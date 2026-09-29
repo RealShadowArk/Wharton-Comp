@@ -56,17 +56,32 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 
 - `context/handoff_2026-09-28.md`: decisions, next trade steps, coding
   priorities, open items. **Read first.**
-- `context/Portfolio_Structure_drive_2026-09-28.xlsx`: export of the
-  "Portfolio Structure" Google Sheet in Drive `Pat (P3)`. It has only the
-  **Summary** (sleeves, cash-flow calendar) and **Input** tabs. It is *not*
-  the full `Laura_Gao_Portfolio_Structure_Model_v1.xlsx` described in the
-  handoff (Step4/Step5, WInS_Plan, Instruments, Tilt_Sizing, Trade_List, Checks).
-  Known issues in its Input tab, which need the user to confirm:
-  - Some percentages look mis-scaled: the 2033 reserve yield shows 0.05%,
-    stock return 0.07% and volatility 0.16%.
-  - The derived log-return mean (0.566) is inconsistent with those inputs.
-  - The safety margin is blank. The required reserve of $405,391 equals the
-    no-margin present value at 5%.
+- `context/Laura_Gao_Portfolio_Structure_Model_v1.xlsx`: **the structure
+  model.** Tabs:
+  - README, Inputs
+  - Step4_Sizing
+  - Step5_Scenarios, Step5_YearByYear, Step5_Simulation (1,000 paths, about 33k formulas), Step5_Summary
+  - WInS_Plan, Instruments, Tilt_Sizing, Trade_List, Checks
+
+  All 24 checks pass. The inputs are still placeholders:
+  - Bond yield 5% (the 2033 yield for Option 2 is also 5%).
+  - Stocks 7% return with 16% volatility.
+  - Safety margin 0.
+  - m = 2, stock cap 100%.
+
+  The M02 base case has not been entered yet. Instruments prices are stale
+  (July/August NAVs) and VOO/VTI/RSP have no price, so Trade_List buys 0
+  shares of the core fund.
+  Read it with openpyxl (`data_only=True`) tab by tab. Skip Step5_Simulation
+  unless a task needs it.
+- `context/M02_assumptions.csv`: long format with columns assumption_id,
+  scenario_id (LOW/BASE/HIGH), asset_id, measure, value, unit, frequency,
+  as_of, source_id, status, input_version. Version "M02 v1.0-DRAFT (28 Sep 2026)".
+- `context/M02_Assumptions_and_Scenarios_v1.xlsx`: the M02 workbook, including
+  Scenario_Definitions, Historical_Returns and Model_Input_Map.
+- `context/Portfolio_Structure_drive_2026-09-28.xlsx`: an older two-tab Google
+  Sheet version. It is superseded by the v1 model; its percentages display
+  mis-scaled.
 
 ## P3 module specs (from the role PDFs in Drive `Pat (P3)`)
 
@@ -120,8 +135,9 @@ Subfolders:
 - Akshaj P (P4 and P5)
 - Aryu (P4 and P1)
 
-Not yet imported: the case study PDF, `M02_Assumptions_and_Scenarios_v1.xlsx`,
-`M02_assumptions.csv`, the Country and Sector Research doc, and the other role PDFs.
+Not yet imported: the case study PDF, the Country and Sector Research doc, and
+the other role PDFs. Large files: ask the user to upload them through the GitHub
+web UI instead of pulling them through the Drive connector.
 US Sector Research artifact: https://claude.ai/code/artifact/d3da66fe-8877-4dea-bda3-b329ee2e5386
 
 ## Coding priorities (from the handoff)
