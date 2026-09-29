@@ -76,6 +76,12 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   shares of the core fund.
   Read it with openpyxl (`data_only=True`) tab by tab. Skip Step5_Simulation
   unless a task needs it.
+- `context/Laura_Gao_Portfolio_Structure_Model_v2.xlsx`: **current model.**
+  v1 plus the M02 base inputs (B13 5%, B14 4.4%, B16 6.95%, B17 17.8%,
+  B28 -37%, B29 -43.84%) and WInS prices VOO 703.61 / RSP 209.74 (28 Sep).
+  It recalculates when opened. Verified with the `formulas` package: all 24
+  checks pass, and Trade_List buys 135 VOO. LibreOffice does not work in this
+  container. Policy inputs are unchanged from v1.
 - `inputs/M02_assumptions.csv`: long format with columns assumption_id,
   scenario_id (LOW/BASE/HIGH), asset_id, measure, value, unit, frequency,
   as_of, source_id, status, input_version. Version "M02 v1.0-DRAFT (28 Sep 2026)".
