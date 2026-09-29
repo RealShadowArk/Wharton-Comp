@@ -9,7 +9,7 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 - The user watches usage limits. Keep work lean: no subagents, read only
   the files a task needs, and fetch Drive files one at a time on demand.
 - Don't delete files without asking.
-- Tests: `python -m pytest -q` (65 tests, pure standard library plus pytest).
+- Tests: `python -m pytest -q` (78 tests, pure standard library plus pytest).
 
 ## Key dates
 
@@ -43,13 +43,15 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 
 | Path | What |
 |---|---|
+| `m02/assumptions.py` | Loads `inputs/M02_assumptions.csv` (single input source), run stamp, Model_Input_Map cases |
+| `structure/plan.py` | Python port of the structure model: floor, cushion, Options 1-3 shares, WInS Stage 1/2 |
 | `m05/` | Reserve model: sizing, year-by-year payout, gap (version m05-0.1, provisional) |
 | `m08/` | Facility-contribution policy and ranges |
 | `inputs/` | Case facts and TEST scenario CSVs |
 | `outputs/` | Generated M05/M08 results |
 | `tests/` | pytest suite for m05 and m08 |
 | `tools/make_hand_check.py` | Builds `handcheck/M05_hand_check.xlsx` |
-| `docs/` | Outlines for the M05 explanation and M08 memos |
+| `docs/` | Outlines for the M05 explanation and M08 memos; `assumptions_and_figures.md` traces every input and Stage 1/2 figure |
 | `context/` | Handoff notes and imported Drive files |
 
 ## Context files
@@ -74,9 +76,12 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   shares of the core fund.
   Read it with openpyxl (`data_only=True`) tab by tab. Skip Step5_Simulation
   unless a task needs it.
-- `context/M02_assumptions.csv`: long format with columns assumption_id,
+- `inputs/M02_assumptions.csv`: long format with columns assumption_id,
   scenario_id (LOW/BASE/HIGH), asset_id, measure, value, unit, frequency,
   as_of, source_id, status, input_version. Version "M02 v1.0-DRAFT (28 Sep 2026)".
+  Values are rounded to 6 decimals (the workbook keeps full precision).
+  `m05/inputs.py` TEAM_FILES still describes an older proposed M02 schema;
+  rewire M05 to `m02.assumptions` in the reserve-ladder task.
 - `context/M02_Assumptions_and_Scenarios_v1.xlsx`: the M02 workbook, including
   Scenario_Definitions, Historical_Returns and Model_Input_Map.
 - `context/Portfolio_Structure_drive_2026-09-28.xlsx`: an older two-tab Google
