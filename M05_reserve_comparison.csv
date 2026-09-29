@@ -1,0 +1,6 @@
+scenario_id,reserve_required,available_assets,actual_reserve_transfer,reserve_gap,reserve_established,first_payment_cash,post_payment_reserve,all_payments_funded,first_shortfall_year,total_shortfall,sizing_yield,runoff_return,source_versions,status
+TEST_Y0_A450,500000.00,450000.00,450000.00,50000.00,FALSE,50000.00,400000.00,FALSE,2042,50000.00,0.0,0.0,case_facts.csv@be12ccac; test_scenarios.csv@67de5dae; m05-0.1,PROVISIONAL TEST
+TEST_Y0_A593,500000.00,593470.93,500000.00,0.00,TRUE,50000.00,450000.00,TRUE,,0.00,0.0,0.0,case_facts.csv@be12ccac; test_scenarios.csv@67de5dae; m05-0.1,PROVISIONAL TEST
+TEST_Y3_A450,439305.45,450000.00,439305.45,0.00,TRUE,50000.00,389305.45,TRUE,,0.00,0.03,0.03,case_facts.csv@be12ccac; test_scenarios.csv@67de5dae; m05-0.1,PROVISIONAL TEST
+TEST_Y3_A593,439305.45,593470.93,439305.45,0.00,TRUE,50000.00,389305.45,TRUE,,0.00,0.03,0.03,case_facts.csv@be12ccac; test_scenarios.csv@67de5dae; m05-0.1,PROVISIONAL TEST
+TEST_Y3_R1_A593,439305.45,593470.93,439305.45,0.00,TRUE,50000.00,389305.45,FALSE,2042,42648.73,0.03,0.01,case_facts.csv@be12ccac; test_scenarios.csv@67de5dae; m05-0.1,PROVISIONAL TEST

@@ -1,0 +1,5 @@
+case_id,description,available_2033,reserve_required,leftover,reserve_gap,reserve_established,policy_id,gift_share,facility_gift,retained_flexibility,assets_after_gift,status
+ENOUGH,More than enough for the reserve,600000.00,440000.00,160000.00,0.00,TRUE,UNDECIDED,,,,,HYPOTHETICAL
+EXACT,Exactly enough for the reserve,440000.00,440000.00,0.00,0.00,TRUE,UNDECIDED,,,,,HYPOTHETICAL
+SHORT,Not enough for the reserve,400000.00,440000.00,-40000.00,40000.00,FALSE,UNDECIDED,,,,,HYPOTHETICAL
+EMPTY,Nothing available,0.00,440000.00,-440000.00,440000.00,FALSE,UNDECIDED,,,,,HYPOTHETICAL

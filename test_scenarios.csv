@@ -1,0 +1,6 @@
+scenario_id,sizing_yield,runoff_return,available_2033,status,note
+TEST_Y0_A450,0.00,0.00,450000.00,TEST,Zero reserve yield; portfolio from zero accumulation (M01 guide p.5)
+TEST_Y0_A593,0.00,0.00,593470.93,TEST,Zero reserve yield; portfolio from 5% accumulation (M01 guide p.5)
+TEST_Y3_A450,0.03,0.03,450000.00,TEST,Flat 3% reserve yield (not sourced); zero accumulation
+TEST_Y3_A593,0.03,0.03,593470.93,TEST,Flat 3% reserve yield (not sourced); 5% accumulation
+TEST_Y3_R1_A593,0.03,0.01,593470.93,TEST,Sized at 3% but the reserve only earns 1%: reinvestment risk

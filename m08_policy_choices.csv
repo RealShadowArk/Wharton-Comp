@@ -1,0 +1,9 @@
+parameter,value,owner,options,notes
+gift_share_candidates,,P1,"One or more shares of the 2033 leftover to give, each from 0 to 1, separated by semicolons","Compared in Pass B. One is chosen after M07 results, but never the biggest gift if it breaks the funding standard"
+payment_success_target,,P1 and P4,A decimal from 0 to 1: the modeled share of paths that must fund all ten payments,The team's definition of a high degree of certainty. The case sets no number
+range_method,,P1,equal_tail (a lower and an upper bound) or one_sided_minimum (a floor only),A floor supports an at-least claim; a two-sided range shows how far the gift could move
+range_target_coverage,,P1,A decimal from 0 to 1: the share of modeled gifts the range should contain,"Wider coverage means a wider, safer, less precise range"
+information_date_2031,,P1 and P4,A date in 2031 as YYYY-MM-DD,The case gives only the year the client approaches co-sponsors; state the convention
+top_up_policy,,P1,"none, or a rule for when retained assets may refill a short reserve",M05 assumes none
+reserve_priority,Fund the full operating reserve before any facility gift,Case p.3,,"Case fact, not a choice"
+underfunding_response,"Gift is zero, the reserve gap is reported, and no gift is ever negative",M08 guide step 3,,Rule from the build guide

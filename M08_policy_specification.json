@@ -1,0 +1,105 @@
+{
+  "policy_id": "M08-facility-contribution",
+  "version": "m08-0.1",
+  "status": "DRAFT: choices undecided",
+  "undecided": [
+    "gift_share_candidates",
+    "payment_success_target",
+    "range_method",
+    "range_target_coverage",
+    "information_date_2031",
+    "top_up_policy",
+    "states_2031"
+  ],
+  "source_versions": "m08_policy_choices.csv@1b721d64; m08_states_2031.csv@676f7636; m08-0.1",
+  "observed_inputs_2033": [
+    "available_2033: portfolio value before the reserve, the first payment, and any gift",
+    "reserve_required: from M05's sizing rule"
+  ],
+  "reserve_priority": {
+    "value": "Fund the full operating reserve before any facility gift",
+    "status": "SET",
+    "owner": "Case p.3"
+  },
+  "gift_rule": {
+    "formula": "facility_gift = share * max(0, available_2033 - reserve_required)",
+    "retained_flexibility": "(1 - share) * max(0, available_2033 - reserve_required)",
+    "notes": "reserve_required already includes the immediate 2033 payment, so it is not subtracted again. The gift leaves the portfolio for good and never funds a later payment."
+  },
+  "candidate_policies": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1",
+    "options": "One or more shares of the 2033 leftover to give, each from 0 to 1, separated by semicolons"
+  },
+  "constraints": [
+    "0 <= share <= 1",
+    "No gift while the reserve gap is above zero",
+    "No gift is ever negative",
+    "No outside money for operating payments"
+  ],
+  "underfunding_response": {
+    "value": "Gift is zero, the reserve gap is reported, and no gift is ever negative",
+    "status": "SET",
+    "owner": "M08 guide step 3"
+  },
+  "top_up_policy": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1",
+    "options": "none, or a rule for when retained assets may refill a short reserve"
+  },
+  "payment_success_target": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1 and P4",
+    "options": "A decimal from 0 to 1: the modeled share of paths that must fund all ten payments"
+  },
+  "range_method": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1",
+    "options": "equal_tail (a lower and an upper bound) or one_sided_minimum (a floor only)"
+  },
+  "range_target_coverage": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1",
+    "options": "A decimal from 0 to 1: the share of modeled gifts the range should contain"
+  },
+  "information_date_2031": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1 and P4",
+    "options": "A date in 2031 as YYYY-MM-DD"
+  },
+  "states_2031": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1 and P4",
+    "options": "Declare each 2031 starting state in inputs/m08_states_2031.csv before seeing any M07 result"
+  },
+  "m07_request": {
+    "file": "M07_path_summary.csv",
+    "fields": [
+      "run_id",
+      "policy_id",
+      "state_id",
+      "path_id",
+      "value_2031",
+      "value_2033",
+      "reserve_required",
+      "reserve_gap",
+      "facility_gift",
+      "all_payments_success",
+      "total_nominal_shortfall",
+      "worst_single_shortfall"
+    ],
+    "notes": [
+      "One row per path. Keep every path, including failed payments and zero gifts.",
+      "Use the policy_id values in candidate_policies.",
+      "Use state_id FROM_2027 for runs that start in 2027, and the declared state_id for runs that start in 2031.",
+      "Apply the gift rule above in 2033, after the reserve is formed."
+    ]
+  }
+}

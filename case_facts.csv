@@ -1,0 +1,10 @@
+name,value,unit,status,source
+base_year,2026,year,CASE,Case study p.2 (2026 is Year 0)
+contribution_1_year,2027,year,CASE,Case study p.2
+contribution_1,300000,USD,CASE,Case study p.2
+contribution_2_year,2028,year,CASE,Case study p.2
+contribution_2,150000,USD,CASE,Case study p.2
+operating_payment,50000,USD,CASE,Case study p.3 (fixed; not adjusted for inflation)
+first_payment_year,2033,year,CASE,Case study p.3
+last_payment_year,2042,year,CASE,Case study p.3
+co_sponsor_outreach_year,2031,year,CASE,Case study p.3

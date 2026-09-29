@@ -1,0 +1,73 @@
+{
+  "policy_id": "M05-operating-reserve",
+  "version": "m05-0.1",
+  "status": "PROVISIONAL",
+  "source_versions": "case_facts.csv@be12ccac; test_scenarios.csv@67de5dae; m05-0.1",
+  "payments": {
+    "amount": 50000,
+    "count": 10,
+    "first_year": 2033,
+    "timing": "beginning of each year; not adjusted for inflation"
+  },
+  "sizing_rule": {
+    "formula": "reserve_required = payment * sum over k = 0 to n - 1 of (1 + sizing_yield) ^ -k",
+    "method": "explicit sum; k = 0 is the immediate first payment",
+    "sizing_yield": {
+      "value": null,
+      "status": "UNDECIDED",
+      "owner": "P2 (M02), approved by P1 and P4",
+      "question": "Which sourced yield sizes the reserve? TEST rates only until M02 is approved."
+    },
+    "information_rule": "Uses only what is known at the start of 2033. Never uses a path's later returns."
+  },
+  "transfer_rule": "actual_reserve_transfer = min(reserve_required, max(0, available_2033))",
+  "gap_rule": "reserve_gap = reserve_required - actual_reserve_transfer",
+  "facility_gift_rule": "Zero while reserve_gap > 0. Otherwise set by M08.",
+  "run_off_rule": {
+    "order": "Pay first, then apply that year's return. No return after the final payment.",
+    "funding": "payment_funded = min(payment_due, max(0, balance)); shortfall = payment_due - payment_funded",
+    "limits": "Balances never go negative. No borrowing. No outside money.",
+    "return_model": "Flat total return on the whole reserve. To be replaced by instrument cash flows after M04."
+  },
+  "success_measures": {
+    "reserve_established": "reserve_gap is zero at formation",
+    "all_payments_funded": "every shortfall is zero",
+    "note": "Report both. A reserve that starts short can still pay everything on lucky returns; that is not the same as being established.",
+    "tolerance_dollars": 0.005
+  },
+  "asset_composition": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1 and P4, with P3's M04 evidence",
+    "question": "What does the reserve hold at formation: a bond ladder, a bond fund, cash, or a mix?"
+  },
+  "payment_order": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1 and P4",
+    "question": "Which assets are sold or mature to fund each payment?"
+  },
+  "rebalancing_rule": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1 and P4",
+    "question": "Does the composition change as payments approach, and when?"
+  },
+  "top_up_rule": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1 (M08)",
+    "question": "Can retained assets top up a short reserve? Default is no."
+  },
+  "high_certainty_definition": {
+    "value": null,
+    "status": "UNDECIDED",
+    "owner": "P1 and P4, after M07",
+    "question": "What funding probability counts as a high degree of certainty?"
+  },
+  "eligibility_caveats": [
+    "Check any proposed instrument in the WInS portal; a public ticker is not proof of eligibility.",
+    "A bond fund does not mature on a payment date. Model its sales and price risk instead.",
+    "Today's yield is not a locked 2033 reinvestment rate."
+  ]
+}
