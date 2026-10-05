@@ -8,7 +8,7 @@
 > unchanged: 36.6% bonds / 57.4% core / 6% tilts.
 
 As of 29 Sep 2026. Inputs: `inputs/M02_assumptions.csv` (M02 v1.0-DRAFT,
-28 Sep 2026) and `context/Laura_Gao_Portfolio_Structure_Model_v1.xlsx`.
+28 Sep 2026) and `Laura_Gao_Portfolio_Structure_Model_v1.xlsx` (now only in git history; the current model is v4).
 Every number below can be reproduced with `m02/assumptions.py` and
 `structure/plan.py`; `tests/test_m02_structure.py` checks them against both
 workbooks.

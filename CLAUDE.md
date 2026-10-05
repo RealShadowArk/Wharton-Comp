@@ -58,24 +58,6 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 
 - `context/handoff_2026-09-28.md`: decisions, next trade steps, coding
   priorities, open items. **Read first.**
-- `context/Laura_Gao_Portfolio_Structure_Model_v1.xlsx`: **the structure
-  model.** Tabs:
-  - README, Inputs
-  - Step4_Sizing
-  - Step5_Scenarios, Step5_YearByYear, Step5_Simulation (1,000 paths, about 33k formulas), Step5_Summary
-  - WInS_Plan, Instruments, Tilt_Sizing, Trade_List, Checks
-
-  All 24 checks pass. The inputs are still placeholders:
-  - Bond yield 5% (the 2033 yield for Option 2 is also 5%).
-  - Stocks 7% return with 16% volatility.
-  - Safety margin 0.
-  - m = 2, stock cap 100%.
-
-  The M02 base case has not been entered yet. Instruments prices are stale
-  (July/August NAVs) and VOO/VTI/RSP have no price, so Trade_List buys 0
-  shares of the core fund.
-  Read it with openpyxl (`data_only=True`) tab by tab. Skip Step5_Simulation
-  unless a task needs it.
 - `context/Laura_Gao_Portfolio_Structure_Model_v4.xlsx`: **current model, Option 3 only**
   (the user's decision, 5 Oct 2026). Built from v3 by
   `tools/build_structure_v4.py` (`python tools/build_structure_v4.py`).
@@ -86,22 +68,14 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   - Inputs B14, B23 and rows 41/45 are cleared (Option 2 only).
   - 20 Option 3 checks; all pass (verified with `formulas`). The simulation
     was also independently recomputed in Python and matches.
-  - v3 keeps the three-option comparison.
-- `context/Laura_Gao_Portfolio_Structure_Model_v3.xlsx`: three-option version.
-  This is v2 with the Step4_Sizing tab rebuilt around Option 3. The old
-  "required return if nothing locked in" block was replaced by B14-B16
-  (stocks = m x cushion, stock share, floor-break fall) and sensitivity
-  columns J-L. The Option 1 labels and chart were relabeled as cushion. The
-  floor-break notes were corrected to (1+y)/m - y, which is -47.5% at m = 2.
-  Verified with the `formulas` package: all 24 checks pass, and B15 =
-  WInS_Plan D14. The Option 1/2 sheets are unchanged (pending a user
-  decision).
-- `context/Laura_Gao_Portfolio_Structure_Model_v2.xlsx`: previous version.
-  v1 plus the M02 base inputs (B13 5%, B14 4.4%, B16 6.95%, B17 17.8%,
-  B28 -37%, B29 -43.84%) and WInS prices VOO 703.61 / RSP 209.74 (28 Sep).
-  It recalculates when opened. Verified with the `formulas` package: all 24
-  checks pass, and Trade_List buys 135 VOO. LibreOffice does not work in this
-  container. Policy inputs are unchanged from v1.
+- Older versions were removed from the repo on 5 Oct 2026 at the user's
+  request. They are still recoverable from git history:
+  - v1: the original three-option model;
+  - v2: v1 plus the M02 base inputs;
+  - v3: v2 with Step 4 rebuilt;
+  - the two-tab Google Sheet export.
+
+  Example: `git show 90b8a21:context/Laura_Gao_Portfolio_Structure_Model_v3.xlsx > v3.xlsx`.
 - `inputs/M02_assumptions.csv`: long format with columns assumption_id,
   scenario_id (LOW/BASE/HIGH), asset_id, measure, value, unit, frequency,
   as_of, source_id, status, input_version. Version "M02 v1.0-DRAFT (28 Sep 2026)".
@@ -110,9 +84,6 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   rewire M05 to `m02.assumptions` in the reserve-ladder task.
 - `context/M02_Assumptions_and_Scenarios_v1.xlsx`: the M02 workbook, including
   Scenario_Definitions, Historical_Returns and Model_Input_Map.
-- `context/Portfolio_Structure_drive_2026-09-28.xlsx`: an older two-tab Google
-  Sheet version. It is superseded by the v1 model; its percentages display
-  mis-scaled.
 
 ## P3 module specs (from the role PDFs in Drive `Pat (P3)`)
 

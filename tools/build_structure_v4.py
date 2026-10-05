@@ -1,4 +1,11 @@
-"""Build structure model v4 (Option 3 only) from v3."""
+"""Build structure model v4 (Option 3 only) from v3.
+
+v3 was removed from the repo after v4 was built; this script reads it from
+git history (commit 90b8a21). Run from the repo root:
+    python tools/build_structure_v4.py
+"""
+import subprocess
+import tempfile
 from copy import copy
 
 import openpyxl
@@ -8,7 +15,13 @@ from openpyxl.styles import Font, PatternFill
 from openpyxl.utils import get_column_letter as L, column_index_from_string as CI
 
 REPO = "/home/user/Wharton-Comp"
-SRC = f"{REPO}/context/Laura_Gao_Portfolio_Structure_Model_v3.xlsx"
+V3_COMMIT = "90b8a21"
+SRC = tempfile.NamedTemporaryFile(suffix=".xlsx", delete=False).name
+with open(SRC, "wb") as f:
+    f.write(subprocess.run(
+        ["git", "-C", REPO, "show",
+         f"{V3_COMMIT}:context/Laura_Gao_Portfolio_Structure_Model_v3.xlsx"],
+        check=True, capture_output=True).stdout)
 OUT = f"{REPO}/context/Laura_Gao_Portfolio_Structure_Model_v4.xlsx"
 M02 = f"{REPO}/context/M02_Assumptions_and_Scenarios_v1.xlsx"
 
