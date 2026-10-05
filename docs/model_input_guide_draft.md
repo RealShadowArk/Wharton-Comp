@@ -158,3 +158,68 @@ At 4%: cushion $115k, Option 3 stocks 49.9%. At 6%: $177k, 75.4%.
   5.03% and 10-year yields 5.18%, so the flat rate is mildly cautious.
 - The actual iBonds fund yields (4.4% in July) need refreshing in WInS.
 - The safety margin is 0% until "high certainty" is defined (M08).
+
+## Step5_Scenarios tab: notes
+
+**Purpose.** It runs the three options through 8 preset market paths,
+2027-2032, and compares where each one ends at the start of 2033. Each row
+is one path. Each path has **one** crash at most, except rows 6 and 7,
+which are checks.
+
+**Layout.**
+
+| Columns | What they show |
+|---|---|
+| C-H | Stock return in each year, 2027-2032 |
+| I-N | Option 1: bonds and stocks bought in 2027 and 2028, then held |
+| O-T | Option 2: wealth at the start of each year (glide path 80% to 20% stocks) |
+| U-Z | Option 3: wealth at the start of each year (stocks = m x cushion, rebalanced yearly) |
+| AA-AI | Results per option: is the reserve funded?, facility capacity (wealth in 2033 minus the reserve), reserve gap |
+
+**Results in v3** (M02 base inputs, m = 2). Facility capacity in 2033:
+
+| Path | Option 1 | Option 2 | Option 3 |
+|---|---|---|---|
+| Steady 6.95% every year | $206k | $209k | **$226k** |
+| Crash in 2027 (-37%) | $206k | $69k | $226k |
+| Crash in 2030 | $121k | $95k | **$44k** |
+| Crash in 2032 | $121k | $157k | **$44k** |
+| Severe crash in 2032 (-43.8%) | $108k | $149k | **$15k** |
+| Zero stock returns | $147k | $105k | $114k |
+| Stocks earn the bond yield (check) | $188k | $178k | $188k |
+
+All three options fund the reserve in every row. The differences are only
+in the facility.
+
+**How Option 3 works in one line.** Each year the cushion is multiplied by
+`1 + yield + m x (stock return - yield)`.
+- A normal year at m = 2: 1.05 + 2 x (6.95% - 5%) = **x1.089**.
+- A -37% year: 1.05 + 2 x (-42%) = **x0.21**, so 79% of the cushion is gone.
+- At -47.5% the factor is 0 and the floor breaks.
+- Multiplication doesn't care about order, so while the cap isn't hit, a
+  crash in 2030 and a crash in 2032 end in the same place ($44k).
+- Option 3 holds no stocks in 2027, because the 2027 money alone is below
+  the floor. That's why "Crash in 2027" doesn't hurt it.
+
+**What the table says.**
+- Option 3 has the best facility in good markets and the worst in crashes.
+- Option 1 is the steadiest.
+- Option 2 suffers if the crash comes early, and does well if it comes late.
+- No option wins every row.
+
+**Caveats found (5 Oct 2026; the user decides).**
+1. **The deterministic paths compound the arithmetic 6.95%.** M02 warns
+   against exactly that (A-06). Paths with a fixed return should use the
+   compound 5.5% (= EXP(Inputs!B18) - 1). At 5.5%, steady-growth facility
+   is Option 1 $193k vs Option 3 $197k. Option 3's edge shrinks from $20k
+   to about $5k, while its crash loss stays about $76k worse than Option 1's.
+2. **The thin equity premium.** Under M02's base, stocks (5.5%) beat bonds
+   (5.0%) by only 0.5% a year, so leverage (m = 2) buys little upside. The
+   case for Option 3 rests on the upper return range (6.7%, or history),
+   not on the base case.
+3. **2027 is all bonds** in Options 1 and 3, but the WInS plan uses the
+   2028 target (WInS_Plan B6). That's a deliberate reference-point choice
+   and should be stated in the Trading Notes.
+4. **These rows use only the Inputs crash sizes.** The M02 paths S0-S8
+   (AI bust, stagflation, and others) can be pasted into row 13 (custom),
+   or run all at once by the planned M06 stress runner.
