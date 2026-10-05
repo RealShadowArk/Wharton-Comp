@@ -77,8 +77,8 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   Read it with openpyxl (`data_only=True`) tab by tab. Skip Step5_Simulation
   unless a task needs it.
 - `context/Laura_Gao_Portfolio_Structure_Model_v4.xlsx`: **current model, Option 3 only**
-  (the user's decision, 5 Oct 2026). Built from v3 by the script
-  `build_v4.py` (in the session scratchpad; not in the repo).
+  (the user's decision, 5 Oct 2026). Built from v3 by
+  `tools/build_structure_v4.py` (`python tools/build_structure_v4.py`).
   - Step5_Scenarios: 16 paths. Rows 6-13 are presets; rows 14-21 are the M02
     stress paths S1-S8. Normal years use the compound return EXP(B18)-1.
   - Step5_YearByYear, Simulation and Summary are rebuilt for Option 3.
