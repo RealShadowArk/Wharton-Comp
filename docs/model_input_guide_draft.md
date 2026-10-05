@@ -232,7 +232,10 @@ a 1931-size crash.
 - Fixed-return paths compounded the arithmetic 6.95%. They now use the
   compound 5.5%. Steady-path facility: $226k becomes $197k.
 - Options 1 and 2 removed.
-- M02 paths S1-S8 added.
+- M02 paths S1-S8 added. Their normal years are linked to the Inputs
+  stock return; their crash and replay years are fixed history. S5 and S6
+  are full historical replays, so they don't move with B16. The zero-return,
+  bond-yield check and custom rows are also fixed by design.
 - Checks rewritten for Option 3 (20/20 pass). They include an independent
   closed-form check of the rule (Checks 10 and 11).
 

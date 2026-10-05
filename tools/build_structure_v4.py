@@ -156,9 +156,15 @@ for r in range(5, 14):
     sid, name = m02.cell(r, 1).value, m02.cell(r, 2).value
     if sid in (None, "S0") or not str(sid).startswith("S"):
         continue
-    rets = [m02.cell(r, c).value for c in range(5, 11)]
+    # Normal years in the M02 paths are the M02 base compound return (5.5%):
+    # link them to the Inputs so they move with the stock-return assumption.
+    # Historical crash and replay years stay as typed values.
+    rets = [G if abs(m02.cell(r, c).value - 0.055) < 1e-12 else m02.cell(r, c).value
+            for c in range(5, 11)]
     flag = m02.cell(r, 16).value
-    presets.append((f"M02 {sid}: {name}", rets, f"{flag}: M02 Scenario_Definitions {sid}"))
+    linked = " (normal years linked to Inputs)" if G in rets else " (all years historical)"
+    presets.append((f"M02 {sid}: {name}", rets,
+                    f"{flag}: M02 Scenario_Definitions {sid}{linked}"))
 assert len(presets) == 16, len(presets)
 
 FIRST, LAST = 6, 6 + len(presets) - 1
@@ -189,7 +195,8 @@ for i, (name, rets, kind) in enumerate(presets):
     put(ws, f"Y{r}", f'=IF(OR({below}),"Yes","No")', "text")
     put(ws, f"Z{r}", kind, "text")
 put(ws, f"B{LAST + 2}", "Rows 1-8 use the Inputs crash sizes; rows 9-16 are P2's M02 stress paths "
-    "(historical replays; S7's -10% is hypothetical). Normal years in the M02 paths are 5.5%.", "note")
+    "(historical replays; S7's -10% is hypothetical). Their normal years use the same compound "
+    "base return as rows 1-5, so they move with Inputs B16/B17; crash and replay years are fixed history.", "note")
 put(ws, f"B{LAST + 3}", "Reading tip: facility capacity = wealth at the start of 2033 minus the required "
     "reserve (Inputs B44). While the cap is not hit, the cushion is multiplied each year by "
     "1 + yield + m x (stock return - yield), so the ORDER of years does not change the 2033 result.", "note")
