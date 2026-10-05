@@ -1,15 +1,19 @@
-"""WInS plan: the Stage 1 and Stage 2 shares from the structure model.
+"""Option 3 (floor rule) and the WInS plan from the structure model.
 
-A Python port of Laura_Gao_Portfolio_Structure_Model_v1.xlsx, sheets Inputs
-(rows 38-45) and WInS_Plan. All amounts are nominal US dollars; rates are
-decimals. Target shares are set at the start of 2028, after both
-contributions, and then applied to the WInS account.
+A Python port of Laura_Gao_Portfolio_Structure_Model_v4.xlsx: sheets Inputs
+(rows 38-44), Step5_Scenarios and WInS_Plan. All amounts are nominal US
+dollars; rates are decimals.
+
+Option 3: every year, stocks = m x cushion (capped at a maximum share of
+wealth), where cushion = wealth - floor and the floor is the cost of bonds
+that cover all ten payments. Everything else is in bonds earning the
+locked-in bond yield.
 """
 
 from m05.reserve import FIRST_PAYMENT_YEAR, required_reserve
 
-GLIDE_START, GLIDE_END = 2027, 2032
-OPTIONS = ("Option 1", "Option 2", "Option 3")
+FIRST_YEAR = 2027
+CONTRIBUTIONS = {2027: 300_000, 2028: 150_000}
 
 
 def reserve_with_margin(bond_yield, safety_margin):
@@ -25,42 +29,51 @@ def floor(year, bond_yield, safety_margin):
             / (1 + bond_yield) ** (FIRST_PAYMENT_YEAR - year))
 
 
-def glide_share(year, share_2027, share_2032):
-    """Option 2's stock share, in a straight line from 2027 to 2032
-    (Inputs row 41)."""
-    return share_2027 + (share_2032 - share_2027) * (
-        (year - GLIDE_START) / (GLIDE_END - GLIDE_START))
+def stocks(wealth, floor_value, m, max_stock_share):
+    """Option 3's stock holding: m x cushion, capped, never below zero."""
+    return min(m * max(0.0, wealth - floor_value), max_stock_share * wealth)
 
 
-def wins_plan(bond_yield, safety_margin, m, max_stock_share,
-              glide_2027, glide_2032, tilts_total, option="Option 3",
-              account_value=300_000, contribution_1=300_000,
+def scenario_path(returns, bond_yield, safety_margin, m, max_stock_share,
+                  contributions=CONTRIBUTIONS):
+    """Wealth at the start of each year 2027-2033 under Option 3, for one
+    stock-return path (one return per year, 2027-2032). Matches a row of
+    Step5_Scenarios, columns I-O."""
+    wealth = [contributions.get(FIRST_YEAR, 0)]
+    for k, ret in enumerate(returns):
+        year = FIRST_YEAR + k
+        w = wealth[-1]
+        s = stocks(w, floor(year, bond_yield, safety_margin), m,
+                   max_stock_share)
+        wealth.append(s * (1 + ret) + (w - s) * (1 + bond_yield)
+                      + contributions.get(year + 1, 0))
+    return wealth
+
+
+def wins_plan(bond_yield, safety_margin, m, max_stock_share, tilts_total,
+              m_lowest=1, account_value=300_000, contribution_1=300_000,
               contribution_2=150_000):
     """Stage 1 and Stage 2 shares and amounts (WInS_Plan sheet).
 
-    The 2028 portfolio assumes a neutral 2027: everything earns the bond
-    yield for one year. Stage 1 takes the smallest safety share and the
-    smallest growth share across the three options, so every option agrees
-    with it; the rest is parked in T-bills until Stage 2.
+    Shares are set at the start of 2028, after both contributions. Under
+    Option 3 the 2027 money alone is below the floor, so it is all in bonds
+    and earns the bond yield. Stage 1 holds what every m from `m_lowest` up
+    to the chosen `m` agrees on: the bond share the chosen m needs and the
+    stock share the lowest m holds; the rest waits in T-bills. Stage 2 is
+    the full target at the chosen m.
     """
     portfolio = contribution_1 * (1 + bond_yield) + contribution_2
     floor_2028 = floor(2028, bond_yield, safety_margin)
     cushion = portfolio - floor_2028
 
-    growth = {
-        "Option 1": cushion / portfolio,
-        "Option 2": glide_share(2028, glide_2027, glide_2032),
-        "Option 3": min(m * cushion, max_stock_share * portfolio) / portfolio,
-    }
-    safety = {k: 1 - v for k, v in growth.items()}
+    def growth(mult):
+        return stocks(portfolio, floor_2028, mult, max_stock_share) / portfolio
 
-    stage1_safety = min(safety.values())
-    stage1_growth = min(growth.values())
-    stage1 = {"safety": stage1_safety, "growth_core": stage1_growth,
-              "parked": 1 - stage1_safety - stage1_growth}
-
-    stage2 = {"safety": safety[option],
-              "growth_core": growth[option] - tilts_total,
+    g_low, g_target = growth(m_lowest), growth(m)
+    stage1 = {"safety": min(1 - g_low, 1 - g_target),
+              "growth_core": min(g_low, g_target)}
+    stage1["parked"] = 1 - stage1["safety"] - stage1["growth_core"]
+    stage2 = {"safety": 1 - g_target, "growth_core": g_target - tilts_total,
               "tilts": tilts_total}
 
     def dollars(shares):
@@ -68,7 +81,8 @@ def wins_plan(bond_yield, safety_margin, m, max_stock_share,
 
     return {
         "portfolio_2028": portfolio, "floor_2028": floor_2028,
-        "cushion_2028": cushion, "growth_by_option": growth,
+        "cushion_2028": cushion, "growth_lowest_m": g_low,
+        "growth_target": g_target,
         "stage1": stage1, "stage1_dollars": dollars(stage1),
         "stage2": stage2, "stage2_dollars": dollars(stage2),
     }

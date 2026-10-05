@@ -1,8 +1,9 @@
 """Tests for the M02 loader and the WInS plan port.
 
-Expected numbers come from Laura_Gao_Portfolio_Structure_Model_v1.xlsx
-(Inputs and WInS_Plan sheets) and M02_Assumptions_and_Scenarios_v1.xlsx
-(Assumptions_Register and Model_Input_Map).
+Expected numbers come from Laura_Gao_Portfolio_Structure_Model_v4.xlsx
+(Inputs, Step5_Scenarios and WInS_Plan sheets, recalculated) and
+M02_Assumptions_and_Scenarios_v1.xlsx (Assumptions_Register and
+Model_Input_Map).
 """
 
 import tempfile
@@ -12,11 +13,13 @@ from pathlib import Path
 from m02.assumptions import (M02_FILE, geometric_to_arithmetic, load_m02,
                              model_inputs)
 from m05.inputs import INPUTS_DIR
-from structure.plan import floor, glide_share, wins_plan
+from structure.plan import floor, scenario_path, wins_plan
 
-# The structure model v1 as saved: placeholder inputs.
-V1 = dict(bond_yield=0.05, safety_margin=0.0, m=2, max_stock_share=1.0,
-          glide_2027=0.8, glide_2032=0.2, tilts_total=0.06)
+# The structure model v4 policy settings: m = 2, Stage 1 at m = 1, no cap.
+V4 = dict(bond_yield=0.05, safety_margin=0.0, m=2, max_stock_share=1.0,
+          tilts_total=0.06, m_lowest=1)
+PATH = dict(bond_yield=0.05, safety_margin=0.0, m=2, max_stock_share=1.0)
+G = 1.055 - 1  # compound base return used by the steady preset paths
 
 
 class M02LoaderTests(unittest.TestCase):
@@ -95,45 +98,81 @@ class WinsPlanTests(unittest.TestCase):
         self.assertAlmostEqual(floor(2028, 0.05, 0), 317634.521796363, 6)
         self.assertAlmostEqual(floor(2033, 0.05, 0), 405391.083782203, 6)
 
-    def test_glide_path_matches_inputs_row_41(self):
-        for year, share in zip(range(2027, 2033),
-                               (0.8, 0.68, 0.56, 0.44, 0.32, 0.2)):
-            self.assertAlmostEqual(glide_share(year, 0.8, 0.2), share, 12)
-
     def test_plan_matches_wins_plan_sheet(self):
-        p = wins_plan(**V1)
+        p = wins_plan(**V4)
         self.assertAlmostEqual(p["portfolio_2028"], 465000, 6)
         self.assertAlmostEqual(p["cushion_2028"], 147365.478203637, 6)
-        g = p["growth_by_option"]
-        self.assertAlmostEqual(g["Option 1"], 0.316915006889542, 12)
-        self.assertAlmostEqual(g["Option 2"], 0.68, 12)
-        self.assertAlmostEqual(g["Option 3"], 0.633830013779083, 12)
-        self.assertAlmostEqual(p["stage1"]["safety"], 0.32, 12)
+        self.assertAlmostEqual(p["growth_lowest_m"], 0.316915006889542, 12)
+        self.assertAlmostEqual(p["growth_target"], 0.633830013779083, 12)
+        self.assertAlmostEqual(p["stage1"]["safety"], 0.366169986220917, 12)
         self.assertAlmostEqual(p["stage1"]["growth_core"],
                                0.316915006889542, 12)
-        self.assertAlmostEqual(p["stage1"]["parked"], 0.363084993110459, 12)
-        self.assertAlmostEqual(p["stage1_dollars"]["growth_core"],
-                               95074.5020668625, 6)
+        self.assertAlmostEqual(p["stage1"]["parked"], 0.316915006889542, 12)
+        self.assertAlmostEqual(p["stage1_dollars"]["safety"],
+                               109850.995866275, 6)
         self.assertAlmostEqual(p["stage2"]["safety"], 0.366169986220917, 12)
         self.assertAlmostEqual(p["stage2"]["growth_core"],
                                0.573830013779083, 12)
 
     def test_stage_totals_equal_account_value(self):
-        p = wins_plan(**V1)
+        p = wins_plan(**V4)
         self.assertAlmostEqual(sum(p["stage1_dollars"].values()), 300_000, 6)
         self.assertAlmostEqual(sum(p["stage2_dollars"].values()), 300_000, 6)
 
-    def test_m_of_one_is_option_1(self):
-        g = wins_plan(**{**V1, "m": 1})["growth_by_option"]
-        self.assertAlmostEqual(g["Option 3"], g["Option 1"], 12)
+    def test_one_stage_when_lowest_m_is_the_chosen_m(self):
+        p = wins_plan(**{**V4, "m_lowest": 2})
+        self.assertAlmostEqual(p["stage1"]["parked"], 0, 12)
+        self.assertAlmostEqual(p["stage1"]["growth_core"],
+                               p["growth_target"], 12)
 
     def test_safety_margin_shrinks_the_cushion(self):
-        base = wins_plan(**V1)
-        margin = wins_plan(**{**V1, "safety_margin": 0.05})
+        base = wins_plan(**V4)
+        margin = wins_plan(**{**V4, "safety_margin": 0.05})
         self.assertAlmostEqual(margin["floor_2028"],
                                base["floor_2028"] * 1.05, 6)
-        self.assertLess(margin["growth_by_option"]["Option 1"],
-                        base["growth_by_option"]["Option 1"])
+        self.assertLess(margin["growth_target"], base["growth_target"])
+
+
+class ScenarioPathTests(unittest.TestCase):
+
+    def test_steady_path_matches_step5_scenarios(self):
+        wealth = scenario_path([G] * 6, **PATH)
+        self.assertAlmostEqual(wealth[0], 300_000, 6)
+        self.assertAlmostEqual(wealth[1], 465_000, 6)
+        self.assertAlmostEqual(wealth[-1], 602599.335969565, 4)
+
+    def test_crash_in_2032_matches_step5_scenarios(self):
+        wealth = scenario_path([G] * 5 + [-0.37], **PATH)
+        self.assertAlmostEqual(wealth[-1], 444460.643177812, 4)
+
+    def test_stocks_earning_the_bond_yield_give_the_risk_free_value(self):
+        wealth = scenario_path([0.05] * 6, **PATH)
+        self.assertAlmostEqual(wealth[-1],
+                               300_000 * 1.05 ** 6 + 150_000 * 1.05 ** 5, 6)
+
+    def test_crash_timing_after_2028_does_not_matter(self):
+        crash_2030 = scenario_path([G] * 3 + [-0.37] + [G] * 2, **PATH)
+        crash_2032 = scenario_path([G] * 5 + [-0.37], **PATH)
+        self.assertAlmostEqual(crash_2030[-1], crash_2032[-1], 6)
+
+    def test_m_of_one_holds_the_cushion_in_stocks(self):
+        returns = [0.10, -0.20, 0.05, 0.08, -0.10, 0.06]
+        wealth = scenario_path(returns, **{**PATH, "m": 1})
+        cushion = 300_000 * 1.05 + 150_000 - floor(2028, 0.05, 0)
+        product = 1.0
+        for r in returns[1:]:
+            product *= 1 + r
+        self.assertAlmostEqual(wealth[-1],
+                               floor(2033, 0.05, 0) + cushion * product, 6)
+
+    def test_floor_breaks_only_beyond_the_gap_threshold(self):
+        # (1 + y)/m - y = 47.5% at m = 2: a 47% fall keeps the reserve,
+        # a 48% fall does not.
+        reserve = floor(2033, 0.05, 0)
+        self.assertGreater(scenario_path([G] * 5 + [-0.47], **PATH)[-1],
+                           reserve)
+        self.assertLess(scenario_path([G] * 5 + [-0.48], **PATH)[-1],
+                        reserve)
 
 
 if __name__ == "__main__":

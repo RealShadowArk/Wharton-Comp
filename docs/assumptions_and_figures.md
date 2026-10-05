@@ -1,5 +1,12 @@
 # How the assumptions and model figures are derived
 
+> **Update, 5 Oct 2026 (structure model v4, Option 3 only).** Sections 1-2
+> still hold. Section 3's Stage 1 used the smallest shares across Options
+> 1-3. In v4, Stage 1 uses the lowest m still being considered (Inputs B22,
+> default 1). It is now 36.6% bonds / 31.7% stocks / 31.7% T-bills: the
+> 32% bond share came from Option 2, which no longer exists. Stage 2 is
+> unchanged: 36.6% bonds / 57.4% core / 6% tilts.
+
 As of 29 Sep 2026. Inputs: `inputs/M02_assumptions.csv` (M02 v1.0-DRAFT,
 28 Sep 2026) and `context/Laura_Gao_Portfolio_Structure_Model_v1.xlsx`.
 Every number below can be reproduced with `m02/assumptions.py` and

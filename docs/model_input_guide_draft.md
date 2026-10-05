@@ -1,7 +1,7 @@
 # Structure model: input guide (DRAFT)
 
 Notes for the doc the user will ask for with "create doc". It covers the
-structure model, `context/Laura_Gao_Portfolio_Structure_Model_v3.xlsx`.
+structure model, `context/Laura_Gao_Portfolio_Structure_Model_v4.xlsx` (Option 3 only).
 This is the portfolio structure model, not M04, which is the later
 portfolio-fit model. Add each tab's notes as we go through it.
 
@@ -41,7 +41,7 @@ assumptions (B16, B17), just translated into log form.
 
 **Multiplier m (B24, 2; your choice, M08).** Option 3's rule, recalculated
 every year: **stocks = m x cushion**, and the rest goes into bonds.
-- m = 1 is the same as Option 1.
+- m = 1 means: lock in the floor in bonds and hold the cushion in stocks.
 - At 2028 values: m = 2 means 63.4% stocks; m = 3 means 95%.
 - After gains the cushion grows, so you buy more stocks. After losses it
   shrinks, so money moves to bonds automatically.
@@ -89,8 +89,15 @@ stock share after long rallies.
   the same futures are reused, so any change in results comes from your
   input, not from luck.
 
-**Reserve purchase yield in 2033 (B14, 4.4%).** This affects Option 2 only.
-Ignore it for Option 3 decisions.
+**Stage 1: lowest m still being considered (B22, 1; your choice, new in v4).**
+- Stage 1 trades only what every m from this value up to the chosen m (B24)
+  agrees on. That means the bonds the chosen m needs, and the stocks the
+  lowest m holds. The rest waits in T-bills.
+- At B22 = 1 and B24 = 2: 36.6% bonds, 31.7% stocks, 31.7% parked.
+- Set B22 equal to B24 to trade the full target in one stage.
+
+**Removed in v4:** the reserve purchase yield in 2033 (old B14) and the
+glide-path settings (old B22-B23, row 41). They were used only by Option 2.
 
 ## Step4_Sizing tab: notes
 
@@ -159,67 +166,94 @@ At 4%: cushion $115k, Option 3 stocks 49.9%. At 6%: $177k, 75.4%.
 - The actual iBonds fund yields (4.4% in July) need refreshing in WInS.
 - The safety margin is 0% until "high certainty" is defined (M08).
 
-## Step5_Scenarios tab: notes
+## Step5_Scenarios tab: notes (v4, Option 3 only)
 
-**Purpose.** It runs the three options through 8 preset market paths,
-2027-2032, and compares where each one ends at the start of 2033. Each row
-is one path. Each path has **one** crash at most, except rows 6 and 7,
-which are checks.
+**Purpose.** It runs Option 3 through 16 preset market paths, 2027-2032, and
+shows where it ends at the start of 2033. Each row is one path.
+- Rows 1-8 use the Inputs crash sizes.
+- Rows 9-16 are P2's M02 stress paths: credit crash, 2022-style rate
+  spike, AI capex pause (2000-02 replay), early crash, lost decade
+  (2000-05), strong growth (2019-24), oil collapse, stagflation (1973-74).
 
 **Layout.**
 
 | Columns | What they show |
 |---|---|
-| C-H | Stock return in each year, 2027-2032 |
-| I-N | Option 1: bonds and stocks bought in 2027 and 2028, then held |
-| O-T | Option 2: wealth at the start of each year (glide path 80% to 20% stocks) |
-| U-Z | Option 3: wealth at the start of each year (stocks = m x cushion, rebalanced yearly) |
-| AA-AI | Results per option: is the reserve funded?, facility capacity (wealth in 2033 minus the reserve), reserve gap |
+| C-H | Stock return each year. Normal years use the compound 5.5%, not the arithmetic 6.95% |
+| I-O | Wealth at the start of each year, 2027-2033 |
+| P-U | Stock share at the start of each year |
+| V | Reserve fully funded? |
+| W | Facility capacity: wealth in 2033 minus the reserve |
+| X | Reserve gap |
+| Y | Did wealth fall below the floor in any year, 2028-2033? |
+| Z | Type and source of the path |
 
-**Results in v3** (M02 base inputs, m = 2). Facility capacity in 2033:
+**How a row is calculated.** Each year:
+1. floor = the cost of bonds that cover all ten payments;
+2. cushion = wealth - floor (never below zero);
+3. stocks = m x cushion (capped);
+4. bonds = everything else;
+5. next year's wealth = stocks x (1 + stock return) + bonds x (1 + bond
+   yield) + any contribution.
 
-| Path | Option 1 | Option 2 | Option 3 |
-|---|---|---|---|
-| Steady 6.95% every year | $206k | $209k | **$226k** |
-| Crash in 2027 (-37%) | $206k | $69k | $226k |
-| Crash in 2030 | $121k | $95k | **$44k** |
-| Crash in 2032 | $121k | $157k | **$44k** |
-| Severe crash in 2032 (-43.8%) | $108k | $149k | **$15k** |
-| Zero stock returns | $147k | $105k | $114k |
-| Stocks earn the bond yield (check) | $188k | $178k | $188k |
+**Results in v4** (M02 base inputs, m = 2). Facility capacity in 2033;
+the reserve is funded in every row and the floor never breaks:
 
-All three options fund the reserve in every row. The differences are only
-in the facility.
+| Path | Facility |
+|---|---|
+| Steady 5.5% (compound base) | $197k |
+| Crash in 2027 | $197k (no stocks in 2027) |
+| Crash in 2030 / 2032 (-37%) | $39k |
+| Severe crash 2032 (-43.8%) | $14k |
+| Zero stock returns | $114k |
+| Stocks earn the bond yield (check) | $188k |
+| Custom path | $76k |
+| M02 S2, 2022-style rate spike 2031 | $109k |
+| M02 S3, AI capex pause 2030-32 | $46k |
+| M02 S5, lost decade start | $99k |
+| M02 S6, strong growth (2019-24) | $372k |
+| M02 S7, oil collapse 2032 (-10%) | $140k |
+| M02 S8, stagflation 2031-32 | $50k |
 
-**How Option 3 works in one line.** Each year the cushion is multiplied by
-`1 + yield + m x (stock return - yield)`.
-- A normal year at m = 2: 1.05 + 2 x (6.95% - 5%) = **x1.089**.
-- A -37% year: 1.05 + 2 x (-42%) = **x0.21**, so 79% of the cushion is gone.
+**How Option 3 works in one line.** While the cap isn't hit, the cushion is
+multiplied each year by `1 + yield + m x (stock return - yield)`.
+- A normal year at 5.5%, m = 2: **x1.06**.
+- A -37% year: **x0.21**.
 - At -47.5% the factor is 0 and the floor breaks.
-- Multiplication doesn't care about order, so while the cap isn't hit, a
-  crash in 2030 and a crash in 2032 end in the same place ($44k).
-- Option 3 holds no stocks in 2027, because the 2027 money alone is below
-  the floor. That's why "Crash in 2027" doesn't hurt it.
+- The order of years after 2028 doesn't change the result.
+- In 2027 the money alone is below the floor, so Option 3 holds no stocks.
 
-**What the table says.**
-- Option 3 has the best facility in good markets and the worst in crashes.
-- Option 1 is the steadiest.
-- Option 2 suffers if the crash comes early, and does well if it comes late.
-- No option wins every row.
+**What it means.** Option 3 protects all ten payments in every path tested,
+including 1931's -43.8%. The facility is what absorbs the risk: $197k in a
+steady market, $39-50k after a 2008-style crash or stagflation, $14k after
+a 1931-size crash.
 
-**Caveats found (5 Oct 2026; the user decides).**
-1. **The deterministic paths compound the arithmetic 6.95%.** M02 warns
-   against exactly that (A-06). Paths with a fixed return should use the
-   compound 5.5% (= EXP(Inputs!B18) - 1). At 5.5%, steady-growth facility
-   is Option 1 $193k vs Option 3 $197k. Option 3's edge shrinks from $20k
-   to about $5k, while its crash loss stays about $76k worse than Option 1's.
-2. **The thin equity premium.** Under M02's base, stocks (5.5%) beat bonds
-   (5.0%) by only 0.5% a year, so leverage (m = 2) buys little upside. The
-   case for Option 3 rests on the upper return range (6.7%, or history),
-   not on the base case.
-3. **2027 is all bonds** in Options 1 and 3, but the WInS plan uses the
-   2028 target (WInS_Plan B6). That's a deliberate reference-point choice
-   and should be stated in the Trading Notes.
-4. **These rows use only the Inputs crash sizes.** The M02 paths S0-S8
-   (AI bust, stagflation, and others) can be pasted into row 13 (custom),
-   or run all at once by the planned M06 stress runner.
+**Fixed in v4 (5 Oct 2026).**
+- Fixed-return paths compounded the arithmetic 6.95%. They now use the
+  compound 5.5%. Steady-path facility: $226k becomes $197k.
+- Options 1 and 2 removed.
+- M02 paths S1-S8 added.
+- Checks rewritten for Option 3 (20/20 pass). They include an independent
+  closed-form check of the rule (Checks 10 and 11).
+
+**Open caveats.**
+- **Thin equity premium in the M02 base:** stocks 5.5% vs bonds 5.0%. The
+  case for m = 2 rests on stocks beating the base case.
+- **2027 is all bonds in the model, but WInS uses the 2028 target**
+  (WInS_Plan B6). State this in the Trading Notes.
+- **Bonds are valued at their locked yield.** Rebalancing would really sell
+  them at market prices, which move with interest rates.
+
+## Step5_YearByYear, Step5_Simulation, Step5_Summary: notes (v4)
+
+- **YearByYear:** the Inputs B30 scenario, year by year (return, floor,
+  wealth, cushion, stocks, bonds, stock share), with a wealth-vs-floor chart.
+- **Simulation:** the same rule on 1,000 random paths (stored draws,
+  seed 20260926).
+- **Summary (M02 base, m = 2):**
+  - reserve funded in 100% of paths;
+  - facility of at least $100k in 72.8% of paths;
+  - facility percentiles: 5th $42k, median $176k, 95th $581k; average $224k.
+  - Independently recomputed in Python: identical.
+  - The lognormal model produces crash years less often than history, so
+    the bad-case numbers are optimistic.
