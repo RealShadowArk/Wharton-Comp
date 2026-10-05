@@ -51,7 +51,7 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 | `outputs/` | Generated M05/M08 results |
 | `tests/` | pytest suite for m05 and m08 |
 | `tools/make_hand_check.py` | Builds `handcheck/M05_hand_check.xlsx` |
-| `docs/` | Outlines for the M05 explanation and M08 memos; `assumptions_and_figures.md` traces every input and Stage 1/2 figure |
+| `docs/` | `model_input_guide_draft.md` = notes for the user's input-guide doc (create the real doc only when they say "create doc"); outlines for the M05 explanation and M08 memos; `assumptions_and_figures.md` traces every input and Stage 1/2 figure |
 | `context/` | Handoff notes and imported Drive files |
 
 ## Context files
@@ -76,7 +76,16 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   shares of the core fund.
   Read it with openpyxl (`data_only=True`) tab by tab. Skip Step5_Simulation
   unless a task needs it.
-- `context/Laura_Gao_Portfolio_Structure_Model_v2.xlsx`: **current model.**
+- `context/Laura_Gao_Portfolio_Structure_Model_v3.xlsx`: **current model.**
+  This is v2 with the Step4_Sizing tab rebuilt around Option 3. The old
+  "required return if nothing locked in" block was replaced by B14-B16
+  (stocks = m x cushion, stock share, floor-break fall) and sensitivity
+  columns J-L. The Option 1 labels and chart were relabeled as cushion. The
+  floor-break notes were corrected to (1+y)/m - y, which is -47.5% at m = 2.
+  Verified with the `formulas` package: all 24 checks pass, and B15 =
+  WInS_Plan D14. The Option 1/2 sheets are unchanged (pending a user
+  decision).
+- `context/Laura_Gao_Portfolio_Structure_Model_v2.xlsx`: previous version.
   v1 plus the M02 base inputs (B13 5%, B14 4.4%, B16 6.95%, B17 17.8%,
   B28 -37%, B29 -43.84%) and WInS prices VOO 703.61 / RSP 209.74 (28 Sep).
   It recalculates when opened. Verified with the `formulas` package: all 24
