@@ -89,15 +89,25 @@ stock share after long rallies.
   the same futures are reused, so any change in results comes from your
   input, not from luck.
 
-**Stage 1: lowest m still being considered (B22, 1; your choice, new in v4).**
-- Stage 1 trades only what every m from this value up to the chosen m (B24)
-  agrees on. That means the bonds the chosen m needs, and the stocks the
-  lowest m holds. The rest waits in T-bills.
-- At B22 = 1 and B24 = 2: 36.6% bonds, 31.7% stocks, 31.7% parked.
-- Set B22 equal to B24 to trade the full target in one stage.
+**Individual stocks / satellites (B22, 70%; your choice, 5 Oct 2026).**
+- This is the share of the growth money, after the sector tilts, that goes
+  into individual stocks. The rest stays in the core index fund.
+- At m = 2 the target is:
+  - bonds 36.6% ($109,851);
+  - core fund 17.2% ($51,645);
+  - sector tilts 6% ($18,000);
+  - individual stocks 40.2% ($120,504).
+- Until each stock passes research, its money waits in SGOV.
+- **Caveat:** the floor-break threshold (-47.5% at m = 2) applies to the whole
+  stock sleeve. A sleeve that is mostly single stocks can fall further than
+  the index in a crash (many stocks fell 50-70% in 2008), so stress-test it
+  in M06.
 
-**Removed in v4:** the reserve purchase yield in 2033 (old B14) and the
-glide-path settings (old B22-B23, row 41). They were used only by Option 2.
+**Removed in v4:**
+- the reserve purchase yield in 2033 (old B14) and the glide-path settings
+  (old B22-B23, row 41), which were used only by Option 2;
+- the Stage 1 / Stage 2 split. WInS holds one target: the Option 3 ratios at
+  m = 2.
 
 ## Step4_Sizing tab: notes
 
@@ -260,3 +270,30 @@ a 1931-size crash.
   - Independently recomputed in Python: identical.
   - The lognormal model produces crash years less often than history, so
     the bad-case numbers are optimistic.
+
+## WInS_Plan and Trade_List: notes (v4, single target)
+
+- **WInS_Plan:** one target portfolio at m = 2. The WInS account holds these
+  ratios; the dollar values scale with the account:
+
+  | Part | Share | Dollars |
+  |---|---|---|
+  | Bonds | 36.6% | $109,851 |
+  | Core fund | 17.2% | $51,645 |
+  | Sector tilts (XLV, XLP at 3% each, placeholders) | 6% | $18,000 |
+  | Individual stocks | 40.2% | $120,504 |
+
+- In real money, the portfolio would be rebalanced to m x cushion at the start
+  of every year, 2028-2033.
+- **Trade_List:** one row per slot, with target amount, price, shares, cost
+  and leftover cash.
+  - The individual-stock row holds SGOV as a placeholder until stocks are
+    chosen.
+  - Prices for IBTO/IBTP/IBTQ/SGOV are still July/August values; refresh
+    them from WInS.
+- **Order of buying (user's plan):**
+  1. bonds;
+  2. sector tilts and the core ETF;
+  3. individual stocks, one at a time after research.
+
+  Each slot needs research showing why it helps Laura, plus a Trading Note.

@@ -15,9 +15,10 @@ from m02.assumptions import (M02_FILE, geometric_to_arithmetic, load_m02,
 from m05.inputs import INPUTS_DIR
 from structure.plan import floor, scenario_path, wins_plan
 
-# The structure model v4 policy settings: m = 2, Stage 1 at m = 1, no cap.
+# The structure model v4 policy settings: m = 2, no cap, 6% tilts and 70% of
+# the remaining growth money in individual stocks.
 V4 = dict(bond_yield=0.05, safety_margin=0.0, m=2, max_stock_share=1.0,
-          tilts_total=0.06, m_lowest=1)
+          tilts_total=0.06, satellite_share=0.7)
 PATH = dict(bond_yield=0.05, safety_margin=0.0, m=2, max_stock_share=1.0)
 G = 1.055 - 1  # compound base return used by the steady preset paths
 
@@ -102,35 +103,32 @@ class WinsPlanTests(unittest.TestCase):
         p = wins_plan(**V4)
         self.assertAlmostEqual(p["portfolio_2028"], 465000, 6)
         self.assertAlmostEqual(p["cushion_2028"], 147365.478203637, 6)
-        self.assertAlmostEqual(p["growth_lowest_m"], 0.316915006889542, 12)
-        self.assertAlmostEqual(p["growth_target"], 0.633830013779083, 12)
-        self.assertAlmostEqual(p["stage1"]["safety"], 0.366169986220917, 12)
-        self.assertAlmostEqual(p["stage1"]["growth_core"],
-                               0.316915006889542, 12)
-        self.assertAlmostEqual(p["stage1"]["parked"], 0.316915006889542, 12)
-        self.assertAlmostEqual(p["stage1_dollars"]["safety"],
-                               109850.995866275, 6)
-        self.assertAlmostEqual(p["stage2"]["safety"], 0.366169986220917, 12)
-        self.assertAlmostEqual(p["stage2"]["growth_core"],
-                               0.573830013779083, 12)
+        self.assertAlmostEqual(p["growth"], 0.633830013779083, 12)
+        t, d = p["target"], p["target_dollars"]
+        self.assertAlmostEqual(t["safety"], 0.366169986220917, 12)
+        self.assertAlmostEqual(t["satellites"], 0.401681009645358, 12)
+        self.assertAlmostEqual(t["core"], 0.172149004133725, 12)
+        self.assertAlmostEqual(d["safety"], 109850.995866275, 6)
+        self.assertAlmostEqual(d["satellites"], 120504.302893607, 6)
+        self.assertAlmostEqual(d["core"], 51644.7012401175, 6)
 
-    def test_stage_totals_equal_account_value(self):
-        p = wins_plan(**V4)
-        self.assertAlmostEqual(sum(p["stage1_dollars"].values()), 300_000, 6)
-        self.assertAlmostEqual(sum(p["stage2_dollars"].values()), 300_000, 6)
+    def test_target_adds_up_to_account_value(self):
+        self.assertAlmostEqual(sum(wins_plan(**V4)["target_dollars"].values()),
+                               300_000, 6)
 
-    def test_one_stage_when_lowest_m_is_the_chosen_m(self):
-        p = wins_plan(**{**V4, "m_lowest": 2})
-        self.assertAlmostEqual(p["stage1"]["parked"], 0, 12)
-        self.assertAlmostEqual(p["stage1"]["growth_core"],
-                               p["growth_target"], 12)
+    def test_satellite_share_only_moves_money_inside_growth(self):
+        low = wins_plan(**{**V4, "satellite_share": 0.3})["target"]
+        high = wins_plan(**V4)["target"]
+        self.assertAlmostEqual(low["safety"], high["safety"], 12)
+        self.assertAlmostEqual(low["satellites"] + low["core"],
+                               high["satellites"] + high["core"], 12)
 
     def test_safety_margin_shrinks_the_cushion(self):
         base = wins_plan(**V4)
         margin = wins_plan(**{**V4, "safety_margin": 0.05})
         self.assertAlmostEqual(margin["floor_2028"],
                                base["floor_2028"] * 1.05, 6)
-        self.assertLess(margin["growth_target"], base["growth_target"])
+        self.assertLess(margin["growth"], base["growth"])
 
 
 class ScenarioPathTests(unittest.TestCase):

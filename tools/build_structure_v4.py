@@ -64,6 +64,7 @@ ST = {
     "chk_val": style_of("Checks", "C5"),
     "chk_res": style_of("Checks", "F5"),
     "in_val": style_of("Inputs", "B24"),
+    "in_pct": style_of("Inputs", "B25"),
     "in_unit": style_of("Inputs", "C24"),
     "in_type": style_of("Inputs", "D24"),
     "in_note": style_of("Inputs", "I24"),
@@ -103,12 +104,13 @@ for row in (14, 23, 41, 45):
         ws[f"{col}{row}"].value = None
         ws[f"{col}{row}"]._style = copy(ST["blank"])
 put(ws, "A21", "Option 3 settings (team choices; P1 approves in M08)")
-put(ws, "A22", "Stage 1: lowest multiplier m still being considered")
-put(ws, "B22", 1, "in_val")
-put(ws, "C22", "x cushion", "in_unit")
+put(ws, "A22", "Individual stocks (satellites): share of the growth money left after sector tilts")
+put(ws, "B22", 0.7, "in_pct")
+put(ws, "C22", "% of growth after tilts", "in_unit")
 put(ws, "D22", "Team choice", "in_type")
-put(ws, "I22", "Stage 1 buys only what every m from this value up to B24 agrees on "
-    "(WInS_Plan). Set it equal to B24 to trade the full Option 3 target in one stage.", "in_note")
+put(ws, "I22", "The rest of that growth money stays in the core index fund (Trade_List B4). Team choice "
+    "(5 Oct 2026): 70%. Single stocks can fall much further than the index in one year, so the "
+    "floor-break threshold below applies to the WHOLE stock sleeve - stress-test it in M06.", "in_note")
 put(ws, "I24", "Stocks = m x cushion, recalculated at the start of every year. m = 1 = lock in "
     "the floor and hold the cushion in stocks. Higher m = more stocks and more gap risk: the "
     "floor breaks if stocks fall by more than (1 + bond yield)/m - bond yield in one year "
@@ -377,66 +379,103 @@ ws.add_chart(ch, "A26")
 ws = wb["WInS_Plan"]
 ws.data_validations.dataValidation = [d for d in ws.data_validations.dataValidation
                                       if "B5" not in str(d.sqref)]
-merged_notes = [str(r) for r in ws.merged_cells.ranges if r.min_row >= 12]
-for rng in merged_notes:
+for rng in [str(r) for r in ws.merged_cells.ranges if r.min_row >= 12]:
     ws.unmerge_cells(rng)
 for row in range(12, 33):
     for col in "ABCDE":
         ws[f"{col}{row}"].value = None
-put(ws, "A2", "Stage 1 = amounts every multiplier still under consideration agrees on (from Inputs B22 "
-    "up to the chosen m in B24): safe to trade now. Stage 2 = the full Option 3 target at the "
-    "chosen m, plus the sector tilts.")
+put(ws, "A2", "The target portfolio for Option 3 at the chosen m. The WInS account holds these RATIOS; the "
+    "dollar amounts scale with the account. Real money would be rebalanced to m x cushion at the "
+    "start of every year from 2028 to 2033.")
 put(ws, "A5", "Strategy")
 put(ws, "B5", "Option 3 - Floor rule")
 put(ws, "E5", "Stocks = m x cushion, rebalanced every year (Inputs B24, B25).")
 put(ws, "A12", "Option 3 shares at start of 2028", "wp_head")
-put(ws, "B12", "Lowest m considered (Stage 1)", "wp_head")
-put(ws, "C12", "Chosen m (Stage 2)", "wp_head")
-put(ws, "A13", "Multiplier m", "wp_label")
-put(ws, "B13", "=Inputs!$B$22", "in_val")
-put(ws, "C13", "=Inputs!$B$24", "in_val")
-for c in "BC":
-    put(ws, f"{c}14", f"=IF($B$8>0,MIN({c}13*MAX(0,$B$10),Inputs!$B$25*$B$8)/$B$8,0)", "wp_pct")
-    put(ws, f"{c}15", f"=1-{c}14", "wp_pct")
-put(ws, "A14", "Growth (stock) share", "wp_label")
+put(ws, "A13", "Multiplier m (Inputs B24)", "wp_label")
+put(ws, "B13", "=Inputs!$B$24", "in_val")
+put(ws, "A14", "Growth (stock) share = m x cushion / portfolio (capped)", "wp_label")
+put(ws, "B14", "=IF($B$8>0,MIN(B13*MAX(0,$B$10),Inputs!$B$25*$B$8)/$B$8,0)", "wp_pct")
 put(ws, "A15", "Safety (bond) share", "wp_label")
-put(ws, "A17", "STAGE 1 - no-regret trades (every m considered agrees)", "wp_head")
-put(ws, "A18", "Part", "wp_head")
-put(ws, "B18", "Share", "wp_head")
-put(ws, "C18", "Amount", "wp_head")
-put(ws, "A19", "Safety: the smallest bond share any m considered needs (the chosen m)", "wp_label")
-put(ws, "B19", "=MIN(B15:C15)", "wp_pct")
-put(ws, "A20", "Growth core: the smallest stock share any m considered holds", "wp_label")
-put(ws, "B20", "=MIN(B14:C14)", "wp_pct")
-put(ws, "A21", "Parked in T-bills until Stage 2", "wp_label")
-put(ws, "B21", "=1-B19-B20", "wp_pct")
-put(ws, "A22", "Total", "wp_label")
-put(ws, "B22", "=SUM(B19:B21)", "wp_pct")
-put(ws, "A24", "STAGE 2 - full Option 3 target at the chosen m", "wp_head")
-put(ws, "A25", "Part", "wp_head")
-put(ws, "B25", "Share", "wp_head")
-put(ws, "C25", "Amount", "wp_head")
-put(ws, "A26", "Safety target", "wp_label")
-put(ws, "B26", "=C15", "wp_pct")
-put(ws, "A27", "Growth target (core + tilts)", "wp_label")
-put(ws, "B27", "=C14", "wp_pct")
-put(ws, "A28", "   of which sector tilts (from Tilt_Sizing)", "wp_label")
-put(ws, "B28", "=Tilt_Sizing!$F$16", "wp_pct")
-put(ws, "A29", "   of which growth core", "wp_label")
-put(ws, "B29", "=B27-B28", "wp_pct")
-put(ws, "A30", "Total (safety + growth)", "wp_label")
-put(ws, "B30", "=B26+B27", "wp_pct")
-for r in (19, 20, 21, 22, 26, 27, 28, 29, 30):
+put(ws, "B15", "=1-B14", "wp_pct")
+put(ws, "A17", "TARGET PORTFOLIO (keep these ratios in WInS)", "wp_head")
+for c, h in zip("ABC", ["Part", "Share", "Amount"]):
+    put(ws, f"{c}18", h, "wp_head")
+rows = [
+    (19, "Safety: Treasury bond ladder", "=B15"),
+    (20, "Growth: all stocks", "=B14"),
+    (21, "   of which sector tilt ETFs (Tilt_Sizing)", "=Tilt_Sizing!$F$16"),
+    (22, "   of which individual stocks / satellites (Inputs B22)", "=(B20-B21)*Inputs!$B$22"),
+    (23, "   of which core index fund", "=B20-B21-B22"),
+    (24, "Total (safety + growth)", "=B19+B20"),
+]
+for r, label, f in rows:
+    put(ws, f"A{r}", label, "wp_label")
+    put(ws, f"B{r}", f, "wp_pct")
     put(ws, f"C{r}", f"=B{r}*$B$4", "wp_usd")
-put(ws, "A32", "How to read: Stage 1 never holds more stocks than the most cautious m you are still "
-    "considering, and already holds the bonds the chosen m needs; the rest waits in T-bills. If "
-    "Inputs B22 = B24, Stage 1 equals Stage 2 and nothing is parked.")
-for rng in merged_notes:
-    ws.merge_cells(rng)
+put(ws, "A26", "How to read: the bond share protects all ten payments (the floor); every stock slot "
+    "(tilts, individual stocks, core fund) shares one risk budget, m x cushion. Individual stocks "
+    "are bought one at a time as each passes research; until then their money waits in SGOV.")
+ws.merge_cells("A26:E26")
+
+# ------------------------------------------------------------ Tilt_Sizing
+ws = wb["Tilt_Sizing"]
+ws["A7"].value = ("Core index fund share (look-through assumes an S&P 500 fund; individual stocks "
+                  "are not included until chosen)")
+ws["F7"].value = "=WInS_Plan!$B$23"
+for r in range(10, 16):
+    ws[f"L{r}"].value = f"=WInS_Plan!$B$20*D{r}"
 
 # ------------------------------------------------------------ Trade_List
 ws = wb["Trade_List"]
-put(ws, "A22", "STAGE 2 - after P1 approves m and the tilts")
+TS = {k: copy(ws[ref]._style) for k, ref in
+      {"head": "A14", "txt": "B15", "usd": "D15", "px": "E15", "sh": "F15", "flag": "I15",
+       "tot": "A20", "totusd": "D20", "title": "A13"}.items()}
+for rng in [str(r) for r in ws.merged_cells.ranges if r.min_row >= 13]:
+    ws.unmerge_cells(rng)
+for row in range(13, 41):
+    for col in "ABCDEFGHI":
+        ws[f"{col}{row}"].value = None
+        ws[f"{col}{row}"]._style = copy(ST["blank"])
+
+
+def tput(ref, v, k):
+    ws[ref].value = v
+    ws[ref]._style = copy(TS[k])
+
+
+ws["A1"].value = "Trade list - share counts for the Option 3 target portfolio"
+wb["Instruments"]["G9"].value = "Holds cash-like T-bills: individual-stock money waits here until each stock passes research"
+tput("A13", "TARGET TRADES - Option 3 at the chosen m (ratios from WInS_Plan). Buy each slot once its "
+     "research and Trading Note are done.", "title")
+for c, h in zip("ABCDEFGH", ["Slot", "Ticker", "Target amount", "Price", "Shares", "Cost", "Uninvested",
+                             "Flag"]):
+    tput(f"{c}14", h, "head")
+slots = [("Safety (bond ladder)", "=A8", "=WInS_Plan!$C$19*B8"),
+         ("Safety (bond ladder)", "=A9", "=WInS_Plan!$C$19*B9"),
+         ("Safety (bond ladder)", "=A10", "=WInS_Plan!$C$19*B10"),
+         ("Core index fund", "=$B$4", "=WInS_Plan!$C$23")]
+slots += [("Sector tilt ETF", f"=Tilt_Sizing!A{r}", f"=Tilt_Sizing!H{r}") for r in range(10, 16)]
+slots += [("Individual stocks (held in SGOV until each stock passes research)", "=$B$5", "=WInS_Plan!$C$22")]
+for i, (slot, tick, amt) in enumerate(slots):
+    r = 15 + i
+    tput(f"A{r}", slot, "txt")
+    tput(f"B{r}", tick, "txt")
+    tput(f"C{r}", amt, "usd")
+    tput(f"D{r}", f"=IFERROR(INDEX(Instruments!$H$5:$H$19,MATCH(B{r},Instruments!$A$5:$A$19,0)),0)", "px")
+    tput(f"E{r}", f"=IF(D{r}>0,ROUNDDOWN(C{r}/D{r},0),0)", "sh")
+    tput(f"F{r}", f"=E{r}*D{r}", "usd")
+    tput(f"G{r}", f"=C{r}-F{r}", "usd")
+    tput(f"H{r}", f'=IF(AND(C{r}>0,D{r}=0),"Enter price on Instruments","")', "flag")
+TL = 15 + len(slots)  # total row
+tput(f"A{TL}", "Total", "tot")
+for c in "CFG":
+    tput(f"{c}{TL}", f"=SUM({c}15:{c}{TL - 1})", "totusd")
+tput(f"A{TL + 2}", "Shares round down; leftover cash stays uninvested. Replace the SGOV placeholder with "
+     "individual stocks one at a time (M12 screen, M03 research, loss-budget sizing). Each start of year "
+     "2028-2033, rebalance to the WInS_Plan ratios.", "txt")
+ws.merge_cells(f"A{TL + 2}:H{TL + 2}")
+for col, w in zip("ABCDEFGH", [52, 10, 15, 11, 9, 14, 13, 26]):
+    ws.column_dimensions[col].width = w
 
 # ---------------------------------------------------------------- Checks
 ws = wb["Checks"]
@@ -453,7 +492,7 @@ checks = [
     ("Reserve cost: PV formula equals the worked discounting table", "=Step4_Sizing!E31", "=Inputs!$B$43", 0.01),
     ("Year axis ends at the first payment year", "=Inputs!$B$9", "=Inputs!H38", 0.01),
     ("Floor in 2033 equals the required reserve", "=Inputs!$B$44", "=Inputs!H40", 0.01),
-    ("Step 4 Option 3 stock share equals the WInS plan (chosen m)", "=WInS_Plan!C14", "=Step4_Sizing!B15", 1e-9),
+    ("Step 4 Option 3 stock share equals the WInS plan (chosen m)", "=WInS_Plan!B14", "=Step4_Sizing!B15", 1e-9),
     ("Stocks earn the bond yield: Option 3 ends at the risk-free value", f"={RF}",
      f"=Step5_Scenarios!O{FIRST + 6}", 0.01),
     ("Steady path matches the cushion formula (cushion x (1 + y + m(g - y))^5); n/a if the cap binds",
@@ -474,17 +513,15 @@ checks = [
      "draws"),
     ("Simulated average return within 1.5 points of the input", "=Inputs!$B$16", "=Step5_Summary!C21", 0.015),
     ("Simulated volatility within 1.5 points of the input", "=Inputs!$B$17", "=Step5_Summary!C22", 0.015),
-    ("Stage 1 amounts add up to the WInS account value", "=WInS_Plan!$B$4", "=WInS_Plan!$C$22", 1),
-    ("Stage 2 targets add up to the WInS account value", "=WInS_Plan!$B$4", "=Trade_List!D35", 1),
+    ("Target amounts add up to the WInS account value", "=WInS_Plan!$B$4", f"=Trade_List!C{TL}", 1),
     ("Safety split weights add up to 100%", "1", "=Trade_List!B11", 0.0001),
     ("Every tilt is within its loss-budget limit", "All Yes",
      '=COUNTIF(Tilt_Sizing!G10:G15,"No")&" No"', "tilts"),
     ("Total tilts are within the tilt budget", "=Tilt_Sizing!$F$5", "=Tilt_Sizing!$F$16", "le"),
-    ("Growth core target in Stage 2 is not negative (tilts fit inside growth)", ">= 0",
-     "=WInS_Plan!$C$29", "nonneg"),
-    ("Stage 1 never exceeds Stage 2 targets (safety and growth)", "Stage 1 <= Stage 2",
-     '=IF(AND(WInS_Plan!C19<=WInS_Plan!C26+0.01,WInS_Plan!C20<=WInS_Plan!C27+0.01),"OK","Exceeds")', "ok"),
-    ("Stage 2 buys and sells net to about zero", "0", "=Trade_List!F35", 1),
+    ("Core index fund target is not negative (tilts fit inside growth)", ">= 0",
+     "=WInS_Plan!$C$23", "nonneg"),
+    ("Individual-stock share is between 0% and 100%", "0%-100%", "=Inputs!$B$22", "pct01"),
+    ("Shares bought never cost more than the account", "=WInS_Plan!$B$4", f"=Trade_List!F{TL}", "le"),
 ]
 for i, (label, exp, act, tol) in enumerate(checks):
     r = 5 + i
@@ -504,6 +541,8 @@ for i, (label, exp, act, tol) in enumerate(checks):
         res = '=IF(COUNTIF(Tilt_Sizing!G10:G15,"No")=0,"PASS","FAIL")'
     elif tol == "nonneg":
         res = f'=IF(D{r}>=0,"PASS","FAIL")'
+    elif tol == "pct01":
+        res = f'=IF(AND(D{r}>=0,D{r}<=1),"PASS","FAIL")'
     elif tol == "ok":
         res = f'=IF(D{r}="OK","PASS","FAIL")'
     put(ws, f"F{r}", res, "chk_res")
@@ -573,11 +612,13 @@ readme = {
            "Fixed-return preset paths use the compound return (5.5%), not the arithmetic average.",
     "B48": "Crash sizes and stress paths: P2's M02 assumptions (2008 -37.0%, 1931 -43.84%) and "
            "M02 Scenario_Definitions S1-S8.",
-    "B52": "WInS_Plan: turns Option 3 into percentages and dollars for the WInS account. Stage 1 = the "
-           "amounts every multiplier still under consideration agrees on (safe to trade now). Stage 2 = "
-           "the full target at the chosen m.",
+    "B52": "WInS_Plan: turns Option 3 into the target ratios for the WInS account: bond ladder, core "
+           "index fund, sector tilt ETFs and individual stocks (Inputs B22). One target, no stages.",
+    "B55": "Trade_List: share counts for every target slot. Shares round down; leftover stays as cash. "
+           "Individual-stock money waits in SGOV until each stock passes research.",
     "B56": "Workflow: (1) P5 confirms WInS value and eligible funds; (2) enter WInS prices; (3) write "
-           "Trading Notes, then trade Stage 1; (4) after P1 approves m and the tilts, trade Stage 2.",
+           "a Trading Note for each slot, then buy it (bonds first, then the core fund and tilt ETFs, then "
+           "individual stocks one at a time as each passes research).",
 }
 for ref, text in readme.items():
     ws[ref].value = text

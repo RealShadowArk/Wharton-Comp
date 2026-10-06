@@ -6,6 +6,10 @@
 > default 1). It is now 36.6% bonds / 31.7% stocks / 31.7% T-bills: the
 > 32% bond share came from Option 2, which no longer exists. Stage 2 is
 > unchanged: 36.6% bonds / 57.4% core / 6% tilts.
+>
+> **Later on 5 Oct:** the stages were removed. WInS now holds one target at
+> m = 2, and 70% of the non-tilt growth money goes to individual stocks:
+> bonds 36.6%, core fund 17.2%, tilts 6%, individual stocks 40.2%.
 
 As of 29 Sep 2026. Inputs: `inputs/M02_assumptions.csv` (M02 v1.0-DRAFT,
 28 Sep 2026) and `Laura_Gao_Portfolio_Structure_Model_v1.xlsx` (now only in git history; the current model is v4).

@@ -51,38 +51,26 @@ def scenario_path(returns, bond_yield, safety_margin, m, max_stock_share,
 
 
 def wins_plan(bond_yield, safety_margin, m, max_stock_share, tilts_total,
-              m_lowest=1, account_value=300_000, contribution_1=300_000,
+              satellite_share=0.7, account_value=300_000, contribution_1=300_000,
               contribution_2=150_000):
-    """Stage 1 and Stage 2 shares and amounts (WInS_Plan sheet).
+    """The Option 3 target portfolio (WInS_Plan sheet): one target, no stages.
 
     Shares are set at the start of 2028, after both contributions. Under
     Option 3 the 2027 money alone is below the floor, so it is all in bonds
-    and earns the bond yield. Stage 1 holds what every m from `m_lowest` up
-    to the chosen `m` agrees on: the bond share the chosen m needs and the
-    stock share the lowest m holds; the rest waits in T-bills. Stage 2 is
-    the full target at the chosen m.
+    and earns the bond yield. Growth = m x cushion (capped); from it come the
+    sector tilts, then `satellite_share` of what is left goes to individual
+    stocks and the rest to the core index fund.
     """
     portfolio = contribution_1 * (1 + bond_yield) + contribution_2
     floor_2028 = floor(2028, bond_yield, safety_margin)
     cushion = portfolio - floor_2028
-
-    def growth(mult):
-        return stocks(portfolio, floor_2028, mult, max_stock_share) / portfolio
-
-    g_low, g_target = growth(m_lowest), growth(m)
-    stage1 = {"safety": min(1 - g_low, 1 - g_target),
-              "growth_core": min(g_low, g_target)}
-    stage1["parked"] = 1 - stage1["safety"] - stage1["growth_core"]
-    stage2 = {"safety": 1 - g_target, "growth_core": g_target - tilts_total,
-              "tilts": tilts_total}
-
-    def dollars(shares):
-        return {k: v * account_value for k, v in shares.items()}
-
+    growth = stocks(portfolio, floor_2028, m, max_stock_share) / portfolio
+    satellites = (growth - tilts_total) * satellite_share
+    target = {"safety": 1 - growth, "tilts": tilts_total,
+              "satellites": satellites,
+              "core": growth - tilts_total - satellites}
     return {
         "portfolio_2028": portfolio, "floor_2028": floor_2028,
-        "cushion_2028": cushion, "growth_lowest_m": g_low,
-        "growth_target": g_target,
-        "stage1": stage1, "stage1_dollars": dollars(stage1),
-        "stage2": stage2, "stage2_dollars": dollars(stage2),
+        "cushion_2028": cushion, "growth": growth, "target": target,
+        "target_dollars": {k: v * account_value for k, v in target.items()},
     }

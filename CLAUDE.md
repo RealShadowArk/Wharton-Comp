@@ -44,7 +44,7 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 | Path | What |
 |---|---|
 | `m02/assumptions.py` | Loads `inputs/M02_assumptions.csv` (single input source), run stamp, Model_Input_Map cases |
-| `structure/plan.py` | Python port of structure model v4 (Option 3 only): floor, `scenario_path`, WInS Stage 1/2 |
+| `structure/plan.py` | Python port of structure model v4 (Option 3 only): floor, `scenario_path`, WInS target incl. satellites |
 | `m05/` | Reserve model: sizing, year-by-year payout, gap (version m05-0.1, provisional) |
 | `m08/` | Facility-contribution policy and ranges |
 | `inputs/` | Case facts and TEST scenario CSVs |
@@ -64,9 +64,12 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   - Step5_Scenarios: 16 paths. Rows 6-13 are presets; rows 14-21 are the M02
     stress paths S1-S8. Normal years use the compound return EXP(B18)-1.
   - Step5_YearByYear, Simulation and Summary are rebuilt for Option 3.
-  - WInS_Plan: Stage 1 uses the lowest m considered (new Inputs B22).
+  - WInS_Plan / Trade_List: ONE target (no stages) at m = 2. Inputs B22 is
+    the individual-stock (satellite) share of the growth money left after
+    tilts: 70%. Target: bonds 36.6%, core fund 17.2%, tilts 6%, individual
+    stocks 40.2% (held in SGOV until researched).
   - Inputs B14, B23 and rows 41/45 are cleared (Option 2 only).
-  - 20 Option 3 checks; all pass (verified with `formulas`). The simulation
+  - 19 checks; all pass (verified with `formulas`). The simulation
     was also independently recomputed in Python and matches.
 - Older versions were removed from the repo on 5 Oct 2026 at the user's
   request. They are still recoverable from git history:
