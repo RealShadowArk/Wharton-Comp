@@ -20,8 +20,11 @@ Sources: Competition Guide p.3; Trading Notes Analysis pp.1-2.
    - how it fits the strategy;
    - the research or analysis behind it;
    - its role (growth, liquidity, risk management or future funding).
-4. **Length:** the official example is about 60 words. Aim for 50-100: plain,
-   specific, no citations needed.
+4. **Length:** WInS allows up to **300 words** per note (seen in WInS by the
+   user, 7 Oct 2026). The official example is about 60 words. Use the extra
+   room for evidence: the yield you're locking in, the alternative you
+   rejected, the risk. Aim for 80-150 words for the trades you may pick for
+   the 23 Oct analysis; shorter is fine for routine ones.
 5. **Your reflections** for the three notes you pick (100 words or fewer each,
    due 23 Oct) must also be your own. The AI policy says not to use AI for
    personal reflection.
@@ -73,7 +76,7 @@ Estimated fund yields come from price changes since July. Check iShares'
 - [ ] What research supports it? (the yield you're locking in, and why now)
 - [ ] What role does it play? (future funding and risk management)
 - [ ] One honest risk or trade-off.
-- [ ] 50-100 words, your own wording, written before you click Buy.
+- [ ] Under 300 words (aim 80-150), your own wording, written before you click Buy.
 
 ## AI-use record (add to Works Cited / M10 AI log)
 
