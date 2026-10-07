@@ -64,7 +64,7 @@ residency funding date approaches."
 | 5 | IBTR (Dec 2036) | Jan 2037 | 441 sh @ ~$23.37 / $10,306 | ~5.15% (estimate) | Lets every payment be funded by something that has already matured | After-hours quote $11.66 / $34.98: a market order would overpay about 50%. Limit order only |
 | 6 | T-BOND 4.750% 15-Feb-2037 | Jan 2038 | 10 units @ $962.07 + $6.64 acc / $9,687 | 5.23% | Feb 2038 bond not tradeable in WInS. This one matures first, and its cash waits about 10.5 months in T-bills | Small reinvestment risk; no early sale needed |
 | 7 | T-BOND 4.500% 15-May-2038 | Jan 2039 | 10 units @ $932.88 + $6.29 acc / $9,392 | 5.28% | Closest maturity before the payment (about 7.5 months early) | WInS shows last coupon 8/15/2026, odd for a May bond; accrued interest differs by a few dollars |
-| 8 | T-BOND 4.500% 15-Aug-2039 | Jan 2040 | 9 units @ $916.51 + $6.04 acc / $8,303 | 5.41% | Closest before the payment (about 4.5 months early) | None |
+| 8 | T-BOND 4.375% 15-Nov-2039 | Jan 2040 | 9 units @ $901.67 + $17.02 acc / $8,268 | 5.43% | Matures about 1.5 months before the payment; found in the part of the bond list not checked at first | **Replaced the 4.5% Aug 2039 bond** (5.41%, cash would wait about 4.5 months) |
 | 9 | T-BOND 4.250% 15-Nov-2040 | Jan 2041 | 9 units @ $878.88 + $16.65 acc / $8,060 | 5.50% | About 6 weeks before the payment | None |
 | 10 | T-BOND 3.125% 15-Nov-2041 | Jan 2042 | 10 units @ $751.05 + $12.24 acc / $7,633 | 5.59% | About 6 weeks before the last payment. Deep discount: most of the yield is fixed up front | Largest price swings before maturity (irrelevant if held) |
 
