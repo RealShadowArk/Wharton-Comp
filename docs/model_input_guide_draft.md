@@ -297,3 +297,32 @@ a 1931-size crash.
   3. individual stocks, one at a time after research.
 
   Each slot needs research showing why it helps Laura, plus a Trading Note.
+
+## Bond_Ladder tab: notes (added 8 Oct 2026, after the fills)
+
+- **What it is:** the ten bond holdings actually bought on 8 Oct 2026. Each
+  one matures before the start-of-year payment it funds and is held to
+  maturity.
+- **Columns:**
+  - payment funded, holding, quantity, price, cost incl. accrued interest,
+    commission;
+  - yield to maturity and its label (fund yields = ASSUMPTION estimates;
+    T-bond yields = RESEARCH from the WInS fills);
+  - years to payment; what the cost grows to by then; PV of $50k at the
+    holding's own yield and at the blended yield.
+- **Blended yield (B19), 5.2423%:** the single yield that values the ten
+  payments the same as the ten individual yields. Inputs B13 uses it rounded
+  (5.24%), so the floor and the stock targets reflect what was locked in.
+- **Effect:** the bond target fell from 36.6% to 33.6%. Growth money rose,
+  so the core target is now $54,356 and the individual-stock target $126,831.
+- **Checks:**
+  - #14 (new): cash spent ($100,879) is within 1% of the bond target
+    ($100,812), at +0.07%;
+  - #20 (new): the blended yield reproduces the full ladder value ($292,056).
+- **Caveats:**
+  - Fund yields are estimates. Replace them with iShares' average YTM and
+    update B13.
+  - "Grows to" assumes cash from early maturities earns the same yield until
+    the payment.
+  - The WInS ladder covers about a third of a full ladder; the real money
+    would scale it up.

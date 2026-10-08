@@ -7,6 +7,7 @@ git history (commit 90b8a21). Run from the repo root:
 import subprocess
 import tempfile
 from copy import copy
+from datetime import date
 
 import openpyxl
 from openpyxl.chart import BarChart, LineChart, Reference
@@ -97,12 +98,62 @@ def widths(ws, spec):
         ws.column_dimensions[col].width = w
 
 
+# ------------------------------------------------- Bond ladder fills (8 Oct 2026)
+TRADE_DATE = date(2026, 10, 8)
+# (payment year funded, holding, type, quantity, price paid, cost incl. accrued interest,
+#  commission, yield to maturity, yield source). Fund yields are estimates from price
+#  changes since July; bond yields come from the WInS fill prices.
+RUNGS = [
+    (2033, "IBTM (iBonds Dec 2032 Term Treasury ETF)", "Fund", 589, 21.69, 12775.41, 25, 0.049,
+     "ASSUMPTION: estimate"),
+    (2034, "IBTO (iBonds Dec 2033 Term Treasury ETF)", "Fund", 530, 22.92, 12147.60, 25, 0.050,
+     "ASSUMPTION: estimate"),
+    (2035, "IBTP (iBonds Dec 2034 Term Treasury ETF)", "Fund", 481, 23.98, 11534.38, 25, 0.050,
+     "ASSUMPTION: estimate"),
+    (2036, "IBTQ (iBonds Dec 2035 Term Treasury ETF)", "Fund", 462, 23.56, 10884.72, 25, 0.051,
+     "ASSUMPTION: estimate"),
+    (2037, "IBTR (iBonds Dec 2036 Term Treasury ETF)", "Fund", 441, 23.34, 10292.94, 25, 0.0515,
+     "ASSUMPTION: estimate"),
+    (2038, "T-Bond 4.750% 15-Feb-2037", "Bond", 10, 962.30, 9690.67, 10, 0.05228,
+     "RESEARCH: WInS fill"),
+    (2039, "T-Bond 4.500% 15-May-2038", "Bond", 10, 933.50, 9399.12, 10, 0.0530,
+     "RESEARCH: WInS fill (approx.)"),
+    (2040, "T-Bond 4.375% 15-Nov-2039", "Bond", 9, 902.32, 8275.17, 10, 0.05428,
+     "RESEARCH: WInS fill"),
+    (2041, "T-Bond 4.250% 15-Nov-2040", "Bond", 9, 879.55, 8066.84, 10, 0.05488,
+     "RESEARCH: WInS fill"),
+    (2042, "T-Bond 3.125% 15-Nov-2041", "Bond", 10, 751.43, 7637.56, 10, 0.05583,
+     "RESEARCH: WInS fill"),
+]
+
+
+def _ladder_years(year):
+    return (date(year, 1, 1) - TRADE_DATE).days / 365.25
+
+
+def _pv(y_of):
+    return sum(50_000 / (1 + y_of(r)) ** _ladder_years(r[0]) for r in RUNGS)
+
+
+# Blended yield: the one yield that gives the ten payments the same present value
+# as each rung's own yield (solved by bisection).
+_target_pv, lo, hi = _pv(lambda r: r[7]), 0.0, 0.1
+for _ in range(100):
+    BLENDED = (lo + hi) / 2
+    lo, hi = (BLENDED, hi) if _pv(lambda r: BLENDED) > _target_pv else (lo, BLENDED)
+BLENDED_INPUT = round(BLENDED, 4)
+
 # ---------------------------------------------------------------- Inputs
 ws = wb["Inputs"]
 for row in (14, 23, 41, 45):
     for col in "ABCDEFGHI":
         ws[f"{col}{row}"].value = None
         ws[f"{col}{row}"]._style = copy(ST["blank"])
+put(ws, "B13", BLENDED_INPUT, "in_pct")
+put(ws, "D13", "RESEARCH (WInS ladder fills, 8 Oct 2026)", "in_type")
+put(ws, "I13", f"Locked-in yield of the bond ladder bought 8 Oct 2026 (Bond_Ladder B19: "
+    f"{BLENDED:.4%}, rounded). Replaces the M02 A-01 base of 5.0% (M02 v1.0-DRAFT, range 4.0%-5.5%). "
+    "The five iBonds fund yields in it are estimates.", "in_note")
 put(ws, "A21", "Option 3 settings (team choices; P1 approves in M08)")
 put(ws, "A22", "Individual stocks (satellites): share of the growth money left after sector tilts")
 put(ws, "B22", 0.7, "in_pct")
@@ -443,16 +494,20 @@ def tput(ref, v, k):
     ws[ref]._style = copy(TS[k])
 
 
+for row in range(7, 12):
+    for col in "ABC":
+        ws[f"{col}{row}"].value = None
+        ws[f"{col}{row}"]._style = copy(ST["blank"])
 ws["A1"].value = "Trade list - share counts for the Option 3 target portfolio"
+wb["Instruments"]["G5"].value = "Bought 8 Oct 2026 (see Bond_Ladder)"
 wb["Instruments"]["G9"].value = "Holds cash-like T-bills: individual-stock money waits here until each stock passes research"
 tput("A13", "TARGET TRADES - Option 3 at the chosen m (ratios from WInS_Plan). Buy each slot once its "
      "research and Trading Note are done.", "title")
 for c, h in zip("ABCDEFGH", ["Slot", "Ticker", "Target amount", "Price", "Shares", "Cost", "Uninvested",
                              "Flag"]):
     tput(f"{c}14", h, "head")
-slots = [("Safety (bond ladder)", "=A8", "=WInS_Plan!$C$19*B8"),
-         ("Safety (bond ladder)", "=A9", "=WInS_Plan!$C$19*B9"),
-         ("Safety (bond ladder)", "=A10", "=WInS_Plan!$C$19*B10"),
+slots = [("Safety: bond ladder, 10 holdings bought 8 Oct 2026 (see Bond_Ladder)", "Ladder",
+          "=WInS_Plan!$C$19"),
          ("Core index fund", "=$B$4", "=WInS_Plan!$C$23")]
 slots += [("Sector tilt ETF", f"=Tilt_Sizing!A{r}", f"=Tilt_Sizing!H{r}") for r in range(10, 16)]
 slots += [("Individual stocks (held in SGOV until each stock passes research)", "=$B$5", "=WInS_Plan!$C$22")]
@@ -461,6 +516,11 @@ for i, (slot, tick, amt) in enumerate(slots):
     tput(f"A{r}", slot, "txt")
     tput(f"B{r}", tick, "txt")
     tput(f"C{r}", amt, "usd")
+    if tick == "Ladder":  # already bought: cost is the cash spent, incl. commissions
+        tput(f"F{r}", "=Bond_Ladder!$B$18", "usd")
+        tput(f"G{r}", f"=C{r}-F{r}", "usd")
+        tput(f"H{r}", "Bought", "flag")
+        continue
     tput(f"D{r}", f"=IFERROR(INDEX(Instruments!$H$5:$H$19,MATCH(B{r},Instruments!$A$5:$A$19,0)),0)", "px")
     tput(f"E{r}", f"=IF(D{r}>0,ROUNDDOWN(C{r}/D{r},0),0)", "sh")
     tput(f"F{r}", f"=E{r}*D{r}", "usd")
@@ -476,6 +536,70 @@ tput(f"A{TL + 2}", "Shares round down; leftover cash stays uninvested. Replace t
 ws.merge_cells(f"A{TL + 2}:H{TL + 2}")
 for col, w in zip("ABCDEFGH", [52, 10, 15, 11, 9, 14, 13, 26]):
     ws.column_dimensions[col].width = w
+
+# ------------------------------------------------------------ Bond_Ladder
+if "Bond_Ladder" in wb.sheetnames:
+    del wb["Bond_Ladder"]
+ws = wb.create_sheet("Bond_Ladder", wb.sheetnames.index("Trade_List") + 1)
+put(ws, "A1", "Bond ladder - the ten holdings bought 8 Oct 2026 (WInS fills)", "title")
+put(ws, "A2", "Each holding matures before the start-of-year payment it funds and is held to "
+    "maturity. Cost includes accrued interest; commissions are $25 per fund trade and $10 per "
+    "bond trade.", "note")
+put(ws, "A3", "Trade date", "label")
+put(ws, "B3", TRADE_DATE).number_format = "d mmm yyyy"
+heads = ["Payment funded (start of year)", "Holding", "Type", "Quantity", "Price paid",
+         "Cost incl. accrued", "Commission", "Yield to maturity", "Yield source (label)",
+         "Years to payment", "Grows to by payment", "PV of $50k at this yield",
+         "PV of $50k at blended yield"]
+for i, h in enumerate(heads):
+    put(ws, f"{L(i + 1)}5", h, "head")
+B0, B1 = 6, 5 + len(RUNGS)
+for i, (yr, name, kind, qty, px, cost, comm, ytm, src) in enumerate(RUNGS):
+    r = B0 + i
+    put(ws, f"A{r}", yr, "num")
+    put(ws, f"B{r}", name, "name")
+    put(ws, f"C{r}", kind, "name")
+    put(ws, f"D{r}", qty, "num")
+    put(ws, f"E{r}", px, "usd").number_format = '"$"#,##0.00'
+    put(ws, f"F{r}", cost, "usd").number_format = '"$"#,##0.00'
+    put(ws, f"G{r}", comm, "usd")
+    put(ws, f"H{r}", ytm, "pct_in").number_format = "0.00%"
+    put(ws, f"I{r}", src, "text")
+    put(ws, f"J{r}", f"=(DATE(A{r},1,1)-$B$3)/365.25", "num").number_format = "0.00"
+    put(ws, f"K{r}", f"=F{r}*(1+H{r})^J{r}", "usd")
+    put(ws, f"L{r}", f"=50000/(1+H{r})^J{r}", "usd")
+    put(ws, f"M{r}", f"=50000/(1+$B$19)^J{r}", "usd")
+T = B1 + 1
+put(ws, f"A{T}", "Total", "label")
+for c in "FGKLM":
+    put(ws, f"{c}{T}", f"=SUM({c}{B0}:{c}{B1})", "usd_res")
+summary = [
+    (18, "Cash spent (cost + commissions)", f"=F{T}+G{T}", "usd_res"),
+    (19, "Blended locked-in yield: the one yield that gives the ten payments the same value as "
+         "each holding's own yield (M = L in the total row)", BLENDED, "pct"),
+    (20, "Bond target in the WInS plan (WInS_Plan C19)", "=WInS_Plan!$C$19", "usd_res"),
+    (21, "Cash spent vs bond target", "=B18/B20-1", "pct"),
+    (22, "Full ladder cost today (PV of all ten payments, total of column L)", f"=L{T}", "usd_res"),
+]
+for r, label, v, st in summary:
+    put(ws, f"A{r}", label, "label")
+    put(ws, f"B{r}", v, st)
+ws["B19"].number_format = ws["B21"].number_format = "0.00%"
+put(ws, "A24", "Notes", "section")
+for k, note in enumerate([
+    "Fund yields (IBTM-IBTR) are ASSUMPTION estimates from price changes since July. Replace them "
+    "with iShares' average yield to maturity, then update Inputs B13.",
+    "Bond yields are RESEARCH, calculated from the WInS fill prices (8 Oct 2026). The May 2038 "
+    "yield is approximate: WInS showed an odd last-coupon date.",
+    "'Grows to by payment' compounds the cost at the yield to the payment date. It ignores the "
+    "funds' 0.07% fee (if the estimate is before fees) and treats early-maturing cash as earning "
+    "the same yield until the payment. The WInS ladder is about a third of a full ladder.",
+    "Inputs B13 uses the blended yield rounded to 4 decimals, so the floor and the stock "
+    "targets reflect the yield actually locked in.",
+]):
+    put(ws, f"A{25 + k}", f"- {note}", "note")
+widths(ws, {"A": 16, "B": 40, "C": 7, "D": 9, "E": 11, "F": 14, "G": 11, "H": 10, "I": 26,
+            "J": 9, "K": 14, "L": 14, "M": 14})
 
 # ---------------------------------------------------------------- Checks
 ws = wb["Checks"]
@@ -514,7 +638,8 @@ checks = [
     ("Simulated average return within 1.5 points of the input", "=Inputs!$B$16", "=Step5_Summary!C21", 0.015),
     ("Simulated volatility within 1.5 points of the input", "=Inputs!$B$17", "=Step5_Summary!C22", 0.015),
     ("Target amounts add up to the WInS account value", "=WInS_Plan!$B$4", f"=Trade_List!C{TL}", 1),
-    ("Safety split weights add up to 100%", "1", "=Trade_List!B11", 0.0001),
+    ("Bond ladder cash spent is within 1% of the bond target", "=WInS_Plan!$C$19",
+     "=Bond_Ladder!$B$18", "pct1"),
     ("Every tilt is within its loss-budget limit", "All Yes",
      '=COUNTIF(Tilt_Sizing!G10:G15,"No")&" No"', "tilts"),
     ("Total tilts are within the tilt budget", "=Tilt_Sizing!$F$5", "=Tilt_Sizing!$F$16", "le"),
@@ -522,6 +647,8 @@ checks = [
      "=WInS_Plan!$C$23", "nonneg"),
     ("Individual-stock share is between 0% and 100%", "0%-100%", "=Inputs!$B$22", "pct01"),
     ("Shares bought never cost more than the account", "=WInS_Plan!$B$4", f"=Trade_List!F{TL}", "le"),
+    ("Blended bond yield gives the same ladder value as each holding's own yield",
+     f"=Bond_Ladder!L{T}", f"=Bond_Ladder!M{T}", 0.01),
 ]
 for i, (label, exp, act, tol) in enumerate(checks):
     r = 5 + i
@@ -535,6 +662,9 @@ for i, (label, exp, act, tol) in enumerate(checks):
     elif tol == "le":
         put(ws, f"E{r}", f"=D{r}-C{r}", "chk_val")
         res = f'=IF(D{r}<=C{r}+0.000001,"PASS","FAIL")'
+    elif tol == "pct1":
+        put(ws, f"E{r}", f"=D{r}/C{r}-1", "chk_val")
+        res = f'=IF(ABS(E{r})<=0.01,"PASS","FAIL")'
     elif tol == "draws":
         res = '=IF(AND(MIN(Step5_Simulation!B6:G1005)>0,MAX(Step5_Simulation!B6:G1005)<1),"PASS","FAIL")'
     elif tol == "tilts":

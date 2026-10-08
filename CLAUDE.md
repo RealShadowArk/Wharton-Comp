@@ -66,10 +66,16 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   - Step5_YearByYear, Simulation and Summary are rebuilt for Option 3.
   - WInS_Plan / Trade_List: ONE target (no stages) at m = 2. Inputs B22 is
     the individual-stock (satellite) share of the growth money left after
-    tilts: 70%. Target: bonds 36.6%, core fund 17.2%, tilts 6%, individual
-    stocks 40.2% (held in SGOV until researched).
+    tilts: 70%. Target at the 5.24% yield: bonds 33.6% ($100,812), core fund
+    18.1% ($54,356), tilts 6% ($18,000), individual stocks 42.3% ($126,831,
+    held in SGOV until researched).
+  - Bond_Ladder: the ten holdings bought 8 Oct 2026 (IBTM-IBTR funds for
+    2033-37; Feb37, May38, Nov39, Nov40, Nov41 T-bonds for 2038-42). Cash
+    spent $100,879.41 incl. $175 commissions. Blended locked-in yield 5.2423%
+    (one yield giving the payments the same PV); Inputs B13 = 5.24% (RESEARCH).
+    Fund yields are estimates. Trade_List has one "Bought" ladder row.
   - Inputs B14, B23 and rows 41/45 are cleared (Option 2 only).
-  - 19 checks; all pass (verified with `formulas`). The simulation
+  - 20 checks; all pass (verified with `formulas`). The simulation
     was also independently recomputed in Python and matches.
 - Older versions were removed from the repo on 5 Oct 2026 at the user's
   request. They are still recoverable from git history:
