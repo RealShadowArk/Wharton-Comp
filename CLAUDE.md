@@ -53,6 +53,7 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 | `tools/make_hand_check.py` | Builds `handcheck/M05_hand_check.xlsx` |
 | `docs/` | `model_input_guide_draft.md` = notes for the user's input-guide doc (create the real doc only when they say "create doc"); outlines for the M05 explanation and M08 memos; `assumptions_and_figures.md` traces every input and Stage 1/2 figure |
 | `context/` | Handoff notes and imported Drive files |
+| `handoff/teammate_2026-10-08/` | Onboarding for a new teammate: briefing, his job (industry research + M12 peer data for payments, pharma, electrical equipment, household products; due 11/14/15 Oct), AI catch-up prompt, research template, peer-data CSV header |
 
 ## Context files
 
