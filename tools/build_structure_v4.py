@@ -500,6 +500,20 @@ for row in range(7, 12):
         ws[f"{col}{row}"]._style = copy(ST["blank"])
 ws["A1"].value = "Trade list - share counts for the Option 3 target portfolio"
 wb["Instruments"]["G5"].value = "Bought 8 Oct 2026 (see Bond_Ladder)"
+# Core fund decision (12 Oct 2026): VT, global cap-weighted. VT replaces the SPY row (same index as VOO).
+for col, v in zip("ABCDEFGH", [
+        "VT", "Vanguard Total World Stock ETF", "Growth core (chosen 12 Oct 2026)",
+        "About 10,000 stocks worldwide (FTSE Global All Cap), cap-weighted; US about 64%, non-US about 36% "
+        "(ACWI 9 Oct 2026 as a proxy; VT's own split not collected)",
+        0.0006, "Not collected", "Top ten 21.7%; ICB Technology 33.3% (Vanguard, 30 Jun 2026)", None]):
+    wb["Instruments"][f"{col}11"].value = v
+ws["B4"].value = "VT"
+ws["C4"].value = ("Team choice, 12 Oct 2026: global cap-weighted core (world market weights, no country "
+                  "or sector bet). Research: docs core fund decision sheet, 11 Oct 2026.")
+wb["Tilt_Sizing"]["A7"].value = ("Core index fund share (VT; look-through uses S&P 500 sector weights as a proxy "
+                                 "because VT's GICS weights were not collected; individual stocks are not "
+                                 "included until chosen)")
+wb["Tilt_Sizing"]["D9"].value = "Sector weight in S&P 500 (proxy for VT)"
 wb["Instruments"]["G9"].value = "Holds cash-like T-bills: individual-stock money waits here until each stock passes research"
 tput("A13", "TARGET TRADES - Option 3 at the chosen m (ratios from WInS_Plan). Buy each slot once its "
      "research and Trading Note are done.", "title")

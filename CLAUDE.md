@@ -68,7 +68,7 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   - WInS_Plan / Trade_List: ONE target (no stages) at m = 2. Inputs B22 is
     the individual-stock (satellite) share of the growth money left after
     tilts: 70%. Target at the 5.24% yield: bonds 33.6% ($100,812), core fund
-    18.1% ($54,356), tilts 6% ($18,000), individual stocks 42.3% ($126,831,
+    18.1% ($54,356; VT, global cap-weighted, chosen 12 Oct; WInS price pending), tilts 6% ($18,000), individual stocks 42.3% ($126,831,
     held in SGOV until researched).
   - Bond_Ladder: the ten holdings bought 8 Oct 2026 (IBTM-IBTR funds for
     2033-37; Feb37, May38, Nov39, Nov40, Nov41 T-bonds for 2038-42). Cash
