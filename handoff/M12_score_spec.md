@@ -176,3 +176,32 @@ Same A–E cards as above, plus scores for the three new measures:
 - Growth = 37.5
 - Valuation = (0 + 25 + 0 + 25) ÷ 4 = 12.5
 - Average of the 4 pillars = 55.2083
+
+## 7. Red-flag checks for the shortlist only (v0.3)
+
+These run only on the preview shortlist from `outputs/M12_scores_preview.csv`:
+PYPL, JKHY, ZTS, LLY, HUBB, ETN, AME, MPWR, ADI, BSX, ISRG (plus MA, NXPI and
+TXN if Pat wants the close runners-up).
+- They are **pass/fail flags, never part of the TFS**.
+- Collect **FY0 and FY-1** values (and FY-2 total assets) from the same 10-Ks.
+
+| Field | Piotroski | Beneish |
+|---|---|---|
+| revenue, cost of goods sold (or gross profit) | ✓ | ✓ |
+| net income, cash from operations | ✓ | ✓ |
+| total assets (FY0, FY-1, FY-2) | ✓ | ✓ |
+| current assets, current liabilities | ✓ | ✓ |
+| long-term debt | ✓ | ✓ |
+| weighted diluted shares | ✓ | |
+| accounts receivable (net) | | ✓ |
+| net PP&E, depreciation | | ✓ |
+| SG&A expense | | ✓ |
+
+- **Piotroski F-score** (0–9; higher = stronger). The flag cut-off is Pat's
+  judgment; the proposal is to flag a score of 3 or lower.
+- **Beneish M-score** (8-variable model, Beneish 1999). A score above
+  −1.78 flags possible earnings manipulation. That cut-off is the published
+  one.
+
+Same sourcing rules as before. Anything not reported is MISSING, and a
+company with missing inputs gets "not checked", never "pass".
