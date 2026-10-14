@@ -129,7 +129,13 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   - Shortlist the top 2 per group, keeping ties.
 - Fixtures:
   - Ranking 10, 20, 20, 30, 40 gives 0, 37.5, 37.5, 75, 100.
-  - Scorecards A-E total 56.25, 53.125, 59.375, 56.25, 25.
+  - Scorecards A-E total 56.25, 53.125, 59.375, 56.25, 25. Inputs (Q1..V2):
+    A 100,75,100,75,50,25,0,25; B 75,100,75,100,0,50,25,0; C 50,50,50,50,100,75,50,50;
+    D 25,25,25,25,75,100,100,75; E 0,0,0,0,25,0,75,100.
+- Guide details: debt includes finance leases (not operating leases); market cap =
+  price × contemporaneous common shares with share classes reconciled; rank only
+  complete companies; gate = at least 5 complete companies and 80% coverage.
+  Full spec for the peer data, plus R1-R7 and the video cross-check: `handoff/M12_score_spec.md`.
 - Sensitivity: 32 variants. Each metric ×0.8 and ×1.2 (16), each pillar ×0.8 and ×1.2 (8),
   drop each metric once (8). Renormalize weights every time.
 - Outputs: `M12_scores.csv`, `M12_score_spec.json`, `M12_stability.csv`, `M12_stock_test_plan.md`.
