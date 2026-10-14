@@ -17,7 +17,24 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 - Trading Notes Analysis due **23 Oct**. Notes are written at trade time and
   copied verbatim.
 - Portfolio freezes at the IPS deadline, **6 Nov**.
+- Final Report instructions posted 9 Nov, 9am ET; school documentation and
+  **Final Report due 4 Dec**, 5pm ET (Week 1-3 emails, `context/`-level source:
+  user uploads 14 Oct).
 - Judged on reasoning and strategic coherence, not returns or trade count.
+
+## Competition rules from the weekly emails (Weeks 1-3)
+
+- Approved universe, for BOTH contributions and all recommendations:
+  - stocks on any WInS exchange priced at $5 or more (or the local equivalent);
+  - any ETF on WInS;
+  - government/Treasury bonds on WInS.
+
+  Nothing else, not even in the long-term plan: no mutual funds, CDs or other
+  asset classes.
+- WInS holds $300,000 only; the $150,000 contribution is not added to WInS.
+- Long-term projections start from the case cash flows with reasonable
+  assumptions. Never add WInS gains or losses to them.
+- Teams may not contact the client. The team is finalized (no new members).
 
 ## Client facts (CASE, Gao case study pp. 2-4)
 
