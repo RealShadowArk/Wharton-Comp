@@ -105,6 +105,9 @@ Scores in the order Q1, Q2, B1, B2, G1, G2, V1, V2:
 | R5 (v0.2) | Market cap = price × cover-page common shares, plus other share classes converted at the disclosed rates (Visa B-1/B-2/B-3/C; Mastercard Class B 1:1). Use net income ÷ diluted EPS **only as a cross-check.** | The guide's market-cap rule |
 | R6 | Price = close on 9 Oct 2026 for every company; record the source | The guide requires the same date for all |
 | R7 | Keep HUBB and PG as peers by business model; note the GICS conflict | Business-model peers |
+| R4 revised (v0.3) | Add capitalized software to capex **only in the Payments group**, where it is material and reported inconsistently. Every other group uses capex as reported. | Ranking needs consistency only within a group. Requiring software data everywhere blanked V2 for 13 companies. |
+| R8 (new, v0.3) | Where the 10-K does not quantify finance-lease liabilities (states them immaterial, or reports only operating leases), B1 uses reported borrowings, flagged "borrowings (R8)". The "drop B1" stability variant shows whether any shortlist depends on it. | Relies on the issuer's audited disclosure, not a guess. Affects MA, FIS, LLY, JNJ, MRK, BMY, EMR, HUBB, VRT, PG, ADI and MCHP; ADI and MCHP have no reconciliation note yet. |
+| R3 note (v0.3) | Where only one year reports continuing EPS (e.g., ZBH FY-3), use total EPS for the other year, because no operations were discontinued in that year | Same basis in both years |
 
 **Expected coverage (v0.2):**
 - **Payments:** 5 of 6 complete (FIS: G2 UNSUITABLE). **Released.**

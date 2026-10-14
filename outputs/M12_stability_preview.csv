@@ -1,0 +1,29 @@
+peer_group,ticker,variants_on_shortlist,variants,worst_rank
+Payments,V,0,32,5
+Payments,MA,2,32,4
+Payments,PYPL,32,32,2
+Payments,FISV,1,32,5
+Payments,FIS,0,32,6
+Payments,JKHY,31,32,3
+Pharma,LLY,32,32,2
+Pharma,JNJ,0,32,5
+Pharma,MRK,0,32,4
+Pharma,PFE,0,32,6
+Pharma,BMY,0,32,5
+Pharma,ZTS,32,32,2
+Electrical,ETN,16,32,3
+Electrical,EMR,0,32,4
+Electrical,AME,16,32,3
+Electrical,HUBB,32,32,1
+Electrical,ROK,0,32,5
+Analog semiconductors,TXN,3,32,5
+Analog semiconductors,ADI,28,32,4
+Analog semiconductors,MCHP,0,32,6
+Analog semiconductors,NXPI,3,32,4
+Analog semiconductors,ON,0,32,5
+Analog semiconductors,MPWR,32,32,1
+Health Care Equipment,SYK,0,32,5
+Health Care Equipment,BSX,32,32,2
+Health Care Equipment,ISRG,32,32,2
+Health Care Equipment,MDT,0,32,5
+Health Care Equipment,ZBH,0,32,5
