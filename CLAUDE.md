@@ -72,6 +72,7 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 | `inputs/m12/` | Teammate's peer data v0.2 (33 active companies, 6 groups) and watchlist (GPN, GEV, KMB) |
 | `docs/` | `model_input_guide_draft.md` = notes for the user's input-guide doc (create the real doc only when they say "create doc"); outlines for the M05 explanation and M08 memos; `assumptions_and_figures.md` traces every input and Stage 1/2 figure |
 | `context/` | Handoff notes and imported Drive files |
+| `handoff/news_monitor_2026-10-15/` | Handoff for a third person: thesis cards for the 11 shortlisted stocks, plus a daily news/signal log (RED/AMBER/GREEN) to 6 Nov |
 | `handoff/teammate_2026-10-08/` | Onboarding for a new teammate: briefing, his job (industry research + M12 peer data for payments, pharma, electrical equipment, household products; due 11/14/15 Oct), AI catch-up prompt, research template, peer-data CSV header |
 
 ## Context files
@@ -86,9 +87,11 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   - Step5_YearByYear, Simulation and Summary are rebuilt for Option 3.
   - WInS_Plan / Trade_List: ONE target (no stages) at m = 2. Inputs B22 is
     the individual-stock (satellite) share of the growth money left after
-    tilts: 70%. Target at the 5.24% yield: bonds 33.6% ($100,812), core fund
-    18.1% ($54,356; VT, global cap-weighted, chosen 12 Oct; WInS price pending), tilts 6% ($18,000), individual stocks 42.3% ($126,831,
-    held in SGOV until researched).
+    tilts: 70%. ETF plan locked 15 Oct (Pat): core VOO 70% + VXUS 30% (Trade_List B4/B6/B7);
+    tilts XLI 3.0%, XLK 2.4%, XLV 1.8%, XLC 1.3%, XLF 1.5% = 10%; loss budget 2% per position
+    (Tilt_Sizing F4). Targets: bonds 33.6%, core 16.9% ($50,756: 50 VOO, 182 VXUS), tilts $30,000,
+    individual stocks 39.5% ($118,431, in SGOV until researched). Prices: WInS 14 Oct (XLF older).
+    India (INDA) and Mexico (EWW) were considered and rejected.
   - Bond_Ladder: the ten holdings bought 8 Oct 2026 (IBTM-IBTR funds for
     2033-37; Feb37, May38, Nov39, Nov40, Nov41 T-bonds for 2038-42). Cash
     spent $100,879.41 incl. $175 commissions. Blended locked-in yield 5.2423%
