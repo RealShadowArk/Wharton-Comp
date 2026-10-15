@@ -1,0 +1,25 @@
+item,type,status,why_it_matters,what_to_watch
+VOO,ETF,held (planned),US core: 70% of the core fund money,S&P 500 moves; concentration in mega-cap tech
+VXUS,ETF,held (planned),International core: 30% of the core,Non-US markets; US dollar moves
+XLI,ETF,held (planned),Industrials tilt 3.0%: grid / defence / AI build-out,AI data-center and grid spending; defence budgets
+XLK,ETF,held (planned),Tech tilt 2.4%: AI growth engine,AI spending; chip demand; Nvidia/Apple/Microsoft news
+XLV,ETF,held (planned),Health care tilt 1.8%: steadier growth,Drug pricing policy; GLP-1 demand; FDA actions
+XLC,ETF,held (planned),Communication tilt 1.3%,Alphabet/Meta advertising; antitrust; AI spending
+XLF,ETF,held (planned),Financials tilt 1.5%: hedge against an AI bubble,Bank earnings; loan losses; credit conditions
+IBTM IBTO IBTP IBTQ IBTR + 5 Treasuries,Bonds,held (bought 8 Oct),Fund Laura's 2033-2042 payments; held to maturity,Only the 10-year yield level (no action needed; price swings don't affect payments)
+PYPL,Stock,shortlist,Top Payments score,Branded checkout growth; competition; valuation 'cheap for a reason'
+JKHY,Stock,shortlist,Payments #2,Bank technology demand
+ZTS,Stock,shortlist,Top Pharma score,Animal health demand; debt level
+LLY,Stock,shortlist,Pharma #2,Mounjaro/Zepbound (56% of revenue); drug pricing; competition
+HUBB,Stock,shortlist,Top Electrical score,Utility and grid spending
+ETN,Stock,shortlist,Electrical (tied),Data-center backlog; AI capex
+AME,Stock,shortlist,Electrical (tied),Industrial demand; acquisitions
+MPWR,Stock,shortlist,Top Analog-chip score,AI server power demand; material weakness and tax restatement disclosed
+ADI,Stock,shortlist,Analog #2 (fragile),Industrial/auto chip cycle
+BSX,Stock,shortlist,Top Medical-device score (tied),Electrophysiology growth; check 9 Oct price
+ISRG,Stock,shortlist,Medical devices (tied),da Vinci procedure growth
+MA NXPI TXN,Stock,runners-up,Close behind the shortlist,Same as their groups
+AI bubble indicators,Theme,macro,Our main risk,"Big-tech AI capex guidance; Nvidia results; data-center power deals; AI revenue vs spending"
+Federal Reserve and 10-year Treasury (DGS10),Theme,macro,Rates drive stock valuations and our floor math,FOMC decisions; week moves of 0.25 points or more
+Credit and banks,Theme,macro,Matters for XLF and the economy,Loan losses; bank earnings; credit spreads
+Oil,Theme,macro,Inflation and energy shocks,Brent/WTI moves; supply shocks
