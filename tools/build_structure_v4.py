@@ -500,20 +500,61 @@ for row in range(7, 12):
         ws[f"{col}{row}"]._style = copy(ST["blank"])
 ws["A1"].value = "Trade list - share counts for the Option 3 target portfolio"
 wb["Instruments"]["G5"].value = "Bought 8 Oct 2026 (see Bond_Ladder)"
-# Core fund decision (12 Oct 2026): VT, global cap-weighted. VT replaces the SPY row (same index as VOO).
-for col, v in zip("ABCDEFGH", [
-        "VT", "Vanguard Total World Stock ETF", "Growth core (chosen 12 Oct 2026)",
-        "About 10,000 stocks worldwide (FTSE Global All Cap), cap-weighted; US about 64%, non-US about 36% "
-        "(ACWI 9 Oct 2026 as a proxy; VT's own split not collected)",
-        0.0006, "Not collected", "Top ten 21.7%; ICB Technology 33.3% (Vanguard, 30 Jun 2026)", None]):
-    wb["Instruments"][f"{col}11"].value = v
-ws["B4"].value = "VT"
-ws["C4"].value = ("Team choice, 12 Oct 2026: global cap-weighted core (world market weights, no country "
-                  "or sector bet). Research: docs core fund decision sheet, 11 Oct 2026.")
-wb["Tilt_Sizing"]["A7"].value = ("Core index fund share (VT; look-through uses S&P 500 sector weights as a proxy "
-                                 "because VT's GICS weights were not collected; individual stocks are not "
-                                 "included until chosen)")
-wb["Tilt_Sizing"]["D9"].value = "Sector weight in S&P 500 (proxy for VT)"
+# ETF decisions (Pat, 15 Oct 2026): core = VOO 70% + VXUS 30%; tilts XLI 3.0%, XLK 2.4%,
+# XLV 1.8%, XLC 1.3%, XLF 1.5% (10% total); loss budget 2% per position. Prices: WInS last
+# price, 14 Oct 2026 4pm ET, except XLF (earlier WInS quote; refresh before trading).
+INSTR = {
+    10: ["VOO", "Vanguard S&P 500 ETF", "Growth core: US (70% of core)",
+         "About 500 large US companies, cap-weighted; IT 37.9% (Vanguard, 31 Aug 2026)", 0.0003,
+         "Not collected", "IT + Comm 47.4% of the S&P 500 (S&P DJI, 31 Aug 2026)", 707.43],
+    11: ["VXUS", "Vanguard Total International Stock ETF", "Growth core: international (30% of core)",
+         "About 8,700 non-US stocks in 43 markets: Europe 36.4%, Pacific 28.5%, emerging 26.2%, "
+         "Canada 8.1% (Vanguard, 31 Aug 2026)", 0.0005, "Not collected",
+         "Japan 15.5%, Taiwan 8.7%, UK 8.3%, Canada 8.1%, China 7.0% (31 Aug 2026)", 83.58],
+    12: ["XLK", "Technology Select Sector SPDR", "Sector tilt",
+         "S&P 500 information technology (capped weights)", 0.0008, "Not collected",
+         "JPM forward P/E 21.5 vs 2016-25 average 23.0 (30 Sep 2026)", 190.43],
+    13: ["XLC", "Communication Services Select Sector SPDR", "Sector tilt",
+         "S&P 500 communication services; top ten 76.7%", 0.0008, "Not collected",
+         "JPM forward P/E 18.6 vs 2016-25 average 17.9 (30 Sep 2026)", 110.82],
+}
+for row, values in INSTR.items():
+    for col, v in zip("ABCDEFGH", values):
+        wb["Instruments"][f"{col}{row}"].value = v
+wb["Instruments"]["H14"].value = 173.96   # XLV, WInS 14 Oct 2026
+wb["Instruments"]["H18"].value = 167.04   # XLI, WInS 14 Oct 2026
+wb["Instruments"]["G16"].value = ("Price is an earlier WInS quote (early Oct 2026): refresh before "
+                                  "trading. JPM forward P/E 14.1 vs average 14.2 (30 Sep 2026)")
+ws["A4"].value, ws["B4"].value = "Core fund (US)", "VOO"
+ws["C4"].value = ("Team choice, 15 Oct 2026: core = VOO 70% + VXUS 30% (cap-weighted). Research: core "
+                  "fund decision sheet, 11 Oct 2026.")
+ws["A6"].value, ws["B6"].value = "Core fund (international)", "VXUS"
+ws["A7"].value, ws["B7"].value = "US share of the core", 0.7
+ws["B7"].number_format = "0%"
+ws["C7"].value = "Team choice, 15 Oct 2026 (world market is about 64% US; USD payments justify a little more)"
+TILTS = [  # ticker, sector, worst calendar year, VOO sector weight (31 Aug 2026), chosen size
+    ("XLI", "Industrials", -0.387, 0.0831, 0.03),
+    ("XLK", "Information Technology", -0.419, 0.3787, 0.024),
+    ("XLV", "Health Care", -0.233, 0.0928, 0.018),
+    ("XLC", "Communication Services", -0.376, 0.0950, 0.013),
+    ("XLF", "Financials", -0.549, 0.1229, 0.015),
+    ("XLE", "Energy", -0.39, 0.0348, 0.0),
+]
+for i, (tick, sector, worst, weight, size) in enumerate(TILTS):
+    r = 10 + i
+    for col, v in zip("ABCDF", [tick, sector, worst, weight, size]):
+        wb["Tilt_Sizing"][f"{col}{r}"].value = v
+wb["Tilt_Sizing"]["F4"].value = 0.02
+wb["Tilt_Sizing"]["G4"].value = "Team choice (Pat, 15 Oct 2026): up to 2% of the portfolio per position"
+wb["Tilt_Sizing"]["A7"].value = ("Core index fund share (VOO + VXUS; look-through uses VOO's sector weights as "
+                                 "a proxy because VXUS's GICS weights were not collected; individual stocks "
+                                 "are not included until chosen)")
+wb["Tilt_Sizing"]["D9"].value = "Sector weight in VOO (31 Aug 2026; proxy for the core)"
+wb["Tilt_Sizing"]["A18"].value = (
+    "Sizes are Pat's choice (15 Oct 2026). Worst calendar years: sector research, ChartRow sector quilt "
+    "(Secondary): IT 2000, Industrials/Health Care/Financials/Energy 2008, Communication 2022 (no "
+    "earlier history). Sector weights: Vanguard VOO, 31 Aug 2026. XLE is kept at 0% for reference. Total "
+    "sector exposure > neutral exposure means the tilt overweights that sector.")
 wb["Instruments"]["G9"].value = "Holds cash-like T-bills: individual-stock money waits here until each stock passes research"
 tput("A13", "TARGET TRADES - Option 3 at the chosen m (ratios from WInS_Plan). Buy each slot once its "
      "research and Trading Note are done.", "title")
@@ -522,7 +563,8 @@ for c, h in zip("ABCDEFGH", ["Slot", "Ticker", "Target amount", "Price", "Shares
     tput(f"{c}14", h, "head")
 slots = [("Safety: bond ladder, 10 holdings bought 8 Oct 2026 (see Bond_Ladder)", "Ladder",
           "=WInS_Plan!$C$19"),
-         ("Core index fund", "=$B$4", "=WInS_Plan!$C$23")]
+         ("Core index fund: US", "=$B$4", "=WInS_Plan!$C$23*$B$7"),
+         ("Core index fund: international", "=$B$6", "=WInS_Plan!$C$23*(1-$B$7)")]
 slots += [("Sector tilt ETF", f"=Tilt_Sizing!A{r}", f"=Tilt_Sizing!H{r}") for r in range(10, 16)]
 slots += [("Individual stocks (held in SGOV until each stock passes research)", "=$B$5", "=WInS_Plan!$C$22")]
 for i, (slot, tick, amt) in enumerate(slots):

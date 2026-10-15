@@ -1,10 +1,16 @@
 # M12 Transparent Fundamental Score (TFS): spec for the peer data
 
-Version 0.2, 14 Oct 2026. Source: the P3 M12 build guide
+**Version 0.3, 15 Oct 2026.** Saved in the repo at `handoff/M12_score_spec.md`.
+Source: the P3 M12 build guide
 (`P3_M12_Transparent_Company_Score_and_Stock_Testing.pdf`, Drive folder
-"Pat (P3)"), re-read in full for this version.
-- Sections 4 and 6 are **proposals pending Pat's sign-off**.
-- **Changes from v0.1 are marked (v0.2).**
+"Pat (P3)").
+- Sections 4, 6 and 7 are **proposals pending Pat's sign-off**.
+- Changes from v0.1 are marked (v0.2); **changes from v0.2 are marked (v0.3)**:
+  - R4 revised to Payments only;
+  - new rule R8;
+  - an R3 note;
+  - updated coverage;
+  - new section 7 (red flags plus the 11 shortlisted tickers).
 
 **The score is a research filter.** It is never a fair value, an expected
 return, a trade signal or a portfolio weight.
@@ -109,12 +115,15 @@ Scores in the order Q1, Q2, B1, B2, G1, G2, V1, V2:
 | R8 (new, v0.3) | Where the 10-K does not quantify finance-lease liabilities (states them immaterial, or reports only operating leases), B1 uses reported borrowings, flagged "borrowings (R8)". The "drop B1" stability variant shows whether any shortlist depends on it. | Relies on the issuer's audited disclosure, not a guess. Affects MA, FIS, LLY, JNJ, MRK, BMY, EMR, HUBB, VRT, PG, ADI and MCHP; ADI and MCHP have no reconciliation note yet. |
 | R3 note (v0.3) | Where only one year reports continuing EPS (e.g., ZBH FY-3), use total EPS for the other year, because no operations were discontinued in that year | Same basis in both years |
 
-**Expected coverage (v0.2):**
-- **Payments:** 5 of 6 complete (FIS: G2 UNSUITABLE). **Released.**
-- **Pharma:** 6 of 6 (with R1). **Released.**
+**Coverage under R1, R2, R3, R4 (Payments only) and R8 (v0.3, computed 15 Oct
+on the v0.2 data package):**
+- **Payments:** 6 of 6 complete. FIS becomes complete with continuing EPS. **Released.**
+- **Pharma:** 6 of 6 (pre-tax margin). **Released.**
 - **Electrical:** 5 of 6 (VRT: G2 UNSUITABLE). **Released.**
-- **Household:** only 4 complete companies. **Diagnostics only**, unless a
-  sixth comparable company with full data is added before scoring.
+- **Analog semiconductors:** 6 of 6. **Released.**
+- **Health Care Equipment:** 5 of 5. **Released.**
+- **Household:** only 4 complete companies (KMB on the watchlist).
+  **Diagnostics only.**
 
 ## 5. Columns to add
 
