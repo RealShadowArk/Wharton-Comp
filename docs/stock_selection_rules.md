@@ -97,3 +97,19 @@ Version 1, 15 Oct 2026. This is updated whenever a rule changes.
 | 7.3 | Money not yet invested waits in SGOV/cash | n/a | JUDGMENT | Earns T-bill interest while stocks are researched |
 | 7.4 | Whole shares, rounded down; refresh prices before ordering; $25 commission per trade | n/a | WInS mechanics | Execution happens at the live bid/ask |
 | 7.5 | A Trading Note written by Pat before each trade (300 characters max) | 300 characters | GUIDE | Competition rule; judged on reasoning |
+
+## ETF selection rules (added 16 Oct 2026)
+
+ETFs are **never** valued with a DCF. They are compared on objective,
+holdings, cost, concentration, tracking and trading (GUIDE, M03).
+
+| # | Rule | Parameter | Type | Why |
+|---|---|---|---|---|
+| E1 | Approved and tradeable in WInS (loads in the trade form) | n/a | GUIDE (competition) | Only approved securities count |
+| E2 | Has a clear role: core (market exposure) or tilt (deliberate sector bet) | n/a | JUDGMENT | Every holding must tie back to the strategy |
+| E3 | Cheapest researched fund that delivers the exposure | e.g., VOO 0.03% over RSP 0.20%; VXUS 0.05% over ACWI 0.32% | JUDGMENT | Fees compound against Laura's growth |
+| E4 | 30-day median bid-ask spread ≤ **0.05%** | 0.05% | JUDGMENT | Cheap to buy and to rebalance every year |
+| E5 | 1-year tracking difference within **±0.25 points** of its index | ±0.25 points | JUDGMENT | It must deliver what it claims |
+| E6 | Research support: the core decision sheet, or a sector labelled "Research now" (an override must be explained in the Trading Note) | n/a | JUDGMENT | Research-backed decisions |
+| E7 | Tilts only: size × worst calendar year ≤ **2%** of the portfolio | 2% | JUDGMENT (Pat, 15 Oct) | Limits the damage from any one sector bet |
+| E8 | Concentration (top-10 weight) recorded and intended | n/a | JUDGMENT | Know exactly what bet is being made |
