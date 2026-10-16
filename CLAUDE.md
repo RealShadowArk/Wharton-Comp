@@ -87,10 +87,11 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
   - Step5_YearByYear, Simulation and Summary are rebuilt for Option 3.
   - WInS_Plan / Trade_List: ONE target (no stages) at m = 2. Inputs B22 is
     the individual-stock (satellite) share of the growth money left after
-    tilts: 70%. ETF plan locked 15 Oct (Pat): core VOO 70% + VXUS 30% (Trade_List B4/B6/B7);
-    tilts XLI 3.0%, XLK 2.4%, XLV 1.8%, XLC 1.3%, XLF 1.5% = 10%; loss budget 2% per position
-    (Tilt_Sizing F4). Targets: bonds 33.6%, core 16.9% ($50,756: 50 VOO, 182 VXUS), tilts $30,000,
-    individual stocks 39.5% ($118,431, in SGOV until researched). Prices: WInS 14 Oct (XLF older).
+    tilts: 70%. ETF plan (Pat): core VOO 70% + VXUS 30% (Trade_List B4/B6/B7), locked 15 Oct;
+    tilts revised 16 Oct to XLI 3.0%, XLK 1.5%, XLV 2.5%, XLF 2.5% = 9.5% (XLC dropped, kept at 0%);
+    loss budget 2% per position (Tilt_Sizing F4). Targets: bonds 33.6%, core 17.1% ($51,206: 50 VOO,
+    183 VXUS), tilts $28,500, individual stocks 39.8% ($119,481, in SGOV until researched).
+    Prices: WInS 14 Oct (XLF older). Fact sheets and crash replays: `docs/trading_notes_etfs.md`.
     India (INDA) and Mexico (EWW) were considered and rejected.
   - Bond_Ladder: the ten holdings bought 8 Oct 2026 (IBTM-IBTR funds for
     2033-37; Feb37, May38, Nov39, Nov40, Nov41 T-bonds for 2038-42). Cash

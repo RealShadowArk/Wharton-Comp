@@ -500,9 +500,9 @@ for row in range(7, 12):
         ws[f"{col}{row}"]._style = copy(ST["blank"])
 ws["A1"].value = "Trade list - share counts for the Option 3 target portfolio"
 wb["Instruments"]["G5"].value = "Bought 8 Oct 2026 (see Bond_Ladder)"
-# ETF decisions (Pat, 15 Oct 2026): core = VOO 70% + VXUS 30%; tilts XLI 3.0%, XLK 2.4%,
-# XLV 1.8%, XLC 1.3%, XLF 1.5% (10% total); loss budget 2% per position. Prices: WInS last
-# price, 14 Oct 2026 4pm ET, except XLF (earlier WInS quote; refresh before trading).
+# ETF decisions (Pat): core = VOO 70% + VXUS 30% (15 Oct 2026); tilts revised 16 Oct 2026 to
+# XLI 3.0%, XLK 1.5%, XLV 2.5%, XLF 2.5% (9.5% total; XLC dropped); loss budget 2% per position.
+# Prices: WInS last price, 14 Oct 2026 4pm ET, except XLF (earlier WInS quote; refresh before trading).
 INSTR = {
     10: ["VOO", "Vanguard S&P 500 ETF", "Growth core: US (70% of core)",
          "About 500 large US companies, cap-weighted; IT 37.9% (Vanguard, 31 Aug 2026)", 0.0003,
@@ -534,10 +534,10 @@ ws["B7"].number_format = "0%"
 ws["C7"].value = "Team choice, 15 Oct 2026 (world market is about 64% US; USD payments justify a little more)"
 TILTS = [  # ticker, sector, worst calendar year, VOO sector weight (31 Aug 2026), chosen size
     ("XLI", "Industrials", -0.387, 0.0831, 0.03),
-    ("XLK", "Information Technology", -0.419, 0.3787, 0.024),
-    ("XLV", "Health Care", -0.233, 0.0928, 0.018),
-    ("XLC", "Communication Services", -0.376, 0.0950, 0.013),
-    ("XLF", "Financials", -0.549, 0.1229, 0.015),
+    ("XLK", "Information Technology", -0.419, 0.3787, 0.015),
+    ("XLV", "Health Care", -0.233, 0.0928, 0.025),
+    ("XLC", "Communication Services", -0.376, 0.0950, 0.0),
+    ("XLF", "Financials", -0.549, 0.1229, 0.025),
     ("XLE", "Energy", -0.39, 0.0348, 0.0),
 ]
 for i, (tick, sector, worst, weight, size) in enumerate(TILTS):
@@ -551,7 +551,7 @@ wb["Tilt_Sizing"]["A7"].value = ("Core index fund share (VOO + VXUS; look-throug
                                  "are not included until chosen)")
 wb["Tilt_Sizing"]["D9"].value = "Sector weight in VOO (31 Aug 2026; proxy for the core)"
 wb["Tilt_Sizing"]["A18"].value = (
-    "Sizes are Pat's choice (15 Oct 2026). Worst calendar years: sector research, ChartRow sector quilt "
+    "Sizes are Pat's choice (revised 16 Oct 2026; XLC dropped, kept at 0% for reference). Worst calendar years: sector research, ChartRow sector quilt "
     "(Secondary): IT 2000, Industrials/Health Care/Financials/Energy 2008, Communication 2022 (no "
     "earlier history). Sector weights: Vanguard VOO, 31 Aug 2026. XLE is kept at 0% for reference. Total "
     "sector exposure > neutral exposure means the tilt overweights that sector.")

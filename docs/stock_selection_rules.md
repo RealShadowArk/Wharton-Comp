@@ -92,7 +92,7 @@ Version 1, 15 Oct 2026. This is updated whenever a rule changes.
 
 | # | Rule | Parameter | Type | Why |
 |---|---|---|---|---|
-| 7.1 | Individual stocks share the stock money left after tilts; 70% of growth money after tilts | $118,431 (39.5%) | JUDGMENT (decided 5 Oct) | Set by the floor rule plus Pat's 70/30 choice |
+| 7.1 | Individual stocks share the stock money left after tilts; 70% of growth money after tilts | $119,481 (39.8%; tilts 9.5% since 16 Oct) | JUDGMENT (decided 5 Oct) | Set by the floor rule plus Pat's 70/30 choice |
 | 7.2 | Loss limit per position: size × worst calendar year ≤ **2% of the portfolio** | 2% | JUDGMENT (Pat, 15 Oct) | Caps the damage from any one bet repeating its worst year |
 | 7.3 | Money not yet invested waits in SGOV/cash | n/a | JUDGMENT | Earns T-bill interest while stocks are researched |
 | 7.4 | Whole shares, rounded down; refresh prices before ordering; $25 commission per trade | n/a | WInS mechanics | Execution happens at the live bid/ask |

@@ -21,9 +21,9 @@
 | Part | Holdings | % |
 |---|---|---|
 | Bond ladder (bought 8 Oct) | IBTM, IBTO, IBTP, IBTQ, IBTR + Treasuries maturing Feb 2037, May 2038, Nov 2039, Nov 2040, Nov 2041 | 33.6% |
-| Core ETFs | VOO (S&P 500), VXUS (all non-US markets) | 16.9% |
-| Sector tilt ETFs | XLI (industrials), XLK (tech), XLV (health care), XLC (communication), XLF (financials) | 10% |
-| Individual US stocks | Chosen from the shortlist below by the M12 score and M03 valuation | 39.5% |
+| Core ETFs | VOO (S&P 500), VXUS (all non-US markets) | 17.1% |
+| Sector tilt ETFs | XLI (industrials) 3.0%, XLK (tech) 1.5%, XLV (health care) 2.5%, XLF (financials) 2.5%. XLC was dropped on 16 Oct. | 9.5% |
+| Individual US stocks | Chosen from the shortlist below by the M12 score and M03 valuation | 39.8% |
 
 - **Biggest risk we're watching: an AI-spending bubble.** About 47% of the
   S&P 500 is tech plus communication, both driven by AI.

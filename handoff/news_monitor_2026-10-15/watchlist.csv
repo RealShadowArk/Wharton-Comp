@@ -2,10 +2,10 @@ item,type,status,why_it_matters,what_to_watch
 VOO,ETF,held (planned),US core: 70% of the core fund money,S&P 500 moves; concentration in mega-cap tech
 VXUS,ETF,held (planned),International core: 30% of the core,Non-US markets; US dollar moves
 XLI,ETF,held (planned),Industrials tilt 3.0%: grid / defence / AI build-out,AI data-center and grid spending; defence budgets
-XLK,ETF,held (planned),Tech tilt 2.4%: AI growth engine,AI spending; chip demand; Nvidia/Apple/Microsoft news
-XLV,ETF,held (planned),Health care tilt 1.8%: steadier growth,Drug pricing policy; GLP-1 demand; FDA actions
-XLC,ETF,held (planned),Communication tilt 1.3%,Alphabet/Meta advertising; antitrust; AI spending
-XLF,ETF,held (planned),Financials tilt 1.5%: hedge against an AI bubble,Bank earnings; loan losses; credit conditions
+XLK,ETF,held (planned),Tech tilt 1.5%: small insurance in case AI keeps winning,AI spending; chip demand; Nvidia/Apple/Microsoft news
+XLV,ETF,held (planned),Health care tilt 2.5%: steadier growth,Drug pricing policy; GLP-1 demand; FDA actions
+XLC,ETF,dropped 16 Oct (not held),Was a communication tilt; still 9.5% of VOO,Alphabet/Meta advertising; antitrust; AI spending
+XLF,ETF,held (planned),Financials tilt 2.5%: hedge against an AI-specific bust (not low-risk),Bank earnings; loan losses; credit conditions
 IBTM IBTO IBTP IBTQ IBTR + 5 Treasuries,Bonds,held (bought 8 Oct),Fund Laura's 2033-2042 payments; held to maturity,Only the 10-year yield level (no action needed; price swings don't affect payments)
 PYPL,Stock,shortlist,Top Payments score,Branded checkout growth; competition; valuation 'cheap for a reason'
 JKHY,Stock,shortlist,Payments #2,Bank technology demand
