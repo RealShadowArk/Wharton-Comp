@@ -65,7 +65,7 @@ VXUS by one share.
 | E5 1-year tracking difference within ±0.25 points | ✅ −0.04 | ⚠️ +0.68 (pricing-time effect, not a cost) | ✅ −0.08 | ✅ −0.10 | ✅ −0.14 | ✅ −0.08 |
 | E6 Research support | ✅ core decision sheet | ✅ core and country research | ✅ "Research now" | ✅ "Research now" | ✅ "Research now" | ✅ "Research now" |
 | E7 Loss limit: size × worst year ≤ 2% (tilts) | n/a (core) | n/a (core) | ✅ 1.16% | ✅ 0.63% | ✅ 0.58% | ✅ 1.37% |
-| E8 Concentration known and intended | ✅ top 10 = 37.9% | ✅ 15.0% | ✅ 39.1% | ⚠️ 64.5% (deliberate) | ✅ 60.0% | ✅ 57.8% |
+| E8 Concentration known and intended | ✅ top 10 = 39.0% (IVV, same index, 9 Oct) | ✅ 15.0% | ✅ 39.1% | ⚠️ 64.5% (deliberate) | ✅ 60.0% | ✅ 57.8% |
 
 ⚠️ means "passes with a note" or "needs your check". **XLF** needs its WInS
 availability and price checked.
