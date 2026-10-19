@@ -52,15 +52,27 @@
    new entrants, substitutes, customer power, supplier power), one line each.
 3. **SWOT:** two bullets each.
 4. **Three drivers** that decide its next 1-3 years.
-5. **Contrary thesis:** the strongest case *against* owning it, plus **one
+5. **Investment case (our edge),** added 19 Oct. The strongest case *for*
+   owning it, with evidence:
+   - **Why this company, not its peers or its sector ETF:** one or two
+     advantages that are hard to copy (patents, a network, switching costs,
+     lowest cost, a growing niche the ETF dilutes).
+   - **What the price assumes vs what we expect:** e.g., "the price assumes
+     about X% earnings growth; the backlog / orders / new products suggest
+     more, because ...". Pat checks the numbers.
+   - **Upside if we are right:** what earnings could look like in 2-3 years.
+
+   "It's a good company" is not an edge: good companies are usually already
+   priced as good.
+6. **Contrary thesis:** the strongest case *against* owning it, plus **one
    measurable "what would prove us wrong" signal**. Examples: "revenue growth
    below 5% for two quarters"; "loses FDA approval for X". This becomes our
    sell trigger.
-6. **Recent news (last 90 days):** date, headline, source link, why it
+7. **Recent news (last 90 days):** date, headline, source link, why it
    matters.
-7. **Next catalyst:** the next earnings date, an FDA decision, a court
+8. **Next catalyst:** the next earnings date, an FDA decision, a court
    ruling, etc.
-8. **Financially material ESG risks only:** e.g., a product-safety recall.
+9. **Financially material ESG risks only:** e.g., a product-safety recall.
    Not personal preferences.
 
 **Do not:**

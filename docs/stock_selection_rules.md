@@ -87,6 +87,8 @@ Version 1, 15 Oct 2026. This is updated whenever a rule changes.
 | 6.1 | DCF using free cash flow to the firm, discounted at WACC; WACC must exceed g | Sensitivities: discount rate, terminal growth, one operating driver | GUIDE (M03) | Tests whether the price already assumes too much |
 | 6.2 | Write a falsifiable thesis and a "what would prove us wrong" signal **before** buying | n/a | GUIDE (M12 step 7) | That signal becomes the sell rule |
 | 6.3 | A valuation target is never an annual return or a position size | n/a | GUIDE | Avoids false precision |
+| 6.4 | Write an **edge statement** before buying: (a) the advantage over peers and over the sector ETF; (b) what the price assumes vs what our research expects; (c) the upside if right; (d) the catalyst | n/a | JUDGMENT (Pat, 19 Oct) | The individual stocks are where the portfolio tries to beat the market; the ETFs are built to track it. "A good company" is not enough, because good companies are usually priced as good. |
+| 6.5 | Higher stock-specific risk is accepted in the individual-stock sleeve | n/a | JUDGMENT (Pat, 19 Oct) | The bond ladder protects Laura's payments, so the cushion can take risk. Each position is still sized by rule 7.2. |
 
 ## Step 7: Sizing and buying
 
