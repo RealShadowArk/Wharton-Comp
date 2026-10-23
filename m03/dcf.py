@@ -31,6 +31,9 @@ class Inputs:
     non_operating_assets: float  # cash and other non-operating assets
     diluted_shares: float        # millions
     years_to_first_cash_flow: float = 1.0  # discount time of forecast year 1
+    # Share of terminal-year NOPAT reinvested to fund growth g (= g / return on
+    # new capital). None: use the year-N D&A, capex and NWC ratios instead.
+    terminal_reinvestment_rate: float = None
 
     def __post_init__(self):
         n = len(self.growth)
@@ -78,9 +81,15 @@ def value(p):
     last = rows[-1]
     # Year N+1: revenue grows at g; margins and ratios stay at year-N levels.
     rev_next = last["revenue"] * (1 + p.terminal_growth)
-    fcff_next = (rev_next * p.ebit_margin[-1] * (1 - p.tax_rate)
-                 + rev_next * (p.da_pct[-1] - p.capex_pct[-1])
-                 - (rev_next - last["revenue"]) * p.nwc_pct_of_change)
+    nopat_next = rev_next * p.ebit_margin[-1] * (1 - p.tax_rate)
+    if p.terminal_reinvestment_rate is None:
+        fcff_next = (nopat_next + rev_next * (p.da_pct[-1] - p.capex_pct[-1])
+                     - (rev_next - last["revenue"]) * p.nwc_pct_of_change)
+    else:
+        # Reinvest a share of NOPAT for growth; non-cash items (D&A above
+        # capex, e.g. amortisation of acquired intangibles) stay at year-N level.
+        fcff_next = (nopat_next * (1 - p.terminal_reinvestment_rate)
+                     + rev_next * (p.da_pct[-1] - p.capex_pct[-1]))
     tv = terminal_value(fcff_next, p.wacc, p.terminal_growth)
     pv = 0.0
     for r in rows:

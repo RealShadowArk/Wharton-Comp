@@ -1,0 +1,24 @@
+field,value,unit,label,source,note
+ticker,LLY,,,,Eli Lilly
+valuation_date,2026-10-23,date,,,
+price,1307.12,USD,RESEARCH,"22 Oct close (teammate price file, Secondary)",Refresh from WInS before trading
+base_year,2025,,,,Fiscal year of the latest 10-K
+base_revenue,65179.0,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures),
+growth,0.319;0.15;0.1;0.08;0.06;0.054;0.048;0.042;0.036;0.03,decimal,ASSUMPTION,Pat/Claude 23 Oct,"2026 revenue guidance raised to $85-87bn (midpoint +31.9%) with Q2 2026 results (8-K, 5 Aug 2026); years 6-10 fade linearly to 3%"
+ebit_margin,0.39477;0.39477;0.39477;0.39477;0.39477;0.39477;0.39477;0.39477;0.39477;0.39477,decimal,ASSUMPTION,FY0 pretax margin (R1) 39.5% held flat (Calc from M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures)),"Standard method: FY0 margin, no improvement assumed"
+tax_rate,0.1979,decimal,RESEARCH,Calc: 1 - net income 20640 / pretax 25731,FY0 effective rate
+da_pct,-0.02291;0.01289;0.04869;0.0845;0.1203;0.1203;0.1203;0.1203;0.1203;0.1203,decimal,ASSUMPTION,D&A not collected for every company. Calibrated to FY0 cash conversion: (CFO - capex + after-tax net interest - NOPAT) / revenue = -17.9%,"A positive gap (non-cash charges such as acquired-intangible amortisation) is held; a negative gap (growth investment) fades to 0 by year 5. Includes stock-compensation add-backs, which flatter heavy payers"
+capex_pct,0.1203;0.1203;0.1203;0.1203;0.1203;0.1203;0.1203;0.1203;0.1203;0.1203,decimal,RESEARCH,FY0 capex 7841 = 12.0% of revenue,
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Working capital is inside the FY0 cash-conversion calibration,
+risk_free,0.0513,decimal,RESEARCH,"10-year Treasury 5.13% on 21 Oct 2026 (FRED DGS10, teammate summary)",
+beta,1.0,,ASSUMPTION,Market beta 1.0 for every company: company betas not collected,"Riskier firms (e.g., chips) deserve a higher WACC; see sensitivity"
+equity_premium,0.05,decimal,ASSUMPTION,Student judgment,
+pre_tax_cost_of_debt,0.056,decimal,ASSUMPTION,10-year Treasury + about 0.5 points,
+equity_value_for_weights,1175558.4,USD m,RESEARCH,Calc: shares x price,
+debt_value_for_weights,42503,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures) (borrowings),
+terminal_growth,0.03,decimal,ASSUMPTION,Student judgment,Below long-run nominal GDP growth
+terminal_reinvestment_rate,0.2,decimal,ASSUMPTION,g / return on new capital = 0.03 / 0.15,Growth after 2030 must be paid for
+debt,42503,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures) (borrowings),
+non_operating_assets,0,USD m,MISSING,MISSING: cash not collected,"Value excludes cash, so it is understated"
+diluted_shares,899.35,m,RESEARCH,Calc: 2025 net income / diluted EPS (cover count includes employee-trust shares),
+years_to_first_cash_flow,0.19,years,ASSUMPTION,Valuation date to the end of the first forecast fiscal year,

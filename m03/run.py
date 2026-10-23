@@ -28,6 +28,8 @@ def load(ticker):
                   float(raw["debt_value_for_weights"]))
     kw = {k: tuple(float(x) for x in raw[k].split(";")) for k in TUPLES}
     kw.update({k: float(raw[k]) for k in FIELDS})
+    if raw.get("terminal_reinvestment_rate"):
+        kw["terminal_reinvestment_rate"] = float(raw["terminal_reinvestment_rate"])
     return Inputs(wacc=k_wacc, **kw), raw, rows
 
 

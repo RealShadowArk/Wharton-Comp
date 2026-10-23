@@ -1,0 +1,24 @@
+field,value,unit,label,source,note
+ticker,AME,,,,AMETEK
+valuation_date,2026-10-23,date,,,
+price,236.82,USD,RESEARCH,"22 Oct close (teammate price file, Secondary)",Refresh from WInS before trading
+base_year,2025,,,,Fiscal year of the latest 10-K
+base_revenue,7401.1,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures),
+growth,0.05;0.05;0.05;0.05;0.04;0.038;0.036;0.034;0.032;0.03,decimal,ASSUMPTION,Pat/Claude 23 Oct,Organic growth assumption; Indicor (closed Aug 2026) valued at cost; 2022-25 CAGR 6.4% (Calc); years 6-10 fade linearly to 3%
+ebit_margin,0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811,decimal,ASSUMPTION,FY0 operating margin 25.8% held flat (Calc from M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures)),"Standard method: FY0 margin, no improvement assumed"
+tax_rate,0.177,decimal,RESEARCH,Calc: 1 - net income 1480.1 / pretax 1798.34,FY0 effective rate
+da_pct,0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347,decimal,ASSUMPTION,D&A not collected for every company. Calibrated to FY0 cash conversion: (CFO - capex + after-tax net interest - NOPAT) / revenue = +2.6%,"A positive gap (non-cash charges such as acquired-intangible amortisation) is held; a negative gap (growth investment) fades to 0 by year 5. Includes stock-compensation add-backs, which flatter heavy payers"
+capex_pct,0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759,decimal,RESEARCH,FY0 capex 130.2 = 1.8% of revenue,
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Working capital is inside the FY0 cash-conversion calibration,
+risk_free,0.0513,decimal,RESEARCH,"10-year Treasury 5.13% on 21 Oct 2026 (FRED DGS10, teammate summary)",
+beta,1.0,,ASSUMPTION,Market beta 1.0 for every company: company betas not collected,"Riskier firms (e.g., chips) deserve a higher WACC; see sensitivity"
+equity_premium,0.05,decimal,ASSUMPTION,Student judgment,
+pre_tax_cost_of_debt,0.056,decimal,ASSUMPTION,10-year Treasury + about 0.5 points,
+equity_value_for_weights,54293.6,USD m,RESEARCH,Calc: shares x price,
+debt_value_for_weights,2283.3,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures) (31 Dec 2025),
+terminal_growth,0.03,decimal,ASSUMPTION,Student judgment,Below long-run nominal GDP growth
+terminal_reinvestment_rate,0.2,decimal,ASSUMPTION,g / return on new capital = 0.03 / 0.15,Growth after 2030 must be paid for
+debt,2283.3,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures) (31 Dec 2025),
+non_operating_assets,0,USD m,MISSING,MISSING: cash not collected,"Value excludes cash, so it is understated"
+diluted_shares,229.261,m,RESEARCH,Cover-page shares (M12 data),
+years_to_first_cash_flow,0.19,years,ASSUMPTION,Valuation date to the end of the first forecast fiscal year,

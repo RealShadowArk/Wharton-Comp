@@ -50,6 +50,12 @@ class TestFormulas(unittest.TestCase):
             Inputs(100, (0.1, 0.1), (0.2,), 0.25, (0.05, 0.05), (0.06, 0.06),
                    0.1, 0.1, 0.02, 0, 0, 1)
 
+    def test_terminal_reinvestment_rate(self):
+        q = replace(P, terminal_reinvestment_rate=0.25)
+        rev_next = 110 * 1.02
+        expected = rev_next * 0.20 * 0.75 * 0.75 + rev_next * (0.05 - 0.06)
+        self.assertAlmostEqual(value(q)["fcff_next"], expected)
+
 
 class TestSensitivities(unittest.TestCase):
     def test_higher_wacc_lowers_value(self):

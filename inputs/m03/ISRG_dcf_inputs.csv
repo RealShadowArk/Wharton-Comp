@@ -1,0 +1,24 @@
+field,value,unit,label,source,note
+ticker,ISRG,,,,Intuitive Surgical
+valuation_date,2026-10-23,date,,,
+price,443.84,USD,RESEARCH,"22 Oct close (teammate price file, Secondary)",Refresh from WInS before trading
+base_year,2025,,,,Fiscal year of the latest 10-K
+base_revenue,10064.7,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures),
+growth,0.2;0.15;0.13;0.11;0.09;0.078;0.066;0.054;0.042;0.03,decimal,ASSUMPTION,Pat/Claude 23 Oct,"Q3 2026 revenue +22%, procedures +15% (20 Oct 2026 8-K); years 6-10 fade linearly to 3%"
+ebit_margin,0.29266;0.29266;0.29266;0.29266;0.29266;0.29266;0.29266;0.29266;0.29266;0.29266,decimal,ASSUMPTION,FY0 operating margin 29.3% held flat (Calc from M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures)),"Standard method: FY0 margin, no improvement assumed"
+tax_rate,0.1375,decimal,RESEARCH,Calc: 1 - net income 2856 / pretax 3311.4,FY0 effective rate
+da_pct,0.0246;0.03186;0.03911;0.04637;0.05363;0.05363;0.05363;0.05363;0.05363;0.05363,decimal,ASSUMPTION,D&A not collected for every company. Calibrated to FY0 cash conversion: (CFO - capex + after-tax net interest - NOPAT) / revenue = -3.6%,"A positive gap (non-cash charges such as acquired-intangible amortisation) is held; a negative gap (growth investment) fades to 0 by year 5. Includes stock-compensation add-backs, which flatter heavy payers"
+capex_pct,0.05363;0.05363;0.05363;0.05363;0.05363;0.05363;0.05363;0.05363;0.05363;0.05363,decimal,RESEARCH,FY0 capex 539.8 = 5.4% of revenue,
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Working capital is inside the FY0 cash-conversion calibration,
+risk_free,0.0513,decimal,RESEARCH,"10-year Treasury 5.13% on 21 Oct 2026 (FRED DGS10, teammate summary)",
+beta,1.0,,ASSUMPTION,Market beta 1.0 for every company: company betas not collected,"Riskier firms (e.g., chips) deserve a higher WACC; see sensitivity"
+equity_premium,0.05,decimal,ASSUMPTION,Student judgment,
+pre_tax_cost_of_debt,0.056,decimal,ASSUMPTION,10-year Treasury + about 0.5 points,
+equity_value_for_weights,156798.9,USD m,RESEARCH,Calc: shares x price,
+debt_value_for_weights,0,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures),
+terminal_growth,0.03,decimal,ASSUMPTION,Student judgment,Below long-run nominal GDP growth
+terminal_reinvestment_rate,0.2,decimal,ASSUMPTION,g / return on new capital = 0.03 / 0.15,Growth after 2030 must be paid for
+debt,0,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures),
+non_operating_assets,6800,USD m,RESEARCH,Cash and investments 30 Sep 2026 (Q3 2026 release via search),
+diluted_shares,353.278,m,RESEARCH,Cover-page shares (M12 data); Q3 buybacks of 7.8m shares not yet reflected,
+years_to_first_cash_flow,0.19,years,ASSUMPTION,Valuation date to the end of the first forecast fiscal year,
