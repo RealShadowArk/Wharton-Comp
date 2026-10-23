@@ -15,6 +15,9 @@ decisions are Pat's; entries marked PROPOSED await approval.
 | 23 Oct | AME, ETN | Rejected at current price | 0.48 and 0.45. Priced for growth well above organic guidance; part of the AI/grid build-out already in XLI. |
 | 23 Oct | ADI, MPWR | Rejected at current price | 0.44 and 0.29. Priced for 22-34% a year growth; adds to the AI-chip risk the portfolio already carries (XLK, VOO). |
 | 23 Oct | ISRG, LLY | Rejected at current price | 0.42 and 0.36. Excellent growers, but the price implies 27-28% a year for five years. |
+| 23 Oct (later) | PYPL | **On hold: decide after Q3 (27 Oct)** | Kit v2 with teammate inputs (22 Oct close $57.54) and stock pay deducted ($1,002m, 3.0% of revenue, secondary source): 1.35 at beta 1.0, 1.15 at measured beta 1.28. Bear case (revenue -2%/yr, margin 15%): $34-39, 0.59-0.68. The edge is thin and the downside is larger than the upside, so it is not bought ahead of results. |
+| 23 Oct (later) | ZTS | Watch, not bought | With stock pay ($83m) deducted: 1.04 at beta 1.0, 1.28 at measured beta 0.74 (higher once net interest is added back). Bear case 0.57-0.77. Guidance cut twice in 2026 (May, Aug); cheaper Elanco rivals; class action. Results 5 Nov. |
+| 23 Oct (later) | BSX | Watch, cannot value yet | Our growth path rests on July guidance that BSX withdrew on 8 Sep; update due 28 Oct. |
 
 Method limits that apply to every row: beta 1.0 for all (company betas not
 collected); FY0 margins held flat (no margin expansion); cash missing for
