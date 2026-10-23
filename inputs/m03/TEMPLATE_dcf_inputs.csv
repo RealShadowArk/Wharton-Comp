@@ -12,13 +12,17 @@ capex_pct,,decimal,RESEARCH,,"10 values: capex / revenue (add capitalised softwa
 nwc_pct_of_change,,decimal,ASSUMPTION,,"Change in working capital per $1 of new revenue (0 if the D&A calibration already covers it)"
 risk_free,0.0513,decimal,RESEARCH,"10-year Treasury 5.13% on 21 Oct 2026 (FRED DGS10)","Update to the latest DGS10"
 beta,1.0,,ASSUMPTION,"Standard method: market beta 1.0","Replace with the company's beta only if collected, and say where from"
+beta_measured,,,RESEARCH,,"Optional: 60-month regression beta. Shown in the report (with the adjusted beta 0.67 x measured + 0.33); the DCF uses the beta row"
 equity_premium,0.05,decimal,ASSUMPTION,Student judgment,
 pre_tax_cost_of_debt,0.056,decimal,ASSUMPTION,"10-year Treasury + about 0.5 points",
 equity_value_for_weights,,USD m,RESEARCH,,"Shares x price"
 debt_value_for_weights,,USD m,RESEARCH,,"Latest debt"
 terminal_growth,0.03,decimal,ASSUMPTION,Student judgment,"Must be below WACC (the model stops with an error otherwise)"
-terminal_reinvestment_rate,0.2,decimal,ASSUMPTION,"g / return on new capital = 0.03 / 0.15",
+return_on_new_capital,0.15,decimal,ASSUMPTION,Student judgment,"Terminal reinvestment = g / 0.15 (20% at g = 3%), so it moves with g in the sensitivity"
 debt,,USD m,RESEARCH,,"Debt at the base-year balance-sheet date (plus finance leases)"
 non_operating_assets,,USD m,RESEARCH,,"Cash and investments at the same date. If not found: put 0, set label to MISSING, and say the value is understated"
 diluted_shares,,m,RESEARCH,,"Latest diluted shares (or net income / diluted EPS)"
 years_to_first_cash_flow,,years,ASSUMPTION,,"Years from the valuation date to the end of the first forecast fiscal year (e.g. 0.19 for 23 Oct to 31 Dec)"
+first_year_fraction,1.0,,ASSUMPTION,Method,"Share of forecast-year-1 cash flow not yet in the debt and cash above: 1.0 with base-year-end balances, 0.5 with 30 June balances"
+sbc_pct,,decimal,RESEARCH,,"Stock-based pay / revenue (cash-flow statement). Fill only if da_pct was calibrated from operating cash flow; put 0 if da_pct is reported D&A"
+net_interest_pct,,decimal,RESEARCH,,"Only if ebit_margin is a pretax margin: (interest expense - interest income) / revenue. Otherwise delete this row"

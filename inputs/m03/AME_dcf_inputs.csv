@@ -1,24 +1,29 @@
 field,value,unit,label,source,note
-ticker,AME,,,,AMETEK
-valuation_date,2026-10-23,date,,,
-price,236.82,USD,RESEARCH,"22 Oct close (teammate price file, Secondary)",Refresh from WInS before trading
-base_year,2025,,,,Fiscal year of the latest 10-K
+ticker,AME,,RESEARCH,https://www.sec.gov/Archives/edgar/data/1037868/000103786826000016/ame-20251231.htm,AMETEK
+valuation_date,2026-10-23,date,RESEARCH,Actual client session date2026-10-23; kit filename datedOctober24 is not the research cutoff,
+price,238.82,USD,RESEARCH,"https://stockanalysis.com/stocks/ame/history/; dated2026-10-22 Close, read2026-10-23T12:54:54-04:00",Secondary previous regular-session close; not current intraday price and not WInS execution evidence.
+base_year,2025,,RESEARCH,https://www.sec.gov/Archives/edgar/data/1037868/000103786826000016/ame-20251231.htm,Fiscal year of the latest 10-K
 base_revenue,7401.1,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures),
-growth,0.05;0.05;0.05;0.05;0.04;0.038;0.036;0.034;0.032;0.03,decimal,ASSUMPTION,Pat/Claude 23 Oct,Organic growth assumption; Indicor (closed Aug 2026) valued at cost; 2022-25 CAGR 6.4% (Calc); years 6-10 fade linearly to 3%
-ebit_margin,0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811,decimal,ASSUMPTION,FY0 operating margin 25.8% held flat (Calc from M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures)),"Standard method: FY0 margin, no improvement assumed"
-tax_rate,0.177,decimal,RESEARCH,Calc: 1 - net income 1480.1 / pretax 1798.34,FY0 effective rate
-da_pct,0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347,decimal,ASSUMPTION,D&A not collected for every company. Calibrated to FY0 cash conversion: (CFO - capex + after-tax net interest - NOPAT) / revenue = +2.6%,"A positive gap (non-cash charges such as acquired-intangible amortisation) is held; a negative gap (growth investment) fades to 0 by year 5. Includes stock-compensation add-backs, which flatter heavy payers"
-capex_pct,0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759,decimal,RESEARCH,FY0 capex 130.2 = 1.8% of revenue,
-nwc_pct_of_change,0.0,decimal,ASSUMPTION,Working capital is inside the FY0 cash-conversion calibration,
-risk_free,0.0513,decimal,RESEARCH,"10-year Treasury 5.13% on 21 Oct 2026 (FRED DGS10, teammate summary)",
+growth,0.05;0.05;0.05;0.05;0.04;0.038;0.036;0.034;0.032;0.03,decimal,ASSUMPTION,Supplied kit path retained provisionally; original research anchor: Pat/Claude 23 Oct,Organic growth assumption; Indicor (closed Aug 2026) valued at cost; 2022-25 CAGR 6.4% (Calc); years 6-10 fade linearly to 3% Forecast numeric path retained from supplied kit; not independently approved.
+ebit_margin,0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811;0.25811,decimal,ASSUMPTION,Supplied kit path retained provisionally; original research anchor: FY0 operating margin 25.8% held flat (Calc from M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures)),"Standard method: FY0 margin, no improvement assumed Forecast numeric path retained from supplied kit; not independently approved."
+tax_rate,0.177,decimal,ASSUMPTION,Calc: 1 - net income 1480.1 / pretax 1798.34,FY0 effective rate Historical rate held constant is a forward assumption. Minority-interest adjustments and net operating tax normalization may differ.
+da_pct,0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347;0.04347,decimal,ASSUMPTION,Supplied kit path retained provisionally; original research anchor: D&A not collected for every company. Calibrated to FY0 cash conversion: (CFO - capex + after-tax net interest - NOPAT) / revenue = +2.6%,"A positive gap (non-cash charges such as acquired-intangible amortisation) is held; a negative gap (growth investment) fades to 0 by year 5. Includes stock-compensation add-backs, which flatter heavy payers This is the supplied synthetic cash-conversion plug for ten companies, not measured D&A. HUBB alone has an explicit D&A path. SBC and working-capital effects need independent normalization."
+capex_pct,0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759;0.01759,decimal,ASSUMPTION,Supplied kit path retained provisionally; original research anchor: FY0 capex 130.2 = 1.8% of revenue,Future reinvestment ratio is an assumption even when anchored to reported history.
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Working capital is inside the FY0 cash-conversion calibration,Calibration choice is not evidence of zero working-capital needs.
+risk_free,0.0513,decimal,RESEARCH,"https://fred.stlouisfed.org/series/DGS10; observation2026-10-21, released2026-10-22T16:16:00-04:00; reopened2026-10-23","Latest exposed released observation, not a live Treasury quote."
 beta,1.0,,ASSUMPTION,Market beta 1.0 for every company: company betas not collected,"Riskier firms (e.g., chips) deserve a higher WACC; see sensitivity"
+beta_measured,0.9618,,RESEARCH,"Research update 23 Oct (context/teammates_2026-10-23): OLS slope vs S&P 500 price index, 60 monthly returns Oct 2021-Sep 2026",Shown in the report only; the DCF uses the beta row until Pat chooses. Yahoo 5Y monthly: 0.96
 equity_premium,0.05,decimal,ASSUMPTION,Student judgment,
 pre_tax_cost_of_debt,0.056,decimal,ASSUMPTION,10-year Treasury + about 0.5 points,
-equity_value_for_weights,54293.6,USD m,RESEARCH,Calc: shares x price,
-debt_value_for_weights,2283.3,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures) (31 Dec 2025),
+equity_value_for_weights,55229.27438,USD m,ASSUMPTION,Calculated: dated diluted-share proxy x October22 regular Close,Approximate equity market-value weight using dated reported diluted weighted-average shares x October22 Close. Not an observed current market capitalization. Subject to the share-period and capital-structure limitations in the review.
+debt_value_for_weights,2283.309,USD m,ASSUMPTION,https://www.sec.gov/Archives/edgar/data/1037868/000103786826000016/ame-20251231.htm; FY0 debt/lease notes,Historical carrying-debt proxy for market debt; current fair-value capital structure is not established.
 terminal_growth,0.03,decimal,ASSUMPTION,Student judgment,Below long-run nominal GDP growth
-terminal_reinvestment_rate,0.2,decimal,ASSUMPTION,g / return on new capital = 0.03 / 0.15,Growth after 2030 must be paid for
-debt,2283.3,USD m,RESEARCH,M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures) (31 Dec 2025),
-non_operating_assets,0,USD m,MISSING,MISSING: cash not collected,"Value excludes cash, so it is understated"
-diluted_shares,229.261,m,RESEARCH,Cover-page shares (M12 data),
-years_to_first_cash_flow,0.19,years,ASSUMPTION,Valuation date to the end of the first forecast fiscal year,
+return_on_new_capital,0.15,decimal,ASSUMPTION,Student judgment: return on new capital 15%,"Terminal reinvestment = g / 0.15 (20% at g = 3%); since 23 Oct it moves with g in the growth sensitivity, replacing a fixed 20%"
+debt,2283.309,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1037868/000103786826000016/ame-20251231.htm; FY0 debt/lease notes,"Historical borrowing-debt proxy. Full current senior-claim bridge, including minorities and any unquantified finance leases, remains unresolved."
+non_operating_assets,457.951,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1037868/000103786826000016/ame-20251231.htm; original FY0 statements; reviewed2026-10-23T12:54:54-04:00,"FY2025 corporate cash and equivalents457951 USD thousand /1000. Other investments not valued here. Dated baseline, not valuation-date excess cash. No operating-cash reserve has been estimated."
+diluted_shares,231.259,m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1037868/000103786826000016/ame-20251231.htm; reported EPS denominator; reviewed2026-10-23T12:55:32-04:00,"FY2025 diluted weighted-average shares231259 thousand /1000, Note1. Historical period proxy; not a current fully diluted count."
+years_to_first_cash_flow,0.19,years,ASSUMPTION,Valuation date to the end of the first forecast fiscal year,Supplied timing retained for reproduction: full first-fiscal-year FCFF is discounted over the remaining stub. A current-date cash-flow/bridge rollforward is not established.
+price_date,2026-10-22,,RESEARCH,https://stockanalysis.com/stocks/ame/history/,Extra provenance row; runner ignores it.
+input_quality,PROVISIONAL_METHOD_REPRODUCTION,,ASSUMPTION,Source and model audit,"Factual cash/price/share edits do not validate synthetic cash conversion, pretax-EBIT proxies or full-year/stub timing. No current fair-value claim."
+sbc_pct,,decimal,MISSING,Requested from P2 23 Oct: FY2025 stock-based compensation / revenue (cash-flow statement),"da_pct is calibrated from operating cash flow, which adds stock-based pay back; this row subtracts it. Blank = value overstated"
+first_year_fraction,1.0,,ASSUMPTION,Method,"Bridge uses cash and debt at the base-year end, so all of forecast year 1 counts. With 30 Jun 2026 balances use 0.5"

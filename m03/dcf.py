@@ -13,6 +13,7 @@ decimals. A valuation is a research estimate, never an annual return,
 a price target or a position size.
 """
 
+import math
 from dataclasses import dataclass, replace
 
 
@@ -34,12 +35,45 @@ class Inputs:
     # Share of terminal-year NOPAT reinvested to fund growth g (= g / return on
     # new capital). None: use the year-N D&A, capex and NWC ratios instead.
     terminal_reinvestment_rate: float = None
+    # If set, the terminal reinvestment rate is g / return_on_new_capital, so it
+    # moves with g in the sensitivities (overrides terminal_reinvestment_rate).
+    return_on_new_capital: float = None
+    # Stock-based pay / revenue, subtracted from FCFF every year. Use it only when
+    # da_pct is calibrated from operating cash flow, which adds SBC back; true
+    # D&A leaves SBC inside EBIT already, so keep 0 there.
+    sbc_pct: float = 0.0
+    # Share of forecast-year-1 FCFF not yet in the bridge's cash and debt
+    # (e.g. 0.5 when they are dated 30 June of a December year).
+    first_year_fraction: float = 1.0
 
     def __post_init__(self):
         n = len(self.growth)
         for name in ("ebit_margin", "da_pct", "capex_pct"):
             if len(getattr(self, name)) != n:
                 raise ValueError(f"{name} needs {n} values, one per forecast year")
+        numbers = (self.base_revenue, self.tax_rate, self.nwc_pct_of_change, self.wacc,
+                   self.terminal_growth, self.debt, self.non_operating_assets,
+                   self.diluted_shares, self.years_to_first_cash_flow, self.sbc_pct,
+                   self.first_year_fraction) + tuple(self.growth) + tuple(
+                   self.ebit_margin) + tuple(self.da_pct) + tuple(self.capex_pct)
+        if not all(math.isfinite(x) for x in numbers):
+            raise ValueError("every input must be a finite number")
+        if self.base_revenue <= 0 or self.diluted_shares <= 0:
+            raise ValueError("base revenue and diluted shares must be positive")
+        if not 0 <= self.tax_rate < 1:
+            raise ValueError("tax rate must be in [0, 1)")
+        if self.wacc <= -1 or self.years_to_first_cash_flow < 0:
+            raise ValueError("WACC must exceed -100% and the first cash flow cannot be in the past")
+        if not 0 < self.first_year_fraction <= 1:
+            raise ValueError("first_year_fraction must be in (0, 1]")
+        if self.return_on_new_capital is not None and self.return_on_new_capital <= 0:
+            raise ValueError("return on new capital must be positive")
+
+    def reinvestment_rate(self):
+        """Terminal NOPAT reinvestment rate, or None for the ratio method."""
+        if self.return_on_new_capital is not None:
+            return self.terminal_growth / self.return_on_new_capital
+        return self.terminal_reinvestment_rate
 
 
 def wacc(risk_free, beta, equity_premium, pre_tax_cost_of_debt, tax_rate,
@@ -61,9 +95,11 @@ def forecast(p):
         da = new_revenue * p.da_pct[k]
         capex = new_revenue * p.capex_pct[k]
         d_nwc = (new_revenue - revenue) * p.nwc_pct_of_change
+        sbc = new_revenue * p.sbc_pct
+        fcff = (nopat + da - capex - d_nwc - sbc) * (p.first_year_fraction if k == 0 else 1)
         rows.append({"year": k + 1, "revenue": new_revenue, "ebit": ebit,
                      "nopat": nopat, "da": da, "capex": capex, "d_nwc": d_nwc,
-                     "fcff": nopat + da - capex - d_nwc})
+                     "sbc": sbc, "fcff": fcff})
         revenue = new_revenue
     return rows
 
@@ -82,14 +118,15 @@ def value(p):
     # Year N+1: revenue grows at g; margins and ratios stay at year-N levels.
     rev_next = last["revenue"] * (1 + p.terminal_growth)
     nopat_next = rev_next * p.ebit_margin[-1] * (1 - p.tax_rate)
-    if p.terminal_reinvestment_rate is None:
+    rr = p.reinvestment_rate()
+    if rr is None:
         fcff_next = (nopat_next + rev_next * (p.da_pct[-1] - p.capex_pct[-1])
                      - (rev_next - last["revenue"]) * p.nwc_pct_of_change)
     else:
         # Reinvest a share of NOPAT for growth; non-cash items (D&A above
         # capex, e.g. amortisation of acquired intangibles) stay at year-N level.
-        fcff_next = (nopat_next * (1 - p.terminal_reinvestment_rate)
-                     + rev_next * (p.da_pct[-1] - p.capex_pct[-1]))
+        fcff_next = nopat_next * (1 - rr) + rev_next * (p.da_pct[-1] - p.capex_pct[-1])
+    fcff_next -= rev_next * p.sbc_pct
     tv = terminal_value(fcff_next, p.wacc, p.terminal_growth)
     pv = 0.0
     for r in rows:
@@ -131,18 +168,28 @@ def grid(p, field_a, values_a, field_b, values_b):
 
 def implied_growth_shift(p, price, lo=-0.5, hi=0.5, tol=1e-6):
     """Parallel shift to every forecast-year growth rate that makes the value
-    per share equal the market price (a reverse DCF). None if no solution."""
+    per share equal the market price (a reverse DCF). None if no solution in
+    [lo, hi]. Works whether value rises or falls with growth."""
+    if not (math.isfinite(price) and price > 0):
+        raise ValueError("price must be a positive finite number")
+
     def gap(shift):
         q = replace(p, growth=tuple(g + shift for g in p.growth))
         return value(q)["per_share"] - price
-    if gap(lo) > 0 or gap(hi) < 0:
+    g_lo, g_hi = gap(lo), gap(hi)
+    if g_lo == 0:
+        return lo
+    if g_hi == 0:
+        return hi
+    if (g_lo > 0) == (g_hi > 0):
         return None
     for _ in range(200):
         mid = (lo + hi) / 2
-        if gap(mid) > 0:
-            hi = mid
+        g_mid = gap(mid)
+        if (g_mid > 0) == (g_lo > 0):
+            lo, g_lo = mid, g_mid
         else:
-            lo = mid
+            hi = mid
         if hi - lo < tol:
             break
     return (lo + hi) / 2

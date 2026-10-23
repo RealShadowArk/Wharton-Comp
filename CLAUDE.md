@@ -9,7 +9,7 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 - The user watches usage limits. Keep work lean: no subagents, read only
   the files a task needs, and fetch Drive files one at a time on demand.
 - Don't delete files without asking.
-- Tests: `python -m pytest -q` (105 tests, pure standard library plus pytest).
+- Tests: `python -m pytest -q` (111 tests, pure standard library plus pytest).
 
 ## Key dates
 
@@ -70,15 +70,16 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 | `tools/make_hand_check.py` | Builds `handcheck/M05_hand_check.xlsx` |
 | `m12/` | M12 score (`score.py`) and preview run (`python -m m12.run`); rules R1/R3/R4/R8 are switches in `RULES`, all pending Pat's sign-off |
 | `m03/` | DCF (FCFF at WACC) per the M03 spec: `dcf.py` (forecast, terminal value with WACC > g check, equity bridge, sensitivities, reverse DCF) and `run.py` (`python -m m03.run HUBB`) |
-| `inputs/m03/` | One labelled input CSV per company (`<TICKER>_dcf_inputs.csv`, written by `tools/make_m03_inputs.py` except HUBB); outputs go to `outputs/M03_Valuation_<TICKER>.md/.csv`, `outputs/M03_summary.md` (all 11, 23 Oct) and `outputs/M03_Thesis_and_Rejection_Log.md` |
+| `inputs/m03/` | One labelled input CSV per company (`<TICKER>_dcf_inputs.csv`): the teammate-corrected files of 23 Oct (22 Oct closes, cash, diluted shares) plus kit-v2 rows `sbc_pct`, `net_interest_pct` (ETN/LLY/ZTS), `first_year_fraction`, `beta_measured` and `return_on_new_capital` (blank = MISSING). `tools/make_m03_inputs.py` is the legacy generator and refuses to overwrite without `--overwrite`. `python tools/make_m03_summary.py` rebuilds all 11 reports and `outputs/M03_summary.md`; decisions in `outputs/M03_Thesis_and_Rejection_Log.md` |
 | `inputs/m12/` | Teammate's peer data v0.2 (33 active companies, 6 groups) and watchlist (GPN, GEV, KMB) |
 | `docs/model_guide.md` | Guide to every model (procedure, inputs and why each value), plus the models and data still missing (23 Oct); superseded by the Claude Doc https://claude.ai/artifact/QWNmM3QzJd7zcNvtNMZ2sa |
 | `context/teammates_2026-10-23/` | Teammates' 23 Oct zips: research update (60-month betas, worst calendar years, cash, guidance for 33 companies) and completed M03 inputs plus an audit (22 Oct closes; engine unchanged) |
+| `docs/stock_longlist_international_midcap.md` | 23 Oct long-list beyond PayPal: international ADRs and mid-caps (Novo, Smith & Nephew, Philips, PagSeguro/StoneCo/dLocal; Fiserv and Diageo parked), with the rule 7.2 sizing arithmetic |
 | `tools/etf_review.py` | ETF look-through, crash replays and M02 stress paths (16 Oct analysis) |
 | `docs/` | `model_input_guide_draft.md` = notes for the user's input-guide doc (create the real doc only when they say "create doc"); outlines for the M05 explanation and M08 memos; `assumptions_and_figures.md` traces every input and Stage 1/2 figure |
 | `context/` | Handoff notes and imported Drive files |
 | `handoff/news_monitor_2026-10-15/` | Handoff for a third person: thesis cards for the 11 shortlisted stocks, plus a daily news/signal log (RED/AMBER/GREEN) to 6 Nov |
-| `handoff/m03_dcf_kit/` + `handoff/Wharton_M03_DCF_kit_2026-10-24.zip` | Standalone DCF kit for a teammate (code, tests, template, 11 valuations); rebuild the zip after changing m03 |
+| `handoff/m03_dcf_kit/` + `handoff/Wharton_M03_DCF_kit_v2_2026-10-23.zip` | Standalone DCF kit v2 for teammates (code, 17 tests, template, 11 valuations); rebuild the zip after changing m03. The older `..._2026-10-24.zip` (v1, misdated) is superseded |
 | `handoff/teammate_2026-10-08/` | Onboarding for a new teammate: briefing, his job (industry research + M12 peer data for payments, pharma, electrical equipment, household products; due 11/14/15 Oct), AI catch-up prompt, research template, peer-data CSV header |
 
 ## Context files

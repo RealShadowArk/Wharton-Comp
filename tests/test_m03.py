@@ -56,6 +56,29 @@ class TestFormulas(unittest.TestCase):
         expected = rev_next * 0.20 * 0.75 * 0.75 + rev_next * (0.05 - 0.06)
         self.assertAlmostEqual(value(q)["fcff_next"], expected)
 
+    def test_stock_based_pay_subtracted(self):
+        q = replace(P, sbc_pct=0.02)
+        self.assertAlmostEqual(forecast(q)[0]["fcff"], 14.4 - 110 * 0.02)
+        self.assertAlmostEqual(value(q)["fcff_next"],
+                               value(P)["fcff_next"] - 110 * 1.02 * 0.02)
+
+    def test_first_year_fraction(self):
+        q = replace(P, first_year_fraction=0.5)
+        self.assertAlmostEqual(forecast(q)[0]["fcff"], 7.2)
+        self.assertAlmostEqual(value(q)["fcff_next"], value(P)["fcff_next"])
+
+    def test_reinvestment_follows_g(self):
+        q = replace(P, return_on_new_capital=0.15, terminal_growth=0.03)
+        fixed = replace(P, terminal_reinvestment_rate=0.20, terminal_growth=0.03)
+        self.assertAlmostEqual(value(q)["fcff_next"], value(fixed)["fcff_next"])
+        self.assertAlmostEqual(replace(q, terminal_growth=0.045).reinvestment_rate(), 0.30)
+
+    def test_invalid_inputs_raise(self):
+        for bad in ({"diluted_shares": 0.0}, {"tax_rate": 1.0},
+                    {"wacc": float("nan")}, {"first_year_fraction": 0.0}):
+            with self.assertRaises(ValueError):
+                replace(P, **bad)
+
 
 class TestSensitivities(unittest.TestCase):
     def test_higher_wacc_lowers_value(self):
@@ -71,6 +94,19 @@ class TestSensitivities(unittest.TestCase):
         self.assertAlmostEqual(implied_growth_shift(P, price), 0.0, places=5)
         shift = implied_growth_shift(P, price * 1.1)
         self.assertGreater(shift, 0.0)
+
+    def test_reverse_dcf_when_growth_destroys_value(self):
+        # Working capital of $3 per $1 of new revenue: faster growth lowers value.
+        q = replace(P, nwc_pct_of_change=3.0)
+        price = value(q)["per_share"]
+        self.assertLess(value(replace(q, growth=(0.15,)))["per_share"], price)
+        self.assertAlmostEqual(implied_growth_shift(q, price), 0.0, places=5)
+        self.assertLess(implied_growth_shift(q, price * 1.1), 0.0)
+
+    def test_reverse_dcf_rejects_bad_price(self):
+        for bad in (0.0, float("nan")):
+            with self.assertRaises(ValueError):
+                implied_growth_shift(P, bad)
 
 
 if __name__ == "__main__":

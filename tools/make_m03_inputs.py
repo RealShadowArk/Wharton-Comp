@@ -1,5 +1,14 @@
-"""Write the standardized M03 input CSVs for the ten shortlisted companies other than HUBB (run from the repo root: python tools/make_m03_inputs.py). Every assumption is set here and labelled in the CSVs."""
+"""Write the standardized M03 input CSVs for the ten shortlisted companies other than HUBB (run from the repo root: python tools/make_m03_inputs.py). Every assumption is set here and labelled in the CSVs.
+
+Superseded 23 Oct 2026: inputs/m03 now holds the teammate-corrected files (cash, 22 Oct prices,
+diluted shares) plus the new rows (sbc_pct, net_interest_pct, beta_measured, first_year_fraction).
+Running this would overwrite them, so it refuses unless --overwrite is given. Kept as the record
+of how the standard inputs were first built."""
 import csv
+import sys
+
+if "--overwrite" not in sys.argv:
+    sys.exit("Refusing to overwrite inputs/m03 (see the docstring); pass --overwrite to force.")
 
 RF, ERP, BETA, KD, G, RONIC = 0.0513, 0.05, 1.0, 0.056, 0.03, 0.15
 PEER = "M12 peer data v0.2 (teammate; FY0 10-K/10-Q figures)"

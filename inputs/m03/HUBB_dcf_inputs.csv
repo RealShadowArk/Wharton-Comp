@@ -1,25 +1,30 @@
 field,value,unit,label,source,note
-ticker,HUBB,,,,Hubbell Incorporated
-valuation_date,2026-10-23,date,,,
-price,450.83,USD,RESEARCH,"StockMonitor close 20 Oct 2026 (Secondary, teammate's price_observations.csv)",Refresh from WInS before trading
-base_year,2025,,,,
+ticker,HUBB,,RESEARCH,https://www.sec.gov/Archives/edgar/data/48898/000162828026007500/hubb-20251231.htm,Hubbell Incorporated
+valuation_date,2026-10-23,date,RESEARCH,Actual client session date2026-10-23; kit filename datedOctober24 is not the research cutoff,
+price,445.8,USD,RESEARCH,"https://stockanalysis.com/stocks/hubb/history/; dated2026-10-22 Close, read2026-10-23T12:54:54-04:00",Secondary previous regular-session close; not current intraday price and not WInS execution evidence.
+base_year,2025,,RESEARCH,https://www.sec.gov/Archives/edgar/data/48898/000162828026007500/hubb-20251231.htm,
 base_revenue,5844.6,USD m,RESEARCH,HUBB 2025 Form 10-K (M12 peer data v0.2),
-growth,0.08;0.07;0.06;0.05;0.04;0.038;0.036;0.034;0.032;0.03,decimal,ASSUMPTION,Pat/Claude 23 Oct,"Legacy business only (NSI excluded, see nsi_note). Q2 2026 organic sales +10% (HUBB-R); 2022-25 revenue CAGR 5.7% (Calc from 10-K)"
-ebit_margin,0.21;0.21;0.21;0.21;0.21;0.21;0.21;0.21;0.21;0.21,decimal,ASSUMPTION,Pat/Claude 23 Oct,"2025 GAAP operating margin 20.7% (1208.8/5844.6, Calc); Q2 2026 adjusted margin 23.9% excludes about 1.9% of intangible amortisation"
-tax_rate,0.21,decimal,RESEARCH,Calc: 1 - 887.1/1119.1 = 20.7% (2025 10-K),Rounded to 21%
-da_pct,0.035;0.035;0.033;0.031;0.030;0.030;0.030;0.030;0.030;0.030,decimal,ASSUMPTION,"2025 D&A 206.1 = 3.5% of revenue (10-K cash-flow statement, via search summary)",Converges to capex so the terminal year has no net capex
-capex_pct,0.027;0.027;0.028;0.029;0.030;0.030;0.030;0.030;0.030;0.030,decimal,ASSUMPTION,2025 capex 155.1 = 2.7% of revenue (10-K),
-nwc_pct_of_change,0.103,decimal,RESEARCH,"Calc: (current assets 2594.0 - cash 482.5 - current liabilities 1508.7) / revenue = 10.3% (2025 10-K; cash via Q4 2025 release search summary)",
-risk_free,0.0513,decimal,RESEARCH,"10-year Treasury 5.13% on 21 Oct 2026 (FRED DGS10, teammate's weekly summary)",
-beta,1.0,,ASSUMPTION,"Market beta 1.0 for every company: company betas not collected (was 0.97 sector proxy until 23 Oct)",Same standard as the other ten companies
+growth,0.08;0.07;0.06;0.05;0.04;0.038;0.036;0.034;0.032;0.03,decimal,ASSUMPTION,Supplied kit path retained provisionally; original research anchor: Pat/Claude 23 Oct,"Legacy business only (NSI excluded, see nsi_note). Q2 2026 organic sales +10% (HUBB-R); 2022-25 revenue CAGR 5.7% (Calc from 10-K) Forecast numeric path retained from supplied kit; not independently approved."
+ebit_margin,0.21;0.21;0.21;0.21;0.21;0.21;0.21;0.21;0.21;0.21,decimal,ASSUMPTION,Supplied kit path retained provisionally; original research anchor: Pat/Claude 23 Oct,"2025 GAAP operating margin 20.7% (1208.8/5844.6, Calc); Q2 2026 adjusted margin 23.9% excludes about 1.9% of intangible amortisation Forecast numeric path retained from supplied kit; not independently approved."
+tax_rate,0.21,decimal,ASSUMPTION,Calc: 1 - 887.1/1119.1 = 20.7% (2025 10-K),Rounded to 21% Historical rate held constant is a forward assumption. Minority-interest adjustments and net operating tax normalization may differ.
+da_pct,0.035;0.035;0.033;0.031;0.030;0.030;0.030;0.030;0.030;0.030,decimal,ASSUMPTION,"Supplied kit path retained provisionally; original research anchor: 2025 D&A 206.1 = 3.5% of revenue (10-K cash-flow statement, via search summary)","Converges to capex so the terminal year has no net capex This is the supplied synthetic cash-conversion plug for ten companies, not measured D&A. HUBB alone has an explicit D&A path. SBC and working-capital effects need independent normalization."
+capex_pct,0.027;0.027;0.028;0.029;0.030;0.030;0.030;0.030;0.030;0.030,decimal,ASSUMPTION,Supplied kit path retained provisionally; original research anchor: 2025 capex 155.1 = 2.7% of revenue (10-K),Future reinvestment ratio is an assumption even when anchored to reported history.
+nwc_pct_of_change,0.103,decimal,ASSUMPTION,Calc: (current assets 2594.0 - cash 482.5 - current liabilities 1508.7) / revenue = 10.3% (2025 10-K; cash via Q4 2025 release search summary),Calibration choice is not evidence of zero working-capital needs.
+risk_free,0.0513,decimal,RESEARCH,"https://fred.stlouisfed.org/series/DGS10; observation2026-10-21, released2026-10-22T16:16:00-04:00; reopened2026-10-23","Latest exposed released observation, not a live Treasury quote."
+beta,1.0,,ASSUMPTION,Market beta 1.0 for every company: company betas not collected (was 0.97 sector proxy until 23 Oct),Same standard as the other ten companies
+beta_measured,0.8464,,RESEARCH,"Research update 23 Oct (context/teammates_2026-10-23): OLS slope vs S&P 500 price index, 60 monthly returns Oct 2021-Sep 2026",Shown in the report only; the DCF uses the beta row until Pat chooses. Yahoo 5Y monthly: 0.85
 equity_premium,0.05,decimal,ASSUMPTION,Student judgment,Tested 4%-6% through the WACC sensitivity
 pre_tax_cost_of_debt,0.056,decimal,ASSUMPTION,10-year Treasury plus about 0.5 points,NSI notes yields not collected
-equity_value_for_weights,23818.7,USD m,RESEARCH,Calc: 52.833m shares (10-Q cover) x 450.83,
-debt_value_for_weights,5372.6,USD m,RESEARCH,30 Jun 2026 debt (Q2 10-Q via teammate's HUBB-Q),Includes NSI financing
+equity_value_for_weights,23850.3,USD m,ASSUMPTION,Calculated: dated diluted-share proxy x October22 regular Close,Approximate equity market-value weight using dated reported diluted weighted-average shares x October22 Close. Not an observed current market capitalization. Subject to the share-period and capital-structure limitations in the review.
+debt_value_for_weights,5372.6,USD m,RESEARCH,30 Jun 2026 debt (Q2 10-Q via teammate's HUBB-Q),Includes NSI financing WACC retains June financing while bridge excludes NSI at assumed value equal to cost; capital structure is not on a unified date.
 terminal_growth,0.03,decimal,ASSUMPTION,Student judgment,Below long-run nominal GDP growth
-terminal_reinvestment_rate,0.2,decimal,ASSUMPTION,g / return on new capital = 0.03 / 0.15,Growth after 2030 must be paid for (standard method added 23 Oct)
-debt,2325.4,USD m,RESEARCH,31 Dec 2025 debt (10-K),Finance leases described as immaterial; amount not reported
-non_operating_assets,482.5,USD m,RESEARCH,31 Dec 2025 cash (Q4 2025 release via search summary),
-diluted_shares,53.6,m,RESEARCH,Calc: 2025 net income 887.1 / diluted EPS 16.54 = 53.6m,Conservative vs 52.833m basic at July 2026
-years_to_first_cash_flow,0.19,years,ASSUMPTION,23 Oct 2026 to 31 Dec 2026,Whole FY2026 cash flow counted because the bridge uses 31 Dec 2025 net debt
+return_on_new_capital,0.15,decimal,ASSUMPTION,Student judgment: return on new capital 15%,"Terminal reinvestment = g / 0.15 (20% at g = 3%); since 23 Oct it moves with g in the growth sensitivity, replacing a fixed 20%"
+debt,2325.4,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/48898/000162828026007500/hubb-20251231.htm; FY0 debt/lease notes,"Historical borrowing-debt proxy. Full current senior-claim bridge, including minorities and any unquantified finance leases, remains unresolved."
+non_operating_assets,482.5,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/48898/000162828026007500/hubb-20251231.htm; original FY0 statements; reviewed2026-10-23T12:54:54-04:00,"FY2025 corporate cash and equivalents; restricted cash excluded. Dated baseline, not valuation-date excess cash. No operating-cash reserve has been estimated."
+diluted_shares,53.5,m,RESEARCH,https://www.sec.gov/Archives/edgar/data/48898/000162828026007500/hubb-20251231.htm; reported EPS denominator; reviewed2026-10-23T12:55:32-04:00,"FY2025 reported diluted weighted-average shares, Note18; participating securities mean net-income/EPS is not the exact denominator. Historical period proxy; not a current fully diluted count."
+years_to_first_cash_flow,0.19,years,ASSUMPTION,23 Oct 2026 to 31 Dec 2026,Whole FY2026 cash flow counted because the bridge uses 31 Dec 2025 net debt Supplied timing retained for reproduction: full first-fiscal-year FCFF is discounted over the remaining stub. A current-date cash-flow/bridge rollforward is not established.
 nsi_note,,,ASSUMPTION,"NSI Industries bought for about $3.0bn cash on 9 Jun 2026, funded with debt (8-K; news)","Valued at cost: NSI is assumed to add as much value as the debt used to buy it, so both are left out. If Hubbell overpaid, this overstates value; if synergies arrive, it understates it."
+price_date,2026-10-22,,RESEARCH,https://stockanalysis.com/stocks/hubb/history/,Extra provenance row; runner ignores it.
+input_quality,PROVISIONAL_METHOD_REPRODUCTION,,ASSUMPTION,Source and model audit,"Factual cash/price/share edits do not validate synthetic cash conversion, pretax-EBIT proxies or full-year/stub timing. No current fair-value claim."
+sbc_pct,0,decimal,ASSUMPTION,Method,"da_pct is reported D&A, so stock-based pay is already an expense inside EBIT"
+first_year_fraction,1.0,,ASSUMPTION,Method,"Bridge uses cash and debt at the base-year end, so all of forecast year 1 counts. With 30 Jun 2026 balances use 0.5"

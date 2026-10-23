@@ -5,6 +5,7 @@ Usage: python -m m03.run HUBB   (writes outputs/M03_Valuation_<TICKER>.md and .c
 
 import csv
 import sys
+from dataclasses import replace
 from pathlib import Path
 
 from m03.dcf import (Inputs, grid, implied_growth_shift, sensitivity, value,
@@ -17,20 +18,66 @@ FIELDS = ("base_revenue", "tax_rate", "nwc_pct_of_change", "terminal_growth",
           "years_to_first_cash_flow")
 
 
+def wacc_for(raw, beta):
+    return wacc(float(raw["risk_free"]), beta, float(raw["equity_premium"]),
+                float(raw["pre_tax_cost_of_debt"]), float(raw["tax_rate"]),
+                float(raw["equity_value_for_weights"]), float(raw["debt_value_for_weights"]))
+
+
+def num(raw, key):
+    """Optional numeric input; None when the row is absent or blank (MISSING)."""
+    v = raw.get(key, "")
+    return float(v) if v.strip() else None
+
+
 def load(ticker):
     path = ROOT / "inputs" / "m03" / f"{ticker}_dcf_inputs.csv"
     with open(path, encoding="utf-8") as f:
         rows = {r["field"]: r for r in csv.DictReader(f)}
     raw = {k: r["value"] for k, r in rows.items()}
-    k_wacc = wacc(float(raw["risk_free"]), float(raw["beta"]),
-                  float(raw["equity_premium"]), float(raw["pre_tax_cost_of_debt"]),
-                  float(raw["tax_rate"]), float(raw["equity_value_for_weights"]),
-                  float(raw["debt_value_for_weights"]))
     kw = {k: tuple(float(x) for x in raw[k].split(";")) for k in TUPLES}
     kw.update({k: float(raw[k]) for k in FIELDS})
-    if raw.get("terminal_reinvestment_rate"):
-        kw["terminal_reinvestment_rate"] = float(raw["terminal_reinvestment_rate"])
-    return Inputs(wacc=k_wacc, **kw), raw, rows
+    # Pretax-based margins (rule R1 fallback): add net interest expense / revenue
+    # to get EBIT. The cash-flow calibration of da_pct is unaffected.
+    if num(raw, "net_interest_pct") is not None:
+        kw["ebit_margin"] = tuple(m + num(raw, "net_interest_pct") for m in kw["ebit_margin"])
+    for k in ("terminal_reinvestment_rate", "return_on_new_capital", "sbc_pct",
+              "first_year_fraction"):
+        if num(raw, k) is not None:
+            kw[k] = num(raw, k)
+    return Inputs(wacc=wacc_for(raw, float(raw["beta"])), **kw), raw, rows
+
+
+def gaps(p, raw, rows, price):
+    """Report lines for inputs that are MISSING or that the user still has to choose."""
+    base = value(p)["per_share"]
+    L = []
+    if "sbc_pct" in rows:
+        if num(raw, "sbc_pct") is None:
+            d = base - value(replace(p, sbc_pct=p.sbc_pct + 0.01))["per_share"]
+            L.append(f"| Stock-based pay | MISSING, so value is overstated: each 1% of revenue "
+                     f"of stock-based pay lowers it by ${d:,.2f} per share (TEST) |")
+        else:
+            L.append(f"| Stock-based pay | {p.sbc_pct:.2%} of revenue subtracted every year |")
+    if "net_interest_pct" in rows:
+        if num(raw, "net_interest_pct") is None:
+            L.append("| EBIT basis | Pretax income (net interest MISSING), so interest is "
+                     "charged twice and value is understated |")
+        else:
+            L.append(f"| EBIT basis | Pretax margin + net interest {num(raw, 'net_interest_pct'):.2%} "
+                     "of revenue |")
+    if num(raw, "beta_measured") is not None:
+        b = num(raw, "beta_measured")
+        cells = []
+        for name, beta in (("measured", b), ("adjusted 0.67 x measured + 0.33", 0.67 * b + 0.33)):
+            v = value(replace(p, wacc=wacc_for(raw, beta)))["per_share"]
+            cells.append(f"{name} {beta:.2f}: ${v:,.2f} ({v / price:.2f} x price)")
+        L.append(f"| Beta choice (Pat decides) | Input {float(raw['beta']):.2f}: ${base:,.2f}; "
+                 + "; ".join(cells) + " |")
+    if p.first_year_fraction < 1:
+        L.append(f"| First forecast year | {p.first_year_fraction:.0%} of its cash flow counted "
+                 "(the rest is already in the bridge's cash) |")
+    return L
 
 
 def fmt(x, pct=False):
@@ -48,11 +95,11 @@ def run(ticker):
     with open(out / f"M03_Valuation_{ticker}.csv", "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["year", "revenue", "ebit", "nopat", "da", "capex", "d_nwc",
-                    "fcff", "discount_factor", "pv_fcff"])
+                    "sbc", "fcff", "discount_factor", "pv_fcff"])
         for r in v["rows"]:
             w.writerow([first_year + r["year"] - 1] + [round(r[k], 2) for k in
                        ("revenue", "ebit", "nopat", "da", "capex", "d_nwc",
-                        "fcff", "discount_factor", "pv_fcff")])
+                        "sbc", "fcff", "discount_factor", "pv_fcff")])
 
     shift = implied_growth_shift(p, price)
     waccs = [round(p.wacc + d, 4) for d in (-0.01, -0.005, 0, 0.005, 0.01)]
@@ -77,8 +124,11 @@ def run(ticker):
          f"| Equity value (USD m) | {fmt(v['equity'])} |",
          f"| **Value per diluted share** | **${v['per_share']:,.2f}** |",
          f"| Price used | ${price:,.2f} ({rows['price']['source']}) |",
-         f"| Value / price | {v['per_share'] / price:.2f} |", "",
-         "## What the price assumes (reverse DCF)", ""]
+         f"| Value / price | {v['per_share'] / price:.2f} |", ""]
+    g_lines = gaps(p, raw, rows, price)
+    if g_lines:
+        L += ["## Data gaps and open choices", "", "| Item | Effect |", "|---|---|"] + g_lines + [""]
+    L += ["## What the price assumes (reverse DCF)", ""]
     if shift is None:
         L.append("No growth shift within +/-50 points matches the price.")
     else:
@@ -88,13 +138,13 @@ def run(ticker):
                  + ", ".join(f"{first_year + i}: {g:.1%}" for i, g in enumerate(implied))
                  + f" (base case: " + ", ".join(f"{g:.0%}" for g in p.growth) + ").")
     L += ["", "## Forecast (USD m)", "",
-          "| Year | Revenue | EBIT | NOPAT | D&A | Capex | ΔNWC | FCFF | PV |",
-          "|---|---|---|---|---|---|---|---|---|"]
+          "| Year | Revenue | EBIT | NOPAT | D&A | Capex | ΔNWC | SBC | FCFF | PV |",
+          "|---|---|---|---|---|---|---|---|---|---|"]
     for r in v["rows"]:
         L.append(f"| {first_year + r['year'] - 1} | " + " | ".join(
             fmt(r[k]) for k in ("revenue", "ebit", "nopat", "da", "capex", "d_nwc",
-                                "fcff", "pv_fcff")) + " |")
-    L.append(f"| Terminal | | | | | | | FCFF {fmt(v['fcff_next'])} | "
+                                "sbc", "fcff", "pv_fcff")) + " |")
+    L.append(f"| Terminal | | | | | | | | FCFF {fmt(v['fcff_next'])} | "
              f"{fmt(v['pv_terminal'])} |")
     L += ["", "## Sensitivity 1: WACC (rows) x terminal growth (columns), $ per share", "",
           "| WACC | " + " | ".join(f"g {g:.1%}" for g in gs) + " |",
