@@ -72,7 +72,8 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 | `m03/` | DCF (FCFF at WACC) per the M03 spec: `dcf.py` (forecast, terminal value with WACC > g check, equity bridge, sensitivities, reverse DCF) and `run.py` (`python -m m03.run HUBB`) |
 | `inputs/m03/` | One labelled input CSV per company (`<TICKER>_dcf_inputs.csv`, written by `tools/make_m03_inputs.py` except HUBB); outputs go to `outputs/M03_Valuation_<TICKER>.md/.csv`, `outputs/M03_summary.md` (all 11, 23 Oct) and `outputs/M03_Thesis_and_Rejection_Log.md` |
 | `inputs/m12/` | Teammate's peer data v0.2 (33 active companies, 6 groups) and watchlist (GPN, GEV, KMB) |
-| `docs/model_guide.md` | Guide to every model (procedure, inputs and why each value), plus the models and data still missing (24 Oct) |
+| `docs/model_guide.md` | Guide to every model (procedure, inputs and why each value), plus the models and data still missing (23 Oct); superseded by the Claude Doc https://claude.ai/artifact/QWNmM3QzJd7zcNvtNMZ2sa |
+| `context/teammates_2026-10-23/` | Teammates' 23 Oct zips: research update (60-month betas, worst calendar years, cash, guidance for 33 companies) and completed M03 inputs plus an audit (22 Oct closes; engine unchanged) |
 | `tools/etf_review.py` | ETF look-through, crash replays and M02 stress paths (16 Oct analysis) |
 | `docs/` | `model_input_guide_draft.md` = notes for the user's input-guide doc (create the real doc only when they say "create doc"); outlines for the M05 explanation and M08 memos; `assumptions_and_figures.md` traces every input and Stage 1/2 figure |
 | `context/` | Handoff notes and imported Drive files |

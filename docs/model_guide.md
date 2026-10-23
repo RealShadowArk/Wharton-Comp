@@ -1,7 +1,14 @@
 # Model guide: every model, what it does, and why each value was chosen
 
-Version 1, 24 Oct 2026. Written for Pat to read through; keep it updated when
+Version 1, 23 Oct 2026. Written for Pat to read through; keep it updated when
 a model or an input changes.
+
+**Superseded the same day** by the Claude Doc "Laura Gao portfolio: model
+guide and data requests" (https://claude.ai/artifact/QWNmM3QzJd7zcNvtNMZ2sa).
+The doc adds the teammates' 23 Oct deliveries
+(`context/teammates_2026-10-23/`): A7 results at 22 Oct closes with measured
+betas, the five known M03 flaws, revised Parts B and C, and the messages to
+P2 and P3.
 
 **Labels used throughout** (the project's guardrail):
 
