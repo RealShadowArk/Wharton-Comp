@@ -9,7 +9,7 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 - The user watches usage limits. Keep work lean: no subagents, read only
   the files a task needs, and fetch Drive files one at a time on demand.
 - Don't delete files without asking.
-- Tests: `python -m pytest -q` (94 tests, pure standard library plus pytest).
+- Tests: `python -m pytest -q` (104 tests, pure standard library plus pytest).
 
 ## Key dates
 
@@ -69,6 +69,8 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 | `tests/` | pytest suite for m05 and m08 |
 | `tools/make_hand_check.py` | Builds `handcheck/M05_hand_check.xlsx` |
 | `m12/` | M12 score (`score.py`) and preview run (`python -m m12.run`); rules R1/R3/R4/R8 are switches in `RULES`, all pending Pat's sign-off |
+| `m03/` | DCF (FCFF at WACC) per the M03 spec: `dcf.py` (forecast, terminal value with WACC > g check, equity bridge, sensitivities, reverse DCF) and `run.py` (`python -m m03.run HUBB`) |
+| `inputs/m03/` | One labelled input CSV per company (`<TICKER>_dcf_inputs.csv`); outputs go to `outputs/M03_Valuation_<TICKER>.md/.csv` |
 | `inputs/m12/` | Teammate's peer data v0.2 (33 active companies, 6 groups) and watchlist (GPN, GEV, KMB) |
 | `docs/` | `model_input_guide_draft.md` = notes for the user's input-guide doc (create the real doc only when they say "create doc"); outlines for the M05 explanation and M08 memos; `assumptions_and_figures.md` traces every input and Stage 1/2 figure |
 | `context/` | Handoff notes and imported Drive files |
