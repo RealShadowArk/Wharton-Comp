@@ -75,6 +75,7 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 | `docs/` | `model_input_guide_draft.md` = notes for the user's input-guide doc (create the real doc only when they say "create doc"); outlines for the M05 explanation and M08 memos; `assumptions_and_figures.md` traces every input and Stage 1/2 figure |
 | `context/` | Handoff notes and imported Drive files |
 | `handoff/news_monitor_2026-10-15/` | Handoff for a third person: thesis cards for the 11 shortlisted stocks, plus a daily news/signal log (RED/AMBER/GREEN) to 6 Nov |
+| `handoff/m03_dcf_kit/` + `handoff/Wharton_M03_DCF_kit_2026-10-24.zip` | Standalone DCF kit for a teammate (code, tests, template, 11 valuations); rebuild the zip after changing m03 |
 | `handoff/teammate_2026-10-08/` | Onboarding for a new teammate: briefing, his job (industry research + M12 peer data for payments, pharma, electrical equipment, household products; due 11/14/15 Oct), AI catch-up prompt, research template, peer-data CSV header |
 
 ## Context files
