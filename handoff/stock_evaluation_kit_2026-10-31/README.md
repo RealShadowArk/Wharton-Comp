@@ -43,8 +43,9 @@ blank (MISSING), never guessed.
    - `total_debt_fy0` includes finance leases, not operating leases.
    - `eps_cont_*`: only if the company reports continuing-operations EPS.
    - `capex_software_fy0`: only for a group named `Payments`.
-   - `accounting_standard`: US GAAP or IFRS (Pat decides how IFRS companies
-     are ranked; mark them).
+   - `accounting_standard`: US GAAP or IFRS. Foreign companies are ranked
+     with their US peers (Pat, 31 Oct); this column flags where the
+     accounting differs.
 3. Run:
 
    ```
@@ -158,7 +159,9 @@ Past returns describe risk; they do not predict returns.
 2. DCF value above the price at both beta 1.0 and the measured beta, with
    stock-based pay counted, and the price assuming less growth than the
    evidence supports.
-3. The base-case upside at least as large as the bear-case downside.
+3. Upside-to-downside ratio = base-case upside / bear-case downside (both
+   in % of today's price). Rank candidates by it; 1.0 or more passes, below
+   1.0 needs a written reason why the bear case is unlikely.
 4. No red flag (Piotroski 4 or more, Beneish -1.78 or lower), or a written
    explanation.
 5. The dip has a temporary cause, with evidence.

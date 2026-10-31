@@ -14,7 +14,7 @@ Version 1, 15 Oct 2026. This is updated whenever a rule changes.
 | # | Rule | Parameter | Type | Why |
 |---|---|---|---|---|
 | 0.1 | Only stocks priced at **$5 or more** on a WInS exchange, ETFs on WInS, and Treasury bonds | $5 | GUIDE (Week 1 email) | Competition rule; applies to both contributions and the long-term plan |
-| 0.2 | Individual stocks may be **US or international** (changed 23 Oct). US 10-K filers go through M12; foreign companies (ADRs preferred, or local listings tradeable in WInS) skip the M12 ranking but need a written reason why this company and not its US peers, plus their currency risk and VXUS overlap | Any WInS exchange, $5 or local equivalent | JUDGMENT (Pat, 23 Oct) | Widens the search for an edge. M12 needs comparable US GAAP accounts, so foreign stocks use steps 3-8 instead. |
+| 0.2 | Individual stocks may be **US or international** (changed 23 Oct). All go through M12: foreign companies (ADRs preferred, or local listings tradeable in WInS) are ranked with their US peers, flagged as IFRS reporters where relevant (Pat, 31 Oct), and also need their currency risk and VXUS overlap checked | Any WInS exchange, $5 or local equivalent | JUDGMENT (Pat, 23 Oct) | Widens the search for an edge. Ranking them with US peers keeps one comparison; the IFRS flag shows where accounting differences may move a ratio. |
 | 0.3 | No banks, insurers or REITs in M12 peer groups | n/a | GUIDE (M12 guide, step 2) | Their accounts make these ratios meaningless. Payment processors are allowed because they earn fees, not loan income. |
 
 ## Step 1: Where to look (industries)
