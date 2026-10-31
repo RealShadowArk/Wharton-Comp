@@ -76,6 +76,7 @@ five roles (P1-P5) solo. Full background: `context/handoff_2026-09-28.md`.
 | `context/teammates_2026-10-23/` | Teammates' 23 Oct zips: research update (60-month betas, worst calendar years, cash, guidance for 33 companies) and completed M03 inputs plus an audit (22 Oct closes; engine unchanged) |
 | `docs/stock_longlist_international_midcap.md` | 23 Oct long-list beyond PayPal: international ADRs and mid-caps (Novo, Smith & Nephew, Philips, PagSeguro/StoneCo/dLocal; Fiserv and Diageo parked), with the rule 7.2 sizing arithmetic |
 | Claude Doc https://claude.ai/artifact/8AHqV4n5y7zWj8zsyUXGmi | 31 Oct team stock research: catch-up, assignments (4 teammates x 2 industries x top 3), industry scorecard and company one-pager templates, AI prompt; research due Mon 2 Nov 9pm ET, freeze 6 Nov |
+| `handoff/stock_evaluation_kit_2026-10-31/` + `handoff/Wharton_stock_evaluation_kit_2026-10-31.zip` | Teammate kit: m03 + m12 code, 28 tests (`python -m unittest discover -s tests`), DCF and M12 templates, red-flag and risk formulas; `python -m m12.run <file.csv>` scores any peer file. Rebuild the zip after changing m03 or m12 |
 | `tools/etf_review.py` | ETF look-through, crash replays and M02 stress paths (16 Oct analysis) |
 | `docs/` | `model_input_guide_draft.md` = notes for the user's input-guide doc (create the real doc only when they say "create doc"); outlines for the M05 explanation and M08 memos; `assumptions_and_figures.md` traces every input and Stage 1/2 figure |
 | `context/` | Handoff notes and imported Drive files |
