@@ -1,0 +1,127 @@
+peer_group,ticker,company,in_wins_at_5_plus,domicile,listing_exchange,reporting_currency,accounting_standard,fiscal_year,fy_end_date,revenue_fy0,revenue_fy3,operating_income_fy0,pretax_income_fy0,total_assets_fy0,total_assets_fy1,total_debt_fy0,current_assets_fy0,current_liabilities_fy0,inventory_fy0,total_equity_fy0,eps_diluted_fy0,eps_diluted_fy3,eps_cont_fy0,eps_cont_fy3,earnings_common_fy0,cfo_fy0,capex_fy0,capex_software_fy0,shares_outstanding_m,price,price_date,market_cap_cutoff_proxy_m,source_url,notes
+Payments,V,VISA INC.,Y,United States (Delaware),NYSE,USD,US GAAP,2026,2026-09-30,45903,32653,30437,28093,94360,99627,22071,30486,31588,,35604,12.32,8.28,,,23504,23728,1671,0,1860,413.59,2026-10-30,769277.3999999999,"https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm
+
+FY2026 results announced 27 Oct 2026: https://investor.visa.com/news/news-details/2026/Visa-Fiscal-Fourth-Quarter-and-Full-Year-2026-Financial-Results/default.aspx","FY2026 replaces FY2025. The FY2025 10-K supplies domicile/accounting only; FY2026 annual figures were released 27 Oct 2026. Software entry 0 avoids double counting: FY2026 cash flow reports purchases of property, equipment and technology of 1,671; Note 1 in the FY2025 10-K identifies technology as purchased and internally developed software. FY2026 source: https://www.sec.gov/Archives/edgar/data/1403161/000140316126000126/q42026earningsrelease.htm . Statistics shares are the rounded total across share classes.
+
+Borrowing components (millions): ST —, current LT 2716, LT 19355. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/v/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero."
+Payments,MA,Mastercard Incorporated,Y,United States (Delaware),NYSE,USD,US GAAP,2025,2025-12-31,32791,22237,19401,18578,54157,48081,19000,23558,22762,,7737,16.52,10.22,,,14968,17648,489,726,871.18,638.01,2026-10-30,555821.5518,https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm,"Software 726 is a separate cash-flow outflow, additional to PPE capex 489 (10-K p73). Standardized operating income 19,401 differs from reported 18,897; use the requested StockAnalysis annual standardized basis consistently.
+
+Borrowing components (millions): ST —, current LT 749, LT 18251. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/ma/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero."
+Payments,PYPL,"PayPal Holdings, Inc.",Y,United States (Delaware),Nasdaq,USD,US GAAP,2025,2025-12-31,33172,27518,6203,6292,80173,78725,11583,59759,46443,,20256,5.41,2.09,,,5233,6416,852,0,830.66,57.01,2026-10-30,47355.9266,https://www.sec.gov/Archives/edgar/data/1633917/000163391726000024/pypl-20251231.htm,"Software entry 0 avoids double counting: capitalized internal software is included in property and equipment/capex (10-K Note 1). Debt uses the requested three StockAnalysis borrowing lines; some reported finance lease amounts may sit outside that sum.
+
+Borrowing components (millions): ST 200, current LT 1396, LT 9987. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/pypl/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero."
+Payments,FISV,"Fiserv, Inc.",Y,United States (Wisconsin),Nasdaq,USD,US GAAP,2025,2025-12-31,21193,17737,5698,4301,80133,77176,27872,24654,23890,603,25792,6.34,3.91,,,3480,6062,1763,0,531.77,50.02,2026-10-30,26599.1354,https://www.sec.gov/Archives/edgar/data/798354/000079835426000009/fi-20251231.htm,"Software entry 0: annual-report capital expenditures of 1,763 already include capitalized software and other intangibles. Three borrowing lines sum to 27,872; prefilled 28,997 also included finance/other financing obligations. The requested borrowing-line basis is used, not Total Debt including operating leases.
+
+Borrowing components (millions): ST 762, current LT 193, LT 26917. Separate lease fields excluded.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/fisv/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero."
+Payments,FIS,"Fidelity National Information Services, Inc.",Y,United States (Georgia),NYSE,USD,US GAAP,2025,2025-12-31,10677,9720,2353,650,33488,33784,13082,4488,7616,,13899,0.73,-27.74,0.73,0.95,382,2816,154,835,515.71,38.55,2026-10-30,19880.6205,https://www.sec.gov/Archives/edgar/data/1136893/000113689326000013/fis-20251231.htm,"Continuing EPS .73/.95 retained from prefilled source basis; FY2022 total EPS includes discontinued operations. Software 835 is additional to PPE capex 154. StockAnalysis standardized operating income, pretax income and CFO differ from the prefilled report figures.
+
+Borrowing components (millions): ST 2729, current LT 1284, LT 9069. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/fis/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted."
+Payments,JKHY,"JACK HENRY & ASSOCIATES, INC.",Y,United States (Delaware),Nasdaq,USD,US GAAP,2026,2026-06-30,2544,2078,643.19,652.79,3146,3044,40,649.1,556.24,,2052,6.98,5.02,,,502.78,761.96,67.1,188.351,70.11,161.34,2026-10-30,11311.5474,https://www.sec.gov/Archives/edgar/data/779152/000077915226000067/jkhy-20260630.htm,"Software 188.351 = purchased software 4.108 + developed software 184.243 (FY2026 cash-flow statement, USD millions). Add to PPE capex 67.1.
+
+Borrowing components (millions): ST —, current LT —, LT 40. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/jkhy/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero."
+Payments,ADYEN,Adyen,Y,Netherlands,Euronext Amsterdam,EUR,IFRS (EU),2025,2025-12-31,2376,1330,1121,1394,12257,11425,0,11690,6787,76.96,5285,33.61,18.17,,,1063,1030,123.66,2.132,31.57,826.9,2026-10-30,26105.233,https://investors.adyen.com/financials/2025,"Revenue 2,376 follows StockAnalysis standardized data; the issuer-defined non-IFRS net revenue is 2,364.191. This provider-versus-report definition difference is retained and flagged. Software capitalization 2.132 is a separate cash outflow (annual report p162). No borrowings appear in the full annual balance sheet; lease liabilities and merchant funds excluded, so borrowing debt = 0. Report text verified through issuer-report mirror: https://financialfilings.com/filings/adyen-nv/annual-report/2026/32906008/
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/quote/ams/ADYEN/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero."
+Payments,STNE,StoneCo,Y,Cayman Islands,Nasdaq,BRL,IFRS,2025,2025-12-31,13400,9016,6517,2790,62297,54813,17412.95,56447,41204,,10995,8.48,-1.67,8.63,,2320,676.57,119.86,,230.6,42.011975,2026-10-30,9687.961435,https://www.sec.gov/Archives/edgar/data/1745431/000207097926000170/stne-20251231.htm,"USD-only listing. User-approved conversion: USD7.75 close × 5.4209 BRL/USD = BRL42.011975. BCB PTAX midpoint for 30 Oct 2026, reproduced at https://fincast.info/pairs/usd-brl/archive . This is a reference-rate conversion, not simultaneous market FX. Software-only cash capex remains unverified. Note 11.3 reports accrual additions: software BRL164.703m and software in progress BRL312.159m (BRL476.862m combined). These are not a cash-flow split. Note 22.2.4 reconciles total intangible cash outlay: 498.136 - 0.001 + 5.015 - 3.739 - 16.418 = BRL482.993m. That total is not software-only; the payment adjustments are not allocated by intangible class. AC9 stays blank and StoneCo stays unscored. Continuing-operations diluted EPS FY2025 is BRL8.63 per share, filled in X9 from Note 16.3. Total diluted EPS remains BRL8.48 in V9. No FY2022 continuing EPS recast onto the FY2025 disposal basis was verified, so Y9 remains blank. Do not calculate comparable continuing-EPS growth by mixing X9 with total EPS in W9.
+
+Borrowing components (millions): ST 434.95, current LT 8182, LT 8796. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/stne/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Gap review 31 Oct 2026: Form 20-F FY2025, Notes 11.3 and 22.2.4. No software-only cash allocation verified."
+Payments,PAGS,PagSeguro Digital,Y,Cayman Islands,NYSE,BRL,IFRS,2025,2025-12-31,19743,15159,7412,2549,74410,72901,2561,64933,47783,0,14640,7.11,4.57,,,2118,7562,1040,1236.82,275.65,43.041945999999996,2026-10-30,11864.512414899998,https://www.sec.gov/Archives/edgar/data/1712807/000155485526001229/pags-20251231.htm,"USD-only listing. User-approved conversion: USD7.94 close × 5.4209 BRL/USD = BRL43.041946. BCB PTAX midpoint, 30 Oct 2026: https://fincast.info/pairs/usd-brl/archive . Software 1,236.820 from cash-flow purchases/development of intangibles; the annual report explicitly identifies third-party software and internal software/technology development (cash-flow discussion).
+
+Borrowing components (millions): ST 2561, current LT —, LT —. Separate lease fields excluded.
+
+Inventory FY2025 is verified nil. The issuer balance sheet explicitly shows a dash for Inventories at 31 Dec 2025, versus BRL1.642m at 31 Dec 2024. Entered 0 in T10, not an estimate. Source: FY2025 consolidated balance sheet, p. F-6.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/pags/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero."
+Payments,DLO,dLocal,Y,Cayman Islands,Nasdaq,USD,IFRS,2025,2025-12-31,1094,418.93,219.92,228.65,1541,1171,86.9,1421,965.91,,569.26,0.65,0.35,,,196.8,415.46,2.28,,288.42,12.96,2026-10-30,3737.9232000000006,https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm,"Software-only cash capex remains unverified. FY2025 cash-flow statement reports USD34.503m of total intangible additions. Note 20 reports accrual additions of USD34.265m internally generated software and USD0.239m acquired intangibles (USD34.504m total). Acquired intangibles include more than one asset class. The USD0.001m difference and cash allocation by class are not reconciled in the reviewed disclosure. Do not enter either USD34.265m or USD34.503m as verified software-only cash spending. AC11 stays blank and dLocal stays unscored. Borrowing liabilities exclude leases.
+
+Borrowing components (millions): ST 86.9, current LT —, LT —. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/dlo/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Gap review 31 Oct 2026: Form 20-F FY2025, cash-flow statement and Note 20.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero."

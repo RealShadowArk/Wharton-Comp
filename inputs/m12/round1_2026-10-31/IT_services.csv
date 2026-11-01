@@ -1,0 +1,126 @@
+peer_group,ticker,company,in_wins_at_5_plus,domicile,listing_exchange,reporting_currency,accounting_standard,fiscal_year,fy_end_date,revenue_fy0,revenue_fy3,operating_income_fy0,pretax_income_fy0,total_assets_fy0,total_assets_fy1,total_debt_fy0,current_assets_fy0,current_liabilities_fy0,inventory_fy0,total_equity_fy0,eps_diluted_fy0,eps_diluted_fy3,eps_cont_fy0,eps_cont_fy3,earnings_common_fy0,cfo_fy0,capex_fy0,capex_software_fy0,shares_outstanding_m,price,price_date,market_cap_cutoff_proxy_m,source_url,notes
+IT services,ACN,Accenture,Y,Ireland,NYSE,USD,US GAAP,2026,2026-08-31,74183,64112,12180,11372,73598,65395,10043.71,31831,22304,,31567,13.56,10.77,,,8367,12363,742.75,,590.74,258.24,2026-10-30,152552.6976,https://www.sec.gov/Archives/edgar/data/1467373/000146737326000049/acn-20260831.htm,"Borrowing components (millions): ST 99.71, current LT —, LT 9944. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/acn/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+IT services,CTSH,Cognizant,Y,United States (Delaware),Nasdaq,USD,US GAAP,2025,2025-12-31,21108,19428,3327,3488,20692,19966,576,7818,3659,,15015,4.56,4.41,,,2230,2883,288,,447.03,65.11,2026-10-30,29106.1233,https://www.sec.gov/Archives/edgar/data/1058290/000105829026000008/ctsh-20251231.htm,"Borrowing components (millions): ST —, current LT 33, LT 543. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/ctsh/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+IT services,INFY,Infosys (ADR),Y,India,NSE: INFY (valuation); NYSE: INFY ADR (WInS),INR,Ind AS,2026,2026-03-31,1786500,1467670,360890,399950,1559670,1489030,0,1034890,523220,,928520,71.46,57.54,,,294400,339860,27270,,4050,1185,2026-10-30,4799250.0,https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/2025-26/consolidated.pdf,"User-approved exception to StockAnalysis company inputs: consolidated INR Ind AS annual reports FY2026 and FY2023. Crore ×10 = INR millions. Operating income 360,890 derived as pretax 399,950 − other income 43,220 + finance cost 4,160; includes labour-code exceptional charge. Net cash capex 27,270 includes intangibles and sale proceeds per cash-flow caption. No borrowing line in audited balance sheet; lease liabilities excluded. WInS check is the US ADR at USD12.55; research price/share count use NSE ordinary shares. FY2023: https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/2022-23/consolidated.pdf
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis price/shares: https://stockanalysis.com/quote/nse/INFY/history/ ; https://stockanalysis.com/quote/nse/INFY/statistics/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+IT services,CAP,Capgemini,Y,France,Euronext Paris,EUR,IFRS (EU),2025,2025-12-31,22465,21995,2504,2141,29060,25660,8338,9496,7855,,11648,9.13,8.79,,,1601,2482,287,,169.74,127.65,2026-10-30,21667.311,https://investors.capgemini.com/en/file/30242?download=1,"Income figures captured directly from the StockAnalysis annual table in the browser when web extraction failed. All inputs use EUR and the Paris home listing.
+
+Borrowing components (millions): ST —, current LT 887, LT 7451. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/quote/epa/CAP/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+IT services,EPAM,EPAM Systems,Y,United States (Delaware),NYSE,USD,US GAAP,2025,2025-12-31,5457,4825,582.67,505.62,4902,4750,25.03,2534,976.94,,3677,6.72,7.09,,,377.68,654.93,42.24,,51.59,140.51,2026-10-30,7248.9109,https://www.sec.gov/Archives/edgar/data/1352010/000135201026000015/epam-20251231.htm,"Borrowing components (millions): ST —, current LT —, LT 25.03. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/epam/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+IT services,GLOB,Globant,Y,Luxembourg,NYSE,USD,IFRS,2025,2025-12-31,2455,1780,245.02,139.15,3318,3149,416.84000000000003,953.76,580.29,,2094,2.29,3.47,,,102.92,301.18,19.22,,43.18,46.72,2026-10-30,2017.3696,https://www.sec.gov/Archives/edgar/data/1557860/000162828026012910/glob-20251231.htm,"Borrowing components (millions): ST 50, current LT 19.67, LT 347.17. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/glob/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+IT services,GIB,CGI,Y,Canada (Quebec),TSX: GIB.A (valuation); NYSE: GIB (WInS),CAD,IFRS,2025,2025-09-30,15913,12867,2611,2242,19522,16685,3777.29,5053,5102,,10282,7.35,6.04,,,1658,2234,116.61,,204.46,112.45,2026-10-30,22991.527000000002,"https://www.cgi.com/sites/default/files/2025-12/cgi-2025-annual-information-form.pdf
+
+FY2025 consolidated financial statements: https://www.cgi.com/sites/default/files/2025-12/cgi-q4-2025-fs-en.pdf","Original workbook identity GIB retained; valuation uses TSX ordinary shares GIB.A in CAD, rather than US GIB price USD80.56. Annual Information Form supplies domicile/accounting basis.
+
+Borrowing components (millions): ST —, current LT 848.29, LT 2929. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/quote/tsx/GIB.A/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Inventory review: CGI calls revenue recognized ahead of billing work in progress (FY2025 statements, p. 13). This is unbilled revenue; do not substitute that amount for inventory. No separately verified inventory balance was found.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+IT services,IT,Gartner,Y,United States (Delaware),NYSE,USD,US GAAP,2025,2025-12-31,6497,5476,1179,968.12,8085,8535,2982,4066,4072,,319.91,9.65,9.96,,,729.23,1290,115.14,,63.15,228.79,2026-10-30,14448.0885,https://www.sec.gov/Archives/edgar/data/749251/000074925126000112/it-20251231.htm,"Borrowing components (millions): ST —, current LT 5, LT 2977. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/it/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+IT services,TCS,Tata Consultancy Services,Y,India,NSE: TCS (valuation); BSE: 532540 (WInS),INR,Ind AS,2026,2026-03-31,2670210,2254580,668570,654870,1823720,1596290,1260,1357050,609140,290,1072400,136.01,115.19,,,492100,520940,42240,,3620,2502.6,2026-10-30,9059412.0,https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2025-26/ar/annual-report-2025-2026.pdf,"FY2026 consolidated figures follow Ind AS, not US GAAP or IFRS. Keep this accounting difference flagged. Research uses NSE TCS INR2,502.60; WInS confirms the BSE listing 532540, INR2,496.00. Exchange prices differ and are not mixed.
+
+Borrowing components (millions): ST —, current LT —, LT 1260. Separate lease fields excluded.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/quote/nse/TCS/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."

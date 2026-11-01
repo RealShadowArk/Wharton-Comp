@@ -1,0 +1,139 @@
+peer_group,ticker,company,in_wins_at_5_plus,domicile,listing_exchange,reporting_currency,accounting_standard,fiscal_year,fy_end_date,revenue_fy0,revenue_fy3,operating_income_fy0,pretax_income_fy0,total_assets_fy0,total_assets_fy1,total_debt_fy0,current_assets_fy0,current_liabilities_fy0,inventory_fy0,total_equity_fy0,eps_diluted_fy0,eps_diluted_fy3,eps_cont_fy0,eps_cont_fy3,earnings_common_fy0,cfo_fy0,capex_fy0,capex_software_fy0,shares_outstanding_m,price,price_date,market_cap_cutoff_proxy_m,source_url,notes
+Exchanges and data,SPGI,S&P Global,Y,United States (New York),NYSE,USD,US GAAP,2025,2025-12-31,15336,11181,6465,6227,61200,60221,13088,6296,7637,,31127,14.66,10.2,,,4471,5651,195,,289.9,466.55,2026-10-30,135252.845,https://www.sec.gov/Archives/edgar/data/64040/000006404026000013/spgi-20251231.htm,"Borrowing components (millions): ST 715, current LT 3, LT 12370. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/spgi/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+Exchanges and data,MCO,Moody's,Y,United States (Delaware),NYSE,USD,US GAAP,2025,2025-12-31,7718,5468,3468,3130,15830,15505,7078,5186,2981,,4054,13.67,7.44,,,2459,2901,326,,172.42,493.91,2026-10-30,85159.9622,https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm,"Borrowing components (millions): ST —, current LT —, LT 7078. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/mco/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+Exchanges and data,MSCI,MSCI,Y,United States (Delaware),NYSE,USD,US GAAP,2025,2025-12-31,3134,2249,1710,1494,5702,5445,6202,1645,1830,,-2655,15.69,10.72,,,1202,1588,39.32,,71.5,623.38,2026-10-30,44571.67,https://www.sec.gov/Archives/edgar/data/1408198/000140819826000011/msci-20251231.htm,"Negative common equity is retained. The balance sheet labels it Shareholders’ Equity rather than Total Common Equity.
+
+Borrowing components (millions): ST —, current LT —, LT 6202. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/msci/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+Exchanges and data,ICE,Intercontinental Exchange,Y,United States (Delaware),NYSE,USD,US GAAP,2025,2025-12-31,9931,7292,4984,4346,136887,139428,19644,85778,84116,,28915,5.77,2.58,,,3315,4662,373,,558.86,168.85,2026-10-30,94363.511,https://www.sec.gov/Archives/edgar/data/1571949/000157194926000004/ice-20251231.htm,"Borrowing components (millions): ST 1035, current LT —, LT 18609. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/ice/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+Exchanges and data,CME,CME Group,Y,United States (Delaware),Nasdaq,USD,US GAAP,2025,2025-12-31,6507,5019,4259,5331,198424,137447,3422,165359,160297,,28728,11.16,7.4,,,4021,4277,83.5,,357.93,303.14,2026-10-30,108502.9002,https://www.sec.gov/Archives/edgar/data/1156375/000115637526000009/cme-20251231.htm,"Borrowing components (millions): ST —, current LT —, LT 3422. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/cme/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+Exchanges and data,NDAQ,Nasdaq Inc.,Y,United States (Delaware),Nasdaq,USD,US GAAP,2025,2025-12-31,5249,3582,2485,2145,31053,30395,9004,8003,7961,,12227,3.09,2.26,,,1788,2255,266,,554.96,106.23,2026-10-30,58953.4008,https://www.sec.gov/Archives/edgar/data/1120193/000162828026007703/ndaq-20251231.htm,"Borrowing components (millions): ST 431, current LT —, LT 8573. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/ndaq/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+Exchanges and data,FDS,FactSet,Y,United States (Delaware),NYSE,USD,US GAAP,2026,2026-08-31,2476,2086,719.48,649.72,4140,4304,1370.03,651.89,1090,,2002,14.57,12.04,,,533.48,822.2,114.72,,35.25,329.57,2026-10-30,11617.3425,https://www.sec.gov/Archives/edgar/data/1013237/000162828026066391/fds-20260831.htm,"Borrowing components (millions): ST —, current LT 499.44, LT 870.59. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/fds/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+Exchanges and data,VRSK,Verisk Analytics,Y,United States (Delaware),Nasdaq,USD,US GAAP,2025,2025-12-31,3073,2497,1378,1171,6196,4265,4714,2765,2300,,309,6.48,6,6.48,6.55,908.3,1436,244.1,,130.16,196.3,2026-10-30,25550.408,"https://www.sec.gov/Archives/edgar/data/1442145/000143774926004452/vrsk20251231_10k.htm
+
+FY2022 continuing EPS: https://www.sec.gov/Archives/edgar/data/1442145/000143774925005160/vrsk20241231_10k.htm","Borrowing components (millions): ST 1500, current LT —, LT 3214. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/vrsk/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Continuing-operations diluted EPS filled: FY2025 USD6.48 (FY2025 10-K, consolidated statement of operations) and FY2022 USD6.55 (FY2024 10-K, p. 54, FY2022 restated comparative). These differ from total EPS where discontinued operations are present. Use X9/Y9 for continuing-EPS comparisons.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+Exchanges and data,LSEG,London Stock Exchange Group,Y,United Kingdom (England and Wales),London Stock Exchange,GBP,IFRS (UK),2025,2025-12-31,9346,7743,2301,1969,796704,732819,11116,763570,763515,,19951,2.37,2.33,,,1249,3622,124,,479.26,94.98,2026-10-30,45520.1148,https://www.lseg.com/content/dam/lseg/en_us/documents/investor-relations/annual-reports/lseg-annual-report-2025.pdf,"Home-market close 9,498 GBX ÷100 = GBP94.98. No FX used. Financial figures and market-cap proxy are GBP millions.
+
+Borrowing components (millions): ST 1841, current LT 1374, LT 7901. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/quote/lon/LSEG/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
+Exchanges and data,DB1,Deutsche Boerse,Y,Germany,Xetra,EUR,IFRS (EU),2025,2025-12-31,7380,5225,2969,2857,297156,222112,7614,274582,270651,,11312,10.87,8.12,,,1995,2810,55,,180.29,320.5,2026-10-30,57782.945,https://www.deutsche-boerse.com/resource/blob/4728238/9dc14bbacfaf2b3ed2f8bd74d38c9128/data/DBG-Consolidated-financial-statements-and-notes-AR-2025.pdf,"Valuation uses the Xetra home-market close; WInS lookup uses Frankfurt DB1. Both quoted EUR320.50.
+
+Borrowing components (millions): ST 1029, current LT 1499, LT 5086. Separate lease fields excluded.
+
+Inventory remains blank after issuer-disclosure review: no separately quantified amount or explicit nil balance was verified. An omitted line is not treated as zero.
+
+Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
+
+StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/quote/etr/DB1/
+
+WInS quote lookup verified 31 Oct 2026; no order submitted.
+
+Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero.
+
+Software field AC is intentionally unused: the template requests software capex only on Payments."
