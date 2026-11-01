@@ -1,9 +1,9 @@
 peer_group,ticker,variants_on_shortlist,variants,worst_rank
 Payments,V,0,32,7
-Payments,MA,0,32,6
-Payments,PYPL,1,32,4
+Payments,MA,0,32,7
+Payments,PYPL,3,32,4
 Payments,FISV,0,32,7
 Payments,FIS,0,32,8
-Payments,JKHY,0,32,6
-Payments,ADYEN,32,32,3
-Payments,PAGS,32,32,2
+Payments,JKHY,0,32,5
+Payments,ADYEN,29,32,3
+Payments,DLO,32,32,2

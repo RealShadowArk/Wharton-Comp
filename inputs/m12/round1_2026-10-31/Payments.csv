@@ -97,20 +97,7 @@ StockAnalysis annual statements, Statistics and History: https://stockanalysis.c
 WInS quote lookup verified 31 Oct 2026; no order submitted.
 
 Gap review 31 Oct 2026: Form 20-F FY2025, Notes 11.3 and 22.2.4. No software-only cash allocation verified."
-Payments,PAGS,PagSeguro Digital,Y,Cayman Islands,NYSE,BRL,IFRS,2025,2025-12-31,19743,15159,7412,2549,74410,72901,2561,64933,47783,0,14640,7.11,4.57,,,2118,7562,1040,1236.82,275.65,43.041945999999996,2026-10-30,11864.512414899998,https://www.sec.gov/Archives/edgar/data/1712807/000155485526001229/pags-20251231.htm,"USD-only listing. User-approved conversion: USD7.94 close × 5.4209 BRL/USD = BRL43.041946. BCB PTAX midpoint, 30 Oct 2026: https://fincast.info/pairs/usd-brl/archive . Software 1,236.820 from cash-flow purchases/development of intangibles; the annual report explicitly identifies third-party software and internal software/technology development (cash-flow discussion).
-
-Borrowing components (millions): ST 2561, current LT —, LT —. Separate lease fields excluded.
-
-Inventory FY2025 is verified nil. The issuer balance sheet explicitly shows a dash for Inventories at 31 Dec 2025, versus BRL1.642m at 31 Dec 2024. Entered 0 in T10, not an estimate. Source: FY2025 consolidated balance sheet, p. F-6.
-
-Retrieved 31 Oct 2026. Annual financials; Statistics shares are current, in millions, rounded as published. Market cap is a price × current-shares proxy, not an exact historical share count.
-
-StockAnalysis annual statements, Statistics and History: https://stockanalysis.com/stocks/pags/
-
-WInS quote lookup verified 31 Oct 2026; no order submitted.
-
-Conditional EPS fields X/Y: no separate applicable continuing-operations EPS pair was verified in the reviewed disclosure. These optional fields remain blank under the template instruction. Reported diluted EPS is already in V/W; blanks must not be interpreted as zero."
-Payments,DLO,dLocal,Y,Cayman Islands,Nasdaq,USD,IFRS,2025,2025-12-31,1094,418.93,219.92,228.65,1541,1171,86.9,1421,965.91,,569.26,0.65,0.35,,,196.8,415.46,2.28,,288.42,12.96,2026-10-30,3737.9232000000006,https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm,"Software-only cash capex remains unverified. FY2025 cash-flow statement reports USD34.503m of total intangible additions. Note 20 reports accrual additions of USD34.265m internally generated software and USD0.239m acquired intangibles (USD34.504m total). Acquired intangibles include more than one asset class. The USD0.001m difference and cash allocation by class are not reconciled in the reviewed disclosure. Do not enter either USD34.265m or USD34.503m as verified software-only cash spending. AC11 stays blank and dLocal stays unscored. Borrowing liabilities exclude leases.
+Payments,DLO,dLocal,Y,Cayman Islands,Nasdaq,USD,IFRS,2025,2025-12-31,1094,418.93,219.92,228.65,1541,1171,86.9,1421,965.91,,569.26,0.65,0.35,,,196.8,415.46,2.28,34.503,288.42,12.96,2026-10-30,3737.9232000000006,https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm,"capex_software_fy0 = reported intangible cash additions USD34.503m (FY2025 cash-flow statement); Note 20: 34.265 of 34.504 accrual additions are internally generated software. Used as the R4 software figure by Pat's decision, 1 Nov 2026. | Software-only cash capex remains unverified. FY2025 cash-flow statement reports USD34.503m of total intangible additions. Note 20 reports accrual additions of USD34.265m internally generated software and USD0.239m acquired intangibles (USD34.504m total). Acquired intangibles include more than one asset class. The USD0.001m difference and cash allocation by class are not reconciled in the reviewed disclosure. Do not enter either USD34.265m or USD34.503m as verified software-only cash spending. AC11 stays blank and dLocal stays unscored. Borrowing liabilities exclude leases.
 
 Borrowing components (millions): ST 86.9, current LT —, LT —. Separate lease fields excluded.
 

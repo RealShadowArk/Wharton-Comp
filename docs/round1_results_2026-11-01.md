@@ -45,8 +45,24 @@ StoneCo cannot be scored in any test: its FY2022 diluted EPS was negative
 - Inventory blanks do not affect M12 (inventory is used only by the unscored
   quick ratio).
 
-## Decisions for Pat
+## Decisions (Pat, 1 Nov 2026)
 
-1. PagSeguro: keep in the payments ranking, or exclude as bank-like (rule 0.3)?
-2. dLocal: accept reported intangible cash additions as its capitalized software?
-3. IT services scores 45.8, below the 50 preference: continue to round 2?
+1. PagSeguro is excluded from the payments ranking: PagBank deposits make its
+   cash-flow and debt measures non-comparable (rule 0.3, bank-like accounts).
+2. dLocal's capitalized software = its reported intangible cash additions
+   (USD 34.503m; Note 20: 99% internally generated software), as a labelled R4
+   decision.
+3. IT services continues to round 2 despite its 45.8 industry score; the weak
+   proxy is stated in the one-pagers.
+
+Official payments run after these decisions: dLocal 73.2 (32/32), Adyen 62.5
+(29/32), PayPal 58.9 (3/32), Jack Henry 55.4, Fiserv 50.0, Mastercard 44.6,
+Visa 41.1, FIS 14.3; StoneCo unscored.
+
+## Round 2: the nine
+
+| Industry | Companies |
+|---|---|
+| Payments | dLocal, Adyen, PayPal |
+| Exchanges and data | CME, ICE, Moody's |
+| IT services | Infosys, TCS, Cognizant |
