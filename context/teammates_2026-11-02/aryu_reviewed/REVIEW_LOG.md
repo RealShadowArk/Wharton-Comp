@@ -2,6 +2,7 @@
 
 The original zip, `../Aryu_stock_research_power_medtech_2026-11-02.zip`, is unchanged. This folder contains:
 
+- `(fact-checked, clean)`: the same two documents with all changes accepted (Pat, 2 Nov);
 - the two documents with every fix as a **Word tracked change**, author "Fact-check for Pat (Claude)". Accept or reject each one in Word or Google Docs; rejecting all gives the original back.
 - the DCF input files (`inputs/m03/`) and the reports re-run with the kit engine (`outputs/`).
 
@@ -70,7 +71,7 @@ Boston Scientific is **not** listed as a TAVR rival: the only source is undated,
    - Shay and Walker facts;
    - the PJM wording in the edge;
    - rate 4.98%.
-2. **OPC's 30 Oct close:** 14,900 agorot (₪149.00, from Pat) conflicts with ₪94.00 on 26 Oct and a 52-week high of ₪136.90 ([Investing.com](https://uk.investing.com/equities/opc-energy)). One of the two figures is wrong; check before the market sum-of-the-parts is used.
+2. **OPC's 30 Oct close:** 9,393 agorot = ₪93.93 (RESEARCH: TASE, read by Pat 2 Nov; Pat first read 14,900 in error). 31% below the 52-week high of ₪136.90.
 3. **Not part of fixes 2-5, so not done:**
    - Power M12 handling: accept the no-G2 diagnostic, or rank by judgment;
    - CEG's short-history sizing (no losing calendar year).
