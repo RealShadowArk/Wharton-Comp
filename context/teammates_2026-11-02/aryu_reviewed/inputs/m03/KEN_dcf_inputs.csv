@@ -1,0 +1,27 @@
+field,value,unit,label,source,note
+ticker,KEN,,RESEARCH,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,Kenon Holdings
+valuation_date,2026-10-30,date,RESEARCH,Price date,
+price,64.11,USD,RESEARCH,"https://finance.yahoo.com/quote/KEN/history/ (Secondary: Yahoo Finance close, 30 Oct 2026)",Not a WInS price
+base_year,2025,,RESEARCH,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,
+base_revenue,871.929,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,
+growth,0.0800;0.0800;0.0700;0.0600;0.0500;0.0460;0.0420;0.0380;0.0340;0.0300,decimal,ASSUMPTION,Growth path: see note,"Assumption, below the 3-year revenue CAGR (15.0%, 2022-2025) because new plants come in steps. Most US growth (CPV) sits in equity-accounted plants outside revenue."
+ebit_margin,0.07151;0.07151;0.07151;0.07151;0.07151;0.07151;0.07151;0.07151;0.07151;0.07151,decimal,ASSUMPTION,Standard method: base-year operating margin held flat,Base-year operating income 62.348 / revenue 871.929 = 7.15%
+tax_rate,0.16,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,1 - net income 148.264 / pretax income 176.508
+da_pct,0.30148;0.30148;0.30148;0.30148;0.30148;0.30148;0.30148;0.30148;0.30148;0.30148,decimal,ASSUMPTION,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,"Calibrated to FY0 cash conversion: (CFO 283.793 + after-tax net interest 31.4 - NOPAT 52.4) / revenue. Net financing expenses 37.4 after tax, added back. Includes working capital and other non-cash items, so it is not reported D&A"
+capex_pct,0.13350;0.13350;0.13350;0.13350;0.13350;0.13350;0.13350;0.13350;0.13350;0.13350,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,"FY0 capex 116.406 / revenue 871.929, held flat"
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Working capital is inside the cash-flow calibration,Inside the da_pct calibration
+risk_free,0.04929,decimal,RESEARCH,"https://finance.yahoo.com/quote/%5ETNX/history/ (Secondary: CBOE 10-year Treasury yield index, close 30 Oct 2026; FRED DGS10 did not load)",
+beta,1.0,,ASSUMPTION,Standard method: market beta 1.0,Measured beta in the next row
+beta_measured,1.029,,RESEARCH,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",
+equity_premium,0.05,decimal,ASSUMPTION,Kit default,
+pre_tax_cost_of_debt,0.05429,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),
+equity_value_for_weights,3340.6,USD m,RESEARCH,Shares outstanding x 30 Oct 2026 close,52.108 m x 64.11
+debt_value_for_weights,3365.3,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,Book value of debt
+terminal_growth,0.03,decimal,ASSUMPTION,Kit default,
+return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
+debt,3365.3,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,"Loans 117.4 + 1,142.1 + debentures 509.6, plus non-controlling interests 1,596.2 at book value (OPC's other shareholders own part of the cash flows; book value understates their claim)"
+non_operating_assets,3211.3,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,"Cash 1,478.3 + other investments 107.3 + OPC's equity-accounted investees (CPV plants) at book value 1,625.7; book value may be far from market value"
+diluted_shares,52.108,m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,Shares outstanding on the 20-F cover (31 Dec 2025)
+years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of forecast year 1,30 Oct 2026 to 31 Dec 2026
+first_year_fraction,1.0,,ASSUMPTION,Method,"Debt and cash are at the base-year end, so all of forecast year 1 counts"
+sbc_pct,0.04964,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm,Stock-based pay 43.285 / revenue 871.929 (cash-flow statement); subtracted because da_pct is calibrated from operating cash flow

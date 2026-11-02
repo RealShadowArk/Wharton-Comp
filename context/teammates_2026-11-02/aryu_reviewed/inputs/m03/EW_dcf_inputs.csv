@@ -1,0 +1,27 @@
+field,value,unit,label,source,note
+ticker,EW,,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,Edwards Lifesciences
+valuation_date,2026-10-30,date,RESEARCH,Price date,
+price,92.01,USD,RESEARCH,"https://finance.yahoo.com/quote/EW/history/ (Secondary: Yahoo Finance close, 30 Oct 2026)",Not a WInS price
+base_year,2025,,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,
+base_revenue,6067.6,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,
+growth,0.1100;0.0900;0.0850;0.0800;0.0700;0.0620;0.0540;0.0460;0.0380;0.0300,decimal,ASSUMPTION,Growth path: see note,"Year 1 (2026) near the latest quarter (+13.6%: 1,741.0 vs 1,532.2, quarter ended 30 Jun 2026, 10-Q). 2026 guidance raised to 10% to 11% (Q2 2026 release). Years 2-5 near the long-term target of about 10% a year, slowing."
+ebit_margin,0.20835;0.20835;0.20835;0.20835;0.20835;0.20835;0.20835;0.20835;0.20835;0.20835,decimal,ASSUMPTION,Standard method: base-year operating margin held flat,Base-year operating income 1264.2 / revenue 6067.6 = 20.84%
+tax_rate,0.1704,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,1 - net income 1056.0 / pretax income 1272.9
+da_pct,0.09006;0.09006;0.09006;0.09006;0.09006;0.09006;0.09006;0.09006;0.09006;0.09006,decimal,ASSUMPTION,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,"Calibrated to FY0 cash conversion: (CFO 1595.2 + after-tax net interest 0.0 - NOPAT 1048.8) / revenue. Edwards earns more interest on its cash than it pays; net interest left at 0. Includes working capital and other non-cash items, so it is not reported D&A"
+capex_pct,0.04288;0.04288;0.04288;0.04288;0.04288;0.04288;0.04288;0.04288;0.04288;0.04288,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,"FY0 capex 260.2 / revenue 6067.6, held flat"
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Working capital is inside the cash-flow calibration,Inside the da_pct calibration
+risk_free,0.0498,decimal,RESEARCH,"https://fred.stlouisfed.org/series/DGS10 (FRED DGS10, 30 Oct 2026, read by Pat 2 Nov 2026)",Was 0.04929 (Yahoo ^TNX); one rate for all DCFs
+beta,1.0,,ASSUMPTION,Standard method: market beta 1.0,Measured beta in the next row
+beta_measured,0.845,,RESEARCH,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",
+equity_premium,0.05,decimal,ASSUMPTION,Kit default,
+pre_tax_cost_of_debt,0.0548,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),
+equity_value_for_weights,53034.6,USD m,RESEARCH,Shares outstanding x 30 Oct 2026 close,576.4 m x 92.01
+debt_value_for_weights,598.3,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,Book value of debt
+terminal_growth,0.03,decimal,ASSUMPTION,Kit default,
+return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
+debt,598.3,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,Long-term debt at 31 Dec 2025
+non_operating_assets,4504.9,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,"Cash 2,938.0 + short-term investments 1,288.3 + long-term investments 278.6 at 31 Dec 2025"
+diluted_shares,577.6,m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,"Diluted weighted shares, quarter ended 30 Jun 2026 (10-Q)"
+years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of forecast year 1,30 Oct 2026 to 31 Dec 2026
+first_year_fraction,1.0,,ASSUMPTION,Method,"Debt and cash are at the base-year end, so all of forecast year 1 counts"
+sbc_pct,0.02606,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,Stock-based pay 158.1 / revenue 6067.6 (cash-flow statement); subtracted because da_pct is calibrated from operating cash flow

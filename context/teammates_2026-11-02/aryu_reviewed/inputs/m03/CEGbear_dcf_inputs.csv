@@ -1,0 +1,27 @@
+field,value,unit,label,source,note
+ticker,CEG,,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"Constellation Energy (with Calpine, pro forma) (bear case)"
+valuation_date,2026-10-30,date,RESEARCH,Price date,
+price,262.38,USD,RESEARCH,"https://finance.yahoo.com/quote/CEG/history/ (Secondary: Yahoo Finance close, 30 Oct 2026)",Not a WInS price
+base_year,2025,,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"2025 pro forma: Calpine as if owned all year (8-K Exhibit 99.2, 20 Mar 2026)"
+base_revenue,36812,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,
+growth,-0.0500;0.0000;0.0200;0.0200;0.0200;0.0250;0.0250;0.0300;0.0300;0.0300,decimal,ASSUMPTION,Growth path: see note,"A bad decade: power prices fall as new gas and solar supply arrives and data-center demand grows slower than hoped; revenue drops 5% then grows 2%, margin falls from 15.5% to 12%."
+ebit_margin,0.12000;0.12000;0.12000;0.12000;0.12000;0.12000;0.12000;0.12000;0.12000;0.12000,decimal,ASSUMPTION,Bear case,"A bad decade: power prices fall as new gas and solar supply arrives and data-center demand grows slower than hoped; revenue drops 5% then grows 2%, margin falls from 15.5% to 12%."
+tax_rate,0.28,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,1 - net income 4027 / pretax income 5593
+da_pct,0.09706;0.09706;0.09706;0.09706;0.09706;0.09706;0.09706;0.09706;0.09706;0.09706,decimal,ASSUMPTION,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"Pro forma D&A 1,957 + CEG's nuclear-fuel amortization and accretion (2,601 cash-flow D&A - 985 income-statement D&A), because capex includes nuclear fuel = 9.71% of revenue"
+capex_pct,0.11132;0.11132;0.11132;0.11132;0.11132;0.11132;0.11132;0.11132;0.11132;0.11132,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"CEG capex 2,949 (10-K) + Calpine capex 1,149 (Calpine 2025 financial statements, 8-K 20 Mar 2026)"
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Assumption,0: no extra working capital per $1 of new revenue
+risk_free,0.0498,decimal,RESEARCH,"https://fred.stlouisfed.org/series/DGS10 (FRED DGS10, 30 Oct 2026, read by Pat 2 Nov 2026)",Was 0.04929 (Yahoo ^TNX); one rate for all DCFs
+beta,1.0,,ASSUMPTION,Standard method: market beta 1.0,Measured beta in the next row
+beta_measured,1.116,,RESEARCH,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",CEG has 57 months (listed Feb 2022)
+equity_premium,0.05,decimal,ASSUMPTION,Kit default,
+pre_tax_cost_of_debt,0.0548,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),
+equity_value_for_weights,92963.2,USD m,RESEARCH,Shares outstanding x 30 Oct 2026 close,354.307379 m x 262.38
+debt_value_for_weights,21543,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,Book value of debt
+terminal_growth,0.03,decimal,ASSUMPTION,Kit default,
+return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
+debt,21543,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"Pro forma debt at 31 Dec 2025: short-term borrowings 1,650 + current long-term debt 371 + long-term debt 19,522"
+non_operating_assets,6655,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"Pro forma cash 1,001 + assets held for sale 5,654 (plants CEG must sell). Decommissioning trust funds and the matching obligations are left out"
+diluted_shares,360.0,m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"Diluted weighted shares, quarter ended 30 Jun 2026 (10-Q)"
+years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of forecast year 1,30 Oct 2026 to 31 Dec 2026
+first_year_fraction,1.0,,ASSUMPTION,Method,"Debt and cash are at the base-year end, so all of forecast year 1 counts"
+sbc_pct,0,decimal,ASSUMPTION,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"0 because da_pct is reported D&A, so stock pay is already inside EBIT"

@@ -1,0 +1,27 @@
+field,value,unit,label,source,note
+ticker,RMD,,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,ResMed (bear case)
+valuation_date,2026-10-30,date,RESEARCH,Price date,
+price,229.94,USD,RESEARCH,"https://finance.yahoo.com/quote/RMD/history/ (Secondary: Yahoo Finance close, 30 Oct 2026)",Not a WInS price
+base_year,2026,,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,"FY2026, ended 30 Jun 2026"
+base_revenue,5653.443,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,
+growth,0.0200;0.0200;0.0300;0.0300;0.0300;0.0300;0.0300;0.0300;0.0300;0.0300,decimal,ASSUMPTION,Growth path: see note,"A bad decade: weight-loss drugs (GLP-1s) shrink the sleep-apnea patient pool and Philips returns to the US CPAP market, so growth drops to 2-3% and the operating margin falls from 33% to 28%."
+ebit_margin,0.31000;0.30000;0.29000;0.28000;0.28000;0.28000;0.28000;0.28000;0.28000;0.28000,decimal,ASSUMPTION,Bear case,"A bad decade: weight-loss drugs (GLP-1s) shrink the sleep-apnea patient pool and Philips returns to the US CPAP market, so growth drops to 2-3% and the operating margin falls from 33% to 28%."
+tax_rate,0.2064,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,1 - net income 1523.293 / pretax income 1919.416
+da_pct,0.05457;0.05457;0.05457;0.05457;0.05457;0.05457;0.05457;0.05457;0.05457;0.05457,decimal,ASSUMPTION,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,"Calibrated to FY0 cash conversion: (CFO 1805.829 + after-tax net interest 0.0 - NOPAT 1497.3) / revenue. ResMed earns more interest than it pays; net interest left at 0. Includes working capital and other non-cash items, so it is not reported D&A"
+capex_pct,0.02764;0.02764;0.02764;0.02764;0.02764;0.02764;0.02764;0.02764;0.02764;0.02764,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,"FY0 capex 156.285 / revenue 5653.443, held flat"
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Working capital is inside the cash-flow calibration,Inside the da_pct calibration
+risk_free,0.0498,decimal,RESEARCH,"https://fred.stlouisfed.org/series/DGS10 (FRED DGS10, 30 Oct 2026, read by Pat 2 Nov 2026)",Was 0.04929 (Yahoo ^TNX); one rate for all DCFs
+beta,1.0,,ASSUMPTION,Standard method: market beta 1.0,Measured beta in the next row
+beta_measured,0.766,,RESEARCH,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",
+equity_premium,0.05,decimal,ASSUMPTION,Kit default,
+pre_tax_cost_of_debt,0.0548,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),
+equity_value_for_weights,32342.7,USD m,RESEARCH,Shares outstanding x 30 Oct 2026 close,140.657071 m x 229.94
+debt_value_for_weights,659.4,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,Book value of debt
+terminal_growth,0.03,decimal,ASSUMPTION,Kit default,
+return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
+debt,659.4,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,Short-term debt 260.0 + long-term debt 399.4 at 30 Jun 2026
+non_operating_assets,1469.2,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,Cash and cash equivalents at 30 Jun 2026
+diluted_shares,143.411,m,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,"Diluted weighted shares, quarter ended 30 Sep 2026 (10-Q filed 30 Oct 2026)"
+years_to_first_cash_flow,0.67,years,ASSUMPTION,Valuation date to the end of forecast year 1,"30 Oct 2026 to 30 Jun 2027, the end of forecast year 1 (FY2027)"
+first_year_fraction,1.0,,ASSUMPTION,Method,"Debt and cash are at the base-year end, so all of forecast year 1 counts"
+sbc_pct,0.01845,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,Stock-based pay 104.3 / revenue 5653.443 (cash-flow statement); subtracted because da_pct is calibrated from operating cash flow
