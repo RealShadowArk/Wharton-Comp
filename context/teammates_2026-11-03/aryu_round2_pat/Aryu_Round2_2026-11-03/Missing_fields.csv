@@ -1,0 +1,62 @@
+﻿sheet,ticker,excel_row,field,reason
+Valuation inputs,CEG,2,cfo,"Pro forma filing contains no combined cash-flow statement; reported standalone CFO 4,237 is not a combined proxy."
+Valuation inputs,CEG,2,capex,"No full-year combined pro forma capex is supplied in the cited pro forma filing; standalone 2,949 excluded."
+Valuation inputs,CEG,2,capex_software,Separate capitalized-software cash expenditure not disclosed; no zero assumed.
+Valuation inputs,CEG,2,debt,"Borrowings subtotal 21,543 = 1,650 + 371 + 19,522 is verified. Combined finance-lease completeness is not separately verified, so required all-in debt is blank."
+Valuation inputs,CEG,2,stock_based_comp,Combined pro forma stock compensation not separately disclosed.
+Valuation inputs,CEG,2,interest_expense,"Only pro forma interest expense, net (1,050) is disclosed; gross expense not separated."
+Valuation inputs,CEG,2,interest_income,Pro forma gross interest income not separately disclosed.
+Valuation inputs,CEG,2,guidance_next_fy_revenue_growth,No numeric FY2026 revenue guidance in latest verified Q2 release; EPS guidance is a different metric.
+Valuation inputs,CEG,2,consensus_revenue_growth_y3,Year 3 revenue consensus is paywalled in the consistent StockAnalysis source; no extrapolation.
+Valuation inputs,CEG,2,long_term_target,Numeric long-term revenue target not independently verified.
+Valuation inputs,CEG,2,beta_5y_monthly,Optional provider beta not verified. Separately supplied OLS diagnostic is not substituted.
+Valuation inputs,CEG,2,guidance_growth_low,No numeric revenue growth range.
+Valuation inputs,CEG,2,guidance_growth_high,No numeric revenue growth range.
+Valuation inputs,NRG,3,cfo,"No combined pro forma cash-flow statement in cited filing; standalone reported CFO 1,913 is not a combined proxy."
+Valuation inputs,NRG,3,capex,"No combined full-year pro forma capex in cited filing; standalone 1,147 excluded."
+Valuation inputs,NRG,3,capex_software,Separate capitalized-software cash expenditure not disclosed; no zero assumed.
+Valuation inputs,NRG,3,stock_based_comp,Combined pro forma stock compensation not separately disclosed.
+Valuation inputs,NRG,3,interest_income,Pro forma other income 92 is not a separately identified gross interest-income figure.
+Valuation inputs,NRG,3,guidance_next_fy_revenue_growth,No numeric revenue guidance in the latest verified Q2 release.
+Valuation inputs,NRG,3,consensus_revenue_growth_y3,Year 3 revenue consensus is paywalled in the consistent StockAnalysis source; no extrapolation.
+Valuation inputs,NRG,3,long_term_target,No independently verified numeric long-term revenue target.
+Valuation inputs,NRG,3,beta_5y_monthly,Optional provider beta not verified. Separately supplied OLS diagnostic is not substituted.
+Valuation inputs,NRG,3,guidance_growth_low,No revenue growth range.
+Valuation inputs,NRG,3,guidance_growth_high,No revenue growth range.
+Valuation inputs,RMD,4,capex_software,Separate capitalized-software cash expenditure not disclosed; no zero assumed.
+Valuation inputs,RMD,4,interest_expense,Annual income statement discloses net interest income 49.914 only; gross expense not separately verified.
+Valuation inputs,RMD,4,interest_income,Annual income statement discloses net interest income 49.914 only; gross income not separately verified.
+Valuation inputs,RMD,4,guidance_next_fy_revenue_growth,"Company supplies a range, not a single growth point. README prohibits averaging; numeric endpoints are in appended columns AG:AH."
+Valuation inputs,RMD,4,consensus_revenue_growth_y3,Year 3 revenue consensus is paywalled in the consistent StockAnalysis source; no extrapolation.
+Valuation inputs,RMD,4,beta_5y_monthly,Optional provider beta not verified. Separately supplied OLS diagnostic is not substituted.
+Valuation inputs,ALC,5,capex_software,Cash flow combines software and other intangible purchases (120); software-only cash amount not disclosed.
+Valuation inputs,ALC,5,guidance_next_fy_revenue_growth,"Company supplies a range, not a single growth point. README prohibits averaging; numeric endpoints are in appended columns AG:AH."
+Valuation inputs,ALC,5,consensus_revenue_growth_y3,Year 3 revenue consensus is paywalled in the consistent StockAnalysis source; no extrapolation.
+Valuation inputs,ALC,5,long_term_target,"Claimed 6–8% five-year target found in secondary CMD summary, but primary dated announcement not verified."
+Valuation inputs,ALC,5,beta_5y_monthly,Optional provider beta not verified. Separately supplied OLS diagnostic is not substituted.
+Valuation inputs,EW,6,cfo,"Continuing-only CFO not separately disclosed. Consolidated 1,595.2 includes discontinued cash flows (Note 5); not substituted."
+Valuation inputs,EW,6,capex_software,Separate capitalized-software cash expenditure not disclosed; no zero assumed.
+Valuation inputs,EW,6,guidance_next_fy_revenue_growth,"Company supplies a range, not a single growth point. README prohibits averaging; numeric endpoints are in appended columns AG:AH."
+Valuation inputs,EW,6,consensus_revenue_growth_y3,Year 3 revenue consensus is paywalled in the consistent StockAnalysis source; no extrapolation.
+Valuation inputs,EW,6,beta_5y_monthly,Optional provider beta not verified. Separately supplied OLS diagnostic is not substituted.
+Red flags,CEG,2,cost_of_revenue,No separately reported cost_of_revenue line; no proxy used.
+Red flags,CEG,2,sga,No separately reported sga line; no proxy used.
+Red flags,CEG,2,depreciation,No separately reported depreciation line; no proxy used.
+Red flags,CEG,3,cost_of_revenue,No separately reported cost_of_revenue line; no proxy used.
+Red flags,CEG,3,sga,No separately reported sga line; no proxy used.
+Red flags,CEG,3,depreciation,No separately reported depreciation line; no proxy used.
+Red flags,EW,10,cfo,Continuing-only CFO is not separately disclosed; consolidated CFO includes discontinued cash flows.
+Red flags,EW,11,cfo,Continuing-only CFO is not separately disclosed; consolidated CFO includes discontinued cash flows.
+WInS confirmation,CEG,,listing and 2026-10-30 close,"No authenticated WInS session/export supplied. Yahoo confirms US listing and close, but is not WInS confirmation."
+WInS confirmation,NRG,,listing and 2026-10-30 close,"No authenticated WInS session/export supplied. Yahoo confirms US listing and close, but is not WInS confirmation."
+WInS confirmation,RMD,,listing and 2026-10-30 close,"No authenticated WInS session/export supplied. Yahoo confirms US listing and close, but is not WInS confirmation."
+WInS confirmation,ALC,,listing and 2026-10-30 close,"No authenticated WInS session/export supplied. Yahoo confirms US listing and close, but is not WInS confirmation."
+WInS confirmation,EW,,listing and 2026-10-30 close,"No authenticated WInS session/export supplied. Yahoo confirms US listing and close, but is not WInS confirmation."
+Kenon research,KEN/OPC,,segment unrestricted debt/cash reconciliation,Management table mixes proportionate associates and restricted cash; consolidated segment allocation not verified.
+Kenon research,KEN/OPC,,Israel maintenance capex FY2025,No verified maintenance-only segment amount.
+Kenon research,KEN/OPC,,CPV maintenance capex FY2025,No verified maintenance-only segment amount.
+Kenon research,KEN/OPC,,Israel cash taxes FY2025,No verified segment amount.
+Kenon research,KEN/OPC,,CPV cash taxes FY2025,No verified segment amount.
+Kenon research,KEN/OPC,,Israel CRP 1.98%,Dated dataset supporting 1.98% not verified; opened January webpage says 2.07%.
+Kenon research,KEN/OPC,,April 2026 dividend payment confirmation,"Declaration/schedule verified, payment completion not independently verified."
+Kenon research,KEN/OPC,,KEN and OPC decline cause,Only speculative AI-generated commentary found; no substantiated dated cause for both stocks.

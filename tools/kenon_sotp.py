@@ -2,10 +2,11 @@
 
 TEST preview. Every input carries a label (RESEARCH / ASSUMPTION / CASE) and a
 source. Missing facts are bracketed, never filled:
-  - the split of OPC's net debt between Israel, CPV and OPC's head office is
-    MISSING, so the share of net debt borne by OPC's shareholders runs from
-    the lowest segment ownership (71%) to 100% (all at the head office);
-  - Basin Ranch spending to date is MISSING (0% and 25% spent shown);
+  - net debt by segment now comes from OPC's management table at 30 Jun 2026
+    (Israel 1,050, CPV 1,344, head office -337; includes restricted cash and
+    hedge assets; 158 owed to non-controlling holders sits outside the table);
+  - Basin Ranch: about 600 spent by 30 Jun 2026, first-full-year EBITDA about 275
+    (Aryu's Round 2, filled by Pat 3 Nov);
   - maintenance capex and cash taxes are MISSING, so EBITDA -> free cash flow
     is an explicit conversion ASSUMPTION with a range.
 
@@ -34,12 +35,16 @@ IN = {  # value, label, source
     "rf": (0.0494, "RESEARCH", "US Treasury 10-year par CMT, 30 Oct 2026 (Pat chose 4.94% on 3 Nov; 4.98% was the 29 Oct FRED reading)"),
     "erp": (0.05, "ASSUMPTION", "Kit default"),
     "beta": (1.0, "ASSUMPTION", "Kit standard method (Kenon measured 1.03)"),
-    "crp_israel": (0.0198, "RESEARCH", "Israel country risk premium, Damodaran July 2026"),
+    "crp_israel": (0.0207, "RESEARCH", "Israel country risk premium, Damodaran page dated 5 Jan 2026 (the earlier 1.98% could not be verified)"),
+    "nd_israel": (1050, "RESEARCH", "OPC board report H1 2026, section 7A: Israel debt 1,321 - cash 258 - hedges 13"),
+    "nd_cpv": (1344, "RESEARCH", "Same: US/CPV debt 1,731 - cash 382 - hedges 5 (consolidated + proportionate associates)"),
+    "nd_hq": (-337, "RESEARCH", "Same: energy headquarters debt 527 - cash 864"),
+    "br_spent": (600, "RESEARCH", "Basin Ranch construction cost incurred by 30 Jun 2026, about 600 (board report)"),
     "debt_weight": (3619 / (3619 + 9273), "RESEARCH", "OPC debt incl. associates 3,619 vs market cap 9,273"),
     "tax": (0.25, "ASSUMPTION", "For the debt tax shield (Israel 23%, US about 25%)"),
     "g": (0.02, "ASSUMPTION", "Long-run growth of the existing fleet: plants age; growth projects valued separately"),
     "conversion": ((0.60, 0.70, 0.80), "ASSUMPTION", "Unlevered free cash flow / EBITDA after maintenance capex and cash tax; MISSING data, range shown"),
-    "br_ebitda": ((250, 275), "RESEARCH", "Basin Ranch first-full-year figures about $250m and $275m (Kenon 6-K table, layout unclear)"),
+    "br_ebitda": ((275, 275), "RESEARCH", "Basin Ranch first-full-year EBITDA about 275 (250 is cash flow after senior debt service)"),
     "br_cost": ((1800, 2000), "RESEARCH", "Basin Ranch expected cost $1.8-2.0bn (Kenon 6-K); CPV owns 100%"),
     "br_first_year": (2030, "ASSUMPTION", "COD 2029 (CPV), so the first full year is 2030"),
     "valuation_date": (2026.83, "CASE", "30 Oct 2026"),
@@ -58,27 +63,26 @@ def perpetuity(ebitda, conv, r):
     return ebitda * conv * (1 + V["g"]) / (r - V["g"])
 
 
-def basin_ranch(conv, r, spent):
+def basin_ranch(conv, r, cost):
     """NPV at the valuation date: perpetuity from the first full year, less remaining cost."""
     ebitda = sum(V["br_ebitda"]) / 2
-    cost = sum(V["br_cost"]) / 2
     t_value = V["br_first_year"] - 1 - V["valuation_date"]  # value sits at the start of the first full year
     pv_ops = perpetuity(ebitda, conv, r) / (1 + V["g"]) / (1 + r) ** t_value
-    pv_cost = cost * (1 - spent) / (1 + r) ** 1.5  # spread to 2029; midpoint about 1.5 years
+    pv_cost = (cost - V["br_spent"]) / (1 + r) ** 1.5  # remaining cost, spread to 2029; midpoint about 1.5 years
     return pv_ops - pv_cost
 
 
-def run(conv, shift, debt_share, spent, with_br=True):
+def run(conv, shift, cost=sum(V["br_cost"]) / 2, with_br=True):
     scale = V["fy_over_h1_2025"]
     r_us, r_il = wacc(shift=shift), wacc(extra=V["crp_israel"], shift=shift)
     israel = perpetuity(V["israel_ebitda_h1"] * scale, conv, r_il)
     us = perpetuity(V["us_ebitda_h1"] * scale, conv, r_us)
     hq_ebitda = (V["group_ebitda_h1"] - V["israel_ebitda_h1"] - V["us_ebitda_h1"]) * scale
     hq = perpetuity(hq_ebitda, 1.0, r_us)
-    br = basin_ranch(conv, r_us, spent) if with_br else 0.0
-    net_debt = V["debt"] - V["cash"] + V["assoc_debt"] - V["assoc_cash"]
-    opc_equity = (V["own_israel"] * israel + V["own_cpv"] * (us + br) + hq
-                  - debt_share * net_debt)
+    br = basin_ranch(conv, r_us, cost) if with_br else 0.0
+    net_debt = V["nd_israel"] + V["nd_cpv"] + V["nd_hq"]
+    opc_equity = (V["own_israel"] * (israel - V["nd_israel"]) + V["own_cpv"] * (us + br - V["nd_cpv"])
+                  + hq - V["nd_hq"])
     kenon = (V["kenon_stake"] * opc_equity + V["kenon_cash"]) / V["kenon_shares"]
     opc_nis = opc_equity * V["usd_ils"] / V["opc_shares"]
     return dict(israel=israel, us=us, hq=hq, br=br, net_debt=net_debt,
@@ -87,21 +91,20 @@ def run(conv, shift, debt_share, spent, with_br=True):
 
 
 if __name__ == "__main__":
-    lo_share = min(V["own_israel"], V["own_cpv"])
-    c = run(0.70, 0.0, (lo_share + 1) / 2, 0.25)
+    c = run(0.70, 0.0)
     print(f"WACC US {c['r_us']:.2%}, Israel {c['r_il']:.2%}; net debt (100% basis) {c['net_debt']:,.0f}")
-    print(f"Central (conversion 70%, WACC as above, net-debt share midpoint, Basin Ranch 25% spent):")
+    print(f"Central (conversion 70%, WACC as above, segment net debt, Basin Ranch cost 1,900 with 600 spent):")
     print(f"  Israel EV {c['israel']:,.0f}  CPV EV {c['us']:,.0f}  head office {c['hq']:,.0f}  "
           f"Basin Ranch NPV {c['br']:,.0f}")
     print(f"  OPC equity {c['opc_equity']:,.0f} = NIS {c['opc_nis']:.2f}/share (market {V['opc_price_nis']}); "
           f"Kenon ${c['kenon']:.2f} = {c['ratio']:.2f}x price")
-    vals = [run(cv, sh, ds, sp, br)["kenon"] for cv, sh, ds, sp, br in
-            product(V["conversion"], (-0.01, 0, 0.01), (lo_share, 1.0), (0.0, 0.25), (False, True))]
-    print(f"Range over conversion 60-80%, WACC +/-1 point, net-debt share 71-100%, Basin Ranch on/off: "
+    vals = [run(cv, sh, co, br)["kenon"] for cv, sh, co, br in
+            product(V["conversion"], (-0.01, 0, 0.01), V["br_cost"], (False, True))]
+    print(f"Range over conversion 60-80%, WACC +/-1 point, Basin Ranch cost 1,800-2,000, Basin Ranch on/off: "
           f"${min(vals):.2f} to ${max(vals):.2f}")
-    print("\nKenon $/share: conversion (rows) x WACC shift (columns), Basin Ranch 25% spent, net-debt midpoint")
+    print("\nKenon $/share: conversion (rows) x WACC shift (columns), central Basin Ranch")
     for cv in V["conversion"]:
-        print(f"  {cv:.0%}: " + "  ".join(f"{run(cv, sh, (lo_share + 1) / 2, 0.25)['kenon']:7.2f}"
+        print(f"  {cv:.0%}: " + "  ".join(f"{run(cv, sh)['kenon']:7.2f}"
                                             for sh in (-0.01, 0, 0.01)))
     # What the prices imply: OPC equity needed to justify each price.
     need_opc_mkt = V["opc_price_nis"] * V["opc_shares"] / V["usd_ils"]

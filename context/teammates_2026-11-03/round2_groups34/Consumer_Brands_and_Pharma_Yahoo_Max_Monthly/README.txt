@@ -1,0 +1,1 @@
+Original Yahoo Finance Max monthly CSVs downloaded 3 November 2026. Contents have not been edited. Filenames are normalized to ticker.csv; the manifest records original download filenames and SHA-256 hashes. Partial 2026 observations remain in the original files but are excluded from completed-calendar-year risk calculations.

@@ -1,0 +1,68 @@
+[
+  {
+    "ticker": "LULU",
+    "file": "LULU_monthly_original.csv",
+    "sha256": "6b69621d44816ce2f05c882043e81df965c43d810b741d0b77c3407e809d83a3",
+    "rows": 234,
+    "first": "2007-07-01",
+    "last": "2026-11-03",
+    "download_date": "2026-11-03",
+    "source": "https://finance.yahoo.com/quote/LULU/history/?frequency=1mo&period1=1185543000&period2=1793724461",
+    "original_download_filename": "LULU.csv"
+  },
+  {
+    "ticker": "HLN",
+    "file": "HLN.csv",
+    "sha256": "e0b8de34d7e77f1a58e1dd8d6dab9feb05f479a9603e1a65873f14a5b690c5e1",
+    "rows": 54,
+    "first": "2022-07-01",
+    "last": "2026-11-03",
+    "download_date": "2026-11-03",
+    "source": "https://finance.yahoo.com/quote/HLN/history/?frequency=1mo&period1=1658755800&period2=1793724544",
+    "original_download_filename": "HLN.csv"
+  },
+  {
+    "ticker": "NVO",
+    "file": "NVO.csv",
+    "sha256": "186613375bd538e9bbbcacd77e85a521a30f01fa0cf4f20856107fb7e6684f61",
+    "rows": 549,
+    "first": "1981-04-01",
+    "last": "2026-11-03",
+    "download_date": "2026-11-03",
+    "source": "https://finance.yahoo.com/quote/NVO/history/?frequency=1mo&period1=357485400&period2=1793724551",
+    "original_download_filename": "NVO.csv"
+  },
+  {
+    "ticker": "ADS.DE",
+    "file": "ADS.DE.csv",
+    "sha256": "263582f47384e5d4d3bf2c9236d2254f079e46b5e50a64a3a750ff778f837198",
+    "rows": 343,
+    "first": "1998-06-01",
+    "last": "2026-11-03",
+    "download_date": "2026-11-03",
+    "source": "https://finance.yahoo.com/quote/ADS.DE/history/?frequency=1mo&period1=898671600&period2=1793724591",
+    "original_download_filename": "ADS.DE.csv"
+  },
+  {
+    "ticker": "SPY",
+    "file": "SPY.csv",
+    "sha256": "bacfaea73483b43e131110d969a9bd694ad8641b384a6710c1c2451c89ca452e",
+    "rows": 408,
+    "first": "1993-01-01",
+    "last": "2026-11-03",
+    "download_date": "2026-11-03",
+    "source": "https://finance.yahoo.com/quote/SPY/history/?frequency=1mo&period1=728317800&period2=1793724582",
+    "original_download_filename": "SPY (3).csv"
+  },
+  {
+    "ticker": "EURUSD=X",
+    "file": "EURUSD=X.csv",
+    "sha256": "ceb9a8fa1a42c6e51ffa5f60f052473407bd382f128a3a62043464197fe038c0",
+    "rows": 277,
+    "first": "2003-12-01",
+    "last": "2026-11-03",
+    "download_date": "2026-11-03",
+    "source": "https://finance.yahoo.com/quote/EURUSD=X/history/?frequency=1mo&period1=1070236800&period2=1793724601",
+    "original_download_filename": "EURUSD=X (1).csv"
+  }
+]

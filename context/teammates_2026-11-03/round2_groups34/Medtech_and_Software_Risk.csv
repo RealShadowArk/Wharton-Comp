@@ -1,0 +1,2 @@
+﻿ticker,company,listing_used_for_prices,price_currency,worst_calendar_year,worst_return,history_start_year,source,notes
+DXCM,Dexcom,Nasdaq DXCM,USD,2008,-0.6874292185730464,2005,https://finance.yahoo.com/quote/DXCM/history/?frequency=1mo,Yahoo Max monthly adjusted closes; 2006–2025 complete December-to-December calendar years. Return = December adjusted close / prior December adjusted close - 1. Downloaded 2026-11-03. Excludes incomplete initial-history year and all 2026 rows. Adjusted-close history may be restated by Yahoo for subsequent corporate actions.

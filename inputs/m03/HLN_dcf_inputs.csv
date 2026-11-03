@@ -1,0 +1,27 @@
+field,value,unit,label,source,note
+ticker,HLN,,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Consumer brands
+valuation_date,2026-10-30,date,CASE,Price date,
+price,3.194,GBP,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),"30 Oct 2026 close, checked in WInS by the teammate"
+base_year,2025,,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2025-12-31
+base_revenue,11030,GBP m,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+growth,0.0250;0.0407;0.0383;0.0376;0.0369;0.0362;0.0355;0.0348;0.0341;0.0335,decimal,ASSUMPTION,"Standard method (Pat, 3 Nov)",Year 1 guidance midpoint; years 2-3 consensus; fade to terminal growth
+ebit_margin,0.21868;0.21868;0.21868;0.21868;0.21868;0.21868;0.21868;0.21868;0.21868;0.21868,decimal,ASSUMPTION,Standard method: FY0 operating margin held flat,
+tax_rate,0.2254,decimal,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income / pretax income
+da_pct,0.03264;0.03264;0.03264;0.03264;0.03264;0.03264;0.03264;0.03264;0.03264;0.03264,decimal,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
+capex_pct,0.02937;0.02937;0.02937;0.02937;0.02937;0.02937;0.02937;0.02937;0.02937;0.02937,decimal,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Kit default,
+risk_free,0.052917,decimal,RESEARCH,"Local 10-year, 30 Oct 2026",
+beta,1.0,,ASSUMPTION,Standard method,
+beta_measured,0.151,,RESEARCH,"60 monthly USD returns vs SPY, Nov 2021-Oct 2026",
+equity_premium,0.05,decimal,ASSUMPTION,Kit default 5%,
+pre_tax_cost_of_debt,0.057917,decimal,ASSUMPTION,Kit default: 10-year + 0.5 points,
+equity_value_for_weights,28447.71,GBP m,RESEARCH,Price x shares,
+debt_value_for_weights,8476,GBP m,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+terminal_growth,0.03345,decimal,ASSUMPTION,"3% in USD, converted by the rate gap",
+return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
+debt,8476,GBP m,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+non_operating_assets,1260,GBP m,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Corporate cash
+diluted_shares,8941.608002,m,RESEARCH,Consumer_Brands_and_Pharma_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Shares at the cash-and-debt date plus dilution (teammate's ledger)
+years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of FY2026 (2026-12-31),
+first_year_fraction,1.0,,ASSUMPTION,Method,Cash and debt at the FY0 year-end
+sbc_pct,0,decimal,ASSUMPTION,Method,0 because da_pct is reported D&A

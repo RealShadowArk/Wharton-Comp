@@ -1,0 +1,7 @@
+﻿ticker,beta,observations,requested_window,basis,source,retrieved
+CEG,1.1161927845402455,57,2021-11 through 2026-10,"OLS slope of monthly adjusted returns versus SPY; own calculation, not provider beta",Yahoo_Max_Monthly_Originals.zip,2026-11-03
+NRG,1.220817752587874,60,2021-11 through 2026-10,"OLS slope of monthly adjusted returns versus SPY; own calculation, not provider beta",Yahoo_Max_Monthly_Originals.zip,2026-11-03
+RMD,0.7664849698494283,60,2021-11 through 2026-10,"OLS slope of monthly adjusted returns versus SPY; own calculation, not provider beta",Yahoo_Max_Monthly_Originals.zip,2026-11-03
+ALC,0.8685344634835913,60,2021-11 through 2026-10,"OLS slope of monthly adjusted returns versus SPY; own calculation, not provider beta",Yahoo_Max_Monthly_Originals.zip,2026-11-03
+EW,0.8447691296732582,60,2021-11 through 2026-10,"OLS slope of monthly adjusted returns versus SPY; own calculation, not provider beta",Yahoo_Max_Monthly_Originals.zip,2026-11-03
+KEN,1.0290430224111535,60,2021-11 through 2026-10,"OLS slope of monthly adjusted returns versus SPY; own calculation, not provider beta",Yahoo_Max_Monthly_Originals.zip,2026-11-03

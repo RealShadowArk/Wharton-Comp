@@ -1,0 +1,6 @@
+﻿ticker,public_listing,currency,date,yahoo_close,wins_listing,wins_close,status,source,checked
+CEG,NASDAQ,USD,2026-10-30,262.38,,,MISSING: WInS not authenticated; public price independently verified,https://finance.yahoo.com/quote/CEG/history/,2026-11-03
+NRG,NYSE,USD,2026-10-30,96.06,,,MISSING: WInS not authenticated; public price independently verified,https://finance.yahoo.com/quote/NRG/history/,2026-11-03
+RMD,NYSE,USD,2026-10-30,229.94,,,MISSING: WInS not authenticated; public price independently verified,https://finance.yahoo.com/quote/RMD/history/,2026-11-03
+ALC,NYSE,USD,2026-10-30,71.45,,,MISSING: WInS not authenticated; public price independently verified,https://finance.yahoo.com/quote/ALC/history/,2026-11-03
+EW,NYSE,USD,2026-10-30,92.01,,,MISSING: WInS not authenticated; public price independently verified,https://finance.yahoo.com/quote/EW/history/,2026-11-03

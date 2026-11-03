@@ -1,0 +1,24 @@
+[
+  {
+    "ticker": "DXCM",
+    "file": "DXCM.csv",
+    "sha256": "e5fd47593ba029a0ed71a513f434a14c6940deab3d23dd2a3254928953c0fdc1",
+    "rows": 261,
+    "first": "2005-04-01",
+    "last": "2026-11-03",
+    "download_date": "2026-11-03",
+    "source": "https://finance.yahoo.com/quote/DXCM/history/?frequency=1mo&period1=1113485400&period2=1793724565",
+    "original_download_filename": "DXCM.csv"
+  },
+  {
+    "ticker": "SPY",
+    "file": "SPY.csv",
+    "sha256": "bacfaea73483b43e131110d969a9bd694ad8641b384a6710c1c2451c89ca452e",
+    "rows": 408,
+    "first": "1993-01-01",
+    "last": "2026-11-03",
+    "download_date": "2026-11-03",
+    "source": "https://finance.yahoo.com/quote/SPY/history/?frequency=1mo&period1=728317800&period2=1793724582",
+    "original_download_filename": "SPY (3).csv"
+  }
+]

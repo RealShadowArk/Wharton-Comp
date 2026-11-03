@@ -1,0 +1,8 @@
+﻿ticker,file,sha256,bytes,rows,first_date,last_date,download_date,frequency,time_period,source
+CEG,CEG.csv,4a317cbbf243f061fb54972f86a9087b6dfd5518d4e30f45a209a155ab0764ec,4428,60,2022-01-01,2026-11-03,2026-11-03,Monthly,Max,https://finance.yahoo.com/quote/CEG/history/
+NRG,NRG.csv,17cc5376abb5cbc0772321f44f7bad934e073f232d769495ca348a626df55086,19536,277,2003-12-01,2026-11-03,2026-11-03,Monthly,Max,https://finance.yahoo.com/quote/NRG/history/
+RMD,RMD.csv,1ba4ebb34a0ffd3d67f6c56268ebe850ed777cd22d6147a8315bc60bdfa7963b,26593,379,1995-06-01,2026-11-03,2026-11-03,Monthly,Max,https://finance.yahoo.com/quote/RMD/history/
+ALC,ALC.csv,202e97f9190ce6b912b15763be8b75f1470a9a1a825d43ceb1c0502ac8ab9391,6541,93,2019-04-01,2026-11-03,2026-11-03,Monthly,Max,https://finance.yahoo.com/quote/ALC/history/
+EW,EW.csv,063a41e6e71cf943a2a979406cb8e26f94d109d09b61b475ec4d5135db1be7eb,22147,322,2000-03-01,2026-11-03,2026-11-03,Monthly,Max,https://finance.yahoo.com/quote/EW/history/
+KEN,KEN.csv,cfee8977dd760ca94ca7179b43cb3437112c9fdc15ae9b0c106c27546732d672,9649,144,2015-01-01,2026-11-03,2026-11-03,Monthly,Max,https://finance.yahoo.com/quote/KEN/history/
+SPY,SPY.csv,59b6de1ba979610de92f2a05d8771583b86d8c0d0f62b1f5812d9f4004fa14de,30642,408,1993-01-01,2026-11-03,2026-11-03,Monthly,Max,https://finance.yahoo.com/quote/SPY/history/

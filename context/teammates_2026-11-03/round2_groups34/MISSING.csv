@@ -1,0 +1,14 @@
+﻿ticker,sheet,period,column,reason
+DXCM,Valuation inputs,,capex_software,"Capitalized software balance of 19.1 m is reported, but separate FY2025 additions/cash expenditure are not identified; balance changes are not capex."
+DXCM,Valuation inputs,,interest_income,Only combined interest and dividend income (112.7 m) is reported; interest-only amount is not verified.
+LULU,Valuation inputs,,capex_software,Computer software is included in PPE; separate annual software additions are not reported. Do not infer additions from carrying balances or double-count PPE capex.
+LULU,Valuation inputs,,interest_expense,"The filing reports Other income (expense), net (28.352 m), not separately quantified annual interest expense and income; cash interest paid is not an expense substitute."
+LULU,Valuation inputs,,interest_income,"The filing reports Other income (expense), net (28.352 m), not separately quantified annual interest expense and income; cash interest paid is not an expense substitute."
+LULU,Valuation inputs,,long_term_target,No current quantified multi-year financial target verified in the 2026 strategy/results releases. Historical 2022 Power of Three target for 2026 is not presented as current guidance.
+NVO,Valuation inputs,,capex_software,Note 3.1 combines software and other intangible additions (528 m); software-only additions are not separately verified. Total intangible cash purchases 29973 m are not substituted.
+NVO,Valuation inputs,,diluted_shares_m,"Latest H1 2026 filing and company financial workbook report diluted weighted-average shares but do not separately quantify incremental dilutive shares. No amount inferred from rounded EPS, and annual dilution is not substituted for latest-filing dilution."
+ADS.DE,Valuation inputs,,capex_software,"Note 12 p 344 reports internally developed intangible additions 25 m, described as mainly software, and miscellaneous additions 89 m. No software-only split is verified; total intangible purchases 114 m are not substituted."
+ADS.DE,Valuation inputs,,diluted_shares_m,Latest Q3 2026 financial supplement gives basic and diluted EPS but no separately quantified incremental dilutive shares. Equal rounded EPS does not establish zero dilution.
+ADS.DE,Valuation inputs,,stock_based_comp,"No aggregate non-cash stock-based compensation expense verified. The equity statement reports a EUR9 m equity-settled movement, while note 26 separately describes several equity/cash-settled plans; that movement is not substituted for total expense."
+ADS.DE,Risk,,worst_calendar_year,"Yahoo EURUSD=X Max begins December 2003; earlier ADS.DE Max years lack verified USD conversion. Observed 2004–2025 minimum is documented in notes, not asserted as full-history worst."
+ADS.DE,Risk,,worst_return,"Yahoo EURUSD=X Max begins December 2003; earlier ADS.DE Max years lack verified USD conversion. Observed 2004–2025 minimum is documented in notes, not asserted as full-history worst."

@@ -1,0 +1,38 @@
+﻿id,title,url,source_date,retrieved
+CEG,CEG company filing,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,2026-02-24,2026-11-03
+NRG,NRG company filing,https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,2026-02-24,2026-11-03
+RMD,RMD company filing,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,2026-08-13,2026-11-03
+ALC,ALC company filing,https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,2026-02-24,2026-11-03
+EW,EW company filing,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,2026-02-25,2026-11-03
+CEG_PF,CEG_PF company filing,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,2025-12-31 (pro forma period),2026-11-03
+NRG_PF,NRG_PF company filing,https://www.sec.gov/Archives/edgar/data/1013871/000110465926022295/tm267426d2_ex99-6.htm,2025-12-31 (pro forma period),2026-11-03
+CEG_Q,CEG_Q company filing,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000104/ceg-20260630.htm,2026-08-06,2026-11-03
+NRG_Q,NRG_Q company filing,https://www.sec.gov/Archives/edgar/data/1013871/000101387126000020/nrg-20260630.htm,2026-06-30 (quarter end),2026-11-03
+RMD_Q,RMD_Q company filing,https://www.sec.gov/Archives/edgar/data/943819/000094381926000089/rmd-20260930.htm,2026-10-30,2026-11-03
+EW_Q,EW_Q company filing,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000043/ew-20260630.htm,2026-06-30 (quarter end),2026-11-03
+ALC_Q,ALC_Q company filing,https://www.sec.gov/Archives/edgar/data/1167379/000116737926000030/q22026pressrelease.htm,2026-08 (Q2 release),2026-11-03
+CEG_PRIOR,CEG_PRIOR company filing,https://www.sec.gov/Archives/edgar/data/1868275/000186827525000023/ceg-20241231.htm,2024-12-31 (annual period),2026-11-03
+NRG_PRIOR,NRG_PRIOR company filing,https://www.sec.gov/Archives/edgar/data/1013871/000101387125000006/nrg-20241231.htm,2024-12-31 (annual period),2026-11-03
+RMD_PRIOR,RMD_PRIOR company filing,https://www.sec.gov/Archives/edgar/data/943819/000094381925000035/rmd-20250630.htm,2025-06-30 (annual period),2026-11-03
+ALC_PRIOR,ALC_PRIOR company filing,https://www.sec.gov/Archives/edgar/data/1167379/000116737925000008/alc-20241231.htm,2024-12-31 (annual period),2026-11-03
+EW_PRIOR,EW_PRIOR company filing,https://www.sec.gov/Archives/edgar/data/1099800/000109980025000005/ew-20241231.htm,2024-12-31 (annual period),2026-11-03
+OPC_H1,OPC_H1 company filing,https://www.sec.gov/Archives/edgar/data/1611005/000117891326004078/exhibit_99-1.htm,2026-08-12,2026-11-03
+KEN_Q,KEN_Q company filing,https://www.sec.gov/Archives/edgar/data/1611005/000117891326004442/exhibit_99-1.htm,2026-09-08,2026-11-03
+CEG_GUIDE,CEG Q2 earnings release,https://www.constellationenergy.com/news/2026/08/constellation-reports-second-quarter-2026-results.html,2026-08-06,2026-11-03
+NRG_GUIDE,NRG Q2 earnings release,https://www.nrg.com/en/about/newsroom/2026/45811,2026-08 (Q2 release),2026-11-03
+RMD_GUIDE,ResMed Q1 FY2027 earnings release,https://investor.resmed.com/news-events/press-releases/detail/433/resmed-inc-announces-results-for-the-first-quarter-of-fiscal-year-2027,2026-10-29,2026-11-03
+EW_GUIDE,Edwards Q2 earnings release,https://ir.edwards.com/news/news-details/2026/Edwards-Lifesciences-Reports-Second-Quarter-Results/default.aspx,2026-07-23,2026-11-03
+RMD_LONG,ResMed 2030 strategy,https://investor.resmed.com/news-events/press-releases/detail/388/resmed-unveils-2030-strategy-to-drive-growth-profitability-and-shareholder-returns,2024-09-30,2026-11-03
+UST,US Treasury daily par yield curve,https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve,2026-10-30,2026-11-03
+CEG_YAHOO,CEG Yahoo historical data,https://finance.yahoo.com/quote/CEG/history/,2026-10-30 close / monthly history through 2026-11-03,2026-11-03
+NRG_YAHOO,NRG Yahoo historical data,https://finance.yahoo.com/quote/NRG/history/,2026-10-30 close / monthly history through 2026-11-03,2026-11-03
+RMD_YAHOO,RMD Yahoo historical data,https://finance.yahoo.com/quote/RMD/history/,2026-10-30 close / monthly history through 2026-11-03,2026-11-03
+ALC_YAHOO,ALC Yahoo historical data,https://finance.yahoo.com/quote/ALC/history/,2026-10-30 close / monthly history through 2026-11-03,2026-11-03
+EW_YAHOO,EW Yahoo historical data,https://finance.yahoo.com/quote/EW/history/,2026-10-30 close / monthly history through 2026-11-03,2026-11-03
+KEN_YAHOO,KEN Yahoo historical data,https://finance.yahoo.com/quote/KEN/history/,2026-10-30 close / monthly history through 2026-11-03,2026-11-03
+SPY_YAHOO,SPY Yahoo historical data,https://finance.yahoo.com/quote/SPY/history/,2026-10-30 close / monthly history through 2026-11-03,2026-11-03
+CEG_CONS,S&P Global revenue consensus displayed by StockAnalysis,https://stockanalysis.com/stocks/ceg/forecast/,2026-11-03,2026-11-03
+NRG_CONS,S&P Global revenue consensus displayed by StockAnalysis,https://stockanalysis.com/stocks/nrg/forecast/,2026-10-30,2026-11-03
+RMD_CONS,S&P Global revenue consensus displayed by StockAnalysis,https://stockanalysis.com/stocks/rmd/forecast/,2026-11-02,2026-11-03
+ALC_CONS,S&P Global revenue consensus displayed by StockAnalysis,https://stockanalysis.com/stocks/alc/forecast/,2026-11-03,2026-11-03
+EW_CONS,S&P Global revenue consensus displayed by StockAnalysis,https://stockanalysis.com/stocks/ew/forecast/,2026-11-03,2026-11-03

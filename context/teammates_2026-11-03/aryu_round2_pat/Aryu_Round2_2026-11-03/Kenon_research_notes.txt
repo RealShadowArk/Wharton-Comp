@@ -1,0 +1,84 @@
+KENON — ROUND 2 RESEARCH NOTES
+Prepared 3 November 2026. USD millions unless stated otherwise. No valuation or recommendation is made here.
+
+The clearest new findings
+
+Basin Ranch's table is not an EBITDA range. The first full operating year has forecast EBITDA of approximately $275m and forecast cash flow after senior debt service of approximately $250m. Total construction cost incurred at 30 June 2026 is approximately $600m. Expected total construction cost is $1,800–2,000m; senior financing is approximately $1,100m. The project is 1,350 MW and expected commercial operation is 2029. These are management estimates, not realized earnings. The table identifies the first full operating year without expressly printing a calendar year; do not silently turn that into a guaranteed 2030 cash flow. [K1, board report p.63, section 6B1]
+
+Debt and cash split at 30 June 2026
+
+The board report supplies a management debt table that combines consolidated projects with proportionate interests in associates. It is not the same accounting scope as the consolidated balance sheet. Its cash column includes deposits and restricted cash; its debt includes accrued interest and deferred costs. Do not use the cash column as unrestricted corporate cash.
+
+                                   Debt    Cash/deposits    Hedge assets    Net debt
+OPC Israel                         1,321          258              13        1,050
+United States / CPV                 1,731          382               5        1,344
+Energy headquarters                  527          864               0         (337)
+Total                              3,579        1,504              18        2,057
+
+Source: K1, board report pp.70–72, section 7A. The displayed dash for headquarters hedges is treated as the filing's nil. Headquarters includes debt/cash in OPC and cash in ICG Energy Inc. The U.S. subtotal includes associated renewable and energy-transition projects at the stated ownership proportions. The U.S. headquarters sub-row (within CPV, not the separate OPC headquarters row) is debt 231 and cash 240. Israel's headquarters-and-others sub-row (within Israel) is debt 826 and cash 23.
+
+The cash column includes approximately 13 restricted in Hadera, 21 in Energy Transition and 152 at U.S. headquarters designated for Basin Ranch. These listed restrictions total 186; the separate consolidated disclosure is 187, reflecting rounded figures/scope. Do not treat the difference as available cash. The report also identifies 158 owed to holders of noncontrolling interests outside the table. It must not disappear in a valuation without checking the claim's terms. [K1, table footnote 50 and note (1)]
+
+For reconciliation, the Kenon release reports consolidated OPC borrowings of 2,977 (204 current and 2,773 noncurrent), unrestricted cash of 1,261, restricted cash of 187, and associates' proportionate debt/cash of 642/56. The previously used 2,302 net debt is the arithmetic 2,977 − 1,261 + 642 − 56. It is a different basis from management's 2,057 table, which includes restricted cash, hedge assets and other debt-basis adjustments. Neither should be substituted for the other without reconciliation. [K2, liquidity section]
+
+2025 maintenance capex and cash taxes
+
+MISSING: a verified 2025 maintenance-only capex amount separately for OPC Israel and CPV, and 2025 cash taxes separately for each. The reviewed annual and H1 material does not establish these four amounts. Consolidated capex, construction spending, FCF, and income-tax expense are not substitutes. Kenon's consolidated 2025 cash taxes paid, net, are 5.376; that is not a segment allocation and is not inserted into either segment. [K3, consolidated cash-flow statement, p.F-14]
+
+Other facts for the team's rewrite
+
+• Kenon owns approximately 46% of OPC, including approximately 2% subject to a collar. Kenon's own cash is 512 at 30 June and 605 at 31 August 2026; there is no material debt at Kenon itself. The cash definition includes treasury-management instruments. The September release describes CPV as 70%-owned, rather than the reference memo's approximate 71%; use the dated ownership basis appropriate to the model. [K2]
+• The remaining ZIM interest was sold in 2024; the 2025 annual report states that all ZIM shares were sold. No ZIM holding is added to this research. [K3]
+• The board declared an approximately 200 cash dividend in March 2026, with April 2026 distribution timing. Payment completion has not been independently verified here; declaration and payment are different facts. [K4]
+• The Peru award yielded approximately 93 to Kenon in August 2026 after the capital provider's allocation and certain costs, subject to tax. It is already reflected in the later 605 cash figure; do not add it again. [K2]
+• The requested Israel country-risk premium of 1.98% remains unverified. The opened Damodaran webpage is explicitly dated 5 January 2026 and shows 2.07% for Israel, not 1.98%. A dated July 2026 spreadsheet could differ. No replacement premium is selected here. [K5]
+• PJM's three delivery-year prices are 329.17/MW-day (2026/27), 333.44 (2027/28) and 325.00 (2028/29). The H1 report identifies the July 2026 result at its price cap. Do not describe all three years as a flat 333/MW-day. [K1, p.19 capacity table; underlying PJM report K6]
+• Shay is an initial-stage 2,100 MW West Virginia project. Walker is an initial-stage 1,465 MW Ohio project in the latest table, rather than the older rounded 1,450 MW. They are in the development pipeline, separate from Basin Ranch under construction. These stages are dated to the August 2026 report, not a guarantee of later status. [K1, pp.64–65]
+• Secondary reporting says Leviathan and Karish were shut on 28 February 2026. The restart detail is more precise than “about 3 April”: Argus reports clearance for preparations on 31 March and regular Leviathan production resumed on 2 April, announced on 3 April. No primary operator notice was independently verified in this pass. [K7–K8]
+
+Share-price decline: one further search
+
+The search found auto-generated TipRanks commentary attributing a Kenon move to profit-taking after its rally (indexed 12 August 2026), and another article suggesting an earnings reaction and sector weakness. Those are explicitly AI-generated possible explanations, not verified evidence that the whole decline from the highs in BOTH Kenon and OPC had that cause. The opened earnings article did not show a reliable exact publication date. Record these as leads only. The requested substantiated, dated causal explanation for both stocks remains MISSING. [K9–K10]
+
+Sources (all accessed 3 November 2026)
+
+K1. OPC H1 2026 board report; 12 August 2026
+https://www.sec.gov/Archives/edgar/data/1611005/000117891326004078/exhibit_99-1.htm
+
+K2. Kenon Q2 release; 8 September 2026
+https://www.sec.gov/Archives/edgar/data/1611005/000117891326004442/exhibit_99-1.htm
+
+K3. Kenon 2025 Form 20-F; annual period ended 31 December 2025
+https://www.sec.gov/Archives/edgar/data/1611005/000117891326001842/zk2634883.htm
+
+K4. Kenon full-year 2025 results; March 2026 dividend declaration
+https://www.kenon-holdings.com/~/media/Files/K/Kenon-Holdings/Annual%20Reports/full-year-2025-results.pdf?pdfdata=1
+
+K5. Damodaran country premium webpage; page dated 5 January 2026
+https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html
+
+K6. PJM 2028/29 auction report; 14 July 2026
+https://www.pjm.com/-/media/DotCom/markets-ops/rpm/rpm-auction-info/2028-2029/2028-2029-bra-results-report.pdf
+
+K7. Argus gas restart report; 3 April 2026
+https://www.argusmedia.com/en/news-and-insights/latest-market-news/2810197-israel-s-leviathan-gas-output-restarts-after-shutdown
+
+K8. Anadolu report; 3 April 2026
+https://www.aa.com.tr/en/middle-east/israel-resumes-leviathan-gas-field-operations-after-32-day-halt-due-to-war/3890773
+
+K9. TipRanks auto-generated commentary; search index dates 12 August 2026; not causal proof
+https://www.tipranks.com/news/catalyst/kenon-stock-slides-as-rally-sparks-profit-taking
+
+K10. TipRanks auto-generated earnings commentary; exact date not confirmed on opened page
+https://www.tipranks.com/news/catalyst/kenon-stock-sinks-as-earnings-spark-selloff
+
+Still MISSING
+
+1. A complete reconciliation of the segment management debt/cash table to consolidated unrestricted balances, including treatment of restricted/project cash, associates and noncontrolling claims.
+2. OPC Israel 2025 maintenance capex: no verified maintenance-only segment amount.
+3. CPV 2025 maintenance capex: no verified maintenance-only segment amount.
+4. OPC Israel 2025 cash taxes: no verified segment allocation.
+5. CPV 2025 cash taxes: no verified segment allocation.
+6. Israel premium of 1.98%: dated supporting dataset not verified; opened January source says 2.07%.
+7. Completion of the April 2026 dividend payment: declaration/schedule verified only.
+8. A substantiated dated explanation of the full decline from the highs in both KEN and OPC: speculative AI commentary is insufficient.

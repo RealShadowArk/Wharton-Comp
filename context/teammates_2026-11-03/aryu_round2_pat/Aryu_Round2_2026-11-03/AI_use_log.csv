@@ -1,0 +1,7 @@
+﻿date,tool,activity,output,team_reviewer,team_review_date,used_in_team_work,source_checked_by_team
+2026-11-03,OpenAI Codex,Read both ZIP READMEs and background documents,Task scope and methodology,,,,
+2026-11-03,OpenAI Codex,"Verify annual/pro forma filings, latest dilution, guidance and analyst consensus using public web sources",Aryu_Round2_filled.xlsx; Source_register.csv; Field_sources.csv; Starting_figures_verification.csv,,,,
+2026-11-03,OpenAI Codex,Download Yahoo Max monthly CSVs through signed-in browser; retain original bytes,Yahoo_Max_Monthly_Originals.zip; Yahoo_download_manifest.csv,,,,
+2026-11-03,OpenAI Codex,Calculate December-to-December adjusted returns and diagnostic return slopes,Calendar_returns.csv; Beta_recalculation_diagnostic.csv,,,,
+2026-11-03,OpenAI Codex,Research Kenon/OPC filing facts; distinguish estimates and unsupported claims,Kenon_research_notes.txt; Kenon_segment_debt_cash.csv,,,,
+2026-11-03,OpenAI Codex,Record unresolved fields without guessing or filling zero,Missing_fields.csv,,,,

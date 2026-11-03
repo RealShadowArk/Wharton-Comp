@@ -117,3 +117,17 @@ This version fixes both.
 - [US-Israel politics (Mother Jones)](https://www.motherjones.com/politics/2026/10/united-states-israel-relationship-jewish-political-groups-elections/)
 - [FDD brief, 20 Oct](https://www.fdd.org/overnight-brief/october-20-2026/)
 - [OPC 2023 war report (Kenon 6-K)](https://www.sec.gov/Archives/edgar/data/1611005/000117891323003724/exhibit_99-1.htm)
+
+## Update, 3 Nov: Round 2 facts (filled by Pat)
+
+- **Net debt by segment** (OPC board report H1 2026, section 7A; includes restricted cash and hedge assets): Israel 1,050, CPV 1,344, head office -337 (net cash), total 2,057. This replaces the 71-100% bracket. The 158 owed to non-controlling holders outside the table is not deducted.
+- **Basin Ranch:** about 600 spent by 30 Jun 2026; first-full-year EBITDA about 275 (250 is cash flow after senior debt service).
+- **Israel country risk premium:** 2.07% (Damodaran page dated 5 Jan 2026); 1.98% could not be verified.
+- **Still MISSING:** maintenance capex and cash taxes by segment, so the 60/70/80% conversion range stays.
+
+| | Kenon per share | vs $64.11 |
+|---|---|---|
+| Central (70% conversion, segment net debt, Basin Ranch cost 1,900 with 600 spent) | **$46.39** | **0.72x** |
+| Range (conversion 60-80%, WACC +/-1 point, cost 1,800-2,000, Basin Ranch on/off) | $27.46 to $66.65 | 0.43x to 1.04x |
+
+Only the most generous corner of the range (80% conversion and WACC one point lower) reaches the price. **Conclusion unchanged: no edge on our method.**

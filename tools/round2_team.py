@@ -27,7 +27,8 @@ from m03.dcf import value  # noqa: E402
 from m03.run import load, run, wacc_for  # noqa: E402
 
 RF = {"USD": 0.0494, "EUR": 0.0334, "INR": 0.073977, "CNY": 0.016266,  # CNY: China 10-year, 30 Oct 2026 (Akshat's source)
-      "HKD": 0.03855, "GBP": 0.052917}  # HK and UK 10-year, 30 Oct 2026 (new-candidates Round 2 workbook, local_10y_yield)
+      "HKD": 0.03855, "GBP": 0.052917,
+      "DKK": 0.0315}  # Denmark 10-year, 30 Oct 2026 (groups 3-4 Round 2 workbook, local_10y_yield)  # HK and UK 10-year, 30 Oct 2026 (new-candidates Round 2 workbook, local_10y_yield)
 RF_US, T_BILL = 0.0494, 0.04
 VAL_DATE = date(2026, 10, 30)
 TEAM = ROOT / "context" / "teammates_2026-11-03"
@@ -76,6 +77,39 @@ SETS = {
         who="Akshaj R (new candidates CW, ASM International)",
         notes={"ASM.AS": "Valued in EUR; capex includes capitalized development 205.1 and intangible purchases 44.7 (IFRS capitalizes development; its amortization is in D&A), total 468.3",
                "CW": "Interest income MISSING (inside other income); no separate software capex"}),
+    "aryu": dict(
+        workbook=TEAM / "aryu_round2_pat/Aryu_Round2_2026-11-03" / "Aryu_Round2_filled.xlsx",
+        yahoo=TEAM / "aryu_round2_pat/Aryu_Round2_2026-11-03" / "Yahoo_Max_Monthly_Originals",
+        m12=[ROOT / "outputs/new_candidates/M12_Medtech.csv"],
+        group={"CEG": "Power", "NRG": "Power"},
+        m12_text={"CEG": "Not scored (EPS growth undefined: 2022 loss); power group not released",
+                   "NRG": "No (power group not released; complete-only diagnostic 5 of 6, 0/32)"},
+        fy_end={"CEG": "2025-12-31", "NRG": "2025-12-31"},
+        val_override={"CEG": {"fiscal_year": 2025, "debt": 21543, "capex": 2949 + 1149, "d_and_a": 1957 + (2601 - 985)},  # D&A + nuclear-fuel amortization (capex includes nuclear fuel)  # borrowings (finance leases not quantified, R8); CEG + Calpine reported capex
+                      "NRG": {"fiscal_year": 2025, "capex": round(1147 / 30713 * 33471, 1)},  # NRG's own capex / revenue on the pro forma revenue
+                      "RMD": {"fiscal_year": 2026}, "ALC": {"fiscal_year": 2025}, "EW": {"fiscal_year": 2025}},
+        g1_override={"CEG": (35850 / 36812 - 1, "consensus FY2026 revenue 35.85bn / 2025 pro forma 36,812"),
+                     "NRG": (35310 / 33471 - 1, "consensus FY2026 revenue 35.31bn / 2025 pro forma 33,471")},
+        who="Aryu (power, medtech; data filled by Pat)",
+        notes={"CEG": "2025 pro forma with Calpine; debt = borrowings 21,543 (finance leases not quantified); capex = CEG 2,949 + Calpine 1,149 reported (no pro forma cash-flow statement); D&A 3,573 = pro forma 1,957 + CEG nuclear-fuel amortization 1,616 (cash-flow D&A 2,601 - income-statement 985), because capex includes nuclear fuel (Aryu's treatment); no losing calendar year (listed 2022)",
+                "NRG": "2025 pro forma with the LS Power plants; debt includes 650 preferred; capex = NRG's 2025 capex ratio (3.7%) on pro forma revenue (ASSUMPTION); D&A 1,866 includes amortization of customer-acquisition costs whose cash cost sits in operating costs (generous)",
+                "RMD": "Year 1 = midpoint of 5-7% core constant-currency guidance", "ALC": "Year 1 = midpoint of 5-7% constant-currency guidance; debt excludes 509 leases",
+                "EW": "Year 1 = midpoint of 10-11% constant-currency guidance; continuing figures"}),
+    "dxcm": dict(
+        workbook=TEAM / "round2_groups34" / "Medtech_and_Software_Round2.xlsx",
+        yahoo=TEAM / "round2_groups34" / "Medtech_and_Software_Yahoo_Max_Monthly",
+        m12=[ROOT / "outputs/new_candidates/M12_Medtech.csv"],
+        who="Group 3 (Dexcom)", notes={"DXCM": "Year 1 = midpoint of 12-13% guidance"}),
+    "consumer_pharma": dict(
+        workbook=TEAM / "round2_groups34" / "Consumer_Brands_and_Pharma_Round2.xlsx",
+        yahoo=TEAM / "round2_groups34" / "Consumer_Brands_and_Pharma_Yahoo_Max_Monthly",
+        m12=[ROOT / "outputs/new_candidates/M12_Consumer_brands.csv", ROOT / "outputs/new_candidates/M12_Pharmaceuticals_and_Biotechnology.csv"],
+        fx={"ADS.DE": ("EURUSD=X", "mul")},  # HLN and NVO risk from their USD ADRs
+        who="Group 4 (Lululemon, Haleon, Novo Nordisk, adidas)",
+        notes={"LULU": "Fiscal year ended 1 Feb 2026; year 1 = midpoint of the -5% to -7% guidance",
+                "HLN": "Valued in GBP (UK 10-year 5.29%); year 1 = organic guidance about 2.5%; risk from the USD ADR",
+                "NVO": "Valued in DKK (Denmark 10-year 3.15%); dilution MISSING (outstanding shares used); capex 19.5% of revenue (capacity build) held for ten years; risk from the USD ADR",
+                "ADS.DE": "Valued in EUR; dilution and stock pay MISSING (outstanding shares used); worst year from 2004 only (EURUSD history)"}),
     "newcands": dict(
         workbook=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Wharton_Candidates_Round2_Missing_Audit.xlsx",
         yahoo=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Yahoo_Max_Monthly",
@@ -168,8 +202,8 @@ def red_flags(a, b, cfo):
     cr = lambda x: x["current_assets"] / x["current_liabilities"]
     gm = lambda x: None if x["cost_of_revenue"] is None else (x["revenue"] - x["cost_of_revenue"]) / x["revenue"]
     turn = lambda x: x["revenue"] / x["total_assets_start_of_year"]
-    tests = {"1 ROA > 0": roa(a) > 0, "2 CFO > 0": cfo > 0, "3 ROA up": roa(a) > roa(b),
-             "4 CFO > net income": cfo > a["net_income_continuing"],
+    tests = {"1 ROA > 0": roa(a) > 0, "2 CFO > 0": None if cfo is None else cfo > 0, "3 ROA up": roa(a) > roa(b),
+             "4 CFO > net income": None if cfo is None else cfo > a["net_income_continuing"],
              "5 leverage down": lev(a) < lev(b) or lev(a) == lev(b) == 0,
              "6 current ratio up": cr(a) > cr(b), "7 no new shares": a["shares_outstanding_m"] <= b["shares_outstanding_m"],
              "8 gross margin up": None if gm(a) is None else gm(a) > gm(b), "9 asset turnover up": turn(a) > turn(b)}
@@ -264,8 +298,18 @@ def main(key):
             raise ValueError(f"{t}: no valid tax rate; needs a decision")
         margin = v["operating_income"] / rev
         g_guid = num_guidance(v.get("guidance_next_fy_revenue_growth", v.get("guidance_fy2026_revenue_growth_numeric")))
+        if g_guid is None and v.get("guidance_growth_low") is not None and v.get("guidance_growth_high") is not None:
+            g_guid = (v["guidance_growth_low"] + v["guidance_growth_high"]) / 2  # midpoint of the published range (team method)
         g1 = g_guid if g_guid is not None else v["consensus_revenue_growth_y1"]
-        growth = fade(g1, v["consensus_revenue_growth_y2"], v["consensus_revenue_growth_y3"], g_term)
+        g1_note = ""
+        if t in cfg.get("g1_override", {}):
+            g1, g1_note = cfg["g1_override"][t]
+        if v["consensus_revenue_growth_y3"] is None:  # year-3 consensus MISSING: fade starts after year 2
+            g2 = v["consensus_revenue_growth_y2"]
+            growth = [g1, g2] + [g2 + (g_term - g2) * k / 8 for k in range(1, 9)]
+            g1_note += ("; " if g1_note else "") + "year-3 consensus MISSING: fade to terminal growth starts after year 2"
+        else:
+            growth = fade(g1, v["consensus_revenue_growth_y2"], v["consensus_revenue_growth_y3"], g_term)
         fy1_end = fy_end[t].replace(year=fy_end[t].year + 1)
         to_first = round((fy1_end - VAL_DATE).days / 365.25, 2)
         rolled = ""
@@ -285,7 +329,8 @@ def main(key):
             ("base_year", v["fiscal_year"], "", "RESEARCH", S, f"Fiscal year ended {fy_end[t]}"),
             ("base_revenue", round(rev, 3), f"{cur} m", "RESEARCH" if not rolled else "ASSUMPTION", S, rolled.lstrip("; ")),
             ("growth", ";".join(f"{g:.4f}" for g in growth), "decimal", "ASSUMPTION", "Standard method (Pat, 3 Nov)",
-             ("Year 1 guidance midpoint" if g_guid is not None else "Year 1 consensus") + "; years 2-3 consensus; fade to terminal growth"),
+             ("Year 1 guidance midpoint" if g_guid is not None and t not in cfg.get("g1_override", {}) else "Year 1 consensus") + "; years 2-3 consensus; fade to terminal growth"
+             + (f" ({g1_note})" if g1_note else "")),
             ("ebit_margin", ";".join([f"{margin:.5f}"] * 10), "decimal", "ASSUMPTION", "Standard method: FY0 operating margin held flat", ""),
             ("tax_rate", round(tax, 4), "decimal", "RESEARCH", S, tax_note),
             ("da_pct", ";".join([f"{da:.5f}"] * 10), "decimal", "RESEARCH", S, "Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)"),
@@ -304,7 +349,8 @@ def main(key):
             ("return_on_new_capital", 0.15, "decimal", "ASSUMPTION", "Kit default", ""),
             ("debt", v["debt"], f"{cur} m", "RESEARCH", S, ""),
             ("non_operating_assets", v["corporate_cash"], f"{cur} m", "RESEARCH", S, "Corporate cash"),
-            ("diluted_shares", v["diluted_shares_m"], "m", "RESEARCH", S, "Shares at the cash-and-debt date plus dilution (teammate's ledger)"),
+            ("diluted_shares", v["diluted_shares_m"] or v["shares_outstanding_m"], "m", "RESEARCH", S,
+             "Shares at the cash-and-debt date plus dilution (teammate's ledger)" if v["diluted_shares_m"] else "Dilution MISSING: shares outstanding used (understates the share count slightly)"),
             ("years_to_first_cash_flow", to_first, "years", "ASSUMPTION", f"Valuation date to the end of FY{v['fiscal_year'] + 1} ({fy1_end})", ""),
             ("first_year_fraction", 1.0, "", "ASSUMPTION", "Method", "Cash and debt at the FY0 year-end"),
             ("sbc_pct", 0, "decimal", "ASSUMPTION", "Method", "0 because da_pct is reported D&A"),
@@ -340,13 +386,16 @@ def main(key):
         else:
             pio, pio_n, fails, mscore = red_flags(a, b, a["cfo"])
         model_cash = v["operating_income"] * (1 - tax) + v["d_and_a"] - v["capex"]
-        rep_cash = v["cfo"] - v["capex"] - v["stock_based_comp"] + (v["interest_expense"] or 0) * (1 - tax)
-        da_rep = pp.da_pct[0] + (rep_cash - model_cash) / rev
+        if v["cfo"] is None or v["stock_based_comp"] is None:  # cash check needs both
+            rep_cash = None
+        else:
+            rep_cash = v["cfo"] - v["capex"] - v["stock_based_comp"] + (v["interest_expense"] or 0) * (1 - tax)
+        da_rep = None if rep_cash is None else pp.da_pct[0] + (rep_cash - model_cash) / rev
         up, down = vv["per_share"] / price - 1, bv["per_share"] / price - 1
         res.append(dict(t=t, g=group.get(t, ""), price=price, cur=cur, v1=vv["per_share"], v5=at(b5), vf=at(bf), b5=b5, bf=bf, nf=nf,
-                        rep=value(replace(pp, da_pct=(da_rep,) * 10))["per_share"], shift=shift, bear=bv["per_share"], up=up, down=down,
+                        rep=None if da_rep is None else value(replace(pp, da_pct=(da_rep,) * 10))["per_share"], shift=shift, bear=bv["per_share"], up=up, down=down,
                         ratio="no upside" if up <= 0 else ("no downside" if down >= 0 else f"{up / -down:.2f}"),
-                        conv=model_cash / rep_cash, vol=vol, cagr=cagr, rm=rm, sharpe=None if vol is None else (cagr - T_BILL) / vol,
+                        conv=None if rep_cash is None else model_cash / rep_cash, vol=vol, cagr=cagr, rm=rm, sharpe=None if vol is None else (cagr - T_BILL) / vol,
                         wy=wy, maxpos=6000 / -wy[1] if wy[1] < 0 else None, pio=f"{pio}/{pio_n}", fails="; ".join(fails),
                         m=f"NOT CHECKED ({', '.join(mscore[1])} MISSING)" if mscore[0] is None else f"{mscore[0]:.2f}", m12=m12.get(t, "MISSING"),
                         note=cfg["notes"].get(t, "")))
@@ -363,7 +412,7 @@ def report(key, cfg, res):
         sh = "n/a" if r["shift"] is None else f"{r['shift']:+.1%}"
         L.append(f"| {r['g']} | {r['t']} | {r['price']:,.2f} {r['cur']} | {r['v1']:,.2f} | {r['v1'] / r['price']:.2f} | "
                  f"{r['v5'] / r['price']:.2f} (beta {r['b5']:.2f}) | {r['vf'] / r['price']:.2f} (beta {r['bf']:.2f}, {r['nf']} months) | "
-                 f"{r['rep'] / r['price']:.2f} | {sh} | {r['bear'] / r['price']:.2f} | {r['up']:+.0%} / {r['down']:+.0%} = {r['ratio']} |")
+                 + ("MISSING" if r["rep"] is None else f"{r['rep'] / r['price']:.2f}") + f" | {sh} | {r['bear'] / r['price']:.2f} | {r['up']:+.0%} / {r['down']:+.0%} = {r['ratio']} |")
     L += ["", "## Tests", "",
           "| Ticker | 1. M12 top 2 and robust | 2. Value > price at beta 1.0, 5-year and full-history beta | 3. Upside/downside >= 1.0 | "
           "4. Piotroski, Beneish | Worst year (max position) | 5-year return a year, volatility, Sharpe | Cash check | Note |",
@@ -375,7 +424,7 @@ def report(key, cfg, res):
         L.append(f"| {r['t']} | {r['m12']} | {t2} | {t3} | {r['pio']} (fails: {r['fails'] or 'none'}), {r['m']} | "
                  f"{r['wy'][0]}: {r['wy'][1]:.1%} ({mp}) | "
                  + ("MISSING until the Yahoo CSVs arrive" if r["vol"] is None else f"{r['cagr']:+.1%}, {r['vol']:.0%}, {r['sharpe']:.2f}")
-                 + f" | {r['conv']:.2f} | {r['note']} |")
+                 + f" | {'MISSING' if r['conv'] is None else format(r['conv'], '.2f')} | {r['note']} |")
     L += ["", (f"S&P 500 (SPY) compound return over the same window: {res[0]['rm']:+.1%} a year; " if res[0]["rm"] is not None
                else "Betas and worst years are the teammate's own calculations until the Yahoo CSVs arrive; ") + "risk-free 4.00% (3-month T-bill, 30 Oct).",
           "Cash check = model year-0 free cash flow / reported cash flow (CFO - capex - stock-based pay + after-tax interest); above about 1.10 the model is generous."]

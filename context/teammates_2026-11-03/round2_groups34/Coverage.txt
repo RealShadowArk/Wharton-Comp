@@ -1,0 +1,44 @@
+Scope
+The supplied READMEs name DXCM only for Medtech and Software, and LULU, HLN and NVO plus optional ADS.DE for Consumer Brands and Pharma. All five are included. No software candidate is named. No Round 1 workbook was changed.
+
+Dates and units
+Annual inputs use FY2025, matching Round 1. Lululemon FY2025 ends 1 February 2026; the other fiscal years end 31 December 2025. Amounts and shares are in millions. Prices are per share, and growth and yields are decimal fractions. Expenses and capital expenditure use positive magnitudes.
+
+Source hierarchy
+Annual financial data come from company annual reports or SEC filings. Evidence identifies each populated field, source URL, statement or note, period, and retrieval date. Previous-year statements supply FY2 opening assets. Reported comparative restatements are retained. Arithmetic uses disclosed components only.
+
+Template definitions
+The READMEs and Start here define diluted_shares_m as actual year-end shares plus incremental dilution from the latest filing. This takes precedence over the conflicting weighted-average description in Where to find it. The cash/debt date and later dilution date are both recorded. Equal rounded EPS is not evidence of zero dilution.
+
+Prices and share basis
+30 October 2026 closing prices come from Yahoo Finance. HLN uses the London ordinary-share close of 319.4 pence / 100 = GBP3.194. NVO uses the Copenhagen B share in DKK; A and B outstanding shares are included. NYSE ADR ratios are 2 ordinary shares per HLN ADS and 1 ordinary share per NVO ADS. The USD ADRs are used only for risk history. No different-date FX rate is substituted.
+
+Guidance and consensus
+Management guidance and targets are attributed observations, not assistant forecasts. Published growth-range midpoints are used only as authorized by Start here. Organic, constant-currency, adjusted and reported bases remain distinct. No price targets, recommendations, valuation conclusions or bear cases were generated.
+
+Consensus dates
+HLN uses company-published Vuma consensus dated 21 October 2026. DXCM uses Simply Wall St data updated 30 October 2026. LULU, NVO and ADS.DE use one MarketScreener snapshot per company retrieved 3 November 2026; an underlying consensus update timestamp is not shown. These three are not represented as archived 31 October consensus. Published growth percentages are retained; HLN and DXCM growth is calculated from the linked revenue estimates.
+
+Secondary-source fields
+Yahoo Finance supplies all closing prices, monthly adjusted closes and optional provider betas. Simply Wall St supplies DXCM consensus; MarketScreener supplies LULU, NVO and ADS.DE consensus. Countryeconomy supplies the Denmark and Germany 10-year yields, and Investing.com supplies the UK 10-year yield, all for 30 October 2026. US yield uses FRED DGS10. Annual financial statement amounts do not rely solely on secondary sources.
+
+Cash, debt and D&A
+Corporate cash excludes specifically identified restricted funds. IFRS debt excludes lease liabilities and records lease totals in notes; US GAAP debt includes finance leases. D&A excludes separately identifiable impairments. Red flags depreciation excludes amortization; NVO reported PPE depreciation includes ROU depreciation, as disclosed. Cash-flow stock compensation and income-statement plan expenses are distinguished.
+
+Risk calculation
+Worst return is the minimum complete December-to-December adjusted-close return through 2025. Incomplete initial years and all 2026 observations are excluded. Monthly CSV rows retain Yahoo month labels and are not calendar-day prices. HLN has only positive complete-year returns, so its worst result is a positive minimum. History start is the first year in the downloaded equity series, not a claim about first listing.
+
+adidas risk limitation
+ADS.DE Yahoo Max starts in June 1998; EURUSD=X Max starts in December 2003. Only the overlapping 2004–2025 USD calendar-year returns can be verified from these downloads. The overlapping minimum is recorded in notes and the calculation audit. Full-history worst_calendar_year and worst_return remain blank because early USD conversion is not verified.
+
+Original downloads
+The two Yahoo ZIPs contain the original CSV bytes, with file hashes and download URLs in each manifest. LULU_monthly_original.csv is a working copy of the original LULU.csv download and is delivered as LULU.csv. SPY is included in both groups; ADS.DE and EURUSD=X are included with the optional candidate. Monthly prices in the supplied templates remains untouched.
+
+Access coverage
+Haleon annual-report download and some PDF screenshots failed through one retrieval route, but the report text was accessible through web search/open. Lululemon PDF text had character-encoding problems; readable SEC HTML was used instead. The adidas H1 PDF failed in web open; the latest Q3 supplement was downloaded successfully. StockAnalysis locked later forecast columns behind Pro, so those inaccessible values were not used. Yahoo Finance was already signed in. StockTrak was not needed.
+
+Missing inputs
+Every blank among the populated company rows is listed in MISSING with a specific reason. Reserved blank template rows, the unchanged Monthly prices tab, and blank non-applicable period labels in the evidence are not unresearched financial inputs. Missing values are never replaced by zero; LULU debt is zero because the filing explicitly reports no borrowings.
+
+AI-use record
+Prepared on 3 November 2026 using OpenAI Codex. Tools used: public web search/open, signed-in Yahoo Finance browser downloads, local PDF/HTML extraction, CSV calculations, and spreadsheet authoring/verification. The separate research log identifies uses and dates. As requested by the README, the team must open every source and write its own conclusions; these files are research notes and must not be submitted as the team's own AI-free work.
