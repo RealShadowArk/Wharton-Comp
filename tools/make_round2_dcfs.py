@@ -90,6 +90,8 @@ def build(t, v, red, beta_measured):
     # Shares at the same date as cash and debt (Red flags tab, FY0 shares outstanding), so buybacks are
     # not counted twice; PayPal's bridge is 30 Sep 2026. Dilutive options/RSUs are not added (MISSING).
     shares = PYPL_Q3["shares"] if t == "PYPL" else red[(t, "FY0")]["shares_outstanding_m"]
+    if t == "DLO":  # dilution is material for dLocal: 7.83m dilutive shares (Q2 2026 6-K, 13 Aug 2026)
+        shares += 7.83
     erp = 0.05 + (CRP_DLO if t == "DLO" else 0)
     fy_end = "2026-03-31" if cur == "INR" else "2025-12-31"
     first = 0.42 if cur == "INR" else 0.17
@@ -127,7 +129,7 @@ def build(t, v, red, beta_measured):
          S, "Gross cash 10,797.401 - merchant/FI payables 6,371.815 (Pat, 3 Nov; EUR 0 shown as the floor)"
          if t == "ADYEN" else ("Cash, cash equivalents and investments 7,160 + 3,120 + 4,785 at 30 Sep 2026 (PayPal's measure excludes customer funds)" if t == "PYPL" else "Corporate cash only; merchant, customer and clearing funds excluded")),
         ("diluted_shares", shares, "m", "RESEARCH", "PayPal Q3 2026 release: diluted shares, Q3" if t == "PYPL" else "Pat_Round2_data_completed.xlsx (Red flags, FY0 shares outstanding)",
-         "Shares at the cash-and-debt date so buybacks are not double counted; dilution not added (MISSING)" if t != "PYPL" else "Matches the 30 Sep 2026 bridge"),
+         ("Year-end shares 294.93 + 7.83 dilutive shares (Q2 2026 6-K)" if t == "DLO" else "Shares at the cash-and-debt date so buybacks are not double counted; dilution not added (MISSING)") if t != "PYPL" else "Matches the 30 Sep 2026 bridge"),
         ("years_to_first_cash_flow", first, "years", "ASSUMPTION", "Valuation date to the end of forecast year 1", ""),
         ("first_year_fraction", fraction, "", "ASSUMPTION", "Method", "PayPal: bridge at 30 Sep 2026, so only Q4 of 2026 counts" if t == "PYPL" else "Cash and debt are at the base-year end, so all of forecast year 1 counts"),
         ("sbc_pct", 0, "decimal", "ASSUMPTION", "Method", "0 because da_pct is reported D&A"),
@@ -262,8 +264,8 @@ def report(res):
           "(CFO, corrected for merchant funds, - capex - stock-based pay + after-tax interest). Above about 1.10 the "
           "model is more generous than the company's actual cash generation.", "",
           "## Caveats that still matter", "",
-          "- **dLocal:** its upside/downside ratio is 1.06 on year-end shares (294.9m) but 0.93 on the FY2025 diluted average (301.7m); "
-          "dilution from options is real for dLocal, so treat test 3 as borderline.",
+          "- **dLocal:** shares include 7.83m dilutive shares from its Q2 2026 6-K (294.9m + 7.8m); without them the "
+          "upside/downside ratio would be 1.06, so test 3 is a near miss, not a clear fail.",
           "- **PayPal:** the bridge counts all $15.1bn of corporate cash and investments as spare, although some supports its credit "
           "book and regulated entities; and the uniform draft bear (no downside) is far milder than the team's 23 Oct bear ($34-39). "
           "Its price implies revenue shrinking about 4-5% a year for a decade.",
