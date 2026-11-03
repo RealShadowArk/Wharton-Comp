@@ -1,0 +1,10 @@
+ticker,piotroski,piotroski_checked,piotroski_fails,piotroski_not_checked,beneish_m,beneish_flag,cfo_used,DSRI,GMI,AQI,SGI,DEPI,SGAI,TATA,LVGI
+DLO,6,9,6 current ratio up; 7 no new shares; 8 gross margin up,,-2.35,pass,227.476,0.777,1.072,0.944,1.467,0.899,0.806,-0.02,1.083
+ADYEN,6,9,3 ROA up; 7 no new shares; 9 asset turnover up,,-2.59,pass,1246.157,0.833,0.963,0.709,1.179,0.907,0.592,-0.015,0.901
+PYPL,8,9,5 leverage down,,-2.54,pass,6416,0.976,0.977,0.97,1.043,1.087,0.985,-0.015,1.001
+CME,7,8,5 leverage down,8 gross margin up,NOT CHECKED (GMI MISSING),,4277,1.049,MISSING,0.666,1.063,0.958,1.001,-0.001,1.08
+ICE,7,8,5 leverage down,8 gross margin up,NOT CHECKED (GMI MISSING),,4662,0.973,MISSING,1.026,1.07,1.131,0.953,-0.01,0.979
+MCO,9,9,,,-2.48,pass,2901,1.036,0.975,1.011,1.089,1.023,0.953,-0.028,0.939
+INFY,8,9,6 current ratio up,,-2.59,pass,339860,1.032,0.987,0.961,1.096,1.004,1.064,-0.029,1.166
+TCS,5,9,3 ROA up; 5 leverage down; 6 current ratio up; 9 asset turnover up,,-2.3,pass,520940,1.133,0.951,1.296,1.046,1.056,1.02,-0.016,1.008
+CTSH,6,9,3 ROA up; 8 gross margin up; 9 asset turnover up,,-2.5,pass,2883,1.023,1.019,1.005,1.07,0.97,0.94,-0.032,0.909
