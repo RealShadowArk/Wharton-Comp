@@ -10,11 +10,11 @@ tax_rate,0.1814,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1013871
 da_pct,0.03735;0.03735;0.03735;0.03735;0.03735;0.03735;0.03735;0.03735;0.03735;0.03735,decimal,ASSUMPTION,https://www.sec.gov/Archives/edgar/data/1013871/000110465926022295/tm267426d2_ex99-6.htm,"Set equal to capex (assumption). Pro forma D&A is 1,866, but it includes amortization of acquired customer intangibles and of capitalized customer-acquisition costs, whose cash cost sits in operating cash flow, so adding all of it back would overstate cash flow = 3.73% of revenue"
 capex_pct,0.03735;0.03735;0.03735;0.03735;0.03735;0.03735;0.03735;0.03735;0.03735;0.03735,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1013871/000110465926022295/tm267426d2_ex99-6.htm,"NRG's 2025 capex ratio (1,147 / 30,713 = 3.7%) applied to pro forma revenue; the acquired plants' capex is not in the pro forma"
 nwc_pct_of_change,0.0,decimal,ASSUMPTION,Assumption,0: no extra working capital per $1 of new revenue
-risk_free,0.0498,decimal,RESEARCH,"https://fred.stlouisfed.org/series/DGS10 (FRED DGS10, 30 Oct 2026, read by Pat 2 Nov 2026)",Was 0.04929 (Yahoo ^TNX); one rate for all DCFs
+risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026 (research compilation; Pat chose it 3 Nov)","Was 0.04929 (Yahoo ^TNX), then 0.0498 (FRED, 29 Oct); one rate for all DCFs"
 beta,1.0,,ASSUMPTION,Standard method: market beta 1.0,Measured beta in the next row
 beta_measured,1.221,,RESEARCH,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",
 equity_premium,0.05,decimal,ASSUMPTION,Kit default,
-pre_tax_cost_of_debt,0.0548,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),Low for a BB-rated borrower
+pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),Low for a BB-rated borrower
 equity_value_for_weights,20192.8,USD m,RESEARCH,Shares outstanding x 30 Oct 2026 close,210.210483 m x 96.06
 debt_value_for_weights,20420,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1013871/000110465926022295/tm267426d2_ex99-6.htm,Book value of debt
 terminal_growth,0.03,decimal,ASSUMPTION,Kit default,

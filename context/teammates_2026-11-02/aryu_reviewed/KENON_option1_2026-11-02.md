@@ -1,4 +1,4 @@
-# Kenon: option 1, OPC valued on its parts' cash flows (TEST preview, 2 Nov 2026)
+# Kenon: option 1, OPC valued on its parts' cash flows (TEST preview, 2 Nov 2026; re-run at 4.94% on 3 Nov)
 
 Pat chose option 1 on 2 Nov. Aryu's Kenon section and files are still unchanged. Script: `python tools/kenon_sotp.py`; every input and its label is in `IN`.
 
@@ -16,7 +16,7 @@ Pat chose option 1 on 2 Nov. Aryu's Kenon section and files are still unchanged.
    - Run-rate EBITDA = H1 2026 × (FY2025 / H1 2025) = × 2.25, because H2 is the stronger half.
    - Free cash flow = EBITDA × a conversion rate (60/70/80%) for maintenance capex and cash tax. Those figures are MISSING, so the rate is an ASSUMPTION.
    - Growth 2% (ASSUMPTION): the plants age, and projects are valued separately.
-   - Discount rates (kit standard: beta 1.0, ERP 5%, 10-year 4.98%): WACC 8.33% for CPV, and 9.76% for Israel, which adds Israel's 1.98% country risk premium.
+   - Discount rates (kit standard: beta 1.0, ERP 5%, 10-year 4.94%): WACC 8.29% for CPV, and 9.72% for Israel, which adds Israel's 1.98% country risk premium.
 2. **Basin Ranch.** Valued from its first full year, 2030: about $262m of EBITDA (midpoint of $250-275m) less the remaining cost. Spending to date is MISSING, so 0% and 25% are shown.
 3. **Ownership.** OPC's shareholders get 80% of Israel and 71% of CPV.
 4. **Net debt.** OPC's net debt on a 100% basis is $2,302m: consolidated debt 2,977 − cash 1,261, plus its share of CPV associates' debt 642 − cash 56. Its split between Israel, CPV and the head office is MISSING, so the share borne by OPC's shareholders is bracketed at 71% to 100%.
@@ -26,17 +26,17 @@ Pat chose option 1 on 2 Nov. Aryu's Kenon section and files are still unchanged.
 
 | Case | Kenon per share | vs $64.11 |
 |---|---|---|
-| Central: 70% conversion, Basin Ranch 25% spent, net-debt share at the midpoint | **$40.25** | **0.63×** |
-| Range: conversion 60-80%, WACC ±1 point, net-debt share 71-100%, Basin Ranch on or off | $19.95 to $62.45 | 0.31× to 0.97× |
-| Central, plus Shay and Walker **if built** on Basin Ranch's economics per MW (ASSUMPTION: no investment decision yet) | $51.33 | 0.80× |
+| Central: 70% conversion, Basin Ranch 25% spent, net-debt share at the midpoint | **$40.57** | **0.63×** |
+| Range: conversion 60-80%, WACC ±1 point, net-debt share 71-100%, Basin Ranch on or off | $20.09 to $62.95 | 0.31× to 0.98× |
+| Central, plus Shay and Walker **if built** on Basin Ranch's economics per MW (ASSUMPTION: no investment decision yet) | $51.87 | 0.81× |
 
 Kenon per share at Basin Ranch 25% spent and the net-debt midpoint:
 
 | Conversion | WACC −1 point | WACC as above | WACC +1 point |
 |---|---|---|---|
-| 60% | $40.71 | $32.32 | $26.18 |
-| 70% | $50.11 | $40.25 | $33.03 |
-| 80% | $59.52 | $48.19 | $39.89 |
+| 60% | $41.08 | $32.58 | $26.37 |
+| 70% | $50.55 | $40.57 | $33.27 |
+| 80% | $60.02 | $48.55 | $40.16 |
 
 **On our method, Kenon shows no edge.** No combination tested reaches the price without the development projects.
 
@@ -44,7 +44,7 @@ Kenon per share at Basin Ranch 25% spent and the net-debt midpoint:
 |---|---|
 | OPC's own price (₪93.93) | $9,273m |
 | Kenon's price | $5,947m |
-| This DCF, central | $3,245m (₪32.87 per OPC share) |
+| This DCF, central | $3,280m (₪33.23 per OPC share) |
 
 Even Kenon's discounted price assumes about $2.7bn of value from projects not yet under construction: Shay, Walker, Israeli projects and data centres. OPC's own price assumes about $6bn.
 
@@ -64,7 +64,7 @@ This version fixes both.
 - **Net-debt split by segment.** MISSING. The two extremes are about $6/share apart (±$3 around the midpoint).
 - **Basin Ranch figures.** Its EBITDA comes from a garbled table, and spending to date is MISSING.
 - **Excluded upside.** Israeli projects and CPV renewables growth are not counted.
-- **Rate.** The 10-year: see the 4.94% note in the chat of 2 Nov. It moves the value by under 1%.
+- **Rate.** Updated to 4.94% (the Treasury's 30 Oct figure) on 3 Nov; at 4.98% the central value was $40.25.
 
 ## War and politics (sourced facts first, then judgment)
 

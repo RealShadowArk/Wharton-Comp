@@ -10,11 +10,11 @@ tax_rate,0.1704,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800
 da_pct,0.09006;0.09006;0.09006;0.09006;0.09006;0.09006;0.09006;0.09006;0.09006;0.09006,decimal,ASSUMPTION,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,"Calibrated to FY0 cash conversion: (CFO 1595.2 + after-tax net interest 0.0 - NOPAT 1048.8) / revenue. Edwards earns more interest on its cash than it pays; net interest left at 0. Includes working capital and other non-cash items, so it is not reported D&A"
 capex_pct,0.04288;0.04288;0.04288;0.04288;0.04288;0.04288;0.04288;0.04288;0.04288;0.04288,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,"FY0 capex 260.2 / revenue 6067.6, held flat"
 nwc_pct_of_change,0.0,decimal,ASSUMPTION,Working capital is inside the cash-flow calibration,Inside the da_pct calibration
-risk_free,0.0498,decimal,RESEARCH,"https://fred.stlouisfed.org/series/DGS10 (FRED DGS10, 30 Oct 2026, read by Pat 2 Nov 2026)",Was 0.04929 (Yahoo ^TNX); one rate for all DCFs
+risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026 (research compilation; Pat chose it 3 Nov)","Was 0.04929 (Yahoo ^TNX), then 0.0498 (FRED, 29 Oct); one rate for all DCFs"
 beta,1.0,,ASSUMPTION,Standard method: market beta 1.0,Measured beta in the next row
 beta_measured,0.845,,RESEARCH,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",
 equity_premium,0.05,decimal,ASSUMPTION,Kit default,
-pre_tax_cost_of_debt,0.0548,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),
+pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),
 equity_value_for_weights,53034.6,USD m,RESEARCH,Shares outstanding x 30 Oct 2026 close,576.4 m x 92.01
 debt_value_for_weights,598.3,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,Book value of debt
 terminal_growth,0.03,decimal,ASSUMPTION,Kit default,

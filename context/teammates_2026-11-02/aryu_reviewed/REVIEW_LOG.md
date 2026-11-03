@@ -75,3 +75,18 @@ Boston Scientific is **not** listed as a TAVR rival: the only source is undated,
 3. **Not part of fixes 2-5, so not done:**
    - Power M12 handling: accept the no-G2 diagnostic, or rank by judgment;
    - CEG's short-history sizing (no losing calendar year).
+
+## Update, 3 Nov: all DCFs at 4.94%
+
+Pat chose the Treasury's 30 Oct 10-year yield, 4.94%, for every DCF. FRED's 4.98% was the 29 Oct reading. The five DCFs, their bear cases and Kenon were re-run, and cost of debt moved with the rate (5.48% to 5.44%). The `inputs/` and `outputs/` folders are updated. **The two documents still show the 4.98% figures:** they will be refreshed once the team method (full-history beta, matched shares) runs on Aryu's Round 2 data.
+
+| | Value / price, beta 1.0 | At measured beta | At adjusted beta | Price implies | Bear / price | Upside / downside |
+|---|---|---|---|---|---|---|
+| CEG | $146.11 (0.56) | $133.53 (0.51) | $137.47 (0.52) | +6.5 points | $63.83 (0.24) | no upside |
+| NRG | $130.01 (1.35) | $106.14 (1.10) | $113.39 (1.18) | -2.1 points | $45.90 (0.48) | +35.3% / -52.2% = 0.68 |
+| RMD | $186.76 (0.81) | $221.00 (0.96) | $208.29 (0.91) | +3.0 points | $132.14 (0.57) | no upside |
+| ALC | $57.06 (0.80) | $63.06 (0.88) | $60.95 (0.85) | +2.7 points | $44.21 (0.62) | no upside |
+| EW | $46.84 (0.51) | $51.48 (0.56) | $49.83 (0.54) | +10.5 points | $36.25 (0.39) | no upside |
+| Kenon (parts valued separately) | $40.57 central (0.63) | | | | | range $20.09-62.95 |
+
+No conclusion changes.

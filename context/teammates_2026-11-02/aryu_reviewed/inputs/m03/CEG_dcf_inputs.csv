@@ -10,11 +10,11 @@ tax_rate,0.28,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/0
 da_pct,0.09706;0.09706;0.09706;0.09706;0.09706;0.09706;0.09706;0.09706;0.09706;0.09706,decimal,ASSUMPTION,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"Pro forma D&A 1,957 + CEG's nuclear-fuel amortization and accretion (2,601 cash-flow D&A - 985 income-statement D&A), because capex includes nuclear fuel = 9.71% of revenue"
 capex_pct,0.11132;0.11132;0.11132;0.11132;0.11132;0.11132;0.11132;0.11132;0.11132;0.11132,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"CEG capex 2,949 (10-K) + Calpine capex 1,149 (Calpine 2025 financial statements, 8-K 20 Mar 2026)"
 nwc_pct_of_change,0.0,decimal,ASSUMPTION,Assumption,0: no extra working capital per $1 of new revenue
-risk_free,0.0498,decimal,RESEARCH,"https://fred.stlouisfed.org/series/DGS10 (FRED DGS10, 30 Oct 2026, read by Pat 2 Nov 2026)",Was 0.04929 (Yahoo ^TNX); one rate for all DCFs
+risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026 (research compilation; Pat chose it 3 Nov)","Was 0.04929 (Yahoo ^TNX), then 0.0498 (FRED, 29 Oct); one rate for all DCFs"
 beta,1.0,,ASSUMPTION,Standard method: market beta 1.0,Measured beta in the next row
 beta_measured,1.116,,RESEARCH,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",CEG has 57 months (listed Feb 2022)
 equity_premium,0.05,decimal,ASSUMPTION,Kit default,
-pre_tax_cost_of_debt,0.0548,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),
+pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),
 equity_value_for_weights,92963.2,USD m,RESEARCH,Shares outstanding x 30 Oct 2026 close,354.307379 m x 262.38
 debt_value_for_weights,21543,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,Book value of debt
 terminal_growth,0.03,decimal,ASSUMPTION,Kit default,

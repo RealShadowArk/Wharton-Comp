@@ -10,11 +10,11 @@ tax_rate,0.2064,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/
 da_pct,0.05457;0.05457;0.05457;0.05457;0.05457;0.05457;0.05457;0.05457;0.05457;0.05457,decimal,ASSUMPTION,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,"Calibrated to FY0 cash conversion: (CFO 1805.829 + after-tax net interest 0.0 - NOPAT 1497.3) / revenue. ResMed earns more interest than it pays; net interest left at 0. Includes working capital and other non-cash items, so it is not reported D&A"
 capex_pct,0.02764;0.02764;0.02764;0.02764;0.02764;0.02764;0.02764;0.02764;0.02764;0.02764,decimal,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,"FY0 capex 156.285 / revenue 5653.443, held flat"
 nwc_pct_of_change,0.0,decimal,ASSUMPTION,Working capital is inside the cash-flow calibration,Inside the da_pct calibration
-risk_free,0.0498,decimal,RESEARCH,"https://fred.stlouisfed.org/series/DGS10 (FRED DGS10, 30 Oct 2026, read by Pat 2 Nov 2026)",Was 0.04929 (Yahoo ^TNX); one rate for all DCFs
+risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026 (research compilation; Pat chose it 3 Nov)","Was 0.04929 (Yahoo ^TNX), then 0.0498 (FRED, 29 Oct); one rate for all DCFs"
 beta,1.0,,ASSUMPTION,Standard method: market beta 1.0,Measured beta in the next row
 beta_measured,0.766,,RESEARCH,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",
 equity_premium,0.05,decimal,ASSUMPTION,Kit default,
-pre_tax_cost_of_debt,0.0548,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),
+pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,10-year Treasury + 0.5 points (kit default),
 equity_value_for_weights,32342.7,USD m,RESEARCH,Shares outstanding x 30 Oct 2026 close,140.657071 m x 229.94
 debt_value_for_weights,659.4,USD m,RESEARCH,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,Book value of debt
 terminal_growth,0.03,decimal,ASSUMPTION,Kit default,

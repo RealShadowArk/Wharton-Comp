@@ -31,7 +31,7 @@ IN = {  # value, label, source
     "opc_shares": (310, "RESEARCH", "OPC shares about 310m (calculated from the March 2026 placement, 8m = 2.65%)"),
     "opc_price_nis": (93.93, "RESEARCH", "OPC TASE close 30 Oct 2026, 9,393 agorot (read by Pat)"),
     "usd_ils": (3.14, "RESEARCH", "About NIS 3.14 per USD, 30 Oct 2026 (aggregators)"),
-    "rf": (0.0498, "RESEARCH", "US 10-year, 4.98% (Pat's FRED read; see the 4.94% note)"),
+    "rf": (0.0494, "RESEARCH", "US Treasury 10-year par CMT, 30 Oct 2026 (Pat chose 4.94% on 3 Nov; 4.98% was the 29 Oct FRED reading)"),
     "erp": (0.05, "ASSUMPTION", "Kit default"),
     "beta": (1.0, "ASSUMPTION", "Kit standard method (Kenon measured 1.03)"),
     "crp_israel": (0.0198, "RESEARCH", "Israel country risk premium, Damodaran July 2026"),
