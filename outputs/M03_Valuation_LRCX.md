@@ -81,7 +81,7 @@ Holding margins, reinvestment and WACC fixed, the price matches the DCF if every
 | risk_free | 0.0494 | RESEARCH | US Treasury 10-year par CMT, 30 Oct 2026 |  |
 | beta | 1.0 | ASSUMPTION | Standard method |  |
 | beta_measured | 1.965 | RESEARCH | 60 monthly USD returns vs SPY, Nov 2021-Oct 2026 (teammate's calculation; recompute from the Yahoo CSVs) |  |
-| equity_premium | 0.05 | ASSUMPTION | Kit default |  |
+| equity_premium | 0.05 | ASSUMPTION | Kit default 5% |  |
 | pre_tax_cost_of_debt | 0.0544 | ASSUMPTION | Kit default: 10-year + 0.5 points |  |
 | equity_value_for_weights | 299193.08 | RESEARCH | Price x shares |  |
 | debt_value_for_weights | 3734.563 | RESEARCH | Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv') |  |

@@ -26,7 +26,7 @@ sys.path.insert(0, str(ROOT))
 from m03.dcf import value  # noqa: E402
 from m03.run import load, run, wacc_for  # noqa: E402
 
-RF = {"USD": 0.0494, "EUR": 0.0334, "INR": 0.073977}
+RF = {"USD": 0.0494, "EUR": 0.0334, "INR": 0.073977, "CNY": 0.016266}  # CNY: China 10-year, 30 Oct 2026 (Akshat's source)
 RF_US, T_BILL = 0.0494, 0.04
 VAL_DATE = date(2026, 10, 30)
 TEAM = ROOT / "context" / "teammates_2026-11-03"
@@ -39,6 +39,18 @@ SETS = {
         notes={"KO": "2025 operating cash flow is low next to profit; check for one-off payments before trusting the cash check",
                "NKE": "FY2026 margin (8.2%) is held flat; Nike's margin is depressed, so the base case is a low-margin case",
                "NOW": "Year-1 growth is consensus (guidance covers subscription revenue only)"}),
+    "akshat": dict(
+        workbook=TEAM / "akshat_final" / "Akshat_Round2_updated.xlsx",
+        yahoo=TEAM / "akshat_final" / "Yahoo Max",
+        m12=[TEAM / "akshat_final" / "pharma_m12_research_inputs.csv", TEAM / "Akshat_digital_m12_research_inputs.csv"],
+        alias={"9961": "9961.HK", "SNY": "SAN.PA"},
+        series={"9961.HK": ("TCOM", None)},             # risk from the TCOM ADR (1 ADS = 1 share), USD
+        fx={"SAN.PA": ("EURUSD=X", "mul")},             # EUR price x USD per EUR
+        crp={"9961.HK": 0.0091},                         # China CRP (Damodaran 1 Jan 2026, secondary mirror; Pat 3 Nov)
+        who="Akshat",
+        notes={"9961.HK": "Valued in RMB (China 10-year 1.63% + China CRP 0.91%); 2025 profit includes RMB 19.4bn of one-off gains (M12 rank holds without them); risk from TCOM",
+               "META": "VOO top-10 holding", "BKNG": "Own cash = cash - deferred merchant bookings (team convention)",
+               "SAN.PA": "Valued in EUR; risk in USD", "NVS": "Year-1 consensus +1.3% (patent expiries)"}),
     "akshajk": dict(
         workbook=TEAM / "akshaj_k_final" / "Akshaj_Six_Picks_Round2.xlsx",
         yahoo=None,  # Max monthly CSVs not yet received: teammate's betas used, labelled
@@ -61,12 +73,19 @@ SETS = {
                "ESLT": "Israel war exposure (see the Kenon note)"}),
 }
 TEXT = {"ticker", "company", "peer_group", "reporting_currency", "guidance_next_fy_revenue_growth", "guidance_basis",
-        "cash_note", "long_term_target", "sources", "notes", "period", "source", "listing_used_for_prices", "price_currency"}
+        "cash_note", "long_term_target", "sources", "notes", "period", "guidance_fy2026_revenue_growth_numeric", "source", "listing_used_for_prices", "price_currency"}
 
 
 def clean(d):
-    """Numeric fields: numbers stay; any text (MISSING, N/A ...) becomes None."""
-    return {k: (v if k in TEXT or isinstance(v, (int, float)) or v is None else None) for k, v in d.items()}
+    """Numeric fields: numbers (or numbers stored as text) stay; other text (MISSING, N/A ...) becomes None."""
+    def num(v):
+        if isinstance(v, (int, float)) or v is None:
+            return v
+        try:
+            return float(str(v).replace(",", ""))
+        except ValueError:
+            return None
+    return {k: (v if k in TEXT else num(v)) for k, v in d.items()}
 
 
 def num_guidance(v):
@@ -79,13 +98,27 @@ def num_guidance(v):
     return sum(pcts) / len(pcts) if len(pcts) == 2 else None
 
 
-def monthly(folder, tickers):
+def read_series(path):
+    out = {}
+    for r in csv.DictReader(open(path)):
+        m = r["Date"][:7]
+        if r["Date"].endswith("-01") and r.get("Adj Close") not in (None, "", "null") and m <= "2026-10":
+            out[m] = float(r["Adj Close"])
+    return out
+
+
+def monthly(folder, tickers, series=None, fx=None):
+    """Monthly USD adjusted closes: {month: {ticker: price}}. series maps a ticker to another file
+    (e.g. an ADR); fx converts a local-currency series with a Yahoo FX file ('mul' for USD per unit)."""
+    series, fx = series or {}, fx or {}
     out = {}
     for t in ["SPY"] + tickers:
-        for r in csv.DictReader(open(folder / f"{t}.csv")):
-            m = r["Date"][:7]
-            if r["Date"].endswith("-01") and r["Adj Close"] not in ("", "null") and m <= "2026-10":
-                out.setdefault(m, {})[t] = float(r["Adj Close"])
+        src = read_series(folder / f"{series.get(t, (t,))[0]}.csv")
+        if t in fx:
+            rate = read_series(folder / f"{fx[t][0]}.csv")
+            src = {m: v * rate[m] if fx[t][1] == "mul" else v / rate[m] for m, v in src.items() if m in rate}
+        for m, v in src.items():
+            out.setdefault(m, {})[t] = v
     return out
 
 
@@ -166,8 +199,11 @@ def main(key):
     m12.update(cfg.get("m12_text", {}))
     for f in cfg.get("m12", []):
         rows = m12load(f)
+        alias = cfg.get("alias", {})
         for r in rows:
-            fy_end[r["ticker"]] = date.fromisoformat(r["fy_end_date"])
+            r["ticker"] = alias.get(r["ticker"], r["ticker"])
+            if r.get("fy_end_date"):
+                fy_end[r["ticker"]] = date.fromisoformat(str(r["fy_end_date"])[:10])
         for g, res in score_all(rows).items():
             st = stability(res) if res["released"] else {}
             ranked = [t for _, t in sorted(((v, t) for t, v in res["totals"].items() if v is not None), reverse=True)]
@@ -177,7 +213,7 @@ def main(key):
                     k = st.get(t, (0, 32))[0]
                     ok = t in res["shortlist"] and k >= 24
                     m12[t] = f"{'Yes' if ok else 'No'}: {ranked.index(t) + 1} of {len(ranked)}, {k}/32"
-    p = monthly(Path(cfg["yahoo"]), tickers) if cfg.get("yahoo") else None
+    p = monthly(Path(cfg["yahoo"]), tickers, cfg.get("series"), cfg.get("fx")) if cfg.get("yahoo") else None
     m3 = ROOT / "inputs" / "m03"
     res = []
     for t in tickers:
@@ -187,8 +223,14 @@ def main(key):
         g_term = 1.03 * (1 + rf) / (1 + RF_US) - 1
         rev = v["revenue"]
         tax = (v["pretax_income"] - v["net_income_common"]) / v["pretax_income"]
+        tax_note = "1 - net income / pretax income"
+        if not 0 <= tax < 1:  # e.g. a discontinued-operations gain: use continuing net income
+            tax = 1 - red[(t, "FY0")]["net_income_continuing"] / v["pretax_income"]
+            tax_note = "1 - continuing net income / pretax income (net income includes discontinued operations)"
+        if not 0 <= tax < 1:
+            raise ValueError(f"{t}: no valid tax rate; needs a decision")
         margin = v["operating_income"] / rev
-        g_guid = num_guidance(v["guidance_next_fy_revenue_growth"])
+        g_guid = num_guidance(v.get("guidance_next_fy_revenue_growth", v.get("guidance_fy2026_revenue_growth_numeric")))
         g1 = g_guid if g_guid is not None else v["consensus_revenue_growth_y1"]
         growth = fade(g1, v["consensus_revenue_growth_y2"], v["consensus_revenue_growth_y3"], g_term)
         fy1_end = fy_end[t].replace(year=fy_end[t].year + 1)
@@ -204,7 +246,7 @@ def main(key):
             ("growth", ";".join(f"{g:.4f}" for g in growth), "decimal", "ASSUMPTION", "Standard method (Pat, 3 Nov)",
              ("Year 1 guidance midpoint" if g_guid is not None else "Year 1 consensus") + "; years 2-3 consensus; fade to terminal growth"),
             ("ebit_margin", ";".join([f"{margin:.5f}"] * 10), "decimal", "ASSUMPTION", "Standard method: FY0 operating margin held flat", ""),
-            ("tax_rate", round(tax, 4), "decimal", "RESEARCH", S, "1 - net income / pretax income"),
+            ("tax_rate", round(tax, 4), "decimal", "RESEARCH", S, tax_note),
             ("da_pct", ";".join([f"{da:.5f}"] * 10), "decimal", "RESEARCH", S, "Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)"),
             ("capex_pct", ";".join([f"{capex:.5f}"] * 10), "decimal", "RESEARCH", S, ""),
             ("nwc_pct_of_change", 0.0, "decimal", "ASSUMPTION", "Kit default", ""),
@@ -212,7 +254,8 @@ def main(key):
             ("beta", 1.0, "", "ASSUMPTION", "Standard method", ""),
             ("beta_measured", round(beta_stats(p, t, "2021-10")[0] if p else cfg["betas"][t][0], 3), "", "RESEARCH",
              "60 monthly USD returns vs SPY, Nov 2021-Oct 2026" + ("" if p else " (teammate's calculation; recompute from the Yahoo CSVs)"), ""),
-            ("equity_premium", 0.05, "decimal", "ASSUMPTION", "Kit default", ""),
+            ("equity_premium", 0.05 + cfg.get("crp", {}).get(t, 0), "decimal", "ASSUMPTION",
+             "Kit default 5%" + (f" + country risk premium {cfg['crp'][t]:.2%}" if t in cfg.get("crp", {}) else ""), ""),
             ("pre_tax_cost_of_debt", round(rf + 0.005, 6), "decimal", "ASSUMPTION", "Kit default: 10-year + 0.5 points", ""),
             ("equity_value_for_weights", round(v["price_30oct"] * v["shares_outstanding_m"], 2), f"{cur} m", "RESEARCH", "Price x shares", ""),
             ("debt_value_for_weights", v["debt"], f"{cur} m", "RESEARCH", S, ""),

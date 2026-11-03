@@ -1,0 +1,2 @@
+Pharmaceuticals and Biotechnology 5 6 True ['NVS', 'AZN']
+Internet and Digital Platforms 8 10 True ['9961', 'META']

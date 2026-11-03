@@ -1,0 +1,12 @@
+symbol,currency,file,first_month,last_month,rows,adjusted_close_gaps,source_url
+9961.HK,HKD,9961.HK.csv,2021-04-01,2026-10-01,67,0,https://query1.finance.yahoo.com/v8/finance/chart/9961.HK?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits
+META,USD,META.csv,2012-05-01,2026-10-01,174,0,https://query1.finance.yahoo.com/v8/finance/chart/META?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits
+BKNG,USD,BKNG.csv,1999-03-01,2026-10-01,332,0,https://query1.finance.yahoo.com/v8/finance/chart/BKNG?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits
+NVS,USD,NVS.csv,1996-11-01,2026-10-01,360,0,https://query1.finance.yahoo.com/v8/finance/chart/NVS?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits
+AZN,USD,AZN.csv,1993-05-01,2026-10-01,402,0,https://query1.finance.yahoo.com/v8/finance/chart/AZN?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits
+SAN.PA,EUR,SAN.PA.csv,2000-01-01,2026-10-01,322,0,https://query1.finance.yahoo.com/v8/finance/chart/SAN.PA?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits
+SPY,USD,SPY.csv,1993-01-01,2026-10-01,406,0,https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits
+EURUSD=X,USD,EURUSD=X.csv,2003-12-01,2026-10-01,275,0,https://query1.finance.yahoo.com/v8/finance/chart/EURUSD%3DX?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits
+HKD=X,HKD,HKD=X.csv,2001-08-01,2026-10-01,303,6,https://query1.finance.yahoo.com/v8/finance/chart/HKD%3DX?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits
+CNY=X,CNY,CNY=X.csv,2001-07-01,2026-10-01,304,7,https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits
+TCOM,USD,TCOM.csv,2003-12-01,2026-10-01,275,0,https://query1.finance.yahoo.com/v8/finance/chart/TCOM?period1=0&period2=1793404800&interval=1mo&includeAdjustedClose=true&events=div%2Csplits

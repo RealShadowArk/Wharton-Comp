@@ -1,0 +1,23 @@
+{
+  "ticker": "TCOM",
+  "currency": "USD",
+  "benchmark": "SPY",
+  "first_month": "2021-09",
+  "last_month": "2026-09",
+  "monthly_returns_count": 60,
+  "beta_usd": -0.03925451978327314,
+  "volatility_usd": 0.4067708265595602,
+  "annual_return_usd": 0.0502372637397257,
+  "benchmark_annual_return_usd": 0.13697931068946834,
+  "risk_free_oct30_dtb3": 0.0399,
+  "sharpe_usd": 0.025412991947228795,
+  "treynor_usd": -0.2633394522923331,
+  "alpha_usd": 0.01414806546173196,
+  "first_full_year_usd": 2004,
+  "last_full_year_usd": 2025,
+  "worst_year_usd": 2008,
+  "worst_loss_usd": -0.5849061567454051,
+  "position_cap_usd_loss": 10258.055810842914,
+  "risk_free_source_url": "https://fred.stlouisfed.org/data/DTB3",
+  "issuer_listing_source_url": "https://www.sec.gov/Archives/edgar/data/1269238/000119312526183379/d27369d20f.htm"
+}
