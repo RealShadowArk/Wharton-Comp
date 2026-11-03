@@ -39,7 +39,34 @@ SETS = {
         notes={"KO": "2025 operating cash flow is low next to profit; check for one-off payments before trusting the cash check",
                "NKE": "FY2026 margin (8.2%) is held flat; Nike's margin is depressed, so the base case is a low-margin case",
                "NOW": "Year-1 growth is consensus (guidance covers subscription revenue only)"}),
+    "akshajk": dict(
+        workbook=TEAM / "akshaj_k_final" / "Akshaj_Six_Picks_Round2.xlsx",
+        yahoo=None,  # Max monthly CSVs not yet received: teammate's betas used, labelled
+        betas={"NVDA": (2.2046, 2.047, 333), "LRCX": (1.9653, 1.968, 405), "ASML": (1.6979, 1.314, 274),
+               "GD": (0.3024, 0.792, 405), "HII": (0.1705, 0.7922, 187), "ESLT": (0.092, 0.6357, 359)},
+        fy_end={"NVDA": "2026-01-25", "LRCX": "2026-06-28", "ASML": "2025-12-31", "GD": "2025-12-31",
+                "HII": "2025-12-31", "ESLT": "2025-12-31"},
+        group={"NVDA": "Semiconductors", "LRCX": "Semiconductors", "ASML": "Semiconductors",
+               "GD": "Aerospace and defence", "HII": "Aerospace and defence", "ESLT": "Aerospace and defence"},
+        m12_text={"NVDA": "1 of 6 (90); stability not given", "LRCX": "2 of 6, tied with ASML and QCOM (45); stability not given",
+                  "ASML": "2 of 6, tied with LRCX and QCOM (45); stability not given", "GD": "1 of 6 (65); stability not given",
+                  "HII": "2 of 6 (57.5); stability not given", "ESLT": "3 of 6 (52.5); stability not given"},
+        rf_proxies={("GD", "FY0"): {"sga": 2595}, ("GD", "FY1"): {"sga": 2568},
+                    ("HII", "FY0"): {"sga": 977}, ("HII", "FY1"): {"sga": 973}},
+        rf_bounds={"ASML": {"FY0": (2709.0, 2725.5), "FY1": (3677.3, 3694.2)}},
+        who="Akshaj K",
+        notes={"GD": "Beneish uses reported G&A as SG&A (NOT FULLY VERIFIED)", "HII": "Beneish uses reported G&A as SG&A (NOT FULLY VERIFIED)",
+               "ASML": "Long-term debt known only within tight bounds; red flags run at both ends",
+               "NVDA": "VOO top-10 holding; consensus growth 91% / 68% / 30%",
+               "ESLT": "Israel war exposure (see the Kenon note)"}),
 }
+TEXT = {"ticker", "company", "peer_group", "reporting_currency", "guidance_next_fy_revenue_growth", "guidance_basis",
+        "cash_note", "long_term_target", "sources", "notes", "period", "source", "listing_used_for_prices", "price_currency"}
+
+
+def clean(d):
+    """Numeric fields: numbers stay; any text (MISSING, N/A ...) becomes None."""
+    return {k: (v if k in TEXT or isinstance(v, (int, float)) or v is None else None) for k, v in d.items()}
 
 
 def num_guidance(v):
@@ -126,12 +153,18 @@ def main(key):
     wb = openpyxl.load_workbook(cfg["workbook"], data_only=True)
     sheet = lambda n: [r for r in wb[n].iter_rows(values_only=True) if any(v not in (None, "") for v in r)]
     vr, rr, kr = sheet("Valuation inputs"), sheet("Red flags"), sheet("Risk")
-    val = {r[vr[0].index("ticker")]: dict(zip(vr[0], r)) for r in vr[1:]}
-    red = {(r[0], r[1]): dict(zip(rr[0], r)) for r in rr[1:]}
+    val = {r[vr[0].index("ticker")]: clean(dict(zip(vr[0], r))) for r in vr[1:]}
+    red = {(r[0], {"FY-1": "FY1"}.get(r[1], r[1])): clean(dict(zip(rr[0], r))) for r in rr[1:]}
+    for k, extra in cfg.get("rf_proxies", {}).items():
+        red[k].update(extra)
+    risk_tab = {r[0]: dict(zip(kr[0], r)) for r in kr[1:]}
     tickers = list(val)
     fy_end, group, m12 = {}, {}, {}
     from m12.score import load as m12load, score_all, stability
-    for f in cfg["m12"]:
+    fy_end.update({t: date.fromisoformat(d) for t, d in cfg.get("fy_end", {}).items()})
+    group.update(cfg.get("group", {}))
+    m12.update(cfg.get("m12_text", {}))
+    for f in cfg.get("m12", []):
         rows = m12load(f)
         for r in rows:
             fy_end[r["ticker"]] = date.fromisoformat(r["fy_end_date"])
@@ -144,7 +177,7 @@ def main(key):
                     k = st.get(t, (0, 32))[0]
                     ok = t in res["shortlist"] and k >= 24
                     m12[t] = f"{'Yes' if ok else 'No'}: {ranked.index(t) + 1} of {len(ranked)}, {k}/32"
-    p = monthly(Path(cfg["yahoo"]), tickers)
+    p = monthly(Path(cfg["yahoo"]), tickers) if cfg.get("yahoo") else None
     m3 = ROOT / "inputs" / "m03"
     res = []
     for t in tickers:
@@ -177,7 +210,8 @@ def main(key):
             ("nwc_pct_of_change", 0.0, "decimal", "ASSUMPTION", "Kit default", ""),
             ("risk_free", rf, "decimal", "RESEARCH", "US Treasury 10-year par CMT, 30 Oct 2026" if cur == "USD" else "Local 10-year, 30 Oct 2026", ""),
             ("beta", 1.0, "", "ASSUMPTION", "Standard method", ""),
-            ("beta_measured", round(beta_stats(p, t, "2021-10")[0], 3), "", "RESEARCH", "60 monthly USD returns vs SPY, Nov 2021-Oct 2026", ""),
+            ("beta_measured", round(beta_stats(p, t, "2021-10")[0] if p else cfg["betas"][t][0], 3), "", "RESEARCH",
+             "60 monthly USD returns vs SPY, Nov 2021-Oct 2026" + ("" if p else " (teammate's calculation; recompute from the Yahoo CSVs)"), ""),
             ("equity_premium", 0.05, "decimal", "ASSUMPTION", "Kit default", ""),
             ("pre_tax_cost_of_debt", round(rf + 0.005, 6), "decimal", "ASSUMPTION", "Kit default: 10-year + 0.5 points", ""),
             ("equity_value_for_weights", round(v["price_30oct"] * v["shares_outstanding_m"], 2), f"{cur} m", "RESEARCH", "Price x shares", ""),
@@ -204,13 +238,23 @@ def main(key):
         write(m3 / f"{t}bear_dcf_inputs.csv", bear)
         pp, vv, shift, price = run(t)
         _, raw, _ = load(t)
-        b5, vol, cagr, rm, _ = beta_stats(p, t, "2021-10")
-        bf, _, _, _, nf = beta_stats(p, t, "1900-01")
+        if p:
+            b5, vol, cagr, rm, _ = beta_stats(p, t, "2021-10")
+            bf, _, _, _, nf = beta_stats(p, t, "1900-01")
+        else:
+            (b5, bf, nf), vol, cagr, rm = cfg["betas"][t], None, None, None
         at = lambda b: value(replace(pp, wacc=wacc_for(raw, b)))["per_share"]
         _, bv, _, _ = run(t + "bear")
-        wy = worst_year(p, t)
+        wy = worst_year(p, t) if p else (risk_tab[t]["worst_calendar_year"], risk_tab[t]["worst_return"])
         a, b = red[(t, "FY0")], red[(t, "FY1")]
-        pio, pio_n, fails, mscore = red_flags(a, b, a["cfo"])
+        bounds = cfg.get("rf_bounds", {}).get(t)
+        if bounds:
+            outs = [red_flags(dict(a, long_term_debt=bounds["FY0"][i]), dict(b, long_term_debt=bounds["FY1"][i]), a["cfo"]) for i in (0, 1)]
+            pio, pio_n, fails, mscore = outs[0]
+            if (outs[0][0], round(outs[0][3], 2)) != (outs[1][0], round(outs[1][3], 2)):
+                fails = fails + [f"bounds differ: {outs[1][0]}/{outs[1][1]}, M {outs[1][3]:.2f} at the upper bound"]
+        else:
+            pio, pio_n, fails, mscore = red_flags(a, b, a["cfo"])
         model_cash = v["operating_income"] * (1 - tax) + v["d_and_a"] - v["capex"]
         rep_cash = v["cfo"] - v["capex"] - v["stock_based_comp"] + (v["interest_expense"] or 0) * (1 - tax)
         da_rep = pp.da_pct[0] + (rep_cash - model_cash) / rev
@@ -218,7 +262,7 @@ def main(key):
         res.append(dict(t=t, g=group.get(t, ""), price=price, cur=cur, v1=vv["per_share"], v5=at(b5), vf=at(bf), b5=b5, bf=bf, nf=nf,
                         rep=value(replace(pp, da_pct=(da_rep,) * 10))["per_share"], shift=shift, bear=bv["per_share"], up=up, down=down,
                         ratio="no upside" if up <= 0 else ("no downside" if down >= 0 else f"{up / -down:.2f}"),
-                        conv=model_cash / rep_cash, vol=vol, cagr=cagr, rm=rm, sharpe=(cagr - T_BILL) / vol,
+                        conv=model_cash / rep_cash, vol=vol, cagr=cagr, rm=rm, sharpe=None if vol is None else (cagr - T_BILL) / vol,
                         wy=wy, maxpos=6000 / -wy[1] if wy[1] < 0 else None, pio=f"{pio}/{pio_n}", fails="; ".join(fails),
                         m="NOT CHECKED (GMI MISSING)" if mscore is None else f"{mscore:.2f}", m12=m12.get(t, "MISSING"),
                         note=cfg["notes"].get(t, "")))
@@ -245,8 +289,11 @@ def report(key, cfg, res):
         t3 = "PASS" if r["ratio"] == "no downside" or (r["ratio"] != "no upside" and float(r["ratio"]) >= 1) else "fail"
         mp = "no losing year" if r["maxpos"] is None else f"${r['maxpos']:,.0f}"
         L.append(f"| {r['t']} | {r['m12']} | {t2} | {t3} | {r['pio']} (fails: {r['fails'] or 'none'}), {r['m']} | "
-                 f"{r['wy'][0]}: {r['wy'][1]:.1%} ({mp}) | {r['cagr']:+.1%}, {r['vol']:.0%}, {r['sharpe']:.2f} | {r['conv']:.2f} | {r['note']} |")
-    L += ["", f"S&P 500 (SPY) compound return over the same window: {res[0]['rm']:+.1%} a year; risk-free 4.00% (3-month T-bill, 30 Oct).",
+                 f"{r['wy'][0]}: {r['wy'][1]:.1%} ({mp}) | "
+                 + ("MISSING until the Yahoo CSVs arrive" if r["vol"] is None else f"{r['cagr']:+.1%}, {r['vol']:.0%}, {r['sharpe']:.2f}")
+                 + f" | {r['conv']:.2f} | {r['note']} |")
+    L += ["", (f"S&P 500 (SPY) compound return over the same window: {res[0]['rm']:+.1%} a year; " if res[0]["rm"] is not None
+               else "Betas and worst years are the teammate's own calculations until the Yahoo CSVs arrive; ") + "risk-free 4.00% (3-month T-bill, 30 Oct).",
           "Cash check = model year-0 free cash flow / reported cash flow (CFO - capex - stock-based pay + after-tax interest); above about 1.10 the model is generous."]
     out = ROOT / "outputs" / "round2" / f"Round2_scorecard_{key}.md"
     out.write_text("\n".join(L) + "\n", encoding="utf-8")
