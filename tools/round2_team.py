@@ -29,7 +29,8 @@ from m03.run import load, run, wacc_for  # noqa: E402
 RF = {"USD": 0.0494, "EUR": 0.0334, "INR": 0.073977, "CNY": 0.016266,  # CNY: China 10-year, 30 Oct 2026 (Akshat's source)
       "HKD": 0.03855, "GBP": 0.052917,  # HK and UK 10-year, 30 Oct 2026 (new-candidates Round 2 workbook, local_10y_yield)
       "DKK": 0.0315,  # Denmark 10-year, 30 Oct 2026 (groups 3-4 Round 2 workbook, local_10y_yield)
-      "JPY": 0.02817}  # Japan 10-year, 30 Oct 2026 (wave 3 group 3 workbook, local_10y_yield)
+      "JPY": 0.02817,  # Japan 10-year, 30 Oct 2026 (wave 3 group 3 workbook, local_10y_yield)
+      "TWD": 0.0203, "KRW": 0.04008}  # Taiwan and Korea 10-year, 30 Oct 2026 (wave 3 group 1 workbook, local_10y_yield)
 RF_US, T_BILL = 0.0494, 0.04
 VAL_DATE = date(2026, 10, 30)
 TEAM = ROOT / "context" / "teammates_2026-11-03"
@@ -135,6 +136,26 @@ SETS = {
                 "0700.HK": "Valued in RMB (China 10-year + 0.91% CRP); bank-like flag: Pat decides",
                 "PDD": "Valued in RMB per ADS (China 10-year + 0.91% CRP); capex = combined line; screened out as bank-like by the researcher (merchant deposits in CFO): Pat decides",
                 "MTCH": "Year 1 = midpoint of the -2.2% to +1.4% guidance"}),
+    "wave3_g1": dict(
+        workbook=ROOT / "inputs/m12/wave3_2026-11-03/return2/New_companies" / "New_companies_Round2.xlsx",
+        yahoo=ROOT / "inputs/m12/wave3_2026-11-03/return2/New_companies" / "Yahoo_Max_monthly",
+        series={t: (f"{t}_Max_monthly_original", None) for t in ("NXPI", "2454.TW", "005930.KS", "8035.T", "TXT", "AIR.PA", "LDO.MI", "HO.PA", "SPY")},
+        fx={"2454.TW": ("TWD=X_Max_monthly_original", "div"), "005930.KS": ("KRW=X_Max_monthly_original", "div"),
+             "8035.T": ("JPY=X_Max_monthly_original", "div"), "AIR.PA": ("EURUSD=X_Max_monthly_original", "mul"),
+             "LDO.MI": ("EURUSD=X_Max_monthly_original", "mul"), "HO.PA": ("EURUSD=X_Max_monthly_original", "mul")},
+        m12=[ROOT / "outputs/new_candidates/M12_Semiconductors.csv", ROOT / "outputs/new_candidates/M12_Aerospace_and_defence.csv"],
+        skip={"TXT"},  # bank-like (Textron Financial) and no operating-income line or classified balance sheet
+        fx_fix={"KRW=X_Max_monthly_original": ROOT / "inputs/m12/wave3_2026-11-03/return2/New_companies" / "Federal_Reserve_DEXKOUS_original.csv", "TWD=X_Max_monthly_original": ROOT / "inputs/m12/wave3_2026-11-03/return2/New_companies" / "Federal_Reserve_DEXTAUS_original.csv", "JPY=X_Max_monthly_original": ROOT / "inputs/m12/wave3_2026-11-03/return2/New_companies" / "Federal_Reserve_DEXJPUS_original.csv", "EURUSD=X_Max_monthly_original": ROOT / "inputs/m12/wave3_2026-11-03/return2/New_companies" / "Federal_Reserve_DEXUSEU_original.csv"},  # Yahoo FX glitches (e.g. KRW 0.11 in 2015-16)
+        fy_end={"AIR.PA": "2025-12-31"}, group={"AIR.PA": "Aerospace and defence"},
+        m12_text={"AIR.PA": "Screened out (bank-like: Airbus Bank) unless Pat overrules"},
+        val_override={"AIR.PA": {"capex": 3964, "corporate_cash": 17221},  # combined capex; cash INCLUDES Airbus Bank (scope unverified: upper bound)
+                      "LDO.MI": {"capex": 1016}, "HO.PA": {"capex": 756.7, "pretax_income": 2036.8}},
+        who="Wave 3, group 1 (semiconductors, aerospace and defence)",
+        notes={"2454.TW": "Valued in TWD; consensus growth 15% / 77% / 69% (check before relying)",
+                "005930.KS": "Valued in KRW; consensus growth 117% / 40% / 11% (check before relying); preferred shares in the share count; stock pay MISSING",
+                "8035.T": "Valued in JPY; year 1 = FY Mar 2027 guidance midpoint 51%; dilution and stock pay MISSING",
+                "AIR.PA": "Valued in EUR; capex = combined line; cash 17,221 includes Airbus Bank (upper bound); bank-like flag: Pat decides",
+                "LDO.MI": "Valued in EUR; capex = combined line", "HO.PA": "Valued in EUR; capex = combined line; pretax = net income + tax"}),
     "newcands": dict(
         workbook=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Wharton_Candidates_Round2_Missing_Audit.xlsx",
         yahoo=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Yahoo_Max_Monthly",
@@ -184,15 +205,29 @@ def read_series(path):
     return out
 
 
-def monthly(folder, tickers, series=None, fx=None):
+def fed_month_end(path):
+    """Federal Reserve daily FX (H.10 / FRED CSV) -> {YYYY-MM: last value in that month}."""
+    out = {}
+    for r in csv.reader(open(path, encoding="utf-8-sig")):
+        if len(r) == 2 and r[1] not in ("", ".") and r[0][:4].isdigit():
+            out[r[0][:7]] = float(r[1])
+    return out
+
+
+def monthly(folder, tickers, series=None, fx=None, fx_fix=None):
     """Monthly USD adjusted closes: {month: {ticker: price}}. series maps a ticker to another file
-    (e.g. an ADR); fx converts a local-currency series with a Yahoo FX file ('mul' for USD per unit)."""
-    series, fx = series or {}, fx or {}
+    (e.g. an ADR); fx converts a local-currency series with a Yahoo FX file ('mul' for USD per unit).
+    fx_fix maps a Yahoo FX file to a Federal Reserve file in the same units: a Yahoo month more than
+    20% away from the Fed month-end value is a known Yahoo glitch and is replaced by the Fed value."""
+    series, fx, fx_fix = series or {}, fx or {}, fx_fix or {}
     out = {}
     for t in ["SPY"] + tickers:
         src = read_series(folder / f"{series.get(t, (t,))[0]}.csv")
         if t in fx:
             rate = read_series(folder / f"{fx[t][0]}.csv")
+            if fx[t][0] in fx_fix:
+                fed = fed_month_end(fx_fix[fx[t][0]])
+                rate = {m: (fed[m] if m in fed and abs(v / fed[m] - 1) > 0.2 else v) for m, v in rate.items()}
             src = {m: v * rate[m] if fx[t][1] == "mul" else v / rate[m] for m, v in src.items() if m in rate}
         for m, v in src.items():
             out.setdefault(m, {})[t] = v
@@ -300,7 +335,7 @@ def main(key):
                     k = st.get(t, (0, 32))[0]
                     ok = t in res["shortlist"] and k >= 24
                     m12[t] = f"{'Yes' if ok else 'No'}: {ranked.index(t) + 1} of {len(ranked)}, {k}/32"
-    p = monthly(Path(cfg["yahoo"]), tickers, cfg.get("series"), cfg.get("fx")) if cfg.get("yahoo") else None
+    p = monthly(Path(cfg["yahoo"]), tickers, cfg.get("series"), cfg.get("fx"), cfg.get("fx_fix")) if cfg.get("yahoo") else None
     m3 = ROOT / "inputs" / "m03"
     res = []
     for t in tickers:

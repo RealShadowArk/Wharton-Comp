@@ -16,6 +16,7 @@ same spending is not added twice.
 M12 is a research filter, never a value, a return or a weight.
 """
 import csv
+import re
 import sys
 import zipfile
 from pathlib import Path
@@ -44,7 +45,13 @@ COMBINED_CAPEX = {"OR.PA": (1495.3, "L'Oreal combined PP&E + intangibles purchas
                   # wave 3 (group 3 return, 3 Nov)
                   "WKL.AS": (303, "Wolters Kluwer total net capital expenditure (PP&E + intangibles), notes"),
                   "TRU": (326.0, "TransUnion capital expenditures as reported (PP&E + software)"),
-                  "PDD": (1145.077, "PDD combined purchases of property, equipment, software and intangibles")}
+                  "PDD": (1145.077, "PDD combined purchases of property, equipment, software and intangibles"),
+                  # wave 3 (group 1 return, 3 Nov)
+                  "AIR.PA": (3964, "Airbus cash purchases of PP&E, intangibles and investment property"),
+                  "LDO.MI": (1016, "Leonardo cash purchases of PP&E and intangibles"),
+                  "HO.PA": (756.7, "Thales cash capital expenditures (tangible + intangible)")}
+# Other blanks filled from reported lines (arithmetic on the filing, labelled in the output source column).
+FIELD_FACTS = {"HO.PA": ({"pretax_income_fy0": "2036.8"}, "pretax = continuing net income 1,640.3 + income tax 396.5")}
 # Facts that fill an EPS blank: the issuer reports no potential shares, so diluted EPS = basic EPS.
 EPS_FACTS = {"8697.T": (76.81, 44.02, "JPX omits diluted EPS (no potential shares): basic EPS, split-adjusted")}
 # Approximate 30 Oct 2026 USD per unit, ONLY for the $2bn size screen (never used in scores).
@@ -61,8 +68,8 @@ INDUSTRIES = [  # canonical name, base loader, new-data tab, new-data workbook
     ("Consumer brands", "csv:context/teammates_2026-11-03/akshaj_p_final/M12_peer_data.csv", "Consumer brands", FIN / "Consumer_Brands_and_Pharma_Research_Package" / "Consumer_Brands_and_Pharma_Round1.xlsx"),
     ("Pharmaceuticals and Biotechnology", "csv:context/teammates_2026-11-03/akshat_final/pharma_m12_research_inputs.csv", "Pharmaceuticals and Biotechnolo", FIN / "Consumer_Brands_and_Pharma_Research_Package" / "Consumer_Brands_and_Pharma_Round1.xlsx"),
     ("Internet and Digital Platforms", "csv:context/teammates_2026-11-03/Akshat_digital_m12_research_inputs.csv", "Internet and Digital Platforms", [FIN / "Wharton_Candidates_Missing_Audit" / "Wharton_Candidates_Round1_Missing_Audit.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return1/New_Companies_Round1.xlsx"]),
-    ("Semiconductors", "akshajk:Akshaj_Semiconductors_Revised.xlsx", "Semiconductors", FIN / "6_Semiconductors_and_Aerospace_Round1_filled.xlsx"),
-    ("Aerospace and defence", "akshajk:Akshaj_Aerospace_Defence_Revised.xlsx", "Aerospace and defence", FIN / "6_Semiconductors_and_Aerospace_Round1_filled.xlsx"),
+    ("Semiconductors", "akshajk:Akshaj_Semiconductors_Revised.xlsx", "Semiconductors", [FIN / "6_Semiconductors_and_Aerospace_Round1_filled.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return2/New_companies/New_companies_Round1.xlsx"]),
+    ("Aerospace and defence", "akshajk:Akshaj_Aerospace_Defence_Revised.xlsx", "Aerospace and defence", [FIN / "6_Semiconductors_and_Aerospace_Round1_filled.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return2/New_companies/New_companies_Round1.xlsx"]),
 ]
 
 
@@ -151,8 +158,8 @@ def new_rows(path, tab, group):
     hdr = [c.value for c in ws[1]]
     rows, screened = [], []
     for r in ws.iter_rows(min_row=2, values_only=True):
-        if not r[1]:
-            continue
+        if not isinstance(r[1], str) or not re.fullmatch(r"[A-Z0-9][A-Z0-9.\-]*", r[1].strip()):
+            continue  # skips helper tables some researchers add below the company rows
         raw = dict(zip(hdr, r))
         d = {k: s(raw.get(k)) for k in COLS}
         d.update(peer_group=group, source=f"{path.name} / {tab}", new="Y")
@@ -161,6 +168,11 @@ def new_rows(path, tab, group):
         if not d["capex_fy0"] and d["ticker"] in COMBINED_CAPEX:
             d["capex_fy0"] = str(COMBINED_CAPEX[d["ticker"]][0])
             d["source"] += "; capex = combined line (exception)"
+        if d["ticker"] in FIELD_FACTS:
+            for k, v in FIELD_FACTS[d["ticker"]][0].items():
+                if not d[k]:
+                    d[k] = v
+            d["source"] += "; " + FIELD_FACTS[d["ticker"]][1]
         if d["ticker"] in EPS_FACTS and not d["eps_diluted_fy0"]:
             d["eps_diluted_fy0"], d["eps_diluted_fy3"] = (str(x) for x in EPS_FACTS[d["ticker"]][:2])
             d["source"] += "; EPS = basic (no potential shares)"

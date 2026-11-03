@@ -47,6 +47,18 @@ The first six caps add up to $73,123. With Lululemon, NRG and adidas the total i
 
 **Filling the sleeve:** the nine passes above leave $16,580. Genpact alone ($13,036) covers most of it. Genpact plus Wolters Kluwer or Amdocs covers all of it.
 
+## Wave 3, group 1 (semiconductors, aerospace and defence; returned 3 Nov)
+
+`python tools/round2_team.py wave3_g1` -> `outputs/round2/Round2_scorecard_wave3_g1.md`. Yahoo's KRW, TWD, JPY and EUR files contain glitch months (for example, KRW at 0.11 in 2015-16), which are replaced by the Federal Reserve month-end rate supplied in the package.
+
+| Company | Value / price (beta 1.0, 5-year, full-history) | Bear / price | Red flags | M12 | Max position | Caveat |
+|---|---|---|---|---|---|---|
+| MediaTek (2454.TW) | 3.30, 1.50, 2.67 | 0.81 | **4/9**, -2.51 | 11th of 16 | $12,529 (2022: -47.9%) | **driven by consensus growth of 15%, 77% and 69% in years 1-3**: check it before relying; the price has nearly tripled in 2026 |
+| Samsung Electronics (005930.KS) | 1.46, 1.07, 1.28 | 0.67 | 6/9, -2.64 | 8th of 16 | $14,664 (2008: -40.9%) | **driven by consensus revenue growth of 117% next year** (a memory boom): check it; memory is cyclical; stock pay MISSING; preferred shares counted |
+
+- **Fail:** NXP (0.87x), Tokyo Electron (0.75x), Thales (0.92x), Leonardo (0.64x), Airbus (0.74x, also flagged bank-like for Airbus Bank).
+- **Screened out:** Textron (bank-like: Textron Financial; no operating-income line or classified balance sheet).
+
 ## Near misses
 
 | Company | What fails |
@@ -65,7 +77,7 @@ Adyen, CME, ICE, Moody's, Infosys, TCS, ServiceNow, Nike, PepsiCo, Coca-Cola, No
 
 Kenon: 0.72x on the parts valuation, updated with the Round 2 facts: central $46.39, range $27.46-66.65. Meta is not validly valued by the method.
 
-## What is left (wave 3 groups 1 and 2 still out: optional now)
+## What is left (wave 3 group 2 still out: optional now)
 
 1. **Pat's decisions:**
    - Nvidia's Beneish flag.
