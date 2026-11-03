@@ -1,0 +1,27 @@
+field,value,unit,label,source,note
+ticker,TW,,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Exchanges and data
+valuation_date,2026-10-30,date,CASE,Price date,
+price,122.54,USD,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),"30 Oct 2026 close, checked in WInS by the teammate"
+base_year,2025,,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2025-12-31
+base_revenue,2052.429,USD m,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+growth,0.1474;0.1270;0.1093;0.0979;0.0866;0.0753;0.0640;0.0526;0.0413;0.0300,decimal,ASSUMPTION,"Standard method (Pat, 3 Nov)",Year 1 consensus; years 2-3 consensus; fade to terminal growth
+ebit_margin,0.40700;0.40700;0.40700;0.40700;0.40700;0.40700;0.40700;0.40700;0.40700;0.40700,decimal,ASSUMPTION,Standard method: FY0 operating margin held flat,
+tax_rate,0.2157,decimal,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income before non-controlling interests / pretax income
+da_pct,0.12190;0.12190;0.12190;0.12190;0.12190;0.12190;0.12190;0.12190;0.12190;0.12190,decimal,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
+capex_pct,0.05023;0.05023;0.05023;0.05023;0.05023;0.05023;0.05023;0.05023;0.05023;0.05023,decimal,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Kit default,
+risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026",
+beta,1.0,,ASSUMPTION,Standard method,
+beta_measured,0.546,,RESEARCH,"60 monthly USD returns vs SPY, Nov 2021-Oct 2026",
+equity_premium,0.05,decimal,ASSUMPTION,Kit default 5%,
+pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,Kit default: 10-year + 0.5 points,
+equity_value_for_weights,28857.28,USD m,RESEARCH,Price x shares,
+debt_value_for_weights,0,USD m,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+terminal_growth,0.03,decimal,ASSUMPTION,"3% in USD, converted by the rate gap",
+return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
+debt,0,USD m,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+non_operating_assets,2084.739,USD m,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Corporate cash
+diluted_shares,235.986691,m,RESEARCH,Wharton_Candidates_Round2_Missing_Audit.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Shares at the cash-and-debt date plus dilution (teammate's ledger)
+years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of FY2026 (2026-12-31),
+first_year_fraction,1.0,,ASSUMPTION,Method,Cash and debt at the FY0 year-end
+sbc_pct,0,decimal,ASSUMPTION,Method,0 because da_pct is reported D&A

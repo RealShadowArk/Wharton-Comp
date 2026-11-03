@@ -1,0 +1,70 @@
+ticker,column,reason
+OR.PA,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+OR.PA,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+OR.PA,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+OR.PA,capex_fy0,"Only combined cash purchases of PPE and intangible assets, EUR 1,495.3m, verified; PPE-only cash amount not separately verified."
+OR.PA,capex_software_fy0,Not applicable: this field is Payments only.
+OR.PA,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+OR.PA,adr_shares_per_ads,"Not applicable: selected listing is an ordinary share or participation certificate, not an ADS."
+ADS.DE,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+ADS.DE,capex_software_fy0,Not applicable: this field is Payments only.
+ADS.DE,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+ADS.DE,adr_shares_per_ads,"Not applicable: selected listing is an ordinary share or participation certificate, not an ADS."
+LULU,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+LULU,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+LULU,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+LULU,capex_software_fy0,Not applicable: this field is Payments only.
+LULU,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+LULU,adr_shares_per_ads,"Not applicable: selected listing is an ordinary share or participation certificate, not an ADS."
+HLN,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+HLN,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+HLN,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+HLN,capex_software_fy0,Not applicable: this field is Payments only.
+HLN,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+MDLZ,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+MDLZ,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+MDLZ,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+MDLZ,capex_software_fy0,Not applicable: this field is Payments only.
+MDLZ,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+MDLZ,adr_shares_per_ads,"Not applicable: selected listing is an ordinary share or participation certificate, not an ADS."
+STZ,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+STZ,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+STZ,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+STZ,capex_software_fy0,Not applicable: this field is Payments only.
+STZ,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+STZ,adr_shares_per_ads,"Not applicable: selected listing is an ordinary share or participation certificate, not an ADS."
+NVO,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+NVO,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+NVO,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+NVO,capex_software_fy0,Not applicable: this field is Payments only.
+NVO,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+GSK,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+GSK,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+GSK,capex_software_fy0,Not applicable: this field is Payments only.
+GSK,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+ROG.SW,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+ROG.SW,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+ROG.SW,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+ROG.SW,capex_software_fy0,Not applicable: this field is Payments only.
+ROG.SW,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+ROG.SW,adr_shares_per_ads,"Not applicable: selected listing is an ordinary share or participation certificate, not an ADS."
+ROG.SW,bank_like,"Diagnostics equipment finance-lease receivables CHF 228m are disclosed, but their cash-flow classification and whether they meet the requested loan-book test were not verified; classification left blank."
+GILD,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+GILD,total_debt_fy0,"Finance leases described as not material (note 11 p.83), without a verified amount; strict borrowings-plus-finance-leases total cannot be verified."
+GILD,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+GILD,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+GILD,capex_software_fy0,Not applicable: this field is Payments only.
+GILD,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+GILD,adr_shares_per_ads,"Not applicable: selected listing is an ordinary share or participation certificate, not an ADS."
+VRTX,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+VRTX,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+VRTX,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+VRTX,capex_software_fy0,Not applicable: this field is Payments only.
+VRTX,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+VRTX,adr_shares_per_ads,"Not applicable: selected listing is an ordinary share or participation certificate, not an ADS."
+REGN,in_wins_at_5_plus,Intentionally blank: Pat checks WInS and the USD 5 screen.
+REGN,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+REGN,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified for this fiscal year. Total diluted EPS is supplied separately; it is not copied into this field.
+REGN,capex_software_fy0,Not applicable: this field is Payments only.
+REGN,market_cap_cutoff_proxy_m,Intentionally blank in CSV: existing workbook formula is preserved and calculates the proxy.
+REGN,adr_shares_per_ads,"Not applicable: selected listing is an ordinary share or participation certificate, not an ADS."

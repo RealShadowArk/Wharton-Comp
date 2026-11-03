@@ -1,0 +1,50 @@
+Consumer Brands and Pharma — Round 1 research notes
+Research date: 3 November 2026
+
+Scope
+Consumer brands (6) researched first, then Pharmaceuticals and Biotechnology (6), using the supplied two-tab template. No scoring, ranking, recommendations, forecasts or target prices added.
+
+Cutoff and periods
+Annual reports published by 31 Oct 2026. FY0 is FY2025 except Constellation Brands FY2026; Lululemon FY2025 ends 1 Feb 2026. FY3 and FY1 dates appear on every evidence record. Later interim numbers are not substituted for annual inputs.
+
+Units and basis
+Financial amounts and shares are millions; EPS and prices are per ordinary share in reporting currency. GBP EPS quoted in pence divided by 100. Lululemon financial statements in thousands divided by 1,000. Cash capex is the positive magnitude of cash PPE purchases. No estimates or placeholder zeros. Lululemon zero debt is explicitly supported by undrawn facilities and operating-only leases.
+
+Protected fields
+WInS stays blank. market_cap_cutoff_proxy_m stays blank in CSV; the original Excel formulas remain. Payments-only software capex and non-ADS ratios remain blank. Every blank CSV field is itemized on MISSING, including intentional blanks.
+
+Primary financial sources
+All populated annual financial fields come from company annual reports or SEC filings. StockAnalysis, Yahoo financial statement summaries and StockTrak were not used for annual values. Vertex FY2022 was initially read from an AnnualReports mirror and then verified against the linked SEC filing; no annual amount remains secondary-only.
+
+Secondary-only market data
+All 30 Oct 2026 unadjusted equity closes and GBP/USD and USD/DKK daily FX closes are from Yahoo Finance public chart/history data only. The precise historical links are in Evidence and notes. Gold or StockTrak sign-in was not required. Share prices are restored to quoted cent precision from the API floats; FX and converted prices are retained to 8 decimals.
+
+Acquisition screen
+Y means no announced, outstanding takeover of the candidate was identified in the annual filings and company-announcement searches through 31 Oct 2026. This is a disclosure-review classification, not an explicit issuer assurance. Buyer-side acquisitions, minority investments and completed historical deals are not counted as the candidate being acquired. Supplemental source dates are in Evidence.
+
+Roche security and proxy
+The template ROG.SW identifier is retained to match the requested company. Roche announced replacement of Genussscheine by economically equivalent ROP participation certificates, 1:1, first trading 17 Mar 2026. ROP.SW supplies the cutoff price. All outstanding bearer and non-voting instruments are summed after consolidated treasury holdings. The preserved proxy formula uses the ROP price for the total and is not a class-specific market-cap sum.
+
+Outstanding verification gaps
+L'Oréal: PPE-only cash capex cannot be separated from the verified combined PPE-plus-intangibles cash line. Gilead: finance leases are unquantified, so strict total debt is blank. Roche: finance-lease receivables are disclosed, but the bank-like loan-book test remains unresolved. Separately labelled continuing EPS is blank wherever unverified.
+
+Definitions
+The two earlier package exceptions (combined capex and EVERTEC debt) were not extended to these candidates. This package requires strict PPE capex and US GAAP debt including finance leases. The original request and embedded prompt control over contradictory guide-sheet hints: unknowns stay blank, and total equity is the reported consolidated total, including non-controlling interests. The guide sheet itself is preserved. Operating income and CFO are reported without normalization.
+
+Access limitations — L'Oréal
+The initial FY2022 PDF links returned HTML/not-found responses. The company's online 2022 URD income statement was readable and used instead. Failed URLs: https://www.loreal-finance.com/system/files/2023-03/LOREAL_2022_Universal_Registration_Document_en.pdf ; https://www.loreal-finance.com/system/files/migrate-files/LOREAL_2022_Universal_Registration_Document_en.pdf
+
+Access limitations — Haleon
+Direct downloads of Haleon annual-report PDFs returned HTTP 403. The browser search reader opened the FY2025 interactive report; FY2022 values came from the SEC 20-F. Failed original: https://www.haleon.com/content/dam/haleon/corporate/documents/investors/oar-2025/Annual-Report-and-Form-20-F-2025.pdf.downloadasset.pdf ; https://www.haleon.com/content/dam/haleon/corporate/documents/investors/annual-report-2022/Haleon-2022AR-Spreads.pdf.downloadasset.pdf ; an FY2024 SEC PDF also returned 403 and was not used.
+
+Access limitations — other filings
+Local download failed for Mondelez FY2025 and Lululemon FY2022; the browser reader opened those company reports. Regeneron report downloads https://newsroom.regeneron.com/pdf/2025AR and https://investor.regeneron.com/pdf/2022AR returned 403; SEC filings were readable through the browser reader. Some direct SEC downloads were blocked; readable SEC browser versions were used.
+
+Text extraction
+Lululemon FY2025 and Constellation FY2023 PDF fonts produced corrupt extracted digits. Relevant statements were visually read from rendered pages. Roche note columns sometimes interleaved in extracted text; source table totals and line labels were checked.
+
+Legacy quote access
+Yahoo returned 404 for ROG.SW historical lookup. Roche's primary exchange notice verified the ROP.SW successor. No value was substituted from another date.
+
+Research log
+Research completed 3 Nov 2026 using Codex web search/open, public company and SEC filings, local PDF extraction/rendering, and Yahoo public historical quote retrieval. The workbook records research notes; the team must check the cited sources and write its own conclusions, as required by the package README.

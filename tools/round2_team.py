@@ -26,7 +26,8 @@ sys.path.insert(0, str(ROOT))
 from m03.dcf import value  # noqa: E402
 from m03.run import load, run, wacc_for  # noqa: E402
 
-RF = {"USD": 0.0494, "EUR": 0.0334, "INR": 0.073977, "CNY": 0.016266}  # CNY: China 10-year, 30 Oct 2026 (Akshat's source)
+RF = {"USD": 0.0494, "EUR": 0.0334, "INR": 0.073977, "CNY": 0.016266,  # CNY: China 10-year, 30 Oct 2026 (Akshat's source)
+      "HKD": 0.03855, "GBP": 0.052917}  # HK and UK 10-year, 30 Oct 2026 (new-candidates Round 2 workbook, local_10y_yield)
 RF_US, T_BILL = 0.0494, 0.04
 VAL_DATE = date(2026, 10, 30)
 TEAM = ROOT / "context" / "teammates_2026-11-03"
@@ -71,6 +72,19 @@ SETS = {
                "ASML": "Long-term debt known only within tight bounds; red flags run at both ends",
                "NVDA": "VOO top-10 holding; consensus growth 91% / 68% / 30%",
                "ESLT": "Israel war exposure (see the Kenon note)"}),
+    "newcands": dict(
+        workbook=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Wharton_Candidates_Round2_Missing_Audit.xlsx",
+        yahoo=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Yahoo_Max_Monthly",
+        m12=[ROOT / "outputs/new_candidates/M12_Exchanges_and_data.csv"],
+        fx={"0388.HK": ("HKD=X", "div"), "AUTO.L": ("GBPUSD=X", "mul")},  # HKD per USD; USD per GBP (pence scale cancels in returns)
+        fy_end={"AUTO.L": "2026-03-31"}, group={"AUTO.L": "Internet and Digital Platforms"},
+        m12_text={"AUTO.L": "No (group not released; complete-only diagnostic 6 of 10, 2/32)"},
+        val_override={"0388.HK": {"capex": 1733}},  # ex the one-off HK$3,148m headquarters purchase (ASSUMPTION, see note)
+        tax_continuing={"TW"},  # Up-C: tax from net income before non-controlling interests (LLC units are in the share count)
+        who="New candidates (HKEX, Tradeweb, Auto Trader)",
+        notes={"0388.HK": "Valued in HKD (HK 10-year 3.855%). Capex 1,733 excludes the one-off HK$3,148m headquarters purchase (with it, capex is 20.6% of revenue held for ten years); operating cash flow includes clearing and margin-fund movements, so the cash check is not meaningful",
+               "TW": "Tax 21.6% from net income before non-controlling interests (Up-C); capex includes capitalized software 62.5",
+               "AUTO.L": "Valued in GBP (UK 10-year 5.29%); shares at 31 Mar 2026 (buybacks since: 760.6m on 19 Oct)"}),
 }
 TEXT = {"ticker", "company", "peer_group", "reporting_currency", "guidance_next_fy_revenue_growth", "guidance_basis",
         "cash_note", "long_term_target", "sources", "notes", "period", "guidance_fy2026_revenue_growth_numeric", "source", "listing_used_for_prices", "price_currency"}
@@ -155,19 +169,26 @@ def red_flags(a, b, cfo):
              "5 leverage down": lev(a) < lev(b) or lev(a) == lev(b) == 0,
              "6 current ratio up": cr(a) > cr(b), "7 no new shares": a["shares_outstanding_m"] <= b["shares_outstanding_m"],
              "8 gross margin up": None if gm(a) is None else gm(a) > gm(b), "9 asset turnover up": turn(a) > turn(b)}
-    idx = {"DSRI": (a["receivables"] / a["revenue"]) / (b["receivables"] / b["revenue"]),
-           "GMI": None if gm(a) is None else gm(b) / gm(a),
-           "AQI": (1 - (a["current_assets"] + a["net_ppe"]) / a["total_assets"]) / (1 - (b["current_assets"] + b["net_ppe"]) / b["total_assets"]),
-           "SGI": a["revenue"] / b["revenue"],
-           "DEPI": (b["depreciation"] / (b["depreciation"] + b["net_ppe"])) / (a["depreciation"] / (a["depreciation"] + a["net_ppe"])),
-           "SGAI": (a["sga"] / a["revenue"]) / (b["sga"] / b["revenue"]),
-           "TATA": (a["net_income_continuing"] - cfo) / a["total_assets"],
-           "LVGI": ((a["current_liabilities"] + (a["long_term_debt"] or 0)) / a["total_assets"])
+    def safe(f):
+        try:
+            return f()
+        except (TypeError, ZeroDivisionError):
+            return None
+    idx = {"DSRI": lambda: (a["receivables"] / a["revenue"]) / (b["receivables"] / b["revenue"]),
+           "GMI": lambda: None if gm(a) is None else gm(b) / gm(a),
+           "AQI": lambda: (1 - (a["current_assets"] + a["net_ppe"]) / a["total_assets"]) / (1 - (b["current_assets"] + b["net_ppe"]) / b["total_assets"]),
+           "SGI": lambda: a["revenue"] / b["revenue"],
+           "DEPI": lambda: (b["depreciation"] / (b["depreciation"] + b["net_ppe"])) / (a["depreciation"] / (a["depreciation"] + a["net_ppe"])),
+           "SGAI": lambda: (a["sga"] / a["revenue"]) / (b["sga"] / b["revenue"]),
+           "TATA": lambda: (a["net_income_continuing"] - cfo) / a["total_assets"],
+           "LVGI": lambda: ((a["current_liabilities"] + (a["long_term_debt"] or 0)) / a["total_assets"])
                    / ((b["current_liabilities"] + (b["long_term_debt"] or 0)) / b["total_assets"])}
+    idx = {k: safe(f) for k, f in idx.items()}
     coef = {"DSRI": 0.920, "GMI": 0.528, "AQI": 0.404, "SGI": 0.892, "DEPI": 0.115, "SGAI": -0.172, "TATA": 4.679, "LVGI": -0.327}
-    m = None if idx["GMI"] is None else -4.84 + sum(coef[k] * v for k, v in idx.items())
+    missing = [k for k, v in idx.items() if v is None]
+    m = None if missing else -4.84 + sum(coef[k] * v for k, v in idx.items())
     checked = [v for v in tests.values() if v is not None]
-    return sum(checked), len(checked), [k for k, v in tests.items() if v is False], m
+    return sum(checked), len(checked), [k for k, v in tests.items() if v is False], (m, missing)
 
 
 def fade(g1, g2, g3, term):
@@ -191,6 +212,8 @@ def main(key):
     for k, extra in cfg.get("rf_proxies", {}).items():
         red[k].update(extra)
     risk_tab = {r[0]: dict(zip(kr[0], r)) for r in kr[1:]}
+    for t, extra in cfg.get("val_override", {}).items():
+        val[t].update(extra)
     tickers = list(val)
     fy_end, group, m12 = {}, {}, {}
     from m12.score import load as m12load, score_all, stability
@@ -224,6 +247,9 @@ def main(key):
         rev = v["revenue"]
         tax = (v["pretax_income"] - v["net_income_common"]) / v["pretax_income"]
         tax_note = "1 - net income / pretax income"
+        if t in cfg.get("tax_continuing", ()):
+            tax = 1 - red[(t, "FY0")]["net_income_continuing"] / v["pretax_income"]
+            tax_note = "1 - net income before non-controlling interests / pretax income"
         if not 0 <= tax < 1:  # e.g. a discontinued-operations gain: use continuing net income
             tax = 1 - red[(t, "FY0")]["net_income_continuing"] / v["pretax_income"]
             tax_note = "1 - continuing net income / pretax income (net income includes discontinued operations)"
@@ -294,8 +320,8 @@ def main(key):
         if bounds:
             outs = [red_flags(dict(a, long_term_debt=bounds["FY0"][i]), dict(b, long_term_debt=bounds["FY1"][i]), a["cfo"]) for i in (0, 1)]
             pio, pio_n, fails, mscore = outs[0]
-            if (outs[0][0], round(outs[0][3], 2)) != (outs[1][0], round(outs[1][3], 2)):
-                fails = fails + [f"bounds differ: {outs[1][0]}/{outs[1][1]}, M {outs[1][3]:.2f} at the upper bound"]
+            if (outs[0][0], round(outs[0][3][0], 2)) != (outs[1][0], round(outs[1][3][0], 2)):
+                fails = fails + [f"bounds differ: {outs[1][0]}/{outs[1][1]}, M {outs[1][3][0]:.2f} at the upper bound"]
         else:
             pio, pio_n, fails, mscore = red_flags(a, b, a["cfo"])
         model_cash = v["operating_income"] * (1 - tax) + v["d_and_a"] - v["capex"]
@@ -307,7 +333,7 @@ def main(key):
                         ratio="no upside" if up <= 0 else ("no downside" if down >= 0 else f"{up / -down:.2f}"),
                         conv=model_cash / rep_cash, vol=vol, cagr=cagr, rm=rm, sharpe=None if vol is None else (cagr - T_BILL) / vol,
                         wy=wy, maxpos=6000 / -wy[1] if wy[1] < 0 else None, pio=f"{pio}/{pio_n}", fails="; ".join(fails),
-                        m="NOT CHECKED (GMI MISSING)" if mscore is None else f"{mscore:.2f}", m12=m12.get(t, "MISSING"),
+                        m=f"NOT CHECKED ({', '.join(mscore[1])} MISSING)" if mscore[0] is None else f"{mscore[0]:.2f}", m12=m12.get(t, "MISSING"),
                         note=cfg["notes"].get(t, "")))
     report(key, cfg, res)
 
