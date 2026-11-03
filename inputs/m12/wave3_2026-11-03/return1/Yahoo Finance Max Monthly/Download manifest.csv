@@ -1,0 +1,20 @@
+Symbol,First CSV row,Last CSV row,Rows,SHA-256,Source URL
+B3SA3.SA,2007-10-01,2026-11-01,230,19363d7a6aa759db57474a81397f11c6cd3d314ae9bc39d5a72d935143fdf8a2,https://finance.yahoo.com/quote/B3SA3.SA/history/?frequency=1mo
+8697.T,2008-09-01,2026-11-02,220,78e61b4259e56c2c65ab31e27330940caa2bc5bb77def799d9e61d46a1596bcb,https://finance.yahoo.com/quote/8697.T/history/?frequency=1mo
+WKL.AS,1995-03-01,2026-11-01,381,5d204d30cf37fd869608817d5905162e4a9b81d64375f14a791850f1f20b0833,https://finance.yahoo.com/quote/WKL.AS/history/?frequency=1mo
+TRU,2015-06-01,2026-11-01,138,bdf020dbfe38fbcf5cabfc5e8ed17e249b8bb280cbc805184c698f36363076ad,https://finance.yahoo.com/quote/TRU/history/?frequency=1mo
+WIPRO.NS,1996-01-01,2026-11-03,372,e2e51772fcbaa4fcf8d1ee63680e686663753e006199c42d150d6d101df20516,https://finance.yahoo.com/quote/WIPRO.NS/history/?frequency=1mo
+G,2007-08-01,2026-11-01,232,cf31c543913e19736b016659ab253c019c59f8f9ff8db24d62cfed5e899c388b,https://finance.yahoo.com/quote/G/history/?frequency=1mo
+DOX,1998-06-01,2026-11-01,342,8808d0726895955bbd35b1cd59e715d729309b93afd16c7071a5fbcd094e50bf,https://finance.yahoo.com/quote/DOX/history/?frequency=1mo
+SAIC,2013-09-01,2026-11-01,159,7447c2a104e632139eadce20c39130110caccafbea7687ef8a54f1149a95c3f9,https://finance.yahoo.com/quote/SAIC/history/?frequency=1mo
+0700.HK,2004-06-01,2026-11-03,271,8346291c34e2625288c209975a8e3f2f13661b6b93648bda11cb00d1f782dfe2,https://finance.yahoo.com/quote/0700.HK/history/?frequency=1mo
+BABA,2014-09-01,2026-11-01,147,9ba668c25f247221064faf5fe4f31aa7928c0ba02154385a05bafc84a28e1fb4,https://finance.yahoo.com/quote/BABA/history/?frequency=1mo
+PDD,2018-07-01,2026-11-01,101,e0389d6d2ec62ad4ada01b9b099463dcc68c57e037014716c5472b853d93f2ca,https://finance.yahoo.com/quote/PDD/history/?frequency=1mo
+MTCH,1993-01-01,2026-11-01,407,a8baa3734735152ab487708742cd094109694af32b09cea61d522e5277f34188,https://finance.yahoo.com/quote/MTCH/history/?frequency=1mo
+SPY,1993-01-01,2026-11-01,407,aba776ac91e12a64b0c2f2d2900b70c1fe71abb1e92b6f7dbddac1c91367a43c,https://finance.yahoo.com/quote/SPY/history/?frequency=1mo
+BRL=X,2003-12-01,2026-11-03,277,0cad5cafa131c1a02ea96e568f5a7665762a6be6e1de9cf3a49652a411eda101,https://finance.yahoo.com/quote/BRL%3DX/history/?frequency=1mo
+CNY=X,2001-07-01,2026-11-03,306,40dfbf6832763949702fd3b9a07b206994460321874a4c3e9057ef78636229e0,https://finance.yahoo.com/quote/CNY%3DX/history/?frequency=1mo
+EURUSD=X,2003-12-01,2026-11-03,277,5b7e21d386acd30ecc495dc422af0c8db80500b459b1dd3d769137df18577630,https://finance.yahoo.com/quote/EURUSD%3DX/history/?frequency=1mo
+HKD=X,2001-08-01,2026-11-03,305,8c5cf46046ed0fe2ed4736dc32bf4f5a98756925e3d6441453d491336d8120ba,https://finance.yahoo.com/quote/HKD%3DX/history/?frequency=1mo
+INR=X,2003-12-01,2026-11-03,277,845fb932a405c9dfc0d457e10bd42acb35f08533584809a9792b739742842cd7,https://finance.yahoo.com/quote/INR%3DX/history/?frequency=1mo
+JPY=X,1996-10-01,2026-11-03,363,6d4add458133351e1d9181048f56706189e4ba41d505775229b441faff3697e7,https://finance.yahoo.com/quote/JPY%3DX/history/?frequency=1mo

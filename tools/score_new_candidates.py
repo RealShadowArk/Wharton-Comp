@@ -40,21 +40,27 @@ COLS = ["peer_group", "ticker", "company", "reporting_currency", "fiscal_year", 
 # Combined cash purchases of PP&E and intangibles/software, used where the PP&E-only line is not reported
 # (Pat's combined-capex exception; values verified by the researcher and recorded in the MISSING notes).
 COMBINED_CAPEX = {"OR.PA": (1495.3, "L'Oreal combined PP&E + intangibles purchases (Consumer_Brands_and_Pharma MISSING.csv)"),
-                  "GE": (1273, "GE combined PP&E + internal-use software (6_Semiconductors_and_Aerospace Missing fields)")}
+                  "GE": (1273, "GE combined PP&E + internal-use software (6_Semiconductors_and_Aerospace Missing fields)"),
+                  # wave 3 (group 3 return, 3 Nov)
+                  "WKL.AS": (303, "Wolters Kluwer total net capital expenditure (PP&E + intangibles), notes"),
+                  "TRU": (326.0, "TransUnion capital expenditures as reported (PP&E + software)"),
+                  "PDD": (1145.077, "PDD combined purchases of property, equipment, software and intangibles")}
+# Facts that fill an EPS blank: the issuer reports no potential shares, so diluted EPS = basic EPS.
+EPS_FACTS = {"8697.T": (76.81, 44.02, "JPX omits diluted EPS (no potential shares): basic EPS, split-adjusted")}
 # Approximate 30 Oct 2026 USD per unit, ONLY for the $2bn size screen (never used in scores).
 USD_PER = {"USD": 1, "EUR": 1.1163, "GBP": 1.33, "CHF": 1.25, "DKK": 0.15, "HKD": 0.1286,
            "INR": 0.0113, "TWD": 0.031, "JPY": 0.0066, "CAD": 1 / 1.396, "BRL": 0.18}
 
 INDUSTRIES = [  # canonical name, base loader, new-data tab, new-data workbook
     ("Payments", "pat:Payments", "Payments", NC / "Round1_Four_Industries.xlsx"),
-    ("Exchanges and data", "pat:Exchanges_and_data", "Exchanges and data", FIN / "Wharton_Candidates_Missing_Audit" / "Wharton_Candidates_Round1_Missing_Audit.xlsx"),
-    ("IT services", "pat:IT_services", "IT services", FIN / "Wharton_Candidates_Missing_Audit" / "Wharton_Candidates_Round1_Missing_Audit.xlsx"),
+    ("Exchanges and data", "pat:Exchanges_and_data", "Exchanges and data", [FIN / "Wharton_Candidates_Missing_Audit" / "Wharton_Candidates_Round1_Missing_Audit.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return1/New_Companies_Round1.xlsx"]),
+    ("IT services", "pat:IT_services", "IT services", [FIN / "Wharton_Candidates_Missing_Audit" / "Wharton_Candidates_Round1_Missing_Audit.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return1/New_Companies_Round1.xlsx"]),
     ("Power", "csv:context/teammates_2026-11-02/aryu_m12/Power.csv", "Power", NC / "Round1_Four_Industries.xlsx"),
     ("Medtech", "csv:context/teammates_2026-11-02/aryu_m12/Medtech.csv", "Medtech", NC / "Round1_Four_Industries.xlsx"),
     ("Software", "csv:context/teammates_2026-11-03/akshaj_p_final/Software.csv", "Software", NC / "Round1_Four_Industries.xlsx"),
     ("Consumer brands", "csv:context/teammates_2026-11-03/akshaj_p_final/M12_peer_data.csv", "Consumer brands", FIN / "Consumer_Brands_and_Pharma_Research_Package" / "Consumer_Brands_and_Pharma_Round1.xlsx"),
     ("Pharmaceuticals and Biotechnology", "csv:context/teammates_2026-11-03/akshat_final/pharma_m12_research_inputs.csv", "Pharmaceuticals and Biotechnolo", FIN / "Consumer_Brands_and_Pharma_Research_Package" / "Consumer_Brands_and_Pharma_Round1.xlsx"),
-    ("Internet and Digital Platforms", "csv:context/teammates_2026-11-03/Akshat_digital_m12_research_inputs.csv", "Internet and Digital Platforms", FIN / "Wharton_Candidates_Missing_Audit" / "Wharton_Candidates_Round1_Missing_Audit.xlsx"),
+    ("Internet and Digital Platforms", "csv:context/teammates_2026-11-03/Akshat_digital_m12_research_inputs.csv", "Internet and Digital Platforms", [FIN / "Wharton_Candidates_Missing_Audit" / "Wharton_Candidates_Round1_Missing_Audit.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return1/New_Companies_Round1.xlsx"]),
     ("Semiconductors", "akshajk:Akshaj_Semiconductors_Revised.xlsx", "Semiconductors", FIN / "6_Semiconductors_and_Aerospace_Round1_filled.xlsx"),
     ("Aerospace and defence", "akshajk:Akshaj_Aerospace_Defence_Revised.xlsx", "Aerospace and defence", FIN / "6_Semiconductors_and_Aerospace_Round1_filled.xlsx"),
 ]
@@ -155,6 +161,9 @@ def new_rows(path, tab, group):
         if not d["capex_fy0"] and d["ticker"] in COMBINED_CAPEX:
             d["capex_fy0"] = str(COMBINED_CAPEX[d["ticker"]][0])
             d["source"] += "; capex = combined line (exception)"
+        if d["ticker"] in EPS_FACTS and not d["eps_diluted_fy0"]:
+            d["eps_diluted_fy0"], d["eps_diluted_fy3"] = (str(x) for x in EPS_FACTS[d["ticker"]][:2])
+            d["source"] += "; EPS = basic (no potential shares)"
         notes = s(raw.get("notes")).lower()
         if group == "Payments" and isnum(d["capex_fy0"]) and ("combined line" in notes or "overlaps" in notes):
             d["capex_software_fy0"] = "0"  # combined line already includes software (Pat's exception)
@@ -189,7 +198,11 @@ def main():
     summary = []
     for group, base, tab, wbpath in INDUSTRIES:
         b = base_rows(base, group)
-        n, out = new_rows(wbpath, tab, group)
+        n, out = [], []
+        for path in (wbpath if isinstance(wbpath, list) else [wbpath]):
+            n1, o1 = new_rows(path, tab, group)
+            n += n1
+            out += o1
         rows = b + n
         with open(OUT / f"M12_{group.replace(' ', '_')}.csv", "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=COLS)

@@ -1,0 +1,5 @@
+New Companies | Wave 3, Group 3
+The two workbooks cover all 12 supplied candidates. Each has Evidence, MISSING and Coverage tabs.
+The 19 Yahoo Finance CSV files are original browser downloads. Canonical filenames replace browser duplicate suffixes; bytes are unchanged.
+Original CSVs may include partial November data. Beta uses 60 matching USD monthly returns through October 2026. Worst-year loss uses complete calendar years through 2025.
+Human source checks, WInS eligibility and team conclusions remain pending. Log AI assistance before using this research.

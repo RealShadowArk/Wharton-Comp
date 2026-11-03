@@ -29,6 +29,24 @@ Test 2: value above price at all three betas. Test 3: upside/downside at least 1
 
 The first six caps add up to $73,123. With Lululemon, NRG and adidas the total is $102,901, against the $119,481 individual-stock sleeve.
 
+## Wave 3, group 3 (exchanges, IT, internet; returned 3 Nov)
+
+`python tools/round2_team.py wave3_g3` -> `outputs/round2/Round2_scorecard_wave3_g3.md`.
+
+| Company | Value / price (beta 1.0, 5-year, full-history) | Bear / price | Red flags | M12 | Max position | Caveat |
+|---|---|---|---|---|---|---|
+| **Genpact (G)** | 1.62, 2.38, 1.64 | 1.04 | 8/9, -2.73 | 5th of 17, 1/32 | $13,036 | none: cash check 0.80 (the model is conservative) |
+| **Wolters Kluwer (WKL.AS)** | 1.42, 2.04, 1.61 | 0.98 | 6/9, -2.71 | 12th of 19 | $14,924 | 2025 operating income includes a disposal gain (amount MISSING); capex = combined line |
+| **Amdocs (DOX)** | 1.49, 2.48, 1.34 | 1.12 | 6/9, -2.71 | 11th of 17 | $8,440 | cash check 1.19 |
+| Tencent (0700.HK) | 1.34, 2.95, 1.43 | 0.78 | 8/9, -2.61 | screened out | $24,544 | **bank-like flag** (loan receivables inside operating cash flow): out unless Pat overrules; China |
+| PDD (PDD) | 2.27, 10.04, 3.03 | 1.50 | 5/9, -2.10 | screened out | $8,930 | **bank-like flag** (merchant deposits inside operating cash flow): out unless Pat overrules; China; 5-year beta -0.03 is an artifact |
+
+- **Near misses:** Japan Exchange Group (1.05x but upside/downside 0.18) and SAIC (1.11x, 0.69).
+- **Fail:** TransUnion, Wipro, Match Group.
+- **Screened out:** B3 (bank-like, no operating-income line) and Alibaba (negative free cash flow after AI capex).
+
+**Filling the sleeve:** the nine passes above leave $16,580. Genpact alone ($13,036) covers most of it. Genpact plus Wolters Kluwer or Amdocs covers all of it.
+
 ## Near misses
 
 | Company | What fails |
@@ -47,7 +65,7 @@ Adyen, CME, ICE, Moody's, Infosys, TCS, ServiceNow, Nike, PepsiCo, Coca-Cola, No
 
 Kenon: 0.72x on the parts valuation, updated with the Round 2 facts: central $46.39, range $27.46-66.65. Meta is not validly valued by the method.
 
-## What is left (no research outstanding)
+## What is left (wave 3 groups 1 and 2 still out: optional now)
 
 1. **Pat's decisions:**
    - Nvidia's Beneish flag.

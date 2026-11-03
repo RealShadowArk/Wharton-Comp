@@ -27,8 +27,9 @@ from m03.dcf import value  # noqa: E402
 from m03.run import load, run, wacc_for  # noqa: E402
 
 RF = {"USD": 0.0494, "EUR": 0.0334, "INR": 0.073977, "CNY": 0.016266,  # CNY: China 10-year, 30 Oct 2026 (Akshat's source)
-      "HKD": 0.03855, "GBP": 0.052917,
-      "DKK": 0.0315}  # Denmark 10-year, 30 Oct 2026 (groups 3-4 Round 2 workbook, local_10y_yield)  # HK and UK 10-year, 30 Oct 2026 (new-candidates Round 2 workbook, local_10y_yield)
+      "HKD": 0.03855, "GBP": 0.052917,  # HK and UK 10-year, 30 Oct 2026 (new-candidates Round 2 workbook, local_10y_yield)
+      "DKK": 0.0315,  # Denmark 10-year, 30 Oct 2026 (groups 3-4 Round 2 workbook, local_10y_yield)
+      "JPY": 0.02817}  # Japan 10-year, 30 Oct 2026 (wave 3 group 3 workbook, local_10y_yield)
 RF_US, T_BILL = 0.0494, 0.04
 VAL_DATE = date(2026, 10, 30)
 TEAM = ROOT / "context" / "teammates_2026-11-03"
@@ -110,6 +111,30 @@ SETS = {
                 "HLN": "Valued in GBP (UK 10-year 5.29%); year 1 = organic guidance about 2.5%; risk from the USD ADR",
                 "NVO": "Valued in DKK (Denmark 10-year 3.15%); dilution MISSING (outstanding shares used); capex 19.5% of revenue (capacity build) held for ten years; risk from the USD ADR",
                 "ADS.DE": "Valued in EUR; dilution and stock pay MISSING (outstanding shares used); worst year from 2004 only (EURUSD history)"}),
+    "wave3_g3": dict(
+        workbook=ROOT / "inputs/m12/wave3_2026-11-03/return1" / "New_Companies_Round2.xlsx",
+        yahoo=ROOT / "inputs/m12/wave3_2026-11-03/return1" / "Yahoo Finance Max Monthly",
+        m12=[ROOT / "outputs/new_candidates/M12_Exchanges_and_data.csv", ROOT / "outputs/new_candidates/M12_IT_services.csv",
+             ROOT / "outputs/new_candidates/M12_Internet_and_Digital_Platforms.csv"],
+        skip={"B3SA3.SA", "BABA"},  # B3: bank-like and no operating income; Alibaba: negative free cash flow
+        fx={"8697.T": ("JPY=X", "div"), "WKL.AS": ("EURUSD=X", "mul"), "WIPRO.NS": ("INR=X", "div"), "0700.HK": ("HKD=X", "div")},
+        crp={"0700.HK": 0.0091, "PDD": 0.0091},  # China country risk premium, as for Trip.com (Pat 3 Nov)
+        fy_end={"0700.HK": "2025-12-31", "PDD": "2025-12-31"},
+        group={"0700.HK": "Internet and Digital Platforms", "PDD": "Internet and Digital Platforms"},
+        m12_text={"0700.HK": "Screened out (bank-like: loan receivables inside operating cash flow) unless Pat overrules",
+                  "PDD": "Screened out (bank-like per the researcher: merchant deposits inside operating cash flow) unless Pat overrules"},
+        val_override={"WKL.AS": {"capex": 303}, "TRU": {"capex": 326.0},
+                      "PDD": {"capex": 1145.077, "cfo": None},  # cash check skipped: CFO includes merchant payables +15,328 and deposits +1,248
+                      "WIPRO.NS": {"d_and_a": 29107 - 851}, "DOX": {"d_and_a": 128.799 + 61.469}},
+        who="Wave 3, group 3 (exchanges, IT services, internet)",
+        notes={"8697.T": "Valued in JPY (Japan 10-year 2.82%); clearing balances excluded from cash",
+                "WKL.AS": "Capex 303 = total net capital expenditure (combined line); D&A includes impairments",
+                "TRU": "Capex 326 = reported capital expenditures (combined)",
+                "WIPRO.NS": "Valued in INR; D&A = 29,107 less the disclosed 851 intangible impairment",
+                "DOX": "D&A = depreciation 128.8 + purchased-intangible amortization 61.5",
+                "0700.HK": "Valued in RMB (China 10-year + 0.91% CRP); bank-like flag: Pat decides",
+                "PDD": "Valued in RMB per ADS (China 10-year + 0.91% CRP); capex = combined line; screened out as bank-like by the researcher (merchant deposits in CFO): Pat decides",
+                "MTCH": "Year 1 = midpoint of the -2.2% to +1.4% guidance"}),
     "newcands": dict(
         workbook=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Wharton_Candidates_Round2_Missing_Audit.xlsx",
         yahoo=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Yahoo_Max_Monthly",
@@ -253,7 +278,7 @@ def main(key):
     risk_tab = {r[0]: dict(zip(kr[0], r)) for r in kr[1:]}
     for t, extra in cfg.get("val_override", {}).items():
         val[t].update(extra)
-    tickers = list(val)
+    tickers = [t for t in val if t not in cfg.get("skip", ())]
     fy_end, group, m12 = {}, {}, {}
     from m12.score import load as m12load, score_all, stability
     fy_end.update({t: date.fromisoformat(d) for t, d in cfg.get("fy_end", {}).items()})
