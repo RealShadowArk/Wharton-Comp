@@ -1,0 +1,106 @@
+ticker,item,value,basis,source,note
+CEG,Fiscal year end,2025-12-31,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Revenue FY0,25533,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Operating income FY0,3086,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Pretax income FY0,3511,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Net income to common FY0,2319,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Operating cash flow FY0,4237,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Capex FY0,2949,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Debt FY0 (M12 basis),8992,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,"Debt = short-term borrowings 1,650 + long-term debt due within one year 92 + long-term debt 7,250; finance leases not shown separately (R8: borrowings). Statements are the 'Parent' (Constellation Energy Corporation) set in the combined 10-K. FY-3 (2022) EPS was a loss (-0.49), so G2 is UNSUITABLE. POST-FY0 ACQUISITION: Calpine closed 7 Jan 2026 (50.0m new shares plus cash and assumed debt, 8-K 2026-01-07), so FY0 financials exclude Calpine while the share count includes the new shares. Possible R2 case for Pat. Source: latest annual report on SEC EDGAR (source_url); FY-3 revenue and EPS from the prior annual report (fy3_source_url). Values come from SEC's tagged data for each filing; the latest-year lines were checked against the filed statements. Price 262.38 USD is the 30 Oct 2026 close (Yahoo Finance, Secondary)."
+CEG,Current assets FY0,12119,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Current liabilities FY0,7944,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Total assets FY0,57249,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Total assets FY-1,52926,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,
+CEG,Shares outstanding (m),354.3074,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm,2026-07-31 (10-Q for Q2 2026)
+CEG,Price 30 Oct 2026,262.38,reported FY0 (Aryu's M12 file),https://finance.yahoo.com/quote/CEG/history/ (Secondary: Yahoo Finance close),
+CEG,DCF base revenue,36812,Aryu's DCF file (2025 pro forma incl. the acquisition),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,
+CEG,DCF debt,21543,Aryu's DCF file (2025 pro forma incl. the acquisition),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"Pro forma debt at 31 Dec 2025: short-term borrowings 1,650 + current long-term debt 371 + long-term debt 19,522"
+CEG,DCF corporate cash,6655,Aryu's DCF file (2025 pro forma incl. the acquisition),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"Pro forma cash 1,001 + assets held for sale 5,654 (plants CEG must sell). Decommissioning trust funds and the matching obligations are left out"
+CEG,DCF diluted shares (m),360.0,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,"Diluted weighted shares, quarter ended 30 Jun 2026 (10-Q)"
+CEG,DCF tax rate,0.28,Aryu's DCF file (2025 pro forma incl. the acquisition),https://www.sec.gov/Archives/edgar/data/1868275/000186827526000037/a12312025proformafinanci.htm,1 - net income 4027 / pretax income 5593
+CEG,5-year beta (Aryu),1.116,Aryu's DCF file,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",CEG has 57 months (listed Feb 2022)
+CEG,Growth notes (guidance),,Aryu's DCF file,Growth path: see note,"Assumption. Quarter ended 30 Jun 2026 revenue was +23% vs a year earlier (7,504 vs 6,101), but that includes Calpine; growth on the pro forma base is not reported. Data-center contracts support mid-single-digit growth. MISSING: guidance check."
+NRG,Fiscal year end,2025-12-31,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Revenue FY0,30713,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Operating income FY0,1845,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Pretax income FY0,1134,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Net income to common FY0,797,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Operating cash flow FY0,1913,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Capex FY0,1147,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Debt FY0 (M12 basis),16443,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,"Debt = current portion of long-term debt and finance leases 31 + long-term debt and finance leases 16,412. Equity includes preferred stock; earnings to common are after 67 of preferred dividends. POST-FY0 ACQUISITION: the LS Power portfolio closed 30 Jan 2026 ($6.4bn cash, 24.25m new shares, about $3.2bn of assumed debt; 8-K 2026-01-30). FY0 debt already includes notes raised in Oct 2025 to pay for it, but FY0 earnings exclude it. Possible R2 case for Pat. Source: latest annual report on SEC EDGAR (source_url); FY-3 revenue and EPS from the prior annual report (fy3_source_url). Values come from SEC's tagged data for each filing; the latest-year lines were checked against the filed statements. Price 96.06 USD is the 30 Oct 2026 close (Yahoo Finance, Secondary)."
+NRG,Current assets FY0,13147,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Current liabilities FY0,8029,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Total assets FY0,29140,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Total assets FY-1,24022,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,
+NRG,Shares outstanding (m),210.2105,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1013871/000101387126000004/nrg-20251231.htm,2026-07-31 (10-Q for Q2 2026)
+NRG,Price 30 Oct 2026,96.06,reported FY0 (Aryu's M12 file),https://finance.yahoo.com/quote/NRG/history/ (Secondary: Yahoo Finance close),
+NRG,DCF base revenue,33471,Aryu's DCF file (2025 pro forma incl. the acquisition),https://www.sec.gov/Archives/edgar/data/1013871/000110465926022295/tm267426d2_ex99-6.htm,
+NRG,DCF debt,20420,Aryu's DCF file (2025 pro forma incl. the acquisition),https://www.sec.gov/Archives/edgar/data/1013871/000110465926022295/tm267426d2_ex99-6.htm,"Pro forma debt at 31 Dec 2025: current 31 + 8, long-term 19,731, plus Series A preferred stock 650 (derived: 67 of yearly dividends / 10.25% coupon; a claim ahead of common shareholders)"
+NRG,DCF corporate cash,480,Aryu's DCF file (2025 pro forma incl. the acquisition),https://www.sec.gov/Archives/edgar/data/1013871/000110465926022295/tm267426d2_ex99-6.htm,Pro forma cash at 31 Dec 2025
+NRG,DCF diluted shares (m),212.0,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1013871/000110465926022295/tm267426d2_ex99-6.htm,"Diluted weighted shares, quarter ended 30 Jun 2026 (10-Q)"
+NRG,DCF tax rate,0.1814,Aryu's DCF file (2025 pro forma incl. the acquisition),https://www.sec.gov/Archives/edgar/data/1013871/000110465926022295/tm267426d2_ex99-6.htm,1 - net income 943 / pretax income 1152
+NRG,5-year beta (Aryu),1.221,Aryu's DCF file,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",
+NRG,Growth notes (guidance),,Aryu's DCF file,Growth path: see note,"Assumption. Quarter ended 30 Jun 2026 revenue +11% (7,481 vs 6,740) includes the acquisition. MISSING: guidance check."
+RMD,Fiscal year end,2026-06-30,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Revenue FY0,5653.443,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Operating income FY0,1886.715,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Pretax income FY0,1919.416,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Net income to common FY0,1523.293,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Operating cash flow FY0,1805.829,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Capex FY0,156.285,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Debt FY0 (M12 basis),659.365,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,"FY ends 30 Jun; FY0 = FY2026 (ended 30 Jun 2026), FY-3 = FY2023. Reports in USD thousands (converted). Debt = short-term debt 260.0 + long-term debt 399.4 (R8). Source: latest annual report on SEC EDGAR (source_url); FY-3 revenue and EPS from the prior annual report (fy3_source_url). Values come from SEC's tagged data for each filing; the latest-year lines were checked against the filed statements. Price 229.94 USD is the 30 Oct 2026 close (Yahoo Finance, Secondary)."
+RMD,Current assets FY0,4324.739,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Current liabilities FY0,1395.11,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Total assets FY0,8965.95,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Total assets FY-1,8174.391,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,
+RMD,Shares outstanding (m),140.6571,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/rmd-20260630.htm,2026-10-26 (10-Q for Q1 FY2027)
+RMD,Price 30 Oct 2026,229.94,reported FY0 (Aryu's M12 file),https://finance.yahoo.com/quote/RMD/history/ (Secondary: Yahoo Finance close),
+RMD,DCF base revenue,5653.443,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,
+RMD,DCF debt,659.4,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,Short-term debt 260.0 + long-term debt 399.4 at 30 Jun 2026
+RMD,DCF corporate cash,1469.2,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,Cash and cash equivalents at 30 Jun 2026
+RMD,DCF diluted shares (m),143.411,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,"Diluted weighted shares, quarter ended 30 Sep 2026 (10-Q filed 30 Oct 2026)"
+RMD,DCF tax rate,0.2064,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/943819/000094381926000047/,1 - net income 1523.293 / pretax income 1919.416
+RMD,5-year beta (Aryu),0.766,Aryu's DCF file,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",
+RMD,Growth notes (guidance),,Aryu's DCF file,Growth path: see note,"Year 1 near the latest quarter (+5.9%: 1,414.8 vs 1,335.6, quarter ended 30 Sep 2026, 10-Q). FY2027 guidance: 5% to 7% core growth (Aug 2026). Years 2-5 between that and the 3-year revenue CAGR (10.2%, FY2023-FY2026), near the 2030 plan's high-single-digit growth."
+ALC,Fiscal year end,2025-12-31,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Revenue FY0,10401,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Operating income FY0,1360,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Pretax income FY0,1160,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Net income to common FY0,980,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Operating cash flow FY0,2271,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Capex FY0,543,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Debt FY0 (M12 basis),4737,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,"Swiss company, reports in USD under IFRS. Revenue = net sales and other revenues (10,401). Debt = financial debts non-current 4,162 + current 575; IFRS 16 lease liabilities (509) left out, to match US GAAP peers that exclude operating leases. Shares from the 20-F cover (31 Dec 2025). Source: latest annual report on SEC EDGAR (source_url); FY-3 revenue and EPS from the prior annual report (fy3_source_url). Values come from SEC's tagged data for each filing; the latest-year lines were checked against the filed statements. Price 71.45 USD is the 30 Oct 2026 close (Yahoo Finance, Secondary)."
+ALC,Current assets FY0,6449,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Current liabilities FY0,3049,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Total assets FY0,31555,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Total assets FY-1,30347,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,
+ALC,Shares outstanding (m),487.4279,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/alc-20251231.htm,2025-12-31 (20-F for 2025)
+ALC,Price 30 Oct 2026,71.45,reported FY0 (Aryu's M12 file),https://finance.yahoo.com/quote/ALC/history/ (Secondary: Yahoo Finance close),
+ALC,DCF base revenue,10401,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/,
+ALC,DCF debt,5246,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/,"Financial debts 4,162 + 575, plus IFRS 16 lease liabilities 509 (lease payments sit in financing cash flow, so they count as debt here)"
+ALC,DCF corporate cash,1527,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/,Cash and cash equivalents at 31 Dec 2025
+ALC,DCF diluted shares (m),487.428,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/,Shares outstanding on the 20-F cover (31 Dec 2025); dilution is under 1%
+ALC,DCF tax rate,0.1552,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1167379/000116737926000014/,1 - net income 980 / pretax income 1160
+ALC,5-year beta (Aryu),0.869,Aryu's DCF file,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",
+ALC,Growth notes (guidance),,Aryu's DCF file,Growth path: see note,"Near the 3-year revenue CAGR (6.1%, 2022-2025). Guidance: 5% to 7% sales growth in 2026 (constant currency) and 6% to 8% a year over five years (Capital Markets Day, Dec 2025)."
+EW,Fiscal year end,2025-12-31,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Revenue FY0,6067.6,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Operating income FY0,1264.2,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Pretax income FY0,1272.9,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Net income to common FY0,1073.5,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Operating cash flow FY0,1595.2,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Capex FY0,260.2,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Debt FY0 (M12 basis),598.3,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,"Critical Care business sold Sept 2024 and shown as discontinued: FY-3 revenue 4,464 is the restated continuing figure, and G2 uses continuing EPS (1.81 and 2.12, R3). Debt = long-term debt 598.3 (R8). Earnings to common = net income attributable to Edwards 1,073.5. Source: latest annual report on SEC EDGAR (source_url); FY-3 revenue and EPS from the prior annual report (fy3_source_url). Values come from SEC's tagged data for each filing; the latest-year lines were checked against the filed statements. Price 92.01 USD is the 30 Oct 2026 close (Yahoo Finance, Secondary)."
+EW,Current assets FY0,6738.9,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Current liabilities FY0,1813.7,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Total assets FY0,13697.2,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Total assets FY-1,13055.3,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,
+EW,Shares outstanding (m),576.4,reported FY0 (Aryu's M12 file),https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/ew-20251231.htm,2026-07-31 (10-Q for Q2 2026)
+EW,Price 30 Oct 2026,92.01,reported FY0 (Aryu's M12 file),https://finance.yahoo.com/quote/EW/history/ (Secondary: Yahoo Finance close),
+EW,DCF base revenue,6067.6,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,
+EW,DCF debt,598.3,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,Long-term debt at 31 Dec 2025
+EW,DCF corporate cash,4504.9,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,"Cash 2,938.0 + short-term investments 1,288.3 + long-term investments 278.6 at 31 Dec 2025"
+EW,DCF diluted shares (m),577.6,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,"Diluted weighted shares, quarter ended 30 Jun 2026 (10-Q)"
+EW,DCF tax rate,0.1704,Aryu's DCF file,https://www.sec.gov/Archives/edgar/data/1099800/000109980026000009/,1 - net income 1056.0 / pretax income 1272.9
+EW,5-year beta (Aryu),0.845,Aryu's DCF file,"Slope of 60 monthly total returns vs SPY (S&P 500), Nov 2021-Oct 2026, Yahoo Finance data",
+EW,Growth notes (guidance),,Aryu's DCF file,Growth path: see note,"Year 1 (2026) near the latest quarter (+13.6%: 1,741.0 vs 1,532.2, quarter ended 30 Jun 2026, 10-Q). 2026 guidance raised to 10% to 11% (Q2 2026 release). Years 2-5 near the long-term target of about 10% a year, slowing."
