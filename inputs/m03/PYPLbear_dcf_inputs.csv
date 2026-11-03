@@ -16,12 +16,12 @@ beta_measured,1.335,,RESEARCH,"60 monthly USD returns vs SPY, Nov 2021-Oct 2026 
 equity_premium,0.05,decimal,ASSUMPTION,Kit default 5%,
 pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,Kit default: 10-year + 0.5 points,
 equity_value_for_weights,47355.93,USD m,RESEARCH,Price x shares outstanding,
-debt_value_for_weights,11583,USD m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),Book debt
+debt_value_for_weights,13472,USD m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),Book debt
 terminal_growth,0.03,decimal,ASSUMPTION,"3% in USD, converted by the rate gap: 1.03 x (1 + rf local) / (1 + rf US) - 1",
 return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
-debt,11583,USD m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there); Finalists_DCF_Supplement_Reviewed.xlsx,Debt
-non_operating_assets,8049,USD m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),"Corporate cash, 23 Oct teammate-corrected file"
-diluted_shares,882,m,RESEARCH,23 Oct teammate-corrected file,
+debt,13472,USD m,RESEARCH,PayPal Q3 2026 release (27 Oct 2026),"Short-term 2,533 + long-term 10,939 at 30 Sep 2026"
+non_operating_assets,15065,USD m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),"Cash, cash equivalents and investments 7,160 + 3,120 + 4,785 at 30 Sep 2026 (PayPal's measure excludes customer funds)"
+diluted_shares,858,m,RESEARCH,"PayPal Q3 2026 release: diluted shares, Q3",Matches the 30 Sep 2026 bridge
 years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of forecast year 1,
-first_year_fraction,1.0,,ASSUMPTION,Method,"Cash and debt are at the base-year end, so all of forecast year 1 counts"
+first_year_fraction,0.25,,ASSUMPTION,Method,"PayPal: bridge at 30 Sep 2026, so only Q4 of 2026 counts"
 sbc_pct,0,decimal,ASSUMPTION,Method,0 because da_pct is reported D&A

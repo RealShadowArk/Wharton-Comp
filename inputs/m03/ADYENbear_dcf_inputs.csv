@@ -21,7 +21,7 @@ terminal_growth,0.0143,decimal,ASSUMPTION,"3% in USD, converted by the rate gap:
 return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
 debt,252.366,EUR m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there); Finalists_DCF_Supplement_Reviewed.xlsx,Debt + IFRS/Ind AS lease liabilities 252.366
 non_operating_assets,4425.586,EUR m,ASSUMPTION,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),"Gross cash 10,797.401 - merchant/FI payables 6,371.815 (Pat, 3 Nov; EUR 0 shown as the floor)"
-diluted_shares,31.610806,m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),
+diluted_shares,31.536692,m,RESEARCH,"Pat_Round2_data_completed.xlsx (Red flags, FY0 shares outstanding)",Shares at the cash-and-debt date so buybacks are not double counted; dilution not added (MISSING)
 years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of forecast year 1,
 first_year_fraction,1.0,,ASSUMPTION,Method,"Cash and debt are at the base-year end, so all of forecast year 1 counts"
 sbc_pct,0,decimal,ASSUMPTION,Method,0 because da_pct is reported D&A

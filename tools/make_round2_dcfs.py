@@ -41,7 +41,11 @@ RF_SRC = {"USD": "US Treasury 10-year par CMT, 30 Oct 2026 (research compilation
 CRP_DLO, CRP_DLO_HIGH = 0.0299, 0.0534
 LEASES = {"DLO": 3.385, "ADYEN": 252.366, "INFY": 91760, "TCS": 112830}  # IFRS/Ind AS totals; US GAAP finance leases are already in debt
 ADYEN_CASH = 10797.401 - 6371.815
-PYPL_KEEP = {"diluted_shares": 882, "cash": 8049}  # from the 23 Oct teammate-corrected file
+# Honest-review corrections (3 Nov): PayPal's bridge at 30 Sep 2026 (Q3 2026 release, 27 Oct):
+# cash, cash equivalents and investments 7,160 + 3,120 + 4,785; debt 2,533 + 10,939; diluted shares 858.
+PYPL_Q3 = {"cash": 15065, "debt": 13472, "shares": 858}
+CTSH_TAX = 0.25  # 2026 adjusted ETR guidance ~25%; 2025 GAAP 36% includes a one-off $390m OBBBA deferred-tax charge
+CME_FLOAT, CME_EQUITY = 5253.6 - 4833.8, 371.7  # 2025 10-K: clearing-collateral earnings less distributions; equity earnings (S&P DJI, OSTTRA)
 TICKERS = ["DLO", "ADYEN", "PYPL", "CME", "ICE", "MCO", "INFY", "TCS", "CTSH"]
 GROUP = {"DLO": "Payments", "ADYEN": "Payments", "PYPL": "Payments", "CME": "Exchanges and data",
          "ICE": "Exchanges and data", "MCO": "Exchanges and data", "INFY": "IT services",
@@ -66,7 +70,7 @@ def build(t, v, red, beta_measured):
     rf = RF[cur]
     g_term = 1.03 * (1 + rf) / (1 + RF_US) - 1
     rev = v["revenue"]
-    tax = (v["pretax_income"] - v["net_income_common"]) / v["pretax_income"]
+    tax = CTSH_TAX if t == "CTSH" else (v["pretax_income"] - v["net_income_common"]) / v["pretax_income"]
     margin = v["operating_income"] / rev
     da = (v["d_and_a"] if v["d_and_a"] is not None else red[(t, "FY0")]["depreciation"]) / rev
     capex = (v["capex"] + (v["capex_software"] or 0)) / rev
@@ -81,12 +85,15 @@ def build(t, v, red, beta_measured):
         notes["ebit_margin"] = f"Exception (Pat, 3 Nov): FY2026 operating profit +30% (guidance midpoint) / consensus revenue = {m1:.4f}, then held"
     if t in ("INFY", "TCS"):
         notes["growth"] += "; year 1 is the rupee consensus (Pat, 3 Nov: guidance is constant currency)"
-    debt = v["debt"] + LEASES.get(t, 0)
-    cash = ADYEN_CASH if t == "ADYEN" else (PYPL_KEEP["cash"] if t == "PYPL" else v["corporate_cash"])
-    shares = PYPL_KEEP["diluted_shares"] if t == "PYPL" else v["diluted_shares_m"]
+    debt = PYPL_Q3["debt"] if t == "PYPL" else v["debt"] + LEASES.get(t, 0)
+    cash = ADYEN_CASH if t == "ADYEN" else (PYPL_Q3["cash"] if t == "PYPL" else v["corporate_cash"])
+    # Shares at the same date as cash and debt (Red flags tab, FY0 shares outstanding), so buybacks are
+    # not counted twice; PayPal's bridge is 30 Sep 2026. Dilutive options/RSUs are not added (MISSING).
+    shares = PYPL_Q3["shares"] if t == "PYPL" else red[(t, "FY0")]["shares_outstanding_m"]
     erp = 0.05 + (CRP_DLO if t == "DLO" else 0)
     fy_end = "2026-03-31" if cur == "INR" else "2025-12-31"
     first = 0.42 if cur == "INR" else 0.17
+    fraction = 0.25 if t == "PYPL" else 1.0  # PayPal: Q1-Q3 2026 cash flow is already in the 30 Sep cash
     S = "Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there)"
     rows = [
         ("ticker", t, "", "RESEARCH", S, GROUP[t]),
@@ -97,7 +104,8 @@ def build(t, v, red, beta_measured):
         ("growth", ";".join(f"{g:.4f}" for g in growth), "decimal", "ASSUMPTION", "Standard method (Pat, 3 Nov)", notes["growth"]),
         ("ebit_margin", ";".join(f"{m:.5f}" for m in margins), "decimal", "ASSUMPTION",
          "Standard method: base-year operating margin held flat", notes.get("ebit_margin", f"Operating income / revenue = {margin:.4f}")),
-        ("tax_rate", round(tax, 4), "decimal", "RESEARCH", S, "1 - net income / pretax income"),
+        ("tax_rate", round(tax, 4), "decimal", "RESEARCH", S if t != "CTSH" else "Cognizant Q3 2025 10-Q and 2026 guidance (8-K, 29 Oct 2026)",
+         "Normal rate: 2026 adjusted guidance about 25%; 2025 GAAP 36% includes a one-off $390m tax charge" if t == "CTSH" else "1 - net income / pretax income"),
         ("da_pct", ";".join([f"{da:.5f}"] * 10), "decimal", "RESEARCH", S, "Reported D&A / revenue (true D&A, so stock pay stays inside EBIT: sbc_pct 0)"),
         ("capex_pct", ";".join([f"{capex:.5f}"] * 10), "decimal", "RESEARCH", S,
          "Capex" + (" + capitalized software (R4)" if GROUP[t] == "Payments" else "") + " / revenue"),
@@ -113,14 +121,15 @@ def build(t, v, red, beta_measured):
         ("terminal_growth", round(g_term, 5), "decimal", "ASSUMPTION",
          "3% in USD, converted by the rate gap: 1.03 x (1 + rf local) / (1 + rf US) - 1", ""),
         ("return_on_new_capital", 0.15, "decimal", "ASSUMPTION", "Kit default", ""),
-        ("debt", debt, f"{cur} m", "RESEARCH", S + "; Finalists_DCF_Supplement_Reviewed.xlsx",
-         "Debt" + (f" + IFRS/Ind AS lease liabilities {LEASES[t]}" if t in LEASES else "")),
+        ("debt", debt, f"{cur} m", "RESEARCH", "PayPal Q3 2026 release (27 Oct 2026)" if t == "PYPL" else S + "; Finalists_DCF_Supplement_Reviewed.xlsx",
+         "Short-term 2,533 + long-term 10,939 at 30 Sep 2026" if t == "PYPL" else "Debt" + (f" + IFRS/Ind AS lease liabilities {LEASES[t]}" if t in LEASES else "")),
         ("non_operating_assets", round(cash, 3), f"{cur} m", "ASSUMPTION" if t == "ADYEN" else "RESEARCH",
          S, "Gross cash 10,797.401 - merchant/FI payables 6,371.815 (Pat, 3 Nov; EUR 0 shown as the floor)"
-         if t == "ADYEN" else ("Corporate cash, 23 Oct teammate-corrected file" if t == "PYPL" else "Corporate cash only; merchant, customer and clearing funds excluded")),
-        ("diluted_shares", shares, "m", "RESEARCH", S if t != "PYPL" else "23 Oct teammate-corrected file", ""),
+         if t == "ADYEN" else ("Cash, cash equivalents and investments 7,160 + 3,120 + 4,785 at 30 Sep 2026 (PayPal's measure excludes customer funds)" if t == "PYPL" else "Corporate cash only; merchant, customer and clearing funds excluded")),
+        ("diluted_shares", shares, "m", "RESEARCH", "PayPal Q3 2026 release: diluted shares, Q3" if t == "PYPL" else "Pat_Round2_data_completed.xlsx (Red flags, FY0 shares outstanding)",
+         "Shares at the cash-and-debt date so buybacks are not double counted; dilution not added (MISSING)" if t != "PYPL" else "Matches the 30 Sep 2026 bridge"),
         ("years_to_first_cash_flow", first, "years", "ASSUMPTION", "Valuation date to the end of forecast year 1", ""),
-        ("first_year_fraction", 1.0, "", "ASSUMPTION", "Method", "Cash and debt are at the base-year end, so all of forecast year 1 counts"),
+        ("first_year_fraction", fraction, "", "ASSUMPTION", "Method", "PayPal: bridge at 30 Sep 2026, so only Q4 of 2026 counts" if t == "PYPL" else "Cash and debt are at the base-year end, so all of forecast year 1 counts"),
         ("sbc_pct", 0, "decimal", "ASSUMPTION", "Method", "0 because da_pct is reported D&A"),
     ]
     return rows, growth, margins, g_term
@@ -151,6 +160,9 @@ def main():
     risk = {r["ticker"]: r for r in csv.DictReader(open(ROOT / "outputs" / "round2" / "M_round2_risk.csv"))}
     flags = {r["ticker"]: r for r in csv.DictReader(open(ROOT / "outputs" / "round2" / "M_round2_redflags.csv"))}
     m3 = ROOT / "inputs" / "m03"
+    sys.path.insert(0, str(ROOT / "tools"))
+    from round2_risk_redflags import usd_prices
+    prices = usd_prices()
     res = []
     for t in TICKERS:
         rows, growth, margins, g_term = build(t, val[t], red, float(risk[t]["beta_measured"] if "beta_measured" in risk[t] else risk[t]["beta"]))
@@ -161,33 +173,46 @@ def main():
         b = float(raw["beta_measured"])
         at_measured = value(replace(p, wacc=wacc_for(raw, b)))["per_share"]
         _, bv, _, _ = run(t + "bear")
+        b_full, n_full = long_beta(prices, t)
+        at_full = value(replace(p, wacc=wacc_for(raw, b_full)))["per_share"]
+        vv = val[t]
+        capex = vv["capex"] + (vv["capex_software"] or 0)
+        da = vv["d_and_a"] if vv["d_and_a"] is not None else red[(t, "FY0")]["depreciation"]
+        sbc = vv["stock_based_comp"] if vv["stock_based_comp"] is not None else 1002  # PYPL: 23 Oct file (secondary)
+        cfo = {"DLO": 227.476, "ADYEN": 1246.157}.get(t, vv["cfo"])
+        model_cash = vv["operating_income"] * (1 - p.tax_rate) + da - capex
+        reported_cash = cfo - capex - sbc + (vv["interest_expense"] or 0) * (1 - p.tax_rate)
+        conv = model_cash / reported_cash
+        da_rep = p.da_pct[0] + (reported_cash - model_cash) / vv["revenue"]
+        at_reported = value(replace(p, da_pct=(da_rep,) * 10))["per_share"]
         extra = ""
         if t == "DLO":
             hi = dict(raw, equity_premium=str(0.05 + CRP_DLO_HIGH))
             extra = f"at {CRP_DLO_HIGH:.1%} country premium: {value(replace(p, wacc=wacc_for(hi, 1.0)))['per_share'] / price:.2f}x"
         if t == "ADYEN":
             extra = f"own cash 0 (floor): {value(replace(p, non_operating_assets=0))['per_share'] / price:.2f}x"
-        if t in ("CTSH", "MCO", "ICE", "PYPL"):
-            out_sh = val[t]["shares_outstanding_m"]
-            extra = f"on {out_sh:,.0f}m shares outstanding (vs {p.diluted_shares:,.0f}m diluted used): {value(replace(p, diluted_shares=out_sh))['per_share'] / price:.2f}x"
         if t == "CME":
-            pre = (val[t]["pretax_income"] + val[t]["interest_expense"]) / val[t]["revenue"]
-            extra = f"if net clearing-collateral income counts as operating (EBIT margin {pre:.1%}): {value(replace(p, ebit_margin=(pre,) * 10))['per_share'] / price:.2f}x"
-        if t == "CTSH":
-            extra += f"; at a 25% tax rate instead of {p.tax_rate:.0%}: {value(replace(p, tax_rate=0.25))['per_share'] / price:.2f}x"
-        vv = val[t]
-        tax = (vv["pretax_income"] - vv["net_income_common"]) / vv["pretax_income"]
-        capex = vv["capex"] + (vv["capex_software"] or 0)
-        da = vv["d_and_a"] if vv["d_and_a"] is not None else red[(t, "FY0")]["depreciation"]
-        sbc = vv["stock_based_comp"] if vv["stock_based_comp"] is not None else 1002  # PYPL: 23 Oct file
-        cfo = {"DLO": 227.476, "ADYEN": 1246.157}.get(t, vv["cfo"])
-        conv = (vv["operating_income"] * (1 - tax) + da - capex) / (cfo - capex - sbc + (vv["interest_expense"] or 0) * (1 - tax))
+            m_adj = (vv["operating_income"] + CME_FLOAT + CME_EQUITY) / vv["revenue"]
+            adj = value(replace(p, ebit_margin=(m_adj,) * 10))["per_share"]
+            extra = (f"with net clearing float {CME_FLOAT:,.0f} and S&P DJI/OSTTRA equity earnings {CME_EQUITY:,.0f} "
+                     f"in EBIT (margin {m_adj:.1%}): {adj / price:.2f}x at beta 1.0, "
+                     f"{value(replace(p, ebit_margin=(m_adj,) * 10, wacc=wacc_for(raw, b_full)))['per_share'] / price:.2f}x at beta {b_full:.2f}")
         up, down = v["per_share"] / price - 1, bv["per_share"] / price - 1
         ratio = ("no upside" if up <= 0 else ("no downside" if down >= 0 else f"{up / -down:.2f}"))
         res.append(dict(t=t, g=GROUP[t], price=price, cur=val[t]["reporting_currency"], v1=v["per_share"], vm=at_measured,
                         b=b, shift=shift, tv=v["terminal_share_of_ev"], wacc=p.wacc, bear=bv["per_share"],
-                        up=up, down=down, ratio=ratio, extra=extra, risk=risk[t], flag=flags[t], conv=conv))
+                        up=up, down=down, ratio=ratio, extra=extra, risk=risk[t], flag=flags[t], conv=conv,
+                        b_full=b_full, n_full=n_full, at_full=at_full, at_reported=at_reported))
     report(res)
+
+
+def long_beta(prices, t):
+    """Beta on every monthly USD return available (up to Oct 2026) versus SPY."""
+    ms = [m for m in sorted(prices) if m <= "2026-10" and prices[m].get(t) and prices[m].get("SPY")]
+    s = [prices[b][t] / prices[a][t] - 1 for a, b in zip(ms, ms[1:])]
+    m = [prices[b]["SPY"] / prices[a]["SPY"] - 1 for a, b in zip(ms, ms[1:])]
+    sb, mb = sum(s) / len(s), sum(m) / len(m)
+    return (sum((x - sb) * (y - mb) for x, y in zip(s, m)) / sum((y - mb) ** 2 for y in m), len(s))
 
 
 def report(res):
@@ -197,18 +222,27 @@ def report(res):
          "uniform DRAFT (years 1-3 growth halved, margin x 0.8) for the team to replace or justify in its own words. "
          "Values are research estimates, never price targets, returns or position sizes.", "",
          "## Valuation", "",
-         "| Group | Ticker | Price | Value (beta 1.0) | Value / price | At measured beta | Price implies (growth shift) | Bear value | Upside / downside | Check |",
-         "|---|---|---|---|---|---|---|---|---|---|"]
+         "| Group | Ticker | Price | Value (beta 1.0) | Value / price | At 5-year beta | At full-history beta | On reported cash flow | Price implies (growth shift) | Bear value | Upside / downside | Other checks |",
+         "|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for r in res:
         shift = "n/a" if r["shift"] is None else f"{r['shift']:+.1%}"
         L.append(f"| {r['g']} | {r['t']} | {r['price']:,.2f} {r['cur']} | {r['v1']:,.2f} | {r['v1'] / r['price']:.2f} | "
-                 f"{r['vm'] / r['price']:.2f} (beta {r['b']:.2f}) | "
-                 f"{shift} | {r['bear']:,.2f} ({r['bear'] / r['price']:.2f}) | "
+                 f"{r['vm'] / r['price']:.2f} (beta {r['b']:.2f}) | {r['at_full'] / r['price']:.2f} (beta {r['b_full']:.2f}, {r['n_full']} months) | "
+                 f"{r['at_reported'] / r['price']:.2f} | {shift} | {r['bear']:,.2f} ({r['bear'] / r['price']:.2f}) | "
                  f"{r['up']:+.0%} / {r['down']:+.0%} = {r['ratio']} | {r['extra']} |")
     L += ["", "Growth shift: added to every forecast year's revenue growth to match the price (negative = the price assumes less "
-          "growth than our base path).", "",
+          "growth than our base path). Full-history beta: every monthly USD return since listing (or 1993) to Oct 2026 versus SPY. "
+          "On reported cash flow: D&A recalibrated so year-1 free cash flow matches the company's reported cash generation "
+          "(CFO corrected for merchant funds, less capex, less stock-based pay, plus after-tax interest).", "",
+          "## Honest-review corrections (3 Nov)", "",
+          "| Item | Before | Now | Source |", "|---|---|---|---|",
+          "| PayPal cash, debt, shares | 8,049 / 11,583 / 882m (mixed dates) | 15,065 / 13,472 / 858m at 30 Sep 2026; only Q4 2026 cash flow added | [Q3 2026 release](https://s205.q4cdn.com/875401827/files/content_files/PYPL-3Q-26-Earnings-Release.pdf) |",
+          "| Share counts (other eight) | FY2025 average diluted shares (counts 2025 buybacks twice) | Shares outstanding at the cash-and-debt date (dilution not added) | Pat's Red flags tab |",
+          "| Cognizant tax rate | 36.1% (2025 GAAP) | 25% | [Q3 2025 10-Q: $390m one-off charge](https://www.sec.gov/Archives/edgar/data/1058290/000105829025000341/ctsh-20250930.htm); [2026 guidance](https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000039/exhibit9939302026.htm) |",
+          "| CME and Adyen betas | 5-year only (0.15, 2.35) | Full-history beta shown for all nine | Pat's Yahoo file |",
+          "| CME earnings | Operating income only | Clearing float and S&P DJI earnings shown as a variant | [2025 10-K](https://www.sec.gov/Archives/edgar/data/1156375/000115637526000009/cme-20251231.htm) |", "",
           "## Tests (kit README, 'What makes a buy candidate')", "",
-          "| Ticker | 1. M12 top 2 and robust | 2. Value > price at beta 1.0 and measured | 3. Upside/downside >= 1.0 | "
+          "| Ticker | 1. M12 top 2 and robust | 2. Value > price at beta 1.0, 5-year and full-history beta | 3. Upside/downside >= 1.0 | "
           "4. No red flag (Piotroski, Beneish) | Max position (2% rule) | Beta, volatility | Cash check |",
           "|---|---|---|---|---|---|---|---|"]
     m12 = {"DLO": "Yes: 1st, 32/32", "ADYEN": "Yes: 2nd, 29/32", "PYPL": "No: 3rd, 3/32",
@@ -216,7 +250,7 @@ def report(res):
            "MCO": "No: 3rd (1st in the data-and-ratings split run, 31/32)",
            "INFY": "Yes: 1st, 32/32", "TCS": "Yes: 2nd, 32/32", "CTSH": "No: 3rd"}
     for r in res:
-        t2 = "PASS" if min(r["v1"], r["vm"]) > r["price"] else "fail"
+        t2 = "PASS" if min(r["v1"], r["vm"], r["at_full"]) > r["price"] else "fail"
         t3 = ("PASS" if r["ratio"] == "no downside" or (r["ratio"] not in ("no upside",) and float(r["ratio"]) >= 1) else "fail")
         f = r["flag"]
         t4 = f"{f['piotroski']}/{f['piotroski_checked']}, {f['beneish_m']}"
@@ -226,7 +260,18 @@ def report(res):
           "rank in the group and variants (of 32) keeping it in the top 2; 'No' needs a written reason. Tests 5-6 (dip, edge, fit) are the team's written work.", "",
           "Cash check = the model's year-0 free cash flow (EBIT after tax + D&A - capex) / reported cash flow "
           "(CFO, corrected for merchant funds, - capex - stock-based pay + after-tax interest). Above about 1.10 the "
-          "model is more generous than the company's actual cash generation."]
+          "model is more generous than the company's actual cash generation.", "",
+          "## Caveats that still matter", "",
+          "- **dLocal:** its upside/downside ratio is 1.06 on year-end shares (294.9m) but 0.93 on the FY2025 diluted average (301.7m); "
+          "dilution from options is real for dLocal, so treat test 3 as borderline.",
+          "- **PayPal:** the bridge counts all $15.1bn of corporate cash and investments as spare, although some supports its credit "
+          "book and regulated entities; and the uniform draft bear (no downside) is far milder than the team's 23 Oct bear ($34-39). "
+          "Its price implies revenue shrinking about 4-5% a year for a decade.",
+          "- **Cognizant:** passes every valuation test, but was 3rd in M12 (needs a written reason).",
+          "- **Adyen:** passes at beta 1.0 and on reported cash flow, fails at its measured betas (2.35 over 5 years, 1.82 since 2018).",
+          "- **CME:** below the price under every reasonable input; only the 5-year beta of 0.15 (cost of equity barely above the "
+          "Treasury yield) made it look cheap.",
+          "- Bear cases are still the uniform draft: the team must replace or justify them in its own words."]
     out = ROOT / "outputs" / "round2" / "Round2_scorecard.md"
     out.write_text("\n".join(L) + "\n", encoding="utf-8")
     print("\n".join(L))
