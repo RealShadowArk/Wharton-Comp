@@ -1,0 +1,1439 @@
+{
+  "as_of": "2026-10-31",
+  "common_price_date": "2026-10-30",
+  "units": "millions in reporting currency, except per-share data",
+  "scope": "Input evidence only. Missing input cells are blank to match kit parser.",
+  "companies": [
+    {
+      "ticker": "ADBE",
+      "fiscal_period": "2025-11-28",
+      "statement_and_reconciliation": "FY2025 10-K 1474–1516, 1540–1572, 1695–1701, 1833. Debt = 0 + 6210. Lease policy expressly says no finance leases. FY2022 revenue/EPS in prior filing lines 1362 and 3102–3110. Cover shares line 67, rounded.",
+      "field_evidence": {
+        "company": {
+          "value": "Adobe Inc.",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "domicile": {
+          "value": "US",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "listing_exchange": {
+          "value": "Nasdaq",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "reporting_currency": {
+          "value": "USD",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "accounting_standard": {
+          "value": "US GAAP",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fiscal_year": {
+          "value": 2025,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fy_end_date": {
+          "value": "2025-11-28",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy0": {
+          "value": 23769,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy3": {
+          "value": 17606,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+          "source_publication_date": "2025-01-13",
+          "basis": "FY2022 comparator in prior annual filing"
+        },
+        "operating_income_fy0": {
+          "value": 8706,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "pretax_income_fy0": {
+          "value": 8734,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy0": {
+          "value": 29496,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy1": {
+          "value": 30230,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_debt_fy0": {
+          "value": 6210,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_assets_fy0": {
+          "value": 10163,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_liabilities_fy0": {
+          "value": 10200,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "inventory_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_equity_fy0": {
+          "value": 11623,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy0": {
+          "value": 16.7,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy3": {
+          "value": 10.1,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+          "source_publication_date": "2025-01-13",
+          "basis": "FY2022 comparator in prior annual filing"
+        },
+        "eps_cont_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_cont_fy3": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+          "source_publication_date": "2025-01-13",
+          "basis": "FY2022 comparator in prior annual filing"
+        },
+        "earnings_common_fy0": {
+          "value": 7130,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "cfo_fy0": {
+          "value": 10031,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_fy0": {
+          "value": 179,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_software_fy0": {
+          "value": null,
+          "status": "NOT_APPLICABLE",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "source_publication_date": "2026-01-15",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "shares_outstanding_m": {
+          "value": 389.2,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "source_publication_date": "2026-09-22",
+          "basis": "Common shares outstanding at 2026-09-18; latest verified dated proxy"
+        },
+        "price": {
+          "value": 250.23,
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:02.035635+00:00"
+        },
+        "price_date": {
+          "value": "2026-10-30",
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:02.035635+00:00"
+        },
+        "market_cap_cutoff_proxy_m": {
+          "value": 97389.516,
+          "status": "VERIFIED",
+          "source_url": [
+            "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+            "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+          ],
+          "source_publication_date": "2026-10-30",
+          "basis": "250.23 × 389.2m dated common shares = 97389.516m USD. Share observation 2026-09-18."
+        }
+      },
+      "wins_status": "UNVERIFIED",
+      "market_input": {
+        "symbol": "ADBE",
+        "observation_date": "2026-10-30",
+        "currency": "USD",
+        "close": "250.22999572753906",
+        "sma200": "250.4357997894287",
+        "high_52wk_intraday": "362.7099914550781",
+        "fraction_below_high": "0.31011000076481154",
+        "one_year_adjusted_return": "-0.262380606853987",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+        "retrieved_utc": "2026-11-03T02:12:02.035635+00:00"
+      },
+      "latest_disclosure": {
+        "published": "2026-09-10",
+        "period_end": "2026-08-28",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+        "facts": "FY2026 Q3 revenue $6.76bn, +13% year over year and +12% at constant currency. GAAP diluted EPS $4.62. Non-GAAP diluted EPS $6.13."
+      }
+    },
+    {
+      "ticker": "CRM",
+      "fiscal_period": "2026-01-31",
+      "statement_and_reconciliation": "FY2026 10-K 1840–1878, 1898–1923, 2048–2056, 2273–2274, 2698–2706. Debt = 4000 + 10439 + 535 finance leases recorded outside debt. FY2023 revenue/EPS lines 1963 and 1986. Cover shares line 70, approximate. August filing describes substantial 2026 accelerated buybacks, so timing matters.",
+      "field_evidence": {
+        "company": {
+          "value": "Salesforce, Inc.",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "domicile": {
+          "value": "US",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "listing_exchange": {
+          "value": "NYSE",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "reporting_currency": {
+          "value": "USD",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "accounting_standard": {
+          "value": "US GAAP",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fiscal_year": {
+          "value": 2026,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fy_end_date": {
+          "value": "2026-01-31",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy0": {
+          "value": 41525,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy3": {
+          "value": 31352,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+          "source_publication_date": "2025-03-05",
+          "basis": "FY2023 comparator in prior annual filing"
+        },
+        "operating_income_fy0": {
+          "value": 8331,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "pretax_income_fy0": {
+          "value": 9520,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy0": {
+          "value": 112305,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy1": {
+          "value": 102928,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_debt_fy0": {
+          "value": 14974,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_assets_fy0": {
+          "value": 28222,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_liabilities_fy0": {
+          "value": 37118,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "inventory_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_equity_fy0": {
+          "value": 59142,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy0": {
+          "value": 7.8,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy3": {
+          "value": 0.21,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+          "source_publication_date": "2025-03-05",
+          "basis": "FY2023 comparator in prior annual filing"
+        },
+        "eps_cont_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_cont_fy3": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+          "source_publication_date": "2025-03-05",
+          "basis": "FY2023 comparator in prior annual filing"
+        },
+        "earnings_common_fy0": {
+          "value": 7457,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "cfo_fy0": {
+          "value": 14996,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_fy0": {
+          "value": 594,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_software_fy0": {
+          "value": null,
+          "status": "NOT_APPLICABLE",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "source_publication_date": "2026-03-02",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "shares_outstanding_m": {
+          "value": 823,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+          "source_publication_date": "2026-08-27",
+          "basis": "Common shares outstanding at 2026-08-20; latest verified dated proxy"
+        },
+        "price": {
+          "value": 229.17,
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:02.345382+00:00"
+        },
+        "price_date": {
+          "value": "2026-10-30",
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:02.345382+00:00"
+        },
+        "market_cap_cutoff_proxy_m": {
+          "value": 188606.91,
+          "status": "VERIFIED",
+          "source_url": [
+            "https://query1.finance.yahoo.com/v8/finance/chart/CRM?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+            "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm"
+          ],
+          "source_publication_date": "2026-10-30",
+          "basis": "229.17 × 823m dated common shares = 188606.91m USD. Share observation 2026-08-20."
+        }
+      },
+      "wins_status": "UNVERIFIED",
+      "market_input": {
+        "symbol": "CRM",
+        "observation_date": "2026-10-30",
+        "currency": "USD",
+        "close": "229.1699981689453",
+        "sma200": "198.3109001159668",
+        "high_52wk_intraday": "269.1099853515625",
+        "fraction_below_high": "0.14841510667261193",
+        "one_year_adjusted_return": "-0.0994981517955913",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+        "retrieved_utc": "2026-11-03T02:12:02.345382+00:00"
+      },
+      "latest_disclosure": {
+        "published": "2026-08-26",
+        "period_end": "2026-07-31",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+        "facts": "FY2027 Q2 subscription and support revenue $10.8bn, +12% year over year and +11% at constant currency. The issuer attributed $440m of this line to Informatica."
+      }
+    },
+    {
+      "ticker": "INTU",
+      "fiscal_period": "2026-07-31",
+      "statement_and_reconciliation": "FY2026 10-K 2008–2045, 2091–2136, 2223–2228 and Note 8 lines 3126–3175. Debt = 1249 + 6420 borrowings (R8 proposed). Lease note provides operating lease totals only. Customer funds are included in reported current asset/liability subtotals. FY2023 revenue/EPS prior filing lines 1386 and 2573. Cover line 70 reports 267236 thousand voting common shares.",
+      "field_evidence": {
+        "company": {
+          "value": "Intuit Inc.",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "domicile": {
+          "value": "US",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "listing_exchange": {
+          "value": "Nasdaq Global Select Market",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "reporting_currency": {
+          "value": "USD",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "accounting_standard": {
+          "value": "US GAAP",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fiscal_year": {
+          "value": 2026,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fy_end_date": {
+          "value": "2026-07-31",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy0": {
+          "value": 21448,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy3": {
+          "value": 14368,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000035/intu-20250731.htm",
+          "source_publication_date": "2025-09-03",
+          "basis": "FY2023 comparator in prior annual filing"
+        },
+        "operating_income_fy0": {
+          "value": 5884,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "pretax_income_fy0": {
+          "value": 6017,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy0": {
+          "value": 36786,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy1": {
+          "value": 36958,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_debt_fy0": {
+          "value": 7669,
+          "status": "PROPOSED_R8",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_assets_fy0": {
+          "value": 15311,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_liabilities_fy0": {
+          "value": 10163,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "inventory_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_equity_fy0": {
+          "value": 18992,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy0": {
+          "value": 16.46,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy3": {
+          "value": 8.42,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000035/intu-20250731.htm",
+          "source_publication_date": "2025-09-03",
+          "basis": "FY2023 comparator in prior annual filing"
+        },
+        "eps_cont_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_cont_fy3": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000035/intu-20250731.htm",
+          "source_publication_date": "2025-09-03",
+          "basis": "FY2023 comparator in prior annual filing"
+        },
+        "earnings_common_fy0": {
+          "value": 4566,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "cfo_fy0": {
+          "value": 8838,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_fy0": {
+          "value": 175,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_software_fy0": {
+          "value": null,
+          "status": "NOT_APPLICABLE",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "shares_outstanding_m": {
+          "value": 267.236,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+          "source_publication_date": "2026-09-09",
+          "basis": "Common shares outstanding at 2026-08-31; latest verified dated proxy"
+        },
+        "price": {
+          "value": 341.09,
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/INTU?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:02.490739+00:00"
+        },
+        "price_date": {
+          "value": "2026-10-30",
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/INTU?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:02.490739+00:00"
+        },
+        "market_cap_cutoff_proxy_m": {
+          "value": 91151.52724,
+          "status": "VERIFIED",
+          "source_url": [
+            "https://query1.finance.yahoo.com/v8/finance/chart/INTU?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+            "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm"
+          ],
+          "source_publication_date": "2026-10-30",
+          "basis": "341.09 × 267.236m dated common shares = 91151.52724m USD. Share observation 2026-08-31."
+        }
+      },
+      "wins_status": "UNVERIFIED",
+      "market_input": {
+        "symbol": "INTU",
+        "observation_date": "2026-10-30",
+        "currency": "USD",
+        "close": "341.0899963378906",
+        "sma200": "360.5609007263184",
+        "high_52wk_intraday": "682.27001953125",
+        "fraction_below_high": "0.5000659759720429",
+        "one_year_adjusted_return": "-0.4728602800441716",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/INTU?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+        "retrieved_utc": "2026-11-03T02:12:02.490739+00:00"
+      },
+      "latest_disclosure": {
+        "published": "2026-08-25",
+        "period_end": "2026-07-31",
+        "source_url": "https://investors.intuit.com/news-events/press-releases/detail/1320/intuit-reports-fourth-quarter-and-full-year-fiscal-2026-results-sets-fiscal-2027-guidance",
+        "facts": "Issuer says it will include stock compensation in its non-GAAP measures effective August 1, 2026. Mailchimp becomes a separate reportable segment in FY2027. Retain GAAP annual inputs in M12."
+      }
+    },
+    {
+      "ticker": "NOW",
+      "fiscal_period": "2025-12-31",
+      "statement_and_reconciliation": "FY2025 10-K 1992–2027, 2049–2070, 2167–2169, 2253–2254, 2385. Debt = 1491 long-term, with zero finance leases explicitly disclosed. FY2022 revenue 7245 (prior lines 1727/2754), reported pre-split EPS 1.60 (line 2560) / 5 = 0.32. 5-for-1 split effective Dec 17 2025. Shares are September balance sheet count in thousands, 1037917 divided by 1000. FY0 weighted diluted shares are a separate denominator.",
+      "field_evidence": {
+        "company": {
+          "value": "ServiceNow, Inc.",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "domicile": {
+          "value": "US",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "listing_exchange": {
+          "value": "NYSE",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "reporting_currency": {
+          "value": "USD",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "accounting_standard": {
+          "value": "US GAAP",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fiscal_year": {
+          "value": 2025,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fy_end_date": {
+          "value": "2025-12-31",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy0": {
+          "value": 13278,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy3": {
+          "value": 7245,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371525000010/now-20241231.htm",
+          "source_publication_date": "2025-01-30",
+          "basis": "FY2022 comparator in prior annual filing"
+        },
+        "operating_income_fy0": {
+          "value": 1824,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "pretax_income_fy0": {
+          "value": 2261,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy0": {
+          "value": 26038,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy1": {
+          "value": 20383,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_debt_fy0": {
+          "value": 1491,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_assets_fy0": {
+          "value": 10471,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_liabilities_fy0": {
+          "value": 10443,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "inventory_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_equity_fy0": {
+          "value": 12964,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy0": {
+          "value": 1.67,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy3": {
+          "value": 0.32,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371525000010/now-20241231.htm",
+          "source_publication_date": "2025-01-30",
+          "basis": "2022 reported diluted EPS 1.60 / 5; split source FY0 filing"
+        },
+        "eps_cont_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_cont_fy3": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371525000010/now-20241231.htm",
+          "source_publication_date": null,
+          "basis": "FY2022 comparator in prior annual filing"
+        },
+        "earnings_common_fy0": {
+          "value": 1748,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "cfo_fy0": {
+          "value": 5444,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_fy0": {
+          "value": 868,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_software_fy0": {
+          "value": null,
+          "status": "NOT_APPLICABLE",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+          "source_publication_date": "2026-01-29",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "shares_outstanding_m": {
+          "value": 1037.917,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000096/now-20260930.htm",
+          "source_publication_date": "2026-10-28",
+          "basis": "Common shares outstanding at 2026-09-30; latest verified dated proxy"
+        },
+        "price": {
+          "value": 105.12,
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:02.758452+00:00"
+        },
+        "price_date": {
+          "value": "2026-10-30",
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:02.758452+00:00"
+        },
+        "market_cap_cutoff_proxy_m": {
+          "value": 109105.83504,
+          "status": "VERIFIED",
+          "source_url": [
+            "https://query1.finance.yahoo.com/v8/finance/chart/NOW?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+            "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000096/now-20260930.htm"
+          ],
+          "source_publication_date": "2026-10-30",
+          "basis": "105.12 × 1037.917m dated common shares = 109105.83504m USD. Share observation 2026-09-30."
+        }
+      },
+      "wins_status": "UNVERIFIED",
+      "market_input": {
+        "symbol": "NOW",
+        "observation_date": "2026-10-30",
+        "currency": "USD",
+        "close": "105.12000274658203",
+        "sma200": "114.98710010528565",
+        "high_52wk_intraday": "189.52999877929688",
+        "fraction_below_high": "0.44536483182806463",
+        "one_year_adjusted_return": "-0.437668506129848",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/NOW?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+        "retrieved_utc": "2026-11-03T02:12:02.758452+00:00"
+      },
+      "latest_disclosure": {
+        "published": "2026-10-28",
+        "period_end": "2026-09-30",
+        "source_url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-Reports-Third-Quarter-2026-Financial-Results/default.aspx",
+        "facts": "Q3 subscription revenue $3,988m, +21% year over year and +20.5% at constant currency."
+      }
+    },
+    {
+      "ticker": "SAP",
+      "fiscal_period": "2025-12-31",
+      "statement_and_reconciliation": "FY2025 20-F audited statements F-5, F-7, F-9. Common earnings are attributable to parent. FY2022 total revenue 29520 and diluted EPS 1.94, continuing EPS 2.79 in prior 20-F. FY2025 continuing EPS 6.10. Capex is the reported combined PP&E and intangible purchases line, gross outflow. FY2025 debt carrying amount 5792 (Note E.3, lines 7030–7043) and IFRS 16 lease liabilities 1684 (Note D.5), with no comparable US GAAP operating-versus-finance allocation verified. Kit-defined debt remains MISSING. Dated outstanding share count remains MISSING, so no market cap. FY2025 figures use the audited 20-F basis.",
+      "field_evidence": {
+        "company": {
+          "value": "SAP SE",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "domicile": {
+          "value": "Germany",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "listing_exchange": {
+          "value": "Frankfurt (Xetra quote SAP.DE)",
+          "status": "VERIFIED",
+          "source_url": "https://www.sap.com/investors/en/resources/faq.html",
+          "source_publication_date": null,
+          "basis": "Issuer states ordinary shares list through Frankfurt/Xetra under SAP. SAP.DE is Yahoo's Xetra quote symbol."
+        },
+        "reporting_currency": {
+          "value": "EUR",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "accounting_standard": {
+          "value": "IFRS",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fiscal_year": {
+          "value": 2025,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fy_end_date": {
+          "value": "2025-12-31",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy0": {
+          "value": 36800,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy3": {
+          "value": 29520,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465925017815/sap-20241224x20f.htm",
+          "source_publication_date": "2025-02-27",
+          "basis": "FY2022 comparator in prior annual filing"
+        },
+        "operating_income_fy0": {
+          "value": 9617,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "pretax_income_fy0": {
+          "value": 10270,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy0": {
+          "value": 70362,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy1": {
+          "value": 74237,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_debt_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_assets_fy0": {
+          "value": 20256,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_liabilities_fy0": {
+          "value": 17416,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "inventory_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_equity_fy0": {
+          "value": 45073,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy0": {
+          "value": 6.1,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy3": {
+          "value": 1.94,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465925017815/sap-20241224x20f.htm",
+          "source_publication_date": "2025-02-27",
+          "basis": "FY2022 comparator in prior annual filing"
+        },
+        "eps_cont_fy0": {
+          "value": 6.1,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_cont_fy3": {
+          "value": 2.79,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465925017815/sap-20241224x20f.htm",
+          "source_publication_date": "2025-02-27",
+          "basis": "FY2022 comparator in prior annual filing"
+        },
+        "earnings_common_fy0": {
+          "value": 7161,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "cfo_fy0": {
+          "value": 9156,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_fy0": {
+          "value": 739,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_software_fy0": {
+          "value": null,
+          "status": "NOT_APPLICABLE",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm",
+          "source_publication_date": "2026-02-26",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "shares_outstanding_m": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": null,
+          "source_publication_date": null,
+          "basis": null
+        },
+        "price": {
+          "value": 211.25,
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SAP.DE?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:03.141195+00:00"
+        },
+        "price_date": {
+          "value": "2026-10-30",
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SAP.DE?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:03.141195+00:00"
+        },
+        "market_cap_cutoff_proxy_m": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": null,
+          "source_publication_date": null,
+          "basis": null
+        }
+      },
+      "wins_status": "UNVERIFIED",
+      "market_input": {
+        "symbol": "SAP.DE",
+        "observation_date": "2026-10-30",
+        "currency": "EUR",
+        "close": "211.25",
+        "sma200": "165.2475",
+        "high_52wk_intraday": "231.0500030517578",
+        "fraction_below_high": "0.08569574892982101",
+        "one_year_adjusted_return": "-0.04876968217201694",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SAP.DE?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+        "retrieved_utc": "2026-11-03T02:12:03.141195+00:00"
+      },
+      "latest_disclosure": {
+        "published": "2026-10-21",
+        "period_end": "2026-09-30",
+        "source_url": "https://www.sap.com/docs/download/investors/2026/sap-2026-q3-statement.pdf",
+        "facts": "Q3 current cloud backlog €24.1bn, +28% reported and +26% at constant currencies. Quarterly comparative balance-sheet figures differ slightly from original audited FY2025 figures. Use the audited annual basis consistently."
+      }
+    },
+    {
+      "ticker": "ADSK",
+      "fiscal_period": "2026-01-31",
+      "statement_and_reconciliation": "FY2026 10-K lines 1887–1910, 1961–1994, 2027–2034 and lease note 3043–3099. Debt = 0 + 2483 borrowings (R8 proposed). Lease note provides operating lease totals only. FY2023 revenue/EPS prior filing lines 1542 and 1961. Cover shares line 70, rounded.",
+      "field_evidence": {
+        "company": {
+          "value": "Autodesk, Inc.",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "domicile": {
+          "value": "US",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "listing_exchange": {
+          "value": "Nasdaq Global Select Market",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "reporting_currency": {
+          "value": "USD",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "accounting_standard": {
+          "value": "US GAAP",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fiscal_year": {
+          "value": 2026,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "fy_end_date": {
+          "value": "2026-01-31",
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy0": {
+          "value": 7206,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "revenue_fy3": {
+          "value": 5005,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000019/adsk-20250131.htm",
+          "source_publication_date": "2025-03-06",
+          "basis": "FY2023 comparator in prior annual filing"
+        },
+        "operating_income_fy0": {
+          "value": 1578,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "pretax_income_fy0": {
+          "value": 1603,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy0": {
+          "value": 12467,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_assets_fy1": {
+          "value": 10833,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_debt_fy0": {
+          "value": 2483,
+          "status": "PROPOSED_R8",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_assets_fy0": {
+          "value": 4942,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "current_liabilities_fy0": {
+          "value": 5808,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "inventory_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "total_equity_fy0": {
+          "value": 3045,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy0": {
+          "value": 5.23,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_diluted_fy3": {
+          "value": 3.78,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000019/adsk-20250131.htm",
+          "source_publication_date": "2025-03-06",
+          "basis": "FY2023 comparator in prior annual filing"
+        },
+        "eps_cont_fy0": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "eps_cont_fy3": {
+          "value": null,
+          "status": "MISSING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000019/adsk-20250131.htm",
+          "source_publication_date": "2025-03-06",
+          "basis": "FY2023 comparator in prior annual filing"
+        },
+        "earnings_common_fy0": {
+          "value": 1124,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "cfo_fy0": {
+          "value": 2452,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_fy0": {
+          "value": 43,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "capex_software_fy0": {
+          "value": null,
+          "status": "NOT_APPLICABLE",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000015/adsk-20260131.htm",
+          "source_publication_date": "2026-03-03",
+          "basis": "FY0 audited filing, see statement locators"
+        },
+        "shares_outstanding_m": {
+          "value": 209,
+          "status": "VERIFIED",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000061/adsk-20260731.htm",
+          "source_publication_date": "2026-08-28",
+          "basis": "Common shares outstanding at 2026-08-21; latest verified dated proxy"
+        },
+        "price": {
+          "value": 249.61,
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/ADSK?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:03.362885+00:00"
+        },
+        "price_date": {
+          "value": "2026-10-30",
+          "status": "VERIFIED",
+          "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/ADSK?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+          "source_publication_date": "2026-10-30",
+          "basis": "Yahoo regular session Close, rounded to cents; retrieval 2026-11-03T02:12:03.362885+00:00"
+        },
+        "market_cap_cutoff_proxy_m": {
+          "value": 52168.49,
+          "status": "VERIFIED",
+          "source_url": [
+            "https://query1.finance.yahoo.com/v8/finance/chart/ADSK?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+            "https://www.sec.gov/Archives/edgar/data/769397/000076939726000061/adsk-20260731.htm"
+          ],
+          "source_publication_date": "2026-10-30",
+          "basis": "249.61 × 209m dated common shares = 52168.49m USD. Share observation 2026-08-21."
+        }
+      },
+      "wins_status": "UNVERIFIED",
+      "market_input": {
+        "symbol": "ADSK",
+        "observation_date": "2026-10-30",
+        "currency": "USD",
+        "close": "249.61000061035156",
+        "sma200": "233.94514961242675",
+        "high_52wk_intraday": "320.0",
+        "fraction_below_high": "0.21996874809265132",
+        "one_year_adjusted_return": "-0.17009671932725567",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/ADSK?period1=1761696000&period2=1793491200&interval=1d&events=history&includeAdjustedClose=true",
+        "retrieved_utc": "2026-11-03T02:12:03.362885+00:00"
+      },
+      "latest_disclosure": {
+        "published": "2026-08-27",
+        "period_end": "2026-07-31",
+        "source_url": "https://investors.autodesk.com/index.php/news-releases/news-release-details/autodesk-inc-announces-fiscal-2027-second-quarter-results",
+        "facts": "FY2027 Q2 revenue $2.05bn, +16% reported and +14% at constant currency."
+      }
+    }
+  ]
+}
