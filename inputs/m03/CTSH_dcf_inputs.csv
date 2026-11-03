@@ -1,0 +1,27 @@
+field,value,unit,label,source,note
+ticker,CTSH,,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),IT services
+valuation_date,2026-10-30,date,CASE,Price date,
+price,65.11,USD,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),"30 Oct 2026 close, local listing"
+base_year,2025,,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),Fiscal year ended 2025-12-31
+base_revenue,21108,USD m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),
+growth,0.0470;0.0399;0.0463;0.0440;0.0416;0.0393;0.0370;0.0347;0.0323;0.0300,decimal,ASSUMPTION,"Standard method (Pat, 3 Nov)",Year 1 guidance midpoint; years 2-3 consensus; linear fade to terminal growth by year 10
+ebit_margin,0.15762;0.15762;0.15762;0.15762;0.15762;0.15762;0.15762;0.15762;0.15762;0.15762,decimal,ASSUMPTION,Standard method: base-year operating margin held flat,Operating income / revenue = 0.1576
+tax_rate,0.3607,decimal,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),1 - net income / pretax income
+da_pct,0.02606;0.02606;0.02606;0.02606;0.02606;0.02606;0.02606;0.02606;0.02606;0.02606,decimal,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),"Reported D&A / revenue (true D&A, so stock pay stays inside EBIT: sbc_pct 0)"
+capex_pct,0.01364;0.01364;0.01364;0.01364;0.01364;0.01364;0.01364;0.01364;0.01364;0.01364,decimal,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),Capex / revenue
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Kit default,
+risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026 (research compilation, 2 Nov; Pat chose it 3 Nov)","USD cash flows, USD rate"
+beta,1.0,,ASSUMPTION,Standard method,
+beta_measured,0.837,,RESEARCH,"60 monthly USD returns vs SPY, Nov 2021-Oct 2026 (outputs/round2/M_round2_risk.csv)",
+equity_premium,0.05,decimal,ASSUMPTION,Kit default 5%,
+pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,Kit default: 10-year + 0.5 points,
+equity_value_for_weights,29106.12,USD m,RESEARCH,Price x shares outstanding,
+debt_value_for_weights,576,USD m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),Book debt
+terminal_growth,0.03,decimal,ASSUMPTION,"3% in USD, converted by the rate gap: 1.03 x (1 + rf local) / (1 + rf US) - 1",
+return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
+debt,576,USD m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there); Finalists_DCF_Supplement_Reviewed.xlsx,Debt
+non_operating_assets,1914,USD m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),"Corporate cash only; merchant, customer and clearing funds excluded"
+diluted_shares,489,m,RESEARCH,Pat_Round2_data_completed.xlsx (Valuation inputs; sources listed there),
+years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of forecast year 1,
+first_year_fraction,1.0,,ASSUMPTION,Method,"Cash and debt are at the base-year end, so all of forecast year 1 counts"
+sbc_pct,0,decimal,ASSUMPTION,Method,0 because da_pct is reported D&A
