@@ -1,27 +1,27 @@
 field,value,unit,label,source,note
-ticker,HII,,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Aerospace and defence
+ticker,HII,,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Aerospace and defence
 valuation_date,2026-10-30,date,CASE,Price date,
-price,316.8800048828125,USD,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),"30 Oct 2026 close, checked in WInS by the teammate"
-base_year,2025,,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2025-12-31
-base_revenue,12484,USD m,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+price,316.8800048828125,USD,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),"30 Oct 2026 close, checked in WInS by the teammate"
+base_year,2025,,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2025-12-31
+base_revenue,12484,USD m,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
 growth,0.0801;0.0659;0.0673;0.0620;0.0566;0.0513;0.0460;0.0407;0.0353;0.0300,decimal,ASSUMPTION,"Standard method (Pat, 3 Nov)",Year 1 consensus; years 2-3 consensus; fade to terminal growth
 ebit_margin,0.05263;0.05263;0.05263;0.05263;0.05263;0.05263;0.05263;0.05263;0.05263;0.05263,decimal,ASSUMPTION,Standard method: FY0 operating margin held flat,
-tax_rate,0.2214,decimal,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income / pretax income
-da_pct,0.02635;0.02635;0.02635;0.02635;0.02635;0.02635;0.02635;0.02635;0.02635;0.02635,decimal,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
-capex_pct,0.03220;0.03220;0.03220;0.03220;0.03220;0.03220;0.03220;0.03220;0.03220;0.03220,decimal,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+tax_rate,0.2214,decimal,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income / pretax income
+da_pct,0.02635;0.02635;0.02635;0.02635;0.02635;0.02635;0.02635;0.02635;0.02635;0.02635,decimal,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
+capex_pct,0.03220;0.03220;0.03220;0.03220;0.03220;0.03220;0.03220;0.03220;0.03220;0.03220,decimal,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
 nwc_pct_of_change,0.0,decimal,ASSUMPTION,Kit default,
 risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026",
 beta,1.0,,ASSUMPTION,Standard method,
-beta_measured,0.171,,RESEARCH,"60 monthly USD returns vs SPY, Nov 2021-Oct 2026 (teammate's calculation; recompute from the Yahoo CSVs)",
+beta_measured,0.17,,RESEARCH,"60 monthly USD returns vs SPY, Nov 2021-Oct 2026",
 equity_premium,0.05,decimal,ASSUMPTION,Kit default 5%,
 pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,Kit default: 10-year + 0.5 points,
 equity_value_for_weights,12434.86,USD m,RESEARCH,Price x shares,
-debt_value_for_weights,2700,USD m,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+debt_value_for_weights,2700,USD m,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
 terminal_growth,0.03,decimal,ASSUMPTION,"3% in USD, converted by the rate gap",
 return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
-debt,2700,USD m,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
-non_operating_assets,774,USD m,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Corporate cash
-diluted_shares,39.241527,m,RESEARCH,Akshaj_Six_Picks_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Shares at the cash-and-debt date plus dilution (teammate's ledger)
+debt,2700,USD m,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+non_operating_assets,774,USD m,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Corporate cash
+diluted_shares,39.241527,m,RESEARCH,Akshaj_Seven_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Shares at the cash-and-debt date plus dilution (teammate's ledger)
 years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of FY2026 (2026-12-31),
 first_year_fraction,1.0,,ASSUMPTION,Method,Cash and debt at the FY0 year-end
 sbc_pct,0,decimal,ASSUMPTION,Method,0 because da_pct is reported D&A

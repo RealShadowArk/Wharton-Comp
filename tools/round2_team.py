@@ -53,25 +53,19 @@ SETS = {
                "META": "VOO top-10 holding", "BKNG": "Own cash = cash - deferred merchant bookings (team convention)",
                "SAN.PA": "Valued in EUR; risk in USD", "NVS": "Year-1 consensus +1.3% (patent expiries)"}),
     "akshajk": dict(
-        workbook=TEAM / "akshaj_k_final" / "Akshaj_Six_Picks_Round2.xlsx",
-        yahoo=None,  # Max monthly CSVs not yet received: teammate's betas used, labelled
-        betas={"NVDA": (2.2046, 2.047, 333), "LRCX": (1.9653, 1.968, 405), "ASML": (1.6979, 1.314, 274),
-               "GD": (0.3024, 0.792, 405), "HII": (0.1705, 0.7922, 187), "ESLT": (0.092, 0.6357, 359)},
+        workbook=TEAM / "akshaj_k_final" / "Akshaj_Seven_Companies_Round2.xlsx",
+        yahoo=TEAM / "akshaj_k_final" / "monthly_from_seven_workbook",  # his Yahoo Max monthly closes (ASML = USD ADR)
+        m12=[ROOT / "outputs/new_candidates/M12_Semiconductors.csv", ROOT / "outputs/new_candidates/M12_Aerospace_and_defence.csv"],
         fy_end={"NVDA": "2026-01-25", "LRCX": "2026-06-28", "ASML": "2025-12-31", "GD": "2025-12-31",
-                "HII": "2025-12-31", "ESLT": "2025-12-31"},
-        group={"NVDA": "Semiconductors", "LRCX": "Semiconductors", "ASML": "Semiconductors",
-               "GD": "Aerospace and defence", "HII": "Aerospace and defence", "ESLT": "Aerospace and defence"},
-        m12_text={"NVDA": "1 of 6 (90); stability not given", "LRCX": "2 of 6, tied with ASML and QCOM (45); stability not given",
-                  "ASML": "2 of 6, tied with LRCX and QCOM (45); stability not given", "GD": "1 of 6 (65); stability not given",
-                  "HII": "2 of 6 (57.5); stability not given", "ESLT": "3 of 6 (52.5); stability not given"},
-        rf_proxies={("GD", "FY0"): {"sga": 2595}, ("GD", "FY1"): {"sga": 2568},
-                    ("HII", "FY0"): {"sga": 977}, ("HII", "FY1"): {"sga": 973}},
-        rf_bounds={"ASML": {"FY0": (2709.0, 2725.5), "FY1": (3677.3, 3694.2)}},
-        who="Akshaj K",
-        notes={"GD": "Beneish uses reported G&A as SG&A (NOT FULLY VERIFIED)", "HII": "Beneish uses reported G&A as SG&A (NOT FULLY VERIFIED)",
-               "ASML": "Long-term debt known only within tight bounds; red flags run at both ends",
+                "HII": "2025-12-31", "ESLT": "2025-12-31", "QCOM": "2025-09-28"},
+        rf_bounds={"ASML": {"FY0": (2709.0, 2725.5), "FY1": (3677.3, 3694.2)}},  # noncurrent borrowings 2,709 / 3,677.3 + finance leases 16.5 / 16.9 (split not disclosed)
+        tax_override={"QCOM": (1 - (5541 + 5724) / 12663, "1 - (net income + one-off 5,724m deferred-tax valuation allowance) / pretax income (reversed in FY2026 per the July 2026 10-Q)")},
+        who="Akshaj K (Akshaj R)",
+        notes={"GD": "SG&A = reported G&A (no separate selling line, verified)", "HII": "SG&A = reported G&A (no separate selling line, verified)",
+               "ASML": "Noncurrent debt 2,709 excl. finance leases (16.5 total, split not disclosed): red flags run at both ends; risk from the USD ADR",
                "NVDA": "VOO top-10 holding; consensus growth 91% / 68% / 30%",
-               "ESLT": "Israel war exposure (see the Kenon note)"}),
+               "ESLT": "Israel war exposure (see the Kenon note); interest expense MISSING (43.6 interest lines, 71.6 with factoring)",
+               "QCOM": "Tied 2nd in Akshaj's six-company M12; FY2025 tax excludes the one-off 5,724m valuation allowance"}),
     "newcands": dict(
         workbook=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Wharton_Candidates_Round2_Missing_Audit.xlsx",
         yahoo=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Yahoo_Max_Monthly",
@@ -250,6 +244,8 @@ def main(key):
         if t in cfg.get("tax_continuing", ()):
             tax = 1 - red[(t, "FY0")]["net_income_continuing"] / v["pretax_income"]
             tax_note = "1 - net income before non-controlling interests / pretax income"
+        if t in cfg.get("tax_override", {}):
+            tax, tax_note = cfg["tax_override"][t]
         if not 0 <= tax < 1:  # e.g. a discontinued-operations gain: use continuing net income
             tax = 1 - red[(t, "FY0")]["net_income_continuing"] / v["pretax_income"]
             tax_note = "1 - continuing net income / pretax income (net income includes discontinued operations)"
@@ -261,6 +257,14 @@ def main(key):
         growth = fade(g1, v["consensus_revenue_growth_y2"], v["consensus_revenue_growth_y3"], g_term)
         fy1_end = fy_end[t].replace(year=fy_end[t].year + 1)
         to_first = round((fy1_end - VAL_DATE).days / 365.25, 2)
+        rolled = ""
+        if to_first <= 0:  # next fiscal year already ended before 30 Oct (e.g. Qualcomm, September year-end)
+            rev = rev * (1 + growth[0])
+            growth = growth[1:] + [g_term]
+            fy1_end = fy1_end.replace(year=fy1_end.year + 1)
+            to_first = round((fy1_end - VAL_DATE).days / 365.25, 2)
+            rolled = (f"; FY{v['fiscal_year'] + 1} ended before the valuation date: base revenue = FY{v['fiscal_year']} x (1 + year-1 consensus), "
+                      "its cash flow treated as already paid out (cash and debt at the FY0 year-end)")
         da, capex = v["d_and_a"] / rev, (v["capex"] + (v["capex_software"] or 0)) / rev
         S = f"{cfg['workbook'].name} (Valuation inputs; source ledger 'Round 2 sources.csv')"
         rows = [
@@ -268,7 +272,7 @@ def main(key):
             ("valuation_date", "2026-10-30", "date", "CASE", "Price date", ""),
             ("price", v["price_30oct"], cur, "RESEARCH", S, "30 Oct 2026 close, checked in WInS by the teammate"),
             ("base_year", v["fiscal_year"], "", "RESEARCH", S, f"Fiscal year ended {fy_end[t]}"),
-            ("base_revenue", rev, f"{cur} m", "RESEARCH", S, ""),
+            ("base_revenue", round(rev, 3), f"{cur} m", "RESEARCH" if not rolled else "ASSUMPTION", S, rolled.lstrip("; ")),
             ("growth", ";".join(f"{g:.4f}" for g in growth), "decimal", "ASSUMPTION", "Standard method (Pat, 3 Nov)",
              ("Year 1 guidance midpoint" if g_guid is not None else "Year 1 consensus") + "; years 2-3 consensus; fade to terminal growth"),
             ("ebit_margin", ";".join([f"{margin:.5f}"] * 10), "decimal", "ASSUMPTION", "Standard method: FY0 operating margin held flat", ""),

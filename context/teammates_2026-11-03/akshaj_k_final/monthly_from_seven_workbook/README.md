@@ -1,0 +1,1 @@
+Monthly adjusted closes copied from the 'Monthly prices' tab of Akshaj_Seven_Companies_Round2.xlsx (the teammate's original Yahoo Max monthly downloads; month-end labels converted back to Yahoo's first-of-month dates). Read by tools/round2_team.py akshajk.
