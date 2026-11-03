@@ -26,7 +26,8 @@ def main(book, out_dir):
     wb = load_workbook(book, data_only=True)
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    for g in GROUPS:
+    groups = [ws.title for ws in wb.worksheets if ws.cell(1, 1).value == "peer_group"] or GROUPS
+    for g in groups:
         ws = wb[g]
         hdr = [c.value for c in ws[1]]
         rows, dropped = [], []
