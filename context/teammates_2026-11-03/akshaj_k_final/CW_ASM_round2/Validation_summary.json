@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "valuation_companies": 2,
+  "red_flag_rows": 4,
+  "risk_companies": 2,
+  "main_valuation_blank_numeric_cells": [
+    "CW capex_software",
+    "CW interest_income"
+  ],
+  "formula_errors": 0,
+  "native_yahoo_files_hash_verified": 4,
+  "checked": "2026-11-03",
+  "resolved_original_gaps": 1,
+  "remaining_verified_amounts_missing": 4,
+  "existing_value_changes": [
+    "Start here!A4",
+    "Start here!A12",
+    "Start here!A16",
+    "Valuation inputs!AE2",
+    "Valuation inputs!AF2",
+    "Valuation inputs!AE3",
+    "Valuation inputs!AF3"
+  ],
+  "existing_formulas_and_styles_preserved": true
+}

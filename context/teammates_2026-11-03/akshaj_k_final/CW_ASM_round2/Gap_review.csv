@@ -1,0 +1,9 @@
+﻿ticker,field,status,candidate,unit,period,basis,source,checked
+CW,Software cash capex,MISSING,,USD m,FY2025,Yahoo Gold: intangibles --; no software-only cash line. Not zero.,https://finance.yahoo.com/quote/CW/cash-flow/,2026-11-03
+CW,Interest income,REJECTED candidate,43.15,USD m,FY2025,Macroaxis labels income; matches reported interest expense 43.148m.,https://www.macroaxis.com/financial-statements/CW/Interest-Income,2026-11-03
+ASM.AS,Lease total,NOT FULLY VERIFIED,77.9,EUR m,31 Dec 2025,StockAnalysis: 13.9 current + 64.0 long-term; 64.0 matches all Other liabilities.,https://stockanalysis.com/quote/ams/ASM/financials/balance-sheet/,2026-11-03
+ASM.AS,Lease total,NOT FULLY VERIFIED,34,EUR m (rounded),31 Dec 2025,FT total debt; no reconciliation to discounted lease carrying values.,https://markets.ft.markitdigital.com/data/equities/tearsheet/financials?s=ASM%3AAEX&subview=BalanceSheet,2026-11-03
+ASM.AS,Lease total,INCOMPLETE total,13.9,EUR m,31 Dec 2025,Yahoo total equals current leases; long-term FY2025 amount is blank.,https://finance.yahoo.com/quote/ASM.AS/balance-sheet/,2026-11-03
+ASM.AS,Software additions,VERIFIED additions; cash NOT FULLY VERIFIED,44.5,EUR m,FY2025,Note 6 p179 additions. This is the existing software-column basis.,https://www.asm.com/media/3skhiimk/asm-2025-annual-report.pdf,2026-11-03
+ASM.AS,Intangible cash purchases,VERIFIED aggregate; software split MISSING,44.7,EUR m,FY2025,"Cash-flow p163; all intangibles, excluding separately reported development.",https://www.asm.com/media/3skhiimk/asm-2025-annual-report.pdf,2026-11-03
+ASM.AS,WInS listing,VERIFIED listing present,ASM,EUR listing,3 Nov 2026,Europe > Amsterdam > ASM International NV. Quote loaded; no order submitted.,https://app.stocktrak.com/trading/equities,2026-11-03

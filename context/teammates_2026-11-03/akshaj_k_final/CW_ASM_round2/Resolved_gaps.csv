@@ -1,0 +1,2 @@
+﻿ticker,field,status,value,reason,source,checked
+ASM.AS,WInS_Amsterdam_listing_eligibility,VERIFIED listing present,ASM,"Within the active 2026-2027 WGHS Investment Competition, select Europe, then Amsterdam. The symbol search returns ASM INTERNATIONAL; selecting it loads ASM International NV, symbol ASM, with a EUR quote. No order was reviewed or submitted. ASM.AS is the Yahoo symbol and failed in the generic quote service; that failure does not imply an unavailable Amsterdam listing.",https://app.stocktrak.com/trading/equities,2026-11-03

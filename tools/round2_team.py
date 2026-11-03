@@ -66,6 +66,16 @@ SETS = {
                "NVDA": "VOO top-10 holding; consensus growth 91% / 68% / 30%",
                "ESLT": "Israel war exposure (see the Kenon note); interest expense MISSING (43.6 interest lines, 71.6 with factoring)",
                "QCOM": "Tied 2nd in Akshaj's six-company M12; FY2025 tax excludes the one-off 5,724m valuation allowance"}),
+    "akshajr_new": dict(
+        workbook=TEAM / "akshaj_k_final/CW_ASM_round2/CW_and_ASM_Round2.xlsx",
+        yahoo=TEAM / "akshaj_k_final/CW_ASM_round2/Yahoo_Max_monthly",
+        series={t: (f"{t}_Max_monthly_original", None) for t in ("CW", "ASM.AS", "SPY")},
+        fx={"ASM.AS": ("EURUSD=X_Max_monthly_original", "mul")},
+        m12=[ROOT / "outputs/new_candidates/M12_Semiconductors.csv", ROOT / "outputs/new_candidates/M12_Aerospace_and_defence.csv"],
+        val_override={"ASM.AS": {"capex_software": 205.1 + 44.7}},  # capitalized development + intangible purchases (cash-flow statement)
+        who="Akshaj R (new candidates CW, ASM International)",
+        notes={"ASM.AS": "Valued in EUR; capex includes capitalized development 205.1 and intangible purchases 44.7 (IFRS capitalizes development; its amortization is in D&A), total 468.3",
+               "CW": "Interest income MISSING (inside other income); no separate software capex"}),
     "newcands": dict(
         workbook=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Wharton_Candidates_Round2_Missing_Audit.xlsx",
         yahoo=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Yahoo_Max_Monthly",
@@ -201,7 +211,8 @@ def main(key):
     wb = openpyxl.load_workbook(cfg["workbook"], data_only=True)
     sheet = lambda n: [r for r in wb[n].iter_rows(values_only=True) if any(v not in (None, "") for v in r)]
     vr, rr, kr = sheet("Valuation inputs"), sheet("Red flags"), sheet("Risk")
-    val = {r[vr[0].index("ticker")]: clean(dict(zip(vr[0], r))) for r in vr[1:]}
+    val = {r[vr[0].index("ticker")]: clean(dict(zip(vr[0], r))) for r in vr[1:]
+           if isinstance(r[vr[0].index("ticker")], str) and isinstance(r[vr[0].index("revenue")], (int, float))}
     red = {(r[0], {"FY-1": "FY1"}.get(r[1], r[1])): clean(dict(zip(rr[0], r))) for r in rr[1:]}
     for k, extra in cfg.get("rf_proxies", {}).items():
         red[k].update(extra)

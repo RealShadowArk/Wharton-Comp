@@ -29,11 +29,11 @@ Caps for these six add up to $73,123 against the $119,481 individual-stock sleev
 
 ## Fail
 
-Adyen, CME, ICE, Moody's, Infosys, TCS, ServiceNow, Nike, PepsiCo, Coca-Cola, Novartis, AstraZeneca, Lam Research, ASML, General Dynamics, Huntington Ingalls, Elbit, HKEX, Tradeweb, Constellation Energy, NRG (upside/downside 0.68), ResMed, Alcon, Edwards, Kenon (0.63x on the parts valuation). Meta: not validly valued by the method (see `new_candidates_results_2026-11-03.md`).
+Adyen, CME, ICE, Moody's, Infosys, TCS, ServiceNow, Nike, PepsiCo, Coca-Cola, Novartis, AstraZeneca, Lam Research, ASML, General Dynamics, Huntington Ingalls, Elbit, HKEX, Tradeweb, Curtiss-Wright (0.55x), ASM International (0.61x; 0.87x even without capitalized development), Constellation Energy, NRG (upside/downside 0.68), ResMed, Alcon, Edwards, Kenon (0.63x on the parts valuation). Meta: not validly valued by the method (see `new_candidates_results_2026-11-03.md`).
 
 ## Still missing
 
-1. **Round 2 for the five strong new names**: Dexcom, Lululemon, Haleon, Novo Nordisk, Curtiss-Wright (optional ASM International, adidas). Request: `handoff/final_round2_request_2026-11-03.zip`.
+1. **Round 2 for the remaining strong new names**: Dexcom (group 3), Lululemon, Haleon, Novo Nordisk (group 4; adidas optional). Requests: `handoff/final_round2_request_2026-11-03/by_group/`. Group 6 is done (Curtiss-Wright and ASM International both fail).
 2. **Aryu's Round 2 rows and Yahoo files** for CEG, NRG, RMD, ALC, EW, plus the Kenon facts. Not blocking: all five fail at beta 1.0 except NRG, which fails upside/downside.
 3. **Pat's decisions**: Nvidia's Beneish flag; Corpay bank-like (screened out); scoring loss-three-years-ago companies without G2 (Power, Uber, Spotify, Toast and others); final picks and position sizes; where unused sleeve money goes.
 4. **Before orders**: the macro and red-flag AI check on the final picks (`handoff/ai_prompt_macro_redflags_2026-11-02.md`), a WInS price check for each, and Pat's bear cases and reasons in his own words.
