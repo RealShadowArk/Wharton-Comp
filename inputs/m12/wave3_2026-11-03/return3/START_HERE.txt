@@ -1,0 +1,19 @@
+NEW COMPANIES — 24 CANDIDATES
+Research date: 3 November 2026
+
+New_Companies.csv lists the 24 candidates separately from earlier research.
+New_Companies_Round1.xlsx preserves the six industry tabs and supplied market-cap formulas. Screens reports only the requested factual tests and their calculation bases.
+New_Companies_Round2.xlsx contains Valuation inputs, two Red flags rows per company, Risk, the annual-return calculations, and exact management-guidance excerpts and endpoints.
+
+The accompanying CSVs contain the raw inputs, evidence, guidance, annual returns and screen arithmetic. The Round 1 CSV retains the exact requested 39-column order. Its WInS and market-cap-proxy fields are blank. The workbook alone calculates the supplied market-cap proxy.
+
+New_Companies_Yahoo_Originals.zip contains 28 unchanged Yahoo Max monthly CSVs and their integrity manifest. Supplemental_FX_and_Yield contains the older FX and USD-yield source downloads used in the research.
+
+New_Companies_Research_Notes.txt explains coverage, definitions, source limitations and material scope changes. New_Companies_AI_Use_Log.csv documents the assistant's use of tools. Team verification is still required by the supplied README.
+
+The research includes 1,965 field-level evidence records and 721 complete calendar-year return calculations. New_Companies_Validation.csv records the export checks. All numeric template inputs have evidence. Workbook calculations were also checked after reopening, including missing inputs and changed inputs. Microsoft Excel desktop recalculation was not separately tested.
+
+Annual reports and management guidance use the 31 October 2026 cutoff; prices and yields use 30 October. Consensus and provider beta are observations retrieved on 3 November, not a verified 31 October archive. No estimates were invented to fill unavailable data.
+
+MISSING
+New_Companies_MISSING.txt and New_Companies_MISSING.csv list every remaining blank template field and its reason: 155 Round 1 fields and 140 Round 2 fields. These totals include intentional exclusions, separately unreported measures and unavailable or unreconciled data; they are not all missing financial disclosures.

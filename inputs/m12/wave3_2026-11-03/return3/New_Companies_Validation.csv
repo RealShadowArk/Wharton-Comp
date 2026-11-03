@@ -1,0 +1,12 @@
+﻿round,area,records,result
+1,Payments,4,"All values, headers and formulas matched the sourced dataset"
+1,Power,4,"All values, headers and formulas matched the sourced dataset"
+1,Medtech,4,"All values, headers and formulas matched the sourced dataset"
+1,Software,4,"All values, headers and formulas matched the sourced dataset"
+1,Consumer brands,4,"All values, headers and formulas matched the sourced dataset"
+1,Pharmaceuticals and Biotechnolo,4,"All values, headers and formulas matched the sourced dataset"
+2,Valuation inputs,24,"All values, headers and formulas matched the sourced dataset"
+2,Red flags,48,"All values, headers and formulas matched the sourced dataset"
+2,Risk,24,"All values, headers and formulas matched the sourced dataset"
+both,Blank handling,295,Every blank input has a reason; user-protected blank values preserved
+both,Original downloads,28,ZIP member bytes match SHA-256 manifest and original downloaded files

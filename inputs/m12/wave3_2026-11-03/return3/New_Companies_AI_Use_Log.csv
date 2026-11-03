@@ -1,0 +1,5 @@
+﻿date,tool,sources,use,review_status
+2026-11-03,Codex AI,Public issuer filings and SEC XBRL,"Extracted and reconciled annual data, units, share classes and debt/cash scope.",Research notes; team verification pending
+2026-11-03,Codex AI with browser/web tools,Yahoo Finance and MarketScreener,Recorded market observations and downloaded original monthly histories.,Current consensus/beta; not an archived 31 October snapshot
+2026-11-03,Codex AI with local calculation tools,Downloaded CSVs and sourced raw inputs,Calculated calendar returns and requested screening arithmetic; retained inputs and formulas.,"No forecasts, opinions or recommendations"
+2026-11-03,Codex AI with spreadsheet authoring tools,Supplied Round 1 and Round 2 templates,"Populated separate new-company workbooks and checked evidence, blanks, formulas and file integrity.",Team must open sources and write its own conclusions

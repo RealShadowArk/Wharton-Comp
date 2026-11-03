@@ -1,0 +1,27 @@
+field,value,unit,label,source,note
+ticker,ZBH,,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Medtech
+valuation_date,2026-10-30,date,CASE,Price date,
+price,94.52,USD,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),"30 Oct 2026 close, checked in WInS by the teammate"
+base_year,2025,,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2025-12-31
+base_revenue,8231.5,USD m,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+growth,0.0440;0.0354;0.0385;0.0373;0.0361;0.0349;0.0336;0.0324;0.0312;0.0300,decimal,ASSUMPTION,"Standard method (Pat, 3 Nov)",Year 1 guidance midpoint; years 2-3 consensus; fade to terminal growth
+ebit_margin,0.13340;0.13340;0.13340;0.13340;0.13340;0.13340;0.13340;0.13340;0.13340;0.13340,decimal,ASSUMPTION,Standard method: FY0 operating margin held flat,
+tax_rate,0.1513,decimal,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income / pretax income
+da_pct,0.13288;0.13288;0.13288;0.13288;0.13288;0.13288;0.13288;0.13288;0.13288;0.13288,decimal,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
+capex_pct,0.06378;0.06378;0.06378;0.06378;0.06378;0.06378;0.06378;0.06378;0.06378;0.06378,decimal,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Kit default,
+risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026",
+beta,1.0,,ASSUMPTION,Standard method,
+beta_measured,0.499,,RESEARCH,"60 monthly USD returns vs SPY, Nov 2021-Oct 2026",
+equity_premium,0.05,decimal,ASSUMPTION,Kit default 5%,
+pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,Kit default: 10-year + 0.5 points,
+equity_value_for_weights,18478.66,USD m,RESEARCH,Price x shares,
+debt_value_for_weights,7519.1,USD m,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+terminal_growth,0.03,decimal,ASSUMPTION,"3% in USD, converted by the rate gap",
+return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
+debt,7519.1,USD m,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+non_operating_assets,591.9,USD m,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Corporate cash
+diluted_shares,196.1,m,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Shares at the cash-and-debt date plus dilution (teammate's ledger)
+years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of FY2026 (2026-12-31),
+first_year_fraction,1.0,,ASSUMPTION,Method,Cash and debt at the FY0 year-end
+sbc_pct,0,decimal,ASSUMPTION,Method,0 because da_pct is reported D&A

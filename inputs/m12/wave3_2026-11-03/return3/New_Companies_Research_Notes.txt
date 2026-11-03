@@ -1,0 +1,61 @@
+NEW COMPANIES — RESEARCH NOTES
+
+Scope
+24 new companies, four in each of six industries. Both supplied templates are populated. Earlier workbooks are unchanged. Research is dated 3 November 2026. This package contains research notes, not team-authored conclusions.
+
+Cutoffs
+Annual filings and management guidance: published by 31 October 2026. Prices and government yields: 30 October 2026. Consensus and Yahoo beta: observed on 3 November, not a verified archive at 31 October. These are attributed provider inputs, not forecasts made by this research assistant.
+
+Source method
+Company annual filings and financial-statement notes are the primary financial sources. SEC companyfacts/XBRL was used for tagged facts, with unit, fiscal period, filing date and statement scope checks. Evidence provides the filing URL and tag or statement locator for every populated numeric template cell.
+
+Missing values
+Every blank template input is listed in MISSING, including intentional exclusions and fields not separately reported. Blank does not mean zero. Explicit reported nil is entered as 0. The CSV market-cap proxy remains blank; only the supplied Excel formula calculates it.
+
+Instruction conflicts
+The README and explicit user rules take precedence over older template helper text: actual year-end shares plus incremental dilution, no weighted-average base; no assumed zeros; no averaged guidance midpoint; total equity as reported. The helper cells are corrected to match those rules.
+
+Revenue and reporting scope
+Wise is now Jersey-incorporated, USD US GAAP, primarily Nasdaq WSE. Its row identifier remains WISE.L. Net revenue includes net interest on customer balances. FY2023 USD/US GAAP comparisons were not verified. BDX and MDT annual data retain the annual reporting scope before their separations. Reckitt and other restated comparatives follow the identified source.
+
+Debt and capex limits
+US GAAP debt includes quantified finance leases without double counting; IFRS debt excludes leases. EEFT and ZBH finance leases are not separately quantified, and RWE borrowings-only scope remains unresolved. Combined PPE/intangible or net purchases/proceeds lines are not substituted for the requested PPE purchases. Earlier README exceptions for other ZIPs are not applied to these new candidates.
+
+Shares and dilution
+Round 1 uses the annual cover or specified year-end count. Round 2 uses actual year-end shares plus the latest eligible verified incremental dilution. Reckitt year-end shares are rescaled by 24/25 to match the post-consolidation quote. BMY actual year-end shares and five candidates’ complete diluted-share inputs remain unresolved; see MISSING.
+
+Cash and settlement funds
+Corporate cash excludes identified restricted, customer, merchant, settlement and ATM balances. Wise corporate-only cash is blank because a complete safeguarding reconciliation was not verified. Operating cash flow is retained as reported; identified settlement/customer flows are documented in notes.
+
+Secondary-only market inputs
+Yahoo Finance supplies daily closes, FX, Max monthly downloads and provider beta. MarketScreener supplies most three-year consensus sequences; Yahoo supplies CHKP and OTEX first-two-year sequences. Countryeconomy supplies the German 10-year yield and Investing.com supplies the UK 10-year yield. FRED supplies the USD yield and older FX observations.
+
+Issuer reports on secondary hosts
+LVMH FY2025 issuer financial statements were read from FinancialReports.eu; its FY2022 issuer financial document was read from OhlalaWatch. These are issuer-authored documents hosted elsewhere, not analyst-reconstructed financials. The FY2026 interim dilution figure uses the issuer’s CDN. URLs are in Evidence.
+
+Other secondary checks
+Reuters reports, carried by Investing.com and Fidelity, were used to distinguish reported BMY and Smith & Nephew talks from announced definitive transactions. Euronext carried the Agache/Christian Dior restructuring notice. These checks and their scope are identified in company notes.
+
+Access limitations
+Direct SEC archive downloads sometimes returned HTTP 403; SEC filings were read through web access and SEC public XBRL endpoints instead. Smith & Nephew’s FY2022 report download was unavailable, so the issuer’s FY2023 comparative was used. LVMH’s annual-report landing page did not expose a usable report, so the secondary-hosted issuer documents above were used. Some MarketScreener browser pages timed out or failed DNS; accessible web snapshots were used and their dates are qualified.
+
+Risk coverage
+Risk uses complete December-to-December USD adjusted-close returns through 2025, excluding partial 2026. SNN is used for Smith & Nephew. Supplemental RWEOY USD ADR history avoids missing pre-euro conversion history for RWE. The original RWE.DE file is also supplied. Annual returns show each input and FX source.
+
+Risk limitations
+Yahoo Max exports for NEE, MDT, GIS, MRK, PFE and BMY begin in 1985 despite earlier dates displayed in the interface. Worst years are restricted to downloaded coverage. EUR/GBP prices use December FX ratios; FRED supplies older December-end rates before Yahoo FX coverage. USD series use the identity rate 1, not an estimated FX observation.
+
+Original downloads
+28 Yahoo CSVs are retained byte-for-byte: 24 company histories (SNN substitutes for SN.L), SPY, EURUSD=X, GBPUSD=X, plus supplemental RWEOY. The manifest records source, download date, coverage and SHA-256. Original files include any partial 2026/current observation returned by Yahoo; calculations filter these out.
+
+Screen definitions
+Market-cap screen uses the supplied price-times-shares proxy, converted to USD, against USD2000m. It is not a verified 30 October share count. Positive FCF screen uses reported CFO minus verified PPE purchases. A separate column also subtracts separately verified software spending; missing software is never assumed zero. No overall pass, rank or recommendation is computed. WInS remains for Pat.
+
+Deal and bank screens
+Pending-deal screening applies the prompt’s wording to announced parent-company combinations. NextEra is marked N because its Dominion merger remains pending, although NextEra is the legal acquirer. Western Union is bank-like because its banking subsidiary offers deposit-protected accounts. Other Y/N entries are bounded reviews of disclosed business models and transactions, not issuer certifications.
+
+Verification performed
+All populated numeric template cells have evidence records; every blank input has a reason. Fiscal-year consistency, protected blanks, ordinary-share/ADS basis, currency units, CSV column order and original-file hashes were checked. Workbook formulas are recalculated and checked in the authoring engine; Microsoft Excel desktop recalculation was not independently tested.
+
+Team review
+The README requires the team to open and check every source and log the date, tool and use. AI use log records this assistant’s work only; it does not claim that a team member has verified the sources. No opinions, recommendations, price targets or assistant-generated forecasts are supplied.

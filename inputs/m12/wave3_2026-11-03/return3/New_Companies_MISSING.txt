@@ -1,0 +1,345 @@
+NEW COMPANIES — MISSING INPUTS
+Every blank template input is listed below. Intentional blanks and unavailable disclosures are distinguished by their reasons.
+
+WU — Western Union
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / eps_cont_fy0: No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+  Round 1 / eps_cont_fy3: No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+  Round 1 / inventory_fy0: No separate inventory line is presented in the consolidated balance sheet.
+  Red flags / FY0 / current_assets: The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+  Red flags / FY0 / current_liabilities: The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+  Red flags / FY0 / long_term_debt: The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+  Red flags / FY1 / current_assets: The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+  Red flags / FY1 / current_liabilities: The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+  Red flags / FY1 / long_term_debt: The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+  Round 1 / current_assets_fy0: Unclassified consolidated balance sheet; current totals are not reported.
+  Round 1 / current_liabilities_fy0: Unclassified consolidated balance sheet; current totals are not reported.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+
+EEFT — Euronet Worldwide
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / eps_cont_fy0: No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+  Round 1 / eps_cont_fy3: No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+  Round 1 / inventory_fy0: No separate inventory line is presented in the consolidated balance sheet.
+  Round 1 / total_debt_fy0: Borrowings carrying value2020.8m is verified. Note14 states finance leases are immaterial but does not quantify the liability; strict borrowings-plus-finance-leases total cannot be verified.
+  Valuation inputs / debt: Borrowings carrying value2020.8m is verified; the unquantified finance-lease liability prevents verification of the required total.
+  Red flags / FY0 / long_term_debt: Reported non-current borrowing obligations are1037.6m (FY0) and1134.4m (FY1); the non-current finance-lease component is not separately quantified.
+  Red flags / FY1 / long_term_debt: Reported non-current borrowing obligations are1037.6m (FY0) and1134.4m (FY1); the non-current finance-lease component is not separately quantified.
+  Round 1 / capex_fy0: Cash-flow line combines purchases of property/equipment and proceeds from sales at125.5m. Gross PPE purchases are not separately verified.
+  Valuation inputs / capex: Cash-flow line combines PPE purchases and proceeds from sales at125.5m; gross purchases are not verified.
+  Round 1 / capex_software_fy0: Separate software/intangible additions are not verified. Purchases of other long-term assets13.5m also include contract-related assets and are not substituted.
+  Valuation inputs / capex_software: Separate capitalized software additions are not verified; balances and acquisitions are not additions for this input.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / diluted_shares_m: Latest eligible Q3 release dated 27 October reports diluted shares 45.761882m but not a verified matching basic denominator. The adjusted-share reconciliation is not basic GAAP shares; no increment inferred.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+
+ACIW — ACI Worldwide
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / eps_cont_fy0: No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+  Round 1 / eps_cont_fy3: No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+  Round 1 / inventory_fy0: No separate inventory line is presented in the consolidated balance sheet.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+
+WISE.L — Wise
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / eps_cont_fy0: No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+  Round 1 / eps_cont_fy3: FY2023 figures on the current US GAAP/USD basis are not verified. Earlier IFRS/GBP figures are a different reporting basis and are not mixed into the row.
+  Round 1 / inventory_fy0: No separate inventory line is presented in the consolidated balance sheet.
+  Red flags / FY0 / cost_of_revenue: Statement presents transaction expense and other operating functions, but no cost-of-revenue line. No synthetic cost-of-revenue total is inserted.
+  Red flags / FY1 / cost_of_revenue: Statement presents transaction expense and other operating functions, but no cost-of-revenue line. No synthetic cost-of-revenue total is inserted.
+  Red flags / FY1 / total_assets_start_of_year: FY2024 closing total assets on the current US GAAP/USD basis is not verified; earlier IFRS/GBP accounts are not substituted.
+  Round 1 / revenue_fy3: FY2023 figures on the current US GAAP/USD basis are not verified. Earlier IFRS/GBP figures are a different reporting basis and are not mixed into the row.
+  Round 1 / eps_diluted_fy3: FY2023 figures on the current US GAAP/USD basis are not verified. Earlier IFRS/GBP figures are a different reporting basis and are not mixed into the row.
+  Valuation inputs / corporate_cash: A corporate-only cash reconciliation excluding all customer funds, including funds subject to safeguarding guarantees, is not verified. Total cash is not substituted.
+  Valuation inputs / consensus_revenue_growth_y1: Yahoo displays consensus currencyGBP inconsistent with reporting currencyUSD; not accepted without reconciliation. ObservedFY2027/2028 growth17.74%/18.44%.
+  Valuation inputs / consensus_revenue_growth_y2: Yahoo displays consensus currencyGBP inconsistent with reporting currencyUSD; not accepted without reconciliation. ObservedFY2027/2028 growth17.74%/18.44%.
+  Valuation inputs / consensus_revenue_growth_y3: Yahoo Analysis shows only two annual revenue-consensus years; third year not verified from that provider.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+
+RWE.DE — RWE
+  Round 1 / in_wins_at_5_plus: Intentionally blank: team checks WInS.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / adr_shares_per_ads: Ordinary-share listing, not an ADR.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Red flags / FY0 / cost_of_revenue: Nature-of-expense statement has no cost-of-revenue or SG&A total. Materials and staff expenses are not substituted.
+  Red flags / FY0 / sga: Nature-of-expense statement has no cost-of-revenue or SG&A total. Materials and staff expenses are not substituted.
+  Red flags / FY0 / long_term_debt: Non-current financial debt15509 (FY0)/14772 (FY1) includes leases, tax-equity and miscellaneous financial debt. Strict non-current borrowings scope is not fully verified.
+  Red flags / FY1 / cost_of_revenue: Nature-of-expense statement has no cost-of-revenue or SG&A total. Materials and staff expenses are not substituted.
+  Red flags / FY1 / sga: Nature-of-expense statement has no cost-of-revenue or SG&A total. Materials and staff expenses are not substituted.
+  Red flags / FY1 / long_term_debt: Non-current financial debt15509 (FY0)/14772 (FY1) includes leases, tax-equity and miscellaneous financial debt. Strict non-current borrowings scope is not fully verified.
+  Round 1 / total_debt_fy0: Financial debt19687 less leases2825 equals16862, but includes collateral674, tax-equity1244 and miscellaneous financial debt760. A complete borrowings-only total is not verified.
+  Valuation inputs / debt: Strict borrowings-only scope is not verified; detailed components are in Round 1 missing list and notes.
+  Round 1 / capex_fy0: Cash-flow capex10014 combines intangible assets and PPE; cash PPE-only purchases are not separately verified.
+  Valuation inputs / capex: Cash-flow capex10014 combines intangible assets and PPE; cash PPE-only purchases are not separately verified.
+  Valuation inputs / interest_income: Interest and similar income766 includes dividends218 and other securities income. A separately reported interest-only figure is not verified.
+  Valuation inputs / guidance_next_fy_revenue_growth: Earnings outlook, but no consolidated annual revenue-growth guide verified.
+  Round 1 / eps_cont_fy0: A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+  Round 1 / eps_cont_fy3: A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+ENEL.MI — Enel
+  Round 1 / in_wins_at_5_plus: Intentionally blank: team checks WInS.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / adr_shares_per_ads: Ordinary-share listing, not an ADR.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Red flags / FY0 / cost_of_revenue: Nature-of-expense statement does not report a cost-of-revenue or SG&A total.
+  Red flags / FY0 / sga: Nature-of-expense statement does not report a cost-of-revenue or SG&A total.
+  Red flags / FY1 / cost_of_revenue: Nature-of-expense statement does not report a cost-of-revenue or SG&A total.
+  Red flags / FY1 / sga: Nature-of-expense statement does not report a cost-of-revenue or SG&A total.
+  Valuation inputs / guidance_next_fy_revenue_growth: Strategic plan includes investment and earnings objectives; no consolidated annual revenue-growth guide verified.
+  Valuation inputs / stock_based_comp: A separate annual share-based compensation expense was not verified; equity movements and outstanding awards are not substituted for expense.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+EDP.LS — EDP
+  Round 1 / in_wins_at_5_plus: Intentionally blank: team checks WInS.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / adr_shares_per_ads: Ordinary-share listing, not an ADR.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Red flags / FY0 / sga: Nature-of-expense statement does not separately report SG&A.
+  Red flags / FY0 / depreciation: PPE note combines depreciation and impairment; a complete depreciation-only total is not verified.
+  Red flags / FY1 / sga: Nature-of-expense statement does not separately report SG&A.
+  Red flags / FY1 / depreciation: PPE note combines depreciation and impairment; a complete depreciation-only total is not verified.
+  Round 1 / capex_fy0: Cash payments4272.735 combine PPE and intangible assets; a PPE-only cash-purchase total is not verified.
+  Valuation inputs / capex: Cash payments4272.735 combine PPE and intangible assets; a PPE-only cash-purchase total is not verified.
+  Valuation inputs / d_and_a: Cash-flow adjustment2016.473 includes impairments; a complete D&A-only reconciliation is not verified.
+  Valuation inputs / guidance_next_fy_revenue_growth: Guidance addresses recurring EBITDA and net profit; no annual revenue-growth guide verified.
+  Valuation inputs / diluted_shares_m: Latest eligible H1 report was located but its incremental-dilution reconciliation was not verified. Prior-year nil dilution is not substituted.
+  Valuation inputs / stock_based_comp: A separate annual share-based compensation expense was not verified; equity movements and outstanding awards are not substituted for expense.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+NEE — NextEra Energy
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Red flags / FY0 / sga: Utility expense statement does not report a consolidated SG&A or cost-of-revenue total.
+  Red flags / FY0 / cost_of_revenue: Utility expense statement does not report a consolidated SG&A or cost-of-revenue total.
+  Red flags / FY0 / depreciation: Annual statement reports combined depreciation and amortization; depreciation-only total is not verified.
+  Red flags / FY0 / long_term_debt: Non-current borrowings89556/72385 verified, but the non-current share of total finance leases1143/840 is not separately verified.
+  Red flags / FY1 / sga: Utility expense statement does not report a consolidated SG&A or cost-of-revenue total.
+  Red flags / FY1 / cost_of_revenue: Utility expense statement does not report a consolidated SG&A or cost-of-revenue total.
+  Red flags / FY1 / depreciation: Annual statement reports combined depreciation and amortization; depreciation-only total is not verified.
+  Red flags / FY1 / long_term_debt: Non-current borrowings89556/72385 verified, but the non-current share of total finance leases1143/840 is not separately verified.
+  Round 1 / capex_fy0: Cash flow separately reports FPL capex8719, NEER independent-power/other investments15332, nuclear fuel553 and other capex2. NEER line includes other investments; consolidated PPE-only purchases are not verified.
+  Valuation inputs / capex: Cash flow separately reports FPL capex8719, NEER independent-power/other investments15332, nuclear fuel553 and other capex2. NEER line includes other investments; consolidated PPE-only purchases are not verified.
+  Valuation inputs / interest_income: Other net income includes interest and other items; separate consolidated interest income is not verified.
+  Valuation inputs / guidance_next_fy_revenue_growth: Quarterly filing provides earnings outlook; no annual revenue-growth guide verified.
+  Round 1 / eps_cont_fy0: A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+  Round 1 / eps_cont_fy3: A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+MDT — Medtronic
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Round 1 / eps_cont_fy0: A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+  Round 1 / eps_cont_fy3: A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+ZBH — Zimmer Biomet
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / total_debt_fy0: Borrowings7519.1 verified; note19 says no significant finance leases but does not quantify finance-lease liabilities. Required full total is not verified.
+  Valuation inputs / debt: Borrowings7519.1 verified; note19 says no significant finance leases but does not quantify finance-lease liabilities. Required full total is not verified.
+  Red flags / FY0 / long_term_debt: Non-current borrowings6932.0/5341.6 verified; non-current finance-lease amount is unquantified.
+  Red flags / FY1 / long_term_debt: Non-current borrowings6932.0/5341.6 verified; non-current finance-lease amount is unquantified.
+  Valuation inputs / interest_expense: Only net interest expense292.8 is verified; separate gross expense and income are not substituted or estimated.
+  Valuation inputs / interest_income: Only net interest expense292.8 is verified; separate gross expense and income are not substituted or estimated.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Round 1 / eps_cont_fy0: A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+  Round 1 / eps_cont_fy3: A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+SN.L — Smith & Nephew
+  Round 1 / in_wins_at_5_plus: Intentionally blank: team checks WInS.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / adr_shares_per_ads: Ordinary-share listing, not an ADR.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / capex_fy0: Cash-flow Capital expenditure433 includes PPE and intangible spending; PPE-only cash amount is not separately verified.
+  Valuation inputs / capex: Cash-flow Capital expenditure433 includes PPE and intangible spending; PPE-only cash amount is not separately verified.
+  Valuation inputs / diluted_shares_m: Latest eligible H1 release dated 4 August reports rounded basic/diluted EPS but a matching share-denominator reconciliation was not verified. No reverse calculation from rounded EPS.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+BDX — Becton Dickinson
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Qualitative wording is preserved; no numeric translation.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+CHKP — Check Point Software
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / inventory_fy0: No separate inventory balance is reported in the reviewed consolidated balance sheet; not assumed zero.
+  Round 1 / eps_cont_fy0: No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+  Round 1 / eps_cont_fy3: No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+  Valuation inputs / consensus_revenue_growth_y3: Yahoo provides only two annual years. MarketScreener web snapshots returned conflicting annual sequences with unverified refresh dates; no third-year observation is combined with the current Yahoo pair.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+OTEX — Open Text
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / inventory_fy0: No separate inventory balance is reported in the reviewed consolidated balance sheet; not assumed zero.
+  Round 1 / eps_cont_fy0: No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+  Round 1 / eps_cont_fy3: No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+  Valuation inputs / consensus_revenue_growth_y3: Yahoo and the reviewed MarketScreener table provide only FY2027 and FY2028 annual estimates; FY2029 revenue growth was not verified.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+ZM — Zoom Communications
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / inventory_fy0: No separate inventory balance is reported in the reviewed consolidated balance sheet; not assumed zero.
+  Round 1 / eps_cont_fy0: No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+  Round 1 / eps_cont_fy3: No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+  Round 1 / total_debt_fy0: No borrowings line is presented, but an explicit nil borrowings-plus-finance-leases total was not verified; no zero assumed.
+  Valuation inputs / debt: No borrowings line is presented, but an explicit nil borrowings-plus-finance-leases total was not verified; no zero assumed.
+  Red flags / FY0 / long_term_debt: No debt line or explicit nil non-current debt total verified.
+  Red flags / FY1 / long_term_debt: No debt line or explicit nil non-current debt total verified.
+  Valuation inputs / interest_expense: No separate gross interest-expense amount or explicit nil amount verified.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+AKAM — Akamai Technologies
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / inventory_fy0: No separate inventory balance is reported in the reviewed consolidated balance sheet; not assumed zero.
+  Round 1 / eps_cont_fy0: No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+  Round 1 / eps_cont_fy3: No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+  Valuation inputs / interest_income: Reported70.808 combines interest and marketable-securities income, net; pure gross interest income is not separately verified.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+
+DECK — Deckers Outdoor
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / eps_cont_fy0: No separate continuing-operations diluted EPS line verified; total EPS retained without adjustment.
+  Round 1 / eps_cont_fy3: No separate continuing-operations diluted EPS line verified; total EPS retained without adjustment.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+RKT.L — Reckitt Benckiser
+  Round 1 / in_wins_at_5_plus: Intentionally blank: team checks WInS.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / adr_shares_per_ads: Ordinary-share listing, not an ADR.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+GIS — General Mills
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / eps_cont_fy0: No separate continuing-operations diluted EPS line verified; total EPS retained without adjustment.
+  Round 1 / eps_cont_fy3: No separate continuing-operations diluted EPS line verified; total EPS retained without adjustment.
+  Red flags / FY0 / depreciation: Only combined depreciation/amortization555.2/539.0 is separately reported; pure depreciation is not verified.
+  Red flags / FY1 / depreciation: Only combined depreciation/amortization555.2/539.0 is separately reported; pure depreciation is not verified.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+MC.PA — LVMH
+  Round 1 / in_wins_at_5_plus: Intentionally blank: team checks WInS.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / adr_shares_per_ads: Ordinary-share listing, not an ADR.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / pretax_income_fy0: No separate pretax-income subtotal is reported in the consolidated income statement; not inferred from tax and net profit.
+  Valuation inputs / pretax_income: No separate pretax-income subtotal is reported in the consolidated income statement; not inferred from tax and net profit.
+  Round 1 / eps_cont_fy0: No separately labelled continuing-operations diluted EPS verified.
+  Round 1 / eps_cont_fy3: No separately labelled continuing-operations diluted EPS verified.
+  Valuation inputs / interest_income: Cash/investment income249 includes dividends67 and other returns; pure interest income is not separately verified.
+  Valuation inputs / guidance_next_fy_revenue_growth: Q3 outlook is qualitative; no numerical full-year revenue-growth guidance verified.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+MRK — Merck & Co.
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / operating_income_fy0: No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+  Valuation inputs / operating_income: No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+  Round 1 / eps_cont_fy0: No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+  Round 1 / eps_cont_fy3: No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / diluted_shares_m: Latest eligible Q3 release dated 29 October reports diluted shares 2478m but no verified matching basic denominator. Earlier Q2 loss-period nil dilution is not substituted.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+PFE — Pfizer
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / operating_income_fy0: No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+  Valuation inputs / operating_income: No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+  Red flags / FY0 / depreciation: Cash-flow D&A is combined; pure depreciation was not separately verified. No difference between differently scoped amortization lines is substituted.
+  Red flags / FY1 / depreciation: Cash-flow D&A is combined; pure depreciation was not separately verified. No difference between differently scoped amortization lines is substituted.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+BMY — Bristol-Myers Squibb
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / operating_income_fy0: No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+  Valuation inputs / operating_income: No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+  Round 1 / eps_cont_fy0: No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+  Round 1 / eps_cont_fy3: No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+  Valuation inputs / shares_outstanding_m: Year-end issued shares disclosed only as2.9bn, insufficient precision to reconcile actual outstanding shares; cover-date shares are a different date.
+  Red flags / FY0 / shares_outstanding_m: Year-end issued shares rounded to2.9bn; actual year-end outstanding count not verified. No weighted-average substitute.
+  Red flags / FY1 / shares_outstanding_m: Year-end issued shares rounded to2.9bn; actual year-end outstanding count not verified. No weighted-average substitute.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+  Valuation inputs / diluted_shares_m: Year-end actual outstanding shares could not be verified at sufficient precision; rounded issued shares cannot be combined with precise treasury shares. Latest incremental dilution alone cannot complete the field.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+
+BIIB — Biogen
+  Round 1 / in_wins_at_5_plus: Intentionally left blank for the team’s WInS check.
+  Round 1 / market_cap_cutoff_proxy_m: Intentionally blank in CSV; preserve the workbook formula.
+  Round 1 / capex_software_fy0: Payments-only Round 1 field; intentionally blank.
+  Round 1 / adr_shares_per_ads: Ordinary/common-share listing, not an ADR/ADS.
+  Round 1 / operating_income_fy0: No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+  Valuation inputs / operating_income: No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+  Round 1 / eps_cont_fy0: No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+  Round 1 / eps_cont_fy3: No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+  Valuation inputs / guidance_next_fy_revenue_growth: No published single revenue-growth point. Qualitative wording is preserved; no numeric translation.
+  Valuation inputs / long_term_target: No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+  Valuation inputs / capex_software: No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.

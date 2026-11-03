@@ -49,9 +49,22 @@ COMBINED_CAPEX = {"OR.PA": (1495.3, "L'Oreal combined PP&E + intangibles purchas
                   # wave 3 (group 1 return, 3 Nov)
                   "AIR.PA": (3964, "Airbus cash purchases of PP&E, intangibles and investment property"),
                   "LDO.MI": (1016, "Leonardo cash purchases of PP&E and intangibles"),
-                  "HO.PA": (756.7, "Thales cash capital expenditures (tangible + intangible)")}
+                  "HO.PA": (756.7, "Thales cash capital expenditures (tangible + intangible)"),
+                  # wave 3 (group 2 return, 3 Nov)
+                  "EEFT": (125.5, "Euronet PP&E purchases net of sale proceeds (only line reported)"),
+                  "RWE.DE": (10014, "RWE cash capex, intangibles + PP&E"),
+                  "EDP.LS": (4272.735, "EDP cash payments for PP&E and intangibles"),
+                  "NEE": (24606, "NextEra FPL capex 8,719 + NEER investments 15,332 + nuclear fuel 553 + other 2"),
+                  "SN.L": (433, "Smith & Nephew capital expenditure, PP&E + intangibles")}
 # Other blanks filled from reported lines (arithmetic on the filing, labelled in the output source column).
-FIELD_FACTS = {"HO.PA": ({"pretax_income_fy0": "2036.8"}, "pretax = continuing net income 1,640.3 + income tax 396.5")}
+FIELD_FACTS = {"HO.PA": ({"pretax_income_fy0": "2036.8"}, "pretax = continuing net income 1,640.3 + income tax 396.5"),
+               # debt = reported borrowings where finance leases are immaterial/unquantified (rule R8) or none presented
+               "EEFT": ({"total_debt_fy0": "2020.8"}, "debt = borrowings (finance leases immaterial, not quantified; R8)"),
+               "ZBH": ({"total_debt_fy0": "7519.1"}, "debt = borrowings (no significant finance leases; R8)"),
+               "RWE.DE": ({"total_debt_fy0": "16862"}, "debt = financial debt 19,687 less leases 2,825 (includes collateral, tax equity)"),
+               "ZM": ({"total_debt_fy0": "0"}, "debt = 0: no borrowings line on the balance sheet")}
+# Screen readings Pat should confirm: the acquirer in a pending merger is not 'being acquired'.
+ACQ_OVERRIDE = {"NEE": "legal acquirer in the pending NextEra-Dominion merger (announced 18 May 2026), not a target"}
 # Facts that fill an EPS blank: the issuer reports no potential shares, so diluted EPS = basic EPS.
 EPS_FACTS = {"8697.T": (76.81, 44.02, "JPX omits diluted EPS (no potential shares): basic EPS, split-adjusted")}
 # Approximate 30 Oct 2026 USD per unit, ONLY for the $2bn size screen (never used in scores).
@@ -59,14 +72,14 @@ USD_PER = {"USD": 1, "EUR": 1.1163, "GBP": 1.33, "CHF": 1.25, "DKK": 0.15, "HKD"
            "INR": 0.0113, "TWD": 0.031, "JPY": 0.0066, "CAD": 1 / 1.396, "BRL": 0.18}
 
 INDUSTRIES = [  # canonical name, base loader, new-data tab, new-data workbook
-    ("Payments", "pat:Payments", "Payments", NC / "Round1_Four_Industries.xlsx"),
+    ("Payments", "pat:Payments", "Payments", [NC / "Round1_Four_Industries.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return3/New_Companies_Round1.xlsx"]),
     ("Exchanges and data", "pat:Exchanges_and_data", "Exchanges and data", [FIN / "Wharton_Candidates_Missing_Audit" / "Wharton_Candidates_Round1_Missing_Audit.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return1/New_Companies_Round1.xlsx"]),
     ("IT services", "pat:IT_services", "IT services", [FIN / "Wharton_Candidates_Missing_Audit" / "Wharton_Candidates_Round1_Missing_Audit.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return1/New_Companies_Round1.xlsx"]),
-    ("Power", "csv:context/teammates_2026-11-02/aryu_m12/Power.csv", "Power", NC / "Round1_Four_Industries.xlsx"),
-    ("Medtech", "csv:context/teammates_2026-11-02/aryu_m12/Medtech.csv", "Medtech", NC / "Round1_Four_Industries.xlsx"),
-    ("Software", "csv:context/teammates_2026-11-03/akshaj_p_final/Software.csv", "Software", NC / "Round1_Four_Industries.xlsx"),
-    ("Consumer brands", "csv:context/teammates_2026-11-03/akshaj_p_final/M12_peer_data.csv", "Consumer brands", FIN / "Consumer_Brands_and_Pharma_Research_Package" / "Consumer_Brands_and_Pharma_Round1.xlsx"),
-    ("Pharmaceuticals and Biotechnology", "csv:context/teammates_2026-11-03/akshat_final/pharma_m12_research_inputs.csv", "Pharmaceuticals and Biotechnolo", FIN / "Consumer_Brands_and_Pharma_Research_Package" / "Consumer_Brands_and_Pharma_Round1.xlsx"),
+    ("Power", "csv:context/teammates_2026-11-02/aryu_m12/Power.csv", "Power", [NC / "Round1_Four_Industries.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return3/New_Companies_Round1.xlsx"]),
+    ("Medtech", "csv:context/teammates_2026-11-02/aryu_m12/Medtech.csv", "Medtech", [NC / "Round1_Four_Industries.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return3/New_Companies_Round1.xlsx"]),
+    ("Software", "csv:context/teammates_2026-11-03/akshaj_p_final/Software.csv", "Software", [NC / "Round1_Four_Industries.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return3/New_Companies_Round1.xlsx"]),
+    ("Consumer brands", "csv:context/teammates_2026-11-03/akshaj_p_final/M12_peer_data.csv", "Consumer brands", [FIN / "Consumer_Brands_and_Pharma_Research_Package" / "Consumer_Brands_and_Pharma_Round1.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return3/New_Companies_Round1.xlsx"]),
+    ("Pharmaceuticals and Biotechnology", "csv:context/teammates_2026-11-03/akshat_final/pharma_m12_research_inputs.csv", "Pharmaceuticals and Biotechnolo", [FIN / "Consumer_Brands_and_Pharma_Research_Package" / "Consumer_Brands_and_Pharma_Round1.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return3/New_Companies_Round1.xlsx"]),
     ("Internet and Digital Platforms", "csv:context/teammates_2026-11-03/Akshat_digital_m12_research_inputs.csv", "Internet and Digital Platforms", [FIN / "Wharton_Candidates_Missing_Audit" / "Wharton_Candidates_Round1_Missing_Audit.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return1/New_Companies_Round1.xlsx"]),
     ("Semiconductors", "akshajk:Akshaj_Semiconductors_Revised.xlsx", "Semiconductors", [FIN / "6_Semiconductors_and_Aerospace_Round1_filled.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return2/New_companies/New_companies_Round1.xlsx"]),
     ("Aerospace and defence", "akshajk:Akshaj_Aerospace_Defence_Revised.xlsx", "Aerospace and defence", [FIN / "6_Semiconductors_and_Aerospace_Round1_filled.xlsx", ROOT / "inputs/m12/wave3_2026-11-03/return2/New_companies/New_companies_Round1.xlsx"]),
@@ -180,7 +193,7 @@ def new_rows(path, tab, group):
         if group == "Payments" and isnum(d["capex_fy0"]) and ("combined line" in notes or "overlaps" in notes):
             d["capex_software_fy0"] = "0"  # combined line already includes software (Pat's exception)
         why = []
-        if s(raw.get("not_being_acquired")).upper() == "N":
+        if s(raw.get("not_being_acquired")).upper() == "N" and d["ticker"] not in ACQ_OVERRIDE:
             why.append("being acquired")
         if s(raw.get("bank_like")).upper() == "Y":
             why.append("bank-like")

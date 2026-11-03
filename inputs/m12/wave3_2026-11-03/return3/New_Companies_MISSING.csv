@@ -1,0 +1,296 @@
+﻿ticker,sheet,period,column,reason
+WU,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+WU,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+WU,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+WU,Round 1,,eps_cont_fy0,No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+WU,Round 1,,eps_cont_fy3,No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+WU,Round 1,,inventory_fy0,No separate inventory line is presented in the consolidated balance sheet.
+EEFT,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+EEFT,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+EEFT,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+EEFT,Round 1,,eps_cont_fy0,No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+EEFT,Round 1,,eps_cont_fy3,No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+EEFT,Round 1,,inventory_fy0,No separate inventory line is presented in the consolidated balance sheet.
+ACIW,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+ACIW,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+ACIW,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+ACIW,Round 1,,eps_cont_fy0,No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+ACIW,Round 1,,eps_cont_fy3,No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+ACIW,Round 1,,inventory_fy0,No separate inventory line is presented in the consolidated balance sheet.
+WISE.L,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+WISE.L,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+WISE.L,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+WISE.L,Round 1,,eps_cont_fy0,No separately labelled diluted EPS from continuing operations is verified for this year. Total diluted EPS is not duplicated into this field.
+WISE.L,Round 1,,eps_cont_fy3,FY2023 figures on the current US GAAP/USD basis are not verified. Earlier IFRS/GBP figures are a different reporting basis and are not mixed into the row.
+WISE.L,Round 1,,inventory_fy0,No separate inventory line is presented in the consolidated balance sheet.
+WU,Red flags,FY0,current_assets,The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+WU,Red flags,FY0,current_liabilities,The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+WU,Red flags,FY0,long_term_debt,The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+WU,Red flags,FY1,current_assets,The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+WU,Red flags,FY1,current_liabilities,The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+WU,Red flags,FY1,long_term_debt,The annual balance sheet is unclassified. No separate current/non-current total for this field is reported; total borrowings are not substituted for non-current debt.
+WU,Round 1,,current_assets_fy0,Unclassified consolidated balance sheet; current totals are not reported.
+WU,Round 1,,current_liabilities_fy0,Unclassified consolidated balance sheet; current totals are not reported.
+EEFT,Round 1,,total_debt_fy0,Borrowings carrying value2020.8m is verified. Note14 states finance leases are immaterial but does not quantify the liability; strict borrowings-plus-finance-leases total cannot be verified.
+EEFT,Valuation inputs,,debt,Borrowings carrying value2020.8m is verified; the unquantified finance-lease liability prevents verification of the required total.
+EEFT,Red flags,FY0,long_term_debt,Reported non-current borrowing obligations are1037.6m (FY0) and1134.4m (FY1); the non-current finance-lease component is not separately quantified.
+EEFT,Red flags,FY1,long_term_debt,Reported non-current borrowing obligations are1037.6m (FY0) and1134.4m (FY1); the non-current finance-lease component is not separately quantified.
+EEFT,Round 1,,capex_fy0,Cash-flow line combines purchases of property/equipment and proceeds from sales at125.5m. Gross PPE purchases are not separately verified.
+EEFT,Valuation inputs,,capex,Cash-flow line combines PPE purchases and proceeds from sales at125.5m; gross purchases are not verified.
+EEFT,Round 1,,capex_software_fy0,Separate software/intangible additions are not verified. Purchases of other long-term assets13.5m also include contract-related assets and are not substituted.
+EEFT,Valuation inputs,,capex_software,Separate capitalized software additions are not verified; balances and acquisitions are not additions for this input.
+WISE.L,Red flags,FY0,cost_of_revenue,"Statement presents transaction expense and other operating functions, but no cost-of-revenue line. No synthetic cost-of-revenue total is inserted."
+WISE.L,Red flags,FY1,cost_of_revenue,"Statement presents transaction expense and other operating functions, but no cost-of-revenue line. No synthetic cost-of-revenue total is inserted."
+WISE.L,Red flags,FY1,total_assets_start_of_year,FY2024 closing total assets on the current US GAAP/USD basis is not verified; earlier IFRS/GBP accounts are not substituted.
+WISE.L,Round 1,,revenue_fy3,FY2023 figures on the current US GAAP/USD basis are not verified. Earlier IFRS/GBP figures are a different reporting basis and are not mixed into the row.
+WISE.L,Round 1,,eps_diluted_fy3,FY2023 figures on the current US GAAP/USD basis are not verified. Earlier IFRS/GBP figures are a different reporting basis and are not mixed into the row.
+WISE.L,Valuation inputs,,corporate_cash,"A corporate-only cash reconciliation excluding all customer funds, including funds subject to safeguarding guarantees, is not verified. Total cash is not substituted."
+RWE.DE,Round 1,,in_wins_at_5_plus,Intentionally blank: team checks WInS.
+RWE.DE,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+RWE.DE,Round 1,,adr_shares_per_ads,"Ordinary-share listing, not an ADR."
+RWE.DE,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+RWE.DE,Red flags,FY0,cost_of_revenue,Nature-of-expense statement has no cost-of-revenue or SG&A total. Materials and staff expenses are not substituted.
+RWE.DE,Red flags,FY0,sga,Nature-of-expense statement has no cost-of-revenue or SG&A total. Materials and staff expenses are not substituted.
+RWE.DE,Red flags,FY0,long_term_debt,"Non-current financial debt15509 (FY0)/14772 (FY1) includes leases, tax-equity and miscellaneous financial debt. Strict non-current borrowings scope is not fully verified."
+RWE.DE,Red flags,FY1,cost_of_revenue,Nature-of-expense statement has no cost-of-revenue or SG&A total. Materials and staff expenses are not substituted.
+RWE.DE,Red flags,FY1,sga,Nature-of-expense statement has no cost-of-revenue or SG&A total. Materials and staff expenses are not substituted.
+RWE.DE,Red flags,FY1,long_term_debt,"Non-current financial debt15509 (FY0)/14772 (FY1) includes leases, tax-equity and miscellaneous financial debt. Strict non-current borrowings scope is not fully verified."
+RWE.DE,Round 1,,total_debt_fy0,"Financial debt19687 less leases2825 equals16862, but includes collateral674, tax-equity1244 and miscellaneous financial debt760. A complete borrowings-only total is not verified."
+RWE.DE,Valuation inputs,,debt,Strict borrowings-only scope is not verified; detailed components are in Round 1 missing list and notes.
+RWE.DE,Round 1,,capex_fy0,Cash-flow capex10014 combines intangible assets and PPE; cash PPE-only purchases are not separately verified.
+RWE.DE,Valuation inputs,,capex,Cash-flow capex10014 combines intangible assets and PPE; cash PPE-only purchases are not separately verified.
+RWE.DE,Valuation inputs,,interest_income,Interest and similar income766 includes dividends218 and other securities income. A separately reported interest-only figure is not verified.
+ENEL.MI,Round 1,,in_wins_at_5_plus,Intentionally blank: team checks WInS.
+ENEL.MI,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+ENEL.MI,Round 1,,adr_shares_per_ads,"Ordinary-share listing, not an ADR."
+ENEL.MI,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+ENEL.MI,Red flags,FY0,cost_of_revenue,Nature-of-expense statement does not report a cost-of-revenue or SG&A total.
+ENEL.MI,Red flags,FY0,sga,Nature-of-expense statement does not report a cost-of-revenue or SG&A total.
+ENEL.MI,Red flags,FY1,cost_of_revenue,Nature-of-expense statement does not report a cost-of-revenue or SG&A total.
+ENEL.MI,Red flags,FY1,sga,Nature-of-expense statement does not report a cost-of-revenue or SG&A total.
+EDP.LS,Round 1,,in_wins_at_5_plus,Intentionally blank: team checks WInS.
+EDP.LS,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+EDP.LS,Round 1,,adr_shares_per_ads,"Ordinary-share listing, not an ADR."
+EDP.LS,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+EDP.LS,Red flags,FY0,sga,Nature-of-expense statement does not separately report SG&A.
+EDP.LS,Red flags,FY0,depreciation,PPE note combines depreciation and impairment; a complete depreciation-only total is not verified.
+EDP.LS,Red flags,FY1,sga,Nature-of-expense statement does not separately report SG&A.
+EDP.LS,Red flags,FY1,depreciation,PPE note combines depreciation and impairment; a complete depreciation-only total is not verified.
+EDP.LS,Round 1,,capex_fy0,Cash payments4272.735 combine PPE and intangible assets; a PPE-only cash-purchase total is not verified.
+EDP.LS,Valuation inputs,,capex,Cash payments4272.735 combine PPE and intangible assets; a PPE-only cash-purchase total is not verified.
+EDP.LS,Valuation inputs,,d_and_a,Cash-flow adjustment2016.473 includes impairments; a complete D&A-only reconciliation is not verified.
+NEE,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+NEE,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+NEE,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+NEE,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+NEE,Red flags,FY0,sga,Utility expense statement does not report a consolidated SG&A or cost-of-revenue total.
+NEE,Red flags,FY0,cost_of_revenue,Utility expense statement does not report a consolidated SG&A or cost-of-revenue total.
+NEE,Red flags,FY0,depreciation,Annual statement reports combined depreciation and amortization; depreciation-only total is not verified.
+NEE,Red flags,FY0,long_term_debt,"Non-current borrowings89556/72385 verified, but the non-current share of total finance leases1143/840 is not separately verified."
+NEE,Red flags,FY1,sga,Utility expense statement does not report a consolidated SG&A or cost-of-revenue total.
+NEE,Red flags,FY1,cost_of_revenue,Utility expense statement does not report a consolidated SG&A or cost-of-revenue total.
+NEE,Red flags,FY1,depreciation,Annual statement reports combined depreciation and amortization; depreciation-only total is not verified.
+NEE,Red flags,FY1,long_term_debt,"Non-current borrowings89556/72385 verified, but the non-current share of total finance leases1143/840 is not separately verified."
+NEE,Round 1,,capex_fy0,"Cash flow separately reports FPL capex8719, NEER independent-power/other investments15332, nuclear fuel553 and other capex2. NEER line includes other investments; consolidated PPE-only purchases are not verified."
+NEE,Valuation inputs,,capex,"Cash flow separately reports FPL capex8719, NEER independent-power/other investments15332, nuclear fuel553 and other capex2. NEER line includes other investments; consolidated PPE-only purchases are not verified."
+NEE,Valuation inputs,,interest_income,Other net income includes interest and other items; separate consolidated interest income is not verified.
+MDT,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+MDT,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+MDT,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+MDT,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+ZBH,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+ZBH,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+ZBH,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+ZBH,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+BDX,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+BDX,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+BDX,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+BDX,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+ZBH,Round 1,,total_debt_fy0,Borrowings7519.1 verified; note19 says no significant finance leases but does not quantify finance-lease liabilities. Required full total is not verified.
+ZBH,Valuation inputs,,debt,Borrowings7519.1 verified; note19 says no significant finance leases but does not quantify finance-lease liabilities. Required full total is not verified.
+ZBH,Red flags,FY0,long_term_debt,Non-current borrowings6932.0/5341.6 verified; non-current finance-lease amount is unquantified.
+ZBH,Red flags,FY1,long_term_debt,Non-current borrowings6932.0/5341.6 verified; non-current finance-lease amount is unquantified.
+ZBH,Valuation inputs,,interest_expense,Only net interest expense292.8 is verified; separate gross expense and income are not substituted or estimated.
+ZBH,Valuation inputs,,interest_income,Only net interest expense292.8 is verified; separate gross expense and income are not substituted or estimated.
+SN.L,Round 1,,in_wins_at_5_plus,Intentionally blank: team checks WInS.
+SN.L,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+SN.L,Round 1,,adr_shares_per_ads,"Ordinary-share listing, not an ADR."
+SN.L,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+SN.L,Round 1,,capex_fy0,Cash-flow Capital expenditure433 includes PPE and intangible spending; PPE-only cash amount is not separately verified.
+SN.L,Valuation inputs,,capex,Cash-flow Capital expenditure433 includes PPE and intangible spending; PPE-only cash amount is not separately verified.
+CHKP,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+CHKP,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+CHKP,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+CHKP,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+CHKP,Round 1,,inventory_fy0,No separate inventory balance is reported in the reviewed consolidated balance sheet; not assumed zero.
+CHKP,Round 1,,eps_cont_fy0,No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+CHKP,Round 1,,eps_cont_fy3,No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+OTEX,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+OTEX,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+OTEX,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+OTEX,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+OTEX,Round 1,,inventory_fy0,No separate inventory balance is reported in the reviewed consolidated balance sheet; not assumed zero.
+OTEX,Round 1,,eps_cont_fy0,No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+OTEX,Round 1,,eps_cont_fy3,No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+ZM,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+ZM,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+ZM,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+ZM,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+ZM,Round 1,,inventory_fy0,No separate inventory balance is reported in the reviewed consolidated balance sheet; not assumed zero.
+ZM,Round 1,,eps_cont_fy0,No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+ZM,Round 1,,eps_cont_fy3,No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+AKAM,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+AKAM,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+AKAM,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+AKAM,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+AKAM,Round 1,,inventory_fy0,No separate inventory balance is reported in the reviewed consolidated balance sheet; not assumed zero.
+AKAM,Round 1,,eps_cont_fy0,No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+AKAM,Round 1,,eps_cont_fy3,No separately reported continuing-operations diluted EPS line verified; total diluted EPS is retained.
+ZM,Round 1,,total_debt_fy0,"No borrowings line is presented, but an explicit nil borrowings-plus-finance-leases total was not verified; no zero assumed."
+ZM,Valuation inputs,,debt,"No borrowings line is presented, but an explicit nil borrowings-plus-finance-leases total was not verified; no zero assumed."
+ZM,Red flags,FY0,long_term_debt,No debt line or explicit nil non-current debt total verified.
+ZM,Red flags,FY1,long_term_debt,No debt line or explicit nil non-current debt total verified.
+ZM,Valuation inputs,,interest_expense,No separate gross interest-expense amount or explicit nil amount verified.
+AKAM,Valuation inputs,,interest_income,"Reported70.808 combines interest and marketable-securities income, net; pure gross interest income is not separately verified."
+DECK,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+DECK,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+DECK,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+DECK,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+DECK,Round 1,,eps_cont_fy0,No separate continuing-operations diluted EPS line verified; total EPS retained without adjustment.
+DECK,Round 1,,eps_cont_fy3,No separate continuing-operations diluted EPS line verified; total EPS retained without adjustment.
+GIS,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+GIS,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+GIS,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+GIS,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+GIS,Round 1,,eps_cont_fy0,No separate continuing-operations diluted EPS line verified; total EPS retained without adjustment.
+GIS,Round 1,,eps_cont_fy3,No separate continuing-operations diluted EPS line verified; total EPS retained without adjustment.
+GIS,Red flags,FY0,depreciation,Only combined depreciation/amortization555.2/539.0 is separately reported; pure depreciation is not verified.
+GIS,Red flags,FY1,depreciation,Only combined depreciation/amortization555.2/539.0 is separately reported; pure depreciation is not verified.
+RKT.L,Round 1,,in_wins_at_5_plus,Intentionally blank: team checks WInS.
+RKT.L,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+RKT.L,Round 1,,adr_shares_per_ads,"Ordinary-share listing, not an ADR."
+RKT.L,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+MC.PA,Round 1,,in_wins_at_5_plus,Intentionally blank: team checks WInS.
+MC.PA,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+MC.PA,Round 1,,adr_shares_per_ads,"Ordinary-share listing, not an ADR."
+MC.PA,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+MC.PA,Round 1,,pretax_income_fy0,No separate pretax-income subtotal is reported in the consolidated income statement; not inferred from tax and net profit.
+MC.PA,Valuation inputs,,pretax_income,No separate pretax-income subtotal is reported in the consolidated income statement; not inferred from tax and net profit.
+MC.PA,Round 1,,eps_cont_fy0,No separately labelled continuing-operations diluted EPS verified.
+MC.PA,Round 1,,eps_cont_fy3,No separately labelled continuing-operations diluted EPS verified.
+MC.PA,Valuation inputs,,interest_income,Cash/investment income249 includes dividends67 and other returns; pure interest income is not separately verified.
+MRK,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+MRK,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+MRK,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+MRK,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+MRK,Round 1,,operating_income_fy0,No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+MRK,Valuation inputs,,operating_income,No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+MRK,Round 1,,eps_cont_fy0,No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+MRK,Round 1,,eps_cont_fy3,No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+PFE,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+PFE,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+PFE,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+PFE,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+PFE,Round 1,,operating_income_fy0,No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+PFE,Valuation inputs,,operating_income,No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+BMY,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+BMY,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+BMY,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+BMY,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+BMY,Round 1,,operating_income_fy0,No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+BMY,Valuation inputs,,operating_income,No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+BMY,Round 1,,eps_cont_fy0,No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+BMY,Round 1,,eps_cont_fy3,No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+BIIB,Round 1,,in_wins_at_5_plus,Intentionally left blank for the team’s WInS check.
+BIIB,Round 1,,market_cap_cutoff_proxy_m,Intentionally blank in CSV; preserve the workbook formula.
+BIIB,Round 1,,capex_software_fy0,Payments-only Round 1 field; intentionally blank.
+BIIB,Round 1,,adr_shares_per_ads,"Ordinary/common-share listing, not an ADR/ADS."
+BIIB,Round 1,,operating_income_fy0,No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+BIIB,Valuation inputs,,operating_income,No operating-income subtotal appears in the consolidated income statement; not calculated from other lines.
+BIIB,Round 1,,eps_cont_fy0,No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+BIIB,Round 1,,eps_cont_fy3,No separate continuing-operations diluted EPS line reported; total diluted EPS retained.
+PFE,Red flags,FY0,depreciation,Cash-flow D&A is combined; pure depreciation was not separately verified. No difference between differently scoped amortization lines is substituted.
+PFE,Red flags,FY1,depreciation,Cash-flow D&A is combined; pure depreciation was not separately verified. No difference between differently scoped amortization lines is substituted.
+BMY,Valuation inputs,,shares_outstanding_m,"Year-end issued shares disclosed only as2.9bn, insufficient precision to reconcile actual outstanding shares; cover-date shares are a different date."
+BMY,Red flags,FY0,shares_outstanding_m,Year-end issued shares rounded to2.9bn; actual year-end outstanding count not verified. No weighted-average substitute.
+BMY,Red flags,FY1,shares_outstanding_m,Year-end issued shares rounded to2.9bn; actual year-end outstanding count not verified. No weighted-average substitute.
+WISE.L,Valuation inputs,,consensus_revenue_growth_y1,Yahoo displays consensus currencyGBP inconsistent with reporting currencyUSD; not accepted without reconciliation. ObservedFY2027/2028 growth17.74%/18.44%.
+WISE.L,Valuation inputs,,consensus_revenue_growth_y2,Yahoo displays consensus currencyGBP inconsistent with reporting currencyUSD; not accepted without reconciliation. ObservedFY2027/2028 growth17.74%/18.44%.
+WISE.L,Valuation inputs,,consensus_revenue_growth_y3,Yahoo Analysis shows only two annual revenue-consensus years; third year not verified from that provider.
+CHKP,Valuation inputs,,consensus_revenue_growth_y3,Yahoo provides only two annual years. MarketScreener web snapshots returned conflicting annual sequences with unverified refresh dates; no third-year observation is combined with the current Yahoo pair.
+OTEX,Valuation inputs,,consensus_revenue_growth_y3,Yahoo and the reviewed MarketScreener table provide only FY2027 and FY2028 annual estimates; FY2029 revenue growth was not verified.
+WU,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+EEFT,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+ACIW,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+WISE.L,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+MDT,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+ZBH,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+BDX,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Qualitative wording is preserved; no numeric translation.
+OTEX,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+ZM,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+AKAM,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+DECK,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+RKT.L,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+GIS,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+MRK,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+PFE,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+BMY,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+BIIB,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Qualitative wording is preserved; no numeric translation.
+RWE.DE,Valuation inputs,,guidance_next_fy_revenue_growth,"Earnings outlook, but no consolidated annual revenue-growth guide verified."
+ENEL.MI,Valuation inputs,,guidance_next_fy_revenue_growth,Strategic plan includes investment and earnings objectives; no consolidated annual revenue-growth guide verified.
+EDP.LS,Valuation inputs,,guidance_next_fy_revenue_growth,Guidance addresses recurring EBITDA and net profit; no annual revenue-growth guide verified.
+NEE,Valuation inputs,,guidance_next_fy_revenue_growth,Quarterly filing provides earnings outlook; no annual revenue-growth guide verified.
+CHKP,Valuation inputs,,guidance_next_fy_revenue_growth,No published single revenue-growth point. Numeric endpoints retained in Guidance; no midpoint calculated under README no-averaging rule.
+MC.PA,Valuation inputs,,guidance_next_fy_revenue_growth,Q3 outlook is qualitative; no numerical full-year revenue-growth guidance verified.
+EEFT,Valuation inputs,,diluted_shares_m,Latest eligible Q3 release dated 27 October reports diluted shares 45.761882m but not a verified matching basic denominator. The adjusted-share reconciliation is not basic GAAP shares; no increment inferred.
+MRK,Valuation inputs,,diluted_shares_m,Latest eligible Q3 release dated 29 October reports diluted shares 2478m but no verified matching basic denominator. Earlier Q2 loss-period nil dilution is not substituted.
+SN.L,Valuation inputs,,diluted_shares_m,Latest eligible H1 release dated 4 August reports rounded basic/diluted EPS but a matching share-denominator reconciliation was not verified. No reverse calculation from rounded EPS.
+EDP.LS,Valuation inputs,,diluted_shares_m,Latest eligible H1 report was located but its incremental-dilution reconciliation was not verified. Prior-year nil dilution is not substituted.
+BMY,Valuation inputs,,diluted_shares_m,Year-end actual outstanding shares could not be verified at sufficient precision; rounded issued shares cannot be combined with precise treasury shares. Latest incremental dilution alone cannot complete the field.
+RWE.DE,Round 1,,eps_cont_fy0,A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+RWE.DE,Round 1,,eps_cont_fy3,A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+NEE,Round 1,,eps_cont_fy0,A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+NEE,Round 1,,eps_cont_fy3,A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+MDT,Round 1,,eps_cont_fy0,A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+MDT,Round 1,,eps_cont_fy3,A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+ZBH,Round 1,,eps_cont_fy0,A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+ZBH,Round 1,,eps_cont_fy3,A separately reported continuing-operations diluted EPS line for this exact annual period was not verified; total diluted EPS is not copied by assumption.
+WU,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+EEFT,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+ACIW,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+RWE.DE,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+ENEL.MI,Valuation inputs,,stock_based_comp,A separate annual share-based compensation expense was not verified; equity movements and outstanding awards are not substituted for expense.
+ENEL.MI,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+EDP.LS,Valuation inputs,,stock_based_comp,A separate annual share-based compensation expense was not verified; equity movements and outstanding awards are not substituted for expense.
+EDP.LS,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+NEE,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+MDT,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+MDT,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+ZBH,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+ZBH,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+SN.L,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+SN.L,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+BDX,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+BDX,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+CHKP,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+CHKP,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+OTEX,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+OTEX,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+ZM,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+ZM,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+AKAM,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+DECK,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+DECK,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+RKT.L,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+GIS,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+GIS,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+MC.PA,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+MC.PA,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+MRK,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+MRK,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+PFE,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+PFE,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+BMY,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+BMY,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.
+BIIB,Valuation inputs,,long_term_target,No numerical multi-year company-wide target with a verified eligible source and horizon was established in the reviewed annual/results materials. No analyst target is substituted.
+BIIB,Valuation inputs,,capex_software,No separately verified cash software/intangible capital-expenditure line for this exact annual period; no zero assumed.

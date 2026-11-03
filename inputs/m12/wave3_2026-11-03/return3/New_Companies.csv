@@ -1,0 +1,25 @@
+﻿peer_group,ticker,company,financial_listing,reporting_currency,fiscal_year,fy_end_date,annual_source,remaining_R1_blanks,remaining_R2_blanks
+Payments,WU,Western Union,NYSE,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/1365135/000119312526061340/wu-20251231.htm,8,8
+Payments,EEFT,Euronet Worldwide,Nasdaq,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/1029199/000155485526000131/eeft-20251231.htm,9,8
+Payments,ACIW,ACI Worldwide,Nasdaq,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/935036/000093503626000011/aciw-20251231.htm,6,2
+Payments,WISE.L,Wise,NASDAQ (WSE; ordinary shares),USD,2026,2026-03-31,https://www.sec.gov/Archives/edgar/data/2099039/000119312526282911/d17323d20f.htm,8,8
+Power,RWE.DE,RWE,Xetra,EUR,2025,2025-12-31,https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2025-GJ/RWE-Annual-Report-2025.pdf,8,11
+Power,ENEL.MI,Enel,Borsa Italiana,EUR,2025,2025-12-31,https://www.enel.com/content/dam/enel-com/documenti/investitori/informazioni-finanziarie/2025/annuali/en/integrated-annual-report_2025.pdf,4,7
+Power,EDP.LS,EDP,Euronext Lisbon,EUR,2025,2025-12-31,https://edp.com/sites/default/files/document/2026-03/EDP_2025IntegratedAnnualReport.pdf,5,10
+Power,NEE,NextEra Energy,NYSE,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/753308/000075330826000015/nee-20251231.htm,7,12
+Medtech,MDT,Medtronic,NYSE,USD,2026,2026-04-24,https://www.sec.gov/Archives/edgar/data/1613103/000162828026044354/mdt-20260424.htm,6,3
+Medtech,ZBH,Zimmer Biomet,NYSE,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/1136869/000119312526059853/zbh-20251231.htm,7,8
+Medtech,SN.L,Smith & Nephew,London,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/845982/000110465926028261/snn-20260331xex99d1.htm,5,4
+Medtech,BDX,Becton Dickinson,NYSE,USD,2025,2025-09-30,https://www.sec.gov/Archives/edgar/data/10795/000001079525000099/bdx-20250930.htm,4,3
+Software,CHKP,Check Point Software,Nasdaq,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/1015922/000117891326001932/zk2634942.htm,7,4
+Software,OTEX,Open Text,Nasdaq,USD,2026,2026-06-30,https://www.sec.gov/Archives/edgar/data/1002638/000100263826000068/otex-20260630.htm,7,4
+Software,ZM,Zoom Communications,Nasdaq,USD,2026,2026-01-31,https://www.sec.gov/Archives/edgar/data/1585521/000158552126000030/zm-20260131.htm,8,7
+Software,AKAM,Akamai Technologies,Nasdaq,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/1086222/000108622226000022/akam-20251231.htm,7,3
+Consumer brands,DECK,Deckers Outdoor,NYSE,USD,2026,2026-03-31,https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm,6,3
+Consumer brands,RKT.L,Reckitt Benckiser,London,GBP,2025,2025-12-31,https://eu-assets.contentstack.com/v3/assets/blt93c8bc7a598af9f0/blt3a6f2cd6ab14bf47/69c2b35aa17ac75c0a18f6f2/Reckitt_Annual_Report_and_Accounts_2025_%282%29.pdf,4,2
+Consumer brands,GIS,General Mills,NYSE,USD,2026,2026-05-31,https://www.sec.gov/Archives/edgar/data/40704/000162828026046466/gis-20260531.htm,6,5
+Consumer brands,MC.PA,LVMH,Euronext Paris,EUR,2025,2025-12-31,https://cdn.financialreports.eu/financialreports/media/filings/1491/2026/IR/1491_ir_2026-02-12_94a72d5f-b2fd-4d7e-a1c6-60b690b3b2b1.pdf,7,5
+Pharmaceuticals and Biotechnolo,MRK,Merck & Co.,NYSE,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/310158/000031015826000063/mrk-20251231.htm,7,5
+Pharmaceuticals and Biotechnolo,PFE,Pfizer,NYSE,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/78003/000007800326000026/pfe-20251231.htm,5,6
+Pharmaceuticals and Biotechnolo,BMY,Bristol-Myers Squibb,NYSE,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/14272/000001427226000004/bmy-20251231.htm,7,8
+Pharmaceuticals and Biotechnolo,BIIB,Biogen,Nasdaq,USD,2025,2025-12-31,https://www.sec.gov/Archives/edgar/data/875045/000087504526000013/biib-20251231.htm,7,4

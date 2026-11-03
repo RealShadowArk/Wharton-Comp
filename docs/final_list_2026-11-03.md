@@ -11,6 +11,19 @@ Pat, 3 Nov: the top-2 M12 rule is a guide (test 1 is advisory), and several pick
 
 "Cash check" = the model's year-0 free cash flow / the cash flow actually reported. Above about 1.10, the model is generous.
 
+## All waves at a glance (3 Nov, evening)
+
+More companies now pass than the $119,481 sleeve can hold. Each tier lists the max position ($6,000 / worst calendar-year loss) in brackets.
+
+| Tier | Companies |
+|---|---|
+| **Clean:** every value test passes, cash check at or below about 1.10, no special flag | Adobe ($11,636), Trip.com ($10,258), Sanofi ($21,517), Genpact ($13,036), Euronet ($9,185), Deckers ($8,471), Wolters Kluwer ($14,924; disposal gain in 2025 profit) |
+| **Mild caveat** (cash check 1.13-1.26) | Cognizant ($12,824), Amdocs ($8,440), Open Text ($16,719), PayPal ($9,641; also the cash and bear caveats) |
+| **Strong caveat** | Lululemon, adidas, Zimmer Biomet and Reckitt (model cash flow well above 2025 reported); NRG (only on reported D&A); Nvidia (Beneish flag); MediaTek and Samsung (pass only on very high consensus growth) |
+| **Pat decides on the screen** | Tencent, PDD (flagged bank-like), Airbus (bank-like, fails anyway) |
+
+The clean and mild-caveat tiers alone come to $127,010 at full caps, which is more than the sleeve. The final picks and sizes are Pat's decision.
+
 ## Pass the value tests
 
 Test 2: value above price at all three betas. Test 3: upside/downside at least 1.0.
@@ -59,6 +72,33 @@ The first six caps add up to $73,123. With Lululemon, NRG and adidas the total i
 - **Fail:** NXP (0.87x), Tokyo Electron (0.75x), Thales (0.92x), Leonardo (0.64x), Airbus (0.74x, also flagged bank-like for Airbus Bank).
 - **Screened out:** Textron (bank-like: Textron Financial; no operating-income line or classified balance sheet).
 
+## Wave 3, group 2 (payments, power, medtech, software, consumer, pharma; returned 3 Nov)
+
+`python tools/round2_team.py wave3_g2` -> `outputs/round2/Round2_scorecard_wave3_g2.md`.
+
+| Company | Value / price (beta 1.0, 5-year, full-history) | Bear / price | Red flags | M12 | Max position | Caveat |
+|---|---|---|---|---|---|---|
+| **Euronet (EEFT)** | 3.32, 3.50, 2.66 | 2.29 | 8/9, -2.50 | not scored (capitalized software MISSING) | $9,185 | cash check 0.87; dilution MISSING (convertible notes are in debt); capex is net of sale proceeds |
+| **Open Text (OTEX)** | 3.19, 3.24, 2.82 | 2.60 | 9/9, -2.48 | 9th of 14 | $16,719 | cash check 1.26 |
+| **Deckers (DECK)** | 1.54, 1.46, 1.60 | 1.11 | 5/9, -2.62 | 1st of 13, 32/32 | $8,471 | cash check 0.92 |
+| Zimmer Biomet (ZBH) | 1.22, 1.95, 1.45 | 0.90 | 7/9, -2.53 | 7th of 21 | $15,426 | **cash check 1.39**: on reported cash flow 0.74x |
+| Reckitt (RKT.L) | 1.26, 2.19, 1.89 | 0.94 | 7/9, -2.42 | 5th of 13 | $17,283 | **cash check 1.72**: on reported cash flow 0.57x |
+
+- **Fail:** ACI Worldwide, Enel, Medtronic, Smith & Nephew (0.99x), Becton Dickinson, Check Point, Zoom (0.78x, despite M12 1st of 14), Akamai, General Mills, Merck, Pfizer and Biogen.
+- **Screened out or not valued:**
+  - RWE, EDP and NextEra: negative free cash flow after capex. NextEra's "being acquired" flag is read as acquirer, not target.
+  - Western Union: bank-like, and its market cap is about $1.9bn.
+  - Wise: corporate cash and FY2023 data MISSING.
+  - Bristol-Myers: share count MISSING.
+  - LVMH: no pretax or tax line.
+
+Stand-ins, all labelled in the files:
+- combined capex lines;
+- debt = borrowings where finance leases are immaterial (Euronet, Zimmer) or no borrowings line (Zoom = 0);
+- pharma EBIT built as pretax + interest expense - interest income;
+- statutory tax as an ASSUMPTION where 2025 net income exceeded pretax (Check Point 23%, Pfizer 21%, General Mills 21%);
+- guidance midpoints from the researcher's ranges.
+
 ## Near misses
 
 | Company | What fails |
@@ -77,7 +117,7 @@ Adyen, CME, ICE, Moody's, Infosys, TCS, ServiceNow, Nike, PepsiCo, Coca-Cola, No
 
 Kenon: 0.72x on the parts valuation, updated with the Round 2 facts: central $46.39, range $27.46-66.65. Meta is not validly valued by the method.
 
-## What is left (wave 3 group 2 still out: optional now)
+## What is left (all research is in)
 
 1. **Pat's decisions:**
    - Nvidia's Beneish flag.

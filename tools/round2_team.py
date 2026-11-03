@@ -156,6 +156,31 @@ SETS = {
                 "8035.T": "Valued in JPY; year 1 = FY Mar 2027 guidance midpoint 51%; dilution and stock pay MISSING",
                 "AIR.PA": "Valued in EUR; capex = combined line; cash 17,221 includes Airbus Bank (upper bound); bank-like flag: Pat decides",
                 "LDO.MI": "Valued in EUR; capex = combined line", "HO.PA": "Valued in EUR; capex = combined line; pretax = net income + tax"}),
+    "wave3_g2": dict(
+        workbook=ROOT / "inputs/m12/wave3_2026-11-03/return3" / "New_Companies_Round2.xlsx",
+        yahoo=ROOT / "inputs/m12/wave3_2026-11-03/return3" / "New_Companies_Yahoo_Originals",
+        series={"SN.L": ("SNN", None)},  # Smith & Nephew risk from the USD ADR
+        fx={"ENEL.MI": ("EURUSD=X", "mul"), "RKT.L": ("GBPUSD=X", "mul")},
+        m12=[ROOT / "outputs/new_candidates" / f"M12_{g}.csv" for g in ("Payments", "Medtech", "Software", "Consumer_brands", "Pharmaceuticals_and_Biotechnology", "Power")],
+        # WU bank-like; WISE.L no corporate cash or FY2023 data; BMY share count MISSING; MC.PA no pretax or tax line;
+        # RWE, EDP, NEE negative free cash flow (combined capex)
+        skip={"WU", "WISE.L", "BMY", "MC.PA", "RWE.DE", "EDP.LS", "NEE"},
+        guidance_csv=ROOT / "inputs/m12/wave3_2026-11-03/return3" / "New_Companies_Guidance.csv",
+        guidance_skip={"RKT.L", "GIS", "BDX", "BIIB"},  # scope differs (Core Reckitt; organic ex divestitures) or qualitative only
+        built_ebit={"MRK", "PFE", "BIIB"},  # no operating-income line: pretax + interest expense - interest income
+        tax_continuing={"ENEL.MI"},  # net income to common is after large minorities; use consolidated continuing net income
+        tax_override={"CHKP": (0.23, "ASSUMPTION: Israel statutory 23% (2025 had a net tax benefit: net income above pretax)"),
+                      "PFE": (0.21, "ASSUMPTION: US federal statutory 21% (2025 had a net tax benefit: net income above pretax)"),
+                      "GIS": (0.21, "ASSUMPTION: US federal statutory 21% (FY2026 loss after impairment and disposal charges)")},
+        val_override={"EEFT": {"capex": 125.5, "debt": 2020.8}, "ZBH": {"debt": 7519.1}, "ZM": {"debt": 0}, "SN.L": {"capex": 433}},
+        who="Wave 3, group 2 (payments, power, medtech, software, consumer brands, pharma)",
+        notes={"EEFT": "Capex = PP&E net of sale proceeds; debt = borrowings (R8); dilution MISSING",
+                "ZBH": "Debt = borrowings (R8)", "ZM": "Debt 0: no borrowings line", "SN.L": "Capex = combined line; dilution MISSING; risk from the SNN ADR",
+                "MRK": "EBIT built = pretax + interest expense - interest income; dilution MISSING",
+                "PFE": "EBIT built = pretax + interest expense - interest income; tax 21% ASSUMPTION (2025 tax benefit)", "BIIB": "EBIT built = pretax + interest expense - interest income",
+                "RKT.L": "Valued in GBP; year 1 = consensus (guidance covers Core Reckitt only)",
+                "GIS": "Year 1 = consensus (organic guidance excludes divestitures); FY2026 margin depressed by impairments; tax 21% ASSUMPTION", "ENEL.MI": "Valued in EUR",
+                "MDT": "Year 1 = midpoint of 7.25-7.75% organic guidance", "CHKP": "Tax 23% ASSUMPTION (2025 tax benefit)", "BDX": "FY0 includes the separated biosciences/diagnostics business; year 1 consensus -11.7%"}),
     "newcands": dict(
         workbook=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Wharton_Candidates_Round2_Missing_Audit.xlsx",
         yahoo=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Yahoo_Max_Monthly",
@@ -313,6 +338,16 @@ def main(key):
     risk_tab = {r[0]: dict(zip(kr[0], r)) for r in kr[1:]}
     for t, extra in cfg.get("val_override", {}).items():
         val[t].update(extra)
+    for t in cfg.get("built_ebit", ()):
+        v = val[t]
+        v["operating_income"] = v["pretax_income"] + (v["interest_expense"] or 0) - (v["interest_income"] or 0)
+    if cfg.get("guidance_csv"):  # numeric guidance ranges -> midpoint growth (team method)
+        for r in csv.DictReader(open(cfg["guidance_csv"], encoding="utf-8-sig")):
+            t = r["ticker"]
+            if t not in val or t in cfg.get("guidance_skip", ()) or not r.get("numeric_low") or not r.get("numeric_high"):
+                continue
+            mid = (float(r["numeric_low"]) + float(r["numeric_high"])) / 2
+            val[t]["guidance_next_fy_revenue_growth"] = mid / 100 if r["units"].strip() == "%" else mid / val[t]["revenue"] - 1
     tickers = [t for t in val if t not in cfg.get("skip", ())]
     fy_end, group, m12 = {}, {}, {}
     from m12.score import load as m12load, score_all, stability
