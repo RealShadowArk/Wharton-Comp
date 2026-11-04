@@ -1,0 +1,55 @@
+# Individual-stock trade list, Thursday 5 November 2026 (freeze 6 Nov)
+
+This list is Pat's 4 Nov final list, with share counts.
+
+Each max position is $6,000 / |worst USD calendar-year loss|. It is a **ceiling**, so shares are rounded down. The sleeve is $119,481.
+
+The prices are the last confirmed closes in the 4 Nov red-flag reports (3 Nov, RESEARCH, secondary feeds). FX rates are:
+- EUR/USD 1.1179 (ECB, 3 Nov);
+- KRW 1,341.0 per USD (3 Nov close);
+- TWD 32.760 per USD (Taiwan central bank, 3 Nov).
+
+**Recompute with the WInS price at trade time:** shares = floor(max position / (local price × USD per unit of local currency)).
+
+| # | Ticker (exchange) | Company | Bucket | Max position | Price used | ≈ USD per share | Shares | ≈ Cost (USD) | When |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | NVDA (Nasdaq) | Nvidia | AI beneficiary | $7,247 | $206.69 | 206.69 | **35** | 7,234 | Thu, US hours |
+| 2 | 005930 (KRX) | Samsung Electronics (common) | AI beneficiary | $14,664 | KRW 219,500 | 163.68 | **89** | 14,568 | **After the US ITC Maxell ruling** (target 5 Nov); KRX Friday session = Thu 19:00 to Fri 01:30 ET |
+| 3 | 2454 (TWSE) | MediaTek | AI beneficiary | $12,529 | TWD 3,675 | 112.18 | **111** | 12,452 | TWSE Friday session = Thu 20:00 to Fri 00:30 ET. Check that WInS allows odd lots (board lot = 1,000 shares) |
+| 4 | ADBE (Nasdaq) | Adobe | AI adopter | $11,636 | $246.14 | 246.14 | **47** | 11,569 | Thu, US hours |
+| 5 | WKL (Euronext Amsterdam) | Wolters Kluwer | AI adopter | $14,924 | €85.44 | 95.51 | **156** | 14,900 | Thu before 11:30 ET (17:30 CET close). The nine-month update came out 4 Nov: check the price |
+| 6 | TCOM (Nasdaq ADS) | Trip.com | Non-AI | $10,258 | $41.38 | 41.38 | **247** | 10,221 | Thu, US hours |
+| 7 | EEFT (Nasdaq) | Euronet | Non-AI | $9,185 | $66.24 | 66.24 | **138** | 9,141 | Thu, US hours |
+| 8 | DECK (NYSE) | Deckers | Non-AI | $8,471 | $84.09 | 84.09 | **100** | 8,409 | Thu, US hours |
+| 9 | ADS (Xetra) | adidas | Non-AI | $11,668 | €168.10 | 187.92 | **62** | 11,651 | Thu before 11:30 ET |
+| 10 | SAN (Euronext Paris) | Sanofi | Non-AI | see below | €80.98 | 90.53 | **208 (A) or 129 (B)** | 18,830 or 11,678 | **After Open Text's results**, Thu before 11:30 ET |
+| 11 | OTEX (Nasdaq) | Open Text | AI adopter | $7,206 (B only) | $25.76 | 25.76 | **279 (B only)** | 7,187 | After its results, US hours |
+
+**The Sanofi / Open Text choice.** Open Text reports on 5 Nov before the US open (call at 8:00 ET). Paris is open until 11:30 ET, so Pat can read the results first.
+- **A, results disappoint:** Sanofi 208 shares and no Open Text. Total ≈ $118,974, leaving ≈ $507.
+- **B, results are fine:** Sanofi 129 shares plus Open Text 279. Total ≈ $119,010, leaving ≈ $471.
+- What to compare (FACT, from the OTEX report):
+  - the Q1 guide of $1.22–1.25bn revenue and a 32–33% adjusted EBITDA margin;
+  - any change to the FY27 guide ($5.135–5.185bn revenue; $625–725m free cash flow);
+  - debt and refinancing news.
+- "Fine" is Pat's judgment.
+
+**Order of the day (ET; US clocks changed on 1 Nov, so Europe is 6 hours ahead, Korea 14 and Taiwan 13):**
+1. About 8:00: read Open Text's results and decide A or B.
+2. 9:30: sell enough SGOV to cover the purchases plus commissions.
+3. 9:30–11:30: Wolters Kluwer, adidas, Sanofi (European markets close at 11:30 ET).
+4. 9:30–16:00: Nvidia, Adobe, Trip.com, Euronet, Deckers (and Open Text under B).
+5. Evening: MediaTek (from 20:00), then Samsung (from 19:00) once the ITC ruling is out. If the ruling slips, Pat decides without it.
+6. Write each trade note at trade time, in Pat's own words.
+
+**Checks before ordering:**
+- The WInS listing and currency for each foreign stock.
+- How WInS fills orders on Asian exchanges (timing, odd lots).
+- Every price at or above $5.
+
+The leftover of about $500 stays in SGOV.
+
+**Buckets after the trades (A / B):**
+- AI beneficiaries: $34,254 / $34,254.
+- AI adopters: $26,469 / $33,656.
+- Non-AI: $58,252 / $51,100.
