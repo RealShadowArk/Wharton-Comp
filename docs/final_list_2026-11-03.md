@@ -22,7 +22,7 @@ More companies now pass than the $119,481 sleeve can hold. Each tier lists the m
 | **Strong caveat** | Lululemon, adidas, Zimmer Biomet and Reckitt (model cash flow well above 2025 reported); NRG (only on reported D&A); Nvidia (Beneish flag); MediaTek and Samsung (pass only on very high consensus growth) |
 | **Pat decides on the screen** | Tencent, PDD (flagged bank-like), Airbus (bank-like, fails anyway) |
 
-The clean and mild-caveat tiers alone come to $127,010 at full caps, which is more than the sleeve. The final picks and sizes are Pat's decision.
+At full caps the clean tier comes to $89,027 and the mild-caveat tier to $47,624, together $136,651 ($127,010 without PayPal), more than the sleeve. The final picks and sizes are Pat's decision.
 
 ## Pass the value tests
 
