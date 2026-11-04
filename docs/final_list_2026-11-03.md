@@ -37,6 +37,9 @@ The review is in `docs/macro_redflags_review_2026-11-04.md`. Max positions are i
 - Dropped: NRG, Reckitt (fails without its disposal gain), Zimmer Biomet.
 
 - Adobe is back in ($11,636): strong valuation evidence (Pat, 4 Nov).
+- **Latest (Pat, 4 Nov): Lululemon is dropped and Sanofi is added.** Without Lululemon the other nine total $100,582, so Sanofi fills the remaining $18,899 (below its $21,517 cap). The buckets become 29% AI beneficiaries, 22% AI adopters, 49% non-AI.
+  - If Open Text passes on 5 Nov, one way to fit it is Sanofi at $11,693 and Open Text at $7,206, giving 29% / 28% / 43%.
+  - The figures in the next paragraph predate this change.
 
 **Final list so far:** ten names, **$107,788 at max positions**, which leaves $11,693 of the $119,481 sleeve. Pat wants a mix of AI-benefited, AI-safe and non-AI bets. The buckets are student judgments:
 - **AI beneficiaries** (sell what AI needs): Nvidia, Samsung, MediaTek. $34,440, 32%.
