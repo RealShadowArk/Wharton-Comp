@@ -32,7 +32,18 @@ The review is in `docs/macro_redflags_review_2026-11-04.md`. Max positions are i
 - Open Text (Q1 results on 5 Nov before the open);
 - Samsung (US ITC Maxell decision, target 5 Nov).
 
-**Pat asked for more information on:** Zimmer Biomet, Reckitt, NRG, MediaTek. Lululemon is not yet decided.
+**Later on 4 Nov:**
+- Kept: Zimmer Biomet ($15,426, for now), Lululemon ($7,206), Samsung ($14,664, for now).
+- Dropped: NRG, Reckitt (fails without its disposal gain).
+- Not yet decided: MediaTek ($12,529).
+
+**Final list so far:** nine names, **$99,049 at max positions**, which leaves $20,432 of the $119,481 sleeve.
+- Open Text would leave $3,713.
+- MediaTek would leave $7,903.
+- Both would be $8,816 over, so trim.
+- Leftover goes to VOO/VXUS 70/30 (Pat, 3 Nov).
+
+Max positions are caps, not targets.
 
 **Fixes applied (4 Nov, Pat):**
 - Wolters Kluwer: operating income excludes the €232m disposal gain. Value/price is now 1.23 / 1.77 / 1.39, bear 0.84, upside/downside 1.49, cash check 0.95. **Still passes.**
