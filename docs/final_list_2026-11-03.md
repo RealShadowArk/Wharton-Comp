@@ -33,15 +33,13 @@ The review is in `docs/macro_redflags_review_2026-11-04.md`. Max positions are i
 - Samsung (US ITC Maxell decision, target 5 Nov).
 
 **Later on 4 Nov:**
-- Kept: Zimmer Biomet ($15,426, for now), Lululemon ($7,206), Samsung ($14,664, for now).
-- Dropped: NRG, Reckitt (fails without its disposal gain).
-- Not yet decided: MediaTek ($12,529).
+- Kept: Lululemon ($7,206), Samsung ($14,664, for now), MediaTek ($12,529).
+- Dropped: NRG, Reckitt (fails without its disposal gain), Zimmer Biomet.
 
-**Final list so far:** nine names, **$99,049 at max positions**, which leaves $20,432 of the $119,481 sleeve.
-- Open Text would leave $3,713.
-- MediaTek would leave $7,903.
-- Both would be $8,816 over, so trim.
+**Final list so far:** nine names, **$96,152 at max positions**, which leaves $23,329 of the $119,481 sleeve.
+- With Open Text, $6,610 would be left.
 - Leftover goes to VOO/VXUS 70/30 (Pat, 3 Nov).
+- The AI suppliers (Nvidia, Samsung, MediaTek) come to $34,440, 36% of the list.
 
 Max positions are caps, not targets.
 
