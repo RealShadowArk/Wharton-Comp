@@ -36,10 +36,16 @@ The review is in `docs/macro_redflags_review_2026-11-04.md`. Max positions are i
 - Kept: Lululemon ($7,206), Samsung ($14,664, for now), MediaTek ($12,529).
 - Dropped: NRG, Reckitt (fails without its disposal gain), Zimmer Biomet.
 
-**Final list so far:** nine names, **$96,152 at max positions**, which leaves $23,329 of the $119,481 sleeve.
-- With Open Text, $6,610 would be left.
-- Leftover goes to VOO/VXUS 70/30 (Pat, 3 Nov).
-- The AI suppliers (Nvidia, Samsung, MediaTek) come to $34,440, 36% of the list.
+- Adobe is back in ($11,636): strong valuation evidence (Pat, 4 Nov).
+
+**Final list so far:** ten names, **$107,788 at max positions**, which leaves $11,693 of the $119,481 sleeve. Pat wants a mix of AI-benefited, AI-safe and non-AI bets. The buckets are student judgments:
+- **AI beneficiaries** (sell what AI needs): Nvidia, Samsung, MediaTek. $34,440, 32%.
+- **AI adopters** (exposed to AI, building it into their products): Adobe, Wolters Kluwer. $26,560, 25%. Open Text joins if its 5 Nov results are fine.
+- **Non-AI:** Trip.com, Euronet, Deckers, adidas, Lululemon. $46,788, 43%. Of this, $27,345 is sportswear.
+
+**Filling the gap:**
+- Open Text at $11,693 (below its $16,719 cap) fills the sleeve exactly, giving 29% / 32% / 39%.
+- Otherwise the $11,693 goes to VOO/VXUS 70/30 (Pat, 3 Nov).
 
 Max positions are caps, not targets.
 
