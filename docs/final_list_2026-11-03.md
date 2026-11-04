@@ -11,6 +11,37 @@ Pat, 3 Nov: the top-2 M12 rule is a guide (test 1 is advisory), and several pick
 
 "Cash check" = the model's year-0 free cash flow / the cash flow actually reported. Above about 1.10, the model is generous.
 
+## Pat's decisions after the macro and red-flag check (4 Nov)
+
+The review is in `docs/macro_redflags_review_2026-11-04.md`. Max positions are in brackets.
+
+**Kept ($61,753):**
+- Trip.com ($10,258)
+- Euronet ($9,185)
+- Deckers ($8,471)
+- Wolters Kluwer ($14,924). Pat's rule was "keep if it is upgrading its services with AI", and it is: UpToDate Expert AI, CCH Axcess AI, the Libra legal AI workspace.
+- adidas ($11,668)
+- Nvidia ($7,247)
+
+**Dropped:**
+- for AI-replacement risk: Adobe, Genpact, Cognizant, Amdocs, PayPal;
+- Sanofi, because Dupixent's patents expire just before the 2033 payments;
+- Tencent and PDD.
+
+**Waiting:**
+- Open Text (Q1 results on 5 Nov before the open);
+- Samsung (US ITC Maxell decision, target 5 Nov).
+
+**Pat asked for more information on:** Zimmer Biomet, Reckitt, NRG, MediaTek. Lululemon is not yet decided.
+
+**Fixes applied (4 Nov, Pat):**
+- Wolters Kluwer: operating income excludes the €232m disposal gain. Value/price is now 1.23 / 1.77 / 1.39, bear 0.84, upside/downside 1.49, cash check 0.95. **Still passes.**
+- Trip.com: the cash check uses FY2025 operating cash flow, giving **1.14** (mild caveat). Value is unchanged.
+
+**Found on 4 Nov (TEST, not yet applied):**
+- Reckitt's 2025 operating income of £4,217m includes a **£1,245m Essential Home disposal gain**; the teammate notes this in the workbook.
+- Without the gain, Reckitt **fails**: 0.83 / 1.48 / 1.27, bear 0.60.
+
 ## All waves at a glance (3 Nov, evening)
 
 More companies now pass than the $119,481 sleeve can hold. Each tier lists the max position ($6,000 / worst calendar-year loss) in brackets.

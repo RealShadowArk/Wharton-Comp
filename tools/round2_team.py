@@ -51,8 +51,9 @@ SETS = {
         series={"9961.HK": ("TCOM", None)},             # risk from the TCOM ADR (1 ADS = 1 share), USD
         fx={"SAN.PA": ("EURUSD=X", "mul")},             # EUR price x USD per EUR
         crp={"9961.HK": 0.0091},                         # China CRP (Damodaran 1 Jan 2026, secondary mirror; Pat 3 Nov)
+        val_override={"9961.HK": {"cfo": 14379}},  # FY2025 audited CFO (teammate's Red flags tab); Valuation inputs had FY2024's 19,625 (found 4 Nov, Pat applied)
         who="Akshat",
-        notes={"9961.HK": "Valued in RMB (China 10-year 1.63% + China CRP 0.91%); 2025 profit includes RMB 19.4bn of one-off gains (M12 rank holds without them); risk from TCOM",
+        notes={"9961.HK": "Valued in RMB (China 10-year 1.63% + China CRP 0.91%); 2025 profit includes RMB 19.4bn of one-off gains (M12 rank holds without them); cash check uses FY2025 CFO 14,379 (corrected 4 Nov); the RMB 5.18bn 2026 SAMR fine (RMB 7.50 per share) is not deducted; risk from TCOM",
                "META": "VOO top-10 holding", "BKNG": "Own cash = cash - deferred merchant bookings (team convention)",
                "SAN.PA": "Valued in EUR; risk in USD", "NVS": "Year-1 consensus +1.3% (patent expiries)"}),
     "akshajk": dict(
@@ -124,12 +125,12 @@ SETS = {
         group={"0700.HK": "Internet and Digital Platforms", "PDD": "Internet and Digital Platforms"},
         m12_text={"0700.HK": "Screened out (bank-like: loan receivables inside operating cash flow) unless Pat overrules",
                   "PDD": "Screened out (bank-like per the researcher: merchant deposits inside operating cash flow) unless Pat overrules"},
-        val_override={"WKL.AS": {"capex": 303}, "TRU": {"capex": 326.0},
+        val_override={"WKL.AS": {"capex": 303, "operating_income": 1735 - 232}, "TRU": {"capex": 326.0},
                       "PDD": {"capex": 1145.077, "cfo": None},  # cash check skipped: CFO includes merchant payables +15,328 and deposits +1,248
                       "WIPRO.NS": {"d_and_a": 29107 - 851}, "DOX": {"d_and_a": 128.799 + 61.469}},
         who="Wave 3, group 3 (exchanges, IT services, internet)",
         notes={"8697.T": "Valued in JPY (Japan 10-year 2.82%); clearing balances excluded from cash",
-                "WKL.AS": "Capex 303 = total net capital expenditure (combined line); D&A includes impairments",
+                "WKL.AS": "Operating income 1,503 = IFRS 1,735 less the 232 FRR disposal gain (FY2025 annual report, found by the 4 Nov red-flag check; human check pending); capex 303 = total net capital expenditure (combined line); D&A includes impairments",
                 "TRU": "Capex 326 = reported capital expenditures (combined)",
                 "WIPRO.NS": "Valued in INR; D&A = 29,107 less the disclosed 851 intangible impairment",
                 "DOX": "D&A = depreciation 128.8 + purchased-intangible amortization 61.5",

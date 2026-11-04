@@ -5,7 +5,7 @@ price,87,EUR,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger
 base_year,2025,,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2025-12-31
 base_revenue,6125,EUR m,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
 growth,0.0131;0.0289;0.0274;0.0256;0.0237;0.0218;0.0199;0.0181;0.0162;0.0143,decimal,ASSUMPTION,"Standard method (Pat, 3 Nov)",DRAFT bear: years 1-3 growth halved. Pat replaces or justifies it
-ebit_margin,0.22661;0.22661;0.22661;0.22661;0.22661;0.22661;0.22661;0.22661;0.22661;0.22661,decimal,ASSUMPTION,Standard method: FY0 operating margin held flat,DRAFT bear: margin x 0.8
+ebit_margin,0.19631;0.19631;0.19631;0.19631;0.19631;0.19631;0.19631;0.19631;0.19631;0.19631,decimal,ASSUMPTION,Standard method: FY0 operating margin held flat,DRAFT bear: margin x 0.8
 tax_rate,0.2068,decimal,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income / pretax income
 da_pct,0.07559;0.07559;0.07559;0.07559;0.07559;0.07559;0.07559;0.07559;0.07559;0.07559,decimal,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
 capex_pct,0.04947;0.04947;0.04947;0.04947;0.04947;0.04947;0.04947;0.04947;0.04947;0.04947,decimal,RESEARCH,New_Companies_Round2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),

@@ -54,3 +54,14 @@ v1, _ = ps("WKL.AS", ebit_margin=tuple(x*1503/1735 for x in load("WKL.AS")[0].eb
 vb, _ = ps("WKL.ASbear", ebit_margin=tuple(x*1503/1735 for x in load("WKL.ASbear")[0].ebit_margin))
 print(f"WKL ex gain upside/downside: +{v1/87-1:.0%} / -{1-vb/87:.0%} = {(v1/87-1)/(1-vb/87):.2f}")
 print(f"TCOM SAMR penalty per share: RMB {5180/690.208:.2f} vs price 265.17 ({5180/690.208/265.17:.1%})")
+print("---- Reckitt: FY2025 operating income 4,217 includes the 1,245 Essential Home disposal gain (teammate's own note)")
+f = (4217 - 1245) / 4217
+pr, rawr, _ = load("RKT.L"); b5r = float(rawr["beta_measured"])
+rows_ = []
+for label, k in (("as run", 1.0), ("ex 1,245 gain", f)):
+    v1, _ = ps("RKT.L", ebit_margin=tuple(x * k for x in load("RKT.L")[0].ebit_margin))
+    v5, _ = ps("RKT.L", beta=b5r, ebit_margin=tuple(x * k for x in load("RKT.L")[0].ebit_margin))
+    vf, _ = ps("RKT.L", beta=0.51, ebit_margin=tuple(x * k for x in load("RKT.L")[0].ebit_margin))
+    vb, _ = ps("RKT.Lbear", ebit_margin=tuple(x * k for x in load("RKT.Lbear")[0].ebit_margin))
+    up, dn = v1 / 54.08 - 1, 1 - vb / 54.08
+    print(f"RKT {label:14s} margin {load('RKT.L')[0].ebit_margin[0]*k:.4f}: b1 GBP {v1:.2f} (x{v1/54.08:.2f}) | 5y x{v5/54.08:.2f} | full 0.51 x{vf/54.08:.2f} | bear x{vb/54.08:.2f} | up/down {up:+.0%}/{-dn:+.0%}" + (f" = {up/dn:.2f}" if dn > 0 else " = no downside"))
