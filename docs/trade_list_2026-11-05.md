@@ -49,7 +49,7 @@ Done 4 Nov: Nvidia 35 (limit $203.50), Adobe 46 (limit $249.00), MediaTek 110 (l
 **Placed on 5 Nov (US, Pat):**
 - Trip.com (TCOM): 233 shares, limit $44.00.
 - Euronet (EEFT): 131 shares, limit $69.80.
-- Deckers (DECK): 96 shares, limit $88.00.
+- Deckers (DECK): 97 shares, limit $87.50.
 
 Prices had risen above the 3 Nov closes, so the share counts were cut to stay under each cap. The market fell sharply that afternoon (WInS ticker: S&P 500 -4.1%, Nasdaq -5.9%).
 
@@ -61,19 +61,20 @@ Prices had risen above the 3 Nov closes, so the share counts were cut to stay un
 - Sanofi (SNY, $11,693) and Open Text (OTEX, $7,206): Friday 8:30 am to 3:00 pm.
 - **Leftover cash goes into VOO (Pat, 5 Nov).** This buys the broad US market after the sell-off. It replaces the 70/30 VOO/VXUS split for this money.
   - Amount: cash now, minus the cash reserved for Samsung, Wolters Kluwer, adidas, Sanofi and Open Text ($60,155), minus about $150 of commissions, minus a small buffer for foreign-exchange costs.
-  - **Check first (5 Nov):** WInS shows cash of $70,444.65. Cash was $120,259.82 before the Nvidia order.
-    - All six stock orders filled (WInS Open Positions, 5 Nov). Their cost at the prices paid plus $150 of commissions is about $58,983, so cash should be about $61,277. It is **$9,168 higher**.
-    - The Equities view does not show the five Treasury bonds. Portfolio value $299,102.86 − equities about $193,585 − cash $70,444.65 leaves about **$35,074 for the bonds**. They cost $43,069 on 8 Oct, and the bond funds are up 2.5–3.7% since then.
-    - WInS also shows 21 trades made. That matches 17 equity positions plus 4 bonds, not 5.
-    - Together these suggest **one Treasury bond (about $8–10k) is missing**, sold or removed, with the cash credited.
-    - Check the bond view and the transaction history before buying VOO. If a bond is missing, rebuy it first: the ladder funds the 2038–42 payments. Only the cash left after that goes to VOO.
-- **Fills (WInS Open Positions, 5 Nov):**
+  - **Checked (5 Nov, 2:00 pm CT):** cash is **$61,277.16**, and all 22 orders are filled (WInS order history), including the five Treasury bonds of 7 Oct.
+    - This matches the expected figure: $120,259.82 before Nvidia, less about $58,983 for the six stocks and their commissions.
+    - The earlier $70,444.65 screenshot was taken before Euronet filled. The difference is exactly Euronet's cost: 131 × $69.79 + $25 = $9,167.49.
+  - **Amount:** $61,277.16 − $60,155 reserved − $125 of commissions on the five remaining stocks ≈ **$997** before an FX buffer.
+    - That is about one VOO share (last price $678.65), and its $25 commission would be 3.7% of the trade.
+    - Pat decides whether to buy one share last on Friday or to keep the money as cash.
+- **Fills (WInS order history, 4–5 Nov):**
   - Nvidia 35 @ $203.15.
   - Adobe 46 @ $248.93.
   - MediaTek 110 @ TWD 3,715.
   - Trip.com 233 @ $43.82.
-  - Euronet 131 @ about $69.79 and Deckers **97** @ about $87.35. WInS hides these prices paid; they are backed out from the P/L column.
-  - Deckers is 97 shares, not 96. That is about $8,473 against the $8,471 cap, $2 over, so the worst-year loss is about $6,001 instead of $6,000. Immaterial: keep it, and record the actual 97 in the report.
+  - Euronet 131 @ $69.79.
+  - Deckers **97** @ $87.35 (limit $87.50).
+  - Deckers is 97 shares, not 96: $8,472.95 against the $8,471 cap, $2 over, so the worst-year loss is about $6,001 instead of $6,000. This is immaterial, so keep it and record the actual 97 in the report.
   - When: US hours, 8:30 am to 3:00 pm CT, today or Friday.
   - A trade note is needed (Pat writes it).
 
@@ -90,7 +91,7 @@ Prices had risen above the 3 Nov closes, so the share counts were cut to stay un
 - How WInS fills orders on Asian exchanges (timing, odd lots).
 - Every price at or above $5.
 
-The leftover of about $500 stays in SGOV.
+No SGOV is held (5 Nov), so whatever is left stays in cash.
 
 **Buckets after the trades (A / B):**
 - AI beneficiaries: $34,254 / $34,254.
