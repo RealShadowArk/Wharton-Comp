@@ -59,7 +59,10 @@ Prices had risen above the 3 Nov closes, so the share counts were cut to stay un
 - Samsung: Thursday 6:00 pm to 12:30 am, Korea's Friday session. Pat decides, given the AI sell-off and the pending ITC ruling.
 - Wolters Kluwer and adidas: Friday 2:00 to 10:30 am, on their home markets.
 - Sanofi (SNY, $11,693) and Open Text (OTEX, $7,206): Friday 8:30 am to 3:00 pm.
-- Leftover cash: Friday before 3:00 pm.
+- **Leftover cash goes into VOO (Pat, 5 Nov).** This buys the broad US market after the sell-off. It replaces the 70/30 VOO/VXUS split for this money.
+  - Amount: cash now, minus the cash reserved for Samsung, Wolters Kluwer, adidas, Sanofi and Open Text ($60,155), minus about $150 of commissions, minus a small buffer for foreign-exchange costs.
+  - When: US hours, 8:30 am to 3:00 pm CT, today or Friday.
+  - A trade note is needed (Pat writes it).
 
 **Order of the day (ET; US clocks changed on 1 Nov, so Europe is 6 hours ahead, Korea 14 and Taiwan 13):**
 1. About 8:00: read Open Text's results and decide A or B.
