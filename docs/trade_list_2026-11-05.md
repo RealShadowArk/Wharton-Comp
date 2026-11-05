@@ -59,10 +59,12 @@ Prices had risen above the 3 Nov closes, so the share counts were cut to stay un
 - Samsung: Thursday 6:00 pm to 12:30 am, Korea's Friday session. Pat decides, given the AI sell-off and the pending ITC ruling.
 - Wolters Kluwer and adidas: Friday 2:00 to 10:30 am, on their home markets.
 - ~~Sanofi and Open Text~~ **Placed 5 Nov before the US close (Pat):**
-  - Sanofi SNY ADR (½ share each): 250 shares, limit at most $46.77, cap $11,693.
-  - Open Text OTEX: 288 shares, limit at most $25.02, cap $7,206.
-  - Worst-year losses are about 1.1% and 0.9% of the account. Both are below the 2% cap because option B splits the remaining money.
-  - Fills still to be checked.
+  - **Filled (WInS positions, 5 Nov). WInS hides the prices paid; they are backed out from the P/L column.**
+    - Sanofi SNY ADR (½ share each): 250 @ about $46.82 = about $11,705, against the $11,693 option B budget ($12 over).
+    - Open Text OTEX: 288 @ about $26.21 = about $7,548, against the $7,206 budget ($342 over; at that price the budget allowed 274 shares).
+  - Worst-year losses are about 1.1% (Sanofi) and 0.9% (Open Text) of the account, so both stay well inside their 2% caps ($21,517 and $16,719). The extra $354 comes out of the leftover cash.
+  - Cash after these two is about $41,974. The last three buys need up to $41,331 including commissions (Samsung $14,664, Wolters Kluwer $14,924, adidas $11,668), leaving about $640 before foreign-exchange costs.
+  - All five Treasury bonds are held (WInS Bonds view, 5 Nov), market value $43,923.
 - **Leftover cash goes into VOO (Pat, 5 Nov).** This buys the broad US market after the sell-off. It replaces the 70/30 VOO/VXUS split for this money.
   - Amount: cash now, minus the cash reserved for Samsung, Wolters Kluwer, adidas, Sanofi and Open Text ($60,155), minus about $150 of commissions, minus a small buffer for foreign-exchange costs.
   - **Checked (5 Nov, 2:00 pm CT):** cash is **$61,277.16**, and all 22 orders are filled (WInS order history), including the five Treasury bonds of 7 Oct.
