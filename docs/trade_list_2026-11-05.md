@@ -61,6 +61,7 @@ Prices had risen above the 3 Nov closes, so the share counts were cut to stay un
 - Sanofi (SNY, $11,693) and Open Text (OTEX, $7,206): Friday 8:30 am to 3:00 pm.
 - **Leftover cash goes into VOO (Pat, 5 Nov).** This buys the broad US market after the sell-off. It replaces the 70/30 VOO/VXUS split for this money.
   - Amount: cash now, minus the cash reserved for Samsung, Wolters Kluwer, adidas, Sanofi and Open Text ($60,155), minus about $150 of commissions, minus a small buffer for foreign-exchange costs.
+  - **Check first (5 Nov):** WInS shows cash of $70,444.65. Cash was $120,259.82 before the Nvidia order. If all six orders (NVDA, ADBE, MediaTek, TCOM, EEFT, DECK) filled, they cost at most $59,068 at their limits, including $150 of commissions. Cash should then be about $61,192 plus any savings from fills below the limits. It is $9,253 higher, about the size of one order (Euronet's is $9,169). Check the order history before buying VOO. If an order did not fill, that cash belongs to that stock, and the VOO amount is about $1k, not about $9.9k.
   - When: US hours, 8:30 am to 3:00 pm CT, today or Friday.
   - A trade note is needed (Pat writes it).
 
