@@ -34,6 +34,18 @@ The prices are the last confirmed closes in the 4 Nov red-flag reports (3 Nov, R
   - debt and refinancing news.
 - "Fine" is Pat's judgment.
 
+**Decision (Pat, 5 Nov): option B.** Open Text's Q1 FY27 results (5 Nov, investor presentation, "FY'27 Annual Outlook" slide; RESEARCH):
+- revenue $1,237M, inside the $1,220–1,250M guidance;
+- adjusted EBITDA margin 35.8%, above the 32–33% guidance;
+- free cash flow $139M;
+- full-year guidance unchanged: revenue $5,135–5,185M, margin 32–33%, free cash flow $625–725M;
+- Q2 guided to $1,260–1,290M revenue and a 33–34% margin;
+- debt down $949M over 12 months, net leverage 2.55x.
+
+Buys: Sanofi (SNY) up to $11,693 and Open Text (OTEX) up to $7,206, both on the US market.
+
+Done 4 Nov: Nvidia 35 (limit $203.50), Adobe 46 (limit $249.00), MediaTek 110 (limit TWD 3,730; check the fill).
+
 **Order of the day (ET; US clocks changed on 1 Nov, so Europe is 6 hours ahead, Korea 14 and Taiwan 13):**
 1. About 8:00: read Open Text's results and decide A or B.
 2. 9:30: sell enough SGOV to cover the purchases plus commissions.
