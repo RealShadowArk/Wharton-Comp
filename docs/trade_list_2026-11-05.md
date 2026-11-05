@@ -46,6 +46,21 @@ Buys: Sanofi (SNY) up to $11,693 and Open Text (OTEX) up to $7,206, both on the 
 
 Done 4 Nov: Nvidia 35 (limit $203.50), Adobe 46 (limit $249.00), MediaTek 110 (limit TWD 3,730; check the fill).
 
+**Placed on 5 Nov (US, Pat):**
+- Trip.com (TCOM): 233 shares, limit $44.00.
+- Euronet (EEFT): 131 shares, limit $69.80.
+- Deckers (DECK): 96 shares, limit $88.00.
+
+Prices had risen above the 3 Nov closes, so the share counts were cut to stay under each cap. The market fell sharply that afternoon (WInS ticker: S&P 500 -4.1%, Nasdaq -5.9%).
+
+**WInS (banner, 5 Nov):** trading ends **Friday 6 Nov at 4:00 pm ET**, and the IPS is due Friday at 5:00 pm ET.
+
+**Still to place (CT):**
+- Samsung: Thursday 6:00 pm to 12:30 am, Korea's Friday session. Pat decides, given the AI sell-off and the pending ITC ruling.
+- Wolters Kluwer and adidas: Friday 2:00 to 10:30 am, on their home markets.
+- Sanofi (SNY, $11,693) and Open Text (OTEX, $7,206): Friday 8:30 am to 3:00 pm.
+- Leftover cash: Friday before 3:00 pm.
+
 **Order of the day (ET; US clocks changed on 1 Nov, so Europe is 6 hours ahead, Korea 14 and Taiwan 13):**
 1. About 8:00: read Open Text's results and decide A or B.
 2. 9:30: sell enough SGOV to cover the purchases plus commissions.
