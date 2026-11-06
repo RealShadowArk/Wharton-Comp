@@ -56,7 +56,12 @@ Prices had risen above the 3 Nov closes, so the share counts were cut to stay un
 **WInS (banner, 5 Nov):** trading ends **Friday 6 Nov at 4:00 pm ET**, and the IPS is due Friday at 5:00 pm ET.
 
 **Still to place (CT):**
-- Samsung: Thursday 6:00 pm to 12:30 am, Korea's Friday session. Pat decides, given the AI sell-off and the pending ITC ruling.
+- Samsung: tried during Korea's Friday session (Thu 6:00 pm to Fri 12:30 am CT).
+  - **WInS's Korean price did not update all session.** It still showed Thursday's close of KRW 201,500, while Yahoo had about 189,200: Samsung opened at 180,000, ranged 179,200–196,500 and was −6.1% on the day.
+  - The 104-share order at a 190,500 limit did not fill, and Pat then tried a market order. **Check the fill on Friday.**
+  - The London GDR (SMSN, 25 common shares per GDR since the 2018 split) appeared inconsistently in WInS.
+  - The Maxell ITC decision was not out by 5:40 pm CT.
+  - Pat (6 Nov): if Samsung did not fill, its money (up to $14,664) goes into VOO during Friday's US hours, with a note. Record the WInS data problem in the report.
 - Wolters Kluwer and adidas: Friday 2:00 to 10:30 am, on their home markets.
 - ~~Sanofi and Open Text~~ **Placed 5 Nov before the US close (Pat):**
   - **Filled (WInS positions, 5 Nov). WInS hides the prices paid; they are backed out from the P/L column.**
