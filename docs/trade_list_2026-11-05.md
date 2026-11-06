@@ -62,7 +62,14 @@ Prices had risen above the 3 Nov closes, so the share counts were cut to stay un
   - The London GDR (SMSN, 25 common shares per GDR since the 2018 split) appeared inconsistently in WInS.
   - The Maxell ITC decision was not out by 5:40 pm CT.
   - Pat (6 Nov): if Samsung did not fill, its money (up to $14,664) goes into VOO during Friday's US hours, with a note. Record the WInS data problem in the report.
-- Wolters Kluwer and adidas: Friday 2:00 to 10:30 am, on their home markets.
+- ~~Wolters Kluwer and adidas on their home markets~~ **6 Nov: WInS did not execute the Amsterdam or Xetra orders.** Its European quotes looked stale, as Korea's had. The limits were raised above the day's highs and the orders still sat open, so they were cancelled.
+  - **Replaced with the US over-the-counter ADRs (Pat's judgment call on the universe rule: WInS lists them, and no exchange-listed US version exists):**
+    - Wolters Kluwer **WTKWY**: 148 @ $100.01 = $14,801 (1 ADR = 1 share; 1.19x at beta 1 at $100.37).
+    - adidas **ADDYY**: **119** @ $97.27 = $11,575 (1 ADR = ½ share; 1.54x at beta 1 at $98.03). The trade note says 118; record the actual 119. That is still under the $11,668 cap.
+  - **Samsung's money was split 50/50 (Pat):**
+    - **VOO** +11 @ about $679.94, now 61 shares.
+    - **VXUS** +95, now 278 shares.
+    - Alcon was re-checked at $74.77 and fails (0.89x at beta 1, bear 0.66x). Qualcomm was considered (near miss, mostly phone chips) and not bought.
 - ~~Sanofi and Open Text~~ **Placed 5 Nov before the US close (Pat):**
   - **Filled (WInS positions, 5 Nov). WInS hides the prices paid; they are backed out from the P/L column.**
     - Sanofi SNY ADR (½ share each): 250 @ about $46.82 = about $11,705, against the $11,693 option B budget ($12 over).
