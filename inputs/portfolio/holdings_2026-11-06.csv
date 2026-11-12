@@ -1,0 +1,28 @@
+id,yahoo,group,qty,currency,price_paid,price_6nov,label,note
+XLF,XLF,Tilt,135,USD,55.14,57.495,RESEARCH,WInS positions 6 Nov (last price and market value)
+XLI,XLI,Tilt,53,USD,168.00,162.83,RESEARCH,
+XLK,XLK,Tilt,24,USD,186.79,165.26,RESEARCH,
+XLV,XLV,Tilt,42,USD,175.52,184.51,RESEARCH,
+VOO,VOO,Core,61,USD,701.98,678.84,RESEARCH,50 bought 16 Oct + 11 on 6 Nov (average price)
+VXUS,VXUS,Core,278,USD,83.07,81.14,RESEARCH,183 bought 16 Oct + 95 on 6 Nov; average backed out of the WInS P/L
+NVDA,NVDA,AI beneficiary,35,USD,203.15,188.10,RESEARCH,
+2454,2454.TW,AI beneficiary,110,TWD,3715,3390,RESEARCH,MediaTek (TWSE); priced in TWD
+ADBE,ADBE,AI adopter,46,USD,248.93,241.86,RESEARCH,
+WTKWY,WTKWY,AI adopter,148,USD,100.01,100.53,RESEARCH,Wolters Kluwer ADR (1 ADR = 1 share)
+OTEX,OTEX,AI adopter,288,USD,26.21,25.43,RESEARCH,price paid backed out of the WInS P/L
+TCOM,TCOM,Non-AI,233,USD,43.82,44.60,RESEARCH,
+EEFT,EEFT,Non-AI,131,USD,69.79,71.45,RESEARCH,
+DECK,DECK,Non-AI,97,USD,87.35,87.04,RESEARCH,
+ADDYY,ADDYY,Non-AI,119,USD,97.27,97.21,RESEARCH,adidas ADR (1 ADR = 1/2 share)
+SNY,SNY,Non-AI,250,USD,46.82,46.59,RESEARCH,Sanofi ADR (1 ADR = 1/2 share)
+IBTM,IBTM,Bond ladder,589,USD,21.69,22.19,RESEARCH,iBonds Dec 2032 (funds 2033)
+IBTO,IBTO,Bond ladder,530,USD,22.92,23.52,RESEARCH,iBonds Dec 2033 (2034)
+IBTP,IBTP,Bond ladder,481,USD,23.98,24.71,RESEARCH,iBonds Dec 2034 (2035)
+IBTQ,IBTQ,Bond ladder,462,USD,23.56,24.34,RESEARCH,iBonds Dec 2035 (2036)
+IBTR,IBTR,Bond ladder,441,USD,23.34,24.18,RESEARCH,iBonds Dec 2036 (2037)
+T4.750-2037-02-15,,Bond ladder,10,USD,962.30,995.05,RESEARCH,Treasury bond per $1000 face (funds 2038)
+T4.500-2038-05-15,,Bond ladder,10,USD,933.50,968.26,RESEARCH,(2039)
+T4.375-2039-11-15,,Bond ladder,9,USD,902.32,939.04,RESEARCH,(2040)
+T4.250-2040-11-15,,Bond ladder,9,USD,879.55,916.96,RESEARCH,(2041)
+T3.125-2041-11-15,,Bond ladder,10,USD,751.43,787.75,RESEARCH,(2042)
+CASH,,Cash,1,USD,291,291,ASSUMPTION,"Estimated from the fills (61,277.16 less the last six buys and commissions); confirm in WInS"
