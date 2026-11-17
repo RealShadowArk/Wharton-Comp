@@ -35,8 +35,8 @@ def say(text=""):
     LINES.append(text)
 
 
-def get(url):
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=20) as r:
+def get(url, headers=UA, timeout=30):
+    with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=timeout) as r:
         return r.read().decode()
 
 
@@ -48,8 +48,9 @@ def yahoo(symbol):
 
 def fred_change(series):
     """Latest value minus the 6 Nov value (percentage points)."""
-    rows = [r.split(",") for r in get(
-        f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}").splitlines()[1:]]
+    rows = [r.split(",") for r in get(   # FRED stalls on browser-like agents; use a plain one
+        f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}",
+        headers={"User-Agent": "curl/8"}, timeout=60).splitlines()[1:]]
     rows = [(date.fromisoformat(d), float(v)) for d, v in rows if v not in ("", ".")]
     at_freeze = [v for d, v in rows if d <= FREEZE][-1]
     return rows[-1][1] - at_freeze, rows[-1][0]
@@ -118,8 +119,12 @@ def main():
     twd = a.twd or (yahoo("TWD=X") if a.yahoo else TWD_6NOV)
     d10 = d20 = 0.0
     if a.fred:
-        (d10, asof), (d20, _) = fred_change("DGS10"), fred_change("DGS20")
-        say(f"FRED yield change since 6 Nov to {asof}: 10y {d10:+.2f}, 20y {d20:+.2f} points")
+        try:
+            (d10, asof), (d20, _) = fred_change("DGS10"), fred_change("DGS20")
+            say(f"FRED yield change since 6 Nov to {asof}: 10y {d10:+.2f}, 20y {d20:+.2f} points")
+        except Exception as e:
+            a.fred = False
+            say(f"FRED unavailable ({type(e).__name__}): bonds held at 6 Nov prices")
 
     total = cost_total = 0.0
     groups = {}

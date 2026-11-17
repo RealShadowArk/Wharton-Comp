@@ -1,0 +1,42 @@
+FRED yield change since 6 Nov to 2026-11-13: 10y +0.29, 20y +0.23 points
+Portfolio summary, 2026-11-17 (TEST: tracking only; the WInS portfolio is frozen)
+id                      qty      price     value $   P/L %  source
+XLF                     135      57.13    7,712.55   +3.6%  Yahoo
+XLI                      53     164.32    8,708.96   -2.2%  Yahoo
+XLK                      24     160.78    3,858.72  -13.9%  Yahoo
+XLV                      42     185.46    7,789.32   +5.7%  Yahoo
+VOO                      61     669.78   40,856.70   -4.6%  Yahoo
+VXUS                    278      79.83   22,194.13   -3.9%  Yahoo
+NVDA                     35     152.97    5,353.95  -24.7%  Yahoo
+2454                    110    3840.00   12,828.38   +3.1%  Yahoo
+ADBE                     46     235.67   10,840.82   -5.3%  Yahoo
+WTKWY                   148      97.28   14,397.44   -2.7%  Yahoo
+OTEX                    288      23.83    6,863.04   -9.1%  Yahoo
+TCOM                    233      43.41   10,114.53   -0.9%  Yahoo
+EEFT                    131      68.40    8,960.40   -2.0%  Yahoo
+DECK                     97      82.14    7,967.58   -6.0%  Yahoo
+ADDYY                   119      95.97   11,420.43   -1.3%  Yahoo
+SNY                     250      47.73   11,931.50   +1.9%  Yahoo
+IBTM                    589      21.95   12,925.60   +1.2%  Yahoo
+IBTO                    530      23.22   12,306.60   +1.3%  Yahoo
+IBTP                    481      24.34   11,708.69   +1.5%  Yahoo
+IBTQ                    462      23.95   11,062.59   +1.6%  Yahoo
+IBTR                    441      23.74   10,470.66   +1.7%  Yahoo
+T4.750-2037-02-15        10     974.06    9,740.60   +1.2%  FRED reprice (TEST)
+T4.500-2038-05-15        10     924.18    9,241.76   -1.0%  FRED reprice (TEST)
+T4.375-2039-11-15         9     894.92    8,054.30   -0.8%  FRED reprice (TEST)
+T4.250-2040-11-15         9     873.21    7,858.93   -0.7%  FRED reprice (TEST)
+T3.125-2041-11-15        10     751.07    7,510.67   -0.0%  FRED reprice (TEST)
+CASH                      1     291.00      291.00   +0.0%  STALE (6 Nov)
+
+By group:
+  Bond ladder         100,880   34.4%
+  Core                 63,051   21.5%
+  Non-AI               50,394   17.2%
+  AI adopter           32,101   11.0%
+  Tilt                 28,070    9.6%
+  AI beneficiary       18,182    6.2%
+  Cash                    291    0.1%
+
+Total value $292,969.87   vs $300,000 start: -2.34%   vs 6 Nov freeze ($298,497): -1.85%
+(TWD 32.927 per USD; cash is an estimate until confirmed. Not for the Final Report: it must use the $300,000 allocation table, and WInS gains are not evidence.)
