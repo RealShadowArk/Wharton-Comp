@@ -1,0 +1,501 @@
+Symbol,Security,GICS Sector,GICS Sub-Industry,country,grade,kind,price,alpha,beta,ind_alpha,ind_beta,alpha_ok,beta_ok,refined,winner,tfs,err,Q1,Q2,B1,B2,G1,G2,V1,V2
+MMM,3M,Industrials,Industrial Conglomerates,USA,B,standard,180.91,-0.009,1.0965,0.0348,1.1109,False,True,True,False,33.4,,0.192,0.643,0.334,1.7079,-0.0157,-0.1616,0.0339,0.0146
+AOS,A. O. Smith,Industrials,Building Products,USA,B,standard,63.86,-0.0892,1.1655,-0.0052,1.2619,False,True,True,False,75.0,,0.1901,1.2002,0.0611,1.4974,0.0067,0.366,0.0617,0.0617
+ABT,Abbott Laboratories,Health Care,Health Care Equipment,USA,B,standard,105.0,-0.0747,0.6379,-0.0956,0.9331,True,True,True,True,44.2,,0.1817,0.5273,0.1598,1.5759,0.0051,-0.0165,0.0358,0.0406
+ABBV,AbbVie,Health Care,Biotechnology,USA,B,standard,292.225,0.1957,0.2522,0.1176,0.4899,True,True,True,True,21.6,,0.3285,0.4545,0.5039,0.6713,0.0175,-0.2903,0.0081,0.0345
+ACN,Accenture,Information Technology,IT Consulting & Other Services,IRL,A,standard,240.53,-0.0724,0.8871,0.077,1.2644,False,True,True,False,60.7,,0.1538,1.0674,0.182,1.4271,0.0498,0.0798,0.0584,0.0811
+ADBE,Adobe Inc.,Information Technology,Application Software,USA,B,standard,236.553,-0.2464,1.3383,-0.0053,1.134,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+AMD,Advanced Micro Devices,Information Technology,Semiconductors,USA,B,standard,491.02,0.2871,2.5381,0.1251,1.9734,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+AES,AES Corporation,Utilities,Independent Power Producers & Energy Traders,USA,B,standard,14.93,-0.1026,1.1394,0.0161,0.9348,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+AFL,Aflac,Financials,Life & Health Insurance,USA,B,banklike,127.875,0.1322,0.6153,0.0671,0.7421,True,True,True,True,48.1,,0.2612,0.0312,0.2851,0.2532,-0.0323,-0.0053,0.055,0.4446
+A,Agilent Technologies,Health Care,Life Sciences Tools & Services,USA,B,standard,172.05,-0.0569,1.2843,-0.0826,1.2021,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+APD,Air Products,Materials,Industrial Gases,USA,B,standard,309.97,-0.0208,0.7669,0.0334,1.0888,False,True,True,False,22.2,,0.24,0.2986,0.4483,1.381,-0.0177,-0.3861,-0.0057,-0.0546
+ABNB,Airbnb,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",USA,B,standard,182.425,-0.0652,1.2859,0.0469,1.5826,False,True,True,False,50.0,,0.2078,0.5671,0.0931,1.3772,0.1338,-0.2826,0.0229,0.0421
+AKAM,Akamai Technologies,Information Technology,Internet Services & Infrastructure,USA,B,standard,84.53,-0.0485,0.6377,0.077,1.2644,False,True,True,False,43.0,,0.1493,0.3852,0.4944,2.3634,0.0518,-0.0198,0.037,0.0572
+ALB,Albemarle Corporation,Materials,Specialty Chemicals,USA,B,standard,87.865,-0.1962,1.4603,-0.0855,1.0126,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ARE,Alexandria Real Estate Equities,Real Estate,Office REITs,USA,B,reit,42.3,-0.3433,1.2796,-0.0744,1.0551,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ALGN,Align Technology,Health Care,Health Care Supplies,USA,B,standard,163.415,-0.3282,1.947,0.0077,0.9282,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ALLE,Allegion,Industrials,Building Products,IRL,A,standard,187.79,0.0235,0.8933,-0.0052,1.2619,True,True,True,True,63.9,,0.2113,0.8376,0.3791,1.8425,0.0752,0.1275,0.0398,0.0424
+LNT,Alliant Energy,Utilities,Electric Utilities,USA,B,standard,71.91,0.0193,0.5873,0.0544,0.598,False,True,True,False,43.0,,0.235,0.1829,0.4848,0.7993,0.0123,0.0477,0.0438,-0.003
+ALL,Allstate,Financials,Property & Casualty Insurance,USA,B,banklike,270.87,0.1544,0.1672,0.1297,0.3444,True,True,True,True,,,0.1962,0.0879,0.2447,0.2556,0.0984,MISSING,0.1443,0.4344
+GOOGL,Alphabet Inc. (Class A),Communication Services,Interactive Media & Services,USA,B,standard,279.97,0.0551,1.2606,0.0246,0.9652,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MO,Altria,Consumer Staples,Tobacco,USA,B,standard,78.06,0.147,0.4832,0.0017,0.5557,True,True,True,True,50.0,,0.5976,0.5738,0.7342,0.648,-0.0089,0.089,0.053,0.0694
+AMZN,Amazon,Consumer Discretionary,Broadline Retail,USA,B,standard,256.62,-0.0067,1.3799,-0.0061,1.2236,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+AMCR,Amcor,Materials,Paper & Plastic Packaging Products & Materials,GBR,B,standard,43.565,-0.0583,0.6991,-0.041,0.9273,False,True,True,False,55.6,,0.0935,0.6339,0.4007,1.2543,0.1695,-0.1227,0.055,0.0611
+AEE,Ameren,Utilities,Multi-Utilities,USA,B,standard,112.79,0.0275,0.5009,0.0321,0.4965,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+AEP,American Electric Power,Utilities,Electric Utilities,USA,B,standard,126.335,0.0638,0.5786,0.0544,0.598,True,True,True,True,53.1,,0.2462,0.2011,0.4325,0.4546,0.0366,0.1404,0.0524,-0.0745
+AXP,American Express,Financials,Consumer Finance,USA,B,banklike,315.337,0.0521,1.143,0.0572,0.7682,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+AIG,American International Group,Financials,Multi-line Insurance,USA,B,banklike,81.56,0.0386,0.5595,0.0572,0.7682,False,True,True,False,49.5,,0.1449,0.0192,0.2234,0.2551,-0.0369,-0.2513,0.0705,0.9372
+AMT,American Tower,Real Estate,Telecom Tower REITs,USA,B,reit,188.7,-0.1185,0.9865,-0.0744,1.0551,False,True,True,False,47.1,,0.4631,0.1713,0.7116,3.626,0.0334,0.1223,0.0519,0.0621
+AWK,American Water Works,Utilities,Water Utilities,USA,B,standard,149.97,-0.0759,0.6466,0.0161,0.9348,False,True,True,False,43.0,,0.3656,0.1506,0.4491,0.4616,0.1067,0.0806,0.038,-0.0424
+AMP,Ameriprise Financial,Financials,Asset Management & Custody Banks,USA,B,banklike,509.63,0.0285,1.1467,-0.0135,1.4671,True,True,True,True,36.1,,0.2437,0.0191,0.8951,0.0343,0.0903,0.0941,0.0766,0.1408
+AME,Ametek,Industrials,Electrical Components & Equipment,USA,B,standard,233.82,0.0409,0.9952,0.2144,1.7639,False,True,True,False,46.6,,0.2581,0.4822,0.1459,1.0623,0.0636,0.085,0.0276,0.0312
+AMGN,Amgen,Health Care,Biotechnology,USA,B,standard,456.735,0.1524,0.4973,0.1176,0.4899,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+APH,Amphenol,Information Technology,Electronic Components,USA,B,standard,75.44,0.2033,1.3137,0.077,1.2644,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ADI,Analog Devices,Information Technology,Semiconductors,USA,B,standard,381.34,0.1032,1.397,0.1251,1.9734,False,True,True,False,35.7,,0.2725,0.229,0.1805,2.1899,-0.0284,-0.0459,0.0121,0.0229
+AON,Aon plc,Financials,Insurance Brokers,GBR,B,banklike,337.085,-0.0433,0.6108,0.0188,0.4651,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+APA,APA Corporation,Energy,Oil & Gas Exploration & Production,USA,B,standard,46.98,0.2072,0.2679,0.1652,0.3752,True,True,True,True,58.8,,0.3083,0.4802,0.2584,0.825,-0.0696,-0.2873,0.0865,0.1073
+APO,Apollo Global Management,Financials,Asset Management & Custody Banks,USA,B,banklike,118.093,0.0287,1.4794,-0.0135,1.4671,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+AAPL,Apple Inc.,Information Technology,"Technology Hardware, Storage & Peripherals",USA,B,standard,350.8,0.0942,1.0114,0.2885,1.6186,False,True,True,False,57.0,,0.3301,1.2538,0.198,1.0232,0.077,0.1357,0.0259,0.0267
+AMAT,Applied Materials,Information Technology,Semiconductor Materials & Equipment,USA,B,standard,342.22,0.1727,1.8504,0.077,1.2644,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+APP,AppLovin,Communication Services,Advertising,USA,B,standard,402.86,0.2808,2.2299,0.0246,0.9652,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+APTV,Aptiv,Consumer Discretionary,Automotive Parts & Equipment,CHE,A,standard,37.95,-0.3454,1.469,-0.0061,1.2236,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ACGL,Arch Capital Group,Financials,Property & Casualty Insurance,BMU,B*,banklike,109.51,0.1718,0.2298,0.1297,0.3444,True,True,True,True,84.7,,0.2581,0.0581,0.1127,0.3055,0.2614,0.4506,0.1109,0.6157
+ADM,Archer Daniels Midland,Consumer Staples,Agricultural Products & Services,USA,B,standard,69.42,0.0154,0.7036,0.0017,0.5557,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ARES,Ares Management,Financials,Asset Management & Custody Banks,USA,B,banklike,127.835,0.0445,1.4178,-0.0135,1.4671,True,True,True,True,31.9,,0.2297,-0.0225,3.3265,0.1493,0.2239,0.2502,-0.0212,0.1507
+ANET,Arista Networks,Information Technology,Communications Equipment,USA,B,standard,185.5,0.3267,1.4783,0.2267,1.2472,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+AJG,Arthur J. Gallagher & Co.,Financials,Insurance Brokers,USA,B,banklike,283.445,0.0745,0.4416,0.0188,0.4651,True,True,True,True,44.0,,0.1342,0.0221,0.5782,0.33,0.177,0.0341,0.0205,0.3201
+AIZ,Assurant,Financials,Multi-line Insurance,USA,B,banklike,323.32,0.0845,0.5288,0.0572,0.7682,True,True,True,True,49.5,,0.0849,0.0243,0.3759,0.1618,0.0793,0.4967,0.0537,0.3647
+T,AT&T,Communication Services,Integrated Telecommunication Services,USA,B,standard,22.435,0.0503,0.398,0.0246,0.9652,True,True,True,True,,,0.199,0.3083,0.369,0.9061,0.0134,MISSING,0.1418,0.126
+ATO,Atmos Energy,Utilities,Gas Utilities,USA,B,standard,172.83,0.0866,0.6488,0.0161,0.9348,True,True,True,True,57.8,,0.3317,0.176,0.3293,0.7726,0.0383,0.1003,0.0429,-0.0541
+ADSK,Autodesk,Information Technology,Application Software,USA,B,standard,257.27,-0.108,1.2075,-0.0053,1.134,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ADP,Automatic Data Processing,Industrials,Human Resource & Employment Services,USA,B,standard,308.695,0.0166,0.721,0.0348,1.1109,False,True,True,False,52.7,,0.2633,0.3766,0.0834,1.0507,0.0681,0.1004,0.0359,0.0389
+AZO,AutoZone,Consumer Discretionary,Automotive Retail,USA,B,standard,3270.36,0.0823,0.3757,-0.0061,1.2236,True,True,True,True,40.9,,0.1831,0.9925,0.5946,0.901,0.0522,0.0732,0.0486,0.0343
+AVY,Avery Dennison,Materials,Paper & Plastic Packaging Products & Materials,USA,B,standard,185.79,-0.0947,0.8824,-0.041,0.9273,False,True,True,False,48.6,,0.1269,1.0294,0.4241,1.1269,-0.0068,-0.0154,0.0482,0.0477
+AXON,Axon Enterprise,Industrials,Aerospace & Defense,USA,B,standard,300.395,0.1431,1.5571,0.1022,0.7981,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+BKR,Baker Hughes,Energy,Oil & Gas Equipment & Services,USA,B,standard,47.615,0.1351,1.1553,0.203,0.6932,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+BALL,Ball Corporation,Materials,"Metal, Glass & Plastic Containers",USA,B,standard,65.02,-0.1185,1.1174,0.0334,1.0888,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+BAC,Bank of America,Financials,Diversified Banks,USA,B,banklike,49.285,-0.0542,1.2506,0.0023,1.104,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+BAX,Baxter International,Health Care,Health Care Equipment,USA,B,standard,25.815,-0.264,0.8753,-0.0956,0.9331,False,True,True,False,,,0.0157,0.4906,0.4877,2.3138,0.0379,MISSING,-0.0721,0.0243
+BDX,Becton Dickinson,Health Care,Health Care Equipment,USA,B,standard,215.56,-0.0033,0.3035,-0.0956,0.9331,True,True,True,True,31.7,,0.1367,0.3879,0.3467,1.1133,0.0499,-0.0034,0.0273,0.0434
+BRK.B,Berkshire Hathaway,Financials,Multi-Sector Holdings,USA,B,banklike,591.23,0.065,0.6143,0.0572,0.7682,True,True,True,True,,,0.2009,0.0564,0.1799,0.587,0.2059,MISSING,78.7562,843.7041
+BBY,Best Buy,Consumer Discretionary,Computer & Electronics Retail,USA,B,standard,99.11,-0.0729,1.2861,-0.0061,1.2236,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TECH,Bio-Techne,Health Care,Life Sciences Tools & Services,USA,B,standard,72.705,-0.1756,1.3951,-0.0826,1.2021,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+BIIB,Biogen,Health Care,Biotechnology,USA,B,standard,249.58,-0.0209,0.1364,0.1176,0.4899,False,True,True,False,45.7,,0.2496,0.3441,0.2234,2.6793,-0.0094,-0.2504,0.0353,0.0537
+BLK,BlackRock,Financials,Asset Management & Custody Banks,USA,B,banklike,1183.715,-0.0367,1.4409,-0.0135,1.4671,False,True,True,False,54.2,,0.3146,0.036,0.2683,0.3288,0.1065,0.013,0.0303,0.3045
+BX,Blackstone Inc.,Financials,Asset Management & Custody Banks,USA,B,banklike,115.875,-0.0685,1.5168,-0.0135,1.4671,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+XYZ,"Block, Inc.",Financials,Transaction & Payment Processing Services,USA,B,standard,79.37,-0.3091,2.7017,-0.1104,1.0773,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+BE,Bloom Energy,Industrials,Electrical Components & Equipment,USA,B,standard,170.25,0.643,3.7876,0.2144,1.7639,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+BNY,BNY Mellon,Financials,Asset Management & Custody Banks,USA,B,banklike,149.525,0.125,1.0945,-0.0135,1.4671,True,True,True,True,47.2,,0.3572,0.0119,0.774,0.0938,0.0687,0.3665,0.0516,0.4306
+BA,Boeing,Industrials,Aerospace & Defense,USA,B,standard,163.638,-0.1166,1.5247,0.1022,0.7981,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+BKNG,Booking Holdings,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",USA,B,standard,154.35,0.0131,1.2411,0.0469,1.5826,False,True,True,False,67.0,,0.3448,0.9449,0.6593,1.3333,0.1635,0.2944,0.0439,0.0738
+BSX,Boston Scientific,Health Care,Health Care Equipment,USA,B,standard,43.195,-0.0538,0.5906,-0.0956,0.9331,True,True,True,True,69.2,,0.1978,0.4833,0.2619,1.6168,0.1654,0.6275,0.0452,0.0531
+BMY,Bristol Myers Squibb,Health Care,Pharmaceuticals,USA,B,standard,60.855,0.0289,0.26,0.0513,0.4465,False,True,True,False,55.3,,0.2848,0.5278,0.5235,1.2551,0.0145,0.0546,0.0569,0.1037
+AVGO,Broadcom,Information Technology,Semiconductors,USA,B,standard,338.07,0.3292,1.4332,0.1251,1.9734,True,True,True,True,49.3,,0.4081,0.3794,0.3807,1.7054,0.2438,0.216,0.0144,0.0168
+BR,Broadridge Financial Solutions,Industrials,Data Processing & Outsourced Services,USA,B,standard,189.885,-0.0464,0.8765,0.0348,1.1109,False,True,True,False,62.5,,0.174,0.855,0.3932,1.2356,0.0725,0.219,0.0519,0.0569
+BRO,Brown & Brown,Financials,Insurance Brokers,USA,B,banklike,72.845,-0.0102,0.5178,0.0188,0.4651,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+BF.B,Brown–Forman,Consumer Staples,Distillers & Vintners,USA,B,standard,30.265,-0.1835,0.3508,0.0017,0.5557,False,True,True,False,59.2,,0.2933,0.4916,0.3169,3.2394,-0.0242,-0.0209,0.0515,0.0643
+BG,Bunge Global,Consumer Staples,Agricultural Products & Services,USA,B,standard,95.955,-0.0144,0.811,0.0017,0.5557,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+BXP,"BXP, Inc.",Real Estate,Office REITs,USA,B,reit,62.745,-0.1367,1.1031,-0.0744,1.0551,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CHRW,C.H. Robinson,Industrials,Air Freight & Logistics,USA,B,standard,137.45,0.0083,1.0512,0.0348,1.1109,False,True,True,False,45.3,,0.049,3.1349,0.2759,1.5278,-0.1305,-0.1326,0.0361,0.0518
+CDNS,Cadence Design Systems,Information Technology,Application Software,USA,B,standard,305.95,0.0584,1.0705,-0.0053,1.134,True,True,True,True,52.9,,0.3115,0.5538,0.2577,2.8556,0.1414,0.0953,0.0133,0.0191
+CPT,Camden Property Trust,Real Estate,Multi-Family Residential REITs,USA,B,reit,97.967,-0.1326,0.8233,-0.1149,0.7707,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+COF,Capital One,Financials,Consumer Finance,USA,B,banklike,186.99,0.008,1.1464,0.0572,0.7682,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CAH,Cardinal Health,Health Care,Health Care Distributors,USA,B,standard,280.18,0.3129,0.5558,0.0077,0.9282,True,True,True,True,58.7,,0.0125,4.6051,0.1551,0.8827,0.0744,0.9337,0.0263,0.0693
+CCL,Carnival Corporation,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",USA,B,standard,28.52,0.0122,2.536,0.0469,1.5826,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CARR,Carrier Global,Industrials,Building Products,USA,B,standard,50.975,-0.0707,1.4626,-0.0052,1.2619,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CVNA,Carvana,Consumer Discretionary,Automotive Retail,USA,B,standard,70.69,0.3574,3.5752,-0.0061,1.2236,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CASY,Casey's,Consumer Staples,Food Retail,USA,B,standard,709.5,0.2163,0.6105,0.0017,0.5557,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CAT,Caterpillar Inc.,Industrials,Construction Machinery & Heavy Transportation Equipment,USA,B,standard,564.785,0.1582,1.7584,0.0348,1.1109,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CBOE,Cboe Global Markets,Financials,Financial Exchanges & Data,USA,B,standard,373.88,0.1712,0.362,-0.0107,1.0932,True,True,True,True,60.2,,0.3212,0.5515,0.1709,1.8717,0.06,0.6819,0.028,0.043
+CBRE,CBRE Group,Real Estate,Real Estate Services,USA,B,standard,131.39,-0.0384,1.315,-0.0744,1.0551,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CDW,CDW Corporation,Information Technology,Technology Distributors,USA,B,standard,163.82,-0.0876,0.9182,0.077,1.2644,False,True,True,False,45.6,,0.0738,1.4605,0.3611,1.1764,-0.0189,-0.0021,0.0503,0.0513
+COR,Cencora,Health Care,Health Care Distributors,USA,B,standard,351.27,0.159,0.6587,0.0077,0.9282,True,True,True,True,54.8,,0.0122,4.4725,0.1,0.9035,0.1043,0.2815,0.0228,0.0471
+CNC,Centene Corporation,Health Care,Managed Health Care,USA,B,standard,72.77,-0.0169,1.2495,0.0077,0.9282,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CNP,CenterPoint Energy,Utilities,Multi-Utilities,USA,B,standard,40.185,0.0686,0.5007,0.0321,0.4965,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CF,CF Industries,Materials,Fertilizers & Agricultural Chemicals,USA,B,standard,119.185,0.1653,0.5115,0.0334,1.0888,True,True,True,True,69.4,,0.3353,0.5142,0.2581,3.3653,-0.1412,-0.1819,0.0795,0.0984
+CRL,Charles River Laboratories,Health Care,Life Sciences Tools & Services,USA,B,standard,333.655,-0.0959,1.3919,-0.0826,1.2021,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SCHW,Charles Schwab Corporation,Financials,Investment Banking & Brokerage,USA,B,banklike,91.58,-0.0138,0.7899,0.1023,1.3644,False,True,True,False,41.7,,0.479,0.0173,0.6262,0.1007,0.0483,0.0993,0.0523,0.3069
+CHTR,Charter Communications,Communication Services,Cable & Satellite,USA,B,standard,139.195,-0.3639,0.9105,0.0246,0.9652,False,True,True,False,46.9,,0.2433,0.3601,0.6298,0.3866,0.0046,0.0561,0.2829,0.2506
+CVX,Chevron Corporation,Energy,Integrated Oil & Gas,USA,B,standard,215.72,0.1559,0.4698,0.203,0.6932,False,True,True,False,45.0,,0.0904,0.6349,0.1258,1.1547,-0.0785,-0.2869,0.0288,0.0388
+CMG,Chipotle Mexican Grill,Consumer Discretionary,Restaurants,USA,B,standard,36.065,-0.0791,1.0585,-0.0374,0.8381,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CB,Chubb Limited,Financials,Property & Casualty Insurance,CHE,A,banklike,374.545,0.0928,0.3666,0.1297,0.3444,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CHD,Church & Dwight,Consumer Staples,Household Products,USA,B,standard,112.655,0.0001,0.5208,0.0017,0.5557,False,True,True,False,59.2,,0.1737,0.6972,0.2474,1.0663,0.0489,0.2159,0.0276,0.041
+CIEN,Ciena,Information Technology,Communications Equipment,USA,B,standard,259.87,0.3553,1.3288,0.2267,1.2472,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CI,Cigna,Health Care,Health Care Services,USA,B,standard,293.25,0.0652,0.3347,0.0482,0.7298,True,True,True,True,63.5,,0.0298,1.7454,0.1992,0.8486,0.1515,0.0136,0.0771,0.1086
+CINF,Cincinnati Financial,Financials,Property & Casualty Insurance,USA,B,banklike,189.35,0.0599,0.5345,0.1297,0.3444,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CTAS,Cintas,Industrials,Diversified Support Services,USA,B,standard,222.445,0.083,0.8735,0.0348,1.1109,True,True,True,True,56.4,,0.2327,1.1069,0.257,1.434,0.0851,0.1477,0.0224,0.0211
+CSCO,Cisco,Information Technology,Communications Equipment,USA,B,standard,94.648,0.0772,1.0029,0.2267,1.2472,False,True,True,False,41.2,,0.2536,0.5027,0.2278,0.9311,0.0357,0.0275,0.0355,0.0342
+C,Citigroup,Financials,Diversified Banks,USA,B,banklike,119.37,0.0618,1.2699,0.0023,1.104,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CFG,Citizens Financial Group,Financials,Regional Banks,USA,B,banklike,63.06,0.0405,1.1933,0.0109,1.0502,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CLX,Clorox,Consumer Staples,Household Products,USA,B,standard,108.55,-0.1304,0.6436,0.0017,0.5557,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CME,CME Group,Financials,Financial Exchanges & Data,USA,B,standard,312.62,0.0773,0.1885,-0.0107,1.0932,True,True,True,True,53.4,,0.6486,0.0388,0.0172,1.0316,0.0911,0.1468,0.0358,0.0374
+CMS,CMS Energy,Utilities,Multi-Utilities,USA,B,standard,69.8,0.0107,0.4117,0.0321,0.4965,False,True,True,False,46.1,,0.2022,0.2251,0.4731,0.9786,-0.0022,0.0684,0.0496,-0.0843
+KO,Coca-Cola Company (The),Consumer Staples,Soft Drinks & Non-alcoholic Beverages,USA,B,standard,99.115,0.0807,0.3837,0.0017,0.5557,True,True,True,True,48.3,,0.311,0.4669,0.434,1.4588,0.0369,0.1155,0.0307,0.0124
+CTSH,Cognizant,Information Technology,IT Consulting & Other Services,USA,B,standard,60.11,-0.0484,0.7794,0.077,1.2644,False,True,True,False,64.7,,0.1576,1.0383,0.0557,2.1366,0.028,0.0112,0.0775,0.0901
+COHR,Coherent Corp.,Information Technology,Electronic Components,USA,B,standard,208.5,0.1976,2.3534,0.077,1.2644,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+COIN,Coinbase,Financials,Financial Exchanges & Data,USA,B,standard,116.535,-0.0682,3.2316,-0.0107,1.0932,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CL,Colgate-Palmolive,Consumer Staples,Household Products,USA,B,standard,100.09,0.0205,0.404,0.0017,0.5557,True,True,True,True,50.0,,0.2077,1.2591,0.5238,0.8331,0.0429,0.0728,0.0266,0.0453
+CMCSA,Comcast,Communication Services,Cable & Satellite,USA,B,standard,25.54,-0.1725,0.8823,0.0246,0.9652,False,True,True,False,56.2,,0.1671,0.4592,0.3629,0.882,0.0062,0.6454,0.2172,0.209
+FIX,Comfort Systems USA,Industrials,Construction & Engineering,USA,B,standard,1084.22,0.4817,1.6278,0.0348,1.1109,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+COP,ConocoPhillips,Energy,Oil & Gas Exploration & Production,USA,B,standard,139.97,0.1783,0.1706,0.1652,0.3752,True,True,True,True,57.5,,0.1924,0.4817,0.1923,1.2974,-0.0911,-0.2418,0.0464,0.0422
+ED,Consolidated Edison,Utilities,Multi-Utilities,USA,B,standard,120.14,0.0783,0.338,0.0321,0.4965,True,True,True,True,65.6,,0.1773,0.2331,0.3804,1.0206,0.0259,0.0657,0.0466,0.0008
+STZ,Constellation Brands,Consumer Staples,Distillers & Vintners,USA,B,standard,143.89,-0.1091,0.4082,0.0017,0.5557,False,True,True,False,,,0.3133,0.4197,0.5115,1.0805,-0.0112,MISSING,0.0678,0.0722
+CEG,Constellation Energy,Utilities,Electric Utilities,USA,B,standard,269.87,,,0.0544,0.598,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+COO,Cooper Companies (The),Health Care,Health Care Supplies,USA,B,standard,60.85,-0.1753,0.9933,0.0077,0.9282,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CPRT,Copart,Industrials,Diversified Support Services,USA,B,standard,31.515,-0.1165,1.0397,0.0348,1.1109,False,True,True,False,70.3,,0.3542,0.4639,0.0088,7.9123,0.0644,0.0659,0.0508,0.0434
+GLW,Corning Inc.,Information Technology,Electronic Components,USA,B,standard,107.255,0.2464,1.4343,0.077,1.2644,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CPAY,Corpay,Financials,Transaction & Payment Processing Services,USA,B,standard,452.03,0.033,0.9964,-0.1104,1.0773,True,True,True,True,39.8,,0.431,0.2041,0.3787,0.9767,0.0973,0.0656,0.0346,0.042
+CSGP,CoStar Group,Real Estate,Real Estate Services,USA,B,standard,31.11,-0.2387,0.6838,-0.0744,1.0551,False,True,True,False,,,-0.0222,0.3281,0.1124,2.8405,0.1416,-0.7219,0.0005,0.0032
+COST,Costco,Consumer Staples,Consumer Staples Merchandise Retail,USA,B,standard,1114.66,0.0864,0.8494,0.0088,0.6706,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CRH,CRH plc,Materials,Construction Materials,IRL,A,standard,91.12,0.0626,1.4566,0.0334,1.0888,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CRWD,CrowdStrike,Information Technology,Systems Software,USA,B,standard,220.31,0.2985,0.941,0.0876,1.04,True,True,True,True,,,-0.061,0.4863,0.074,1.7731,0.2901,MISSING,-0.0007,0.0056
+CCI,Crown Castle,Real Estate,Telecom Tower REITs,USA,B,reit,88.01,-0.1506,0.9917,-0.0744,1.0551,False,True,True,False,35.6,,0.4892,0.1327,0.9381,2.2168,-0.1517,-0.3604,0.0296,0.0798
+CSX,CSX Corporation,Industrials,Rail Transportation,USA,B,standard,51.39,-0.002,1.1567,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CMI,Cummins,Industrials,Construction Machinery & Heavy Transportation Equipment,USA,B,standard,431.13,0.086,1.3234,0.0348,1.1109,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+CVS,CVS Health,Health Care,Health Care Services,USA,B,standard,85.73,-0.0047,0.7541,0.0482,0.7298,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DHR,Danaher Corporation,Health Care,Life Sciences Tools & Services,USA,B,standard,226.24,-0.0987,0.8025,-0.0826,1.2021,False,True,True,False,27.9,,0.1909,0.3052,0.236,1.874,-0.0267,-0.1944,0.0226,0.0329
+DRI,Darden Restaurants,Consumer Discretionary,Restaurants,USA,B,standard,231.39,0.0535,0.7004,-0.0374,0.8381,True,True,True,True,44.3,,0.1216,1.0382,0.4917,0.3137,0.08,0.0911,0.0457,0.0412
+DDOG,Datadog,Information Technology,Application Software,USA,B,standard,166.63,0.0824,1.3136,-0.0053,1.134,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DVA,DaVita,Health Care,Health Care Services,USA,B,standard,173.32,0.0927,0.9932,0.0482,0.7298,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DECK,Deckers Brands,Consumer Discretionary,Footwear,USA,B,standard,81.625,0.0063,1.0752,-0.0061,1.2236,True,True,True,True,89.2,,0.2308,1.5079,0.1017,3.545,0.1469,0.2955,0.0896,0.096
+DE,Deere & Company,Industrials,Agricultural & Farm Machinery,USA,B,standard,646.79,0.0856,0.9782,0.0348,1.1109,True,True,True,True,24.3,,0.1884,0.4188,0.6062,2.3079,-0.045,-0.0737,0.0287,0.0185
+DELL,Dell Technologies,Information Technology,"Technology Hardware, Storage & Peripherals",USA,B,standard,319.45,0.4264,1.4831,0.2885,1.6186,True,True,True,True,45.2,,0.0744,1.2543,0.311,0.9104,0.0353,0.3889,0.0285,0.0411
+DAL,Delta Air Lines,Industrials,Passenger Airlines,USA,B,standard,85.1,0.0944,1.4376,0.0348,1.1109,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DVN,Devon Energy,Energy,Oil & Gas Exploration & Production,USA,B,standard,43.83,0.0967,0.4566,0.1652,0.3752,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DXCM,Dexcom,Health Care,Health Care Equipment,USA,B,standard,81.915,-0.1401,1.3795,-0.0956,0.9331,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+FANG,Diamondback Energy,Energy,Oil & Gas Exploration & Production,USA,B,standard,177.61,0.1583,0.4434,0.1652,0.3752,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DLR,Digital Realty,Real Estate,Data Center REITs,USA,B,reit,176.765,-0.0142,1.0006,-0.0744,1.0551,True,True,True,True,43.3,,0.1509,0.1291,0.3978,2.1056,0.0922,0.4775,0.0521,0.0397
+DG,Dollar General,Consumer Staples,Consumer Staples Merchandise Retail,USA,B,standard,133.88,-0.0808,0.318,0.0088,0.6706,False,True,True,False,57.5,,0.0516,1.3761,0.5076,1.1346,0.0413,-0.1376,0.0513,0.0812
+DLTR,Dollar Tree,Consumer Staples,Consumer Staples Merchandise Retail,USA,B,standard,138.96,0.0245,0.6605,0.0088,0.6706,True,True,True,True,55.8,,0.0852,1.2091,0.5239,1.0674,0.08,-0.048,0.0465,0.0508
+D,Dominion Energy,Utilities,Multi-Utilities,USA,B,standard,67.465,-0.043,0.6852,0.0321,0.4965,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DPZ,Domino's,Consumer Discretionary,Restaurants,USA,B,standard,348.53,-0.1312,1.0396,-0.0374,0.8381,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DASH,DoorDash,Consumer Discretionary,Specialized Consumer Services,USA,B,standard,165.855,-0.0883,2.1528,-0.0061,1.2236,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DOV,Dover Corporation,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,202.28,-0.0369,1.1814,-0.0092,1.0529,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DOW,Dow Inc.,Materials,Commodity Chemicals,USA,B,standard,31.595,-0.0556,0.5065,0.0334,1.0888,False,True,True,False,,,0.004,0.69,0.3348,1.9669,-0.1111,MISSING,-0.1162,-0.0639
+DHI,D. R. Horton,Consumer Discretionary,Homebuilding,USA,B,standard,143.35,0.031,1.516,-0.0061,1.2236,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DTE,DTE Energy,Utilities,Multi-Utilities,USA,B,standard,137.41,0.0158,0.4533,0.0321,0.4965,False,True,True,False,45.3,,0.1599,0.3073,0.4863,0.8038,-0.0631,0.0839,0.0511,-0.0357
+DUK,Duke Energy,Utilities,Electric Utilities,USA,B,standard,130.44,0.0292,0.4275,0.0544,0.598,False,True,True,False,55.5,,0.2661,0.1687,0.4642,0.5518,0.0387,0.2375,0.0484,-0.0167
+DD,DuPont,Industrials,Industrial Conglomerates,USA,B,standard,150.11,0.0335,1.2061,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ETN,Eaton Corporation,Industrials,Electrical Components & Equipment,IRL,A,standard,333.88,0.1005,1.1374,0.2144,1.7639,False,True,True,False,55.7,,0.1898,0.6894,0.2553,1.3186,0.0977,0.1939,0.0316,0.0274
+EBAY,eBay Inc.,Consumer Discretionary,Broadline Retail,USA,B,standard,117.655,0.0217,1.3873,-0.0061,1.2236,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ECHO,EchoStar,Communication Services,Wireless Telecommunication Services,USA,B,standard,99.47,0.3651,1.2343,0.0246,0.9652,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ECL,Ecolab,Materials,Specialty Chemicals,USA,B,standard,304.86,-0.0003,0.8838,-0.0855,1.0126,True,True,True,True,51.4,,0.1799,0.6831,0.3643,1.076,0.0426,0.2409,0.0241,0.0221
+EIX,Edison International,Utilities,Electric Utilities,USA,B,standard,62.45,-0.0014,0.6628,0.0544,0.598,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+EW,Edwards Lifesciences,Health Care,Health Care Equipment,USA,B,standard,105.955,-0.1072,0.8905,-0.0956,0.9331,False,True,True,False,50.0,,0.2697,0.4536,0.0515,3.7156,0.1077,-0.0914,0.0174,0.0217
+ELV,Elevance Health,Health Care,Managed Health Care,USA,B,standard,434.91,-0.0376,0.6897,0.0077,0.9282,False,True,True,False,,,MISSING,1.6706,0.2638,MISSING,0.0834,0.0053,0.059,0.0331
+EME,Emcor,Industrials,Construction & Engineering,USA,B,standard,642.545,0.2844,1.1394,0.0348,1.1109,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+EMR,Emerson Electric,Industrials,Electrical Components & Equipment,USA,B,standard,158.973,0.042,1.2341,0.2144,1.7639,False,True,True,False,38.5,,0.2116,0.4531,0.3078,0.9406,0.0777,-0.4062,0.0304,0.0399
+ETR,Entergy,Utilities,Electric Utilities,USA,B,standard,108.515,0.1365,0.4978,0.0544,0.598,True,True,True,True,42.2,,0.2483,0.1894,0.4303,0.7423,-0.0202,0.1335,0.0358,-0.0569
+EOG,EOG Resources,Energy,Oil & Gas Exploration & Production,USA,B,standard,154.765,0.1507,0.3074,0.1652,0.3752,False,True,True,False,68.8,,0.3211,0.4563,0.1623,1.6321,-0.0851,-0.1164,0.0598,0.0415
+EQT,EQT Corporation,Energy,Oil & Gas Exploration & Production,USA,B,standard,50.33,0.2183,0.6074,0.1652,0.3752,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+EFX,Equifax,Industrials,Research & Consulting Services,USA,B,standard,182.9,-0.1346,1.3787,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+EQIX,Equinix,Real Estate,Data Center REITs,USA,B,reit,1035.725,-0.0254,1.1085,-0.0744,1.0551,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ERIE,Erie Indemnity,Financials,Insurance Brokers,USA,B,banklike,275.43,0.0603,0.2279,0.0188,0.4651,True,True,True,True,62.0,,0.1713,0.1792,0.0,0.6805,0.1332,0.2325,0.0388,0.1585
+ESS,Essex Property Trust,Real Estate,Multi-Family Residential REITs,USA,B,reit,271.055,-0.0792,0.7207,-0.1149,0.7707,True,True,True,True,49.0,,0.3189,0.1447,0.5207,2.3293,0.0551,0.1837,0.0731,0.0615
+EL,Estée Lauder Companies (The),Consumer Staples,Personal Care Products,USA,B,standard,105.1,-0.2457,1.4592,0.0017,0.5557,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+EG,Everest Group,Financials,Reinsurance,BMU,B*,banklike,426.092,0.0798,0.2437,0.0572,0.7682,True,True,True,True,72.7,,0.1096,0.0265,0.2321,0.2473,0.1284,0.3551,0.0907,0.8915
+EVRG,Evergy,Utilities,Electric Utilities,USA,B,standard,87.41,0.0393,0.5519,0.0544,0.598,False,True,True,False,35.9,,0.2571,0.18,0.4478,0.4913,0.0058,0.0383,0.0425,-0.0373
+P,Everpure,Information Technology,"Technology Hardware, Storage & Peripherals",USA,B,standard,101.93,0.3113,1.1869,0.2885,1.6186,True,True,True,True,51.8,,0.0313,0.8481,0.0464,1.6039,0.0998,0.3372,0.0057,0.0185
+ES,Eversource Energy,Utilities,Electric Utilities,USA,B,standard,71.665,-0.0703,0.8223,0.0544,0.598,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+EXC,Exelon,Utilities,Electric Utilities,USA,B,standard,46.061,0.0329,0.3227,0.0544,0.598,False,True,True,False,68.0,,0.2121,0.2162,0.4296,0.924,0.0834,0.0918,0.0588,-0.0483
+EXE,Expand Energy,Energy,Oil & Gas Exploration & Production,USA,B,standard,84.8,0.0974,0.3677,0.1652,0.3752,False,True,True,False,61.2,,0.2273,0.4339,0.1789,1.0052,0.0213,-0.3901,0.0897,0.081
+EXPE,Expedia Group,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",USA,B,standard,245.925,0.0714,1.448,0.0469,1.5826,True,True,True,True,58.0,,0.1468,0.6291,0.2624,0.7324,0.0809,0.6535,0.043,0.1032
+EXPD,Expeditors International,Industrials,Air Freight & Logistics,USA,B,standard,190.77,0.0217,1.1707,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+EXR,Extra Space Storage,Real Estate,Self-Storage REITs,USA,B,reit,157.615,-0.0863,1.1327,-0.0744,1.0551,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+XOM,ExxonMobil,Energy,Integrated Oil & Gas,USA,B,standard,166.85,0.2339,0.1984,0.203,0.6932,True,True,True,True,57.5,,0.1048,0.7178,0.097,1.1528,-0.0669,-0.2035,0.0414,0.0339
+FFIV,"F5, Inc.",Information Technology,Communications Equipment,USA,B,standard,305.41,0.0303,1.0751,0.2267,1.2472,False,True,True,False,64.3,,0.2563,0.5176,0.0414,1.5619,0.0463,0.241,0.0393,0.0514
+FDS,FactSet,Financials,Financial Exchanges & Data,USA,B,standard,318.135,-0.0902,0.622,-0.0107,1.0932,False,True,True,False,38.6,,0.2827,0.5865,0.3726,0.5983,0.0589,0.0659,0.0475,0.0631
+FICO,Fair Isaac,Information Technology,Application Software,USA,B,standard,687.67,0.091,1.4816,-0.0053,1.134,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+FAST,Fastenal,Industrials,Trading Companies & Distributors,USA,B,standard,54.425,0.0863,0.6724,0.0348,1.1109,True,True,True,True,55.1,,0.2019,1.682,0.0875,4.852,0.0552,0.0487,0.0201,0.0168
+FRT,Federal Realty Investment Trust,Real Estate,Retail REITs,USA,B,reit,112.8,-0.0617,1.0317,-0.0263,1.0064,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+FDX,FedEx,Industrials,Air Freight & Logistics,USA,B,standard,319.05,0.039,1.3986,0.0348,1.1109,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+FDXF,FedEx Freight,Industrials,Cargo Ground Transportation,USA,B,standard,131.72,,,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+FERG,Ferguson Enterprises,Industrials,Trading Companies & Distributors,USA,B,standard,249.81,0.0348,1.2128,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+FIS,Fidelity National Information Services,Financials,Transaction & Payment Processing Services,USA,B,standard,27.495,-0.2242,0.8378,-0.1104,1.0773,False,True,True,False,,,0.1647,0.3174,0.3981,0.5893,0.0318,MISSING,0.027,0.1293
+FITB,Fifth Third Bancorp,Financials,Regional Banks,USA,B,banklike,52.41,0.0126,1.0753,0.0109,1.0502,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+FSLR,First Solar,Information Technology,Semiconductors,USA,B,standard,153.36,0.0652,1.7619,0.1251,1.9734,False,True,True,False,,,0.3059,0.4102,0.0492,2.6746,0.2584,MISSING,0.0929,0.0721
+FE,FirstEnergy,Utilities,Electric Utilities,USA,B,standard,47.145,0.024,0.4772,0.0544,0.598,False,True,True,False,49.2,,0.1877,0.2796,0.475,0.5652,0.0659,0.3534,0.0374,-0.0369
+FISV,Fiserv,Financials,Transaction & Payment Processing Services,USA,B,standard,62.5,-0.1526,0.8255,-0.1104,1.0773,False,True,True,False,58.0,,0.2689,0.2694,0.3634,1.032,0.0611,0.1748,0.1043,0.1288
+FLEX,Flex Ltd.,Information Technology,Electronic Manufacturing Services,USA,B,standard,72.07,0.329,1.8021,0.077,1.2644,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+F,Ford Motor Company,Consumer Discretionary,Automobile Manufacturers,USA,B,standard,11.325,-0.0845,1.9433,-0.0061,1.2236,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+FTNT,Fortinet,Information Technology,Systems Software,USA,B,standard,124.22,0.1278,0.983,0.0876,1.04,True,True,True,True,61.4,,0.3066,0.6748,0.0959,1.1721,0.1546,0.3167,0.0201,0.0241
+FTV,Fortive,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,66.405,-0.0491,1.0584,-0.0092,1.0529,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+FOXA,Fox Corporation (Class A),Communication Services,Broadcasting,USA,B,standard,66.785,0.0599,0.6645,0.0246,0.9652,True,True,True,True,62.5,,0.2041,0.7499,0.3366,3.1695,0.0472,0.1812,0.0601,0.0524
+BEN,Franklin Resources,Financials,Asset Management & Custody Banks,USA,B,banklike,34.4,-0.0539,1.7392,-0.0135,1.4671,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+FCX,Freeport-McMoRan,Materials,Copper,USA,B,standard,54.93,0.0401,1.693,0.0334,1.0888,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+GRMN,Garmin,Consumer Discretionary,Consumer Electronics,CHE,A,standard,275.56,0.0852,0.9687,-0.0061,1.2236,True,True,True,True,63.6,,0.2589,0.7026,0.015,3.6325,0.1424,0.1945,0.0313,0.0257
+IT,Gartner,Information Technology,IT Consulting & Other Services,USA,B,standard,183.545,-0.0945,0.8213,0.077,1.2644,False,True,True,False,50.0,,0.181,0.7819,0.4141,0.9986,0.0587,-0.0105,0.0561,0.0904
+GE,GE Aerospace,Industrials,Aerospace & Defense,USA,B,standard,323.5,0.223,1.5894,0.1022,0.7981,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+GEHC,GE HealthCare,Health Care,Health Care Equipment,USA,B,standard,82.29,,,-0.0956,0.9331,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+GEV,GE Vernova,Industrials,Heavy Electrical Equipment,USA,B,standard,767.02,,,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+GEN,Gen Digital,Information Technology,Systems Software,USA,B,standard,29.78,-0.0042,1.269,0.0876,1.04,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+GNRC,Generac,Industrials,Heavy Electrical Equipment,USA,B,standard,184.182,-0.1913,2.0442,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+GD,General Dynamics,Industrials,Aerospace & Defense,USA,B,standard,355.125,0.0988,0.3195,0.1022,0.7981,False,True,True,False,63.2,,0.1019,0.929,0.171,1.4437,0.1007,0.0822,0.0438,0.0412
+GIS,General Mills,Consumer Staples,Packaged Foods & Meats,USA,B,standard,35.03,-0.0954,0.0618,-0.0631,0.341,False,True,True,False,,,0.1524,0.5841,0.4644,0.6818,-0.0285,MISSING,-0.0047,0.087
+GM,General Motors,Consumer Discretionary,Automobile Manufacturers,USA,B,standard,83.93,0.0262,1.3936,-0.0061,1.2236,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+GPC,Genuine Parts Company,Consumer Discretionary,Distributors,USA,B,standard,121.2,-0.0354,0.6746,-0.0061,1.2236,False,True,True,False,24.4,,0.05,1.2126,0.3143,1.0794,0.0322,-0.6161,0.004,0.0252
+GILD,Gilead Sciences,Health Care,Biotechnology,USA,B,standard,169.63,0.1936,0.3891,0.1176,0.4899,True,True,True,True,54.8,,0.3974,0.4989,0.4225,1.5527,0.0257,0.2304,0.0404,0.0449
+GPN,Global Payments,Financials,Transaction & Payment Processing Services,USA,B,standard,86.88,-0.1097,0.8279,-0.1104,1.0773,True,True,True,True,48.9,,0.191,0.1538,0.4099,1.6901,-0.0496,1.4357,0.0681,0.0991
+GL,Globe Life,Financials,Life & Health Insurance,USA,B,banklike,158.2,0.0886,0.491,0.0671,0.7421,True,True,True,True,61.1,,0.2396,0.0388,0.4394,0.1939,0.0467,0.235,0.0928,0.4775
+GDDY,GoDaddy,Information Technology,Internet Services & Infrastructure,USA,B,standard,107.28,0.0599,0.8762,0.077,1.2644,False,True,True,False,57.4,,0.2299,0.6086,0.4807,0.6146,0.0656,0.4162,0.0605,0.109
+GS,Goldman Sachs,Financials,Investment Banking & Brokerage,USA,B,banklike,873.99,0.0838,1.3627,0.1023,1.3644,False,True,True,False,41.7,,0.3749,0.0094,3.0899,0.0691,0.0716,0.1952,0.0629,0.4823
+HAL,Halliburton,Energy,Oil & Gas Equipment & Services,USA,B,standard,32.115,0.0846,0.8376,0.203,0.6932,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+HIG,Hartford (The),Financials,Property & Casualty Insurance,USA,B,banklike,136.325,0.0866,0.5278,0.1297,0.3444,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+HAS,Hasbro,Consumer Discretionary,Leisure Products,USA,B,standard,118.73,0.0679,0.4555,-0.0061,1.2236,True,True,True,True,,,0.225,0.7906,0.5936,1.3808,-0.0706,MISSING,-0.0193,0.0417
+HCA,HCA Healthcare,Health Care,Health Care Facilities,USA,B,standard,500.14,0.0674,1.2391,0.0077,0.9282,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DOC,Healthpeak Properties,Real Estate,Health Care REITs,USA,B,reit,19.375,-0.1471,1.1701,-0.0744,1.0551,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+HSIC,Henry Schein,Health Care,Health Care Distributors,USA,B,standard,83.515,-0.0541,1.0367,0.0077,0.9282,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+HSY,Hershey Company (The),Consumer Staples,Packaged Foods & Meats,USA,B,standard,174.22,-0.006,0.1248,-0.0631,0.341,True,True,True,True,45.8,,0.125,0.8762,0.4176,1.1916,0.0392,-0.1831,0.025,0.0495
+HPE,Hewlett Packard Enterprise,Information Technology,"Technology Hardware, Storage & Peripherals",USA,B,standard,45.47,0.2288,1.4593,0.2885,1.6186,False,True,True,False,,,0.0479,0.4661,0.3172,1.0142,0.0637,MISSING,-0.001,0.0105
+HLT,Hilton Worldwide,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",USA,B,standard,371.22,0.1022,1.0887,0.0469,1.5826,True,True,True,True,33.5,,0.2237,0.7231,0.7806,0.6646,0.1113,0.1055,0.017,0.0227
+HD,Home Depot (The),Consumer Discretionary,Home Improvement Retail,USA,B,standard,339.045,-0.0755,1.0077,-0.0061,1.2236,False,True,True,False,37.5,,0.1268,1.6369,0.6218,1.0607,0.0152,-0.0518,0.0419,0.0375
+HONA,Honeywell Aerospace,Industrials,Aerospace & Defense,USA,B,standard,161.325,,,0.1022,0.7981,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+HON,Honeywell Technologies,Industrials,Industrial Conglomerates,USA,B,standard,219.14,-0.049,0.8692,0.0348,1.1109,False,True,True,False,48.0,,0.1754,0.503,0.4827,1.2978,0.0182,0.032,0.0679,0.0779
+HRL,Hormel Foods,Consumer Staples,Packaged Foods & Meats,USA,B,standard,22.755,-0.1346,0.3159,-0.0631,0.341,False,True,True,False,46.7,,0.0739,0.9025,0.2134,2.4664,-0.0095,-0.2181,0.0382,0.0427
+HST,Host Hotels & Resorts,Real Estate,Hotel & Resort REITs,USA,B,reit,25.579,0.0552,1.1267,-0.0744,1.0551,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+HWM,Howmet Aerospace,Industrials,Aerospace & Defense,USA,B,standard,213.16,0.309,1.4444,0.1022,0.7981,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+HPQ,HP Inc.,Information Technology,"Technology Hardware, Storage & Peripherals",USA,B,standard,28.665,-0.036,1.1687,0.2885,1.6186,False,True,True,False,46.3,,0.0655,1.354,0.2605,0.7674,-0.0421,-0.0458,0.0958,0.106
+HUBB,Hubbell Incorporated,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,421.205,0.1076,0.8345,-0.0092,1.0529,True,True,True,True,61.1,,0.2068,0.7753,0.3023,1.7194,0.0571,0.206,0.0395,0.039
+HUM,Humana,Health Care,Managed Health Care,USA,B,standard,440.19,-0.0163,0.6539,0.0077,0.9282,False,True,True,False,,,MISSING,2.7187,0.2529,MISSING,0.1177,-0.2362,0.0224,0.0071
+HBAN,Huntington Bancshares,Financials,Regional Banks,USA,B,banklike,15.25,-0.0244,1.0208,0.0109,1.0502,False,True,True,False,47.2,,0.3306,0.0097,0.7584,0.1081,0.0388,-0.014,0.0873,1.0182
+HII,Huntington Ingalls Industries,Industrials,Aerospace & Defense,USA,B,standard,295.84,0.1135,0.2472,0.1022,0.7981,True,True,True,True,53.7,,0.0489,1.0031,0.2293,1.1333,0.0535,0.0215,0.0521,0.0684
+IBM,IBM,Information Technology,IT Consulting & Other Services,USA,B,standard,232.3,0.1518,0.7534,0.077,1.2644,True,True,True,True,47.4,,0.185,0.4673,0.4254,0.9557,0.0372,0.8376,0.0487,0.0526
+IEX,IDEX Corporation,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,232.27,-0.0586,1.0069,-0.0092,1.0529,False,True,True,False,44.6,,0.2082,0.5058,0.2669,2.8558,0.0281,-0.0597,0.0279,0.0356
+IDXX,Idexx Laboratories,Health Care,Health Care Equipment,USA,B,standard,689.99,-0.1314,1.7055,-0.0956,0.9331,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ITW,Illinois Tool Works,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,281.57,-0.0188,1.0065,-0.0092,1.0529,False,True,True,False,43.9,,0.2628,1.028,0.5704,1.2095,0.0023,0.024,0.0377,0.0333
+ILMN,"Illumina, Inc.",Health Care,Life Sciences Tools & Services,USA,B,standard,200.94,-0.1364,1.4365,-0.0826,1.2021,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+INCY,Incyte,Health Care,Biotechnology,USA,B,standard,119.66,0.056,0.8348,0.1176,0.4899,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+IR,Ingersoll Rand,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,82.4,0.0029,1.1662,-0.0092,1.0529,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PODD,Insulet Corporation,Health Care,Health Care Equipment,USA,B,standard,146.34,-0.1732,1.1678,-0.0956,0.9331,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+INTC,Intel,Information Technology,Semiconductors,USA,B,standard,53.679,0.0933,2.6189,0.1251,1.9734,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+IBKR,Interactive Brokers,Financials,Investment Banking & Brokerage,USA,B,banklike,76.28,0.2318,1.3049,0.1023,1.3644,True,True,True,True,49.1,,0.4667,0.0056,0.0035,0.0264,0.346,0.3329,0.029,0.1578
+ICE,Intercontinental Exchange,Financials,Financial Exchanges & Data,USA,B,standard,173.53,-0.0143,0.8873,-0.0107,1.0932,False,True,True,False,51.1,,0.3955,0.0915,0.1481,1.0198,0.0947,0.3077,0.0337,0.0393
+IFF,International Flavors & Fragrances,Materials,Specialty Chemicals,USA,B,standard,79.98,-0.136,1.0656,-0.0855,1.0126,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+IP,International Paper,Materials,Paper & Plastic Packaging Products & Materials,USA,B,standard,32.36,-0.0746,1.1293,-0.041,0.9273,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+INTU,Intuit,Information Technology,Application Software,USA,B,standard,325.455,-0.1366,0.7745,-0.0053,1.134,False,True,True,False,71.0,,0.288,0.5817,0.2289,1.5065,0.1429,0.2504,0.0523,0.0987
+ISRG,Intuitive Surgical,Health Care,Health Care Equipment,USA,B,standard,430.695,-0.0396,1.4112,-0.0956,0.9331,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+IVZ,Invesco,Financials,Asset Management & Custody Banks,USA,B,banklike,28.715,-0.0358,1.8333,-0.0135,1.4671,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+INVH,Invitation Homes,Real Estate,Single-Family Residential REITs,USA,B,reit,26.715,-0.1306,0.865,-0.0744,1.0551,False,True,True,False,53.8,,0.2757,0.146,0.4486,2.1295,0.0684,0.1507,0.0817,0.0739
+IQV,IQVIA,Health Care,Life Sciences Tools & Services,USA,B,standard,258.66,-0.0571,1.1564,-0.0826,1.2021,True,True,True,True,37.5,,0.1402,0.5739,0.5326,0.7495,0.0421,0.1108,0.031,0.0468
+IRM,Iron Mountain,Real Estate,Other Specialized REITs,USA,B,reit,110.97,0.1454,1.2622,-0.0744,1.0551,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+JBHT,J.B. Hunt,Industrials,Cargo Ground Transportation,USA,B,standard,224.56,-0.057,1.371,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+JBL,Jabil,Information Technology,Electronic Manufacturing Services,USA,B,standard,243.12,0.2367,1.3863,0.077,1.2644,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+JKHY,Jack Henry & Associates,Financials,Transaction & Payment Processing Services,USA,B,standard,176.2,-0.0399,0.5366,-0.1104,1.0773,True,True,True,True,60.2,,0.2496,0.8221,0.0127,1.1669,0.0699,0.1161,0.0407,0.041
+J,Jacobs Solutions,Industrials,Construction & Engineering,USA,B,standard,158.86,0.0031,0.6952,0.0348,1.1109,False,True,True,False,38.2,,0.0718,1.0455,0.2408,1.3009,0.0713,-0.2182,0.0153,0.0321
+JNJ,Johnson & Johnson,Health Care,Pharmaceuticals,USA,B,standard,278.27,0.0893,0.2837,0.0513,0.4465,True,True,True,True,50.5,,0.2717,0.4966,0.2406,1.0277,0.056,0.179,0.04,0.0288
+JCI,Johnson Controls,Industrials,Building Products,IRL,A,standard,136.125,0.0687,1.4222,-0.0052,1.2619,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+JPM,JPMorgan Chase,Financials,Diversified Banks,USA,B,banklike,329.86,0.0782,1.0825,0.0023,1.104,True,True,True,True,49.1,,0.3992,0.0132,1.3795,0.0819,0.125,0.1831,0.0626,0.4075
+KDP,Keurig Dr Pepper,Consumer Staples,Soft Drinks & Non-alcoholic Beverages,USA,B,standard,34.715,-0.0195,0.4192,0.0017,0.5557,False,True,True,False,49.2,,0.22,0.305,0.291,0.6352,0.0571,0.1485,0.0441,0.0315
+KEY,KeyCorp,Financials,Regional Banks,USA,B,banklike,20.815,-0.0306,1.1956,0.0109,1.0502,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+KEYS,Keysight Technologies,Information Technology,Electronic Equipment & Instruments,USA,B,standard,283.34,0.0372,1.3094,0.077,1.2644,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+KMB,Kimberly-Clark,Consumer Staples,Household Products,USA,B,standard,108.335,-0.0351,0.3359,0.0017,0.5557,False,True,True,False,48.3,,0.1429,0.9777,0.4267,0.7453,-0.0658,0.0194,0.0562,0.0456
+KIM,Kimco Realty,Real Estate,Retail REITs,USA,B,reit,25.595,-0.0189,0.9766,-0.0263,1.0064,True,True,True,True,54.8,,0.3353,0.107,0.4219,2.1735,0.074,0.7241,0.0665,0.0649
+KMI,Kinder Morgan,Energy,Oil & Gas Storage & Transportation,USA,B,standard,31.612,0.1339,0.632,0.203,0.6932,False,True,True,False,46.2,,0.2789,0.235,0.4369,0.6372,-0.0409,0.0695,0.0432,0.0411
+KKR,KKR & Co.,Financials,Asset Management & Custody Banks,USA,B,banklike,94.91,-0.0357,1.6681,-0.0135,1.4671,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+KLAC,KLA Corporation,Information Technology,Semiconductor Materials & Equipment,USA,B,standard,141.685,0.2519,1.6614,0.077,1.2644,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+KHC,Kraft Heinz,Consumer Staples,Packaged Foods & Meats,USA,B,standard,25.195,-0.0579,0.1856,-0.0631,0.341,True,True,True,True,,,0.1859,0.2933,0.2594,1.1537,-0.0198,MISSING,-0.196,0.1228
+KR,Kroger,Consumer Staples,Food Retail,USA,B,standard,70.46,0.0886,0.3567,0.0017,0.5557,True,True,True,True,37.5,,0.0128,2.8789,0.4943,0.801,-0.0014,-0.2046,0.0233,0.0798
+LHX,L3Harris,Industrials,Aerospace & Defense,USA,B,standard,258.88,0.0145,0.5184,0.1022,0.7981,False,True,True,False,52.7,,0.0983,0.5256,0.2698,1.1892,0.0862,0.1582,0.0332,0.0554
+LH,Labcorp,Health Care,Health Care Services,USA,B,standard,368.745,0.0127,0.9423,0.0482,0.7298,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+LRCX,Lam Research,Information Technology,Semiconductor Materials & Equipment,USA,B,standard,206.391,0.2391,2.1496,0.077,1.2644,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+LVS,Las Vegas Sands,Consumer Discretionary,Casinos & Gaming,USA,B,standard,39.51,-0.0356,0.8802,-0.0061,1.2236,False,True,True,False,55.7,,0.2373,0.6113,0.7201,1.1445,0.4686,-0.007,0.061,0.0668
+LDOS,Leidos,Industrials,Diversified Support Services,USA,B,standard,128.69,0.053,0.5938,0.0348,1.1109,True,True,True,True,69.3,,0.1223,1.296,0.388,1.7029,0.0606,0.3096,0.089,0.0999
+LEN,Lennar,Consumer Discretionary,Homebuilding,USA,B,standard,82.82,-0.0864,1.5114,-0.0061,1.2236,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+LII,Lennox International,Industrials,Building Products,USA,B,standard,333.955,-0.0371,1.267,-0.0052,1.2619,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+LLY,Lilly (Eli),Health Care,Pharmaceuticals,USA,B,standard,1404.33,0.3467,0.3286,0.0513,0.4465,True,True,True,True,56.7,,0.4556,0.6818,0.3779,1.5791,0.3169,0.5171,0.0164,0.0047
+LIN,Linde plc,Materials,Industrial Gases,GBR,B,standard,518.66,0.0378,0.757,0.0334,1.0888,True,True,True,True,43.1,,0.2723,0.4071,0.3233,0.8768,0.0062,0.2108,0.0287,0.0212
+LYV,Live Nation Entertainment,Communication Services,Movies & Entertainment,USA,B,standard,176.52,0.04,1.1635,-0.0592,1.3958,True,True,True,True,,,0.0489,1.1845,0.4541,0.9951,0.1474,MISSING,-0.0013,0.0073
+LMT,Lockheed Martin,Industrials,Aerospace & Defense,USA,B,standard,585.85,0.1492,0.1438,0.1022,0.7981,True,True,True,True,42.9,,0.103,1.3,0.3626,1.0869,0.0438,-0.0026,0.0374,0.0515
+L,Loews Corporation,Financials,Multi-line Insurance,USA,B,banklike,110.52,0.0812,0.5348,0.0572,0.7682,True,True,True,True,57.9,,0.1256,0.0198,0.5078,0.2164,0.0896,0.331,0.0732,0.8207
+LOW,Lowe's,Consumer Discretionary,Home Improvement Retail,USA,B,standard,221.52,-0.0732,0.8847,-0.0061,1.2236,False,True,True,False,41.5,,0.1177,1.7746,0.8252,1.0767,-0.0385,0.0523,0.0534,0.0616
+LULU,Lululemon Athletica,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",CAN,A,standard,104.185,-0.3015,0.8073,-0.0061,1.2236,False,True,True,False,80.1,,0.1991,1.3826,0.2127,2.2583,0.1103,0.2568,0.1246,0.0727
+LITE,Lumentum,Information Technology,Communications Equipment,USA,B,standard,551.703,0.4907,1.6992,0.2267,1.2472,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+LYB,LyondellBasell,Materials,Specialty Chemicals,NLD,A,standard,60.85,0.0027,0.3536,-0.0855,1.0126,True,True,True,True,,,0.0276,0.8646,0.4304,1.7732,-0.1577,MISSING,-0.0384,0.0196
+MTB,M&T Bank,Financials,Regional Banks,USA,B,banklike,215.675,0.0613,0.7138,0.0109,1.0502,True,True,True,True,60.6,,0.3833,0.0128,0.4459,0.1367,0.0633,0.1382,0.0824,0.891
+MPC,Marathon Petroleum,Energy,Oil & Gas Refining & Marketing,USA,B,standard,394.91,0.3861,0.5478,0.203,0.6932,True,True,True,True,42.5,,0.0435,1.6301,0.4092,1.2593,-0.0923,-0.2224,0.0348,0.041
+MAR,Marriott International,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",USA,B,standard,424.675,0.1093,1.152,0.0469,1.5826,True,True,True,True,31.8,,0.1581,0.9749,0.6203,0.4268,0.0802,0.0952,0.023,0.0231
+MRSH,Marsh McLennan,Financials,Insurance Brokers,USA,B,banklike,207.0,-0.0008,0.5491,0.0188,0.4651,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MLM,Martin Marietta Materials,Materials,Construction Materials,USA,B,standard,505.46,-0.0072,1.0499,0.0334,1.0888,False,True,True,False,58.3,,0.2366,0.3335,0.3049,3.5676,-0.0006,0.1061,0.0373,0.0321
+MRVL,Marvell Technology,Information Technology,Semiconductors,USA,B,standard,145.66,0.2358,2.2207,0.1251,1.9734,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MAS,Masco,Industrials,Building Products,USA,B,standard,83.53,-0.0211,1.3468,-0.0052,1.2619,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MA,Mastercard,Financials,Transaction & Payment Processing Services,USA,B,standard,649.63,0.0646,0.802,-0.1104,1.0773,True,True,True,True,56.8,,0.5951,0.6415,0.3508,1.035,0.1382,0.1736,0.0258,0.0283
+MKC,McCormick & Company,Consumer Staples,Packaged Foods & Meats,USA,B,standard,45.75,-0.1348,0.776,-0.0631,0.341,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MCD,McDonald's,Consumer Discretionary,Restaurants,USA,B,standard,276.06,-0.0208,0.4713,-0.0374,0.8381,True,True,True,True,39.8,,0.461,0.4688,0.921,0.9546,0.0506,0.1278,0.0437,0.0366
+MCK,McKesson,Health Care,Health Care Distributors,USA,B,standard,1091.255,0.2989,0.2496,0.0077,0.9282,True,True,True,True,58.7,,0.016,5.1241,0.1046,0.8537,0.1339,0.1531,0.0364,0.0413
+MDT,Medtronic,Health Care,Health Care Equipment,IRL,A,standard,102.61,-0.0627,0.6024,-0.0956,0.9331,True,True,True,True,50.5,,0.1878,0.3937,0.3006,2.1262,0.0521,0.0977,0.0365,0.0413
+MRK,Merck & Co.,Health Care,Pharmaceuticals,USA,B,standard,143.505,0.113,0.1855,0.0513,0.4465,True,True,True,True,51.9,,0.3401,0.512,0.3605,1.5362,0.0312,0.0843,0.0514,0.0348
+META,Meta Platforms,Communication Services,Interactive Media & Services,USA,B,standard,619.69,0.0933,1.3759,0.0246,0.9652,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MET,MetLife,Financials,Life & Health Insurance,USA,B,banklike,101.18,0.0602,0.8163,0.0671,0.7421,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MTD,Mettler Toledo,Health Care,Life Sciences Tools & Services,USA,B,standard,1706.912,-0.0582,1.2441,-0.0826,1.2021,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MGM,MGM Resorts,Consumer Discretionary,Casinos & Gaming,USA,B,standard,33.46,-0.1634,1.4566,-0.0061,1.2236,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MCHP,Microchip Technology,Information Technology,Semiconductors,USA,B,standard,59.29,-0.0581,2.018,0.1251,1.9734,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MU,Micron Technology,Information Technology,Semiconductors,USA,B,standard,696.015,0.5049,2.5932,0.1251,1.9734,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MSFT,Microsoft,Information Technology,Systems Software,USA,B,standard,506.67,0.0258,0.993,0.0876,1.04,False,True,True,False,62.9,,0.4678,0.4818,0.0749,1.2303,0.1612,0.2286,0.0355,0.0178
+MAA,Mid-America Apartment Communities,Real Estate,Multi-Family Residential REITs,USA,B,reit,116.4,-0.1429,0.7732,-0.1149,0.7707,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MRNA,Moderna,Health Care,Biotechnology,USA,B,standard,206.3,0.0905,1.401,0.1176,0.4899,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MDLZ,Mondelez International,Consumer Staples,Packaged Foods & Meats,USA,B,standard,67.18,-0.0104,0.4502,-0.0631,0.341,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MPWR,Monolithic Power Systems,Information Technology,Semiconductors,USA,B,standard,1308.425,0.1049,1.8776,0.1251,1.9734,False,True,True,False,60.7,,0.2611,0.7239,0.0048,5.9123,0.1586,0.1243,0.0098,0.0104
+MNST,Monster Beverage,Consumer Staples,Soft Drinks & Non-alcoholic Beverages,USA,B,standard,44.725,0.108,0.6227,0.0017,0.5557,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MCO,Moody's Corporation,Financials,Financial Exchanges & Data,USA,B,standard,482.24,-0.0525,1.3618,-0.0107,1.0932,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+MS,Morgan Stanley,Financials,Investment Banking & Brokerage,USA,B,banklike,183.025,0.0561,1.3411,0.1023,1.3644,False,True,True,False,41.7,,0.3328,0.0123,3.3193,0.0786,0.0952,0.1841,0.0561,0.3853
+MOS,Mosaic Company (The),Materials,Fertilizers & Agricultural Chemicals,USA,B,standard,20.745,-0.1641,1.0162,0.0334,1.0888,False,True,True,False,36.1,,0.0895,0.5085,0.2157,1.315,-0.1427,-0.4471,0.0821,-0.0812
+MSI,Motorola Solutions,Information Technology,Communications Equipment,USA,B,standard,521.495,0.0797,0.8992,0.2267,1.2472,False,True,True,False,44.1,,0.2533,0.6875,0.5037,1.0365,0.0863,0.1715,0.0249,0.0298
+MSCI,MSCI,Financials,Financial Exchanges & Data,USA,B,standard,638.375,-0.089,1.2427,-0.0107,1.0932,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NDAQ,"Nasdaq, Inc.",Financials,Financial Exchanges & Data,USA,B,standard,106.21,0.0319,0.9021,-0.0107,1.0932,True,True,True,True,36.4,,0.2945,0.2689,0.3048,1.0053,0.0989,0.1099,0.0295,0.0329
+NTAP,NetApp,Information Technology,"Technology Hardware, Storage & Peripherals",USA,B,standard,172.8,0.1111,1.4643,0.2885,1.6186,False,True,True,False,51.5,,0.2448,0.6422,0.2544,1.4365,0.0287,0.0313,0.0377,0.0552
+NFLX,Netflix,Communication Services,Movies & Entertainment,USA,B,standard,59.61,-0.0557,1.5853,-0.0592,1.3958,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NEM,Newmont,Materials,Gold,USA,B,standard,110.51,0.1429,0.8865,0.0334,1.0888,True,True,True,True,,,0.4863,0.3996,0.0978,2.2875,0.2391,MISSING,0.0589,0.0607
+NWSA,News Corp (Class A),Communication Services,Publishing,USA,B,standard,26.5,-0.0225,1.0274,0.0246,0.9652,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NEE,NextEra Energy,Utilities,Multi-Utilities,USA,B,standard,84.78,-0.0287,0.6722,0.0321,0.4965,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NKE,"Nike, Inc.",Consumer Discretionary,"Apparel, Accessories & Luxury Goods",USA,B,standard,36.09,-0.3373,1.1376,-0.0061,1.2236,False,True,True,False,46.6,,0.0818,1.2375,0.2872,1.9609,-0.0324,-0.1337,0.0581,0.0408
+NI,NiSource,Utilities,Multi-Utilities,USA,B,standard,44.765,0.09,0.5952,0.0321,0.4965,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NDSN,Nordson Corporation,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,319.517,-0.0267,1.0784,-0.0092,1.0529,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NSC,Norfolk Southern,Industrials,Rail Transportation,USA,B,standard,322.97,-0.0377,1.2741,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NTRS,Northern Trust,Financials,Asset Management & Custody Banks,USA,B,banklike,171.3,-0.0,1.3116,-0.0135,1.4671,True,True,True,True,31.5,,0.2893,0.0101,1.08,0.0732,0.0615,0.1249,0.0526,0.406
+NOC,Northrop Grumman,Industrials,Aerospace & Defense,USA,B,standard,551.425,0.1082,-0.1262,0.1022,0.7981,True,True,True,True,43.2,,0.102,0.8329,0.3313,1.1012,0.0465,-0.026,0.0534,0.0422
+NCLH,Norwegian Cruise Line Holdings,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",USA,B,standard,17.715,-0.0899,1.9911,0.0469,1.5826,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NRG,NRG Energy,Utilities,Independent Power Producers & Energy Traders,USA,B,standard,92.23,0.1563,1.3045,0.0161,0.9348,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NUE,Nucor,Materials,Steel,USA,B,standard,252.775,0.1234,1.8684,0.0334,1.0888,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NVDA,Nvidia,Information Technology,Semiconductors,USA,B,standard,153.375,0.3587,2.1285,0.1251,1.9734,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NVR,"NVR, Inc.",Consumer Discretionary,Homebuilding,USA,B,standard,5675.5,-0.0383,1.0365,-0.0061,1.2236,False,True,True,False,65.3,,0.1633,1.6901,0.1798,5.4689,-0.0063,-0.039,0.0843,0.069
+NXPI,NXP Semiconductors,Information Technology,Semiconductors,NLD,A,standard,251.295,-0.0248,1.956,0.1251,1.9734,False,True,True,False,37.9,,0.2474,0.4817,0.4602,2.0459,-0.0242,-0.09,0.0318,0.0359
+ORLY,O'Reilly Automotive,Consumer Discretionary,Automotive Retail,USA,B,standard,92.73,0.1043,0.4814,-0.0061,1.2236,True,True,True,True,39.2,,0.1946,1.1315,0.5134,0.7685,0.0726,0.1003,0.0325,0.0204
+OXY,Occidental Petroleum,Energy,Oil & Gas Exploration & Production,USA,B,standard,56.775,0.1618,0.1427,0.1652,0.3752,False,True,True,False,27.5,,0.1724,0.2546,0.2774,0.9363,-0.1616,-0.4936,0.0288,0.0733
+OKTA,"Okta, Inc.",Information Technology,Application Software,USA,B,standard,176.39,0.0375,0.7398,-0.0053,1.134,True,True,True,True,,,0.0524,0.3049,0.0435,1.4268,0.1625,MISSING,0.0075,0.0276
+ODFL,Old Dominion,Industrials,Cargo Ground Transportation,USA,B,standard,171.39,-0.0666,1.2378,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+OMC,Omnicom Group,Communication Services,Advertising,USA,B,standard,86.71,0.0114,0.8029,0.0246,0.9652,False,True,True,False,,,0.0257,0.4111,0.1973,0.9298,0.0652,MISSING,-0.002,0.1027
+ON,ON Semiconductor,Information Technology,Semiconductors,USA,B,standard,67.06,0.0236,2.1955,0.1251,1.9734,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+OKE,Oneok,Energy,Oil & Gas Storage & Transportation,USA,B,standard,88.39,0.081,0.8038,0.203,0.6932,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ORCL,Oracle Corporation,Information Technology,Application Software,USA,B,standard,114.51,0.0271,1.6566,-0.0053,1.134,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+OTIS,Otis Worldwide,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,77.155,-0.0727,0.9901,-0.0092,1.0529,False,True,True,False,43.9,,0.1538,1.3138,0.7989,0.8491,0.0179,0.0574,0.046,0.048
+PCAR,Paccar,Industrials,Construction Machinery & Heavy Transportation Equipment,USA,B,standard,104.35,0.0665,1.0459,0.0348,1.1109,True,True,True,True,45.9,,0.1041,0.6483,0.3527,3.0786,-0.0044,-0.078,0.0433,0.0553
+PKG,Packaging Corporation of America,Materials,Paper & Plastic Packaging Products & Materials,USA,B,standard,246.885,0.0863,0.8635,-0.041,0.9273,True,True,True,True,55.6,,0.1397,0.9192,0.407,3.1659,0.0197,-0.0803,0.0349,0.0331
+PLTR,Palantir Technologies,Information Technology,Application Software,USA,B,standard,156.75,0.5059,1.4124,-0.0053,1.134,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PANW,Palo Alto Networks,Information Technology,Systems Software,USA,B,standard,308.99,0.2774,0.8521,0.0876,1.04,True,True,True,True,28.3,,0.0605,0.3187,0.0516,0.871,0.1854,-0.145,0.0012,0.0163
+PH,Parker Hannifin,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,926.51,0.1517,1.2003,-0.0092,1.0529,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PAYX,Paychex,Industrials,Human Resource & Employment Services,USA,B,standard,114.77,-0.0452,0.7863,0.0348,1.1109,False,True,True,False,60.5,,0.3855,0.3978,0.2849,1.2591,0.0915,0.0438,0.0431,0.0569
+PYPL,PayPal,Financials,Transaction & Payment Processing Services,USA,B,standard,58.535,-0.3238,1.3488,-0.1104,1.0773,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PNR,Pentair,Industrials,Industrial Machinery & Supplies & Components,GBR,B,standard,67.37,-0.0769,1.0911,-0.0092,1.0529,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PEP,PepsiCo,Consumer Staples,Soft Drinks & Non-alcoholic Beverages,USA,B,standard,142.55,-0.0493,0.3533,0.0017,0.5557,False,True,True,False,45.0,,0.1436,0.9081,0.4646,0.853,0.0283,-0.0223,0.0423,0.0394
+PFE,Pfizer,Health Care,Pharmaceuticals,USA,B,standard,28.36,-0.0517,0.317,0.0513,0.4465,False,True,True,False,40.9,,0.2782,0.2969,0.3073,1.1599,-0.148,-0.3712,0.0482,0.0563
+PCG,PG&E Corporation,Utilities,Multi-Utilities,USA,B,standard,13.575,0.0187,0.2169,0.0321,0.4965,False,True,True,False,54.7,,0.1945,0.1812,0.4331,0.9712,0.0477,0.12,0.0869,-0.1029
+PM,Philip Morris International,Consumer Staples,Tobacco,USA,B,standard,196.42,0.1592,0.513,0.0017,0.5557,True,True,True,True,50.8,,0.3674,0.6207,0.7059,0.9582,0.0857,0.0771,0.037,0.0349
+PSX,Phillips 66,Energy,Oil & Gas Refining & Marketing,USA,B,standard,255.49,0.2715,0.6959,0.203,0.6932,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PNW,Pinnacle West Capital,Utilities,Multi-Utilities,USA,B,standard,103.3,0.0861,0.5729,0.0321,0.4965,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PNC,PNC Financial Services,Financials,Diversified Banks,USA,B,banklike,225.115,-0.0187,1.0147,0.0023,1.104,False,True,True,False,44.0,,0.3677,0.0116,0.9425,0.1056,0.0301,0.062,0.0748,0.6893
+PPG,PPG Industries,Materials,Specialty Chemicals,USA,B,standard,121.01,-0.1236,1.1545,-0.0855,1.0126,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PPL,PPL Corporation,Utilities,Electric Utilities,USA,B,standard,35.415,0.0123,0.6637,0.0544,0.598,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PFG,Principal Financial Group,Financials,Life & Health Insurance,USA,B,banklike,111.8,0.0641,0.9281,0.0671,0.7421,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PG,Procter & Gamble,Consumer Staples,Personal Care Products,USA,B,standard,172.09,-0.0002,0.4324,0.0017,0.5557,False,True,True,False,45.8,,0.2269,0.6914,0.2768,0.6773,0.02,0.0391,0.0394,0.0379
+PGR,Progressive Corporation,Financials,Property & Casualty Insurance,USA,B,banklike,235.98,0.176,0.2363,0.1297,0.3444,True,True,True,True,70.4,,0.1623,0.0989,0.2275,0.2465,0.209,1.5353,0.0818,0.2192
+PLD,Prologis,Real Estate,Industrial REITs,USA,B,reit,125.425,-0.0844,1.3568,-0.0744,1.0551,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PRU,Prudential Financial,Financials,Life & Health Insurance,USA,B,banklike,122.075,-0.0097,0.8595,0.0671,0.7421,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+PTC,PTC Inc.,Information Technology,Application Software,USA,B,standard,195.96,0.0408,0.8867,-0.0053,1.134,True,True,True,True,58.5,,0.3643,0.4214,0.207,1.118,0.1232,0.3232,0.0313,0.0366
+PEG,Public Service Enterprise Group,Utilities,Electric Utilities,USA,B,standard,75.02,0.0062,0.5277,0.0544,0.598,False,True,True,False,81.2,,0.2449,0.2169,0.4203,0.8007,0.0748,0.2705,0.0565,0.0007
+PSA,Public Storage,Real Estate,Self-Storage REITs,USA,B,reit,332.335,-0.0327,0.9641,-0.0744,1.0551,True,True,True,True,49.0,,0.4686,0.2414,0.5074,7.4237,0.0488,-0.2735,0.0469,0.0546
+PHM,PulteGroup,Consumer Discretionary,Homebuilding,USA,B,standard,124.49,0.1251,1.3744,-0.0061,1.2236,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+Q,Qnity Electronics,Information Technology,Semiconductor Materials & Equipment,USA,B,standard,113.175,,,0.077,1.2644,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+QCOM,Qualcomm,Information Technology,Semiconductors,USA,B,standard,165.43,-0.0029,1.7763,0.1251,1.9734,False,True,True,False,66.5,,0.2008,0.7771,0.2484,1.8594,0.0638,0.2553,0.0771,0.049
+PWR,Quanta Services,Industrials,Construction & Engineering,USA,B,standard,591.36,0.2567,1.3336,0.0348,1.1109,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+DGX,Quest Diagnostics,Health Care,Health Care Services,USA,B,standard,256.955,0.0752,0.6249,0.0482,0.7298,True,True,True,True,43.3,,0.141,0.6816,0.4059,1.0439,0.0374,0.0316,0.0349,0.048
+RL,Ralph Lauren Corporation,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",USA,B,standard,379.86,0.169,1.4163,-0.0061,1.2236,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+RJF,Raymond James Financial,Financials,Investment Banking & Brokerage,USA,B,banklike,164.45,0.0448,0.8809,0.1023,1.3644,False,True,True,False,51.4,,0.1961,0.0248,0.3375,0.1417,0.0845,0.1433,0.0653,0.3837
+RDDT,Reddit,Communication Services,Interactive Media & Services,USA,B,standard,95.2,,,0.0246,0.9652,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+O,Realty Income,Real Estate,Retail REITs,USA,B,reit,58.19,-0.0594,0.7886,-0.0263,1.0064,False,True,True,False,54.8,,0.4511,0.0812,0.4031,2.3442,0.198,-0.0625,0.0659,0.0735
+REG,Regency Centers,Real Estate,Retail REITs,USA,B,reit,75.885,-0.0283,0.8822,-0.0263,1.0064,False,True,True,False,50.0,,0.3753,0.1224,0.4106,2.8242,0.0827,-0.0001,0.0646,0.0596
+REGN,Regeneron Pharmaceuticals,Health Care,Biotechnology,USA,B,standard,954.69,0.0803,0.0671,0.1176,0.4899,False,True,True,False,59.6,,0.2581,0.3663,0.0667,4.1255,0.0562,0.0277,0.0446,0.0373
+RF,Regions Financial Corporation,Financials,Regional Banks,USA,B,banklike,28.21,0.0064,1.1024,0.0109,1.0502,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+RSG,Republic Services,Industrials,Environmental & Facilities Services,USA,B,standard,254.16,0.088,0.3367,0.0348,1.1109,True,True,True,True,34.8,,0.2002,0.497,0.4017,0.6423,0.0708,0.1346,0.0273,0.0308
+RMD,ResMed,Health Care,Health Care Equipment,USA,B,standard,237.97,-0.0715,0.8846,-0.0956,0.9331,True,True,True,True,78.8,,0.3376,0.6597,0.0921,3.0999,0.1021,0.2531,0.0444,0.0474
+RVTY,Revvity,Health Care,Health Care Equipment,USA,B,standard,148.235,-0.0847,1.1583,-0.0956,0.9331,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+HOOD,Robinhood Markets,Financials,Investment Banking & Brokerage,USA,B,banklike,68.555,0.2112,2.5067,0.1023,1.3644,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ROK,Rockwell Automation,Industrials,Electrical Components & Equipment,USA,B,standard,388.47,-0.0087,1.4902,0.2144,1.7639,False,True,True,False,38.5,,0.1968,0.7995,0.3229,1.0303,-0.0025,0.0162,0.0329,0.0398
+ROL,"Rollins, Inc.",Industrials,Environmental & Facilities Services,USA,B,standard,38.43,-0.0452,0.7276,0.0348,1.1109,False,True,True,False,52.0,,0.193,1.2621,0.3305,0.6017,0.1174,0.1327,0.0285,0.0352
+ROP,Roper Technologies,Information Technology,Electronic Equipment & Instruments,USA,B,standard,475.7,-0.0457,0.6111,0.077,1.2644,False,True,True,False,38.2,,0.2829,0.2398,0.2704,0.5175,0.1373,-0.3064,0.0303,0.048
+ROST,Ross Stores,Consumer Discretionary,Apparel Retail,USA,B,standard,220.835,0.0913,0.8811,-0.0061,1.2236,True,True,True,True,48.9,,0.119,1.4941,0.3352,1.5827,0.0676,0.147,0.0301,0.031
+RCL,Royal Caribbean Group,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",USA,B,standard,311.23,0.222,1.9181,0.0469,1.5826,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+RTX,RTX Corporation,Industrials,Aerospace & Defense,USA,B,standard,197.075,0.1497,0.367,0.1022,0.7981,True,True,True,True,41.2,,0.105,0.5307,0.2309,1.0263,0.0972,0.1232,0.0254,0.0282
+SPGI,S&P Global,Financials,Financial Exchanges & Data,USA,B,standard,453.56,-0.0624,1.041,-0.0107,1.0932,False,True,True,False,46.6,,0.4028,0.2526,0.2219,0.8244,0.1111,0.1285,0.033,0.0403
+CRM,Salesforce,Information Technology,Application Software,USA,B,standard,196.46,-0.0897,1.1692,-0.0053,1.134,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SNDK,Sandisk,Information Technology,"Technology Hardware, Storage & Peripherals",USA,B,standard,788.83,,,0.2885,1.6186,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SBAC,SBA Communications,Real Estate,Telecom Tower REITs,USA,B,reit,183.14,-0.17,1.1088,-0.0744,1.0551,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SLB,Schlumberger,Energy,Oil & Gas Equipment & Services,USA,B,standard,49.165,0.1027,0.8933,0.203,0.6932,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+STX,Seagate Technology,Information Technology,"Technology Hardware, Storage & Peripherals",IRL,A,standard,495.97,0.3718,2.3598,0.2885,1.6186,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SRE,Sempra,Utilities,Multi-Utilities,USA,B,standard,77.915,0.0344,0.5963,0.0321,0.4965,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+NOW,ServiceNow,Information Technology,Systems Software,USA,B,standard,93.07,-0.0786,0.9262,0.0876,1.04,False,True,True,False,57.4,,0.1374,0.5721,0.0923,1.0027,0.2238,0.7346,0.0179,0.0465
+SHW,Sherwin-Williams,Materials,Specialty Chemicals,USA,B,standard,346.09,-0.0593,1.1576,-0.0855,1.0126,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SPG,Simon Property Group,Real Estate,Retail REITs,USA,B,reit,230.82,0.0368,1.3531,-0.0263,1.0064,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SKYD,Skydance,Communication Services,Movies & Entertainment,USA,B,standard,6.935,-0.3043,2.0045,-0.0592,1.3958,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SWKS,Skyworks Solutions,Information Technology,Semiconductors,USA,B,standard,86.11,-0.1809,1.5947,0.1251,1.9734,False,True,True,False,24.3,,0.0861,0.4563,0.2809,5.0122,-0.0603,-0.4292,0.0134,0.0155
+SJM,J.M. Smucker Company (The),Consumer Staples,Packaged Foods & Meats,USA,B,standard,134.31,0.0116,0.3335,-0.0631,0.341,True,True,True,True,,,0.1484,0.5358,0.4371,0.7774,0.02,MISSING,-0.0097,0.0807
+SW,Smurfit Westrock,Materials,Paper & Plastic Packaging Products & Materials,IRL,A,standard,40.77,-0.0638,1.0624,-0.041,0.9273,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SNA,Snap-on,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,360.965,0.0677,0.7957,-0.0092,1.0529,True,True,True,True,67.9,,0.2575,0.6323,0.1536,4.7935,0.0211,0.0449,0.0543,0.0537
+SOLV,Solventum,Health Care,Health Care Technology,USA,B,standard,87.01,,,0.0077,0.9282,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SO,Southern Company,Utilities,Electric Utilities,USA,B,standard,93.685,0.0721,0.3661,0.0544,0.598,True,True,True,True,39.8,,0.2465,0.1964,0.4757,0.6464,0.0031,0.0634,0.0414,-0.028
+LUV,Southwest Airlines,Industrials,Passenger Airlines,USA,B,standard,45.99,-0.0622,1.3412,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SWK,Stanley Black & Decker,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,108.995,-0.1396,1.3616,-0.0092,1.0529,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SBUX,Starbucks,Consumer Discretionary,Restaurants,USA,B,standard,107.74,-0.051,1.1228,-0.0374,0.8381,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+STT,State Street Corporation,Financials,Asset Management & Custody Banks,USA,B,banklike,166.11,0.0449,1.4616,-0.0135,1.4671,True,True,True,True,31.9,,0.2672,0.0076,1.0403,0.0761,0.0482,0.0935,0.0586,0.6006
+STLD,Steel Dynamics,Materials,Steel,USA,B,standard,224.51,0.2159,1.5034,0.0334,1.0888,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+STE,Steris,Health Care,Health Care Equipment,IRL,A,standard,257.49,-0.0725,0.9647,-0.0956,0.9331,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SYK,Stryker Corporation,Health Care,Health Care Equipment,USA,B,standard,314.48,-0.0379,0.8159,-0.0956,0.9331,True,True,True,True,53.4,,0.2014,0.5531,0.3315,1.8931,0.1083,0.1083,0.027,0.0356
+SMCI,Supermicro,Information Technology,"Technology Hardware, Storage & Peripherals",USA,B,standard,24.03,0.6833,1.9405,0.2885,1.6186,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SYF,Synchrony Financial,Financials,Consumer Finance,USA,B,banklike,70.455,0.0485,1.3752,0.0572,0.7682,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+SNPS,Synopsys,Information Technology,Application Software,USA,B,standard,433.49,0.0085,1.1258,-0.0053,1.134,True,True,True,True,34.6,,0.1297,0.2302,0.2964,1.6151,0.1519,0.0853,0.0165,0.0167
+SYY,Sysco,Consumer Staples,Food Distributors,USA,B,standard,78.065,-0.0168,0.7473,0.0017,0.5557,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TMUS,T-Mobile US,Communication Services,Wireless Telecommunication Services,USA,B,standard,169.49,0.0275,0.424,0.0246,0.9652,True,True,True,True,50.0,,0.2101,0.4134,0.5577,0.9984,0.0353,0.6773,0.0586,0.0822
+TROW,T. Rowe Price,Financials,Asset Management & Custody Banks,USA,B,banklike,107.075,-0.2037,1.4954,-0.0135,1.4671,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TTWO,Take-Two Interactive,Communication Services,Interactive Home Entertainment,USA,B,standard,206.05,-0.0536,0.9469,0.0246,0.9652,False,True,True,False,,,-0.0163,0.7171,0.3153,1.2359,0.0756,MISSING,-0.0078,0.0121
+TPR,"Tapestry, Inc.",Consumer Discretionary,"Apparel, Accessories & Luxury Goods",USA,B,standard,128.835,0.1759,1.5907,-0.0061,1.2236,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TRGP,Targa Resources,Energy,Oil & Gas Storage & Transportation,USA,B,standard,290.06,0.3295,0.7735,0.203,0.6932,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TGT,Target Corporation,Consumer Staples,Consumer Staples Merchandise Retail,USA,B,standard,156.7,-0.1312,1.0123,0.0088,0.6706,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TEL,TE Connectivity,Information Technology,Electronic Manufacturing Services,IRL,A,standard,210.84,0.0022,1.1722,0.077,1.2644,False,True,True,False,66.5,,0.2082,0.7685,0.2163,1.7306,0.0744,0.2241,0.0537,0.0561
+TDY,Teledyne Technologies,Information Technology,Electronic Equipment & Instruments,USA,B,standard,620.81,0.0033,0.9535,0.077,1.2644,False,True,True,False,46.3,,0.188,0.4148,0.1729,1.6427,0.0386,0.0453,0.0312,0.0375
+TER,Teradyne,Information Technology,Semiconductor Materials & Equipment,USA,B,standard,232.46,0.1009,1.9178,0.077,1.2644,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TSLA,"Tesla, Inc.",Consumer Discretionary,Automobile Manufacturers,USA,B,standard,379.775,0.0306,1.6079,-0.0061,1.2236,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TXN,Texas Instruments,Information Technology,Semiconductors,USA,B,standard,292.085,0.0368,1.492,0.1251,1.9734,False,True,True,False,35.7,,0.3472,0.5045,0.4062,4.3526,-0.0407,-0.1664,0.0188,0.0098
+TPL,Texas Pacific Land Corporation,Energy,Oil & Gas Exploration & Production,USA,B,standard,290.16,0.2184,0.6128,0.1652,0.3752,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TXT,Textron,Industrials,Aerospace & Defense,USA,B,standard,82.115,-0.0452,0.9434,0.1022,0.7981,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TMO,Thermo Fisher Scientific,Health Care,Life Sciences Tools & Services,USA,B,standard,687.94,-0.0424,0.8588,-0.0826,1.2021,True,True,True,True,29.3,,0.182,0.4291,0.3569,1.89,-0.0027,0.0021,0.0259,0.0243
+TJX,TJX Companies,Consumer Discretionary,Apparel Retail,USA,B,standard,130.99,0.1092,0.6022,-0.0061,1.2236,True,True,True,True,49.4,,0.1189,1.7884,0.3771,1.1378,0.0653,0.1792,0.0379,0.0339
+TKO,TKO Group Holdings,Communication Services,Movies & Entertainment,USA,B,standard,187.62,0.1867,0.7715,-0.0592,1.3958,True,True,True,True,,,0.1763,0.3094,0.2622,1.2609,0.6074,MISSING,0.0134,0.0794
+TSCO,Tractor Supply,Consumer Discretionary,Other Specialty Retail,USA,B,standard,38.155,-0.0678,0.494,-0.0061,1.2236,False,True,True,False,43.8,,0.0945,1.4971,0.5435,1.3417,0.03,0.0199,0.0545,0.0368
+TT,Trane Technologies,Industrials,Building Products,IRL,A,standard,404.64,0.0895,1.2762,-0.0052,1.2619,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TDG,TransDigm Group,Industrials,Aerospace & Defense,USA,B,standard,1181.34,0.0789,1.0484,0.1022,0.7981,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TRV,Travelers Companies (The),Financials,Property & Casualty Insurance,USA,B,banklike,398.84,0.1531,0.4539,0.1297,0.3444,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TRMB,Trimble Inc.,Information Technology,Application Software,USA,B,standard,53.99,-0.1325,1.2524,-0.0053,1.134,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TFC,Truist Financial,Financials,Diversified Banks,USA,B,banklike,48.485,-0.0721,0.9961,0.0023,1.104,False,True,True,False,41.7,,0.3125,0.0092,0.9864,0.1191,0.0057,-0.0482,0.0813,1.065
+TWLO,Twilio,Information Technology,Systems Software,USA,B,standard,194.44,-0.0338,1.3156,0.0876,1.04,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+TYL,Tyler Technologies,Information Technology,Application Software,USA,B,standard,416.4,-0.11,0.6669,-0.0053,1.134,False,True,True,False,44.9,,0.1534,0.4312,0.114,1.0504,0.0802,0.2299,0.0176,0.0346
+TSN,Tyson Foods,Consumer Staples,Packaged Foods & Meats,USA,B,standard,64.14,-0.0776,0.4802,-0.0631,0.341,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+USB,U.S. Bancorp,Financials,Diversified Banks,USA,B,banklike,59.28,-0.0353,1.16,0.0023,1.104,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+UBER,Uber,Industrials,Passenger Ground Transportation,USA,B,standard,69.05,0.0204,1.3914,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+UDR,"UDR, Inc.",Real Estate,Multi-Family Residential REITs,USA,B,reit,36.075,-0.1185,0.7665,-0.1149,0.7707,False,True,True,False,51.0,,0.1883,0.1593,0.5661,1.6396,0.0411,0.6319,0.0889,0.0762
+ULTA,Ulta Beauty,Consumer Discretionary,Other Specialty Retail,USA,B,standard,641.93,0.0642,0.9341,-0.0061,1.2236,True,True,True,True,55.7,,0.125,1.9064,0.3118,1.4135,0.0668,0.0221,0.0407,0.0377
+UNP,Union Pacific Corporation,Industrials,Rail Transportation,USA,B,standard,298.82,-0.008,0.9218,0.0348,1.1109,False,True,True,False,31.8,,0.4017,0.3567,0.4709,0.9085,-0.0049,0.0224,0.0403,0.031
+UAL,United Airlines Holdings,Industrials,Passenger Airlines,USA,B,standard,107.48,0.1365,1.3532,0.0348,1.1109,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+UPS,United Parcel Service,Industrials,Air Freight & Logistics,USA,B,standard,110.053,-0.1672,1.1285,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+URI,United Rentals,Industrials,Trading Companies & Distributors,USA,B,standard,1076.0,0.1498,1.8876,0.0348,1.1109,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+UNH,UnitedHealth Group,Health Care,Managed Health Care,USA,B,standard,389.0,-0.0232,0.5216,0.0077,0.9282,False,True,True,False,45.2,,0.0424,1.4726,0.2532,0.7884,0.1135,-0.1452,0.0342,0.0456
+UHS,Universal Health Services,Health Care,Health Care Facilities,USA,B,standard,192.4,0.0138,1.2226,0.0077,0.9282,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+VLO,Valero Energy,Energy,Oil & Gas Refining & Marketing,USA,B,standard,363.04,0.3369,0.6329,0.203,0.6932,True,True,True,True,43.8,,0.0351,2.0771,0.2018,1.645,-0.114,-0.3612,0.0216,0.0463
+VEEV,Veeva Systems,Health Care,Health Care Technology,USA,B,standard,292.205,-0.0367,0.9064,0.0077,0.9282,False,True,True,False,,,0.2868,0.3916,0.0107,4.8854,0.1403,0.2194,0.019,MISSING
+VTR,Ventas,Real Estate,Health Care REITs,USA,B,reit,88.04,0.0576,0.9746,-0.0744,1.0551,True,True,True,True,,,0.147,0.217,0.4791,1.4006,0.1221,MISSING,0.0398,0.0394
+VLTO,Veralto,Industrials,Environmental & Facilities Services,USA,B,standard,118.305,,,0.0348,1.1109,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+VRSN,Verisign,Information Technology,Internet Services & Infrastructure,USA,B,standard,305.14,0.0188,0.6269,0.077,1.2644,False,True,True,False,47.1,,0.6767,1.2126,1.3561,0.4895,0.0515,0.1218,0.0294,0.0381
+VRSK,Verisk Analytics,Industrials,Research & Consulting Services,USA,B,standard,206.28,-0.0515,0.5668,0.0348,1.1109,False,True,True,False,47.6,,0.4374,0.5875,0.791,1.2022,0.0716,0.026,0.0318,0.0417
+VZ,Verizon,Communication Services,Integrated Telecommunication Services,USA,B,standard,46.2,-0.0114,0.3909,0.0246,0.9652,False,True,True,False,34.4,,0.2117,0.3503,0.4493,0.9127,0.0033,-0.0708,0.0881,0.101
+VRTX,Vertex Pharmaceuticals,Health Care,Biotechnology,USA,B,standard,533.37,0.1934,0.3413,0.1176,0.4899,True,True,True,True,60.1,,0.3795,0.4982,0.0792,2.9009,0.1035,0.0612,0.0292,0.0236
+VRT,Vertiv,Industrials,Electrical Components & Equipment,USA,B,standard,187.22,0.4687,1.9389,0.2144,1.7639,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+VTRS,Viatris,Health Care,Pharmaceuticals,USA,B,standard,20.517,0.064,1.0009,0.0513,0.4465,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+VICI,Vici Properties,Real Estate,Hotel & Resort REITs,USA,B,reit,24.63,-0.0522,0.7404,-0.0744,1.0551,True,True,True,True,79.8,,0.9124,0.087,0.3786,4.3329,0.1549,0.2714,0.1056,0.0953
+V,Visa Inc.,Financials,Transaction & Payment Processing Services,USA,B,standard,418.94,0.0676,0.8189,-0.1104,1.0773,True,True,True,True,50.0,,0.6508,0.4733,0.2339,0.9651,0.1202,0.1416,0.0298,0.0282
+VST,Vistra Corp.,Utilities,Electric Utilities,USA,B,standard,127.91,0.3689,1.3631,0.0544,0.598,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+VMRK,Vivmark Residential,Real Estate,Multi-Family Residential REITs,USA,B,reit,64.34,-0.1014,0.7701,-0.1149,0.7707,True,True,True,True,51.9,,0.3025,0.1408,0.4278,3.5487,0.0545,-0.0305,0.078,0.0664
+VMC,Vulcan Materials Company,Materials,Construction Materials,USA,B,standard,275.255,0.0123,1.0204,0.0334,1.0888,False,True,True,False,59.7,,0.1974,0.4698,0.2925,2.6858,0.0277,0.2346,0.03,0.0316
+VYLR,Vylor,Consumer Staples,Agricultural Products & Services,USA,B,standard,70.455,,,0.0017,0.5557,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+WRB,W. R. Berkley Corporation,Financials,Property & Casualty Insurance,USA,B,banklike,77.83,0.1428,0.2396,0.1297,0.3444,True,True,True,True,52.8,,0.1558,0.042,0.2927,0.2201,0.0928,0.1055,0.0606,0.3305
+GWW,W. W. Grainger,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,1467.248,0.1557,0.9226,-0.0092,1.0529,True,True,True,True,45.9,,0.1391,2.017,0.3193,2.8268,0.0562,0.056,0.0245,0.0191
+WAB,Wabtec,Industrials,Construction Machinery & Heavy Transportation Equipment,USA,B,standard,289.84,0.1495,1.0266,0.0348,1.1109,True,True,True,True,48.6,,0.1606,0.5478,0.2511,1.1056,0.1012,0.2544,0.0237,0.0303
+WMT,Walmart,Consumer Staples,Consumer Staples Merchandise Retail,USA,B,standard,127.58,0.1453,0.5128,0.0088,0.6706,True,True,True,True,50.8,,0.0418,2.6148,0.2357,0.7898,0.0527,0.2425,0.0215,0.0147
+DIS,Walt Disney Company (The),Communication Services,Movies & Entertainment,USA,B,standard,117.63,-0.1627,1.4544,-0.0592,1.3958,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+WM,Waste Management,Industrials,Environmental & Facilities Services,USA,B,standard,243.036,0.0453,0.3847,0.0348,1.1109,True,True,True,True,34.5,,0.1828,0.5576,0.4998,0.8888,0.0856,0.0752,0.0277,0.0288
+WAT,Waters Corporation,Health Care,Life Sciences Tools & Services,USA,B,standard,448.77,-0.0222,1.2492,-0.0826,1.2021,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+WEC,WEC Energy Group,Utilities,Electric Utilities,USA,B,standard,117.24,0.0286,0.5234,0.0544,0.598,False,True,True,False,41.4,,0.2423,0.1982,0.4331,0.5872,0.007,0.0263,0.0408,-0.0267
+WFC,Wells Fargo,Financials,Diversified Banks,USA,B,banklike,82.705,0.0562,0.9541,0.0023,1.104,True,True,True,True,46.3,,0.3011,0.0099,1.0658,0.0843,0.0402,0.2586,0.0793,0.7081
+WELL,Welltower,Real Estate,Health Care REITs,USA,B,reit,245.105,0.1675,0.9195,-0.0744,1.0551,True,True,True,True,47.1,,0.0333,0.1803,0.3177,0.5448,0.2269,0.6671,0.018,0.0169
+WST,West Pharmaceutical Services,Health Care,Health Care Supplies,USA,B,standard,413.615,-0.0552,1.0707,0.0077,0.9282,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+WDC,Western Digital,Information Technology,"Technology Hardware, Storage & Peripherals",USA,B,standard,278.7,0.4054,2.4938,0.2885,1.6186,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+WY,Weyerhaeuser,Real Estate,Timber REITs,USA,B,reit,20.275,-0.1441,1.0127,-0.0744,1.0551,False,True,True,False,32.7,,0.0647,0.4166,0.3369,1.6374,-0.1215,-0.4376,0.057,0.0385
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,Homefurnishing Retail,USA,B,standard,249.55,0.1579,1.496,-0.0061,1.2236,True,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+WMB,Williams Companies,Energy,Oil & Gas Storage & Transportation,USA,B,standard,67.185,0.184,0.6777,0.203,0.6932,False,True,True,False,41.2,,0.3689,0.2113,0.5018,0.5313,0.0291,0.0862,0.0319,0.011
+WTW,Willis Towers Watson,Financials,Insurance Brokers,GBR,B,banklike,333.43,0.032,0.4436,0.0188,0.4651,True,True,True,True,,,0.2012,0.0561,MISSING,MISSING,0.0307,0.2188,0.0506,MISSING
+WDAY,"Workday, Inc.",Information Technology,Application Software,USA,B,standard,184.39,-0.1074,0.9146,-0.0053,1.134,False,True,True,False,,,0.1072,0.5299,0.2114,1.3216,0.154,MISSING,0.0145,0.0581
+WYNN,Wynn Resorts,Consumer Discretionary,Casinos & Gaming,USA,B,standard,82.185,-0.0949,1.1265,-0.0061,1.2236,False,True,True,False,,,0.169,0.5473,0.9289,1.6331,0.2386,MISSING,0.0383,0.0809
+XEL,Xcel Energy,Utilities,Multi-Utilities,USA,B,standard,80.675,0.0265,0.4146,0.0321,0.4965,False,True,True,False,28.1,,0.1963,0.1938,0.4274,0.7073,-0.0142,0.0256,0.0401,-0.1357
+XYL,Xylem Inc.,Industrials,Industrial Machinery & Supplies & Components,USA,B,standard,94.929,-0.1355,1.0464,-0.0092,1.0529,False,True,True,False,66.2,,0.1468,0.5295,0.117,1.625,0.1784,0.2599,0.0414,0.0394
+YUM,Yum! Brands,Consumer Discretionary,Restaurants,USA,B,standard,160.947,0.0042,0.6362,-0.0374,0.8381,True,True,True,True,43.8,,0.308,1.1008,1.609,1.3456,0.0628,0.0669,0.035,0.0368
+ZBRA,Zebra Technologies,Information Technology,Electronic Equipment & Instruments,USA,B,standard,312.73,-0.1594,1.6006,0.077,1.2644,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
+ZBH,Zimmer Biomet,Health Care,Health Care Equipment,USA,B,standard,102.56,-0.117,0.6086,-0.0956,0.9331,False,True,True,False,56.2,,0.1648,0.3703,0.3256,1.9816,0.0585,0.4778,0.0352,0.0708
+ZTS,Zoetis,Health Care,Pharmaceuticals,USA,B,standard,83.299,-0.2313,0.7496,0.0513,0.4465,False,False,False,False,,,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING,MISSING
