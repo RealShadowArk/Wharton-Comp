@@ -1,0 +1,78 @@
+ticker,group,price_now,ccy,r_b1,r_5y,r_full,bear,updown,old_pass,country,grade,alpha,beta,etf,etf_alpha,etf_beta,alpha_above,beta_below,mgmt,refined_pass,refined_beta_only,status,source
+005930.KS,Semiconductors,190300.0,KRW,1.73,1.27,1.51,0.79,3.49,True,KOR,A*,17.3,1.86,IXN,6.2,1.41,True,False,pending,no,no,ok,Round2_scorecard_wave3_g1.md
+0388.HK,Exchanges and data,378.2,HKD,0.7,1.07,0.62,0.5,-0.6,False,HKG,A*,-4.7,0.79,IXG,3.0,0.9,False,True,pending,no,no,ok,Round2_scorecard_newcands.md
+0700.HK,Internet and Digital Platforms,318.94,CNY,1.37,3.01,1.46,0.8,1.81,True,CHN,C*,-3.5,0.59,IXP,-2.9,1.01,False,True,pending,no,"yes, management pending",ok,Round2_scorecard_wave3_g3.md
+2454.TW,Semiconductors,3840.0,TWD,3.36,1.53,2.72,0.83,13.57,True,TWN,B*,28.7,2.37,IXN,6.2,1.41,True,False,pending,no,no,ok,Round2_scorecard_wave3_g1.md
+8035.T,Semiconductors,8657.0,JPY,0.82,0.48,0.62,0.36,-0.28,False,JPN,A*,10.5,2.16,IXN,6.2,1.41,True,False,pending,no,no,ok,Round2_scorecard_wave3_g1.md
+8697.T,Exchanges and data,2166.5,JPY,1.03,1.21,1.59,0.69,0.08,False,JPN,A*,-1.0,0.91,IXG,3.0,0.9,False,False,pending,no,no,ok,Round2_scorecard_wave3_g3.md
+9961.HK,Internet and Digital Platforms,292.14,CNY,1.92,6.54,1.79,1.3,no downside,True,CHN,C*,9.8,0.07,RXI,-7.4,1.13,True,True,pending,"yes, management pending","yes, management pending",ok,Round2_scorecard_akshat.md
+ACIW,Payments,59.05,USD,0.9,0.9,0.84,0.61,-0.26,False,USA,B*,7.4,1.01,IXG,3.0,0.9,True,False,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+ADBE,Software,237.3,USD,1.67,1.34,1.33,1.1,no downside,True,USA,B*,-24.6,1.34,IXN,6.2,1.41,False,True,pending,no,"yes, management pending",ok,Round2_scorecard_akshajp.md
+ADS.DE,Consumer brands,173.75,EUR,1.55,1.4,1.36,1.12,no downside,True,DEU,B*,-17.2,1.42,RXI,-7.4,1.13,False,False,pending,no,no,ok,Round2_scorecard_consumer_pharma.md
+ADYEN,Payments,837.7,EUR,1.38,0.76,0.91,0.77,1.63,False,NLD,A*,-27.6,2.51,IXG,3.0,0.9,False,False,pending,no,no,ok,Round2_scorecard.md
+AIR.PA,Aerospace and defence,201.1,EUR,0.71,0.64,0.6,0.42,-0.5,False,FRA,B*,3.9,1.23,EXI,0.1,1.11,True,False,pending,no,no,ok,Round2_scorecard_wave3_g1.md
+AKAM,Software,84.66,USD,0.66,0.93,0.39,0.18,-0.42,False,USA,B*,-4.8,0.64,IXN,6.2,1.41,False,True,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+ALC,Medtech,74.33,USD,0.89,0.99,1.07,0.66,-0.31,False,CHE,B*,-10.2,1.0,IXJ,-0.3,0.59,False,False,pending,no,no,ok,Round2_scorecard_aryu.md
+ASM.AS,Semiconductors,653.0,EUR,0.68,0.4,0.44,0.3,-0.46,False,NLD,A*,5.3,2.23,IXN,6.2,1.41,False,False,pending,no,no,ok,Round2_scorecard_akshajr_new.md
+ASML,Semiconductors,1236.8,EUR,0.94,0.59,0.56,0.42,-0.11,False,NLD,A*,5.5,1.92,IXN,6.2,1.41,False,False,pending,no,no,ok,Round2_scorecard_akshajk.md
+AUTO.L,Internet and Digital Platforms,5.52,GBP,0.95,0.94,0.99,0.66,-0.16,False,GBR,B*,-8.9,1.12,IXP,-2.9,1.01,False,False,pending,no,no,ok,Round2_scorecard_newcands.md
+AZN,Pharmaceuticals and Biotechnology,182.65,USD,0.83,1.78,1.24,0.57,-0.4,False,GBR,B*,6.3,0.36,IXJ,-0.3,0.59,True,True,pending,no,no,ok,Round2_scorecard_akshat.md
+BDX,Medtech,215.65,USD,0.77,1.87,1.22,0.58,-0.54,False,USA,B*,-0.3,0.3,IXJ,-0.3,0.59,False,True,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+BIIB,Pharmaceuticals and Biotechnology,249.06,USD,0.89,2.29,0.98,0.69,-0.37,False,USA,B*,-2.1,0.14,IXJ,-0.3,0.59,False,True,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+BKNG,Internet and Digital Platforms,154.45,USD,1.21,1.08,0.78,0.78,0.93,False,USA,B*,1.3,1.24,RXI,-7.4,1.13,True,False,pending,no,no,ok,Round2_scorecard_akshat.md
+CEG,Power,269.56,USD,0.38,0.34,0.34,0.21,-0.79,False,USA,B*,,,JXI,1.8,0.66,,,pending,no,no,ok,Round2_scorecard_aryu.md
+CHKP,Software,148.72,USD,0.83,1.29,0.78,0.62,-0.46,False,ISR,B*,1.8,0.44,IXN,6.2,1.41,False,True,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+CME,Exchanges and data,313.3,USD,0.55,1.29,0.68,0.39,-0.73,False,USA,B*,7.7,0.19,IXG,3.0,0.9,True,True,pending,no,no,ok,Round2_scorecard.md
+CTSH,IT services,60.4,USD,1.56,1.74,1.34,1.16,no downside,True,USA,B*,-4.8,0.78,IXN,6.2,1.41,False,True,pending,no,"yes, management pending",ok,Round2_scorecard.md
+CW,Aerospace and defence,451.25,USD,0.58,0.6,0.66,0.38,-0.68,False,USA,B*,20.3,0.98,EXI,0.1,1.11,True,True,pending,no,no,ok,Round2_scorecard_akshajr_new.md
+DECK,Consumer brands,81.58,USD,1.55,1.47,1.61,1.12,no downside,True,USA,B*,0.6,1.08,RXI,-7.4,1.13,True,True,pending,"yes, management pending","yes, management pending",ok,Round2_scorecard_wave3_g2.md
+DLO,Payments,12.49,USD,1.38,1.43,1.42,0.66,1.11,True,URY,B*,-18.8,0.88,IXG,3.0,0.9,False,True,pending,no,"yes, management pending",ok,Round2_scorecard.md
+DOX,IT services,43.48,USD,2.15,3.58,1.94,1.62,no downside,True,USA,B*,-6.4,0.43,IXN,6.2,1.41,False,True,pending,no,"yes, management pending",ok,Round2_scorecard_wave3_g3.md
+DXCM,Medtech,82.19,USD,0.41,0.32,0.4,0.25,-0.79,False,USA,B*,-14.0,1.38,IXJ,-0.3,0.59,False,False,pending,no,no,ok,Round2_scorecard_dxcm.md
+EEFT,Payments,68.76,USD,3.05,3.21,2.44,2.1,no downside,True,USA,B*,-17.9,1.03,IXG,3.0,0.9,False,False,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+ENEL.MI,Power,9.68,EUR,0.87,1.15,0.95,0.42,-0.23,False,ITA,B*,3.0,1.0,JXI,1.8,0.66,True,False,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+ESLT,Aerospace and defence,724.23,USD,0.38,1.0,0.5,0.23,-0.81,False,ISR,B*,33.5,0.11,EXI,0.1,1.11,True,True,pending,no,no,ok,Round2_scorecard_akshajk.md
+EW,Medtech,106.22,USD,0.36,0.39,0.46,0.24,-0.85,False,USA,B*,-10.7,0.89,IXJ,-0.3,0.59,False,False,pending,no,no,ok,Round2_scorecard_aryu.md
+G,IT services,42.87,USD,1.5,2.2,1.52,0.96,12.8,True,USA,B*,-5.0,0.48,IXN,6.2,1.41,False,True,pending,no,"yes, management pending",ok,Round2_scorecard_wave3_g3.md
+GD,Aerospace and defence,356.64,USD,0.66,1.29,0.77,0.44,-0.61,False,USA,B*,9.9,0.32,EXI,0.1,1.11,True,True,pending,no,no,ok,Round2_scorecard_akshajk.md
+GIS,Consumer brands,35.07,USD,-0.03,1.01,0.53,-0.17,-0.88,False,USA,B*,-9.5,0.06,KXI,-1.1,0.56,False,True,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+HII,Aerospace and defence,297.32,USD,0.58,1.45,0.68,0.31,-0.61,False,USA,B*,11.4,0.25,EXI,0.1,1.11,True,True,pending,no,no,ok,Round2_scorecard_akshajk.md
+HLN,Consumer brands,6.88,GBP,0.42,1.08,1.08,0.28,-0.8,False,GBR,B*,,,KXI,-1.1,0.56,,,pending,no,no,ok,Round2_scorecard_consumer_pharma.md
+HO.PA,Aerospace and defence,226.9,EUR,0.96,3.15,1.22,0.65,-0.13,False,FRA,B*,23.0,0.14,EXI,0.1,1.11,True,True,pending,no,no,ok,Round2_scorecard_wave3_g1.md
+ICE,Exchanges and data,173.94,USD,0.89,1.01,0.93,0.57,-0.25,False,USA,B*,-1.4,0.89,IXG,3.0,0.9,False,True,pending,no,no,ok,Round2_scorecard.md
+INFY,IT services,1130.0,INR,0.9,0.98,0.85,0.67,-0.3,False,IND,B*,-13.8,0.71,IXN,6.2,1.41,False,True,pending,no,no,ok,Round2_scorecard.md
+INTU,Software,325.98,USD,1.1,1.17,1.01,0.73,0.37,False,USA,B*,-13.7,0.77,IXN,6.2,1.41,False,True,pending,no,no,ok,Round2_scorecard_akshajp.md
+KO,Consumer brands,99.18,USD,0.28,0.63,0.45,0.18,-0.87,False,USA,B*,8.1,0.38,KXI,-1.1,0.56,True,True,pending,no,no,ok,Round2_scorecard_akshajp.md
+LDO.MI,Aerospace and defence,50.62,EUR,0.65,1.23,0.61,0.36,-0.54,False,ITA,B*,42.5,0.45,EXI,0.1,1.11,True,True,pending,no,no,ok,Round2_scorecard_wave3_g1.md
+LRCX,Semiconductors,206.91,USD,0.86,0.51,0.51,0.42,-0.25,False,USA,B*,23.9,2.15,IXN,6.2,1.41,True,False,pending,no,no,ok,Round2_scorecard_akshajk.md
+LULU,Consumer brands,104.42,USD,1.54,1.7,1.22,1.21,no downside,True,CAN,A*,-30.1,0.81,RXI,-7.4,1.13,False,True,pending,no,"yes, management pending",ok,Round2_scorecard_consumer_pharma.md
+MCO,Exchanges and data,483.85,USD,0.57,0.47,0.57,0.37,-0.68,False,USA,B*,-5.2,1.36,IXG,3.0,0.9,False,False,pending,no,no,ok,Round2_scorecard.md
+MDT,Medtech,102.94,USD,0.7,1.04,0.88,0.49,-0.58,False,USA,B*,-6.3,0.6,IXJ,-0.3,0.59,False,False,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+META,Internet and Digital Platforms,620.26,USD,0.03,0.04,0.03,-0.13,-0.86,False,USA,B*,9.3,1.38,IXP,-2.9,1.01,True,False,pending,no,no,ok,Round2_scorecard_akshat.md
+MRK,Pharmaceuticals and Biotechnology,143.53,USD,0.93,2.36,1.35,0.65,-0.21,False,USA,B*,11.3,0.19,IXJ,-0.3,0.59,True,True,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+MTCH,Internet and Digital Platforms,40.51,USD,1.1,0.81,1.08,0.74,0.39,False,USA,B*,-32.2,1.66,IXP,-2.9,1.01,False,False,pending,no,no,ok,Round2_scorecard_wave3_g3.md
+NKE,Consumer brands,36.12,USD,0.77,0.76,0.85,0.61,-0.59,False,USA,B*,-33.7,1.14,RXI,-7.4,1.13,False,False,pending,no,no,ok,Round2_scorecard_akshajp.md
+NOW,Software,93.1,USD,0.36,0.36,0.34,0.16,-0.76,False,USA,B*,-7.9,0.93,IXN,6.2,1.41,False,True,pending,no,no,ok,Round2_scorecard_akshajp.md
+NRG,Power,92.0,USD,1.89,1.57,1.96,1.28,no downside,True,USA,B*,15.6,1.3,JXI,1.8,0.66,True,False,pending,no,no,ok,Round2_scorecard_aryu.md
+NVDA,Semiconductors,153.6,USD,2.66,1.37,1.47,0.84,10.36,True,USA,B*,35.9,2.13,IXN,6.2,1.41,True,False,pending,no,no,ok,Round2_scorecard_akshajk.md
+NVO,Pharmaceuticals and Biotechnology,276.41,DKK,0.67,0.87,1.03,0.36,-0.51,False,DNK,A*,-5.1,0.69,IXJ,-0.3,0.59,False,False,pending,no,no,ok,Round2_scorecard_consumer_pharma.md
+NVS,Pharmaceuticals and Biotechnology,159.17,USD,0.98,1.65,1.61,0.71,-0.07,False,CHE,B*,11.3,0.57,IXJ,-0.3,0.59,True,True,pending,no,no,ok,Round2_scorecard_akshat.md
+NXPI,Semiconductors,251.57,USD,0.9,0.54,0.55,0.53,-0.22,False,USA,B*,-2.5,1.96,IXN,6.2,1.41,False,False,pending,no,no,ok,Round2_scorecard_wave3_g1.md
+OTEX,Software,24.03,USD,3.53,3.59,3.12,2.88,no downside,True,CAN,A*,-15.3,1.02,IXN,6.2,1.41,False,True,pending,no,"yes, management pending",ok,Round2_scorecard_wave3_g2.md
+PDD,Internet and Digital Platforms,518.12,CNY,2.29,10.15,3.06,1.52,no downside,True,CHN,C*,6.7,0.33,RXI,-7.4,1.13,True,True,pending,"yes, management pending","yes, management pending",ok,Round2_scorecard_wave3_g3.md
+PEP,Consumer brands,142.65,USD,0.52,1.08,0.77,0.31,-0.69,False,USA,B*,-4.9,0.35,KXI,-1.1,0.56,False,True,pending,no,no,ok,Round2_scorecard_akshajp.md
+PFE,Pharmaceuticals and Biotechnology,28.46,USD,0.53,1.14,0.74,0.55,-1.05,False,USA,B*,-5.2,0.32,IXJ,-0.3,0.59,False,True,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+PYPL,Payments,58.66,USD,1.88,1.55,1.64,1.35,no downside,True,USA,B*,-32.4,1.35,IXG,3.0,0.9,False,False,pending,no,no,ok,Round2_scorecard.md
+QCOM,Semiconductors,165.5,USD,1.27,0.84,0.97,0.78,1.23,False,USA,B*,-0.3,1.78,IXN,6.2,1.41,False,False,pending,no,no,ok,Round2_scorecard_akshajk.md
+RKT.L,Consumer brands,57.42,GBP,1.19,2.06,1.78,0.89,1.63,True,GBR,B*,-7.7,0.47,KXI,-1.1,0.56,False,True,pending,no,"yes, management pending",ok,Round2_scorecard_wave3_g2.md
+RMD,Medtech,239.16,USD,0.74,0.87,0.9,0.53,-0.55,False,USA,B*,-7.1,0.88,IXJ,-0.3,0.59,False,False,pending,no,no,ok,Round2_scorecard_aryu.md
+SAIC,IT services,144.48,USD,1.17,2.4,1.51,0.88,1.42,True,USA,B*,9.9,0.28,IXN,6.2,1.41,True,True,pending,"yes, management pending","yes, management pending",ok,Round2_scorecard_wave3_g3.md
+SAN.PA,Pharmaceuticals and Biotechnology,86.56,EUR,1.24,2.48,1.67,0.88,1.95,True,FRA,B*,-2.2,0.39,IXJ,-0.3,0.59,False,True,pending,no,"yes, management pending",ok,Round2_scorecard_akshat.md
+SN.L,Medtech,15.23,USD,0.96,1.49,1.47,0.65,-0.11,False,GBR,B*,-7.3,0.66,IXJ,-0.3,0.59,False,False,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+TCS,IT services,2406.6,INR,0.83,1.12,0.86,0.59,-0.41,False,IND,B*,-12.3,0.57,IXN,6.2,1.41,False,True,pending,no,no,ok,Round2_scorecard.md
+TRU,Exchanges and data,78.24,USD,1.1,0.74,0.84,0.69,0.32,False,USA,B*,-13.8,1.67,IXG,3.0,0.9,False,False,pending,no,no,ok,Round2_scorecard_wave3_g3.md
+TW,Exchanges and data,130.41,USD,0.66,0.92,0.82,0.44,-0.61,False,USA,B*,3.1,0.62,IXG,3.0,0.9,True,True,pending,no,no,ok,Round2_scorecard_newcands.md
+WIPRO.NS,IT services,189.89,INR,0.81,0.86,0.72,0.61,-0.47,False,IND,B*,-18.1,0.86,IXN,6.2,1.41,False,True,pending,no,no,ok,Round2_scorecard_wave3_g3.md
+WKL.AS,Exchanges and data,88.2,EUR,1.21,1.75,1.37,0.83,1.24,True,NLD,A*,-2.2,0.5,IXG,3.0,0.9,False,True,pending,no,"yes, management pending",ok,Round2_scorecard_wave3_g3.md
+ZBH,Medtech,103.04,USD,1.12,1.79,1.33,0.83,0.68,False,USA,B*,-11.7,0.61,IXJ,-0.3,0.59,False,False,pending,no,no,ok,Round2_scorecard_wave3_g2.md
+ZM,Software,92.22,USD,0.81,0.81,1.63,0.66,-0.57,False,USA,B*,-25.4,1.01,IXN,6.2,1.41,False,True,pending,no,no,ok,Round2_scorecard_wave3_g2.md
