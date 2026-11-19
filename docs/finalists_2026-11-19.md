@@ -1,4 +1,4 @@
-# Finalists and close calls after the universe screen (19 Nov 2026, TEST)
+# Finalists and close calls after the universe screen (19 Nov 2026, TEST; updated with Package 4 v2)
 
 ## How to read this
 
@@ -23,7 +23,7 @@ Values are research estimates, never price targets, returns or position sizes. F
 | Company | Ours | Winner's | Value/price (β1, 5-yr, full) | Bear | Alpha vs industry | Beta vs industry | M12 | Max position (worst year) |
 |---|---|---|---|---|---|---|---|---|
 | Arch Capital (ACGL), RI | ✓ | ✓ | 1.15, 1.37, 1.32 | 0.95 | +17.2% vs +13.0% | 0.23 vs 0.34 | 84.7 | $14,301 (1999 −42.0%) |
-| Cigna (CI) | ✓ | ✓ | 1.88, 4.00, 2.12 | 1.29 | +6.5% vs +4.8% | 0.33 vs 0.73 | 63.5 | $8,745 (2008 −68.6%) |
+| Cigna (CI) | ✓ | ✓ | 1.87, 3.99, 2.11 | 1.28 | +6.5% vs +4.8% | 0.33 vs 0.73 | 63.5 | $8,745 (2008 −68.6%) |
 | Deckers (DECK), held | ✓ | ✓ | 1.54, 1.46, 1.60 | 1.11 | +0.6% vs −0.6% | 1.08 vs 1.22 | 89.2 | $8,471 (1998 −70.8%) |
 | Everest (EG), RI | ✓ | ✓ | 1.14, 1.35, 1.28 | 1.00 | +8.0% vs +5.7% | 0.24 vs 0.77 | 72.7 | $14,214 (1999 −42.2%) |
 | Leidos (LDOS) | ✓ | ✓ | 1.63, 2.40, 2.06 | 1.12 | +5.3% vs +3.5% | 0.59 vs 1.11 | 69.3 | $26,655 (2011 −22.5%) |
@@ -53,11 +53,14 @@ Values are research estimates, never price targets, returns or position sizes. F
   - bear 1.29, so no downside even in the bear case;
   - after the price fell to $273 by 19 Nov, 2.06×.
 - **Weak:**
-  - **The teammate's residual-income rows value it at $167–196 against a $298 price (fails).** Book value includes Express Scripts goodwill.
-  - Parent-company cash is only $900m; the rest is held in regulated insurers.
-  - Beneish not checked (no cost-of-revenue line).
-- **Stands out:** the widest gap between methods (cash flow 1.88× against residual income about 0.6×).
-- **Red flag:** Express Scripts' FTC insulin-rebate settlement requires changes to its pricing and rebate practices.
+  - The teammate's residual-income rows value it at $167–196 against a $298 price.
+  - **But its tangible common equity is negative (−$31.8bn: goodwill $44.9bn plus intangibles $28.6bn against $41.7bn of equity).** So a book-value method says little here.
+  - Parent-only cash is just $118m; the rest is held in regulated subsidiaries.
+  - Piotroski 7/9; Beneish −2.31, using medical plus pharmacy costs as cost of revenue (ASSUMPTION).
+- **Stands out:** 3.99× at its 5-year beta, and negative tangible equity.
+- **Red flags:**
+  - Express Scripts' FTC insulin-rebate settlement requires changes to its pricing and rebate practices.
+  - The price fell 8.45% by 19 Nov in a managed-care selloff after CMS proposed broader Medicare Advantage audits.
 
 **Deckers (DECK), already held**
 - **Strong:**
@@ -89,7 +92,9 @@ Values are research estimates, never price targets, returns or position sizes. F
   - it depends on US government contracts;
   - only net interest is reported.
 - **Stands out:** the mildest worst year of the long-history finalists (−22.5%), so the largest meaningful max position ($26,655).
-- **Red flag:** **a DOJ Antitrust Division criminal investigation and grand jury subpoena over three federal procurements** (latest 10-Q).
+- **Red flags:**
+  - **A DOJ Antitrust Division criminal investigation and grand jury subpoena over three federal procurements** (latest 10-Q).
+  - On 3 Nov: a Q3 revenue miss, a cut to FY2026 sales guidance and a signal of flat FY2027 earnings.
 
 **T-Mobile (TMUS)**
 - **Strong:**
@@ -165,14 +170,15 @@ Ordered from closest to least close.
 
 | Company | Strategies it meets | Why it is close | Why it fails | Red flag |
 |---|---|---|---|---|
-| Copart (CPRT) | Ours (alpha −11.7% vs +3.5%) | Value equals price at all three betas (1.02, 1.01, 1.01) | Upside/downside 0.06 (bear 0.68); 0.99 at the 19 Nov price; relies on our cash assumption ($4.49bn) | DOJ consumer-protection investigation of its anti-money-laundering practices |
+| Copart (CPRT) | Ours (alpha −11.7% vs +3.5%) | Value equals price at all three betas (1.02, 1.01, 1.01) | Upside/downside 0.06 (bear 0.68); 0.99 at the 19 Nov price; relies on our cash assumption ($4.49bn; the restricted part is still MISSING) | DOJ consumer-protection investigation of its anti-money-laundering practices. Piotroski 5/9 (gross margin fell); Beneish −2.51 |
+| A. O. Smith (AOS), new close call | Ours (alpha −8.9%) | Without China (sale signed, closing pending; TEST): 0.93, 0.91, 1.01 | Below price at beta 1.0, and the sale proceeds are MISSING. With the proceeds added to cash it could pass: ask for the amount when the deal closes | None from our tests (7/9, −2.50) |
 | Intuit (INTU) | Ours (alpha −13.7%) | 1.06, 1.13, 0.98; at the 19 Nov price ($309.64), passes all three betas (1.17, 1.24, 1.07) | Upside/downside 0.21 on 30 Oct, 0.78 on 19 Nov (bear 0.78) | None from our tests (7/9, −2.89). AI substitution risk to simple TurboTax filings. The FTC "free" ads case was dismissed in Sept 2026 |
 | CF Industries (CF) | Both (alpha +16.5% vs +3.3%) | 0.89, 1.26, 0.91; on 19 Nov 0.95, 1.34, 0.98 | Just below price at beta 1.0 and full history; bear 0.74 | None from our tests (8/9, −2.67). A $170m one-time settlement gain in Q1 2026 inflates 2026 earnings |
 | Booking (BKNG) | Ours (alpha +1.3% vs +4.7%) | 1.26 and 1.13; upside/downside 1.40 passes | Fails only at the full-history beta (1.83): 0.81 | FTC matter ($900m revenue reduction plus a $100m accrual). Worst year −97.2% (2000), so max position $6,171 |
 | Fox (FOXA), dropped | Both | On its own 1.24, 1.64, 1.42 | Combined with Roku at the 19 Nov price: 0.78 | $2.7bn Smartmatic defamation suit. Class A (the class we'd buy) has no vote |
 | Expedia (EXPE) | Both | 0.90 at beta 1.0; at the lower 19 Nov price 1.07 | 0.72 and 0.66 at its own higher betas (1.39, 1.57) | Barry Diller has 32.6% of the votes through Class B. $185m of legal reserves |
-| Snap-on (SNA) | Both | 0.89, 1.06, 0.84 | Below price at beta 1.0 and full history | None from our tests (Beneish not checked). Revenue includes the finance arm, while consensus excludes it |
-| Boston Scientific (BSX) | Both | 1.18 at its 5-year beta | 0.83 and 0.91 | **An August 2026 cyberattack disrupted manufacturing** and materially hit Q3. The stock is down about 58% in 2026 |
+| Snap-on (SNA) | Both | 0.89, 1.06, 0.84 | Below price at beta 1.0 and full history | None from our tests (6/9, Beneish −2.42). Revenue includes the finance arm, while consensus excludes it |
+| Boston Scientific (BSX) | Both | 1.18 at its 5-year beta | 0.83 and 0.91 | **An August 2026 cyberattack disrupted manufacturing** and materially hit Q3. The stock is down about 58% in 2026 after three guidance cuts (slower Watchman adoption, electrophysiology competition, a 2027 China pricing warning). Year-2 consensus −0.45% confirmed |
 | Cboe (CBOE) | Both | 1.07 at its 5-year beta; Piotroski 9/9 | 0.62 at beta 1.0 | Lawsuits challenging the funding of the SEC's Consolidated Audit Trail; $14m provision |
 | Kimco (KIM) | Both | 1.10 on FFO | 0.79 on FAD (its AFFO-type measure) | Kimco publishes FAD instead of AFFO |
 

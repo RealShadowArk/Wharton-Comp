@@ -271,7 +271,7 @@ SETS = {
                "EXPE": "Yahoo history fetched by Claude", "DLTR": "Fiscal year ended 31 Jan 2026; year 1 = guidance midpoint; Yahoo history fetched by Claude",
                "PM": "Year 1 = guidance; Yahoo history fetched by Claude (listed 2008)", "WMT": "Fiscal year ended 31 Jan 2026; Yahoo history fetched by Claude"}),
     "pkg4": dict(  # universe-screen package 4 (health care and industrials), returned 19 Nov; RMD price only (failed 3 Nov)
-        workbook=ROOT / "context/teammates_2026-11-19/package4/Wharton_Package4_Healthcare_Industrials.xlsx",
+        workbook=ROOT / "context/teammates_2026-11-19/package4/Wharton_Package4_Healthcare_Industrials_v2.xlsx",  # v2: follow-up answers (CI parent cash 118, cost lines, AOS ex China)
         yahoo=ROOT / "context/teammates_2026-11-19/package4/yahoo_monthly", now_col="price_collection_close",
         series={t: (t + "_Yahoo_Chart_Max_Monthly",) for t in ['BSX', 'CI', 'AOS', 'CPRT', 'LDOS', 'SNA', 'ALLE', 'RMD', 'SPY']},
         skip={"RMD"},
@@ -279,15 +279,28 @@ SETS = {
                 "SNA": "2026-01-03", "ALLE": "2025-12-31"},
         # CPRT: corporate cash MISSING in the workbook; ASSUMPTION: cash incl. restricted 1,907.9 + company-owned Treasury bills 2,581.9 (FY26 10-K pp. 57, 67, 74)
         val_override={"CPRT": {"fiscal_year": 2026, "corporate_cash": 4489.802}, "LDOS": {"interest_expense": 203}},  # LDOS: net interest (tab)
+        # cost-of-revenue proxies for the red-flag check (ASSUMPTION; filed lines on the Red flags tab of v2):
+        # CI = medical costs + pharmacy and other service costs; CPRT = facility operations + cost of vehicle sales
+        rf_proxies={("CI", "FY0"): {"cost_of_revenue": 34349 + 214991}, ("CI", "FY1"): {"cost_of_revenue": 38648 + 182509},
+                    ("CPRT", "FY0"): {"cost_of_revenue": 1965.888 + 616.463}, ("CPRT", "FY1"): {"cost_of_revenue": 1944.318 + 602.997}},
         g1_override={"AOS": (-0.126, "consensus FY2026 -12.6%: the +4% guidance excludes China (sold), while the FY2025 base includes it")},
         group={"BSX": "Health care", "CI": "Health care", "AOS": "Industrials", "CPRT": "Industrials", "LDOS": "Industrials", "SNA": "Industrials", "ALLE": "Industrials"},
         m12_text={"BSX": "Universe M12 69.2 (top 3)", "CI": "Universe M12 63.5 (top 3)", "AOS": "Universe M12 75.0 (top 3)", "CPRT": "Universe M12 70.3 (top 3)",
                   "LDOS": "Universe M12 69.3 (top 3)", "SNA": "Universe M12 67.9 (winner's top 3)", "ALLE": "Universe M12 63.9 (winner's top 3)"},
         who="Universe package 4 (health care and industrials)",
-        notes={"BSX": "Year 2 consensus -0.45% (check)", "CI": "Standard method (the teammate also gave residual-income rows); parent cash 900 only; cost of revenue MISSING (Beneish not checked)",
-               "AOS": "Year 1 = consensus -12.6% (China business sold; the +4% guidance is ex China)", "CPRT": "Fiscal year ended 31 Jul 2026; cash 4,489.8 = cash + Treasury bills (ASSUMPTION; MISSING in the workbook); cost of revenue MISSING",
-               "LDOS": "Year 1 = FY2026 guidance midpoint +5.4%; interest = net 203 (gross MISSING); cash and debt at 2 Oct 2026; price fell to 124.76 by 19 Nov", "SNA": "Revenue includes Financial Services (412.9), consensus excludes it; SG&A MISSING in red flags",
+        notes={"BSX": "Year 2 consensus -0.45% (check)", "CI": "Standard method (the teammate also gave residual-income rows; tangible common equity is -31.8bn: goodwill 44.9bn + intangibles 28.6bn); parent-only cash 118; cost of revenue = medical costs + pharmacy and other service costs (ASSUMPTION)",
+               "AOS": "Year 1 = consensus -12.6% (China sale signed, closing pending, proceeds MISSING; the +4% guidance is ex China)", "CPRT": "Fiscal year ended 31 Jul 2026; cash 4,489.8 = cash incl. restricted 1,907.9 + Treasury bills 2,581.9 (ASSUMPTION; restricted part MISSING; buyer deposits 175.1 not deducted); cost of revenue = facility operations + cost of vehicle sales",
+               "LDOS": "Year 1 = FY2026 guidance midpoint +5.4%; interest = net 203 (gross MISSING); cash and debt at 2 Oct 2026; price fell to 124.76 by 19 Nov", "SNA": "Revenue includes Financial Services (412.9), consensus excludes it (Financial Services consensus MISSING); SG&A = operating expenses",
                "ALLE": ""}),
+    "pkg4_aos_exchina": dict(  # TEST: A. O. Smith without China (sale signed, closing pending); proceeds MISSING, so not added to cash
+        workbook=ROOT / "context/teammates_2026-11-19/package4/Wharton_Package4_Healthcare_Industrials_v2.xlsx",
+        yahoo=ROOT / "context/teammates_2026-11-19/package4/yahoo_monthly", now_col="price_collection_close", file_suffix="_EXCHINA",
+        series={t: (t + "_Yahoo_Chart_Max_Monthly",) for t in ["AOS", "SPY"]},
+        skip={"RMD", "BSX", "CI", "CPRT", "LDOS", "SNA", "ALLE"}, fy_end={"AOS": "2025-12-31"},
+        val_override={"AOS": {"revenue": 3155.3, "operating_income": 668.2}},
+        group={"AOS": "Industrials"}, m12_text={"AOS": "Universe M12 75.0 (top 3)"},
+        who="A. O. Smith without China (TEST: ex-China FY2025 base, +4% guidance; sale proceeds MISSING)",
+        notes={"AOS": "TEST: revenue 3,155.3 and EBIT 668.2 ex China (investor presentation slide 7); D&A and capex shares as consolidated; proceeds not in cash (MISSING)"}),
     "partA": dict(  # follow-up Part A (winner's-rule names: technology and financials), returned 19 Nov
         workbook=ROOT / "context/teammates_2026-11-19/partA/Wharton_Part_A_Technology_and_Financials_v2.xlsx",  # v2 adds the CMCSA follow-up tab
         yahoo=ROOT / "context/teammates_2026-11-19/partA/yahoo_monthly", now_col="wins_price_usd",
