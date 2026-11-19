@@ -23,9 +23,9 @@ Values are research estimates. They are never price targets, returns or position
 
 | Ticker | Method | Value / price at 30 Oct (beta 1.0, 5-year, full) | Bear / price | Piotroski, Beneish | Worst year (max position) | Caveat to check |
 |---|---|---|---|---|---|---|
-| FOXA | FCFF | 1.24, 1.64, 1.42 | 0.93 | 7/9, −2.22 | 2020 −20.2% ($29,673) | Valued as standalone Fox at 30 Oct. Year 1 is +2.8% without Roku (ASSUMPTION; the +32.3% consensus includes it). **Roku closed on 6 Nov**: $95.30 cash plus 0.9799 Class A shares per Roku share, with the $8.4bn bridge loan refinanced with notes on 13 Nov. So the 19 Nov re-test is not like for like: post-close price against pre-close debt and shares. A combined Fox + Roku valuation needs the top-up data. History only since 2019, so the max position is not meaningful |
-| CMCSA | FCFF | 4.31, 5.28, 4.47 | 3.47 | 7/8, NOT CHECKED | 1994 −36.3% ($16,512) | The price implies growth 12.3 points a year below consensus: a value-trap test. The FY2025 base includes Versant (spun off). Capex excludes software and intangibles (MISSING). The NBCUniversal/Sky spin-off is pending |
-| TMUS | FCFF | 1.81, 3.17, 2.46 | 1.24 | 6/9, −2.75 | 2009 −48.6% ($12,341) | Interest expense MISSING, so the cash check of 1.03 is generous. D&A above capex is held flat. Spectrum purchases are outside capex |
+| FOXA | FCFF | 1.24, 1.64, 1.42 | 0.92 | 6/8, NOT CHECKED (no cost-of-revenue line) | 2020 −20.2% ($29,673) | Valued as standalone Fox at 30 Oct. Year 1 is +2.8% without Roku (ASSUMPTION; the +32.3% consensus includes it). **Roku closed on 6 Nov**: $95.30 cash plus 0.9799 Class A shares per Roku share, with the $8.4bn bridge loan refinanced with notes on 13 Nov. So the 19 Nov re-test is not like for like: post-close price against pre-close debt and shares. A combined Fox + Roku valuation needs the top-up data. History only since 2019, so the max position is not meaningful |
+| CMCSA | FCFF | 3.54, 4.37, 3.68 | 2.71 | 7/8, NOT CHECKED | 1973 −69.6% ($8,624) | The price implies growth 10.3 points a year below consensus: a value-trap test. The FY2025 base includes Versant (spun off). Capex now includes the $2,658m software spending. The worst year is since the 1972 listing (teammate); Yahoo's history from 1980 gives 1994 −36.3%. The NBCUniversal/Sky spin-off is pending |
+| TMUS | FCFF | 1.81, 3.17, 2.46 | 1.24 | 6/9, −2.75 | 2009 −48.6% ($12,341) | The cash check (0.88) uses net interest of $3,774m, since gross interest is undisclosed. D&A above capex is held flat. Spectrum purchases are outside capex. The worst year comes from the MetroPCS predecessor history; the teammate prefers the post-2013 history (2014 −19.9%, max position $30,126): Pat decides |
 | EXE | FCFF | 1.62, 2.84, 3.07 | 1.16 | 7/8, NOT CHECKED | 2023 −14.8% ($40,615) | Commodity revenue (year 1 consensus −18.7%) with the 2025 margin held flat. Listed only since Feb 2021 (Chesapeake after bankruptcy), so the max position needs a proxy |
 | FISV | FCFF | 4.19, 4.67, 4.50 | 3.13 | 6/9, −2.58 | 2025 −67.3% ($8,915) | The FY2025 margin of 27.5% is held flat despite the 2026 guidance reset |
 | ACGL | RI | 1.15, 1.37, 1.32 | 0.95 | not applied | 1999 −42.0% ($14,301) | 3-year average ROE; catastrophe-loss years |
@@ -37,7 +37,7 @@ Values are research estimates. They are never price targets, returns or position
 
 | Package | Fails |
 |---|---|
-| 1 | INTU (full-history beta 0.97; upside/downside 0.17), QCOM (0.88; FY2026 GAAP margin 20.1% against 27.9% in FY2025, cause not in the workbook), TEL (0.91) |
+| 1 | INTU (full-history beta 0.98; upside/downside 0.21), QCOM (0.88; FY2026 GAAP margin 20.1% against 27.9% in FY2025, cause not in the workbook), TEL (0.90) |
 | 3 | CBOE (0.62), JKHY (0.63), PGR (0.58, RI), KIM (FFO 1.10, but upside/downside 0.52; AFFO MISSING, so FFO is used) |
 | 5 | EOG (0.34), APA (0.62), CF (0.89; at the 19 Nov price 0.95, 1.34, 0.98, a near miss), VMC (0.51), MLM (0.70), PEG, EXC, ED (negative values: see the method question below) |
 
@@ -46,7 +46,8 @@ Values are research estimates. They are never price targets, returns or position
 - **All 24 meet the price rule.** The lowest 19 Nov price is VICI at $24.22.
 - All 24 are S&P 500 members listed on the NYSE, Nasdaq or Cboe BZX.
 - **Package 3:** the teammate found all 9 in WInS equity research.
-- **Packages 1 and 5:** the WInS listing is MISSING (not checked by the teammates). Pat can confirm each one in a WInS trade ticket.
+- **Package 1 (second return, 19 Nov):** all six were confirmed by exact ticker in the signed-in WInS (StockTrak) search, with delayed quotes from about 1:40 pm ET.
+- **Package 5:** the WInS listing is MISSING (not checked by the teammate). Pat can confirm each one in a WInS trade ticket.
 
 ## Method question for Pat: regulated utilities (PEG, EXC, ED)
 
@@ -65,10 +66,15 @@ Values are research estimates. They are never price targets, returns or position
 
 ## Data handling
 
-- **Package 1's price histories:**
-  - INTU, QCOM and SPY are the teammate's Yahoo files.
-  - TEL, FOXA, CMCSA and TMUS were fetched on 19 Nov with `tools/fetch_yahoo_monthly.py` (see `context/teammates_2026-11-19/package1/yahoo_monthly/SOURCES.md`).
-  - Yahoo's `range=max` sends 3-month bars for long histories, so the tool asks for explicit dates and refuses to write a file with gaps.
+- **Package 1, second return (19 Nov), `Wharton_Package1_Round2_v2.xlsx`:**
+  - adds the 30 Oct closes;
+  - Intuit's capex no longer counts software twice ($175m plus $46m software);
+  - adds Comcast's software capex ($2,658m);
+  - TE Connectivity's consensus now comes from QDD Research (+12.4%, +8.2%, +7.4%);
+  - adds the WInS check;
+  - includes all seven Yahoo files, which replace the four Claude had fetched (same months).
+  The passes are unchanged.
+- `tools/fetch_yahoo_monthly.py`: Yahoo's `range=max` sends 3-month bars for long histories, so the tool asks for explicit dates and refuses to write a file with gaps.
 - **Package 5:** the teammate's original Yahoo files are used. The PortfoliosLab and Digrin alternatives are not used.
 - **Overwritten DCF files:** `inputs/m03/INTU`, `QCOM` and `JKHY` now hold the packages' newer fiscal years. The 3 Nov versions are in git history.
 - **Package 1 corrections:**

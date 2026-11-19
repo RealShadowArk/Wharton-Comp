@@ -1,14 +1,14 @@
 field,value,unit,label,source,note
-ticker,TEL,,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Information technology
+ticker,TEL,,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Information technology
 valuation_date,2026-10-30,date,CASE,Price date,
-price,213.03,USD,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),"30 Oct 2026 close (Yahoo daily close, fetched 19 Nov by tools/fetch_yahoo_monthly.py)"
-base_year,2026,,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2026-09-25
-base_revenue,19885,USD m,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
-growth,0.1241;0.0673;0.0812;0.0739;0.0666;0.0593;0.0519;0.0446;0.0373;0.0300,decimal,ASSUMPTION,"Standard method (Pat, 3 Nov)",Year 1 consensus; years 2-3 consensus; fade to terminal growth
+price,213.03,USD,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),30 Oct 2026 close (teammate's workbook; matches the Yahoo daily close)
+base_year,2026,,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2026-09-25
+base_revenue,19885,USD m,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+growth,0.1240;0.0820;0.0740;0.0677;0.0614;0.0551;0.0489;0.0426;0.0363;0.0300,decimal,ASSUMPTION,"Standard method (Pat, 3 Nov)",Year 1 consensus; years 2-3 consensus; fade to terminal growth
 ebit_margin,0.20070;0.20070;0.20070;0.20070;0.20070;0.20070;0.20070;0.20070;0.20070;0.20070,decimal,ASSUMPTION,Standard method: FY0 operating margin held flat,
-tax_rate,0.1765,decimal,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income / pretax income
-da_pct,0.05195;0.05195;0.05195;0.05195;0.05195;0.05195;0.05195;0.05195;0.05195;0.05195,decimal,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
-capex_pct,0.05642;0.05642;0.05642;0.05642;0.05642;0.05642;0.05642;0.05642;0.05642;0.05642,decimal,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+tax_rate,0.1765,decimal,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income / pretax income
+da_pct,0.05195;0.05195;0.05195;0.05195;0.05195;0.05195;0.05195;0.05195;0.05195;0.05195,decimal,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
+capex_pct,0.05642;0.05642;0.05642;0.05642;0.05642;0.05642;0.05642;0.05642;0.05642;0.05642,decimal,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
 nwc_pct_of_change,0.0,decimal,ASSUMPTION,Kit default,
 risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026",
 beta,1.0,,ASSUMPTION,Standard method,
@@ -16,12 +16,12 @@ beta_measured,1.146,,RESEARCH,"60 monthly USD returns vs SPY, Nov 2021-Oct 2026"
 equity_premium,0.05,decimal,ASSUMPTION,Kit default 5%,
 pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,Kit default: 10-year + 0.5 points,
 equity_value_for_weights,61246.24,USD m,RESEARCH,Price x shares,
-debt_value_for_weights,5639,USD m,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+debt_value_for_weights,5639,USD m,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
 terminal_growth,0.03,decimal,ASSUMPTION,"3% in USD, converted by the rate gap",
 return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
-debt,5639,USD m,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
-non_operating_assets,1697,USD m,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Corporate cash
-diluted_shares,289.500549,m,RESEARCH,704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Shares at the cash-and-debt date plus dilution (teammate's ledger)
+debt,5639,USD m,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+non_operating_assets,1697,USD m,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Corporate cash
+diluted_shares,289.500549,m,RESEARCH,Wharton_Package1_Round2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Shares at the cash-and-debt date plus dilution (teammate's ledger)
 years_to_first_cash_flow,0.9,years,ASSUMPTION,Valuation date to the end of FY2027 (2027-09-25),
 first_year_fraction,1.0,,ASSUMPTION,Method,Cash and debt at the FY0 year-end
 sbc_pct,0,decimal,ASSUMPTION,Method,0 because da_pct is reported D&A

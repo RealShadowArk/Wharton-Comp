@@ -201,9 +201,13 @@ SETS = {
                "JKHY": "Year 1 = FY2027 guidance +6.4% (GAAP); capex includes capitalized software 188.4",
                "FISV": "Year 1 consensus -1.4% (FY26 organic guidance -1% to 0% reaffirmed 3 Nov); corporate cash 798 includes 456 classified unavailable; 2025 worst year -67%"}),
     "pkg1": dict(  # universe-screen package 1 (technology and communication), returned 19 Nov
-        workbook=ROOT / "context/teammates_2026-11-19/package1/704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx",
-        yahoo=ROOT / "context/teammates_2026-11-19/package1/yahoo_monthly",  # INTU, QCOM, SPY teammate's; TEL, FOXA, CMCSA, TMUS fetched 19 Nov
-        prices=PX_30OCT, price_note=PX_NOTE, now_col="collection_price_usd",
+        # second return (19 Nov): price_30oct added, INTU capex no longer double-counts software, CMCSA software capex, WInS check
+        workbook=ROOT / "context/teammates_2026-11-19/package1/Wharton_Package1_Round2_v2.xlsx",
+        yahoo=ROOT / "context/teammates_2026-11-19/package1/yahoo_monthly",  # the teammate's original Yahoo Max monthly CSVs
+        prices=PX_30OCT, price_note="30 Oct 2026 close (teammate's workbook; matches the Yahoo daily close)",
+        now_prices={"INTU": 309.64, "QCOM": 164.53, "TEL": 213.82, "FOXA": 64.70, "CMCSA": 24.99, "TMUS": 162.64},  # WInS (StockTrak) quotes, 19 Nov about 1:40 pm ET
+        val_override={"TMUS": {"interest_expense": 3774}},  # net interest expense (gross undisclosed), FY2025 10-K
+        worst_override={"CMCSA": (1973, -0.6957)},  # since listing (1972); Yahoo starts 1980 (its worst is 1994, -36.3%)
         fy_end={"INTU": "2026-07-31", "QCOM": "2026-09-27", "TEL": "2026-09-25", "FOXA": "2026-06-30",
                 "CMCSA": "2025-12-31", "TMUS": "2025-12-31"},
         group={"INTU": "Information technology", "QCOM": "Information technology", "TEL": "Information technology",
@@ -219,8 +223,8 @@ SETS = {
                "QCOM": "Tax 16.0% ex the valuation-allowance release (ASSUMPTION); FY2026 GAAP operating margin 20.1% vs 27.9% in FY2025 (cause not in the workbook: check for one-off charges)",
                "TEL": "Year 1 consensus +12.4% may include the pending Astrodyne acquisition",
                "FOXA": "Standalone Fox at 30 Oct: year 1 +2.8% ex Roku (ASSUMPTION; +32.3% as reported). Roku closed 6 Nov ($95.30 cash + 0.9799 Class A shares per Roku share; 8.4bn bridge refinanced with notes 13 Nov), so the 19 Nov re-test is NOT like for like (post-close price, pre-close debt and shares); history since 2019 only",
-               "CMCSA": "FY2025 pretax and net income include the 9.4bn Hulu gain (EBIT does not); base includes Versant, so consensus falls 3.2%; NBCUniversal/Sky spin-off pending; cash at 30 Sep 2026",
-               "TMUS": "Interest expense MISSING, so the cash check is generous; cash at 30 Sep 2026"}),
+               "CMCSA": "FY2025 pretax and net income include the 9.4bn Hulu gain (EBIT does not); base includes Versant, so consensus falls 3.2%; NBCUniversal/Sky spin-off pending; capex includes 2,658 software (cash paid for intangibles); worst year 1973 -69.6% since listing (teammate, MarketScreener; Yahoo from 1980: 1994 -36.3%); cash at 30 Sep 2026",
+               "TMUS": "Interest = net interest expense 3,774 (gross undisclosed); worst year 2009 -48.6% from the MetroPCS predecessor history (teammate prefers the post-May 2013 history: 2014 -19.9%); cash at 30 Sep 2026"}),
     "pkg5": dict(  # universe-screen package 5 (energy, materials, utilities), returned 19 Nov
         workbook=ROOT / "context/teammates_2026-11-19/package5/4553af86-Wharton_Package_5_Round_2.xlsx",
         yahoo=ROOT / "context/teammates_2026-11-19/package5/yahoo_monthly",  # the teammate's original Yahoo Max monthly CSVs
@@ -533,6 +537,7 @@ def main(key):
         at = lambda b: value(replace(pp, wacc=wacc_for(raw, b)))["per_share"]
         _, bv, _, _ = run(t + "bear")
         wy = worst_year(p, t) if p else (risk_tab[t]["worst_calendar_year"], risk_tab[t]["worst_return"])
+        wy = cfg.get("worst_override", {}).get(t, wy)  # a verified worst year from before the Yahoo history starts
         a, b = red[(t, "FY0")], red[(t, "FY1")]
         bounds = cfg.get("rf_bounds", {}).get(t)
         if bounds:
@@ -550,7 +555,7 @@ def main(key):
         da_rep = None if rep_cash is None else pp.da_pct[0] + (rep_cash - model_cash) / rev
         up, down = vv["per_share"] / price - 1, bv["per_share"] / price - 1
         note = cfg["notes"].get(t, "")
-        now = v.get(cfg["now_col"]) if cfg.get("now_col") else None
+        now = cfg.get("now_prices", {}).get(t) or (v.get(cfg["now_col"]) if cfg.get("now_col") else None)
         if now:  # same values at the teammate's collection-date price
             r_now = [x / now for x in (vv["per_share"], at(b5), at(bf))]
             u2, d2 = r_now[0] - 1, bv["per_share"] / now - 1

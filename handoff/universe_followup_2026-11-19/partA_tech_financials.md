@@ -79,15 +79,12 @@ The companies below pass the **winner's rule** but were optional in the first pa
 
 ## Top-ups for Package 1 names (only if you did Package 1)
 
-- **T-Mobile (TMUS):** FY2025 interest expense and interest income.
-- **Comcast (CMCSA):** FY2025 and FY2024 "cash paid for intangible assets" (capitalized software).
 - **Fox (FOXA): Roku closed on 6 Nov.** For a combined valuation, give:
   - Roku shares acquired, new FOX Class A shares issued and total cash paid;
   - the new notes that replaced the $8.4bn bridge (amounts and coupons);
   - Fox's debt, cash and diluted shares after the close (latest filing);
   - Roku's latest annual revenue, operating income, D&A, capex, and cash and debt at the close.
 - **Qualcomm (QCOM):** what lowered the FY2026 GAAP operating margin (20.1%, against 27.9% in FY2025). Give each one-off charge with its amount and 10-K page.
-- **All six Package 1 names:** the WInS check.
 
 ## Top-ups for Package 3 names (only if you did Package 3)
 
