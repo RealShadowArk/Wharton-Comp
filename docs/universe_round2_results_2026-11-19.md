@@ -1,6 +1,10 @@
-# Universe screen, Round 2 results: packages 1, 3 and 5 and follow-up Parts A and B (19 Nov 2026, TEST)
+# Universe screen, Round 2 results: packages 1, 2, 3 and 5 and follow-up Parts A and B (19 Nov 2026, TEST)
 
-These came back on 19 Nov, after the universe screen of 17 Nov (`handoff/universe_packages_2026-11-17.md`) and the follow-up for the winner's-rule names (`handoff/universe_followup_2026-11-19/`). **Packages 2 (consumer) and 4 (health care and industrials) are still out**, including their optional names.
+These came back on 19 Nov, after the universe screen of 17 Nov (`handoff/universe_packages_2026-11-17.md`) and the follow-up for the winner's-rule names (`handoff/universe_followup_2026-11-19/`). Package 2 (consumer) returned later on 19 Nov without its optional names. **Package 4 (health care and industrials) is still out**: the file sent as it was Package 1 again, byte for byte.
+
+**Pat's decisions, 19 Nov:**
+- Fox (FOXA) is dropped.
+- T-Mobile's worst year is its second worst, 2011 −31.3% (max position $19,169). There is no −93% year in its history; the worst is 2009 −48.6%.
 
 The method is the same as Pat's nine:
 - value above price at beta 1.0, at the 5-year beta and at the full-history beta;
@@ -18,17 +22,20 @@ Values are research estimates. They are never price targets, returns or position
 | 1 | `outputs/round2/Round2_scorecard_pkg1.md` | — |
 | 3 | `outputs/round2/Round2_scorecard_pkg3.md` | `outputs/round2/Round2_scorecard_pkg3_financials.md` (RI and FFO, `tools/value_financials.py`) |
 | 5 | `outputs/round2/Round2_scorecard_pkg5.md` | `outputs/round2/Round2_scorecard_utilities_financials.md` (utility RI, TEST) |
+| 2 | `outputs/round2/Round2_scorecard_pkg2.md` (BF.B, CHD, DG); LULU, BKNG and DECK carry forward from 3 Nov (`consumer_pharma`, `akshat`, `wave3_g2`), same 30 Oct prices | — |
 | Part A | `outputs/round2/Round2_scorecard_partA.md` | — |
 | Part B | `outputs/round2/Round2_scorecard_partB.md` | utilities: as package 5 |
 | Fox + Roku (TEST) | `outputs/round2/Round2_scorecard_pkg1_foxroku.md` | — |
 
-## Passes (9 of 24 at 30 Oct; Fox fails as a combined company, so 8 on the current business)
+## Passes: 9 universe names (Fox dropped), plus Deckers (held)
 
 | Ticker | Method | Value / price at 30 Oct (beta 1.0, 5-year, full) | Bear / price | Piotroski, Beneish | Worst year (max position) | Caveat to check |
 |---|---|---|---|---|---|---|
-| FOXA | FCFF | 1.24, 1.64, 1.42 | 0.92 | 6/8, NOT CHECKED (no cost-of-revenue line) | 2020 −20.2% ($29,673) | Valued as standalone Fox at 30 Oct. Year 1 is +2.8% without Roku (ASSUMPTION; the +32.3% consensus includes it). **Roku closed on 6 Nov**: $95.30 cash plus 0.9799 Class A shares per Roku share, with the $8.4bn bridge loan refinanced with notes on 13 Nov. So the 19 Nov re-test is not like for like: post-close price against pre-close debt and shares. **Combined Fox + Roku TEST at the 19 Nov WInS price ($64.43): fails, 0.78 / 1.10 / 0.92, bear 0.52** (Roku's GAAP operating income is about zero, and the deal added about $10bn of net debt and 145m shares). History only since 2019, so the max position is not meaningful |
+| ~~FOXA~~ dropped (Pat, 19 Nov) | FCFF | 1.24, 1.64, 1.42 | 0.92 | 6/8, NOT CHECKED (no cost-of-revenue line) | 2020 −20.2% ($29,673) | Valued as standalone Fox at 30 Oct. Year 1 is +2.8% without Roku (ASSUMPTION; the +32.3% consensus includes it). **Roku closed on 6 Nov**: $95.30 cash plus 0.9799 Class A shares per Roku share, with the $8.4bn bridge loan refinanced with notes on 13 Nov. So the 19 Nov re-test is not like for like: post-close price against pre-close debt and shares. **Combined Fox + Roku TEST at the 19 Nov WInS price ($64.43): fails, 0.78 / 1.10 / 0.92, bear 0.52** (Roku's GAAP operating income is about zero, and the deal added about $10bn of net debt and 145m shares). History only since 2019, so the max position is not meaningful |
+| LULU | FCFF (3 Nov inputs) | 1.50, 1.66, 1.19 | 1.18 | 6/9, −1.91 | 2008 −83.3% ($7,206) | Carried forward: year 1 −6.0% matches the current FY2026 guidance (−5% to −7%). Cash check 1.60, but 0.92 on reported cash flow. A securities complaint was filed 2 Nov (Package 2 legal line) |
+| DECK (held) | FCFF (3 Nov inputs) | 1.54, 1.46, 1.60 | 1.11 | 5/9, −2.62 | 1998 −70.8% ($8,471) | Price only updated; management evidence MISSING |
 | CMCSA | FCFF | 3.54, 4.37, 3.68 | 2.71 | 7/8, NOT CHECKED | 1973 −69.6% ($8,624) | The price implies growth 10.3 points a year below consensus: a value-trap test. The FY2025 base includes Versant (spun off). Capex now includes the $2,658m software spending. The worst year is since the 1972 listing (teammate); Yahoo's history from 1980 gives 1994 −36.3%. The NBCUniversal/Sky spin-off is pending |
-| TMUS | FCFF | 1.81, 3.17, 2.46 | 1.24 | 6/9, −2.75 | 2009 −48.6% ($12,341) | The cash check (0.88) uses net interest of $3,774m, since gross interest is undisclosed. D&A above capex is held flat. Spectrum purchases are outside capex. The worst year comes from the MetroPCS predecessor history; the teammate prefers the post-2013 history (2014 −19.9%, max position $30,126): Pat decides |
+| TMUS | FCFF | 1.81, 3.17, 2.46 | 1.24 | 6/9, −2.75 | 2011 −31.3% ($19,169), second worst (Pat) | The cash check (0.88) uses net interest of $3,774m, since gross interest is undisclosed. D&A above capex is held flat. Spectrum purchases are outside capex. The worst year comes from the MetroPCS predecessor history; the teammate prefers the post-2013 history (2014 −19.9%, max position $30,126): Pat decides |
 | EXE | FCFF | 1.62, 2.84, 3.07 | 1.16 | 7/8, NOT CHECKED | 2023 −14.8% ($40,615) | Commodity revenue (year 1 consensus −18.7%) with the 2025 margin held flat. Listed only since Feb 2021 (Chesapeake after bankruptcy), so the max position needs a proxy |
 | FISV | FCFF | 4.19, 4.67, 4.50 | 3.13 | 6/9, −2.58 | 2025 −67.3% ($8,915) | The FY2025 margin of 27.5% is held flat despite the 2026 guidance reset |
 | ACGL | RI | 1.15, 1.37, 1.32 | 0.95 | not applied | 1999 −42.0% ($14,301) | 3-year average ROE; catastrophe-loss years |
@@ -41,6 +48,7 @@ Values are research estimates. They are never price targets, returns or position
 | Package | Fails |
 |---|---|
 | 1 | INTU (full-history beta 0.98; upside/downside 0.21), QCOM (0.88; FY2026 GAAP margin 20.1% against 27.9% in FY2025, cause not in the workbook), TEL (0.90) |
+| 2 | BF.B (0.75 at beta 1.0; 1.52 at its 5-year beta 0.30), CHD (0.52), DG (0.73; interest and receivables MISSING), BKNG (carried forward: full-history beta 0.81) |
 | 3 | CBOE (0.62), JKHY (0.63), PGR (0.58, RI), KIM (0.79 on FAD $1.26, Kimco's AFFO-type measure from the Part A top-up; FFO gave 1.10 with upside/downside 0.52) |
 | 5 | EOG (0.34), APA (0.62), CF (0.89; at the 19 Nov price 0.95, 1.34, 0.98, a near miss), VMC (0.51), MLM (0.70), PEG, EXC, ED (negative FCFF values; also fail on residual income: see below) |
 
@@ -104,14 +112,27 @@ All ten pass both screening rules (beta below and alpha above the industry). The
 
 The winner's optional names add no passes. Their higher past alpha comes with prices that already assume much faster growth.
 
-## Still to come
+## Still to come (audit of every returned workbook, 19 Nov)
 
-- **Package 2 (consumer):**
-  - shortlist LULU, BKNG, BF.B, CHD, DG (and DECK's price);
-  - optional GRMN, EXPE, DLTR, PM, WMT.
-- **Package 4 (health care and industrials):**
+Messages per teammate: `handoff/teammate_followups_2026-11-19.md`.
+
+- **Package 4 (health care and industrials), not received:**
   - shortlist RMD, BSX, CI, AOS, CPRT, LDOS;
   - optional SNA, ALLE.
+- **Package 2:**
+  - the optional names GRMN, EXPE, DLTR, PM and WMT;
+  - Deckers' management evidence;
+  - Dollar General's interest (optional).
+- **Package 1:** Comcast's expense lines for the red-flag check, and its guidance record.
+- **Package 3:** Everest's diluted shares.
+- **Package 5:** Expand Energy's cost lines for the red-flag check.
+- **Missing but not needed:**
+  - **No numbers published:** Kimco's AFFO (Kimco publishes FAD instead); company ROE for the utilities (computed instead).
+  - **Worst years missing for APA, VMC, ED, XOM, ECL and AEP:** the Yahoo series is used instead.
+  - **Gaps on names that fail anyway:** PTC's FY2026 red-flag lines, and PTC's and PKG's interest.
+- **Pat's decisions left:**
+  - max-position proxies for VICI (listed 2018) and EXE (listed 2021);
+  - management grades after the rescreen.
 - **MISSING, waiting on new filings:**
   - Fox's post-close actual balance sheet: the first quarterly report with Roku, expected early Feb 2027;
   - PTC's FY2026 10-K red-flag lines.

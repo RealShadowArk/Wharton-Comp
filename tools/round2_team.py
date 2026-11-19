@@ -207,7 +207,8 @@ SETS = {
         prices=PX_30OCT, price_note="30 Oct 2026 close (teammate's workbook; matches the Yahoo daily close)",
         now_prices={"INTU": 309.64, "QCOM": 164.53, "TEL": 213.82, "FOXA": 64.70, "CMCSA": 24.99, "TMUS": 162.64},  # WInS (StockTrak) quotes, 19 Nov about 1:40 pm ET
         val_override={"TMUS": {"interest_expense": 3774}},  # net interest expense (gross undisclosed), FY2025 10-K
-        worst_override={"CMCSA": (1973, -0.6957)},  # since listing (1972); Yahoo starts 1980 (its worst is 1994, -36.3%)
+        worst_override={"CMCSA": (1973, -0.6957),  # since listing (1972); Yahoo starts 1980 (its worst is 1994, -36.3%)
+                        "TMUS": (2011, -0.313)},  # Pat 19 Nov: the second-worst year (worst: 2009 -48.6%, MetroPCS history)
         fy_end={"INTU": "2026-07-31", "QCOM": "2026-09-27", "TEL": "2026-09-25", "FOXA": "2026-06-30",
                 "CMCSA": "2025-12-31", "TMUS": "2025-12-31"},
         group={"INTU": "Information technology", "QCOM": "Information technology", "TEL": "Information technology",
@@ -224,7 +225,7 @@ SETS = {
                "TEL": "Year 1 consensus +12.4% may include the pending Astrodyne acquisition",
                "FOXA": "Standalone Fox at 30 Oct: year 1 +2.8% ex Roku (ASSUMPTION; +32.3% as reported). Roku closed 6 Nov ($95.30 cash + 0.9799 Class A shares per Roku share; 8.4bn bridge refinanced with notes 13 Nov), so the 19 Nov re-test is NOT like for like (post-close price, pre-close debt and shares); history since 2019 only",
                "CMCSA": "FY2025 pretax and net income include the 9.4bn Hulu gain (EBIT does not); base includes Versant, so consensus falls 3.2%; NBCUniversal/Sky spin-off pending; capex includes 2,658 software (cash paid for intangibles); worst year 1973 -69.6% since listing (teammate, MarketScreener; Yahoo from 1980: 1994 -36.3%); cash at 30 Sep 2026",
-               "TMUS": "Interest = net interest expense 3,774 (gross undisclosed); worst year 2009 -48.6% from the MetroPCS predecessor history (teammate prefers the post-May 2013 history: 2014 -19.9%); cash at 30 Sep 2026"}),
+               "TMUS": "Interest = net interest expense 3,774 (gross undisclosed); worst year = the second worst, 2011 -31.3% (Pat, 19 Nov; worst 2009 -48.6% from the MetroPCS history; post-2013 history: 2014 -19.9%); cash at 30 Sep 2026"}),
     "pkg5": dict(  # universe-screen package 5 (energy, materials, utilities), returned 19 Nov
         workbook=ROOT / "context/teammates_2026-11-19/package5/4553af86-Wharton_Package_5_Round_2.xlsx",
         yahoo=ROOT / "context/teammates_2026-11-19/package5/yahoo_monthly",  # the teammate's original Yahoo Max monthly CSVs
@@ -244,6 +245,18 @@ SETS = {
                "PEG": "Regulated utility: capex 3,272 is about CFO (3,298), so FCFF stays near zero at a flat capex share; the method is harsh on rate-base growth",
                "EXC": "Regulated utility: capex 8,529 exceeds CFO 6,254 (rate-base growth funded with debt and equity); FCFF method is harsh",
                "ED": "Regulated utility: capex 4,764 about CFO 4,800; FCFF method is harsh"}),
+    "pkg2": dict(  # universe-screen package 2 (consumer), returned 19 Nov; LULU, BKNG, DECK carried forward (3 Nov inputs, same 30 Oct prices)
+        workbook=ROOT / "context/teammates_2026-11-19/package2/Wharton_Package2_Consumer_Round2_Updated.xlsx",
+        yahoo=ROOT / "context/teammates_2026-11-19/package2/yahoo_monthly", now_col="price_current",
+        series={"BF.B": ("BF-B",)}, skip={"LULU", "BKNG", "DECK"},
+        fy_end={"BF.B": "2026-04-30", "CHD": "2025-12-31", "DG": "2026-01-30"},
+        val_override={"BF.B": {"fiscal_year": 2026}, "CHD": {"fiscal_year": 2025}, "DG": {"fiscal_year": 2025}},  # the workbook gives year-end dates
+        group={"BF.B": "Consumer staples", "CHD": "Consumer staples", "DG": "Consumer staples"},
+        m12_text={"BF.B": "Universe M12 59.2 (top 3)", "CHD": "Universe M12 59.2 (top 3)", "DG": "Universe M12 57.5 (top 3)"},
+        who="Universe package 2 (consumer staples: Brown-Forman, Church & Dwight, Dollar General)",
+        notes={"BF.B": "Fiscal year ended 30 Apr 2026; shares are both classes (Class B traded); finance leases immaterial",
+               "CHD": "",
+               "DG": "Fiscal year ended 30 Jan 2026; year 1 consensus +4.3% (FY2026 guidance +4.0-4.3%); interest and receivables MISSING (cash check generous, Beneish not checked)"}),
     "partA": dict(  # follow-up Part A (winner's-rule names: technology and financials), returned 19 Nov
         workbook=ROOT / "context/teammates_2026-11-19/partA/Wharton_Part_A_Technology_and_Financials.xlsx",
         yahoo=ROOT / "context/teammates_2026-11-19/partA/yahoo_monthly", now_col="wins_price_usd",
