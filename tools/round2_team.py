@@ -244,6 +244,48 @@ SETS = {
                "PEG": "Regulated utility: capex 3,272 is about CFO (3,298), so FCFF stays near zero at a flat capex share; the method is harsh on rate-base growth",
                "EXC": "Regulated utility: capex 8,529 exceeds CFO 6,254 (rate-base growth funded with debt and equity); FCFF method is harsh",
                "ED": "Regulated utility: capex 4,764 about CFO 4,800; FCFF method is harsh"}),
+    "partA": dict(  # follow-up Part A (winner's-rule names: technology and financials), returned 19 Nov
+        workbook=ROOT / "context/teammates_2026-11-19/partA/Wharton_Part_A_Technology_and_Financials.xlsx",
+        yahoo=ROOT / "context/teammates_2026-11-19/partA/yahoo_monthly", now_col="wins_price_usd",
+        fy_end={"FTNT": "2025-12-31", "PTC": "2026-09-30", "CDNS": "2025-12-31", "MA": "2025-12-31"},
+        # debt MISSING in the workbook only because finance leases are undisclosed or immaterial: use the borrowings on each tab
+        val_override={"FTNT": {"debt": 996.3}, "PTC": {"debt": 1609.763}, "MA": {"debt": 19000}},
+        group={"FTNT": "Information technology", "PTC": "Information technology", "CDNS": "Information technology", "MA": "Financials: other"},
+        m12_text={"FTNT": "Universe M12 61.4 (winner's top 3)", "PTC": "Universe M12 58.5 (winner's top 3)",
+                  "CDNS": "Universe M12 52.9 (winner's top 3)", "MA": "Universe M12 56.8 (winner's top 3)"},
+        who="Follow-up Part A (winner's-rule names: Fortinet, PTC, Cadence, Mastercard)",
+        notes={"FTNT": "Debt = borrowings 996.3 (finance leases immaterial, MISSING); year 1 = guidance midpoint",
+               "PTC": "Debt = borrowings net of issue costs 1,609.8 (finance leases inside other liabilities, MISSING); interest expense MISSING, so the cash check is generous",
+               "CDNS": "",
+               "MA": "Debt = borrowings 19,000 (finance leases MISSING); capex includes capitalized software 726; cash excludes restricted and customer collateral cash"}),
+    "partB": dict(  # follow-up Part B (winner's-rule names: energy, materials, utilities), returned 19 Nov with the package 5 nine (unchanged)
+        workbook=ROOT / "context/teammates_2026-11-19/partB/Wharton_Package_5_Part_B_Round_2.xlsx",
+        yahoo=ROOT / "context/teammates_2026-11-19/partB/yahoo_monthly", price_col="price_30oct_close", now_col="wins_price_usd",
+        skip={"EOG", "EXE", "APA", "CF", "VMC", "MLM", "PEG", "EXC", "ED"},  # valued in pkg5 (same figures)
+        fy_end={"COP": "2025-12-31", "XOM": "2025-12-31", "PKG": "2025-12-31", "ECL": "2025-12-31", "ATO": "2026-09-30", "AEP": "2025-12-31"},
+        val_override={"AEP": {"debt": 54416}},  # borrowings at 30 Sep 2026 (finance leases MISSING)
+        group={"COP": "Energy", "XOM": "Energy", "PKG": "Materials", "ECL": "Materials", "ATO": "Utilities", "AEP": "Utilities"},
+        m12_text={"COP": "Universe M12 57.5 (winner's top 3)", "XOM": "Universe M12 57.5 (winner's top 3)", "PKG": "Universe M12 55.6 (winner's top 3)",
+                  "ECL": "Universe M12 51.4 (winner's top 3)", "ATO": "Universe M12 57.8 (winner's top 3)", "AEP": "Universe M12 53.1 (winner's top 3)"},
+        who="Follow-up Part B (winner's-rule names: ConocoPhillips, ExxonMobil, Packaging Corp, Ecolab, Atmos, AEP)",
+        notes={"COP": "Commodity revenue: year 1 consensus +26.0%, then -3.9% and -6.0%, 2025 margin held flat",
+               "XOM": "Commodity revenue: year 1 consensus +34.7%, then 0.0% and -5.6%, 2025 margin held flat",
+               "PKG": "Interest expense MISSING, so the cash check is generous", "ECL": "",
+               "ATO": "Regulated utility: capex 4,174 is twice CFO 2,076 (12-14% rate-base growth), so FCFF is negative; see the utility RI test",
+               "AEP": "Regulated utility: capex 8,453 exceeds CFO 6,944; debt = borrowings 54,416 at 30 Sep 2026 (finance leases MISSING); see the utility RI test"}),
+    "pkg1_foxroku": dict(  # TEST: Fox + Roku combined (Roku closed 6 Nov), compared with the post-close WInS price
+        workbook=ROOT / "context/teammates_2026-11-19/package1/Wharton_Package1_Round2_v2.xlsx",
+        yahoo=ROOT / "context/teammates_2026-11-19/package1/yahoo_monthly", file_suffix="_ROKU",
+        skip={"INTU", "QCOM", "TEL", "CMCSA", "TMUS"}, fy_end={"FOXA": "2026-06-30"},
+        prices={"FOXA": 64.43}, price_note="19 Nov 2026 WInS quote, 2:16 pm ET (after the Roku close; Part A top-ups)",
+        val_override={"FOXA": {"revenue": 22033, "operating_income": 3345 - 5.624, "d_and_a": 410 + 68.904, "capex": 502 + 5.28,
+                               "debt": 16924, "corporate_cash": 4400, "diluted_shares_m": 580.513853, "shares_outstanding_m": 419.586946 + 144.5}},
+        g1_override={"FOXA": (22656 / 22033 - 1, "consensus FY2027 22,656 on the illustrative combined FY2026 revenue 22,033")},
+        group={"FOXA": "Communication"}, m12_text={"FOXA": "Universe M12 62.5 (top 3)"},
+        who="Fox + Roku combined (TEST, post-close price)",
+        notes={"FOXA": "TEST, ASSUMPTIONS: revenue = illustrative combined FY2026 (8-K/A Ex. 99.4); EBIT = Fox FY2026 3,345 + Roku FY2025 -5.6 (periods differ); "
+                       "D&A and capex = Fox + Roku before purchase accounting; debt 16,924 and cash 4,400 = 30 Sep as-adjusted (prospectus); "
+                       "diluted shares 580.5 = pro forma quarter (preliminary deal terms); tax = Fox's"}),
     "newcands": dict(
         workbook=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Wharton_Candidates_Round2_Missing_Audit.xlsx",
         yahoo=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Yahoo_Max_Monthly",
@@ -350,16 +392,17 @@ def red_flags(a, b, cfo):
     cr = lambda x: x["current_assets"] / x["current_liabilities"]
     gm = lambda x: None if x["cost_of_revenue"] is None else (x["revenue"] - x["cost_of_revenue"]) / x["revenue"]
     turn = lambda x: x["revenue"] / x["total_assets_start_of_year"]
-    tests = {"1 ROA > 0": roa(a) > 0, "2 CFO > 0": None if cfo is None else cfo > 0, "3 ROA up": roa(a) > roa(b),
-             "4 CFO > net income": None if cfo is None else cfo > a["net_income_continuing"],
-             "5 leverage down": lev(a) < lev(b) or lev(a) == lev(b) == 0,
-             "6 current ratio up": cr(a) > cr(b), "7 no new shares": a["shares_outstanding_m"] <= b["shares_outstanding_m"],
-             "8 gross margin up": None if gm(a) is None else gm(a) > gm(b), "9 asset turnover up": turn(a) > turn(b)}
-    def safe(f):
+    def safe(f):  # a MISSING line makes that test or index NOT CHECKED
         try:
             return f()
         except (TypeError, ZeroDivisionError):
             return None
+    tests = {k: safe(f) for k, f in {
+        "1 ROA > 0": lambda: roa(a) > 0, "2 CFO > 0": lambda: None if cfo is None else cfo > 0, "3 ROA up": lambda: roa(a) > roa(b),
+        "4 CFO > net income": lambda: None if cfo is None else cfo > a["net_income_continuing"],
+        "5 leverage down": lambda: lev(a) < lev(b) or lev(a) == lev(b) == 0,
+        "6 current ratio up": lambda: cr(a) > cr(b), "7 no new shares": lambda: a["shares_outstanding_m"] <= b["shares_outstanding_m"],
+        "8 gross margin up": lambda: None if gm(a) is None else gm(a) > gm(b), "9 asset turnover up": lambda: turn(a) > turn(b)}.items()}
     idx = {"DSRI": lambda: (a["receivables"] / a["revenue"]) / (b["receivables"] / b["revenue"]),
            "GMI": lambda: None if gm(a) is None else gm(b) / gm(a),
            "AQI": lambda: (1 - (a["current_assets"] + a["net_ppe"]) / a["total_assets"]) / (1 - (b["current_assets"] + b["net_ppe"]) / b["total_assets"]),
@@ -401,6 +444,9 @@ def main(key):
     risk_tab = {r[0]: dict(zip(kr[0], r)) for r in kr[1:]}
     for t, extra in cfg.get("val_override", {}).items():
         val[t].update(extra)
+    if cfg.get("price_col"):  # the workbook names its 30 Oct close differently
+        for v in val.values():
+            v["price_30oct"] = v.get(cfg["price_col"])
     for t, px in cfg.get("prices", {}).items():  # 30 Oct close when the workbook gives only a collection-date price
         if t in val:
             val[t]["price_30oct"] = px
@@ -516,7 +562,8 @@ def main(key):
             ("first_year_fraction", 1.0, "", "ASSUMPTION", "Method", "Cash and debt at the FY0 year-end"),
             ("sbc_pct", 0, "decimal", "ASSUMPTION", "Method", "0 because da_pct is reported D&A"),
         ]
-        write(m3 / f"{t}_dcf_inputs.csv", rows)
+        fn = t + cfg.get("file_suffix", "")  # a TEST variant writes its own input files
+        write(m3 / f"{fn}_dcf_inputs.csv", rows)
         bear = []
         for r in rows:
             r = list(r)
@@ -526,16 +573,16 @@ def main(key):
             if r[0] == "ebit_margin":
                 r[1], r[5] = ";".join([f"{margin * 0.8:.5f}"] * 10), "DRAFT bear: margin x 0.8"
             bear.append(r)
-        write(m3 / f"{t}bear_dcf_inputs.csv", bear)
-        pp, vv, shift, price = run(t)
-        _, raw, _ = load(t)
+        write(m3 / f"{fn}bear_dcf_inputs.csv", bear)
+        pp, vv, shift, price = run(fn)
+        _, raw, _ = load(fn)
         if p:
             b5, vol, cagr, rm, _ = beta_stats(p, t, "2021-10")
             bf, _, _, _, nf = beta_stats(p, t, "1900-01")
         else:
             (b5, bf, nf), vol, cagr, rm = cfg["betas"][t], None, None, None
         at = lambda b: value(replace(pp, wacc=wacc_for(raw, b)))["per_share"]
-        _, bv, _, _ = run(t + "bear")
+        _, bv, _, _ = run(fn + "bear")
         wy = worst_year(p, t) if p else (risk_tab[t]["worst_calendar_year"], risk_tab[t]["worst_return"])
         wy = cfg.get("worst_override", {}).get(t, wy)  # a verified worst year from before the Yahoo history starts
         a, b = red[(t, "FY0")], red[(t, "FY1")]

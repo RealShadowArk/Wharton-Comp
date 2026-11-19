@@ -28,7 +28,15 @@ import round2_team as r2  # noqa: E402
 
 RF, ERP, G = 0.0494, 0.05, 0.03
 SETS = {"pkg3": dict(workbook=r2.SETS["pkg3"]["workbook"], yahoo=r2.SETS["pkg3"]["yahoo"],
-                     who="Universe package 3 (RI and FFO methods)")}
+                     who="Universe package 3 (RI and FFO methods)",
+                     # Part A top-ups (19 Nov): Kimco publishes FAD (its AFFO-type measure), not AFFO; Realty Income year-1 consensus
+                     affo_override={"KIM": (1.26, "FAD per diluted share FY2025 (Kimco's AFFO-type measure, Q4 2025 supplement p. 9)")},
+                     g1_override={"O": (0.091, "FY2026 consensus +9.1% (QDD Research, 19 Nov; Part A top-ups)")}),
+        "utilities": dict(  # TEST preview for Pat's option (b): residual income for regulated utilities
+            workbook=ROOT / "context/teammates_2026-11-19/partB/Wharton_Package_5_Part_B_Round_2.xlsx",
+            yahoo=ROOT / "context/teammates_2026-11-19/partB/yahoo_monthly", kind="utility",
+            tickers=["PEG", "EXC", "ED", "ATO", "AEP"], px30={**{t: r2.PX_30OCT[t] for t in ("PEG", "EXC", "ED")}},
+            who="Regulated utilities, residual income (TEST preview for option b)")}
 
 
 def long_block(wb):
@@ -66,8 +74,56 @@ def ffo_value(cf0, g123, ke):
     return total + cf * (1 + G) / (ke - G) / (1 + ke) ** len(gs)
 
 
+def utility(key):
+    """Residual income for regulated utilities: same as the insurer RI method, from the Part B long block.
+    ROE = 3-year average of net income / average common equity; payout = dividends per share x current
+    diluted shares / net income (ASSUMPTION: today's share count); book value per share at 30 Sep 2026."""
+    cfg = SETS[key]
+    wb = openpyxl.load_workbook(cfg["workbook"], data_only=True)
+    rows = list(wb["Valuation inputs"].iter_rows(values_only=True))
+    head = rows[0]
+    val = {r[1]: dict(zip(head, r)) for r in rows[1:] if r[1] in cfg["tickers"] and isinstance(r[5], (int, float))}
+    i = next(k for k, r in enumerate(rows) if r[0] == "Ticker" and r[1] == "Method")
+    lb = defaultdict(list)
+    for r in rows[i + 1:]:
+        if r[0] in cfg["tickers"] and r[2]:
+            lb[r[0]].append((str(r[2]), str(r[3]), r[4]))
+    p = r2.monthly(Path(cfg["yahoo"]), cfg["tickers"])
+    year = lambda per: int(next(x for x in str(per).replace("FY", " ").replace("-", " ").split() if len(x) == 4 and x.isdigit()))
+    out = []
+    for t in cfg["tickers"]:
+        v, items = val[t], lb[t]
+        pick = lambda pre: {year(per): num(x) for m, per, x in items if m.startswith(pre) and num(x) is not None}
+        ni, eq, dps = pick("Net income to common"), pick("Common equity"), pick("Dividends")
+        bv0 = next(num(x) for m, per, x in items if m.startswith("Book value per"))
+        ys = sorted(ni)[-3:]
+        roes = [ni[y] / ((eq[y - 1] + eq[y]) / 2) for y in ys]
+        sh = num(v["diluted_shares_m"])
+        pays = [dps[y] * sh / ni[y] for y in ys]
+        roe, payout = sum(roes) / 3, sum(pays) / 3
+        allowed = sorted(num(x) for m, per, x in items if "llowed" in m and num(x) is not None)
+        b5 = r2.beta_stats(p, t, "2021-10")[0]
+        bf, _, _, _, nf = r2.beta_stats(p, t, "1900-01")
+        wy = r2.worst_year(p, t)
+        vals = {b: ri_value(bv0, roe, payout, RF + b * ERP) for b in (1.0, b5, bf)}
+        bear = ri_value(bv0, roe * 0.8, payout, RF + ERP)
+        px30 = cfg["px30"].get(t) or num(v.get("price_30oct_close"))
+        for label, price in (("30 Oct", px30), ("19 Nov WInS", num(v["wins_price_usd"]))):
+            r = [vals[b] / price for b in (1.0, b5, bf)]
+            up, down = vals[1.0] / price - 1, bear / price - 1
+            ud = "no downside" if down >= 0 else ("no upside" if up <= 0 else f"{up / -down:.2f}")
+            ok = all(x > 1 for x in r) and (ud == "no downside" or (ud != "no upside" and float(ud) >= 1))
+            out.append(dict(t=t, method="RI (utility)", when=label, price=price, v1=vals[1.0], r=r, b5=b5, bf=bf, nf=nf, bear=bear / price, ud=ud, ok=ok, wy=wy,
+                            basis=(f"book value {bv0:.2f} (30 Sep 2026, {price / bv0:.2f}x book), ROE {roe:.1%} (FY{ys[0]}-FY{ys[-1]}: {', '.join(f'{x:.1%}' for x in roes)}), "
+                                   f"payout {payout:.0%}, allowed ROE {allowed[0]:.2%}-{allowed[-1]:.2%}"), notes=""))
+    write_report(key, cfg, out, "Residual income on book value, as for the insurers (TEST preview for Pat's option b, not adopted). "
+                 "Cost of equity = 4.94% + beta x 5%; at beta 1.0 it is 9.94%, about the allowed returns, so value is close to book value.")
+
+
 def main(key):
     cfg = SETS[key]
+    if cfg.get("kind") == "utility":
+        return utility(key)
     wb = openpyxl.load_workbook(cfg["workbook"], data_only=True)
     vr = [r for r in wb["Valuation inputs"].iter_rows(values_only=True)]
     head = vr[0]
@@ -99,10 +155,16 @@ def main(key):
             bear = f(1.0, 0.8)
         else:
             affo = num(m.get(("Affo per diluted share", "FY2025")))
+            if t in cfg.get("affo_override", {}):
+                affo, why = cfg["affo_override"][t]
+                notes.append(why)
             if affo is None:
                 affo = num(m.get(("Ffo per diluted share", "FY2025")))
                 notes.append("AFFO MISSING: FFO per share used, which overstates cash (no maintenance capex)")
             g = [num(v[f"consensus_revenue_growth_y{k}"]) for k in (1, 2, 3)]
+            if t in cfg.get("g1_override", {}):
+                g[0], why = cfg["g1_override"][t]
+                notes.append(why)
             if g[0] is None:
                 g[0] = g[1]
                 notes.append("year-1 consensus MISSING: year-2 consensus used")
@@ -117,10 +179,13 @@ def main(key):
             ok = all(x > 1 for x in r) and (ud == "no downside" or (ud != "no upside" and float(ud) >= 1))
             out.append(dict(t=t, method=v["peer_group"], when=label, price=price, v1=vals[1.0], r=r, b5=b5, bf=bf, nf=nf,
                             bear=bear / price, ud=ud, ok=ok, wy=wy, basis=basis, notes="; ".join(notes)))
+    write_report(key, cfg, out, "Piotroski and Beneish are not applied: their tests (current ratio, gross margin, asset quality) do not fit insurers or REITs.")
+
+
+def write_report(key, cfg, out, extra):
     L = [f"# Round 2 scorecard: {cfg['who']} (TEST preview, {date.today()})", "",
          "Generated by `python tools/value_financials.py " + key + "`. Methods and defaults: module docstring and "
-         "`docs/refined_screen_rules.md`. Values are research estimates, never price targets, returns or position sizes. "
-         "Piotroski and Beneish are not applied: their tests (current ratio, gross margin, asset quality) do not fit insurers or REITs.", "",
+         "`docs/refined_screen_rules.md`. Values are research estimates, never price targets, returns or position sizes. " + extra, "",
          "| Ticker | Method | Price | Value (beta 1.0) | Value / price at beta 1.0, 5-year, full | Bear / price | Upside / downside | Value tests | Worst year (max position) | Basis |",
          "|---|---|---|---|---|---|---|---|---|---|"]
     for o in out:
