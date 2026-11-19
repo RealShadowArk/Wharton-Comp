@@ -213,12 +213,12 @@ SETS = {
         tax_override={"QCOM": ((5724 - 4214) / 9414, "ASSUMPTION: the reported -44.8% includes the release of the FY2025 deferred-tax "
                                "valuation allowance (taken as the 5,724m FY2025 charge; the teammate cites about 5.7bn): (5,724 - 4,214 benefit) / 9,414 pretax")},
         g1_override={"FOXA": (22656 / 22033 - 1, "ASSUMPTION: FY2027 consensus 22,656 on the illustrative Fox + Roku FY2026 base 22,033; the +32.3% "
-                                                 "consensus includes the pending Roku acquisition, whose price, debt and shares are not in the model")},
+                                                 "consensus includes Roku (acquired 6 Nov, after the 30 Oct valuation date), whose price, debt and shares are not in the model")},
         who="Universe package 1 (technology and communication)",
         notes={"INTU": "Year 1 = midpoint of the 9-10% FY2027 guidance; capex includes capitalized software 46",
                "QCOM": "Tax 16.0% ex the valuation-allowance release (ASSUMPTION); FY2026 GAAP operating margin 20.1% vs 27.9% in FY2025 (cause not in the workbook: check for one-off charges)",
                "TEL": "Year 1 consensus +12.4% may include the pending Astrodyne acquisition",
-               "FOXA": "Year 1 +2.8% ex Roku (ASSUMPTION; +32.3% as reported); history since 2019 only",
+               "FOXA": "Standalone Fox at 30 Oct: year 1 +2.8% ex Roku (ASSUMPTION; +32.3% as reported). Roku closed 6 Nov ($95.30 cash + 0.9799 Class A shares per Roku share; 8.4bn bridge refinanced with notes 13 Nov), so the 19 Nov re-test is NOT like for like (post-close price, pre-close debt and shares); history since 2019 only",
                "CMCSA": "FY2025 pretax and net income include the 9.4bn Hulu gain (EBIT does not); base includes Versant, so consensus falls 3.2%; NBCUniversal/Sky spin-off pending; cash at 30 Sep 2026",
                "TMUS": "Interest expense MISSING, so the cash check is generous; cash at 30 Sep 2026"}),
     "pkg5": dict(  # universe-screen package 5 (energy, materials, utilities), returned 19 Nov
