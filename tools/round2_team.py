@@ -34,6 +34,12 @@ RF = {"USD": 0.0494, "EUR": 0.0334, "INR": 0.073977, "CNY": 0.016266,  # CNY: Ch
 RF_US, T_BILL = 0.0494, 0.04
 VAL_DATE = date(2026, 10, 30)
 TEAM = ROOT / "context" / "teammates_2026-11-03"
+# 30 Oct closes for the packages that gave only a collection-date price (Yahoo daily close, fetched 19 Nov:
+# python tools/fetch_yahoo_monthly.py --close 2026-10-30 ...). RESEARCH.
+PX_30OCT = {"INTU": 341.09, "QCOM": 164.79, "TEL": 213.03, "FOXA": 63.24, "CMCSA": 23.22, "TMUS": 156.44,
+            "EOG": 165.54, "EXE": 90.55, "APA": 52.82, "CF": 123.3, "VMC": 281.25, "MLM": 540.41,
+            "PEG": 74.29, "EXC": 46.16, "ED": 116.64}
+PX_NOTE = "30 Oct 2026 close (Yahoo daily close, fetched 19 Nov by tools/fetch_yahoo_monthly.py)"
 SETS = {
     "akshajp": dict(
         workbook=TEAM / "akshaj_p_final" / "Team_Round2_Akshaj_P.xlsx",
@@ -182,6 +188,58 @@ SETS = {
                 "RKT.L": "Valued in GBP; year 1 = consensus (guidance covers Core Reckitt only)",
                 "GIS": "Year 1 = consensus (organic guidance excludes divestitures); FY2026 margin depressed by impairments; tax 21% ASSUMPTION", "ENEL.MI": "Valued in EUR",
                 "MDT": "Year 1 = midpoint of 7.25-7.75% organic guidance", "CHKP": "Tax 23% ASSUMPTION (2025 tax benefit)", "BDX": "FY0 includes the separated biosciences/diagnostics business; year 1 consensus -11.7%"}),
+    "pkg3": dict(  # universe-screen package 3 (financials and REITs), returned 19 Nov; RI/FFO names valued by tools/value_financials.py
+        workbook=ROOT / "context/teammates_2026-11-19/package3/Wharton_Package3_Financials_and_REITs.xlsx",
+        yahoo=ROOT / "context/teammates_2026-11-19/package3/yahoo_monthly", now_col="collection_date_price_usd",
+        skip={"ACGL", "EG", "PGR", "VICI", "KIM", "O"},
+        fy_end={"CBOE": "2025-12-31", "JKHY": "2026-06-30", "FISV": "2025-12-31"},
+        group={"CBOE": "Financials: other", "JKHY": "Financials: other", "FISV": "Financials: other"},
+        m12_text={"CBOE": "Universe M12 60.2 (Financials: other, top 3)", "JKHY": "Universe M12 60.2 (Financials: other, top 3)",
+                  "FISV": "Universe M12 58.0 (Financials: other, top 3)"},
+        who="Universe package 3 (standard method: Cboe, Jack Henry, Fiserv)",
+        notes={"CBOE": "Corporate cash 2,216.8 excludes 1,618.2 of clearing, margin and interoperability funds (company adjusted-cash table)",
+               "JKHY": "Year 1 = FY2027 guidance +6.4% (GAAP); capex includes capitalized software 188.4",
+               "FISV": "Year 1 consensus -1.4% (FY26 organic guidance -1% to 0% reaffirmed 3 Nov); corporate cash 798 includes 456 classified unavailable; 2025 worst year -67%"}),
+    "pkg1": dict(  # universe-screen package 1 (technology and communication), returned 19 Nov
+        workbook=ROOT / "context/teammates_2026-11-19/package1/704e1f3d-Wharton_Package1_Technology_and_Communication.xlsx",
+        yahoo=ROOT / "context/teammates_2026-11-19/package1/yahoo_monthly",  # INTU, QCOM, SPY teammate's; TEL, FOXA, CMCSA, TMUS fetched 19 Nov
+        prices=PX_30OCT, price_note=PX_NOTE, now_col="collection_price_usd",
+        fy_end={"INTU": "2026-07-31", "QCOM": "2026-09-27", "TEL": "2026-09-25", "FOXA": "2026-06-30",
+                "CMCSA": "2025-12-31", "TMUS": "2025-12-31"},
+        group={"INTU": "Information technology", "QCOM": "Information technology", "TEL": "Information technology",
+               "FOXA": "Communication", "CMCSA": "Communication", "TMUS": "Communication"},
+        m12_text={"INTU": "Universe M12 71.0 (top 3)", "QCOM": "Universe M12 66.5 (top 3)", "TEL": "Universe M12 66.5 (top 3)",
+                  "FOXA": "Universe M12 62.5 (top 3)", "CMCSA": "Universe M12 56.2 (top 3)", "TMUS": "Universe M12 50.0 (top 3)"},
+        tax_override={"QCOM": ((5724 - 4214) / 9414, "ASSUMPTION: the reported -44.8% includes the release of the FY2025 deferred-tax "
+                               "valuation allowance (taken as the 5,724m FY2025 charge; the teammate cites about 5.7bn): (5,724 - 4,214 benefit) / 9,414 pretax")},
+        g1_override={"FOXA": (22656 / 22033 - 1, "ASSUMPTION: FY2027 consensus 22,656 on the illustrative Fox + Roku FY2026 base 22,033; the +32.3% "
+                                                 "consensus includes the pending Roku acquisition, whose price, debt and shares are not in the model")},
+        who="Universe package 1 (technology and communication)",
+        notes={"INTU": "Year 1 = midpoint of the 9-10% FY2027 guidance; capex includes capitalized software 46",
+               "QCOM": "Tax 16.0% ex the valuation-allowance release (ASSUMPTION); FY2026 GAAP operating margin 20.1% vs 27.9% in FY2025 (cause not in the workbook: check for one-off charges)",
+               "TEL": "Year 1 consensus +12.4% may include the pending Astrodyne acquisition",
+               "FOXA": "Year 1 +2.8% ex Roku (ASSUMPTION; +32.3% as reported); history since 2019 only",
+               "CMCSA": "FY2025 pretax and net income include the 9.4bn Hulu gain (EBIT does not); base includes Versant, so consensus falls 3.2%; NBCUniversal/Sky spin-off pending; cash at 30 Sep 2026",
+               "TMUS": "Interest expense MISSING, so the cash check is generous; cash at 30 Sep 2026"}),
+    "pkg5": dict(  # universe-screen package 5 (energy, materials, utilities), returned 19 Nov
+        workbook=ROOT / "context/teammates_2026-11-19/package5/4553af86-Wharton_Package_5_Round_2.xlsx",
+        yahoo=ROOT / "context/teammates_2026-11-19/package5/yahoo_monthly",  # the teammate's original Yahoo Max monthly CSVs
+        prices=PX_30OCT, price_note=PX_NOTE, now_col="price_collection_date",
+        fy_end={t: "2025-12-31" for t in ("EOG", "EXE", "APA", "CF", "VMC", "MLM", "PEG", "EXC", "ED")},
+        group={**{t: "Energy" for t in ("EOG", "EXE", "APA")}, **{t: "Materials" for t in ("CF", "VMC", "MLM")},
+               **{t: "Utilities" for t in ("PEG", "EXC", "ED")}},
+        m12_text={"EOG": "Universe M12 68.8 (top 3)", "EXE": "Universe M12 61.2 (top 3)", "APA": "Universe M12 58.8 (top 3)",
+                  "CF": "Universe M12 69.4 (top 3)", "VMC": "Universe M12 59.7 (top 3)", "MLM": "Universe M12 58.3 (top 3)",
+                  "PEG": "Universe M12 81.2 (top 3)", "EXC": "Universe M12 68.0 (top 3)", "ED": "Universe M12 65.6 (top 3)"},
+        who="Universe package 5 (energy, materials and utilities)",
+        notes={"EOG": "Commodity revenue: year 1 consensus +43.2%, then -10.4% and -8.7%, with the 2025 margin held flat",
+               "EXE": "Commodity revenue: year 1 consensus -18.7%; listed since Feb 2021 (Chesapeake after bankruptcy), 2024 base is pre-Southwestern",
+               "APA": "Commodity revenue; tax 39.4% (Egypt and UK North Sea)",
+               "CF": "Cash 1,982 includes 130 at the Blue Point VIE",
+               "VMC": "", "MLM": "Year 1 consensus +26.2% includes an acquisition (LNA deal) not in debt or shares",
+               "PEG": "Regulated utility: capex 3,272 is about CFO (3,298), so FCFF stays near zero at a flat capex share; the method is harsh on rate-base growth",
+               "EXC": "Regulated utility: capex 8,529 exceeds CFO 6,254 (rate-base growth funded with debt and equity); FCFF method is harsh",
+               "ED": "Regulated utility: capex 4,764 about CFO 4,800; FCFF method is harsh"}),
     "newcands": dict(
         workbook=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Wharton_Candidates_Round2_Missing_Audit.xlsx",
         yahoo=ROOT / "inputs/m12/new_candidates_2026-11-03/final_2026-11-03/Wharton_Candidates_Missing_Audit/Yahoo_Max_Monthly",
@@ -339,6 +397,9 @@ def main(key):
     risk_tab = {r[0]: dict(zip(kr[0], r)) for r in kr[1:]}
     for t, extra in cfg.get("val_override", {}).items():
         val[t].update(extra)
+    for t, px in cfg.get("prices", {}).items():  # 30 Oct close when the workbook gives only a collection-date price
+        if t in val:
+            val[t]["price_30oct"] = px
     for t in cfg.get("built_ebit", ()):
         v = val[t]
         v["operating_income"] = v["pretax_income"] + (v["interest_expense"] or 0) - (v["interest_income"] or 0)
@@ -421,7 +482,7 @@ def main(key):
         rows = [
             ("ticker", t, "", "RESEARCH", S, group.get(t, "")),
             ("valuation_date", "2026-10-30", "date", "CASE", "Price date", ""),
-            ("price", v["price_30oct"], cur, "RESEARCH", S, "30 Oct 2026 close, checked in WInS by the teammate"),
+            ("price", v["price_30oct"], cur, "RESEARCH", S, cfg.get("price_note", "30 Oct 2026 close, checked in WInS by the teammate")),
             ("base_year", v["fiscal_year"], "", "RESEARCH", S, f"Fiscal year ended {fy_end[t]}"),
             ("base_revenue", round(rev, 3), f"{cur} m", "RESEARCH" if not rolled else "ASSUMPTION", S, rolled.lstrip("; ")),
             ("growth", ";".join(f"{g:.4f}" for g in growth), "decimal", "ASSUMPTION", "Standard method (Pat, 3 Nov)",
@@ -488,13 +549,22 @@ def main(key):
             rep_cash = v["cfo"] - v["capex"] - v["stock_based_comp"] + (v["interest_expense"] or 0) * (1 - tax)
         da_rep = None if rep_cash is None else pp.da_pct[0] + (rep_cash - model_cash) / rev
         up, down = vv["per_share"] / price - 1, bv["per_share"] / price - 1
+        note = cfg["notes"].get(t, "")
+        now = v.get(cfg["now_col"]) if cfg.get("now_col") else None
+        if now:  # same values at the teammate's collection-date price
+            r_now = [x / now for x in (vv["per_share"], at(b5), at(bf))]
+            u2, d2 = r_now[0] - 1, bv["per_share"] / now - 1
+            ud2 = "no upside" if u2 <= 0 else ("no downside" if d2 >= 0 else f"{u2 / -d2:.2f}")
+            ok = min(r_now) > 1 and (ud2 == "no downside" or (ud2 != "no upside" and float(ud2) >= 1))
+            note += ("; " if note else "") + (f"At the 19 Nov collection price {now:,.2f}: value/price {', '.join(f'{x:.2f}' for x in r_now)}, "
+                                              f"bear {bv['per_share'] / now:.2f}, upside/downside {ud2}: {'PASS' if ok else 'fail'}")
         res.append(dict(t=t, g=group.get(t, ""), price=price, cur=cur, v1=vv["per_share"], v5=at(b5), vf=at(bf), b5=b5, bf=bf, nf=nf,
                         rep=None if da_rep is None else value(replace(pp, da_pct=(da_rep,) * 10))["per_share"], shift=shift, bear=bv["per_share"], up=up, down=down,
                         ratio="no upside" if up <= 0 else ("no downside" if down >= 0 else f"{up / -down:.2f}"),
                         conv=None if rep_cash is None else model_cash / rep_cash, vol=vol, cagr=cagr, rm=rm, sharpe=None if vol is None else (cagr - T_BILL) / vol,
                         wy=wy, maxpos=6000 / -wy[1] if wy[1] < 0 else None, pio=f"{pio}/{pio_n}", fails="; ".join(fails),
                         m=f"NOT CHECKED ({', '.join(mscore[1])} MISSING)" if mscore[0] is None else f"{mscore[0]:.2f}", m12=m12.get(t, "MISSING"),
-                        note=cfg["notes"].get(t, "")))
+                        note=note))
     report(key, cfg, res)
 
 
