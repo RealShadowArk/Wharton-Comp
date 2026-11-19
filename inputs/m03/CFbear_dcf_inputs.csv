@@ -1,14 +1,14 @@
 field,value,unit,label,source,note
-ticker,CF,,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Materials
+ticker,CF,,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Materials
 valuation_date,2026-10-30,date,CASE,Price date,
-price,123.3,USD,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),"30 Oct 2026 close (Yahoo daily close, fetched 19 Nov by tools/fetch_yahoo_monthly.py)"
-base_year,2025,,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2025-12-31
-base_revenue,7084,USD m,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+price,123.3,USD,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),"30 Oct 2026 close (Yahoo daily close, fetched 19 Nov by tools/fetch_yahoo_monthly.py)"
+base_year,2025,,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2025-12-31
+base_revenue,7084,USD m,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
 growth,0.0723;-0.0398;-0.0287;-0.0204;-0.0120;-0.0036;0.0048;0.0132;0.0216;0.0300,decimal,ASSUMPTION,"Standard method (Pat, 3 Nov)",DRAFT bear: years 1-3 growth halved. Pat replaces or justifies it
 ebit_margin,0.25974;0.25974;0.25974;0.25974;0.25974;0.25974;0.25974;0.25974;0.25974;0.25974,decimal,ASSUMPTION,Standard method: FY0 operating margin held flat,DRAFT bear: margin x 0.8
-tax_rate,0.3502,decimal,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income / pretax income
-da_pct,0.12676;0.12676;0.12676;0.12676;0.12676;0.12676;0.12676;0.12676;0.12676;0.12676,decimal,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
-capex_pct,0.13411;0.13411;0.13411;0.13411;0.13411;0.13411;0.13411;0.13411;0.13411;0.13411,decimal,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+tax_rate,0.3502,decimal,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income / pretax income
+da_pct,0.12676;0.12676;0.12676;0.12676;0.12676;0.12676;0.12676;0.12676;0.12676;0.12676,decimal,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
+capex_pct,0.13411;0.13411;0.13411;0.13411;0.13411;0.13411;0.13411;0.13411;0.13411;0.13411,decimal,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
 nwc_pct_of_change,0.0,decimal,ASSUMPTION,Kit default,
 risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026",
 beta,1.0,,ASSUMPTION,Standard method,
@@ -16,12 +16,12 @@ beta_measured,0.541,,RESEARCH,"60 monthly USD returns vs SPY, Nov 2021-Oct 2026"
 equity_premium,0.05,decimal,ASSUMPTION,Kit default 5%,
 pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,Kit default: 10-year + 0.5 points,
 equity_value_for_weights,18932.98,USD m,RESEARCH,Price x shares,
-debt_value_for_weights,3215,USD m,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+debt_value_for_weights,3215,USD m,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
 terminal_growth,0.03,decimal,ASSUMPTION,"3% in USD, converted by the rate gap",
 return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
-debt,3215,USD m,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
-non_operating_assets,1982,USD m,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Corporate cash
-diluted_shares,153.652162,m,RESEARCH,4553af86-Wharton_Package_5_Round_2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Shares at the cash-and-debt date plus dilution (teammate's ledger)
+debt,3215,USD m,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+non_operating_assets,1982,USD m,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Corporate cash
+diluted_shares,153.652162,m,RESEARCH,Wharton_Package_5_Part_B_Round_2_v2.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Shares at the cash-and-debt date plus dilution (teammate's ledger)
 years_to_first_cash_flow,0.17,years,ASSUMPTION,Valuation date to the end of FY2026 (2026-12-31),
 first_year_fraction,1.0,,ASSUMPTION,Method,Cash and debt at the FY0 year-end
 sbc_pct,0,decimal,ASSUMPTION,Method,0 because da_pct is reported D&A

@@ -189,7 +189,7 @@ SETS = {
                 "GIS": "Year 1 = consensus (organic guidance excludes divestitures); FY2026 margin depressed by impairments; tax 21% ASSUMPTION", "ENEL.MI": "Valued in EUR",
                 "MDT": "Year 1 = midpoint of 7.25-7.75% organic guidance", "CHKP": "Tax 23% ASSUMPTION (2025 tax benefit)", "BDX": "FY0 includes the separated biosciences/diagnostics business; year 1 consensus -11.7%"}),
     "pkg3": dict(  # universe-screen package 3 (financials and REITs), returned 19 Nov; RI/FFO names valued by tools/value_financials.py
-        workbook=ROOT / "context/teammates_2026-11-19/package3/Wharton_Package3_Financials_and_REITs.xlsx",
+        workbook=ROOT / "context/teammates_2026-11-19/package3/Wharton_Package3_Financials_and_REITs_v2.xlsx",  # v2: Everest diluted shares
         yahoo=ROOT / "context/teammates_2026-11-19/package3/yahoo_monthly", now_col="collection_date_price_usd",
         skip={"ACGL", "EG", "PGR", "VICI", "KIM", "O"},
         fy_end={"CBOE": "2025-12-31", "JKHY": "2026-06-30", "FISV": "2025-12-31"},
@@ -207,6 +207,9 @@ SETS = {
         prices=PX_30OCT, price_note="30 Oct 2026 close (teammate's workbook; matches the Yahoo daily close)",
         now_prices={"INTU": 309.64, "QCOM": 164.53, "TEL": 213.82, "FOXA": 64.70, "CMCSA": 24.99, "TMUS": 162.64},  # WInS (StockTrak) quotes, 19 Nov about 1:40 pm ET
         val_override={"TMUS": {"interest_expense": 3774}},  # net interest expense (gross undisclosed), FY2025 10-K
+        # Comcast has no cost-of-revenue or SG&A line (Part A v2, CMCSA follow-up tab, 10-K p. 62). ASSUMPTION: cost of revenue =
+        # programming and production; SG&A = marketing and promotion + other operating and administrative
+        rf_proxies={("CMCSA", "FY0"): {"cost_of_revenue": 34951, "sga": 8862 + 43013}, ("CMCSA", "FY1"): {"cost_of_revenue": 37026, "sga": 8073 + 40533}},
         worst_override={"CMCSA": (1973, -0.6957),  # since listing (1972); Yahoo starts 1980 (its worst is 1994, -36.3%)
                         "TMUS": (2011, -0.313)},  # Pat 19 Nov: the second-worst year (worst: 2009 -48.6%, MetroPCS history)
         fy_end={"INTU": "2026-07-31", "QCOM": "2026-09-27", "TEL": "2026-09-25", "FOXA": "2026-06-30",
@@ -227,7 +230,8 @@ SETS = {
                "CMCSA": "FY2025 pretax and net income include the 9.4bn Hulu gain (EBIT does not); base includes Versant, so consensus falls 3.2%; NBCUniversal/Sky spin-off pending; capex includes 2,658 software (cash paid for intangibles); worst year 1973 -69.6% since listing (teammate, MarketScreener; Yahoo from 1980: 1994 -36.3%); cash at 30 Sep 2026",
                "TMUS": "Interest = net interest expense 3,774 (gross undisclosed); worst year = the second worst, 2011 -31.3% (Pat, 19 Nov; worst 2009 -48.6% from the MetroPCS history; post-2013 history: 2014 -19.9%); cash at 30 Sep 2026"}),
     "pkg5": dict(  # universe-screen package 5 (energy, materials, utilities), returned 19 Nov
-        workbook=ROOT / "context/teammates_2026-11-19/package5/4553af86-Wharton_Package_5_Round_2.xlsx",
+        workbook=ROOT / "context/teammates_2026-11-19/partB/Wharton_Package_5_Part_B_Round_2_v2.xlsx",  # Part B v2 holds the same nine plus EXE cost lines
+        skip={"COP", "XOM", "PKG", "ECL", "ATO", "AEP"},  # valued in partB
         yahoo=ROOT / "context/teammates_2026-11-19/package5/yahoo_monthly",  # the teammate's original Yahoo Max monthly CSVs
         prices=PX_30OCT, price_note=PX_NOTE, now_col="price_collection_date",
         fy_end={t: "2025-12-31" for t in ("EOG", "EXE", "APA", "CF", "VMC", "MLM", "PEG", "EXC", "ED")},
@@ -246,19 +250,46 @@ SETS = {
                "EXC": "Regulated utility: capex 8,529 exceeds CFO 6,254 (rate-base growth funded with debt and equity); FCFF method is harsh",
                "ED": "Regulated utility: capex 4,764 about CFO 4,800; FCFF method is harsh"}),
     "pkg2": dict(  # universe-screen package 2 (consumer), returned 19 Nov; LULU, BKNG, DECK carried forward (3 Nov inputs, same 30 Oct prices)
-        workbook=ROOT / "context/teammates_2026-11-19/package2/Wharton_Package2_Consumer_Round2_Updated.xlsx",
+        workbook=ROOT / "context/teammates_2026-11-19/package2/Wharton_Package2_Consumer_Round2_v2.xlsx",  # v2: optional names, DECK evidence, DG interest
         yahoo=ROOT / "context/teammates_2026-11-19/package2/yahoo_monthly", now_col="price_current",
         series={"BF.B": ("BF-B",)}, skip={"LULU", "BKNG", "DECK"},
-        fy_end={"BF.B": "2026-04-30", "CHD": "2025-12-31", "DG": "2026-01-30"},
-        val_override={"BF.B": {"fiscal_year": 2026}, "CHD": {"fiscal_year": 2025}, "DG": {"fiscal_year": 2025}},  # the workbook gives year-end dates
-        group={"BF.B": "Consumer staples", "CHD": "Consumer staples", "DG": "Consumer staples"},
-        m12_text={"BF.B": "Universe M12 59.2 (top 3)", "CHD": "Universe M12 59.2 (top 3)", "DG": "Universe M12 57.5 (top 3)"},
-        who="Universe package 2 (consumer staples: Brown-Forman, Church & Dwight, Dollar General)",
+        fy_end={"BF.B": "2026-04-30", "CHD": "2025-12-31", "DG": "2026-01-30", "GRMN": "2025-12-27", "EXPE": "2025-12-31",
+                "DLTR": "2026-01-31", "PM": "2025-12-31", "WMT": "2026-01-31"},
+        val_override={"BF.B": {"fiscal_year": 2026}, "CHD": {"fiscal_year": 2025}, "DG": {"fiscal_year": 2025, "interest_expense": 230.567},
+                      "GRMN": {"fiscal_year": 2025}, "EXPE": {"fiscal_year": 2025}, "DLTR": {"fiscal_year": 2025}, "PM": {"fiscal_year": 2025},
+                      "WMT": {"fiscal_year": 2026}},  # the workbook gives year-end dates; DG interest = net (gross undisclosed)
+        group={"BF.B": "Consumer staples", "CHD": "Consumer staples", "DG": "Consumer staples", "DLTR": "Consumer staples", "PM": "Consumer staples",
+               "WMT": "Consumer staples", "GRMN": "Consumer discretionary", "EXPE": "Consumer discretionary"},
+        m12_text={"BF.B": "Universe M12 59.2 (top 3)", "CHD": "Universe M12 59.2 (top 3)", "DG": "Universe M12 57.5 (top 3)",
+                  "GRMN": "Universe M12 63.6 (winner's top 3)", "EXPE": "Universe M12 58.0 (winner's top 3)", "DLTR": "Universe M12 55.8 (winner's top 3)",
+                  "PM": "Universe M12 50.8 (winner's top 3)", "WMT": "Universe M12 50.8 (winner's top 3)"},
+        who="Universe package 2 (consumer: Brown-Forman, Church & Dwight, Dollar General; optional Garmin, Expedia, Dollar Tree, Philip Morris, Walmart)",
         notes={"BF.B": "Fiscal year ended 30 Apr 2026; shares are both classes (Class B traded); finance leases immaterial",
                "CHD": "",
-               "DG": "Fiscal year ended 30 Jan 2026; year 1 consensus +4.3% (FY2026 guidance +4.0-4.3%); interest and receivables MISSING (cash check generous, Beneish not checked)"}),
+               "DG": "Fiscal year ended 30 Jan 2026; year 1 consensus +4.3% (FY2026 guidance +4.0-4.3%); interest = net 230.6 (gross undisclosed); receivables not itemized (Beneish not checked)",
+               "GRMN": "Fiscal year ended 27 Dec 2025; no debt; Yahoo history fetched by Claude (teammate's download failed)",
+               "EXPE": "Yahoo history fetched by Claude", "DLTR": "Fiscal year ended 31 Jan 2026; year 1 = guidance midpoint; Yahoo history fetched by Claude",
+               "PM": "Year 1 = guidance; Yahoo history fetched by Claude (listed 2008)", "WMT": "Fiscal year ended 31 Jan 2026; Yahoo history fetched by Claude"}),
+    "pkg4": dict(  # universe-screen package 4 (health care and industrials), returned 19 Nov; RMD price only (failed 3 Nov)
+        workbook=ROOT / "context/teammates_2026-11-19/package4/Wharton_Package4_Healthcare_Industrials.xlsx",
+        yahoo=ROOT / "context/teammates_2026-11-19/package4/yahoo_monthly", now_col="price_collection_close",
+        series={t: (t + "_Yahoo_Chart_Max_Monthly",) for t in ['BSX', 'CI', 'AOS', 'CPRT', 'LDOS', 'SNA', 'ALLE', 'RMD', 'SPY']},
+        skip={"RMD"},
+        fy_end={"BSX": "2025-12-31", "CI": "2025-12-31", "AOS": "2025-12-31", "CPRT": "2026-07-31", "LDOS": "2026-01-02",
+                "SNA": "2026-01-03", "ALLE": "2025-12-31"},
+        # CPRT: corporate cash MISSING in the workbook; ASSUMPTION: cash incl. restricted 1,907.9 + company-owned Treasury bills 2,581.9 (FY26 10-K pp. 57, 67, 74)
+        val_override={"CPRT": {"fiscal_year": 2026, "corporate_cash": 4489.802}, "LDOS": {"interest_expense": 203}},  # LDOS: net interest (tab)
+        g1_override={"AOS": (-0.126, "consensus FY2026 -12.6%: the +4% guidance excludes China (sold), while the FY2025 base includes it")},
+        group={"BSX": "Health care", "CI": "Health care", "AOS": "Industrials", "CPRT": "Industrials", "LDOS": "Industrials", "SNA": "Industrials", "ALLE": "Industrials"},
+        m12_text={"BSX": "Universe M12 69.2 (top 3)", "CI": "Universe M12 63.5 (top 3)", "AOS": "Universe M12 75.0 (top 3)", "CPRT": "Universe M12 70.3 (top 3)",
+                  "LDOS": "Universe M12 69.3 (top 3)", "SNA": "Universe M12 67.9 (winner's top 3)", "ALLE": "Universe M12 63.9 (winner's top 3)"},
+        who="Universe package 4 (health care and industrials)",
+        notes={"BSX": "Year 2 consensus -0.45% (check)", "CI": "Standard method (the teammate also gave residual-income rows); parent cash 900 only; cost of revenue MISSING (Beneish not checked)",
+               "AOS": "Year 1 = consensus -12.6% (China business sold; the +4% guidance is ex China)", "CPRT": "Fiscal year ended 31 Jul 2026; cash 4,489.8 = cash + Treasury bills (ASSUMPTION; MISSING in the workbook); cost of revenue MISSING",
+               "LDOS": "Year 1 = FY2026 guidance midpoint +5.4%; interest = net 203 (gross MISSING); cash and debt at 2 Oct 2026; price fell to 124.76 by 19 Nov", "SNA": "Revenue includes Financial Services (412.9), consensus excludes it; SG&A MISSING in red flags",
+               "ALLE": ""}),
     "partA": dict(  # follow-up Part A (winner's-rule names: technology and financials), returned 19 Nov
-        workbook=ROOT / "context/teammates_2026-11-19/partA/Wharton_Part_A_Technology_and_Financials.xlsx",
+        workbook=ROOT / "context/teammates_2026-11-19/partA/Wharton_Part_A_Technology_and_Financials_v2.xlsx",  # v2 adds the CMCSA follow-up tab
         yahoo=ROOT / "context/teammates_2026-11-19/partA/yahoo_monthly", now_col="wins_price_usd",
         fy_end={"FTNT": "2025-12-31", "PTC": "2026-09-30", "CDNS": "2025-12-31", "MA": "2025-12-31"},
         # debt MISSING in the workbook only because finance leases are undisclosed or immaterial: use the borrowings on each tab
@@ -272,7 +303,7 @@ SETS = {
                "CDNS": "",
                "MA": "Debt = borrowings 19,000 (finance leases MISSING); capex includes capitalized software 726; cash excludes restricted and customer collateral cash"}),
     "partB": dict(  # follow-up Part B (winner's-rule names: energy, materials, utilities), returned 19 Nov with the package 5 nine (unchanged)
-        workbook=ROOT / "context/teammates_2026-11-19/partB/Wharton_Package_5_Part_B_Round_2.xlsx",
+        workbook=ROOT / "context/teammates_2026-11-19/partB/Wharton_Package_5_Part_B_Round_2_v2.xlsx",
         yahoo=ROOT / "context/teammates_2026-11-19/partB/yahoo_monthly", price_col="price_30oct_close", now_col="wins_price_usd",
         skip={"EOG", "EXE", "APA", "CF", "VMC", "MLM", "PEG", "EXC", "ED"},  # valued in pkg5 (same figures)
         fy_end={"COP": "2025-12-31", "XOM": "2025-12-31", "PKG": "2025-12-31", "ECL": "2025-12-31", "ATO": "2026-09-30", "AEP": "2025-12-31"},

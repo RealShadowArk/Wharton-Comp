@@ -7,7 +7,48 @@ These are messages Pat can send as they are. They follow from the audit of every
 
 ---
 
-## Package 4 teammate (health care and industrials): the whole package
+## Update (19 Nov, evening): everything is back; only the Package 4 feedback is left
+
+Packages 1, 2, 3 and 5 and Part B sent everything asked below. Part A has nothing left. The earlier messages are kept for the record.
+
+## Package 4 feedback (health care and industrials)
+
+> Thanks for Package 4: it is complete and well sourced. The management and AI evidence is there for all seven companies, and so are the Yahoo files and the WInS research listings.
+>
+> **Results so far:**
+> - **Cigna and Leidos pass** the value tests.
+> - Copart is just short: value about equals the price, with little upside against the bear case.
+> - Boston Scientific, A. O. Smith, Snap-on and Allegion fail.
+> - ResMed stays a fail from 3 Nov.
+>
+> These items matter most, because the companies pass:
+>
+> 1. **Cigna (CI):**
+>    - FY2025 goodwill and other intangible assets, with the page. Cigna passes on cash flow but fails on the book-value rows you added, and goodwill from Express Scripts is the likely reason.
+>    - The FY2025 and FY2024 lines "medical costs and other benefit expenses" and "cost of products sold", for the red-flag check.
+>    - The exact parent-company cash at FY2025 (the note says "approximately").
+>    - One line on why the price fell from $298 on 30 Oct to $273 on 19 Nov.
+> 2. **Leidos (LDOS):**
+>    - FY2025 gross interest expense and interest income, if the 10-K shows them separately. Only net interest of $203m is in the tab.
+>    - One line on why the price fell 13% after 30 Oct (the 3 Nov results?).
+>
+> For completeness (these companies fail now):
+>
+> 3. **Copart (CPRT):**
+>    - Corporate cash is MISSING. Please confirm how much of the $1,907.9m is restricted, whether the $2,581.9m Treasury bills are company-owned and free to use, and whether to exclude the $175.1m buyer deposits. Pat used $4,489.8m as an assumption.
+>    - The FY2026 and FY2025 cost lines (yard operations, cost of vehicle sales) for the red-flag check.
+> 4. **A. O. Smith (AOS):**
+>    - The China sale: close date, proceeds, and where the cash sits.
+>    - FY2025 revenue and operating income excluding China (the $3,155m base).
+>    - Red-flag shares outstanding for both years.
+> 5. **Snap-on (SNA):**
+>    - The red-flag SG&A line: use "operating expenses" and say so.
+>    - The consensus excludes Financial Services but the revenue includes it. Give the Financial Services revenue forecast, or write MISSING.
+> 6. **Boston Scientific (BSX):** the FY2027 consensus of −0.45% looks odd. Please recheck it and give the provider's FY2027 revenue figure. If it is real, one line on why (the stock fell from about $100 to $42 during 2026).
+
+---
+
+## Package 4 teammate (health care and industrials): the whole package (sent earlier; now received)
 
 > Hi! Your Package 4 workbook hasn't reached Pat. The file that came through was Package 1 again, byte for byte. Please send `handoff/universe_packages_2026-11-17/package4_healthcare_industrials.zip` filled in, with a Yahoo Max monthly CSV for every company and SPY.
 >

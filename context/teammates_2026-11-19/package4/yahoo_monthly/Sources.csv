@@ -1,0 +1,10 @@
+Ticker,Evidence,Listing,Currency,Source URL,First row,Last row,Rows,Retrieved,Native file downloaded separately
+RMD,RESEARCH,NYSE:RMD,USD,https://query1.finance.yahoo.com/v8/finance/chart/RMD?period1=0&period2=1795132800&interval=1mo,1995-06-01,2026-11-01,378,2026-11-19,Yes
+BSX,RESEARCH,NYSE:BSX,USD,https://query1.finance.yahoo.com/v8/finance/chart/BSX?period1=0&period2=1795132800&interval=1mo,1992-05-01,2026-11-01,415,2026-11-19,Yes
+CI,RESEARCH,NYSE:CI,USD,https://query1.finance.yahoo.com/v8/finance/chart/CI?period1=0&period2=1795132800&interval=1mo,1985-01-01,2026-11-01,503,2026-11-19,Yes
+AOS,RESEARCH,NYSE:AOS,USD,https://query1.finance.yahoo.com/v8/finance/chart/AOS?period1=0&period2=1795132800&interval=1mo,1985-01-01,2026-11-01,503,2026-11-19,Yes
+CPRT,RESEARCH,Nasdaq:CPRT,USD,https://query1.finance.yahoo.com/v8/finance/chart/CPRT?period1=0&period2=1795132800&interval=1mo,1994-03-01,2026-11-01,393,2026-11-19,Yes
+LDOS,RESEARCH,NYSE:LDOS,USD,https://query1.finance.yahoo.com/v8/finance/chart/LDOS?period1=0&period2=1795132800&interval=1mo,2006-10-01,2026-11-01,242,2026-11-19,Yes
+SNA,RESEARCH,NYSE:SNA,USD,https://query1.finance.yahoo.com/v8/finance/chart/SNA?period1=0&period2=1795132800&interval=1mo,1985-01-01,2026-11-01,503,2026-11-19,Yes
+ALLE,RESEARCH,NYSE:ALLE,USD,https://query1.finance.yahoo.com/v8/finance/chart/ALLE?period1=0&period2=1795132800&interval=1mo,2013-11-01,2026-11-01,157,2026-11-19,Yes
+SPY,RESEARCH,NYSE Arca:SPY,USD,https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=0&period2=1795132800&interval=1mo,1993-01-01,2026-11-01,407,2026-11-19,Yes
