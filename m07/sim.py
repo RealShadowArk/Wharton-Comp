@@ -139,105 +139,127 @@ def conditional(hist_case, value_2031, block, seed, n_paths=N_PATHS):
     return ok / n_paths, [q(left, p) for p in (0.10, 0.50, 0.90)]
 
 
+WINDOWS = {1928: "with the Great Depression (1928-2025)", 1940: "without the Great Depression (1940-2025)"}  # Pat 20 Nov: always run both
+GEOM_BASE = 0.055   # M02 A-04 BASE geometric, for the non-crash years of the stress replays
+REPLAYS = [  # actual S&P 500 total returns (inputs/m07_sp500_annual_1928_2025.csv), placed just before 2033; other years at 5.5%
+    ("No crash (every year 5.5%)", {}),
+    ("AI-bubble burst: dot-com 2000-2002 in 2030-2032", {2030: -0.0903, 2031: -0.1185, 2032: -0.2197}),
+    ("2022 (-18.1%) in 2032", {2032: -0.1811}),
+    ("1973-74 in 2031-2032", {2031: -0.1431, 2032: -0.2590}),
+    ("2008 (-36.6%) in 2032", {2032: -0.3655}),
+    ("1931 (-43.8%) in 2032", {2032: -0.4384}),
+    ("Reverse stress: -50% in 2032", {2032: -0.50}),
+]
+
+
 def money(x):
     return f"${x:,.0f}"
 
 
-def main():
-    OUT.mkdir(parents=True, exist_ok=True)
-    hist = history()
-    required = form_reserve(0, BOND_YIELD)["reserve_required"]
-    floors = {y: floor(y, BOND_YIELD, MARGIN) for y in range(FIRST_YEAR, 2034)}
-    runs = {}
-    for case in ("LOW", "BASE", "HIGH"):
-        runs[(case, 5)] = simulate(block_paths(shifted(hist, ARITH[case]), N_PATHS, len(YEARS), 5, SEED))
+def window(start, floors):
+    """Every BASE/LOW/HIGH and sensitivity run for one history window, plus its files."""
+    h = history(start)
+    runs = {(c, 5): simulate(block_paths(shifted(h, ARITH[c]), N_PATHS, len(YEARS), 5, SEED)) for c in ("LOW", "BASE", "HIGH")}
     for b in (1, 3, 10):
-        runs[("BASE", b)] = simulate(block_paths(shifted(hist, ARITH["BASE"]), N_PATHS, len(YEARS), b, SEED))
-    runs[("RAW", 5)] = simulate(block_paths([r - FEE for r in hist], N_PATHS, len(YEARS), 5, SEED))
-    runs[("LOGNORMAL", 0)] = simulate(lognormal_paths(ARITH["BASE"], VOL_BASE, N_PATHS, len(YEARS), SEED))
-    windows = {}
-    for start in (1928, 1940, 1950):  # history window sensitivity (BASE mean and raw)
-        h = history(start)
-        windows[start] = (h, stats(simulate(block_paths(shifted(h, ARITH["BASE"]), N_PATHS, len(YEARS), 5, SEED))),
-                          stats(simulate(block_paths([r - FEE for r in h], N_PATHS, len(YEARS), 5, SEED))))
-    S = {k: stats(v) for k, v in runs.items()}
+        runs[("BASE", b)] = simulate(block_paths(shifted(h, ARITH["BASE"]), N_PATHS, len(YEARS), b, SEED))
+    runs[("RAW", 5)] = simulate(block_paths([r - FEE for r in h], N_PATHS, len(YEARS), 5, SEED))
     base = runs[("BASE", 5)]
-
-    # Fan chart data: wealth percentiles by year (BASE, block 5)
-    with open(OUT / "M07_fan_BASE.csv", "w", newline="") as f:
+    with open(OUT / f"M07_fan_BASE_{start}.csv", "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n")
         w.writerow(["year", "p10", "p25", "p50", "p75", "p90", "floor", "label"])
         for k, y in enumerate(range(FIRST_YEAR, 2034)):
             col = [r["wealth"][k] for r in base]
             w.writerow([y] + [round(q(col, p), 2) for p in (0.10, 0.25, 0.50, 0.75, 0.90)] + [round(floors[y], 2), "TEST"])
-
-    # M08 input: one row per path and gift share (BASE, block 5)
-    with open(OUT / "M07_path_summary.csv", "w", newline="") as f:
+    with open(OUT / f"M07_path_summary_{start}.csv", "w", newline="") as f:
         cols = ["run_id", "policy_id", "state_id", "path_id", "value_2031", "value_2033", "reserve_required", "reserve_gap",
                 "facility_gift", "all_payments_success", "total_nominal_shortfall", "worst_single_shortfall"]
         w = csv.DictWriter(f, cols, lineterminator="\n")
         w.writeheader()
         for sh in SHARES:
             for r in base:
-                w.writerow(dict(run_id="m07-0.1_BASE_block5", policy_id=policy_id(sh), state_id=FROM_2027, path_id=r["path_id"],
+                w.writerow(dict(run_id=f"m07-0.2_BASE_block5_{start}", policy_id=policy_id(sh), state_id=FROM_2027, path_id=r["path_id"],
                                 value_2031=round(r["value_2031"], 2), value_2033=round(r["value_2033"], 2),
                                 reserve_required=round(r["required"], 2), reserve_gap=round(r["gap"], 2),
                                 facility_gift=round(facility_gift(r["value_2033"], r["required"], sh), 2),
                                 all_payments_success=r["success"], total_nominal_shortfall=round(r["total_short"], 2),
                                 worst_single_shortfall=round(r["worst_short"], 2)))
-
-    # 2031 states: what a co-sponsor range would look like from a known 2031 balance
     w31 = sorted(r["value_2031"] for r in base)
-    states = [(f"p{int(p * 100)} of simulated 2031 balances", q(w31, p)) for p in (0.10, 0.50, 0.90)]
-    cond = [(name, v) + conditional(shifted(hist, ARITH["BASE"]), v, 5, SEED + 1) for name, v in states]
+    cond = [(f"p{int(p * 100)} of simulated 2031 balances", q(w31, p)) for p in (0.10, 0.50, 0.90)]
+    cond = [(n, v) + conditional(shifted(h, ARITH["BASE"]), v, 5, SEED + 1) for n, v in cond]
+    gifts = {sh: [facility_gift(r["value_2033"], r["required"], sh) for r in base] for sh in SHARES}
+    return dict(h=h, S={k: stats(v) for k, v in runs.items()}, base=base, cond=cond, gifts=gifts)
 
+
+def replay(crash):
+    rets = [crash.get(y, GEOM_BASE) for y in YEARS]
+    w, share = run_path(rets)
+    rv, paid = year_2033(w[-1])
+    return w[-1], max(0.0, w[-1] - rv["reserve_required"]), paid, share
+
+
+def main():
+    OUT.mkdir(parents=True, exist_ok=True)
+    required = form_reserve(0, BOND_YIELD)["reserve_required"]
+    floors = {y: floor(y, BOND_YIELD, MARGIN) for y in range(FIRST_YEAR, 2034)}
+    W = {start: window(start, floors) for start in WINDOWS}
+    logn = stats(simulate(lognormal_paths(ARITH["BASE"], VOL_BASE, N_PATHS, len(YEARS), SEED)))
     breach = (1 + BOND_YIELD) / M - 1   # one-year fall that wipes out the cushion when stocks = m x cushion
-    b = S[("BASE", 5)]
-    L = [f"# M07 Monte Carlo: floor rule, 2027-2042 (TEST, m07-0.1, {N_PATHS:,} paths per run, seed {SEED})", "",
-         "Generated by `python -m m07.sim`. Method and every default: module docstring. Student judgments (Pat 20 Nov defaults): "
-         "block bootstrap of 1928-2025 S&P 500 years, mean set to M02 LOW/BASE/HIGH, yearly rebalancing, hold-back 0% (10% and 20% shown). "
-         "**Simulation results do not prove future outcomes.**", "",
-         "## Plan facts used", "",
-         f"- Contributions $300,000 (2027) and $150,000 (2028), CASE. Ten $50,000 payments 2033-2042, CASE.",
-         f"- Floor rule: stocks = {M} x (wealth - floor), at most {CAP:.0%} of wealth; bonds earn {BOND_YIELD:.2%} (locked ladder yield); rebalanced yearly.",
-         f"- Required reserve at the start of 2033: {money(required)} (present value of the ten payments at {BOND_YIELD:.2%}). Floor at the start of 2028: {money(floors[2028])}.",
-         f"- Median stock share in 2028 (after both contributions): {b['share_2028']:.0%}.",
-         f"- One-year stock fall that would break the floor when stocks are exactly {M} x the cushion: {breach:.1%}. "
-         f"Worst year in the 1928-2025 history: -43.8% (1931); after the BASE mean shift: {-0.4384 + ARITH['BASE'] - statistics.mean(hist):.1%}.", "",
-         "## Headline (BASE, 5-year blocks)", "",
-         f"- **All ten payments funded in {b['success']:.2%} of paths** ({b['n_short']} of {N_PATHS:,} short; average shortfall in those paths {money(b['mean_short'])}, worst {money(b['worst_short'])}).",
-         f"- **Leftover at the start of 2033** (after the reserve and the first payment's funding), middle 80% of paths: **{money(b['left'][1])} to {money(b['left'][5])}**, median {money(b['left'][3])}.",
-         f"- Worst 5% of paths average a leftover of {money(b['cvar5'])} (expected shortfall, CVaR 5%); leftover is zero in {b['zero_left']:.1%} of paths.", "",
-         "## Leftover in 2033 by case (the pool for a facility gift)", "",
-         "| Run | Payments fully funded | p10 | p25 | Median | p75 | p90 | Worst 5% average |", "|---|---|---|---|---|---|---|---|"]
-    names = {("LOW", 5): "LOW (M02 mean 5.64%)", ("BASE", 5): "**BASE (6.95%)**", ("HIGH", 5): "HIGH (7.48%)", ("RAW", 5): "Raw history (11.8%)",
-             ("BASE", 1): "BASE, 1-year blocks", ("BASE", 3): "BASE, 3-year blocks", ("BASE", 10): "BASE, 10-year blocks",
-             ("LOGNORMAL", 0): "Lognormal cross-check (6.95%, 17.8%)"}
-    for k in [("LOW", 5), ("BASE", 5), ("HIGH", 5), ("RAW", 5), ("BASE", 1), ("BASE", 3), ("BASE", 10), ("LOGNORMAL", 0)]:
-        s = S[k]
-        L.append(f"| {names[k]} | {s['success']:.2%} | {money(s['left'][1])} | {money(s['left'][2])} | {money(s['left'][3])} | "
-                 f"{money(s['left'][4])} | {money(s['left'][5])} | {money(s['cvar5'])} |")
-    L += ["", "## History window (5-year blocks): which years feed the bootstrap", "",
-          "| Years | Mean, volatility | Worst year (after BASE shift) | BASE: payments funded | BASE leftover p10 / median / p90 | Raw: payments funded | Raw leftover median |",
-          "|---|---|---|---|---|---|---|"]
-    for start, (h, sb, sr) in windows.items():
-        L.append(f"| {start}-2025 ({len(h)} years) | {statistics.mean(h):.1%}, {statistics.stdev(h):.1%} | {min(h):.1%} ({min(h) + ARITH['BASE'] - statistics.mean(h):.1%}) | "
-                 f"{sb['success']:.2%} | {money(sb['left'][1])} / {money(sb['left'][3])} / {money(sb['left'][5])} | {sr['success']:.2%} | {money(sr['left'][3])} |")
-    L += ["", "## Gift range by hold-back (BASE, 5-year blocks; middle 80% of paths)", "",
-          "| Hold-back | Gift share | p10 | Median | p90 |", "|---|---|---|---|---|"]
-    for sh in SHARES:
-        g = [facility_gift(r["value_2033"], r["required"], sh) for r in base]
-        L.append(f"| {1 - sh:.0%} | {sh:.0%} | {money(q(g, 0.10))} | {money(q(g, 0.50))} | {money(q(g, 0.90))} |")
-    L += ["", "## From a known 2031 balance (BASE): the range a co-sponsor would hear in 2031", "",
-          "Two more stock years (2031, 2032) from the stated balance; 10,000 paths each.", "",
-          "| 2031 state | Balance at the start of 2031 | Payments fully funded | Leftover p10 | Median | p90 |", "|---|---|---|---|---|---|"]
-    for name, v, ok, (a, m_, c) in cond:
-        L.append(f"| {name} | {money(v)} | {ok:.2%} | {money(a)} | {money(m_)} | {money(c)} |")
-    L += ["", "## Wealth path (BASE): percentiles at the start of each year", "", "| Year | p10 | Median | p90 | Floor |", "|---|---|---|---|---|"]
-    for k, y in enumerate(range(FIRST_YEAR, 2034)):
-        col = [r["wealth"][k] for r in base]
-        L.append(f"| {y} | {money(q(col, 0.10))} | {money(q(col, 0.50))} | {money(q(col, 0.90))} | {money(floors[y])} |")
-    L += ["", "Files: `M07_fan_BASE.csv` (fan chart), `M07_path_summary.csv` (M08's input: BASE, one row per path and gift share)."]
+    L = [f"# M07 Monte Carlo: floor rule, 2027-2042 (TEST, m07-0.2, {N_PATHS:,} paths per run, seed {SEED})", "",
+         "Generated by `python -m m07.sim`. Method and every default: module docstring. Student judgments (Pat 20 Nov): "
+         "every run is shown twice, with and without the Great Depression years; block bootstrap of S&P 500 years with the mean set to M02 "
+         "LOW/BASE/HIGH; yearly rebalancing; hold-back 0% (10% and 20% shown). **Simulation results do not prove future outcomes.**", "",
+         "## What is simulated", "",
+         "- **Laura's plan, not the WInS account:** contributions of $300,000 (2027) and $150,000 (2028), $450,000 in total (CASE); ten $50,000 payments 2033-2042 (CASE). "
+         "WInS gains and losses are never added (competition rule).",
+         "- **The stock sleeve is the S&P 500**, the longest reliable history (1928-2025), with its average set to M02. Our specific holdings are not modelled; "
+         "a variant with our final mix waits for the 2028 additions.",
+         f"- Floor rule: stocks = {M} x (wealth - floor), at most {CAP:.0%} of wealth; the rest earns {BOND_YIELD:.2%} (locked ladder yield); rebalanced yearly.",
+         f"- Required reserve at the start of 2033: {money(required)}. Floor at the start of 2028: {money(floors[2028])}.",
+         f"- **Breach point:** the floor breaks only if stocks fall more than {-breach:.1%} in one year.", "",
+         "## Headline: the two histories side by side (BASE mean 6.95%, 5-year blocks)", "",
+         "| | " + " | ".join(WINDOWS.values()) + " |", "|---|---|---|"]
+    rows = [("Years in the bootstrap", lambda d: f"{len(d['h'])}"),
+            ("Raw average, volatility", lambda d: f"{statistics.mean(d['h']):.1%}, {statistics.stdev(d['h']):.1%}"),
+            ("Worst year (after the BASE shift)", lambda d: f"{min(d['h']):.1%} ({min(d['h']) + ARITH['BASE'] - statistics.mean(d['h']):.1%})"),
+            ("**All ten payments funded**", lambda d: f"**{d['S'][('BASE', 5)]['success']:.2%}**"),
+            ("Paths short, average shortfall", lambda d: f"{d['S'][('BASE', 5)]['n_short']}, {money(d['S'][('BASE', 5)]['mean_short'])}"),
+            ("**2033 leftover, middle 80%**", lambda d: f"**{money(d['S'][('BASE', 5)]['left'][1])} to {money(d['S'][('BASE', 5)]['left'][5])}**"),
+            ("2033 leftover, median", lambda d: money(d['S'][('BASE', 5)]['left'][3])),
+            ("Worst 5% of paths, average leftover (CVaR)", lambda d: money(d['S'][('BASE', 5)]['cvar5']))]
+    for label, f in rows:
+        L.append(f"| {label} | " + " | ".join(f(W[s]) for s in WINDOWS) + " |")
+    names = {("LOW", 5): "LOW (mean 5.64%)", ("BASE", 5): "**BASE (6.95%)**", ("HIGH", 5): "HIGH (7.48%)", ("RAW", 5): "Raw history",
+             ("BASE", 1): "BASE, 1-year blocks", ("BASE", 3): "BASE, 3-year blocks", ("BASE", 10): "BASE, 10-year blocks"}
+    for start, title in WINDOWS.items():
+        d = W[start]
+        L += ["", f"## {title[0].upper() + title[1:]}", "", "### Leftover in 2033 by case", "",
+              "| Run | Payments fully funded | p10 | p25 | Median | p75 | p90 | Worst 5% average |", "|---|---|---|---|---|---|---|---|"]
+        for k in names:
+            s_ = d["S"][k]
+            L.append(f"| {names[k]} | {s_['success']:.2%} | {money(s_['left'][1])} | {money(s_['left'][2])} | {money(s_['left'][3])} | "
+                     f"{money(s_['left'][4])} | {money(s_['left'][5])} | {money(s_['cvar5'])} |")
+        L += ["", "### Gift range by hold-back (BASE; middle 80%)", "", "| Hold-back | p10 | Median | p90 |", "|---|---|---|---|"]
+        for sh, g in d["gifts"].items():
+            L.append(f"| {1 - sh:.0%} | {money(q(g, 0.10))} | {money(q(g, 0.50))} | {money(q(g, 0.90))} |")
+        L += ["", "### From a known 2031 balance (BASE): the range for co-sponsors in 2031", "",
+              "| 2031 state | Balance at the start of 2031 | Payments fully funded | Leftover p10 | Median | p90 |", "|---|---|---|---|---|---|"]
+        for n, v, ok, (a, m_, c) in d["cond"]:
+            L.append(f"| {n} | {money(v)} | {ok:.2%} | {money(a)} | {money(m_)} | {money(c)} |")
+        L += ["", "### Wealth at the start of each year (BASE)", "", "| Year | p10 | Median | p90 | Floor |", "|---|---|---|---|---|"]
+        for k, y in enumerate(range(FIRST_YEAR, 2034)):
+            col = [r["wealth"][k] for r in d["base"]]
+            L.append(f"| {y} | {money(q(col, 0.10))} | {money(q(col, 0.50))} | {money(q(col, 0.90))} | {money(floors[y])} |")
+    L += ["", "## Crash replays (actual years placed just before 2033; other years at M02 BASE 5.5%)", "",
+          "Deterministic stress tests, the same under both histories.", "",
+          "| Replay | Wealth at the start of 2033 | All payments funded | Leftover in 2033 | Leftover vs no crash |", "|---|---|---|---|---|"]
+    w0, left0, _, _ = replay({})
+    for name, crash in REPLAYS:
+        w33, left, paid, _ = replay(crash)
+        L.append(f"| {name} | {money(w33)} | {'yes' if paid['all_payments_funded'] else 'NO: short ' + money(paid['total_shortfall'])} | "
+                 f"{money(left)} | {(left / left0 - 1):+.0%} |")
+    L += ["", f"Lognormal cross-check (M02 BASE 6.95%, 17.8%): payments funded {logn['success']:.2%}; leftover middle 80% "
+          f"{money(logn['left'][1])} to {money(logn['left'][5])}, median {money(logn['left'][3])}.", "",
+          "Files: `M07_fan_BASE_<start>.csv` (fan chart), `M07_path_summary_<start>.csv` (M08's input: BASE, one row per path and gift share)."]
     (OUT / "M07_summary.md").write_text("\n".join(L) + "\n")
     print("\n".join(L))
 
