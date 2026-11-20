@@ -21,7 +21,7 @@ def stamp(t, off):
     return datetime.fromtimestamp(t + off + 43200, tz=timezone.utc).date()
 
 
-def monthly_csv(sym, folder):
+def monthly_csv(sym, folder, allow_gaps=False):
     # range=max returns 3-month bars for long histories (Comcast, 19 Nov), so ask for explicit dates
     now = int(datetime.now(timezone.utc).timestamp())
     d = json.loads(get(f"{BASE}{sym}?period1=-1500000000&period2={now}&interval=1mo&events=div,split"))["chart"]["result"][0]
@@ -34,7 +34,7 @@ def monthly_csv(sym, folder):
         lines.append(f"{day},{q['open'][i]},{q['high'][i]},{q['low'][i]},{q['close'][i]},{adj[i]},{q['volume'][i]}")
     months = [l[:7] for l in lines[1:]]
     gaps = sum(1 for a, b in zip(months, months[1:]) if (int(b[:4]) * 12 + int(b[5:7])) - (int(a[:4]) * 12 + int(a[5:7])) != 1)
-    if gaps:
+    if gaps and not allow_gaps:
         raise ValueError(f"{sym}: {gaps} gaps between monthly bars; not written")
     (Path(folder) / f"{sym}.csv").write_text("\n".join(lines) + "\n")
     return lines[1].split(",")[0], lines[-1].split(",")[0]
@@ -57,6 +57,7 @@ if __name__ == "__main__":
         for s in sys.argv[3:]:
             print(f"{s},{close_on(s, day)}")
     else:
+        args = [a for a in sys.argv[2:] if a != "--allow-gaps"]  # --allow-gaps: keep a series with missing months (e.g. FX)
         Path(sys.argv[1]).mkdir(parents=True, exist_ok=True)
-        for s in sys.argv[2:]:
-            print(s, *monthly_csv(s, sys.argv[1]))
+        for s in args:
+            print(s, *monthly_csv(s, sys.argv[1], "--allow-gaps" in sys.argv))

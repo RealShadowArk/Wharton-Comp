@@ -143,7 +143,7 @@ WINDOWS = {1928: "with the Great Depression (1928-2025)", 1940: "without the Gre
 GEOM_BASE = 0.055   # M02 A-04 BASE geometric, for the non-crash years of the stress replays
 REPLAYS = [  # actual S&P 500 total returns (inputs/m07_sp500_annual_1928_2025.csv), placed just before 2033; other years at 5.5%
     ("No crash (every year 5.5%)", {}),
-    ("AI-bubble burst: dot-com 2000-2002 in 2030-2032", {2030: -0.0903, 2031: -0.1185, 2032: -0.2197}),
+    ("Dot-com bust 2000-2002 in 2030-2032 (stand-in for an AI-bubble burst)", {2030: -0.0903, 2031: -0.1185, 2032: -0.2197}),
     ("2022 (-18.1%) in 2032", {2032: -0.1811}),
     ("1973-74 in 2031-2032", {2031: -0.1431, 2032: -0.2590}),
     ("2008 (-36.6%) in 2032", {2032: -0.3655}),

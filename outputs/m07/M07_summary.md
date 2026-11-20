@@ -114,7 +114,7 @@ Deterministic stress tests, the same under both histories.
 | Replay | Wealth at the start of 2033 | All payments funded | Leftover in 2033 | Leftover vs no crash |
 |---|---|---|---|---|
 | No crash (every year 5.5%) | $606,224 | yes | $204,601 | +0% |
-| AI-bubble burst: dot-com 2000-2002 in 2030-2032 | $449,530 | yes | $47,907 | -77% |
+| Dot-com bust 2000-2002 in 2030-2032 (stand-in for an AI-bubble burst) | $449,530 | yes | $47,907 | -77% |
 | 2022 (-18.1%) in 2032 | $514,873 | yes | $113,250 | -45% |
 | 1973-74 in 2031-2032 | $453,598 | yes | $51,975 | -75% |
 | 2008 (-36.6%) in 2032 | $443,526 | yes | $41,903 | -80% |
