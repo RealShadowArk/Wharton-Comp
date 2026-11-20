@@ -94,7 +94,7 @@ Values are research estimates, never price targets, returns or position sizes. F
 - **Stands out:** the mildest worst year of the long-history finalists (−22.5%), so the largest meaningful max position ($26,655).
 - **Red flags:**
   - **A DOJ Antitrust Division criminal investigation and grand jury subpoena over three federal procurements** (latest 10-Q).
-  - On 3 Nov: a Q3 revenue miss, a cut to FY2026 sales guidance and a signal of flat FY2027 earnings.
+  - On 3 Nov: a Q3 revenue miss and a signal of flat FY2027 earnings. The FY2026 revenue range was cut after the SES/Industrial Automation joint venture closed, while EPS and cash-flow guidance were raised.
 
 **T-Mobile (TMUS)**
 - **Strong:**
