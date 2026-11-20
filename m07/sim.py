@@ -42,8 +42,8 @@ YEARS = list(range(FIRST_YEAR, 2033))   # stock years 2027-2032
 SHARES = (1.0, 0.9, 0.8)                # gift share = 1 - hold-back
 
 
-def history():
-    return [float(r["sp500_total_return"]) for r in csv.DictReader(open(HISTORY))]
+def history(start=1928, end=2025):
+    return [float(r["sp500_total_return"]) for r in csv.DictReader(open(HISTORY)) if start <= int(r["year"]) <= end]
 
 
 def shifted(hist, target):
@@ -155,6 +155,11 @@ def main():
         runs[("BASE", b)] = simulate(block_paths(shifted(hist, ARITH["BASE"]), N_PATHS, len(YEARS), b, SEED))
     runs[("RAW", 5)] = simulate(block_paths([r - FEE for r in hist], N_PATHS, len(YEARS), 5, SEED))
     runs[("LOGNORMAL", 0)] = simulate(lognormal_paths(ARITH["BASE"], VOL_BASE, N_PATHS, len(YEARS), SEED))
+    windows = {}
+    for start in (1928, 1940, 1950):  # history window sensitivity (BASE mean and raw)
+        h = history(start)
+        windows[start] = (h, stats(simulate(block_paths(shifted(h, ARITH["BASE"]), N_PATHS, len(YEARS), 5, SEED))),
+                          stats(simulate(block_paths([r - FEE for r in h], N_PATHS, len(YEARS), 5, SEED))))
     S = {k: stats(v) for k, v in runs.items()}
     base = runs[("BASE", 5)]
 
@@ -212,6 +217,12 @@ def main():
         s = S[k]
         L.append(f"| {names[k]} | {s['success']:.2%} | {money(s['left'][1])} | {money(s['left'][2])} | {money(s['left'][3])} | "
                  f"{money(s['left'][4])} | {money(s['left'][5])} | {money(s['cvar5'])} |")
+    L += ["", "## History window (5-year blocks): which years feed the bootstrap", "",
+          "| Years | Mean, volatility | Worst year (after BASE shift) | BASE: payments funded | BASE leftover p10 / median / p90 | Raw: payments funded | Raw leftover median |",
+          "|---|---|---|---|---|---|---|"]
+    for start, (h, sb, sr) in windows.items():
+        L.append(f"| {start}-2025 ({len(h)} years) | {statistics.mean(h):.1%}, {statistics.stdev(h):.1%} | {min(h):.1%} ({min(h) + ARITH['BASE'] - statistics.mean(h):.1%}) | "
+                 f"{sb['success']:.2%} | {money(sb['left'][1])} / {money(sb['left'][3])} / {money(sb['left'][5])} | {sr['success']:.2%} | {money(sr['left'][3])} |")
     L += ["", "## Gift range by hold-back (BASE, 5-year blocks; middle 80% of paths)", "",
           "| Hold-back | Gift share | p10 | Median | p90 |", "|---|---|---|---|---|"]
     for sh in SHARES:
