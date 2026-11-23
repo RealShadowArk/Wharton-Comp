@@ -59,7 +59,8 @@ def wacc(year):
     return 0.12 if year <= 2031 else path(0.12, 0.095, 2031, 2036, year)
 
 
-def value(s, r_end=None, life=None, wacc_shift=0.0):
+def value(s, r_end=None, life=None, wacc_shift=0.0, wacc_const=None):
+    W = (lambda y: wacc_const) if wacc_const is not None else (lambda y: wacc(y) + wacc_shift)  # a fixed rate (e.g. from a beta) or the path
     r0, r1 = s["r"]
     r1 = r_end if r_end is not None else r1
     L = life or s["life"]
@@ -68,7 +69,7 @@ def value(s, r_end=None, life=None, wacc_shift=0.0):
     vint = dict(VINTAGES)
     r = lambda y: path(r0, r1, 2027, 2031, y)
     # Q4 2026 stub: Q3 2026 EBIT was about zero, so no tax
-    pv, df, rows = (REV_Q4 * e0 - CAPEX_Q4) / (1 + wacc(2026) + wacc_shift) ** Y0, (1 + wacc(2026) + wacc_shift) ** Y0, []
+    pv, df, rows = (REV_Q4 * e0 - CAPEX_Q4) / (1 + W(2026)) ** Y0, (1 + W(2026)) ** Y0, []
     # equipment from one year retires in thirds at ages L-1, L and L+1, so one big purchase year does not echo as one lump
     alive_share = lambda age: 1.0 if age < L - 1 else (2 / 3 if age == L - 1 else (1 / 3 if age == L else 0.0))
     for t in range(2027, LAST + 1):
@@ -79,7 +80,7 @@ def value(s, r_end=None, life=None, wacc_shift=0.0):
         ebitda = rev[t] * path(e0, e1, 2026, ey, t)
         ebit = ebitda - da
         fcff = ebitda - TAX * max(ebit, 0.0) - capex
-        df *= 1 + wacc(t) + wacc_shift
+        df *= 1 + W(t)
         pv += fcff / df
         rows.append((t, rev[t], ebitda / rev[t], ebit / rev[t], capex, fcff))
     # terminal: a fleet growing steadily at G (capex grows at G, so capacity = capex x sum of (1+G)^-k over its life)
@@ -90,7 +91,7 @@ def value(s, r_end=None, life=None, wacc_shift=0.0):
     da = capex / (1 + G) * sum((1 + G) ** -k for k in range(L)) / L
     ebitda = R * e1
     fcff = ebitda - TAX * max(ebitda - da, 0.0) - capex
-    pv_tv = fcff / (wacc(t) + wacc_shift - G) / df
+    pv_tv = fcff / (W(t) - G) / df
     ev = pv + pv_tv
     eq = ev - DEBT - FIN_LEASES + CASH
     return dict(ev=ev, pv_tv=pv_tv, eq=eq, ps=eq * 1000 / SHARES, rows=rows, rev=rev)

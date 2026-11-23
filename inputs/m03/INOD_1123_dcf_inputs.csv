@@ -1,0 +1,27 @@
+field,value,unit,label,source,note
+ticker,INOD,,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Data services (sub-industry not verified)
+valuation_date,2026-11-23,date,CASE,Price date,
+price,32.84,USD,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),"Yahoo regular-market price, 23 Nov 2026"
+base_year,2025,,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Fiscal year ended 2025-12-31
+base_revenue,251.663,USD m,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+growth,0.4200;0.2383;0.2123;0.1862;0.1602;0.1342;0.1081;0.0821;0.0560;0.0300,decimal,ASSUMPTION,"Standard method (Pat, 3 Nov)",Year 1 consensus; years 2-3 consensus; fade to terminal growth (year-3 consensus MISSING: fade to terminal growth starts after year 2)
+ebit_margin,0.15844;0.15844;0.15844;0.15844;0.15844;0.15844;0.15844;0.15844;0.15844;0.15844,decimal,ASSUMPTION,Standard method: FY0 operating margin held flat,
+tax_rate,0.2232,decimal,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),1 - net income / pretax income
+da_pct,0.02737;0.02737;0.02737;0.02737;0.02737;0.02737;0.02737;0.02737;0.02737;0.02737,decimal,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Reported D&A / revenue; stock pay stays in EBIT (sbc_pct 0)
+capex_pct,0.04412;0.04412;0.04412;0.04412;0.04412;0.04412;0.04412;0.04412;0.04412;0.04412,decimal,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+nwc_pct_of_change,0.0,decimal,ASSUMPTION,Kit default,
+risk_free,0.0494,decimal,RESEARCH,"US Treasury 10-year par CMT, 30 Oct 2026",
+beta,1.0,,ASSUMPTION,Standard method,
+beta_measured,3.119,,RESEARCH,"60 monthly USD returns vs SPY, Nov 2021-Oct 2026",
+equity_premium,0.05,decimal,ASSUMPTION,Kit default 5%,
+pre_tax_cost_of_debt,0.0544,decimal,ASSUMPTION,Kit default: 10-year + 0.5 points,
+equity_value_for_weights,1061.95,USD m,RESEARCH,Price x shares,
+debt_value_for_weights,-0.083,USD m,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+terminal_growth,0.03,decimal,ASSUMPTION,"3% in USD, converted by the rate gap",
+return_on_new_capital,0.15,decimal,ASSUMPTION,Kit default,
+debt,-0.083,USD m,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),
+non_operating_assets,82.23,USD m,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Corporate cash
+diluted_shares,35.47,m,RESEARCH,Yahoo_Round2_data.xlsx (Valuation inputs; source ledger 'Round 2 sources.csv'),Shares at the cash-and-debt date plus dilution (teammate's ledger)
+years_to_first_cash_flow,0.1,years,ASSUMPTION,Valuation date to the end of FY2026 (2026-12-31),
+first_year_fraction,1.0,,ASSUMPTION,Method,Cash and debt at the FY0 year-end
+sbc_pct,0,decimal,ASSUMPTION,Method,0 because da_pct is reported D&A

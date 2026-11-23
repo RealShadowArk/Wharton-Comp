@@ -388,6 +388,15 @@ SETS = {
         val_override={"MU": {"consensus_revenue_growth_y2": 0.03, "consensus_revenue_growth_y3": 0.03, "operating_income": 133188 * 0.1778}},
         who="Micron TEST B: as A, at the average FY2023-26 operating margin 17.8% (-34.8%, 5.2%, 26.1%, 74.6%)",
         notes={"MU": "TEST: through-cycle margin = simple average of the FY2023-26 operating margins (Yahoo); tax rate and the cash check still use FY2026"}),
+    "inod": dict(  # Pat 23 Nov (personal, not for the competition): Innodata through the standard Round 2 method at today's price
+        workbook=ROOT / "personal/inod_round2_2026-11-23/Yahoo_Round2_data.xlsx", yahoo=ROOT / "personal/inod_round2_2026-11-23/yahoo_monthly",
+        val_date=date(2026, 11, 23), file_suffix="_1123", fy_end={"INOD": "2025-12-31"},
+        price_note="Yahoo regular-market price, 23 Nov 2026", group={"INOD": "Data services (sub-industry not verified)"},
+        val_override={"INOD": {"diluted_shares_m": 35.47}},  # Q4 2025 diluted average (Yahoo): options and RSUs are about 3m shares
+        m12_text={"INOD": "Not run (no peer file)"},
+        who="Innodata at 23 Nov price (personal; Yahoo statements)",
+        notes={"INOD": "Year 1 = 2026 guidance floor +42%; year 2 = consensus 442.5m (Mar 2026 snapshot, stale); year 3 MISSING; FY2025 cash 82.2 (164 at 30 Sep 2026 incl. prepayments); "
+                       "two customers 73% of 9M 2026 revenue"}),
 }
 TEXT = {"ticker", "company", "peer_group", "reporting_currency", "guidance_next_fy_revenue_growth", "guidance_basis",
         "cash_note", "long_term_target", "sources", "notes", "period", "guidance_fy2026_revenue_growth_numeric", "source", "listing_used_for_prices", "price_currency"}
