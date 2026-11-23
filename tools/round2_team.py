@@ -40,6 +40,10 @@ PX_30OCT = {"INTU": 341.09, "QCOM": 164.79, "TEL": 213.03, "FOXA": 63.24, "CMCSA
             "EOG": 165.54, "EXE": 90.55, "APA": 52.82, "CF": 123.3, "VMC": 281.25, "MLM": 540.41,
             "PEG": 74.29, "EXC": 46.16, "ED": 116.64}
 PX_NOTE = "30 Oct 2026 close (Yahoo daily close, fetched 19 Nov by tools/fetch_yahoo_monthly.py)"
+AI6 = ROOT / "inputs" / "round2_ai_2026-11-23"  # Pat 23 Nov: NVDA, AMD, INTC, CRWV, MU, PLTR at today's prices
+AI6_FY = {"NVDA": "2026-01-25", "AMD": "2025-12-31", "INTC": "2025-12-31", "CRWV": "2025-12-31", "MU": "2026-08-31", "PLTR": "2025-12-31"}
+AI6_GROUP = {"NVDA": "Semiconductors", "AMD": "Semiconductors", "INTC": "Semiconductors", "MU": "Semiconductors",
+             "PLTR": "Application software", "CRWV": "AI cloud (sub-industry not verified)"}
 SETS = {
     "akshajp": dict(
         workbook=TEAM / "akshaj_p_final" / "Team_Round2_Akshaj_P.xlsx",
@@ -356,6 +360,34 @@ SETS = {
         notes={"0388.HK": "Valued in HKD (HK 10-year 3.855%). Capex 1,733 excludes the one-off HK$3,148m headquarters purchase (with it, capex is 20.6% of revenue held for ten years); operating cash flow includes clearing and margin-fund movements, so the cash check is not meaningful",
                "TW": "Tax 21.6% from net income before non-controlling interests (Up-C); capex includes capitalized software 62.5",
                "AUTO.L": "Valued in GBP (UK 10-year 5.29%); shares at 31 Mar 2026 (buybacks since: 760.6m on 19 Oct)"}),
+    "ai6": dict(  # Pat 23 Nov: six AI names at today's prices. Statements from Yahoo (tools/yahoo_round2_workbook.py), TEST until checked against the 10-Ks
+        workbook=AI6 / "Yahoo_Round2_data.xlsx", yahoo=AI6 / "yahoo_monthly", val_date=date(2026, 11, 23), skip={"MU"}, file_suffix="_1123",
+        price_note="Yahoo regular-market price, 23 Nov 2026 (WInS not checked)", fy_end=AI6_FY, group=AI6_GROUP,
+        tax_override={"INTC": (0.21, "ASSUMPTION: US federal 21%. FY2025 operating income is -23 while pretax income 1,557 includes gains, "
+                               "and net income after minority interests is negative"),
+                      "CRWV": (0.21, "ASSUMPTION: US federal 21% (FY2025 pretax loss of 1,215)"),
+                      "AMD": (0.21, "ASSUMPTION: US federal 21% (FY2025 net income 4,335 exceeds pretax income 4,140: a net tax benefit)")},
+        m12_text={t: "Not run (no peer file)" for t in AI6_FY},
+        who="Six AI names at 23 Nov prices (Yahoo statements; consensus in inputs/round2_ai_2026-11-23/consensus.csv)",
+        notes={"NVDA": "Consensus from Akshaj K (3 Nov); held in WInS (35 shares)",
+               "AMD": "Year 1 = Q1-Q3 2026 actual + Q4 consensus (51.6bn); years 2-3 consensus MISSING, so the fade starts after year 1 (TEST rule); GAAP operating margin 10.7% is after about 2.4bn of acquired-intangible amortization",
+               "INTC": "Debt includes 12,079 of minority interests (Brookfield and Apollo fab stakes, Mobileye, IMS) as a senior claim; FY2025 operating margin -0.04% held flat, so the operating value is about zero",
+               "CRWV": "Listed 28 Mar 2025: 19 monthly returns, no complete calendar year; capex 201% of revenue held flat (build-out phase), so the standard method gives a negative value; finance leases MISSING",
+               "PLTR": "Debt = minority interests 101 (no borrowings)"}),
+    "ai6_mu_flat": dict(  # TEST: Micron with FY2028-29 consensus MISSING; growth after FY2027 = terminal 3% (no further growth)
+        workbook=AI6 / "Yahoo_Round2_data.xlsx", yahoo=AI6 / "yahoo_monthly", val_date=date(2026, 11, 23), file_suffix="_FLAT",
+        skip={"NVDA", "AMD", "INTC", "CRWV", "PLTR"}, fy_end=AI6_FY, group=AI6_GROUP,
+        price_note="Yahoo regular-market price, 23 Nov 2026 (WInS not checked)", m12_text={"MU": "Not run (no peer file)"},
+        val_override={"MU": {"consensus_revenue_growth_y2": 0.03, "consensus_revenue_growth_y3": 0.03}},
+        who="Micron TEST A: FY2027 consensus +106%, then 3% a year, FY2026 operating margin 74.6% held",
+        notes={"MU": "TEST: FY2028-29 consensus MISSING, so growth after FY2027 is set to the terminal 3% (the standard fade from +106% would compound to about 60x revenue); margin is the FY2026 peak"}),
+    "ai6_mu_cycle": dict(  # TEST: as A, with the average FY2023-26 operating margin (one trough-to-peak memory cycle)
+        workbook=AI6 / "Yahoo_Round2_data.xlsx", yahoo=AI6 / "yahoo_monthly", val_date=date(2026, 11, 23), file_suffix="_CYCLE",
+        skip={"NVDA", "AMD", "INTC", "CRWV", "PLTR"}, fy_end=AI6_FY, group=AI6_GROUP,
+        price_note="Yahoo regular-market price, 23 Nov 2026 (WInS not checked)", m12_text={"MU": "Not run (no peer file)"},
+        val_override={"MU": {"consensus_revenue_growth_y2": 0.03, "consensus_revenue_growth_y3": 0.03, "operating_income": 133188 * 0.1778}},
+        who="Micron TEST B: as A, at the average FY2023-26 operating margin 17.8% (-34.8%, 5.2%, 26.1%, 74.6%)",
+        notes={"MU": "TEST: through-cycle margin = simple average of the FY2023-26 operating margins (Yahoo); tax rate and the cash check still use FY2026"}),
 }
 TEXT = {"ticker", "company", "peer_group", "reporting_currency", "guidance_next_fy_revenue_growth", "guidance_basis",
         "cash_note", "long_term_target", "sources", "notes", "period", "guidance_fy2026_revenue_growth_numeric", "source", "listing_used_for_prices", "price_currency"}
@@ -568,27 +600,31 @@ def main(key):
         g1_note = ""
         if t in cfg.get("g1_override", {}):
             g1, g1_note = cfg["g1_override"][t]
-        if v["consensus_revenue_growth_y3"] is None:  # year-3 consensus MISSING: fade starts after year 2
+        if v["consensus_revenue_growth_y2"] is None:  # years 2-3 MISSING: fade starts after year 1 (TEST rule, 23 Nov; Pat to confirm)
+            growth = [g1] + [g1 + (g_term - g1) * k / 9 for k in range(1, 10)]
+            g1_note += ("; " if g1_note else "") + "years 2-3 consensus MISSING: fade to terminal growth starts after year 1 (TEST rule)"
+        elif v["consensus_revenue_growth_y3"] is None:  # year-3 consensus MISSING: fade starts after year 2
             g2 = v["consensus_revenue_growth_y2"]
             growth = [g1, g2] + [g2 + (g_term - g2) * k / 8 for k in range(1, 9)]
             g1_note += ("; " if g1_note else "") + "year-3 consensus MISSING: fade to terminal growth starts after year 2"
         else:
             growth = fade(g1, v["consensus_revenue_growth_y2"], v["consensus_revenue_growth_y3"], g_term)
+        vd = cfg.get("val_date", VAL_DATE)  # a later valuation date when the price is today's (rates stay at 30 Oct)
         fy1_end = fy_end[t].replace(year=fy_end[t].year + 1)
-        to_first = round((fy1_end - VAL_DATE).days / 365.25, 2)
+        to_first = round((fy1_end - vd).days / 365.25, 2)
         rolled = ""
         if to_first <= 0:  # next fiscal year already ended before 30 Oct (e.g. Qualcomm, September year-end)
             rev = rev * (1 + growth[0])
             growth = growth[1:] + [g_term]
             fy1_end = fy1_end.replace(year=fy1_end.year + 1)
-            to_first = round((fy1_end - VAL_DATE).days / 365.25, 2)
+            to_first = round((fy1_end - vd).days / 365.25, 2)
             rolled = (f"; FY{v['fiscal_year'] + 1} ended before the valuation date: base revenue = FY{v['fiscal_year']} x (1 + year-1 consensus), "
                       "its cash flow treated as already paid out (cash and debt at the FY0 year-end)")
         da, capex = v["d_and_a"] / rev, (v["capex"] + (v["capex_software"] or 0)) / rev
         S = f"{cfg['workbook'].name} (Valuation inputs; source ledger 'Round 2 sources.csv')"
         rows = [
             ("ticker", t, "", "RESEARCH", S, group.get(t, "")),
-            ("valuation_date", "2026-10-30", "date", "CASE", "Price date", ""),
+            ("valuation_date", str(vd), "date", "CASE", "Price date", ""),
             ("price", v["price_30oct"], cur, "RESEARCH", S, cfg.get("price_note", "30 Oct 2026 close, checked in WInS by the teammate")),
             ("base_year", v["fiscal_year"], "", "RESEARCH", S, f"Fiscal year ended {fy_end[t]}"),
             ("base_revenue", round(rev, 3), f"{cur} m", "RESEARCH" if not rolled else "ASSUMPTION", S, rolled.lstrip("; ")),
@@ -671,7 +707,7 @@ def main(key):
                         rep=None if da_rep is None else value(replace(pp, da_pct=(da_rep,) * 10))["per_share"], shift=shift, bear=bv["per_share"], up=up, down=down,
                         ratio="no upside" if up <= 0 else ("no downside" if down >= 0 else f"{up / -down:.2f}"),
                         conv=None if rep_cash is None else model_cash / rep_cash, vol=vol, cagr=cagr, rm=rm, sharpe=None if vol is None else (cagr - T_BILL) / vol,
-                        wy=wy, maxpos=6000 / -wy[1] if wy[1] < 0 else None, pio=f"{pio}/{pio_n}", fails="; ".join(fails),
+                        wy=wy, maxpos=6000 / -wy[1] if wy[0] is not None and wy[1] < 0 else None, pio=f"{pio}/{pio_n}", fails="; ".join(fails),
                         m=f"NOT CHECKED ({', '.join(mscore[1])} MISSING)" if mscore[0] is None else f"{mscore[0]:.2f}", m12=m12.get(t, "MISSING"),
                         note=note))
     report(key, cfg, res)
@@ -697,7 +733,7 @@ def report(key, cfg, res):
         t3 = "PASS" if r["ratio"] == "no downside" or (r["ratio"] != "no upside" and float(r["ratio"]) >= 1) else "fail"
         mp = "no losing year" if r["maxpos"] is None else f"${r['maxpos']:,.0f}"
         L.append(f"| {r['t']} | {r['m12']} | {t2} | {t3} | {r['pio']} (fails: {r['fails'] or 'none'}), {r['m']} | "
-                 f"{r['wy'][0]}: {r['wy'][1]:.1%} ({mp}) | "
+                 + ("MISSING (no complete calendar year of prices)" if r["wy"][0] is None else f"{r['wy'][0]}: {r['wy'][1]:.1%} ({mp})") + " | "
                  + ("MISSING until the Yahoo CSVs arrive" if r["vol"] is None else f"{r['cagr']:+.1%}, {r['vol']:.0%}, {r['sharpe']:.2f}")
                  + f" | {'MISSING' if r['conv'] is None else format(r['conv'], '.2f')} | {r['note']} |")
     L += ["", (f"S&P 500 (SPY) compound return over the same window: {res[0]['rm']:+.1%} a year; " if res[0]["rm"] is not None

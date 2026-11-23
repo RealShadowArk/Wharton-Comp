@@ -1,0 +1,7 @@
+ticker,y1,y2,y3,source
+NVDA,0.9063,0.6815,0.3048,"Akshaj K, Akshaj_Seven_Companies_Round2.xlsx (consensus FY2027-29 vs FY2026, as of 3 Nov 2026; RESEARCH)"
+AMD,0.4885,,,"2026 = Q1-Q3 2026 actual 35.17bn (Yahoo quarterly) + Q4 2026 consensus 16.389bn (Chartmill, Nov 2026) = 51.56bn vs 2025 34.64bn; 2027-28 consensus MISSING (only '100bn by 2028' in a 247wallst article, 27 Jul 2026; not used)"
+INTC,0.1920,0.1429,,"247wallst, 29 Sep 2026: consensus 2026 63.0bn, 2027 72.0bn (Simply Wall St shows 63.0 / 71.1); 2028 MISSING"
+CRWV,1.5122,1.0450,,"Twelve Data average estimates (about Sep 2026): 2026 12.89bn (range 12.62-13.23), 2027 26.36bn (range 22.50-31.03); 2028 MISSING (Simply Wall St 34.49bn is from Apr 2026, 13 analysts; not used)"
+MU,1.0648,,,"TIKR, Nov 2026 (39 analysts): FY2027 275bn vs FY2026 133.19bn; FY2028-29 consensus MISSING"
+PLTR,0.8367,0.5000,,"Visible Alpha via S&P Global, 2 Nov 2026: 2026 8.22bn; 24/7 Wall St, 23 Oct 2026: 2027 12.33bn; 2028 MISSING"

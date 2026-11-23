@@ -1,0 +1,8 @@
+Window (2021, 10) to (2026, 10): 60 monthly USD returns vs ACWI, T-bill adjusted (tools/refined_screen.py alpha_beta)
+ticker | alpha | beta | industry alpha | industry beta | beta below (ours) | alpha above too (winner's) | 17 Nov screen alpha, beta
+NVDA | 35.9% | 2.13 | 12.5% | 1.97 | fail | fail (alpha above) | 35.9%, 2.13 (Semiconductors)
+AMD | 28.7% | 2.54 | 12.5% | 1.97 | fail | fail (alpha above) | 28.7%, 2.54 (Semiconductors)
+INTC | 9.3% | 2.62 | 12.5% | 1.97 | fail | fail (alpha below) | 9.3%, 2.62 (Semiconductors)
+MU | 50.5% | 2.59 | 12.5% | 1.97 | fail | fail (alpha above) | 50.5%, 2.59 (Semiconductors)
+PLTR | 50.6% | 1.41 | -0.5% | 1.13 | fail | fail (alpha above) | 50.6%, 1.41 (Application Software)
+CRWV | -37.8% | 7.99 | n/a | n/a | not screenable: 18 monthly returns (60 needed) | TEST only, from (2025, 4) | not in the S&P 500
